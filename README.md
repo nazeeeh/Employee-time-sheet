@@ -8,3 +8,15 @@
 4. Aisha Opaluwa
 5. Adeyemo Peter
 6. Ariyibi Baseet
+
+
+# Project Contribution Guideline
+
+1. HTML files should end with .html suffix. 
+2. File name should not be more than 32 characters
+3. Use relative links/paths for links and images from your branch project web pages to other web pages in the project.
+4. We strongly suggest using all lowercase for letters because people make fewer mistakes.
+5. The first character of the file should be a letter.
+6. Use relative short name that are indicative to the content of the page.
+7. Name files with images, with names that will help remember what is in them.
+8. Class and id names must be relative to the bearing tags. 
