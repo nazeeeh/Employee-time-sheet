@@ -20,3 +20,4 @@
 6. Use relative short name that are indicative to the content of the page.
 7. Name files with images, with names that will help remember what is in them.
 8. Class and id names must be relative to the bearing tags. 
+9. Use 2 space indentation both in html code and css code
