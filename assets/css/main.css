@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+	height: 100vh;
+	background: #fff;
+}
+.team-at-work{
+	text-align: center;
+}
+.team-at-work img{
+	display: block;
+	margin: 0 auto;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 200px;
+}
+.team-at-work h4{
+	font-family: cursive;
+	color: orange;
+	font-size: 20px;
+	margin: 20px 0px 90px 0px;
+}
+img.team{
+	width: 250px;
+	display: inline-block;
+	padding: 12px;
+}
