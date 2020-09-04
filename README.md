@@ -30,7 +30,7 @@
   
 >  ``  <h3 id="about-heading">  `` 
   
-    >  ``</h3>``  
+  >  ``</h3>``  
   
  >   ``  <p id="about-paragraph"></p>``  
         
