@@ -36,3 +36,19 @@
         
    > ``</div>``
   
+ 
+# Css Styling
+
+1. A space before opening curly bracket 
+> i.e. about.html    
+
+>``  .about-container {  }  ``  
+
+2. No space between previous closing curly bracket and next selector
+
+>  `` }``
+``#about-heading {}``  
+> 
+
+> 3. New line after last styling
+`` }\n ``
