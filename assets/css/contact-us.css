@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html, body{
+   background: #fa8526;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+#contact{
+    color: #fdf5e6; 
+    margin: 1rem auto;
+    padding: 2rem;  
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#contact .icon{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 3rem auto;
+    
+}
+
+#contact .icon a i{
+    color: #fdf5e6;
+    font-size: 3rem;
+    margin:  0 ;
+    padding: 0 .5em;
+}
+
+/* 
+=========================
+    contact form
+=========================
+*/
+.contact-form{
+	margin: auto;
+	padding: 1em;
+	width: 40%;
+	background: #fff;
+    border-radius: 3em;	
+    box-shadow: #000 10px 5px 15px;
+}
+
+.contact-form input{
+    padding: .5em;
+	border-radius: 5em;
+}
+
+@media(max-width:800px){
+    #contact{
+        width: auto;
+    }
+    .contact-form{
+        width: 100%;
+    }
+    #contact .icon a i{
+        font-size: 2rem;
+        margin:  0 ;
+        padding: 0 .2em;
+    }
+}
+
+textarea{
+    height: 15em;
+}
+
+.contact-form input, textarea{
+    display: block;
+    width: 80%;
+    margin: 1em auto;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    background: #fa8526;
+}
+
+.contact-form input[type=submit]{
+    display: block;
+    margin: auto;
+    padding: 1em;
+    width: 8em;
+    font-size: 1em;
+}
+
+input[type=submit]{
+    background: #fa8526;
+    color: #f0ffff;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+}
