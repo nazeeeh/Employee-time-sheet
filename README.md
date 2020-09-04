@@ -28,11 +28,11 @@
 > i.e. about.html   
 ``  <div class="about-container">  ``  
   
->  ``  <div id="about-heading">  ``  
+>  ``  <h3 id="about-heading">  `` 
+  
+    >  ``</h3>``  
   
  >   ``  <p id="about-paragraph"></p>``  
-    
-  >  ``</div>``  
-    
+        
    > ``</div>``
   
