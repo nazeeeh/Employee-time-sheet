@@ -22,6 +22,7 @@ class Footer extends HTMLElement {
         this.innerHTML = `
         <footer>
             <div class="footer-container">
+            <p class> Get started</p>
             <input type="text" class="company-email" placeholder="Your Company's Email"></input>
             <button class="subscribe">Let's go</button>
             <p> Team T-Circuit &copy; 2020</p>
