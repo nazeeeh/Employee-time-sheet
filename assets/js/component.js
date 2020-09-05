@@ -6,9 +6,9 @@ class Header extends HTMLElement {
           <ul class="nav-list">
             <li><a href="#" class="nav-item">FEATURES</a></li>
             <li><a href="#" class="nav-item">PRICING</a></li>
-            <li><a href="#" class="nav-item">SERVICES</a></li>
-            <li><a href="#" class="nav-item">ABOUT</a></li>
-            <li><a href="#" class="nav-item">CONTACT</a></li>
+            <li><a href="/contents/service-price.html" class="nav-item">SERVICES</a></li>
+            <li><a href="/contents/about.html" class="nav-item">ABOUT</a></li>
+            <li><a href="/contents/contact-us.html" class="nav-item">CONTACT</a></li>
             <li><button class="nav-button">Log In</button></li>
           </ul>
         </div>
@@ -22,6 +22,7 @@ class Footer extends HTMLElement {
         this.innerHTML = `
         <footer>
             <div class="footer-container">
+            <p class> Get started</p>
             <input type="text" class="company-email" placeholder="Your Company's Email"></input>
             <button class="subscribe">Let's go</button>
             <p> Team T-Circuit &copy; 2020</p>
