@@ -39,7 +39,7 @@ h3{
     width: 100%;
 }
 .con .main{
-    max-width: 1240px;
+    max-width: 1440px;
     margin: auto;
 }
 .con .main .about-1, .con .main .about-2-con, .con .main .about-3{
@@ -125,7 +125,7 @@ h3{
     width: 30%;
     height: 150px;
     margin-bottom: 20px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
     background-color: white;
     justify-content: center;
     align-items: center;
@@ -141,7 +141,7 @@ h3{
 ==================================
  */
  .con .main .about-3{
-     padding-bottom: 50px;
+     padding: 50px 0;
  }
 .con .main .about-3 .social-links{
     display: flex;
@@ -154,6 +154,12 @@ h3{
 .con .main .about-3 .social-links .social-items i{
     font-size: 3rem;
     color: #fa8526;
+}
+.con .main .about-3 .social-links .social-items i:hover{
+    transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
 }
 
 
