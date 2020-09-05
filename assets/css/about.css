@@ -1,0 +1,109 @@
+/* css reset */
+body{
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.8;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+* p{
+    color: rgb(95, 107, 123);
+    padding: 20px 0;
+    font-size: 1.2rem;
+}
+
+* h3,
+* h1{
+    color: black;
+}
+
+h1{
+    padding: 20px 0;
+    font-size: 2rem;
+}
+
+h3{
+    padding: 20px 0;
+    font-size: 1.5rem;
+}
+
+/* 
+==================================
+********* body *******************
+==================================
+ */
+
+.body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.con{
+    width: 100%;
+    height: 100vh;
+}
+
+.con .main{
+    max-width: 1240px;
+    margin: auto;
+}
+
+.con .main .section-1, .con .main .section-2, .con .main .section-3{
+    width: 80%;
+    margin: auto;
+    padding: 0 40px;
+}
+
+
+/* 
+==================================
+********* Section 2 **************
+==================================
+ */
+
+.con .main .section-2 .team-members{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+
+.con .main .section-2 .team-members .team-individuals{
+    display: flex;
+    width: 30%;
+    height: 150px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+}
+
+.con .main .section-2 .team-members .team-individuals p{
+    padding-left: 10px;
+}
+
+.con .main .section-2 .team-members .team-individuals img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 
+==================================
+********* Section 2 **************
+==================================
+ */
+
+.con .main .section-3 .social-links{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.con .main .section-3 .social-links .social-items{
+    height: 70px;
+    width: 70px;
+    background-color: lightgrey;
+}
