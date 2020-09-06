@@ -7,7 +7,7 @@ class Header extends HTMLElement {
         <div class="navbar-container">
           <ul class="nav-list">
             <li><a href="../../index.html" class="nav-item">HOME</a></li>
-            <li><a href="#" class="nav-item">PRICING</a></li>
+            <li><a href="/contents/pricing.html" class="nav-item">PRICING</a></li>
             <li><a href="/contents/service.html" class="nav-item">SERVICES</a></li>
             <li><a href="/contents/about.html" class="nav-item">ABOUT</a></li>
             <li><a href="/contents/contact-us.html" class="nav-item">CONTACT</a></li>
