@@ -14,9 +14,10 @@ hr{
 div.service-wrapper{
     border:hidden;
     padding-top:60px;
-    background-image:url('../img/original-bg-image.jpg');
+/* Unclebay touched here, I changed the image*/
+    background-image:url('img/bg-image.jpg');
     background-repeat:no-repeat;
-    filter:blur(0.2px);
+    filter:blur(0.2px);    
 }
 div.service-wrapper .service-info {
     width:100%;
@@ -25,20 +26,32 @@ div.service-wrapper .service-info {
     border:hidden;
     display:flex;
     justify-content:center;
+/* Unclebay touched here*/
+    background-color: rgba(0,0,0,0.1);
 }
 div.service-wrapper .service-info .service-heading {
     border:hidden;
     width:70%;
     padding:20px;
+/* Unclebay touched here, centered the heading*/
+    margin-top: 5rem;
 }
 div.service-wrapper .service-info .service-heading h1{
     text-align:center;
     color:#6b5b95;
+    font-weight: 700;
 }
 div.service-wrapper .service-info .service-heading p{
     color:white;
     text-align:center;
     color:orangered;
+    font-weight: 600;
+/* Unclebay touched here, gave space around the paragraph*/
+    padding: 15px;
+}
+div.service-wrapper .service-info .service-heading a{
+/* Unclebay touched here, gave space around the paragraph*/
+text-decoration: none;
 }
 div.service-wrapper .service-info .service-heading button{
     display:block;
@@ -51,13 +64,18 @@ div.service-wrapper .service-info .service-heading button{
     border-radius:10px;
     background:#6b5b95;
     color:white;
+/* Unclebay touched here */
+    cursor: pointer;
 }
 div.service-wrapper .service-info .service-heading button:hover{
     background:orangered;
     background:tomato;
     transition:600ms ease-in-out;
 }
-
+/* UncleBay touched here */
+.our-service-container{
+    background-color: rgba(0,0,0,0.6);
+}
 div.our-service{
     border:hidden;
     background:white;
