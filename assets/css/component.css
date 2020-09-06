@@ -60,7 +60,8 @@
     border: none;
     font-size: 1rem;
     color: #ffffff;
-    background-color: #ff4500;
+    /* background-color: #ff4500; */
+    background: rgb(253, 95, 4);
     font-weight: 500;
 }
 
@@ -91,8 +92,10 @@
     padding: 5px;
     border-radius: 20px;
     border: none;
-    background-color: #ff4500;
+    /* background-color: #ff4500; */
+    background: rgb(253, 95, 4);
     margin: 5px auto;
+    color: #fff;
 }
 
 .footer-container p {
