@@ -8,13 +8,20 @@
     top: 0;
 }
 
+.nav-section {
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+}
 .navbar-container {
     font-family: 'Roboto', sans-serif;
-    height: 50px;
     display: flex;
     justify-content: flex-end;
     overflow: hidden;
-    background-color: #fff;
+    height: 50px;
+    width: 100%;
 }
 
 .nav-list {
@@ -22,6 +29,13 @@
     align-items: center;
     list-style: none;
 }
+
+.navbar-logo {
+    height: 40px;
+    width: 100px;
+    background: url("../img/logo.png") center center/cover;
+    margin-left: 10px;
+} 
 
 .nav-list li {
     font-weight: 500;
