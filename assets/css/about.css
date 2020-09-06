@@ -4,28 +4,23 @@ body{
     text-decoration: none;
     line-height: 1.8;
 }
-
 *{
     padding: 0;
     margin: 0;
 }
-
 * p{
     color: rgb(95, 107, 123);
     padding: 20px 0;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
-
 * h3,
 * h1{
     color: black;
 }
-
 h1{
     padding: 20px 0;
     font-size: 2rem;
 }
-
 h3{
     padding: 20px 0;
     font-size: 1.5rem;
@@ -39,71 +34,201 @@ h3{
 
 .body{
     width: 100%;
-    display: flex;
-    flex-direction: column;
 }
-
 .con{
     width: 100%;
-    height: 100vh;
 }
-
 .con .main{
-    max-width: 1240px;
+    max-width: 1440px;
     margin: auto;
 }
-
-.con .main .section-1, .con .main .section-2, .con .main .section-3{
+.con .main .about-1, .con .main .about-2-con, .con .main .about-3{
     width: 80%;
     margin: auto;
     padding: 0 40px;
 }
+/* 
+====================================
+********* about Section 1 **********
+====================================
+*/
 
+/* About pace time-sheet */
+.con .main .about-1{
+    padding-top: 15px;
+}
+.con .main .about-1 .about-ts{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.con .main .about-1 .about-ts img{
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    align-self: center;
+    padding-right: 10px;
+    background-color: white;
+}
+.con .main .about-1 .about-ts div{
+    padding-left: 10px;
+    width: 55%;
+    margin-left: 20px;
+}
+.con .main .about-1 .about-ts h3, .con .main .about-1 .pace-story h3{
+    border-left: solid 0.5rem #fa8526;
+    padding-left: 10px;
+}
 
+/* pace story */
+.con .main .about-1 .pace-story{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+
+.con .main .about-1 .pace-story img{
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+    align-self: center;
+    padding-right: 10px;
+    background-color: white;
+}
+.con .main .about-1 .pace-story div{
+    padding-right: 10px;
+    width: 50%;
+    margin-left: 20px;
+}
 /* 
 ==================================
-********* Section 2 **************
+********* about 2 **************
 ==================================
  */
-
-.con .main .section-2 .team-members{
+.con .main .about-2{
+    width: 100%;
+    background-color: #fcd3a1;
+}
+.con .main .about-2 .about-2-con{
+    padding-bottom: 70px;
+}
+.con .main .about-2 .about-2-con .team-members{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     padding-top: 40px;
 }
-
-.con .main .section-2 .team-members .team-individuals{
+.con .main .about-2 .team-members .team-individuals{
     display: flex;
     width: 30%;
     height: 150px;
     margin-bottom: 20px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
 }
-
-.con .main .section-2 .team-members .team-individuals p{
+.con .main .about-2 .team-members .team-individuals p{
     padding-left: 10px;
 }
 
-.con .main .section-2 .team-members .team-individuals img{
-    max-width: 100%;
-    max-height: 100%;
-}
 
 /* 
 ==================================
-********* Section 2 **************
+********* about 3 **************
+==================================
+ */
+ .con .main .about-3{
+     padding: 50px 0;
+ }
+.con .main .about-3 .social-links{
+    display: flex;
+    justify-content: space-around;
+}
+.con .main .about-3 .social-links .social-items{
+    height: 70px;
+    width: 70px;
+}
+.con .main .about-3 .social-links .social-items i{
+    font-size: 3rem;
+    color: #fa8526;
+}
+.con .main .about-3 .social-links .social-items i:hover{
+    transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+}
+
+
+/* 
+==================================
+********* Media queries**************
 ==================================
  */
 
-.con .main .section-3 .social-links{
-    display: flex;
-    justify-content: space-around;
-    padding: 30px 0;
+ @media(max-width:850px){
+    .con .main{
+        max-width: 750px;
+        margin: auto;
+    }
+
+    .con .main .about-1, .con .main .about-2-con, .con .main .about-3{
+        width: 90%;
+        margin: auto;
+        padding: 0 30px;
+    }
+    .con .main .about-1 .about-ts{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .con .main .about-1 .about-ts img{
+        width: 70%;
+        padding-bottom: 40px;
+    }
+    .con .main .about-1 .about-ts div{
+        width: 90%;
+        margin-top: 20px;
+    }
+    /* About pace-time-sheet */
+    .con .main .about-1 .pace-story{
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+    .con .main .about-1 .pace-story img{
+        width: 90%;
+        order: 1;
+    }
+    .con .main .about-1 .pace-story div{
+        order: 2;
+        padding-top: 10px;
+        width: 90%;
+        margin-top: 70px;
+    }
+    .con .main .about-2 .team-members .team-individuals p{
+        font-size: 1rem;
+    }
 }
 
-.con .main .section-3 .social-links .social-items{
-    height: 70px;
-    width: 70px;
-    background-color: lightgrey;
+@media(max-width:500px){
+    * p{
+       
+        font-size: 1rem;
+    }
+    .con .main .about-2 .about-2-con .team-members{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .con .main .about-2 .team-members .team-individuals{
+        display: flex;
+        width: 60%;
+        justify-content: center;
+        align-items: center;
+    }
 }
