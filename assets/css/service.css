@@ -11,6 +11,9 @@ hr{
     border:1px solid orangered;
     width:30%;
 }
+a {
+    text-decoration:none;
+}
 div.service-wrapper{
     border:hidden;
     padding-top:60px;
