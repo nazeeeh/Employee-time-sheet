@@ -1,0 +1,155 @@
+body{
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.con{
+    width: 90%;
+    margin: 50px auto;
+}
+
+.con h2:first-of-type{
+    text-align: center;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.con .prices{
+    display: flex;
+    justify-content: space-around;
+    padding: 70px 0 20px 0;
+}
+
+.con .prices h3{
+    font-size: 2rem;
+}
+
+
+.con .prices em{
+    font-size: 0.6rem;
+}
+
+.con .prices h1{
+    font-size: 3rem;
+}
+
+.con .prices p{
+    font-size: 1rem;
+}
+
+
+.con .prices .free{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 17%;
+}
+
+.con .prices .free .heading{
+    border: solid 2px #FF4500;
+    border-radius: 10px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.con .prices .free .heading button{
+    padding: 7px 30px;
+    border-radius: 10px;
+    background: #FF4500;
+    color: white;
+    border: none;
+}
+
+.con .prices .free .body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    border: solid 1px #FF4500;
+    border-radius: 10px;
+    padding: 20px 10px;
+    height: 120%;
+}
+
+.con .prices .free .body p{
+    padding-bottom: 20px;
+    flex: 1;
+}
+
+.con .prices .free .body button{
+    padding: 7px 30px;
+    border-radius: 10px;
+    background: #FF4500;
+    color: white;
+    border: none;
+    justify-self: flex-end;
+}
+
+.con .prices .free:nth-of-type(2) .heading, .con .prices .free:nth-of-type(2) .body{
+    border: solid 2px #E6899C;
+}
+
+.con .prices .free:nth-of-type(2) .heading button, .con .prices .free:nth-of-type(2) .body button{
+    background-color: #D64161;
+}
+
+.con .prices .free:nth-of-type(3) .heading, .con .prices .free:nth-of-type(3) .body{
+    border: solid 2px #b5adca;
+}
+
+.con .prices .free:nth-of-type(3) .heading button, .con .prices .free:nth-of-type(3) .body button{
+    background-color: #6B5B95 ;
+}
+
+.con .others{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.con .others h3{
+    margin-top: 10px;
+}
+
+.con .others p{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.con .others .each{
+    margin-bottom: 10px;
+    border-bottom: solid 1px #FF4500;
+}
+
+.con .others .each:nth-of-type(1), .con .others .each:nth-of-type(5){
+    width: 60%;
+    margin: auto;
+}
+
+.con .others .each:nth-of-type(4), .con .others .each:nth-of-type(2){
+    width: 70%;
+    margin: auto;
+}
+
+.con .others .each:nth-of-type(6){
+    border: none;
+}
+
+.con .others .each:nth-of-type(3){
+    width: 80%;
+    margin: auto;
+}
+
+.con .others .each h3{
+    margin-bottom: 10px;
+}
+
+.con .others .each p{
+    margin-bottom: 8px;
+}
