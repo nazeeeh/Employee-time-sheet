@@ -88,7 +88,6 @@ body{
     background: #FF4500;
     color: white;
     border: none;
-    justify-self: flex-end;
 }
 
 .con .prices .free:nth-of-type(2) .heading, .con .prices .free:nth-of-type(2) .body{
