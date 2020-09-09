@@ -1,112 +1,102 @@
+/* 
+==================================
+*********   RESET ****************
+==================================
+ */
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
 }
-html, body{
-   background: #fa8526;
-    line-height: 1.6;
-    min-height: 100vh;
-    margin: 0;
+html, body {
     padding: 0;
-    scroll-behavior: smooth;
+    margin: 0;
+    line-height: 1.6;
 }
 /* 
-=========================
-    CONTACT STYLING
-=========================
-*/
-#contact{
-    color: #fdf5e6; 
-    margin: 1rem auto;
-    padding: 2rem;  
-    text-align: center;
-    text-transform: uppercase;
+==================================
+***** CONTACT CONTAINER    *******
+==================================
+ */
+.contact-container {
+    min-height: 100vh;
 }
-#contact .icon{
+/* 
+==================================
+*******  CONTACT FORM ************
+==================================
+ */
+.contact-form {
+    margin: 8rem auto;
+    width: 55%;
+}
+/* 
+==================================
+***    CONTACT FORM  HEADING ***
+==================================
+ */
+.contact-form h2 {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 0 1rem 2rem;
+    font-size: 50px;
+    line-height: 35px;
+    color: #000000;
     width: 100%;
-    margin: 3rem auto;
-    
+    height: 155px;
+    border: 1px solid #C4C4C4;
+    border-radius: 0px 0px 15px 15px;
+    border-top: 10px solid #FF4500
 }
-#contact .icon a i{
-    color: #fff;
-    font-size: 3rem;
-    margin:  0 2rem;
-    padding: .5rem;
+.contact-form fieldset {
+    width: 100%;
+    height:auto;
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+    margin: 1rem 0;
 }
-#contact .icon a i:hover{
-    background: #fff;
-    color: #fa8526;
-    outline: none;
-}
-/* 
-=========================
-    CONTACT FORM STYLING
-=========================
-*/
-.contact-form{
-	margin: auto;
-	padding: 1em;
-	width: 40%;
-	background: #fff;
-    border-radius: 3em;	
-    box-shadow: #000 10px 5px 15px;
-}
-.contact-form input{
-    padding: .5em;
-	border-radius: 5em;
-}
-/* 
-===================================
-    CONTACT FORM MOBILE STYLING
-===================================
-*/
-@media(max-width:800px){
-    #contact{
-        width: auto;
-    }
-    .contact-form{
-        width: 100%;
-    }
-    #contact .icon a i{
-        font-size: 2rem;
-        margin:  0 1rem;
-        padding: .2rem;
-    }
-}
-textarea{
-    height: 15em;
-}
-
-.contact-form input, textarea{
+.contact-form fieldset label,
+.contact-form fieldset p {
     display: block;
     width: 80%;
-    margin: 1em auto;
+    padding: 1.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
-
-input:focus, textarea:focus{
+/* 
+==================================
+***    CONTACT FORM INPUT ***
+==================================
+ */
+.contact-form fieldset input {
+    width: 50%;
+    padding-top: 1rem;
+    margin: .9rem;
+    margin-bottom: 2rem;
+    border-color: transparent;
+    border-bottom: 1px solid #C4C4C4;   
+}
+.contact-form fieldset textarea {
+    width: 80%;
+    height: 180px;
+    margin:  0 1rem 1rem;
+}
+.contact-form fieldset input:focus {
     outline: none;
-    background: #fa8526;
-    opacity: .7;
 }
-
-.contact-form input[type=submit]{
-    display: block;
-    margin: auto;
-    padding: 1em;
-    width: 8em;
-    font-size: 1em;
+/* 
+==================================
+*** CONTACT FORM SUBMIT BUTTON ***
+==================================
+ */
+input[type=submit] {
+    width: 11rem;
+    padding: .5rem;
+    background: #FF4500;
+    color: #fff;
+    font-size: 1.8rem;
+    border-radius: .7rem;
 }
-
-input[type=submit]{
-    background: #fa8526;
-    color: #f0ffff;
-    text-transform: uppercase;
-    text-align: center;
-    border: none;
-}
-input[type=submit]:hover{
+input[type=submit]:hover {
     opacity: .8;
 }

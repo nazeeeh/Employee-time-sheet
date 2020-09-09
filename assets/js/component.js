@@ -3,6 +3,7 @@ class Header extends HTMLElement {
         this.innerHTML = `
         <nav>
         <div class="nav-section">
+<<<<<<< HEAD
         <a href="../../index.html">
         <div class="navbar-logo">
         <div class="logo-image">
@@ -10,10 +11,13 @@ class Header extends HTMLElement {
         <div class="logo-text">Pace</div>
         </div>
         </a>
+=======
+        <a href="../../index.html"><div class="navbar-logo"><h4>Pace</h4></div></a>
+>>>>>>> origin
         <div class="navbar-container">
           <ul class="nav-list">
-            <li><a href="../../index.html" class="nav-item">Home</a></li>
-            <li><a href="/contents/pricing.html" class="nav-item">Pricing</a></li>
+            <li><a href="../../index.html" class="nav-item home">Home</a></li>
+            <li><a href="/contents/pricing2.html" class="nav-item">Pricing</a></li>
             <li><a href="/contents/about.html" class="nav-item">About</a></li>
             <li><a href="/contents/contact-us.html" class="nav-item">Contact</a></li>
             <li><a href="/contents/contact-us.html"><button class="nav-login-button ">Log In</button></a></li>

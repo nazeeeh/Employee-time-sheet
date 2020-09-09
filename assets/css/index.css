@@ -6,6 +6,11 @@
 body{
   background: rgb(250, 241, 238);
 }
+/* MAKE HOME LINK ACTIVE */
+.nav-list a.home{
+  background: #fff;
+  color:#333;
+}
 .landing-page-body{
   height: 100vh;
   background-repeat: no-repeat;
@@ -46,12 +51,17 @@ body{
   border-radius: 12px;
   background: #2b3541;
   color: #fff;
+  cursor: pointer;
+}
+.trial-form input[type=submit]:hover{
+  opacity: 0.9;
 }
 .features-container{
   height: 150px;
   width: 700px;
   position: relative;
-  top: 35.6rem;
+  /* top: 35.6rem; */
+  top: 39.6rem;
   left: 25%;
   display: flex;
   justify-content: center;
@@ -60,10 +70,6 @@ body{
   box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25);
   backdrop-filter: blur(4px);
   gap: 25px;
-}
-.logo img{
-  /* height: 30px; */
-
 }
 .logo p{
   color: #333;
@@ -77,7 +83,7 @@ body{
   position: relative;
   top: 130px;
 }
-.features-section-2 h3{
+.features-section-2 #logo-heading{
   font-weight: 500;
   font-family: roboto;
   text-align: center;
@@ -99,6 +105,7 @@ body{
   position: relative;
   top: 91px;
   text-align: center;
+  margin-bottom: 18rem;
 }
 .features-summary h3{
   font-size: 28px;
