@@ -2,9 +2,10 @@ body {
   margin:0;
   padding:0;
   box-sizing:border-box;
-  background-image:url('../img/original-bg-image.jpg');
+  background-image:url('img/bg-image.jpg');
   background-repeat:no-repeat;
   background-size:cover;
+
 }
 
 /*  */
@@ -14,6 +15,8 @@ body {
   display:flex;
   flex-direction:column;
   padding:70px 20px;
+  /* Unclebay touched here*/
+  background-color: rgba(0,0,0,0.1);
 }
 
 /* Styling for service price heading starts */
