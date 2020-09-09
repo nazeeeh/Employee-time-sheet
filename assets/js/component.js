@@ -3,14 +3,20 @@ class Header extends HTMLElement {
         this.innerHTML = `
         <nav>
         <div class="nav-section">
-        <a href="../../index.html"><div class="navbar-logo"></div></a>
+        <a href="../../index.html">
+        <div class="navbar-logo">
+        <div class="logo-image">
+        <img src="../../assets/img/Vector.png" alt="Logo"></div>
+        <div class="logo-text">Pace</div>
+        </div>
+        </a>
         <div class="navbar-container">
           <ul class="nav-list">
             <li><a href="../../index.html" class="nav-item">Home</a></li>
             <li><a href="/contents/pricing.html" class="nav-item">Pricing</a></li>
             <li><a href="/contents/about.html" class="nav-item">About</a></li>
             <li><a href="/contents/contact-us.html" class="nav-item">Contact</a></li>
-            <li><button class="nav-login-button ">Log In</button></li>
+            <li><a href="/contents/contact-us.html"><button class="nav-login-button ">Log In</button></a></li>
             <li><button class="nav-signup-button">Sign Up</button></li>
           </ul>
         </div>

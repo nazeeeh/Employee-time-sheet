@@ -30,14 +30,34 @@
     list-style: none;
 }
 
+.nav-section a {
+    text-decoration: none;
+}
+
 .navbar-logo {
     height: 40px;
     width: 100px;
-    background: url("../img/logo.png") center center/cover;
-/* UncleBay touched here */
-    /* margin-left: 10px; */
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
 } 
+.navbar-logo .logo-image {
+    width: 30px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.navbar-logo .logo-image img {
+    max-height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.navbar-logo .logo-text {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
 
 .nav-list li {
     font-weight: 500;
@@ -161,10 +181,7 @@
 .right-side-2 p {
     justify-content: flex-end;
 }
-/*
+
 .footer-container input:focus {
     outline: none;
 }
-
-
-} */
