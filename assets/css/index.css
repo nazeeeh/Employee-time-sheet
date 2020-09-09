@@ -47,11 +47,12 @@ body{
 .trial-form input[type=submit]{
   border: none;
   outline: none;
-  padding: 9px;
+  padding: 19px;
   border-radius: 12px;
   background: #2b3541;
   color: #fff;
   cursor: pointer;
+  font-weight: 700;
 }
 .trial-form input[type=submit]:hover{
   opacity: 0.9;
@@ -84,10 +85,10 @@ body{
   top: 130px;
 }
 .features-section-2 #logo-heading{
-  font-weight: 500;
+  font-weight: 700;
   font-family: roboto;
   text-align: center;
-  font-size: 39px;
+  font-size: 5rem;
   margin: 50px;
 }
 .features-wrapper{

@@ -5,6 +5,12 @@ body{
     line-height: 1.5;
     font-family: 'Roboto', sans-serif;
 }
+/* UncleBay touched here */
+/* MAKE PAGE LINK ACTIVE */
+.nav-list a.about{
+    background: #fff;
+    color:#333;
+  }
 *{
     padding: 0;
     margin: 0;

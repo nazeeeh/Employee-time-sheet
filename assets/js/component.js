@@ -7,9 +7,9 @@ class Header extends HTMLElement {
         <div class="navbar-container">
           <ul class="nav-list">
             <li><a href="../../index.html" class="nav-item home">Home</a></li>
-            <li><a href="/contents/pricing2.html" class="nav-item">Pricing</a></li>
-            <li><a href="/contents/about.html" class="nav-item">About</a></li>
-            <li><a href="/contents/contact-us.html" class="nav-item">Contact</a></li>
+            <li><a href="/contents/pricing2.html" class="nav-item pricing">Pricing</a></li>
+            <li><a href="/contents/about.html" class="nav-item about">About</a></li>
+            <li><a href="/contents/contact-us.html" class="nav-item contact">Contact</a></li>
             <li><button class="nav-login-button ">Log In</button></li>
             <li><button class="nav-signup-button">Sign Up</button></li>
           </ul>
