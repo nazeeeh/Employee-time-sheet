@@ -61,6 +61,7 @@ a{
     text-decoration: none;
     color: #fff;
     padding: 15px;
+    margin-right: 12px;
 }
 
 .nav-list li a:hover {
@@ -79,10 +80,7 @@ a{
     font-weight: 500;
     border: none;
 }
-.nav-list a.home{
-    background: #fff;
-    color:#333;
-}
+
 .nav-login-button {
     color: #2B3541;
     /* background-color: rgba(255, 255, 255, 0); */
@@ -94,6 +92,7 @@ a{
     border: 2px solid #fff !important;
     background: transparent;
     color: #fff;
+    outline: none;
 }
 .nav-login-button:hover{
     /* color: #fff;
@@ -101,6 +100,7 @@ a{
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid #2B3541 !important;
     color: #333;
+    outline: none;
 }
 .nav-signup-button {
     color: #ffffff;
@@ -108,7 +108,9 @@ a{
     padding: 7px 8px;
     margin-right: 4rem;
     margin-left: 20px;
+    /* Bay touched here */
     border: none;
+    outline: none;
     cursor: pointer;
 }
 .nav-signup-button:hover{

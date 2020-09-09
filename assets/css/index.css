@@ -6,6 +6,11 @@
 body{
   background: rgb(250, 241, 238);
 }
+/* MAKE HOME LINK ACTIVE */
+.nav-list a.home{
+  background: #fff;
+  color:#333;
+}
 .landing-page-body{
   height: 100vh;
   background-repeat: no-repeat;
@@ -46,12 +51,17 @@ body{
   border-radius: 12px;
   background: #2b3541;
   color: #fff;
+  cursor: pointer;
+}
+.trial-form input[type=submit]:hover{
+  opacity: 0.9;
 }
 .features-container{
   height: 150px;
   width: 700px;
   position: relative;
-  top: 35.6rem;
+  /* top: 35.6rem; */
+  top: 39.6rem;
   left: 25%;
   display: flex;
   justify-content: center;
