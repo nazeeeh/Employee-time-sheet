@@ -13,6 +13,12 @@ html, body {
     margin: 0;
     line-height: 1.6;
 }
+/* UncleBay touched here */
+/* MAKE PAGE LINK ACTIVE */
+.nav-list a.contact{
+    background: #fff;
+    color:#333;
+  }
 /* 
 ==================================
 ***** CONTACT CONTAINER    *******

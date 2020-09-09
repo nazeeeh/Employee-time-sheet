@@ -47,11 +47,12 @@ body{
 .trial-form input[type=submit]{
   border: none;
   outline: none;
-  padding: 9px;
+  padding: 19px;
   border-radius: 12px;
   background: #2b3541;
   color: #fff;
   cursor: pointer;
+  font-weight: 700;
 }
 .trial-form input[type=submit]:hover{
   opacity: 0.9;

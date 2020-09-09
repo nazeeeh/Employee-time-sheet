@@ -3,24 +3,14 @@ class Header extends HTMLElement {
         this.innerHTML = `
         <nav>
         <div class="nav-section">
-<<<<<<< HEAD
-        <a href="../../index.html">
-        <div class="navbar-logo">
-        <div class="logo-image">
-        <img src="../../assets/img/Vector.png" alt="Logo"></div>
-        <div class="logo-text">Pace</div>
-        </div>
-        </a>
-=======
         <a href="../../index.html"><div class="navbar-logo"><h4>Pace</h4></div></a>
->>>>>>> origin
         <div class="navbar-container">
           <ul class="nav-list">
             <li><a href="../../index.html" class="nav-item home">Home</a></li>
-            <li><a href="/contents/pricing2.html" class="nav-item">Pricing</a></li>
-            <li><a href="/contents/about.html" class="nav-item">About</a></li>
-            <li><a href="/contents/contact-us.html" class="nav-item">Contact</a></li>
-            <li><a href="/contents/contact-us.html"><button class="nav-login-button ">Log In</button></a></li>
+            <li><a href="/contents/pricing2.html" class="nav-item pricing">Pricing</a></li>
+            <li><a href="/contents/about.html" class="nav-item about">About</a></li>
+            <li><a href="/contents/contact-us.html" class="nav-item contact">Contact</a></li>
+            <li><button class="nav-login-button ">Log In</button></li>
             <li><button class="nav-signup-button">Sign Up</button></li>
           </ul>
         </div>

@@ -33,16 +33,6 @@ a{
     align-items: center;
     list-style: none;
 }
-<<<<<<< HEAD
-
-.nav-section a {
-    text-decoration: none;
-}
-
-.navbar-logo {
-    height: 40px;
-    width: 100px;
-=======
 .navbar-logo {
     height: 40px;
     width: 40px;
@@ -50,29 +40,10 @@ a{
     background: url("../img/Vector.png") center center/cover;
 /* UncleBay touched here */
     /* margin-left: 10px; */
->>>>>>> origin
     margin-left: 5rem;
     display: flex;
     align-items: center;
 } 
-<<<<<<< HEAD
-.navbar-logo .logo-image {
-    width: 30px;
-    height: 40px;
-    margin-top: 10px;
-}
-
-.navbar-logo .logo-image img {
-    max-height: 100%;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-.navbar-logo .logo-text {
-    font-family: "Roboto", sans-serif;
-    color: white;
-=======
 .navbar-logo h4{
     /* Bay Touched here */
     color:#fff;
@@ -83,7 +54,7 @@ a{
     border: none;
     outline: none;
     font-style: oblique;
->>>>>>> origin
+    font-family: "Roboto", sans-serif;
 }
 
 .nav-list li {
@@ -120,7 +91,7 @@ a{
     /* border: 2px solid #2B3541 !important; */
     padding: 5px 8px;
     cursor: pointer;
-    transition-delay: 0.21s;
+    transition-delay: 0.28s;
     /* color: #fff; */
     border: 2px solid #fff !important;
     background: transparent;
@@ -128,12 +99,16 @@ a{
     outline: none;
 }
 .nav-login-button:hover{
+    /* unclebay touched here */
     /* color: #fff;
     border: 2px solid #fff !important; */
-    background-color: rgba(255, 255, 255, 0);
-    border: 2px solid #2B3541 !important;
+    /* background-color: rgba(255, 255, 255, 0); */
+    background: #fff;
+    /* border: 2px solid #2B3541 !important; */
     color: #333;
     outline: none;
+    transition-delay: 0.3s;
+
 }
 .nav-signup-button {
     color: #ffffff;
@@ -145,10 +120,16 @@ a{
     border: none;
     outline: none;
     cursor: pointer;
+    transition-delay: 0.21s;
 }
 .nav-signup-button:hover{
-    background: #ffffff;
-    color: #2B3541;
+    /* unclebay touched here */
+    background: transparent;
+    color: #333;
+    border: 2px solid #333;
+    /* background: #ffffff; */
+    /* color: #2B3541; */
+    transition-delay: 0.3s;
 }
 
 /* FOOTER STYLING */
