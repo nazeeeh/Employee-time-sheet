@@ -85,10 +85,10 @@ body{
   top: 130px;
 }
 .features-section-2 #logo-heading{
-  font-weight: 700;
+  font-weight: 500;
   font-family: roboto;
   text-align: center;
-  font-size: 5rem;
+  font-size: 39px;
   margin: 50px;
 }
 .features-wrapper{
