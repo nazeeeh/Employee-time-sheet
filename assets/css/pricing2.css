@@ -114,6 +114,8 @@ body{
 .con .others{
     margin-top: 100px;
     text-align: center;
+    /* UncleBay touched here */
+    cursor: pointer;
 }
 
 .con .others h3{
@@ -139,6 +141,12 @@ body{
 .con .others .each:nth-of-type(4), .con .others .each:nth-of-type(2){
     width: 70%;
     margin: auto;
+}
+
+/* UncleBay Touched here */
+.con .others .each:hover{
+    background: rgba(248, 66, 0, 0.1);
+    padding: 50px;
 }
 
 .con .others .each:nth-of-type(6){
