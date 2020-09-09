@@ -1,0 +1,19 @@
+form{
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  gap: 23px;
+  margin-top: 15%;
+  border: 2px solid tomato;
+  padding: 25px;
+}
+
+form input{
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid tomato;
+  outline: none;
+  background: wheat;
+}
