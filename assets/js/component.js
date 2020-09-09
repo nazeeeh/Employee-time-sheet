@@ -2,15 +2,18 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <nav>
+        <div class="nav-section">
+        <a href="../../index.html"><div class="navbar-logo"></div></a>
         <div class="navbar-container">
           <ul class="nav-list">
-            <li><a href="#" class="nav-item">FEATURES</a></li>
-            <li><a href="#" class="nav-item">PRICING</a></li>
-            <li><a href="/contents/service-price.html" class="nav-item">SERVICES</a></li>
+            <li><a href="../../index.html" class="nav-item">HOME</a></li>
+            <li><a href="/contents/pricing.html" class="nav-item">PRICING</a></li>
+            <li><a href="/contents/service.html" class="nav-item">SERVICES</a></li>
             <li><a href="/contents/about.html" class="nav-item">ABOUT</a></li>
             <li><a href="/contents/contact-us.html" class="nav-item">CONTACT</a></li>
             <li><button class="nav-button">Log In</button></li>
           </ul>
+        </div>
         </div>
       </nav>
       `;
