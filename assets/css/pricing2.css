@@ -45,9 +45,9 @@ body{
     font-size: 3rem;
 }
 
-/* .con .prices .free h1 span img{
+.con .prices .free h1 span img{
     /* margin-right: -5px; */
-} */
+}
 
 .con .prices p{
     font-size: 1rem;
@@ -173,4 +173,68 @@ body{
 
 .con .others .each p{
     margin-bottom: 8px;
+}
+
+@media(max-width: 800px){
+    .con .prices .free{
+        width: 22%;
+    }
+
+    .con .prices h3{
+        font-size: 1.7rem;
+    }
+    
+    
+    .con .prices em{
+        font-size: 0.6rem;
+    }
+    
+    .con .prices h1{
+        font-size: 2.5rem;
+    }
+    
+    .con .prices p{
+        font-size: 1rem;
+    }
+    
+}
+
+@media(max-width: 500px){
+    .con .prices .free{
+        width: 22%;
+    }
+
+    .con .prices h3{
+        font-size: 1rem;
+    }
+    
+    
+    .con .prices em{
+        font-size: 0.6rem;
+    }
+    
+    .con .prices h1{
+        font-size: 1.8rem;
+    }
+    
+    .con .prices p{
+        font-size: 1rem;
+    }
+
+    .con .prices .free .body button{
+        padding: 5px 5px;
+    }
+
+    .con .prices .free .heading button{
+        padding: 5px 5px;
+    }
+
+    .con .prices .free h1 span img{
+        margin-right: 17px;
+        margin-left: 5px;
+    }
+
+    .con .prices .free .body p{
+        font-size: 0.8rem;
+    }
 }
