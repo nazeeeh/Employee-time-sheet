@@ -76,6 +76,9 @@ a{
     border-radius: 2px;
 }
 
+.nav-list li a:last-of-type:hover {
+    background: none;
+}
 .nav-list li button {
     font-family: 'Roboto', sans-serif;
     width: 100px;
@@ -115,7 +118,7 @@ a{
     background-color: #2B3541;
     padding: 7px 8px;
     margin-right: 4rem;
-    margin-left: 20px;
+    margin-left: 5px;
     /* Bay touched here */
     border: none;
     outline: none;

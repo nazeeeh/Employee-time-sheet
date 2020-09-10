@@ -10,8 +10,8 @@ class Header extends HTMLElement {
             <li><a href="/contents/pricing2.html" class="nav-item pricing">Pricing</a></li>
             <li><a href="/contents/about.html" class="nav-item about">About</a></li>
             <li><a href="/contents/contact-us.html" class="nav-item contact">Contact</a></li>
-            <li><button class="nav-login-button ">Log In</button></li>
-            <li><button class="nav-signup-button">Sign Up</button></li>
+            <li><a href="../../contents/login.html"><button class="nav-login-button ">Log In</button></a></li>
+            <li><a href="../../contents/register.html"><button class="nav-signup-button">Sign Up</button></a></li>
           </ul>
         </div>
         </div>

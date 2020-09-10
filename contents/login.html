@@ -4,24 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/login.css">
+  <link rel="shortcut icon" href="../assets/img/pace.png" />
   <link rel="stylesheet" href="../assets/css/component.css">
-  <script type="text/javascript" src="../assets/js/component.js"></script>
-  <title>Login</title>
+  <script src="../assets/js/component.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+  <title>Register</title>
 </head>
+
+<!-- This page still needs to be really corrected.. Not satisfied with all that was done -->
 <body>
-  <div class="userLogin">
-    <main-header></main-header>
+  <main-header></main-header>
+
+  <div class="registration-container">
     <div class="form-wrapper">
-      <form action="">
-        <input type="text" placeholder="Enter Your Username">
-        <input type="password" placeholder="Enter Your Password">
-        <select class="userType">
-          <option value="Employer">Employer</option>
-          <option value="Employee">Employee</option>
-          <option value="Internal">Internal</option>
-        </select>
+      <form action="" class="form">
+        <img class="logo" src="/assets/img/register-logo.png" alt="">
+        <h3>Login to <img src="/assets/img/pace.png"></h3>
+        <input type="text" placeholder="Email or Username">
+        <!-- <input type="text"> -->
+    
+        <input type="password" placeholder="Enter Password">
+        <!-- <input type="checkbox"><span></span> -->
+        <!-- <input type="checkbox"> -->
+        <span> <a href="#">Forgot Password?</a><a href="../contents/register.html">Sign up for Pace</a>.</span>
+        <input type="submit" value="Log In">
       </form>
     </div>
   </div>
+
+  <main-footer></main-footer>
 </body>
 </html>
