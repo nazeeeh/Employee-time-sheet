@@ -41,6 +41,8 @@ a{
 /* UncleBay touched here */
     /* margin-left: 10px; */
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
 } 
 .navbar-logo h4{
     /* Bay Touched here */
@@ -52,6 +54,7 @@ a{
     border: none;
     outline: none;
     font-style: oblique;
+    font-family: "Roboto", sans-serif;
 }
 
 .nav-list li {
@@ -73,6 +76,9 @@ a{
     border-radius: 2px;
 }
 
+.nav-list li a:last-of-type:hover {
+    background: none;
+}
 .nav-list li button {
     font-family: 'Roboto', sans-serif;
     width: 100px;
@@ -112,7 +118,7 @@ a{
     background-color: #2B3541;
     padding: 7px 8px;
     margin-right: 4rem;
-    margin-left: 20px;
+    margin-left: 5px;
     /* Bay touched here */
     border: none;
     outline: none;
@@ -214,10 +220,7 @@ a{
 .right-side-2 p {
     justify-content: flex-end;
 }
-/*
+
 .footer-container input:focus {
     outline: none;
 }
-
-
-} */
