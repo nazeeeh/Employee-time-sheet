@@ -40,6 +40,10 @@ body{
     font-size: 3rem;
 }
 
+/* .con .prices .free h1 span img{
+    /* margin-right: -5px; */
+} */
+
 .con .prices p{
     font-size: 1rem;
 }
@@ -90,6 +94,11 @@ body{
     border: none;
 }
 
+.con .prices .free .body button:hover, .con .prices .free .heading button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+}
 .con .prices .free:nth-of-type(2) .heading, .con .prices .free:nth-of-type(2) .body{
     border: solid 2px #E6899C;
 }
