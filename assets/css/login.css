@@ -1,19 +1,98 @@
-form{
+body{
+  background-color: rgb(253, 136, 95);
+  background-image: url("/assets/img/register/bg-img.png");
+  background-repeat: no-repeat;
+  position: right;
+}
+.registration-container{
+  width: 350px;
   display: block;
   margin: 0 auto;
+  margin-top: 30px;
+}
+.form-wrapper .form img.logo{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 17px;
+}
+.form-wrapper .form h3{
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+.form-wrapper .form img{
+  position: relative;
+  top: 7px;
+  width: 70px;
+  /* margin: 15px; */
+}
+.form-wrapper .form{
+  background: #fff;
   display: flex;
   flex-direction: column;
-  width: 24%;
-  gap: 23px;
-  margin-top: 15%;
-  border: 2px solid tomato;
+  width: 502px;
+  height: 550px;
+  justify-content: center;
+  align-items: center;
   padding: 25px;
+  border-radius: 15px;
+  /* margin: 50px;
+  margin-top: 100px; */
+}
+.form-wrapper .form input{
+  padding: 10px;
+  margin: 12px;
+  width: 60%;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  color: #333;
+  /* background: #e6e6e6; */
+  /* background: #ffaa8b; */
+  box-sizing: border-box;
+  border: 1px solid #7a290b;
+  color: #fff;
+  font-size: 21px;
+  transition: ease-in-out, width .35s ease-in-out;
+}
+.form-wrapper .form input:focus{
+  /* border-bottom: 1px solid #f14d11; */
+  background: #f35b28;
+  font-family: monospace;
+  transition: ease-in-out, width .35s ease-in-out;
+  color: #fff;
+}
+.form-wrapper .form span{
+  padding: 15px;
+}
+.form-wrapper .form span a{
+  margin: 10px;
+}
+.form-wrapper .form a{
+  text-decoration: none;
+  color: #ff4500;
+  font-weight: 600;
+}
+/* Button Style */
+.form-wrapper .form input[type=submit]{
+  background: #ff4500;
+  color: white;
+  font-size: 21px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  opacity: 0.9;
+}
+.form-wrapper .form input[type=submit]:hover{
+  opacity: 0.8;
 }
 
-form input{
-  padding: 12px;
-  border: none;
-  border-bottom: 2px solid tomato;
-  outline: none;
-  background: wheat;
+/* MEDIA QUERY */
+@media (max-width: 800px) {
+  .form-wrapper{
+    width: 411px;
+  }
 }

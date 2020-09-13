@@ -7,13 +7,17 @@
     margin: 0;
     top: 0;
 }
-
+a{
+    /* Bay Touched here */
+    text-decoration: none;
+}
 .nav-section {
     display: flex;
     background: linear-gradient(180deg, #FF4500 99.99%, rgba(255, 69, 0, 0) 100%);
     width: 100%;
     height: 50px;
     position: fixed;
+    z-index: 1;
 }
 .navbar-container {
     font-family: 'Roboto', sans-serif;
@@ -29,15 +33,29 @@
     align-items: center;
     list-style: none;
 }
-
 .navbar-logo {
     height: 40px;
-    width: 100px;
-    background: url("../img/logo.png") center center/cover;
+    width: 40px;
+    margin-top: 7px;
+    background: url("../img/Vector.png") center center/cover;
 /* UncleBay touched here */
     /* margin-left: 10px; */
     margin-left: 5rem;
+    display: flex;
+    align-items: center;
 } 
+.navbar-logo h4{
+    /* Bay Touched here */
+    color:#fff;
+    position: relative;
+    left: 50px;
+    bottom: 20px;
+    font-size: 35px;
+    border: none;
+    outline: none;
+    font-style: oblique;
+    font-family: "Roboto", sans-serif;
+}
 
 .nav-list li {
     font-weight: 500;
@@ -47,33 +65,73 @@
     text-decoration: none;
     color: #fff;
     padding: 15px;
+    margin-right: 12px;
 }
 
 .nav-list li a:hover {
-    background-image: linear-gradient(to bottom right, #ff4500, #ffffff);
-    color: #fff;
+    /* Bay touched here */
+    /* background-image: linear-gradient(to bottom right, #ff4500, #ffffff); */
+    color: #333;
+    background: #fff;
+    border-radius: 2px;
 }
 
+.nav-list li a:last-of-type:hover {
+    background: none;
+}
 .nav-list li button {
     font-family: 'Roboto', sans-serif;
     width: 100px;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 500;
+    border: none;
 }
+
 .nav-login-button {
     color: #2B3541;
-    background-color: rgba(255, 255, 255, 0);
-    border: 2px solid #2B3541;
+    /* background-color: rgba(255, 255, 255, 0); */
+    /* border: 2px solid #2B3541 !important; */
     padding: 5px 8px;
+    cursor: pointer;
+    transition-delay: 0.28s;
+    /* color: #fff; */
+    border: 2px solid #fff !important;
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+.nav-login-button:hover{
+    /* unclebay touched here */
+    /* color: #fff;
+    border: 2px solid #fff !important; */
+    /* background-color: rgba(255, 255, 255, 0); */
+    background: #fff;
+    /* border: 2px solid #2B3541 !important; */
+    color: #333;
+    outline: none;
+    transition-delay: 0.3s;
+
 }
 .nav-signup-button {
     color: #ffffff;
     background-color: #2B3541;
     padding: 7px 8px;
-    margin-right: 4rem;
-    margin-left: 20px;
+    margin-right: 2rem;
+    /* Bay touched here */
     border: none;
+    outline: none;
+    cursor: pointer;
+    transition-delay: 0.21s;
+}
+.nav-signup-button:hover{
+    /* unclebay touched here */
+    background: transparent;
+    color: #333;
+    border: 2px solid #333;
+    /* background: #ffffff; */
+    /* color: #2B3541; */
+    transition-delay: 0.3s;
 }
 
 /* FOOTER STYLING */
@@ -161,10 +219,7 @@
 .right-side-2 p {
     justify-content: flex-end;
 }
-/*
+
 .footer-container input:focus {
     outline: none;
 }
-
-
-} */

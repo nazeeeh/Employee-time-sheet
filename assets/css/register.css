@@ -8,13 +8,14 @@ body{
   width: 350px;
   display: block;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 90px;
+  margin-bottom: 35px;
 }
 .form-wrapper .form img.logo{
   width: 30px;
   height: 30px;
   position: relative;
-  top: 17px;
+  margin: 1px;
 }
 .form-wrapper .form h3{
   font-size: 35px;
@@ -84,9 +85,9 @@ body{
   opacity: 0.8;
 }
 
-/* MEDIA QUERY */
+/* MEDIA QUERY 
 @media (max-width: 800px) {
   .form-wrapper{
     width: 411px;
   }
-}
+}*/
