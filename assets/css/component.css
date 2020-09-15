@@ -256,7 +256,7 @@ a{
     height: 2rem;
     width: 12rem;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     margin: 10px auto 5px auto;
 }
@@ -264,9 +264,9 @@ a{
 .right-side-2 button {
     width: 12rem;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
-    background: #FF4500;
+    background: #4D8AF0;
     margin: 5px auto;
     color: #fff;
 }
