@@ -34,7 +34,7 @@ html, body {
 ==================================
  */
 .contact-form {
-    margin: 8rem auto;
+    margin: 5rem auto;
     width: 55%;
 }
 /* 
@@ -54,21 +54,24 @@ html, body {
     height: 155px;
     border: 1px solid #C4C4C4;
     border-radius: 0px 0px 15px 15px;
-    border-top: 8px solid #FF4500; 
+    border-top: 8px solid #213260; 
     white-space: nowrap;
 }
-.contact-form header h2{
+.contact-form header h2 {
     font-size: 3rem;
 }   
-.contact-form header .icon{
+.contact-form header .icon {
     display: flex;
-    font-size: 2rem;
+    font-size: 3rem;
     margin:   1rem;
 }
-.contact-form header .icon a i{
-    color: #FF4500;
+.contact-form header .icon a i {
+    color: #213260;
     margin:   .5rem;
     padding: .5rem;
+}
+.contact-form header .icon a i:hover {
+    color:#4D8AF0;
 }
 .contact-form fieldset {
     width: 100%;
@@ -80,7 +83,8 @@ html, body {
 .contact-form fieldset p {
     display: block;
     width: 80%;
-    padding: 1.5rem 1rem;
+    color: #213260 ;
+    padding: 1rem;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -92,8 +96,7 @@ html, body {
 .contact-form fieldset input {
     width: 50%;
     padding-top: 1rem;
-    margin: .9rem;
-    margin-bottom: 2rem;
+    margin: .3rem .9rem 2rem;
     font-size: 1.5rem;
     border-color: transparent;
     border-bottom: 1px solid #C4C4C4;   
@@ -104,6 +107,29 @@ html, body {
     margin:  0 1rem 1rem;
     font-size: 1.5rem;
 }
+/* 
+==================================
+*** HOVER STATE FOR INPUT ***
+==================================
+ */
+.contact-form fieldset input:hover {
+    border-color: transparent;
+    border-bottom: 1px solid #4D8AF0;
+}
+/* 
+============================================
+*** HOVER STATE FOR FIELDSET & TEXTAREA ***
+============================================
+ */
+.contact-form fieldset:hover,
+.contact-form fieldset textarea:hover {
+    border: 2px solid #4D8AF0;
+}
+/* 
+==================================================
+*** FOCUS STATE STYLING FOR INPUT & TEXTAREA ***
+==================================================
+ */
 .contact-form fieldset input:focus,
 .contact-form fieldset textarea:focus {
     outline: none;
@@ -116,13 +142,15 @@ html, body {
 input[type=submit] {
     width: 11rem;
     padding: .5rem;
-    background: #FF4500;
+    background: #213260;
     color: #fff;
     font-size: 1.8rem;
-    border-radius: .7rem;
+    border: none;
+    border-radius: .32rem;
+    opacity: .9;
 }
 input[type=submit]:hover {
-    opacity: .8;
+    opacity: 1;
 }
 /* 
 ==================================
@@ -143,4 +171,3 @@ input[type=submit]:hover {
         font-size: 1.5rem;
     }
  }
- 
