@@ -1,0 +1,25 @@
+span{
+    text-align: center;
+}
+.registration-container{
+    width: 100%;
+}
+.form-wrapper .form{
+    background: transparent;
+}
+.form-wrapper .form a{
+    color: #fff;
+  }
+.form-wrapper .form input[type=submit]{
+    background: transparent;
+    font-size: 2em;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    opacity: 0.9;
+  }
+  .form-wrapper .form input[type=submit]:hover{
+    opacity: 0.8;
+    background: #ff4500;
+  }

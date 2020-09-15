@@ -3,68 +3,157 @@
   margin: 0;
   padding: 0;
 }
-.landing-page-body {
-  background-image: url('img/bg-image.jpg');
-  height: 100vh;
+body{
+  background: rgb(250, 241, 238);
 }
-.free-trial-form {
-  background-color: rgba(0,0,0,0.6);
+/* MAKE HOME LINK ACTIVE */
+.nav-list a.home{
+  background: #fff;
+  color:#333;
+}
+.landing-page-body{
   height: 100vh;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: right;
+  background-image: linear-gradient(250deg, rgba(233, 183, 166, 0.2), rgba(241, 69, 6, 0.92)), url('img/landing-page.png');
+  left: 0px;
+}
+.free-trial-form{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: #fff;
+}
+.free-trial-form h3{
+  font-size: 50px;
+}
+.trial-form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 12px;
 }
-.free-trial-form form.trial-form {
-  display: block;
-  margin: 0 auto;
-}
-.free-trial-form h3 {
-  color: white;
-  text-align: center;
-  font-size: 5.2rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-.free-trial-form form.trial-form input[type="text"] {
+.trial-form input[type=text]{
   border: none;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 10px;
+  outline: none;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 12px;  
   font-size: 23px;
-  font-weight: 500;
-  background: rgb(211, 211, 211);
-  color: rgb(114, 105, 105);
-  outline: none;
-  margin-bottom: 120px;
 }
-.free-trial-form form.trial-form input[type="text"]:focus {
-color: rgb(66, 56, 56);
+.trial-form input[type=text]{
+
 }
-.free-trial-form form.trial-form input[type="submit"] {
+.trial-form input[type=submit]{
   border: none;
-  border-radius: 12px;
-  padding: 24px;
-  font-size: 18px;
-  background: rgb(253, 95, 4);
-  /* background: #ff4500; */
-  color: #fff;
-  font-weight: 500;
   outline: none;
+  padding: 19px;
+  border-radius: 12px;
+  background: #2b3541;
+  color: #fff;
   cursor: pointer;
+  font-weight: 700;
 }
-.free-trial-form form.trial-form input[type="submit"]:hover {
+.trial-form input[type=submit]:hover{
   opacity: 0.9;
 }
+.features-container{
+  height: 150px;
+  width: 700px;
+  position: relative;
+  /* top: 35.6rem; */
+  top: 39.6rem;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25);
+  backdrop-filter: blur(4px);
+  gap: 25px;
+}
+.logo p{
+  color: #333;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 16px;
+  font-family: roboto;
+}
+.features-section-2{
+  height: 1024px;
+  position: relative;
+  top: 130px;
+}
+.features-section-2 #logo-heading{
+  font-weight: 500;
+  font-family: roboto;
+  text-align: center;
+  font-size: 39px;
+  margin: 50px;
+}
+.features-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+.features-summary{
+  width: 59%;
+  display: block;
+  margin: 0 auto;
+  line-height: 29px;
+  height: 84px;
+  position: relative;
+  top: 91px;
+  text-align: center;
+  margin-bottom: 18rem;
+}
+.features-summary h3{
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.features-summary #second-summary h3{
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 28px;
+  font-style: bold;
+}
+.hello-to-pace-container{
+  background: #FF4500;
+  position: relative;
+  height: 185px;
+  width: 1024;
+  top: 300px;
+  color: #ffff;
+  text-align: left;
+  padding: 20px 0px 0px 70px ;
+  line-height: 38px;
+}
+.hello-to-pace-container h2{
+  font-size: 2.6rem;
+  margin-top: 35px;
+}
 
-/*  Small Devices */
-@media only screen and (max-width: 420px) {
-  .free-trial-form form.trial-form input{
-    display: block;
-    margin: 0 auto;
+
+
+/* MEDIA QUERY */
+@media (max-width: 800px) {
+  .landing-page-container{
+    width: 411px;
   }
-  .free-trial-form form.trial-form input[type="text"] {
-    margin-bottom: 10px;
-    
+  .trial-form{
+    position: relative;
+    right: 20px;
+  }
+  .features-container{
+    display: none;
+  }
+  .features-summary{
+    width: 411px;
+  }
+  .hello-to-pace-container{
+    top: 350px;
+    padding: 12px 20px 12px 22px;
   }
 }
