@@ -4,7 +4,8 @@
   padding: 0;
 }
 body{
-  background: rgb(250, 241, 238);
+  /* background: rgb(250, 241, 238); */
+  background: #f2f2f2;
 }
 /* MAKE HOME LINK ACTIVE */
 .nav-list a.home{
