@@ -8,13 +8,15 @@ body{
   width: 350px;
   display: block;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 90px;
+  margin-bottom: 35px;
 }
 .form-wrapper .form img.logo{
   width: 30px;
   height: 30px;
   position: relative;
   top: 17px;
+  margin-bottom: 25px;
 }
 .form-wrapper .form h3{
   font-size: 35px;
@@ -43,7 +45,7 @@ body{
 .form-wrapper .form input{
   padding: 10px;
   margin: 12px;
-  width: 60%;
+  width: 70%;
   border-radius: 15px;
   border: none;
   outline: none;
@@ -62,6 +64,9 @@ body{
   font-family: monospace;
   transition: ease-in-out, width .35s ease-in-out;
   color: #fff;
+}
+i{
+  color: #f35b28;
 }
 .form-wrapper .form span{
   padding: 15px;
