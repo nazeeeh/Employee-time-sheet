@@ -2,9 +2,14 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <nav>
-        <div class="nav-section">
-        <a href="../../index.html"><div class="navbar-logo"><h4>Pace</h4></div></a>
-        <div class="navbar-container">
+    <div class="nav-section">
+    <a href="../../index.html"><div class="navbar-logo"><h4>Pace</h4></div></a>
+    <div class="navbar-container">
+      <input type="checkbox" class="toggler">
+      <div class="hamburger"><div></div></div>
+      <div class="navbar-collapse">
+      <div>
+        <div>
           <ul class="nav-list">
             <li><a href="../../index.html" class="nav-item home">Home</a></li>
             <li><a href="/contents/pricing2.html" class="nav-item pricing">Pricing</a></li>
@@ -14,8 +19,11 @@ class Header extends HTMLElement {
             <li><a href="../../contents/register.html"><button class="nav-signup-button">Sign Up</button></a></li>
           </ul>
         </div>
-        </div>
-      </nav>
+      </div>
+      </div>
+    </div>
+    </div>
+  </nav>
       `;
     }
 }

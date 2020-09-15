@@ -8,8 +8,12 @@ body{
 }
 /* MAKE HOME LINK ACTIVE */
 .nav-list a.home{
-  background: #fff;
-  color:#333;
+  /* Peter Made modification of the active button for new color scheme 
+  Kindly take not for all other pages too 
+  Didn't want to tamper with too many things. Thanks */
+  background-color: #fff;
+  color: #213260;
+  height: 40px;
 }
 .landing-page-body{
   height: 100vh;
