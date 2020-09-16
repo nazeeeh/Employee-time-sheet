@@ -74,7 +74,8 @@ a{
 .nav-list li a {
     text-decoration: none;
     color: #fff;
-    padding: 20px;
+    padding: 20px 15px;
+    margin: 5px;
 }
 
 .nav-list .nav-item.home:hover,
@@ -170,6 +171,7 @@ a{
     content: '';
     top: -10px;
 }
+
 .navbar-container .hamburger > div:after {
     content: '';
     top: 10px;
@@ -178,6 +180,7 @@ a{
 .navbar-container .toggler:checked + .hamburger > div {
     transform: rotate(135deg);
 }
+
 .navbar-container .toggler:checked + .hamburger > div:before,
 .navbar-container .toggler:checked + .hamburger > div:after {
     top: 0;
@@ -252,6 +255,7 @@ a{
     color: #fff;
     margin-top: -8px;
 }
+
 .right-side input {
     height: 2rem;
     width: 12rem;
@@ -269,7 +273,9 @@ a{
     background: #4D8AF0;
     margin: 5px auto;
     color: #fff;
+    cursor: pointer;
 }
+
 
 .right-side-2 p {
     justify-content: flex-end;
@@ -347,6 +353,15 @@ a{
 
     .pre-footer {
         width: 100vw;
+    }
+
+    .navbar-logo {
+        margin-left: 2rem;
+    } 
+
+    .navbar-logo h4 {
+        font-size: 25px;
+        left: 40px;
     }
 }
 
