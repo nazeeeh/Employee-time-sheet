@@ -74,7 +74,7 @@
  */
  @media(max-width:500px) {
      section {
-        width: 95vw;
+        width: 90vw;
         white-space: nowrap;
      }
      .confirm {
