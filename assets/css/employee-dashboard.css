@@ -1,0 +1,60 @@
+/* 
+==================================
+*********   RESET ****************
+==================================
+ */
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+ html, body {
+     padding: 0;
+     margin: 0;
+     line-height: 1.6;
+     font-family: 'Roboto', sans-serif;
+ }
+ body {
+    background: #213260; /*rgba(33, 50, 96, .7)*/
+ }
+ section {
+     display: flex;
+     background: #fff;
+     width: 90vw;
+     height: 90%;
+     margin: 5rem 0 1rem;
+     padding: 1rem;
+ }
+ .div-one {
+     background: #fff;
+     width: 60%;
+     padding: 3rem;
+     border-radius: 5px;
+ }
+ header h2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: .5rem;
+ }
+ .div-two {
+     background: #4D8AF0;
+     width: 40%;
+     padding: 3rem;
+     border-radius: 5px;
+ }
+ .div-two .icon i {
+     color: #fff;
+ }
+ .icon i {
+     color: #4D8AF0;
+     padding: 0 1rem;
+ }
+ .task {
+    background: #c4c4c4;
+    height: 5rem;
+    width: 85%;
+ }
+/* #user{
+    font-size: 5rem;
+} */
