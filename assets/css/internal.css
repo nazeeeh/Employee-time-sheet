@@ -70,7 +70,7 @@ header #right-in #other-in .profile-in button img{
 /* body */
 #body-in{
     background-color: #F2F2F2;
-    height: 100vh;
+    height: 130vh;
 }
 #body-in #body-con-in{
     width: 95%;
@@ -133,8 +133,8 @@ header #right-in #other-in .profile-in button img{
     flex-direction: column;
 }
 #body-in #body-con-in #section-one .bottom #left img{
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     margin: auto;
     object-fit: cover;
 }
