@@ -11,7 +11,7 @@ body{
 }
 /* header */
 header{
-    padding: 15px 5px;
+    padding: 8px 5px;
     display: flex;
     width: 95%;
     margin: auto;
@@ -26,10 +26,10 @@ header{
     margin-left: -15px;
     outline: none;
     background-color: #F2F2F2;
-    padding: 7px;
+    padding: 5px 7px;
 }
 #search-in button{
-    padding: 7px 10px;
+    padding: 5px 10px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -70,16 +70,52 @@ header #right-in #other-in .profile-in button img{
 /* body */
 #body-in{
     background-color: #F2F2F2;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#body-in #cards-con{
+    height: 150px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+#body-in #cards-con .cards{
+    width: 24%;
+    height: 100%;
+    background-color: white;
+}
+#body-in #cards-con .cards h5{
+    width: 70%;
+    margin: 10px auto;
+}
+#body-in #cards-con .cards br{
+    margin: 0 10px;
+}
+#body-in #cards-con .cards p{
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+#body-in #cards-con .cards meter{
+    margin: 0 10px;
+    width: 70%;
+}
+#body-in #cards-con .cards a, #body-in #body-con-in #section-one .bottom #right a{
+    margin: 150px 10px 0 40px;
+    color: #7E7E7E;
 }
 #body-in #body-con-in{
     width: 95%;
-    height: 100%;
+    height: 130vh;
     margin: auto;
-    padding: 30px 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
 }
 #body-in #body-con-in #section-one{
-    width: 65%;
+    width: 64%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -116,7 +152,7 @@ header #right-in #other-in .profile-in button img{
 #body-in #body-con-in #section-one .top #bar-chart .bar{
     height: 60%;
     width: 5%;
-    background-color: #7480a3;
+    background-color: #a6b7eb;
 }
 /* bar-chart ends here */
 #body-in #body-con-in #section-one .bottom{
@@ -133,12 +169,12 @@ header #right-in #other-in .profile-in button img{
     flex-direction: column;
 }
 #body-in #body-con-in #section-one .bottom #left img{
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     margin: auto;
     object-fit: cover;
 }
-#body-in #body-con-in #section-one .bottom #left h5, #body-in #body-con-in #section-one .bottom #right h5, #body-in #body-con-in #section-one .top h5{
+#body-in #body-con-in #section-one .bottom #left h5, #body-in #body-con-in #section-one .top h5{
     margin: 10px 0;
     align-self: center;
 }
@@ -150,13 +186,24 @@ header #right-in #other-in .profile-in button img{
     flex-direction: column;
 }
 /* #7E7E7E */
-#body-in #body-con-in #section-one .bottom #right p{
+#body-in #body-con-in #section-two p{
     margin: 4px 10px;
     border-bottom: solid 1px #F2F2F2;
     color: #7E7E7E;
     padding: 5px 0;
 }
-#body-in #body-con-in #section-one .bottom #right p i{
+#body-in #body-con-in #section-two p i{
     margin: 0 5px;
     color: green;
+}
+#body-in #body-con-in #section-two h5{
+    width: 50%;
+    margin: 10px auto;
+}
+#body-in #body-con-in #section-two{
+    width: 34%;
+    height: 98%;
+    margin: auto 0;
+    background-color: white;
+    /* display: flex; */
 }

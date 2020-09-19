@@ -6,62 +6,156 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
     <link rel="stylesheet" href="/assets/css/internal.css">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <main class="internal-con">
-        <header>
-            <div id="search-in">
-                <input type="text" placeholder="Search">
-                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+    <div class="dashboard-container">
+        <div class="sidebar-container">
+          <div class="sidebar-wrapper">
+            <div class="company">
+              <i id="logo" class=""></i>
+              <h4 id="name">TIIDELab</h4>
             </div>
-            <div id="right-in">
-                <button>Start Time</button>
-                <div id="other-in">
-                        <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
-                        <div class="profile-in">
-                            <button> <img src="" alt=""> Ayoola Toluwanimi</button>
-                            <div class="dropdown-in">
-                            </div>
-                        </div>
+            
+            <div class="sidebar-links">
+                <!-- Link Start -->
+                <div class="dashboard-link">
+                    <i class="fas fa-chart-pie"></i>
+                    <a href="">Employee Status</a>
                 </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-user-friends"></i>
+                    <a href="">Add User</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <a href="">Calender</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-calendar-plus"></i>
+                    <a href="">e-Schedule</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-flag-checkered"></i>
+                    <a href="">Report</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-stream"></i>
+                    <a href="">Billing Rate</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-bell"></i>
+                    <a href="">Requests</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sliders-h"></i>
+                    <a href="">Settings</a>
+                </div>
+        
+              <!-- End of Side-bar-Link -->
             </div>
-        </header>
-        <main id="body-in">
-            <div id="body-con-in">
-                <section id="section-one">
-                    <div class="top">
-                        <h5>Most active developers (Team 5)</h5>
-                        <div id="bar-chart">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
+      
+          </div>
+        </div>
+        <!-- this is where the dashboard components goes -->
+        <div class="dashboard-body">
+            <main class="internal-con">
+                <header>
+                    <div id="search-in">
+                        <input type="text" placeholder="Search">
+                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                    <div id="right-in">
+                        <button>Start Time</button>
+                        <div id="other-in">
+                                <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+                                <div class="profile-in">
+                                    <button> <img src="" alt=""> Ayoola Toluwanimi</button>
+                                    <div class="dropdown-in">
+                                    </div>
+                                </div>
                         </div>
                     </div>
-                    <div class="bottom">
-                        <div id="left">
-                            <h5>Calender</h5>
-                            <img src="/assets/img/internal/September-2020-Calendar.jpg" alt="">
+                </header>
+                <main id="body-in">
+                    <div id="cards-con">
+                        <div class="cards">
+                            <h5>Aisha Opaluwa</h5>
+                            <hr>
+                            <p>Notification page</p>
+                            <meter id="a1" value="8" min="0" max="10"></meter><span>80%</span>
+                            <p>Deadline: 24th/9/2020</p>
                         </div>
-                        <div id="right">
-                            <h5>Active Users (3)</h5>
-                            <p><i class="fa fa-circle" aria-hidden="true"></i>Aisha Opaluwa (<span>Senior Dev</span>)</p>
-                            <p><i class="fa fa-circle" aria-hidden="true"></i>Akan Asanga (<span>Junior Dev</span>)</p>
-                            <p><i class="fa fa-circle" aria-hidden="true"></i>Peter Adeyemo (<span>Junior Dev</span>)</p>
+                        <div class="cards">
+                            <h5>Adeyemo Peter</h5>
+                            <hr>
+                            <p>Flo app SRSD</p>
+                            <meter id="a1" value="5" min="0" max="10"></meter><span>50%</span>
+                            <p>Deadline: 24th/9/2020</p>
+                        </div>
+                        <div class="cards">
+                            <h5>Ariyibi Baseet</h5>
+                            <hr>
+                            <p>Zenith Bank timeline</p>
+                            <meter id="a1" value="2" min="0" max="10"></meter><span>20%</span>
+                            <p>Deadline: 24th/9/2020</p>
+                        </div>
+                        <div class="cards">
+                            <a href="" id="empty">Click to assign a task <i class="fa fa-plus" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                </section>
-            </div>
-        </main>
-    </main>
+                    <div id="body-con-in">
+                        <section id="section-one">
+                            <div class="top">
+                                <h5>Most active developers (Team 5)</h5>
+                                <div id="bar-chart">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div id="left">
+                                    <h5>Calender</h5>
+                                    <img src="/assets/img/internal/September-2020-Calendar.jpg" alt="">
+                                </div>
+                                <div id="right">
+                                    <a href="" id="empty">Click to manage documents <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="section-two">
+                            <h5>Active Users (7)</h5>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Aisha Opaluwa (<span>Senior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Akan Asanga (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Peter Adeyemo (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Adebayo Ayodele (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Ariyibi Baseet (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Pishikeni Tukura (<span>Senior Dev</span>)</p>
+                        </section>
+                    </div>
+                </main>
+            </main>
+        </div>
+    </div>
+   
 </body>
 </html>
