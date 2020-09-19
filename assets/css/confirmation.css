@@ -1,0 +1,96 @@
+/*
+==================================
+*********   RESET ****************
+==================================
+ */
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+ html, body {
+     padding: 0;
+     margin: 0;
+     line-height: 1.6;
+     font-family: 'Roboto', sans-serif;
+     /* background:  #C4C4C4; */
+ }
+ section {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background:  #213260;
+     width: 60vw;
+     height: 80vh;
+     margin: 3rem auto;
+     border-radius: 5px;
+ }
+ .confirm h2, .confirm p{
+     font-size: 1.5rem;
+ }
+ .confirm #p2 {
+     font-size: 1.4rem;
+     margin:  5rem 0 -1.8rem;
+ }
+ .confirm {
+     background-color: #fff;
+     color: #213260;
+     width: 80%;
+     height: 30rem;
+     border-radius: 5px;
+     text-align: center;
+ }
+ .confirm .icon{
+     margin: 2rem auto;
+     text-align: center;
+}
+.confirm .icon i {
+     font-size: 5rem;
+     color: #4D8AF0;
+     text-align: center;
+ }
+ .confirm input{
+     width: 20rem;
+     margin: 3rem 0;
+     padding: .5rem;
+     border-radius: 5px;
+     text-transform: uppercase;
+     background-color: #4D8AF0;
+     color: #fff;
+     outline: none;
+     border: none;
+     font-size: 1.5rem;
+     letter-spacing: .2rem;
+     opacity: .85;
+ }
+ .confirm input:hover {
+     opacity: 1;
+     cursor: pointer;
+ }
+ /* 
+==================================
+******** MOBILE VIEW STYLE *******
+==================================
+ */
+ @media(max-width:500px) {
+     section {
+        width: 95vw;
+        white-space: nowrap;
+     }
+     .confirm {
+         width: 90%;
+         height: 25rem;
+     }
+    .confirm input {
+        width: 10rem;
+        margin: 1rem 0;
+    }
+    .confirm h2, .confirm p {
+        font-size: 1.2rem;
+        padding: .1rem;
+    }
+    .confirm #p2 {
+        font-size: .9rem;
+        margin: 2rem 0 0;
+    }
+ }
