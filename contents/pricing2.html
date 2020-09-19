@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="../assets/img/Vector.png" />
     <link rel="stylesheet" href="../assets/css/pricing2.css">
     <script type="text/javascript" src="../assets/js/component.js"></script>
+    <script src="../assets/js/accordion.js"></script>
     <link rel="stylesheet" href="../assets/css/component.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Pricing</title>
@@ -26,7 +27,6 @@
                     <em>forever</em>
                     <h1> <span> <img src="../assets/img/naira.png" alt=""></span> 0</h1>
                     <p>1 user</p>
-                    <button>Activate</button>
                 </div>
                 <div class="body">
                    <p>Time tracking <br>
@@ -44,7 +44,6 @@
                     <em>Monthly</em>
                     <h1><span> <img src="../assets/img/naira.png" alt=""></span>2000</h1>
                     <p>2 users</p>
-                    <button>Activate</button>
                 </div>
                 <div class="body">
                    <p>Time tracking <br>
@@ -65,7 +64,6 @@
                     <em>Monthly</em>
                     <h1><span> <img src="../assets/img/naira.png" alt=""></span>3050</h1>
                     <p>3 users</p>
-                    <button>Activate</button>
                 </div>
                 <div class="body">
                    <p>Time tracking <br>
@@ -98,7 +96,6 @@
                     <em>Monthly</em>
                     <h1><span> <img src="../assets/img/naira.png" alt=""></span>6000</h1>
                     <p>4 users</p>
-                    <button>Activate</button>
                 </div>
                 <div class="body">
                    <p>Time tracking <br>
@@ -131,52 +128,62 @@
             </div>
         </section>
 
-        <section class="others">
+        <section class="padd-accordion">
             <h2>Frequently Asked questions</h2>
-            <p>We're here to help. If you run into any problems at all, feel free to contact us and we'd love to talk personally about how we can help.</p>
-            <div class="questions">
-                <div class="each">
-                    <h1>Can I cancel at any time?
-                        </h1>
-                    <p> Yes, you can cancel and upgrade or downgrade your plan at any time.
-                    </p>
-                </div>
-                <div class="each">
-                    <h3> Are there larger plans?</h3>
-                    <p>  Yes there are. We can serve any size team. <br>
-                        We have plans for up to 350 users. <br>
-                        If that's not big enough please contact us. <br>
-                        and we will set up a plan that is right for you.</p>
-                </div>
-                <div class="each">
-                    <h3>How are users counted?</h3>
-                    <p>Users, managers, and organization owners are considered members and count toward the total price of your subscription. Client viewers do not count as members.</p>
-                </div>
-                <div class="each">
-                    <h3>Can I export my data?</h3>
-                    <p>Yes. Your data is just that, yours. <br>
-                        We provide several export options. <br>
-                        We make it easy for you to get your data.</p>
-                </div>
-                <div class="each">
-                    <h3>Can I invite clients?</h3>
-                    <p>Yes, you can invite as many clients as you want, and you will not be charged for them.How can I contact Pace support?
-                        Please email us at support@pace.com.,
-                        and we will get back to you as soon as possible.</p>
-                </div>
-                <div class="each">
-                    <h3>
-                        How can I contact Pace support?
-                    </h3>
-                    <p>
-                        Please email us at support@pace.com <br>
-                        We wil get back to you as soon as possible
-                    </p>
-                </div>
-            </div>
+            <p>We're here to help. If you run into any problems at all, 
+            feel free to contact us and we'd love to talk personally about
+             how we can help.</p>
+        <button class="accordion">Can I cancel at any time?</button>
+        <div class="panel">
+          <p>Yes, you can cancel and upgrade or downgrade your plan at any time.</p>
+        </div>
+        
+        <button class="accordion">Are there larger plans?</button>
+        <div class="panel">
+          <p>Yes there are. We can serve any size team. We have plans for up to 350 users.
+          If that's not big enough please contact us. And we will set up a plan that is right 
+          for you.
+          </p>
+        </div>
+        
+        <button class="accordion">How are users counted?</button>
+        <div class="panel">
+          <p>Users, managers, and organization owners are considered members and count toward the total price of your subscription. Client viewers do not count as members.</p>
+        </div>
+        
+        <button class="accordion">Can I export my data?</button>
+        <div class="panel">
+          <p>Yes. Your data is just that, yours. We provide several export options. We make it easy for you to get your data.</p>
+        </div>
+        
+        <button class="accordion">Can I invite clients?</button>
+        <div class="panel">
+          <p>Yes, you can invite as many clients as you want, and you will not be charged for them.How can I contact Pace support?Please email us at support@pace.com.,and we will
+          get back to you as soon as possible.</p>
+        </div>
+        
+        <button class="accordion">How can I contact Pace support?</button>
+        <div class="panel">
+          <p>Please email us at support@pace.com We wil get back to you as soon as possible</p>
+        </div>
         </section>
     </main>
     <main-footer></main-footer>
-
+    <!-- <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+        </script> -->
 </body>
 </html>
