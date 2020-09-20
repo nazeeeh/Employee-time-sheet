@@ -8,7 +8,7 @@ body{
   background-repeat: no-repeat;
   position: right;
 }
-.registration-container{
+.login-container{
   width: 350px;
   display: block;
   margin: 0 auto;
@@ -64,10 +64,10 @@ body{
 }
 .form-wrapper .form input:focus{
   /* border-bottom: 1px solid #f14d11; */
-  background: rgba(33, 50, 96, 0.05);
+  background: rgba(33, 50, 96, 0.1);
   font-family: monospace;
   transition: ease-in-out, width .35s ease-in-out;
-  color: #fff;
+  color: black;
 }
 i{
   color: rgba(33, 50, 96, 0.62);
@@ -100,8 +100,8 @@ i{
 }
 
 /* MEDIA QUERY */
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   .form-wrapper{
     width: 411px;
   }
-}
+} */
