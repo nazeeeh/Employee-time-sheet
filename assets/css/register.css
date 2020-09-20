@@ -98,7 +98,7 @@ body{
   -------------------------
 */
 .cont-registration{
-  /* display: none; */
+  display: none;
 /* stick to the top */
   position: fixed;
 /* prevent navbar from been above */
@@ -113,9 +113,10 @@ body{
   overflow: auto; 
   /* Fallback color */
   background-color: rgb(0,0,0); 
-  /* filter: blur(8px) ;
-  -webkit-filter: blur(8px); */
-  background-color: rgba(255,255,255,0.9);
+  /* filter: blur(8px) ; */
+  /* -webkit-filter: blur(8px);  */
+  background-color: rgba(255,255,255,0.6);
+  background-image: url("../img/register/dummy-bg.png")
 }
 
 /* Make the form contents align to center */
@@ -141,7 +142,9 @@ body{
 .cont-registration form .form-detail input[type=text],
 .cont-registration form .form-detail input[type=number],
 .cont-registration form .form-detail input[type=password]{
-  padding: 23px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #cdd3df;
 }
 
 /* Button and terms */
