@@ -1,12 +1,14 @@
-email = document.getElementById("email");
-var password = document.getElementById("password").value;
-// var message = document.getElementById("message");
-document.getElementById("btn").addEventListener("click", function() {
+var email = document.getElementById("email");
+var password = document.getElementById("password");
+var url_link = document.getElementById("url_link");
+document.getElementById("demo_btn").addEventListener("click", function() {
   if (email.value != null){
-    const check = confirm("Continue to login as " + email.value);
+    const check = confirm(
+      `Continue to register as ${email.value} with company url ${url_link.value}?`);
     if (check == false)
     {
-      alert("Redirecting to Login page");
+      // to close the alert only when user click cancel
+      return;
     }
     else
     {
@@ -16,12 +18,7 @@ document.getElementById("btn").addEventListener("click", function() {
     }
   }
   else{
-    alert("User name or Password incorrect")
+    alert(`Email ${email.value} is not valid`)
   }
 });
-
-var loggedIn = () =>
-{
-  window.location.href = "http://www.w3schools.com";
-} 
 
