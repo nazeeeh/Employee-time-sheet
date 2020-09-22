@@ -13,6 +13,7 @@
      margin: 0;
      line-height: 1.6;
      font-family: 'Roboto', sans-serif;
+     height: 100%;
  }
  body {
     background: #213260; /*rgba(33, 50, 96, .7)*/
@@ -20,6 +21,21 @@
  section {
      display: flex;
      background: #fff;
+<<<<<<< HEAD
+     width: 75vw;
+     height: 100%;
+     margin: 5rem 0 1rem;
+ }
+ ul {
+     list-style-type: none;
+ }
+ a {
+     text-decoration: none;
+ }
+ .div-one {
+     background: #fff;
+     width: 70%;
+=======
      width: 90%;
      margin: 5rem -2rem 1rem;
      padding: 1rem;
@@ -27,6 +43,7 @@
  .div-one {
      background: #fff;
      width: auto;
+>>>>>>> 5cd64e4678dd8fcf9781dfe648092febf1866256
      padding: 3rem;
      border-radius: 5px;
  }
@@ -44,16 +61,30 @@
      margin-bottom: -33px;
      margin-right: -100px;
  }
- .div-two {
+ .track {
      background: #4D8AF0;
+<<<<<<< HEAD
+     width: 30%;
+     border-radius: 5px 0 0 5px;
+ }
+ .track-content {
+     margin: 3rem;
+=======
      width: 300px;
      height: auto;
      margin-top: 0;
      margin-right: 0;
      padding: 10px 20px;
      border-radius: 15px;
+>>>>>>> 5cd64e4678dd8fcf9781dfe648092febf1866256
  }
- .div-two .icon i {
+ .track-content header h2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: .9rem;
+ }
+ .track .track-content .icon i {
      color: #fff;
  }
  .icon i {
@@ -62,6 +93,49 @@
  }
  .task {
     background: #c4c4c4;
+<<<<<<< HEAD
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+ }
+ .task-list {
+     display: flex;
+     justify-content: space-between;
+     margin: .5rem;
+ }
+ .task-list div {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 .2rem;
+ }
+ .task-list a {
+     background: #4D8AF0;
+     color: #fff;
+     padding: .2rem;
+     margin: 0 .5rem;
+     border-radius: 5px;
+ }
+ .stats {
+     position: absolute;
+     display: flex;
+     margin: 0 0 0 1.5rem;
+ }
+ .stats .card {
+     background-color: #fff;
+     width: 10rem;
+     height: 10rem;
+     margin: 0 1rem;
+     border-radius: 10px;
+     text-align: center;
+ }
+ .timer {
+
+ }
+ .rate {
+
+=======
     height: 10rem;
     width: 100%;
     border-radius: 15px;
@@ -88,6 +162,7 @@
  .work-list{
      display: flex;
      justify-content: space-evenly;
+>>>>>>> 5cd64e4678dd8fcf9781dfe648092febf1866256
  }
  .work-review{
      color:#fff;
