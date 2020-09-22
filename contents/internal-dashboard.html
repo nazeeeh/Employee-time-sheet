@@ -76,7 +76,9 @@
                         <button><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                     <div id="right-in">
-                        <button>Start Time</button>
+                        <button id="start-time" onclick="changeTimerButton()">Start Time</button>
+                        <div id="time"><span id="hours">05:</span><span id="mins">34:</span><span id="seconds">04</span></div>
+                        <button id="stop-time" onclick="changeTimerButton()">Stop Time</button>
                         <div id="other-in">
                                 <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
@@ -102,10 +104,9 @@
                                 <div class="progress-value"></div>
                             </div>
                             <div class="details">
-                                <h5>Aisha Opaluwa</h5>
-                                <hr>
-                                <p>Notification page</p>
-                                <p>24th/9/2020</p>
+                                <h5>Completed Tasks (<span class="completedtask">15</span>)</h5>
+                                <p>- Notification page</p>
+                                <p>- Period Tracker</p>
                             </div>
                         </div>
                         <div class="cards">
@@ -145,7 +146,13 @@
                                 </div>
                             </div>
                         <div class="cards">
-                            <a href="" id="empty">Click to assign a task <i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <a href="#" id="assign-link" onclick="assignNewTask()">Click to assign new task <i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <div id="new-task">
+                                <input type="text" id="task-name" placeholder="Task" required>
+                                <input type="text" id="employee-assigned" placeholder="Employee to be assigned" required>
+                                <input type="text" id="due-date" placeholder="Due date" required>
+                                <button id="assign" onclick="CancelNewTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
+                            </div>
                         </div>
                     </div>
                     <div id="body-con-in">
@@ -189,5 +196,6 @@
             </main>
         </div>
     </div>
+    <script src="/assets/js/internal-dashboard.js"></script>
 </body>
 </html>
