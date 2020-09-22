@@ -213,9 +213,11 @@ header #right-in #other-in .profile-in button img{
 .progress.blue .progress-bar{
     border-color: #049dff;
 }
+/* 50% loader */
 .progress.blue .progress-left .progress-bar{
     animation: loading-2 1.5s linear forwards 1.8s;
 }
+/* 75% loader */
 .progress.yellow .progress-bar{
     border-color: #fdba04;
 }
@@ -228,6 +230,7 @@ header #right-in #other-in .profile-in button img{
 .progress.pink .progress-left .progress-bar{
     animation: loading-4 0.4s linear forwards 1.8s;
 }
+/* 85% loader */
 .progress.green .progress-bar{
     border-color: #1abc9c;
 }
@@ -235,6 +238,7 @@ header #right-in #other-in .profile-in button img{
     animation: loading-5 1.2s linear forwards 1.8s;
 }
 /* animation of the progress circles */
+/* right half of loader */
 @keyframes loading-1{
     0%{
         -webkit-transform: rotate(0deg);
@@ -245,6 +249,7 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(180deg);
     }
 }
+/* 50% loader */
 @keyframes loading-2{
     0%{
         -webkit-transform: rotate(0deg);
@@ -255,6 +260,7 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(0deg);
     }
 }
+/* 75% loader */
 @keyframes loading-3{
     0%{
         -webkit-transform: rotate(0deg);
@@ -275,6 +281,7 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(36deg);
     }
 }
+/* 85% loader */
 @keyframes loading-5{
     0%{
         -webkit-transform: rotate(0deg);
@@ -318,10 +325,8 @@ header #right-in #other-in .profile-in button img{
 }
 /* This diplays when the text in the card is clicked */
 /* 4th task card starts here */
-#body-in #body-con-in #section-one-in .bottom #right a{
-    margin: 150px 10px 0 40px;
-    color: #7E7E7E;
-}
+
+/* sections at the bottom part starts here */
 #body-in #body-con-in{
     width: 95%;
     height: 130vh;
@@ -330,6 +335,7 @@ header #right-in #other-in .profile-in button img{
     display: flex;
     justify-content: space-between;
 }
+/* bar-chart div */
 #body-in #body-con-in #section-one-in{
     width: 64%;
     height: 100%;
@@ -345,6 +351,7 @@ header #right-in #other-in .profile-in button img{
     display: flex;
     flex-direction: column;
 }
+/* bar chart */
 #body-in #body-con-in #section-one-in .top #bar-chart{
     width: 90%;
     margin: 5px auto;
@@ -356,6 +363,7 @@ header #right-in #other-in .profile-in button img{
     justify-content: space-around;
     align-items: flex-end;
 }
+/* Individual bar heights */
 #body-in #body-con-in #section-one-in .top #bar-chart .bar:first-child{
     height: 80%;
 }
@@ -371,12 +379,14 @@ header #right-in #other-in .profile-in button img{
     background-color: #a6b7eb;
 }
 /* bar-chart ends here */
+/* section below the bar-chart */
 #body-in #body-con-in #section-one-in .bottom{
     height: 48%;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
+/* left dive below the bar-chart */
 #body-in #body-con-in #section-one-in .bottom #left{
     width: 49%;
     height: 100%;
@@ -384,15 +394,22 @@ header #right-in #other-in .profile-in button img{
     display: flex;
     flex-direction: column;
 }
+/* calendar image */
 #body-in #body-con-in #section-one-in .bottom #left img{
     width: 80%;
     height: 80%;
     margin: auto;
     object-fit: cover;
 }
+/* text above calendar */
 #body-in #body-con-in #section-one-in .bottom #left h5, #body-in #body-con-in #section-one-in .top h5{
     margin: 10px 0;
     align-self: center;
+}
+/* left dive below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom #right a{
+    margin: 150px 10px 0 40px;
+    color: #7E7E7E;
 }
 #body-in #body-con-in #section-one-in .bottom #right{
     width: 49%;
@@ -401,7 +418,7 @@ header #right-in #other-in .profile-in button img{
     display: flex;
     flex-direction: column;
 }
-/* #7E7E7E */
+/* Online users segment */
 #body-in #body-con-in #section-two p{
     margin: 4px 10px;
     border-bottom: solid 1px #F2F2F2;
@@ -421,5 +438,4 @@ header #right-in #other-in .profile-in button img{
     height: 98%;
     margin: auto 0;
     background-color: white;
-    /* display: flex; */
 }
