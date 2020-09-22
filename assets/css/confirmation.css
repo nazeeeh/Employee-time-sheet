@@ -19,7 +19,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     background:  #213260;
+     /* background:  #213260; */
      width: 60vw;
      height: 80vh;
      margin: 3rem auto;
@@ -28,9 +28,12 @@
  .confirm h2, .confirm p{
      font-size: 1.5rem;
  }
+ #next {
+     margin: 2rem 0;
+ }
  .confirm #p2 {
      font-size: 1.4rem;
-     margin:  5rem 0 -1.8rem;
+     margin:  1rem 0 -1.8rem;
  }
  .confirm {
      background-color: #fff;
@@ -39,6 +42,7 @@
      height: 30rem;
      border-radius: 5px;
      text-align: center;
+     border: 10px solid #213260;
  }
  .confirm .icon{
      margin: 2rem auto;

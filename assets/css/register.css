@@ -1,5 +1,4 @@
 body{
-  /* background-color: rgb(253, 136, 95); */
   background: rgba(33, 50, 96, 0.05);
   background-image: linear-gradient(250deg, rgba(33, 50, 96, 0.24), 
                   rgba(33, 50, 96, 0.62)), 
@@ -36,7 +35,6 @@ body{
   display: flex;
   flex-direction: column;
   width: 502px;
-  /* height: 550px; */
   justify-content: center;
   align-items: center;
   padding: 25px;
@@ -50,35 +48,22 @@ body{
   border: none;
   outline: none;
   color: #333;
-  /* background: #e6e6e6; */
-  /* background: #ffaa8b; */
   box-sizing: border-box;
-  /* border: 1px solid #7a290b; */
   border-bottom: 2px solid rgba(33, 50, 96, 0.1);
   color: #333;
   font-size: 21px;
   transition: ease-in-out, 1s ease-in-out;
 }
 .form-wrapper .form input:focus{
-  /* border-bottom: 1px solid #f14d11; */
-  /* background: #f35b28; */
   background: rgba(33, 50, 96, 0.1);
   font-family: monospace;
   transition: ease-in-out, 1s ease-in-out;
   color: #333;
 }
-.form-wrapper .form span{
-  padding: 15px;
-}
-.form-wrapper .form a{
-  text-decoration: none;
-  color: rgba(33, 50, 96, 0.8);
-  font-weight: 600;
-}
-/* Button Style */
-.form-wrapper .form input[type=submit]{
-  /* background: #ff4500; */
-  background: #2b3541;
+
+/* Turning <p> to Button Style */
+.form-wrapper .form p#form_2Btn{
+  background: #131f41;
   color: white;
   font-size: 21px;
   font-weight: 500;
@@ -87,10 +72,123 @@ body{
   outline: none;
   border: none;
   opacity: 0.9;
+  border-radius: 5px;
+  padding: 15px;
 }
-.form-wrapper .form input[type=submit]:hover{
+.form-wrapper .form p#form_2Btn:hover{
   opacity: 0.8;
 }
+.form-wrapper .form #tandc{
+  margin: 1rem;
+}
+.form-wrapper .form #tandc a{
+  text-decoration: none;
+  color: rgba(33, 50, 96, 0.8);
+  font-weight: 600;
+}
+
+/* 
+  ------------------------
+  POP UP CONT. REGISTRATION 
+  -------------------------
+*/
+.cont-registration{
+  display: none;
+  position: fixed;
+/* prevent navbar from been above */
+  z-index: 99; 
+  padding-top: 90x;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(146, 138, 138); 
+  /* filter: blur(8px) ; */
+  /* -webkit-filter: blur(8px);  */
+  background-color: rgba(255,255,255,0.6);
+  background-image: url("../img/register/dummy-bg.png")
+}
+
+.form-2 span.close_form2{
+  cursor: pointer;
+  font-size: 21px;
+  color:rgb(136, 132, 132);
+}
+/* Make the form contents align to center */
+.cont-registration .form-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 23px;
+  width: 50%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* style the label and their input */
+.cont-registration .form-2 .form-detail{
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  color: rgb(141, 139, 139);
+}
+
+.cont-registration .form-2 .form-detail input[type=text],
+.cont-registration .form-2 .form-detail input[type=number],
+.cont-registration .form-2 .form-detail input[type=password]{
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #cdd3df;
+  border-radius: 5px;
+  outline:none;
+  font-size: 19px;
+  color: rgb(90, 69, 69);
+}
+
+.cont-registration .form-2 .form-detail input[type=text]:focus,
+.cont-registration .form-2 .form-detail input[type=number]:focus,
+.cont-registration .form-2 .form-detail input[type=password]:focus{
+  background: rgba(33, 50, 96, 0.1);
+  transition: all 1s ease-in-out;
+  color: rgb(75, 66, 66);
+}
+
+/* Button and terms */
+.cont-registration .form-2 .form-links{
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+}
+.cont-registration .form-2 .form-links input[type=submit]{
+  padding: 15px;
+  width: 120px;
+  border: none;
+  background: #131f41;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* style privacy and signup button */
+.cont-registration .form-2 .form-links{
+  display: flex;
+  flex-direction: column;
+}
+.const-registration .form-2 .form-links span input[type=checkbox]{
+  background: red;
+}
+.form-2 .form-links a{
+  text-decoration: none;
+  color: rgba(33, 50, 96, 0.8);
+  font-weight: 600;
+}
+
+
 
 /* MEDIA QUERY 
 @media (max-width: 800px) {

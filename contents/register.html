@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/assets/css/register.css">
   <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
   <link rel="stylesheet" href="/assets/css/component.css">
@@ -17,20 +18,65 @@
       <form action="" class="form">
         <img class="logo" src="/assets/img/logo-1.png" alt="">
         <h3>Register to <img src="/assets/img/pace.png"></h3>
-        <input type="text" placeholder="Company Name">
-        <!-- <input type="text"> -->
-        <input type="email" placeholder="Company Email">
-        <input type="password" placeholder="Enter Password">
-        <!-- <input type="checkbox"><span></span> -->
-        <!-- <input type="checkbox"> -->
-        <span>By clicking <a href="#">Sign Up</a>, you agree to our <a href="#">Terms and Condition Policy</a>.</span>
-        <input type="submit" value="Next">
+        <!-- email -->
+        <input type="email" id="email" placeholder="Company Email" value="techspecialist@gmail.com">
+        <!-- company name -->
+        <input type="text" placeholder="Company Name" value="Tech Specialist">
+        <!-- password -->
+        <input type="password" id="password" placeholder="Enter Password" value="demo0123456789">
+        <p id="form_2Btn">Continue</p>
+        <span id="tandc">
+          <a href="#" onclick="alert(`This page is under maintenance by TIIDELab-Circuit`);"> Read Terms and Condition</a>
+        </span>
       </form>
+
+      
+      <!-- 
+          --------------------------------
+          Continue Registration Modal form 
+          --------------------------------
+      -->
+      <div class="cont-registration" id="form2_container">
+        <div  class="form-2">
+    <span class="close_form2"><i class="fas fa-undo"></i> return </span>
+          <!--  -->
+          <div class="form-detail">
+            <label for="company-url">Choose company site URL</label>
+            <input type="text" value="techspecialist.pacetime.com" id="url_link">
+          </div>
+          <!--  -->
+          <div class="form-detail">
+            <label for="company-type">Company Type</label>
+            <input type="text" value="IT Solution">
+          </div>
+          <!--  -->
+          <div class="form-detail">
+            <label for="phone-number">Phone Number</label>
+            <input type="number" value="08038157444">
+          </div>
+          <!--  -->
+          <div class="form-detail">
+            <label for="confirm-password" >Confirm Password</label>
+            <input type="password" value="Confirm Password">
+          </div>
+          <div class="form-links">
+            <span>
+              <input type="checkbox" name="" id=""> 
+              I agree to Pace 
+              <a href="#" onclick="alert(`This page is under maintenance by TIIDELab-Circuit`);">
+              Terms and Condition Policy</a>.</span>
+            <input type="submit" value="SIGN UP" id="demo_btn">
+          </div>
+        </div>
+      </div>
+      <!-- End of continue modal form  -->
     </div>
   </div>
   <main-footer></main-footer>
 
   <!-- JavaScript for navbar and footer -->
   <script type="text/javascript" src="/assets/js/component.js"></script>
+  <script type="text/javascript" src="/assets/js/procedure.js"></script>
+  <script type="text/javascript" src="/assets/js/registration.js"></script>
 </body>
 </html>

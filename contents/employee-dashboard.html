@@ -6,20 +6,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/employee-dashboard.css">
-    <title>Employee's Dashboard</title>
+    <title>Pace | Employee's Dashboard</title>
 </head>
 <body>
     <section>
         <div class="div-one">
             <header>
-                <h2>ID 0000
+                <h2 class="id">ID 0000
                     <span class="icon">
                         <a href="#"><i class="fa fa-bell" id="bell"></i></a>
                         <a href="#"><i class="fa fa-user" id="user"></i></a>
+                        <!-- <a href="#"><i class="fa fa-users-cog" id="users-cog"></i></a> -->
                     </span> 
                 </h2>
             </header><hr>
             <div class="task">
+<<<<<<< HEAD
                 <ul>
                     <li class="task-list">
                         <p>Task 1</p>
@@ -61,8 +63,73 @@
                 <div class="timer card">Timer</div>
                 <div class="rate card">Rate</div>
             </div>
+=======
+                <p class="new-task">you have a new task</p>
+                <a href="#" class="view-task">view</a>
+            </div>
+         <!-- <form action="POST"> -->
+            <h2>Work review</h2>
+            <div class="work-list">
+            <div class="work-review">day:1 <input type="checkbox" id="check" name="check" value="daily-check"></div>
+            <div class="work-review">day:2 <input type="checkbox" id="check" name="check" value="daily-check"></div>
+            <div class="work-review">day:3 <input type="checkbox" id="check" name="check" value="daily-check"></div>
+            <div class="work-review">day:4 <input type="checkbox" id="check" name="check" value="daily-check"></div>
+            <div class="work-review">day:5 <input type="checkbox" id="check" name="check" value="daily-check"></div>
+            <div class="work-review">day:6 <input type="checkbox" id="check" name="check" value="daily-check"></div>
+            </div>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+>>>>>>> 5cd64e4678dd8fcf9781dfe648092febf1866256
         </div>
-
+        <section id="div-two">
+            <div class="div-two">
+                <header>
+                    <h2 class="info">Information
+                        <span class="icon">
+                            <i class="fa fa-ellipsis-h"></i>
+                        </span> 
+                    </h2>
+                </header><hr>
+                <!-- Timer section -->
+                <div class="data-info">
+                   <div class="card-1">
+                       <h2>Time start</h2>
+                       <div class="timer">
+                           <p class="time">12</p>
+                           <p class="time">6</p>
+                           <p class="time">20</p>
+                       </div>
+                   </div>
+                   <div class="card-2">
+                    <h2>Time End</h2>
+                    <div class="timer">
+                        <p class="time">04</p>
+                        <p class="time">30</p>
+                        <p class="time">13</p>
+                    </div>
+                   </div>
+                </div>
+                <h1>$496.40</h1>
+                 <p class="paid">paid to 01.02.20</p>
+                <a href="./feed-back.html"><button>Feedback</button></a>
+            </div>
+        </section>
     </section>
+            <section id="div-3">
+                <div class="div-3">
+                    <h3>Upload document:</h3>
+                    <form action="POST" method="post" enctype="multipart/form-data">
+                      <input type="file" name="fileToUpload" id="fileToUpload" required>
+                      <input type="submit" value="Upload document" name="submit">
+                    </form>
+                </div>
+                <div class="leave">
+                <form action="POST">
+                    <h3>Request for leave:</h3>
+                    <input type="file" id="myFile" name="filename" required>
+                    <input type="submit" >
+                  </form>
+                  </div>
+            </section>
 </body>
 </html>

@@ -142,6 +142,11 @@ body{
   font-size: 2.6rem;
   margin-top: 35px;
 }
+/*feedback icon*/
+.feedback img{
+  float: right;
+  width: 100px;
+}
 
 
 
