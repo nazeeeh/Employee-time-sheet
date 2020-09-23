@@ -15,20 +15,25 @@
      font-family: 'Roboto', sans-serif;
  }
  body {
-    background: #213260; /*rgba(33, 50, 96, .7)*/
+    background:#ccc /*rgba(33, 50, 96, .7)*/
  }
+ /* main{
+     background: #213260;
+     display: flex;
+ } */
  section {
      display: flex;
-     background: #fff;
-     width: 90%;
-     margin: 5rem -2rem 1rem;
-     padding: 1rem;
- }
+     background: transparent;
+     width: 60%;
+     /* margin: 5rem -2rem 1rem;
+     padding: 1rem; */
+ } 
  .div-one {
+     width: 92%;
      background: #fff;
-     width: auto;
+     margin-left: 10px;
      padding: 3rem;
-     border-radius: 5px;
+     border-radius: 20px;
  }
  h2.info{
      margin-top: 72px;
@@ -40,9 +45,10 @@
  #div-two{
      width: 300px;
      background:transparent;
-     margin-top: -33px;
-     margin-bottom: -33px;
-     margin-right: -100px;
+     margin-top: 0;
+     margin-bottom: 0;
+     /* margin-right: -100px; */
+     margin-left: -30px;
  }
  .div-two {
      background: #4D8AF0;
@@ -83,7 +89,7 @@
      margin: 20px 300px;
      border-radius: 5px;
 
- }
+ } 
  /*Calendar section*/
  .work-list{
      display: flex;
@@ -103,13 +109,13 @@
     margin: 12px;
  }
  /*Information section*/
- .data-info{
+  .data-info{
      display: flex;
      justify-content: space-around;
      margin-top: 40px;
  }
  /* Timer section*/
- .timer{
+  .timer{
      display: flex;
      justify-content: space-around;
      padding: auto;
@@ -139,26 +145,20 @@
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 10px;
-    margin-right: -70px;
-}
+    margin-right: -20px;
+} 
 /*Document section*/
-section#div-3{
+ section#div-3{
     display: flex;
-    justify-content: space-around;
-    width: 60%;
-    margin: -6rem 2rem 1rem;
-    padding: 0.5rem 4rem;
+    margin-top: 10px;
+    padding: 0.5rem;
     border-radius: 15px;
 }
 
-.leave{
-    display: flex;
-    justify-content: space-around;
-}
 /*Button section*/
-button{
-    color: #fff;
-    background: #213260;
+ button{
+    color: #0a0a0a;
+    background: #eaebec;
     width: 200px;
     height: 50px;
     border: #213260;
@@ -170,12 +170,15 @@ button:hover{
 }
 input{
     color: #fff;
-    background: #4D8AF0;
+    background: #0a0a0a;
     height: 40px;
     margin: 0.1rem;
     margin-left: 2px;
     border:#4D8AF0;
     border-radius: 10px;
+} 
+img{
+    width: 500px;
 }
 
 /* #user{
