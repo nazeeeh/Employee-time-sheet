@@ -68,19 +68,8 @@ function addNewTask(){
         "expectedDueDate" : dueDate
     }
 
-    if(taskName==""){
-        prompt("please input task name")
-    }
-    else if(employeeAssigned==""){
-        prompt("please input Employee name")
-    }
-    else if(dueDate==""){
-        prompt("please input due date")
-    }
-    else{
-        taskName.push(newTask)
-        onclick="CancelNewTask()"
-    }
+    taskName.push(newTask)
+    onclick="CancelNewTask()"
 
    
 }

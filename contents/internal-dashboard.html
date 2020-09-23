@@ -70,6 +70,7 @@
         <!-- this is where the dashboard components goes -->
         <div class="dashboard-body">
             <main class="internal-con">
+                <!-- header starts here -->
                 <header>
                     <div id="search-in">
                         <input type="text" placeholder="Search">
@@ -90,8 +91,11 @@
                         </div>
                     </div>
                 </header>
+                <!-- header ends here -->
                 <main id="body-in">
+                    <!-- div conataining cards -->
                     <div id="cards-con">
+                        <!-- first card -->
                         <div class="cards">
                             <div class="progress green">
                                 <span class="percent">85%</span>
@@ -109,6 +113,7 @@
                                 <p>- Period Tracker</p>
                             </div>
                         </div>
+                        <!-- second card -->
                         <div class="cards">
                             <div class="progress yellow">
                                 <span class="percent">75%</span>
@@ -127,6 +132,7 @@
                                 <p>24th/9/2020</p>
                             </div>
                         </div>
+                        <!-- third card -->
                         <div class="cards">
                             <div class="progress blue">
                                 <span class="percent">50%</span>
@@ -145,6 +151,7 @@
                                 <p>24th/9/2020</p>
                                 </div>
                             </div>
+                            <!-- fourth card -->
                         <div class="cards">
                             <a href="#" id="assign-link" onclick="assignNewTask()">Click to assign new task <i class="fa fa-plus" aria-hidden="true"></i></a>
                             <div id="new-task">
@@ -155,10 +162,14 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end os cards -->
+                    <!-- section below the cards -->
                     <div id="body-con-in">
+                        <!-- bar chart, calendar and manage documents section -->
                         <section id="section-one-in">
+                        <!-- bar chart (top) -->
                             <div class="top">
-                                <h5>Most active developers (Team 5)</h5>
+                                <h5>Most active employee (Team 5)</h5>
                                 <div id="bar-chart">
                                     <div class="bar"></div>
                                     <div class="bar"></div>
@@ -172,16 +183,20 @@
                                     <div class="bar"></div>
                                 </div>
                             </div>
+                            <!-- calendar and manage documents section (below bar chart)-->
                             <div class="bottom">
+                                <!-- calendar -->
                                 <div id="left">
                                     <h5>Calender</h5>
                                     <img src="/assets/img/internal/September-2020-Calendar.jpg" alt="">
                                 </div>
+                                <!-- Manage documents -->
                                 <div id="right">
                                     <a href="" id="empty">Click to manage documents <i class="fa fa-plus" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </section>
+                        <!-- Online users section -->
                         <section id="section-two">
                             <h5>Active Users (7)</h5>
                                     <p><i class="fa fa-circle" aria-hidden="true"></i>Aisha Opaluwa (<span>Senior Dev</span>)</p>
