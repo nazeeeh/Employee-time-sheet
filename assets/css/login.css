@@ -58,14 +58,13 @@ body{
   /* background: #ffaa8b; */
   box-sizing: border-box;
   border: 1px solid rgba(33, 50, 96, 0.62);
-  color: #fff;
   font-size: 21px;
   transition: ease-in-out, width .35s ease-in-out;
+  font-family: monospace;
 }
 .form-wrapper .form input:focus{
   /* border-bottom: 1px solid #f14d11; */
   background: rgba(33, 50, 96, 0.1);
-  font-family: monospace;
   transition: ease-in-out, width .35s ease-in-out;
   color: black;
 }
