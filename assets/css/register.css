@@ -228,6 +228,7 @@ input[type="file"] {
   outline:none;
   font-size: 19px;
   color: rgb(90, 69, 69);
+
 }
 
 .cont-registration .form-2 .form-detail input[type=text]:focus,
