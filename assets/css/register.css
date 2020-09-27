@@ -118,21 +118,7 @@ body{
   5%{
     transform: scale(0.4);
   }
-  /* 60%{
-    transform: scale(1.1);
-  }
-  70%{
-    transform: scale(1.2);
-  }
-  80%{
-    transform: scale(1);
-  }
-  90%{
-    transform: scale(1.1);
-  }
-  100%{
-    transform: scale(1);
-  } */
+
 }
 
 
@@ -215,10 +201,13 @@ input[type="file"] {
 .cont-registration .form-2 .form-detail{
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  /* gap: 23px; */
   color: rgb(141, 139, 139);
 }
 
+.form-detail label{
+  margin-left: 20px;
+}
 .cont-registration .form-2 .form-detail input[type=text],
 .cont-registration .form-2 .form-detail input[type=number],
 .cont-registration .form-2 .form-detail input[type=password]{
@@ -229,7 +218,7 @@ input[type="file"] {
   outline:none;
   font-size: 19px;
   color: rgb(90, 69, 69);
-
+  margin: 19px;
 }
 
 .cont-registration .form-2 .form-detail input[type=text]:focus,
@@ -244,7 +233,7 @@ input[type="file"] {
 .cont-registration .form-2 .form-links{
   display: flex;
   flex-direction: row;
-  gap: 9px;
+  margin-left: 20px;
 }
 .cont-registration .form-2 .form-links input[type=submit]{
   padding: 15px;
@@ -252,7 +241,7 @@ input[type="file"] {
   border: none;
   background: #131f41;
   color: #fff;
-  margin: 0 auto;
+  margin: 20px auto;
   border-radius: 3px;
   cursor: pointer;
   outline: none;
