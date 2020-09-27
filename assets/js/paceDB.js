@@ -1,41 +1,52 @@
-// SCRIPT That handles the registration details of clients 
+/*
+SCRIPT That handles the registration details of clients 
+*/ 
 
-let checkDb = localStorage.getItem("paceDB");
-if (checkDb == null){ // checks if the local storage name does not exist
-  checkDb = [] // creates an empty array if not exist
+let checkDb = JSON.parse(localStorage.getItem("paceDB"));
+if(checkDb == null) // if paceDB does not exist create one 
+{
+
+  checkDb=[]
+
 }
-let company = [
-  {
-    "name" : "",
-    "email" : "",
-    "phone" : "",
-    "type" : "",
-    "password" : ""
-  }
-]
-
-// alert(JSON.stringify(company));
-
 let getUserDetails = () =>
 { // function to get all user's details
-  companyName = document.getElementById("name").Value;
-  companyEmail = document.getElementById("email").Value;
-  companyTel = document.getElementById("phone").Value;
-  companyType = document.getElementById("type").Value;
-  companyPassword = document.getElementById("cpassword").Value;
+  
+  companyName = document.getElementById("name").value;
+  companyEmail = document.getElementById("email").value;
+  companyTel = document.getElementById("phone").value;
+  companyType = document.getElementById("type").value;
+  companyUrl = document.getElementById("url").value;
+  companyPassword = document.getElementById("password").value;
+  company2Password = document.getElementById("cpassword").value;
+  companyLogo = document.getElementById("logo").value;
 
-  let newCompany = {
-    "name" : companyName,
-    "email" : companyEmail,
-    "phone" : companyTel,
-    "type" : companyType,
-    "password" : companyPassword
+  if (companyPassword == company2Password)
+  {  // validate password and confirm password before storage
+
+    let newCompany = {
+      "name" : companyName,
+      "email" : companyEmail,
+      "phone" : companyTel,
+      "type" : companyType,
+      "password" : companyPassword,
+      "url" : companyUrl,
+      "logo" : companyLogo
+
+    }
+
+    checkDb.push(newCompany)
+    localStorage.setItem("paceDB", JSON.stringify(checkDb))
+    validateReg()
+
   }
-  company.push(newCompany)
-  alert(JSON.stringify(company))
 
-  alert(companyEmail)
-  alert(companyName)
+  else
+
+  {
+
+    alert("Password Mismatch")
+
+  }
+
 }
-
-// getUserDetails()
