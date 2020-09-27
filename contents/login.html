@@ -22,6 +22,7 @@
       <form action="" class="form">
         <img class="logo" src="/assets/img/logo-1.png" alt="logo">
         <h3>Login to <img src="/assets/img/pace.png"></h3>
+        <span id="errorMessage"></span>
         <i class="fas fa-user fa-2x"><input type="email" placeholder="Company email" id="emailAuth"></i>
         <!-- <input type="text"> -->
     
@@ -29,8 +30,9 @@
         <!-- <input type="checkbox"><span></span> -->
         <!-- <input type="checkbox"> -->
         <span> <a href="/contents/forgot-password.html">Forgot Password?</a><a href="../contents/register.html">Sign up for Pace</a>.</span>
-        <!-- <a id="login" href="https://pacetimesheet.netlify.app/contents/internal-dashboard.html">Login</a> -->
-        <input type="submit" value="Log In" id="toDashboard">
+        <a id="login" onclick="authUser()">Login</a>
+        <!-- <a id="login" href="https://pacetimesheet.netlify.app/contents/internal-dashboard.html" onclick="authUser()">Login</a> -->
+        <!-- <input type="submit" value="Log In" id="toDashboard" onclick="authUser()"> -->
       </form>
     </div>
   </div>
