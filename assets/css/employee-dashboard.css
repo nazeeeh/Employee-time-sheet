@@ -3,184 +3,355 @@
 *********   RESET ****************
 ==================================
  */
- *,
- *::before,
- *::after {
-     box-sizing: border-box;
- }
- html, body {
-     padding: 0;
-     margin: 0;
-     line-height: 1.6;
-     font-family: 'Roboto', sans-serif;
- }
- body {
-    background:#ccc /*rgba(33, 50, 96, .7)*/
- }
- /* main{
-     background: #213260;
-     display: flex;
- } */
- section {
-     display: flex;
-     background: transparent;
-     width: 60%;
-     /* margin: 5rem -2rem 1rem;
-     padding: 1rem; */
- } 
- .div-one {
-     width: 92%;
-     background: #fff;
-     margin-left: 10px;
-     padding: 3rem;
-     border-radius: 20px;
- }
- h2.info{
-     margin-top: 72px;
- }
- header h2 {
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* CSS reset */
+
+body {
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* header starts here*/
+
+header {
+    padding: 8px 5px;
+    display: flex;
+    width: 95%;
+    margin: auto;
+    background-color: white;
+}
+
+
+/* search bar */
+
+#search-in {
+    flex: 1;
+}
+
+#search-in input {
+    border: none;
+    border-radius: 5px;
+    margin-left: -15px;
+    outline: none;
+    background-color: #F2F2F2;
+    padding: 5px 7px;
+}
+
+
+/* search bar button */
+
+#search-in button {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* div containing everything after the search bar */
+
+header #right-in {
+    display: flex;
+    width: 60%;
+}
+
+header #right-in button#start-time,
+header #right-in button#stop-time {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 6px;
+    height: 30px;
+    color: white;
+}
+
+
+/* Start timer button */
+
+header #right-in button#start-time {
+    background-color: #213260;
+    display: block;
+}
+
+#right-in #time {
+    margin: auto 10px;
+}
+
+
+/* Stop timer button */
+
+header #right-in #stop-time {
+    background-color: #971425;
+    display: none;
+}
+
+
+/* div containing notification button, settings and username */
+
+header #right-in #other-in {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+header #right-in #other-in .fa-cog,
+header #right-in #other-in .fa-bell {
+    align-self: center;
+    margin-right: 10px;
+    color: #213260;
+}
+
+
+/* Username(It's a button) */
+
+header #right-in #other-in .profile-in button {
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: black;
+}
+
+
+/* image before username but I did'nt upload an image */
+
+header #right-in #other-in .profile-in button img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/*==================================
+ **********body*********************
+ ===================================
+  */
+
+
+/* background div. holds everything */
+
+#body-in {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Container holding all cards (task cards) */
+
+#body-in #cards-con {
+    height: 200px;
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
- }
- #div-two{
-     width: 300px;
-     background:transparent;
-     margin-top: 0;
-     margin-bottom: 0;
-     /* margin-right: -100px; */
-     margin-left: -30px;
- }
- .div-two {
-     background: #4D8AF0;
-     width: 300px;
-     height: auto;
-     margin-top: 0;
-     margin-right: 0;
-     padding: 10px 20px;
-     border-radius: 15px;
- }
- .div-two .icon i {
-     color: #fff;
- }
- .icon i {
-     color: #4D8AF0;
-     padding: 0 1rem;
- }
- .task {
-    background: #c4c4c4;
-    height: 10rem;
-    width: 100%;
-    border-radius: 15px;
- }
- .new-task{
-     color: #fff;
-     text-align: center;
-     padding: 10px;
- }
- .view-task{
-     text-decoration: none;
-     display: block;
-     color: #ffffff;
-     background-color: #4D8AF0;
-     width: 100px;
-     height: 30px;
-     text-align: center;
-     padding: 20px auto;
-     margin: 20px 300px;
-     border-radius: 5px;
+    margin-top: 40px;
+}
 
- } 
- /*Calendar section*/
- .work-list{
-     display: flex;
-     justify-content: space-evenly;
- }
- .work-review{
-     color:#fff;
-     background-color: #4D8AF0;
-     width: 50px;
-     height: 80px;
-     padding: 20px 4px;
-     margin: 20px;
-     border-radius: 45%;
- }
- #check{
-    padding: 20px 4px;
-    margin: 12px;
- }
- /*Information section*/
-  .data-info{
-     display: flex;
-     justify-content: space-around;
-     margin-top: 40px;
- }
- /* Timer section*/
-  .timer{
-     display: flex;
-     justify-content: space-around;
-     padding: auto;
- }
- .time{
-     width: 30px;
-     height: 30px;
-     font-weight: bolder;
-     background-color: #ccc;
-     border-radius: 50%;
- }
-.card-1{
-     width:130px;
-     height:120px;
-     padding: 5px;
-     text-align: center;
-     background-color: #fff;
-     border: 1px solid #fff;
-     border-radius: 10px;
- }
- .card-2{
-    width:130px;
-    height:120px;
-    padding: 5px;
-    text-align: center;
-    align-content: right;
-    background-color: #fff;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    margin-right: -20px;
-} 
-/*Document section*/
- section#div-3{
+div.cards .details a {
+    text-decoration: none;
+    background: #213260;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+/* Template for all cards */
+
+#body-in #cards-con .cards {
+    width: 24.5%;
+    height: 100%;
+    background-color: white;
     display: flex;
-    margin-top: 10px;
-    padding: 0.5rem;
-    border-radius: 15px;
 }
 
-/*Button section*/
- button{
-    color: #0a0a0a;
-    background: #eaebec;
-    width: 200px;
-    height: 50px;
-    border: #213260;
-    border-radius: 15px;
-    font-size: 1.3rem;
+
+/* The text in the cards */
+
+
+/* #body-in #cards-con .cards .details {
+    width: 40%;
+    margin: auto;
+} */
+
+#body-in #cards-con .cards h5 {
+    width: 70%;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 16px;
 }
-button:hover{
-    background: #4D8AF0;
+
+#body-in #cards-con .cards br {
+    margin: 0 10px;
 }
-input{
-    color: #fff;
-    background: #0a0a0a;
+
+#body-in #cards-con .cards p {
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+
+/* 4th task card starts here */
+
+#body-in #cards-con .cards a {
+    margin: 50px 10px 0 40px;
+    color: #7E7E7E;
+}
+
+
+/* This diplays when the text in the card is clicked */
+
+#body-in #cards-con .cards #new-task {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    margin: 20px 10px;
+}
+
+#body-in #cards-con .cards #new-task input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: solid 1px #f2f2f2;
+    outline: none;
+    background-color: white;
+    padding: 0 5px;
+}
+
+#body-in #cards-con .cards #new-task button {
+    padding: 2px 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    background-color: #213260;
+}
+
+
+/* This diplays when the text in the card is clicked */
+
+
+/* 4th task card starts here */
+
+
+/* sections at the bottom part starts here */
+
+#body-in #body-con-in {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    padding: 5px 2px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+
+/* calendar section */
+
+#body-in #body-con-in #section-one-in {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+section#section-one-in {
+    background-color: #fff;
+}
+
+#calWrapper {
+    width: 100%;
+    margin: 0 5;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.dayCell {
+    width: 40px;
     height: 40px;
-    margin: 0.1rem;
-    margin-left: 2px;
-    border:#4D8AF0;
-    border-radius: 10px;
-} 
-img{
-    width: 500px;
+    font-size: 11px;
+    vertical-align: top;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 2px;
+    background-color: white;
 }
 
-/* #user{
-    font-size: 5rem;
+.dayHeader {
+    width: 40px;
+    height: 20px;
+    background-color: #ddd;
+}
+
+.today {
+    border: 2px solid blue;
+}
+
+
+/* list section todo-list*/
+
+h3 {
+    width: auto;
+    margin: 10px auto;
+}
+
+#body-in #body-con-in #section-two {
+    width: 34%;
+    height: 100%;
+    margin-left: 20px;
+    background-color: white;
+}
+
+div.cards-todo {
+    padding: 50px;
+}
+
+div.cards-todo input {
+    border: 1px #ccc;
+    padding: 20px;
+    background-color: #213260;
+    color: #fff;
+}
+
+div.cards-todo button {
+    border: 1px #ccc;
+    padding: 15px;
+    margin-top: 15px;
+    margin-left: center;
+}
+
+div.cards-todo button:hover {
+    background: #213260;
+}
+
+
+/* #section-two .cards-todo #new-task {
+    display: flex;
+    justify-content: space-around;
 } */
