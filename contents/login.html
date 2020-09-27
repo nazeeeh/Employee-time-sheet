@@ -22,27 +22,28 @@
       <form action="" class="form">
         <img class="logo" src="/assets/img/logo-1.png" alt="logo">
         <h3>Login to <img src="/assets/img/pace.png"></h3>
-        <i class="fas fa-user fa-2x"><input type="text" placeholder="Username" value="techspecialist@gmail.com"></i>
+        <i class="fas fa-user fa-2x"><input type="email" placeholder="Company email" id="emailAuth"></i>
         <!-- <input type="text"> -->
     
-        <i class="fas fa-lock fa-2x"><input type="password" placeholder="Password" value="demoPassword"></i>
+        <i class="fas fa-lock fa-2x"><input type="password" placeholder="Password" id="passwordAuth"></i>
         <!-- <input type="checkbox"><span></span> -->
         <!-- <input type="checkbox"> -->
         <span> <a href="/contents/forgot-password.html">Forgot Password?</a><a href="../contents/register.html">Sign up for Pace</a>.</span>
-        <a id="login" href="https://pacetimesheet.netlify.app/contents/internal-dashboard.html">Login</a>
-        <!-- <input type="submit" value="Log In" id="toDashboard"> -->
+        <!-- <a id="login" href="https://pacetimesheet.netlify.app/contents/internal-dashboard.html">Login</a> -->
+        <input type="submit" value="Log In" id="toDashboard">
       </form>
     </div>
   </div>
 
   <!-- <main-footer></main-footer> -->
   <script>
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    document.getElementById("toDashboard").addEventListener("click", function() {
-          // window.location.assign("online link.html", 500)
-          window.location.href = "https://pacetimesheet.netlify.app/contents/internal-dashboard.html";
-    });
+    // var email = document.getElementById("email");
+    // var password = document.getElementById("password");
+    // document.getElementById("toDashboard").addEventListener("click", function() {
+    //       // window.location.assign("online link.html", 500)
+    //       window.location.href = "https://pacetimesheet.netlify.app/contents/internal-dashboard.html";
+    // });
   </script>
+  <script src="/assets/js/userAuth.js"></script>
 </body>
 </html>
