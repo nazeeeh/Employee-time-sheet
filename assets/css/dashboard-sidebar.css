@@ -55,6 +55,23 @@
   color: #fff;
   font-size: 16px;
 }
+#companyImage{
+  height: 100px;
+  border-radius: 5px;
+}
+/* Hamburger menu */
+.fa-bars{
+  position: relative;
+  bottom: 87px;
+  color: #fff;
+  left: 60px;
+  font-size: 23px;
+  cursor: pointer;
+}
+.fa-bars:active{
+  color: #ccc;
+
+}
 .dashboard-link a{
   color: #fff;
   text-decoration: none;
