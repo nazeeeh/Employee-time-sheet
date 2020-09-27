@@ -135,6 +135,8 @@ body{
   } */
 }
 
+
+
 .form-2 span.close_form2{
   cursor: pointer;
   font-size: 21px;
@@ -148,10 +150,65 @@ body{
   align-items: center;
   height: 100%;
   gap: 23px;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   background: #fff;
 }
+/* SECTION TO FLEX TWO SIDES */
+.cont-section{
+  display: flex;
+}
+
+.cont-section1{
+  width: 50%;
+  border-right: 2px solid #ccc;
+  margin-left: 19px;
+}
+.cont-section1 .avatar .custom-file-upload{
+  margin-left: 24px;
+  margin-top: 9px;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.avatar h4{
+  margin-left: 24px;
+  font-size: 3rem;
+}
+.avatar p{
+  margin-top: 9px;
+  margin-left: 24px;
+}
+
+.cont-section2{
+  margin: 19px;
+}
+.cont-section1 .company_logo{
+  float: left;
+}
+
+.cont-section1 .company_logo img{
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  margin: 23px;
+  cursor: pointer;
+  box-shadow: 0 0 6px #ddd;
+
+}
+.cont-section1 .company_logo img:hover{
+  box-shadow: 0 0 6px black;
+}
+.cont-section1 .company_logo img:active{
+  box-shadow: 0 0 6px #ccc;
+}
+
 
 /* style the label and their input */
 .cont-registration .form-2 .form-detail{
@@ -171,6 +228,7 @@ body{
   outline:none;
   font-size: 19px;
   color: rgb(90, 69, 69);
+
 }
 
 .cont-registration .form-2 .form-detail input[type=text]:focus,
