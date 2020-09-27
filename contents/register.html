@@ -19,11 +19,11 @@
         <img class="logo" src="/assets/img/logo-1.png" alt="">
         <h3>Register to <img src="/assets/img/pace.png"></h3>
         <!-- email -->
-        <input type="email" id="email" placeholder="Company Email" value="techspecialist@gmail.com">
+        <input type="email" id="email" placeholder="Company Email">
         <!-- company name -->
-        <input type="text" id="name" placeholder="Company Name" value="Tech Specialist">
+        <input type="text" id="name" placeholder="Company Name" >
         <!-- password -->
-        <input type="password" id="password" placeholder="Enter Password" value="demo0123456789">
+        <input type="password" id="password" placeholder="Enter Password">
         <p id="form_2Btn">Continue</p>
         <span id="tandc">
           <a href="#" onclick="alert(`This page is under maintenance by TIIDELab-Circuit`);"> Read Terms and Condition</a>
@@ -43,13 +43,14 @@
           <div class="cont-section">
             <div class="cont-section1">
               <div class="avatar">
-                <h4>CLIENT COMPANY</h4>
+                <h4 id="companyNameHolder"></h4> <!-- Company Name Display from name input-->
                 <p>Choose Company Avatar</p>
                 <div class="company_logo">
                   <label for="file-upload" class="custom-file-upload">
                     <i class="fa fa-cloud-upload"></i> Custom Upload
                   </label>
                   <input id="file-upload" type="file"/>
+                  <input type="text" id="logo">
                   <div class="avatar-img">
                     <img src="/assets/img/register/bussiness_avatar.png" alt="">
                     <img src="/assets/img/register/engineer_avatar.jpg" alt="">
@@ -66,22 +67,22 @@
                         <!--  -->
               <div class="form-detail">
                 <label for="company-url">Choose company site URL</label>
-                <input type="text" value="techspecialist.pacetime.com" id="url_link">
+                <input type="text"  id="url">
               </div>
               <!--  -->
               <div class="form-detail">
                 <label for="company-type">Company Type</label>
-                <input type="text" id="type" value="IT Solution">
+                <input type="text" id="type" >
               </div>
               <!--  -->
               <div class="form-detail">
                 <label for="phone-number">Phone Number</label>
-                <input type="number" id="phone" value="08038157444">
+                <input type="number" id="phone" >
               </div>
               <!--  -->
               <div class="form-detail">
                 <label for="confirm-password" >Confirm Password</label>
-                <input type="password" id="cpassword" value="demoPassword">
+                <input type="password" id="cpassword" >
               </div>
               <div class="form-links">
                 <span>
@@ -89,7 +90,7 @@
                   I agree to Pace 
                   <a href="#" onclick="alert(`This page is under maintenance by TIIDELab-Circuit`);">
                   Terms and Condition Policy</a>.</span>
-                <input type="submit" value="SIGN UP" id="demo_btn">
+                <input type="submit" value="SIGN UP" onclick="getUserDetails();">
               </div>
             </div>
 <!--  -->
