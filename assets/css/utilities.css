@@ -1,0 +1,19 @@
+/* Pace logo style */
+.pace-logo{
+  color: #213260;
+  text-transform: capitalize;
+}
+
+
+/* a tag to button */
+
+.to-btn{
+  color: #333;
+  background: #fff;
+  padding: 10px 10px;
+}
+
+.btn-deep{
+  background: #131f41;
+}
+

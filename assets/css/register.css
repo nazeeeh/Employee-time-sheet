@@ -1,45 +1,121 @@
+/* reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body{
-  background: rgba(33, 50, 96, 0.05);
-  background-image: linear-gradient(250deg, rgba(33, 50, 96, 0.24), 
+  /* background: rgba(33, 50, 96, 0.05); */
+  /* background-image: linear-gradient(250deg, 
+                  rgba(33, 50, 96, 0.24), 
                   rgba(33, 50, 96, 0.62)), 
-                    url('/assets/img/register/bg-img.png');
+                    url('/assets/img/register/bg-img.png'); */
 
   background-repeat: no-repeat;
   position: right;
+  background: #f4f4f4;
 }
+
 .registration-container{
-  width: 350px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 90px;
-  margin-bottom: 35px;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.reg-wrapper{
+  display: flex;
+  gap: 20px;
+  height: 500px;
+}
+
+/* section 1 of registration page by the left */
+#reg-info{
+  background: #213260;
+  color: #f4f4f4;
+  border-radius: 5px;
+  display: flex;
+  height: 556px;
+  position: relative;
+  max-width: 50%;
+}
+/* left section text container */
+#reg-info #reg-info-text{
+  margin-top: 58px;
+  overflow: hidden;
+  width: 510px;
+  padding: 23px;
+}
+
+#reg-info #reg-info-text h1{
+  color:#fff;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+/* the container of have an account button */
+#reg-info #to-login-con{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  height: 100%;
+  top: 60px;
+}
+
+#reg-info #to-login-con .to-login{
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #f4f4f4;
+  font-weight: 600;
+}
+
+#reg-info #to-login-con .to-login:hover{
+  background: #fff;
+}
+
+.form-wrapper{
+  width: 50%;
+
+}
+
+.form-wrapper .form{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width:700px;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #221133;
+}
+
+.form-wrapper .form h3.reg-lead{
+  color: #213260;
+}
+
 .form-wrapper .form img.logo{
   width: 30px;
   height: 30px;
   position: relative;
   margin: 12px;
 }
+
 .form-wrapper .form h3{
   font-size: 35px;
   font-weight: bold;
   font-family: roboto;
 }
+
 .form-wrapper .form img{
   position: relative;
   top: 7px;
   width: 70px;
 }
-.form-wrapper .form{
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  border-radius: 15px;
-}
+
 .form-wrapper .form input{
   padding: 25px;
   margin: 12px;
@@ -52,20 +128,23 @@ body{
   border-bottom: 2px solid rgba(33, 50, 96, 0.1);
   color: #333;
   font-size: 21px;
-  transition: ease-in-out, 1s ease-in-out;
+  font-family: monospace;
+  /* transition: ease-in-out, 1s ease-in-out; */
 }
+
 .form-wrapper .form input:focus{
   background: rgba(33, 50, 96, 0.1);
-  font-family: monospace;
-  transition: ease-in-out, 1s ease-in-out;
+  /* transition: ease-in-out, 1s ease-in-out; */
   color: #333;
 }
 
+
 /* Turning <p> to Button Style */
+
 .form-wrapper .form p#form_2Btn{
   background: #131f41;
   color: white;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
@@ -73,19 +152,24 @@ body{
   border: none;
   opacity: 0.9;
   border-radius: 5px;
-  padding: 15px;
+  padding: 10px 11px;
+  margin: 5px;
 }
+
 .form-wrapper .form p#form_2Btn:hover{
   opacity: 0.8;
 }
+
 .form-wrapper .form #tandc{
   margin: 1rem;
 }
+
 .form-wrapper .form #tandc a{
   text-decoration: none;
   color: rgba(33, 50, 96, 0.8);
   font-weight: 600;
 }
+
 
 /* 
   ------------------------
@@ -111,15 +195,19 @@ body{
   animation: popup 0.6s;
 }
 
+
 @keyframes popup {
   0%{
     transform: scale(0.3);
   }
+
   5%{
     transform: scale(0.4);
   }
 
+
 }
+
 
 
 
@@ -128,6 +216,7 @@ body{
   font-size: 21px;
   color:rgb(136, 132, 132);
 }
+
 /* Make the form contents align to center */
 .cont-registration .form-2{
   display: flex;
@@ -140,45 +229,55 @@ body{
   margin: 0 auto;
   background: #fff;
 }
+
 /* SECTION TO FLEX TWO SIDES */
 .cont-section{
   display: flex;
 }
+
 
 .cont-section1{
   width: 50%;
   border-right: 2px solid #ccc;
   margin-left: 19px;
 }
+
 .cont-section1 .avatar .custom-file-upload{
   margin-left: 24px;
   margin-top: 9px;
 }
+
 input[type="file"] {
   display: none;
 }
+
 .custom-file-upload {
   border: 1px solid #ccc;
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
 }
+
 .avatar h4{
   margin-left: 24px;
   font-size: 3rem;
   text-transform: capitalize;
 }
+
 .avatar p{
   margin-top: 9px;
   margin-left: 24px;
 }
 
+
 .cont-section2{
   margin: 19px;
 }
+
 .cont-section1 .company_logo{
   float: left;
 }
+
 
 .cont-section1 .company_logo img{
   width: 100px;
@@ -189,12 +288,15 @@ input[type="file"] {
   box-shadow: 0 0 6px #ddd;
 
 }
+
 .cont-section1 .company_logo img:hover{
   box-shadow: 0 0 6px black;
 }
+
 .cont-section1 .company_logo img:active{
   box-shadow: 0 0 6px #ccc;
 }
+
 
 
 /* style the label and their input */
@@ -205,9 +307,11 @@ input[type="file"] {
   color: rgb(141, 139, 139);
 }
 
+
 .form-detail label{
   margin-left: 20px;
 }
+
 .cont-registration .form-2 .form-detail input[type=text],
 .cont-registration .form-2 .form-detail input[type=number],
 .cont-registration .form-2 .form-detail input[type=password]{
@@ -221,6 +325,7 @@ input[type="file"] {
   margin: 19px;
 }
 
+
 .cont-registration .form-2 .form-detail input[type=text]:focus,
 .cont-registration .form-2 .form-detail input[type=number]:focus,
 .cont-registration .form-2 .form-detail input[type=password]:focus{
@@ -229,12 +334,14 @@ input[type="file"] {
   color: rgb(75, 66, 66);
 }
 
+
 /* Button and terms */
 .cont-registration .form-2 .form-links{
   display: flex;
   flex-direction: row;
   margin-left: 20px;
 }
+
 .cont-registration .form-2 .form-links input[type=submit]{
   padding: 15px;
   width: 120px;
@@ -247,14 +354,17 @@ input[type="file"] {
   outline: none;
 }
 
+
 /* style privacy and signup button */
 .cont-registration .form-2 .form-links{
   display: flex;
   flex-direction: column;
 }
+
 .const-registration .form-2 .form-links span input[type=checkbox]{
   background: red;
 }
+
 .form-2 .form-links a{
   text-decoration: none;
   color: rgba(33, 50, 96, 0.8);
@@ -263,9 +373,12 @@ input[type="file"] {
 
 
 
+
 /* MEDIA QUERY 
 @media (max-width: 800px) {
   .form-wrapper{
     width: 411px;
   }
-}*/
+
+}
+*/
