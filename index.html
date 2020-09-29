@@ -7,8 +7,8 @@
   <meta name="keyword" content="timesheet software, time track">
   <link rel="shortcut icon" href="assets/img/Vector.png" />  
   <link rel="stylesheet" href="assets/css/index.css">
-  <script type="text/javascript" src="./assets/js/component.js"></script>
   <link rel="stylesheet" href="./assets/css/component.css">
+  <link rel="stylesheet" href="./assets/css/utilities.css">
   <title>Pace Time-Sheet</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
   <div class="landing-page-container">
     <div class="landing-page-body">
       <div class="free-trial-form">
-        <h3>Track Your Time <br>At Your Own <img src="assets/img/Vector.png" alt=""> Pace</h3> 
+        <h3 class="roboto-slab">Track Your Time <br>At Your Own <img src="assets/img/Vector.png" alt=""> Pace</h3> 
         <p>Spend less time making the right and informed decisions</p>
         <form class="trial-form" name="form" netlify>
           <input type="text" name="email" placeholder="Your Company's Email" required>
@@ -26,12 +26,14 @@
       </div>
       <!-- Features With Logo -->
       <div class="features-container">
-        <div class="logo"><img src="assets/img/landing-page/13.png"><p>  Time<br>Tracking</p></div>
-        <div class="logo"><img src="assets/img/landing-page/14.png"><p>Productivity <br>Monitoring</p></div>
-        <div class="logo"><img src="assets/img/landing-page/15.png"><p>Reporting <br> Sheet</p></div>
-        <div class="logo"><img src="assets/img/landing-page/16.png"><p>Time <br>Scheduling</p></div>
-        <div class="logo"><img src="assets/img/landing-page/17.png"><p>Online  <br>Timesheet</p></div>
-        <div class="logo"><img src="assets/img/landing-page/18.png"><p>Team  <br>Memos</p></div>
+        <div class="features-items">
+          <div class="logo"><img src="assets/img/landing-page/13.png"><p>  Time<br>Tracking</p></div>
+          <div class="logo"><img src="assets/img/landing-page/14.png"><p>Productivity <br>Monitoring</p></div>
+          <div class="logo"><img src="assets/img/landing-page/15.png"><p>Reporting <br> Sheet</p></div>
+          <div class="logo"><img src="assets/img/landing-page/16.png"><p>Time <br>Scheduling</p></div>
+          <div class="logo"><img src="assets/img/landing-page/17.png"><p>Online  <br>Timesheet</p></div>
+          <div class="logo"><img src="assets/img/landing-page/18.png"><p>Team  <br>Memos</p></div>
+        </div>
       </div>
     </div>
     <!-- End of Features with Logo -->
@@ -40,7 +42,9 @@
     <!-- Features Information -->
 
     <div class="features-section-2">
-      <h3 id="logo-heading">Everything your team needs to work smarter</h3>
+      <div class="heading-con">
+        <h3 id="logo-heading" class="roboto-slab">Everything your team needs to work smarter</h3>
+      </div>
         <div class="features-wrapper">
         <div class="features-section-2-logo"><img src="assets/img/landing-page/19.png"></div>
         <div class="features-section-2-logo"><img src="assets/img/landing-page/20.png"></div>
@@ -64,6 +68,9 @@
     <main-footer></main-footer>
     </div>
     <!-- End of Body Container -->
+
+    <!-- js files -->
+   <script type="text/javascript" src="./assets/js/component.js"></script>
   </div>
 </body>
 </html>
