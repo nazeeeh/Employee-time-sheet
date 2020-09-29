@@ -61,3 +61,14 @@ input[type=tel]{
   color: #333;
   background: #fff;
 }
+
+
+
+/* Error Message */
+
+#errorMessage{
+  font-size: 19px;
+  color: rgb(197, 40, 40);
+  /* background: #ccc; */
+  margin: 5px;
+}
