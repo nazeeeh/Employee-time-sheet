@@ -180,6 +180,29 @@ body{
   text-decoration: none;
   color: rgba(33, 50, 96, 0.8);
   font-weight: 600;
+  opacity: 0.9;
+}
+.form-wrapper .form #tandc a:hover{
+  opacity: 1.9;
+}
+
+.links-to{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  opacity: 0.9;
+}
+.links-to span{
+  font-weight: 900;
+}
+
+.links-to .to-btn{
+  font-weight: 900;
+}
+
+.links-to .to-btn:hover{
+  opacity: 1.9;
 }
 
 
