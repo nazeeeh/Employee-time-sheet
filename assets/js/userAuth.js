@@ -3,11 +3,6 @@ var unKnown = document.getElementById("errorMessage");
 
 
 let paceDB = JSON.parse(localStorage.getItem("paceDB"));
-// isExist = paceDB.find(findEmail)
-// email = paceDB[0].email;
-// password = paceDB[0].password;
-
-
 
 
 let authUser = () =>
@@ -22,31 +17,52 @@ let authUser = () =>
   
   // console.log(email_InDb["email"])
   // console.log(password_InDb["password"])
+  
+  
+  // controlling error when the local storage is empty 
+  try{
 
-  if(emailAuth == email_InDb["email"] && pwAuth == password_InDb["password"]){
+    if(email_InDb["email"] === undefined || password_InDb["password"] === undefined)
+    {
+  
+      unKnown.innerHTML = "Invalid Login Details"
+  
+  
+    }
 
-    // window.location.href = "https://pacetimesheet.netlify.app/contents/confirmation.html", 500;
+  }
+  catch(err){
+    
+    unKnown.innerHTML = "Invalid Login Details"
 
-    // current loggedin user
+  }
 
-    let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));
+  // check if the parameters are empty
+
+  if(!emailAuth || !email_InDb["email"] || !pwAuth || !password_InDb["password"] )
+  {
+
+    unKnown.innerHTML = "Invalid Login Details"
+
+
+  }
+
+  // validation
+  if(emailAuth == email_InDb["email"] && pwAuth == password_InDb["password"])
+  {
+
+    let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));// current loggedin user
     if(current_UserDb == null || current_UserDb.length > 1) // if paceDB does not exist create one 
     {
 
-      current_UserDb=[]
+      current_UserDb = []
 
     }
-    current_UserDb.push(email_InDb)
-    localStorage.setItem("currentUser", JSON.stringify(current_UserDb))
-    
+    current_UserDb.push(email_InDb)  // store the loggedIn use into an array
+    localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
     location.assign("../contents/internal-dashboard.html"); //redirect to internal dashboard
     
   }
-  // else if(emailAuth === undefined || pwAuth === undefined){
-
-  //   unKnown.innerHTML = "Invalid Login Details"
-  
-  // }
   else
   {
 
@@ -55,26 +71,3 @@ let authUser = () =>
   }
 
 }
-
-
-
-// if(isExist )
-// {
-
-//   alert("i dey here")
-
-// }
-// else
-// {
-
-//   alert("not found")
-
-// }
-
-// function findEmail(x)
-// {
-//   // alert(JSON.stringify(paceDB))
-//   x.name == "test1@gmail.com";
-
-// }
-
