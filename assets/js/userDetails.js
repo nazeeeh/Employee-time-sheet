@@ -10,7 +10,5 @@ document.getElementById("name").innerHTML = islogged_In[0].name;
 
 let logOut = () =>
 {
-
-  localStorage.clear("currentUser");
-
+  localStorage.removeItem("currentUser");
 }

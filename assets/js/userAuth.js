@@ -29,7 +29,7 @@ let authUser = () =>
 
     // current loggedin user
 
-    let current_UserDb= JSON.parse(localStorage.getItem("currentUser"));
+    let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));
     if(current_UserDb == null || current_UserDb.length > 1) // if paceDB does not exist create one 
     {
 
