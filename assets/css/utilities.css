@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+html, 
+body{
+  /* font-family: "Open Sans"; */
+}
+
+/* fonts */
+.roboto-slab{
+  font-family: 'Roboto Slab';
+}
+
+.open-sans{
+  font-family: 'Open Sans';
+}
+
+/* input font-families */
+input[type=text],
+input[type=email],
+input[type=tel]{
+
+  font-family: 'Open Sans'
+
+}
+
 /* Pace logo style */
 .pace-logo{
   color: #213260;
@@ -11,9 +36,21 @@
   color: #333;
   background: #fff;
   padding: 10px 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* button with font-size */
+.btn-size-18{
+  color: #333;
+  font-size: 18px;
+  background: #fff;
+  padding: 10px 10px;
+  cursor: pointer;
 }
 
 .btn-deep{
   background: #131f41;
+  color: #fff
 }
 

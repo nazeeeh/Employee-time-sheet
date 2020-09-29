@@ -1,3 +1,5 @@
+
+
 /* reset */
 *{
   margin: 0;
@@ -48,21 +50,35 @@ body{
   overflow: hidden;
   width: 510px;
   padding: 23px;
+  overflow: hidden;
+
 }
 
+/* section 1 heading */
 #reg-info #reg-info-text h1{
-  color:#fff;
+  color:#f4f4f4;
   font-size: 40px;
   margin-bottom: 20px;
+  font-family: 'Roboto Slab';
+  font-weight: 100;
+}
+
+/* section 1 text */
+#reg-info #reg-info-text p{
+  color:#f4f4f4;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+  text-align: center;
+  line-height: 1.8rem;
 }
 /* the container of have an account button */
 #reg-info #to-login-con{
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
-  height: 100%;
-  top: 60px;
+  position:absolute;
+  top: 440px;
+  left: 180px;
 }
 
 #reg-info #to-login-con .to-login{
@@ -82,7 +98,7 @@ body{
 }
 
 .form-wrapper .form{
-  background: #fff;
+  background: #f4f4f4;
   display: flex;
   flex-direction: column;
   width:700px;
@@ -95,6 +111,7 @@ body{
 
 .form-wrapper .form h3.reg-lead{
   color: #213260;
+  font-family: 'Roboto Slab';
 }
 
 .form-wrapper .form img.logo{
@@ -126,9 +143,8 @@ body{
   color: #333;
   box-sizing: border-box;
   border-bottom: 2px solid rgba(33, 50, 96, 0.1);
-  color: #333;
   font-size: 21px;
-  font-family: monospace;
+  background: rgba(33, 50, 96, 0.1);
   /* transition: ease-in-out, 1s ease-in-out; */
 }
 
@@ -146,7 +162,6 @@ body{
   color: white;
   font-size: 18px;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   outline: none;
   border: none;

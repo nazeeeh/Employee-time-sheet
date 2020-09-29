@@ -43,8 +43,6 @@ body{
   align-items: center;
   padding: 25px;
   border-radius: 15px;
-  /* margin: 50px;
-  margin-top: 100px; */
 }
 .form-wrapper .form input{
   padding: 10px;
@@ -54,8 +52,6 @@ body{
   border: none;
   outline: none;
   color: #333;
-  /* background: #e6e6e6; */
-  /* background: #ffaa8b; */
   box-sizing: border-box;
   border: 1px solid rgba(33, 50, 96, 0.62);
   font-size: 21px;
@@ -63,7 +59,6 @@ body{
   font-family: monospace;
 }
 .form-wrapper .form input:focus{
-  /* border-bottom: 1px solid #f14d11; */
   background: rgba(33, 50, 96, 0.1);
   transition: ease-in-out, width .35s ease-in-out;
   color: black;
@@ -74,23 +69,23 @@ i{
 .form-wrapper .form span{
   padding: 15px;
 }
-.form-wrapper .form span a{
+.form-wrapper .form span a.link{
   margin: 10px;
 }
-.form-wrapper .form a{
+.form-wrapper .form a.link{
   text-decoration: none;
   color: rgba(33, 50, 96, 0.8);
   font-weight: 600;
 }
 
-a#login{
+/* a#login{
   padding: 12px;
   background: #2b3541;
   color: white;
   font-size: 23px;
   border-radius: 5px;
 }
-/* Button Style */
+Button Style
 .form-wrapper .form input[type=button]
 {
   background: #2b3541;
@@ -105,7 +100,7 @@ a#login{
 }
 .form-wrapper .form input[type=submit]:hover{
   opacity: 0.8;
-}
+} */
 
 /* MEDIA QUERY */
 /* @media (max-width: 800px) {
