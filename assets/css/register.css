@@ -40,7 +40,7 @@ body{
   color: #f4f4f4;
   border-radius: 5px;
   display: flex;
-  height: 556px;
+  height: 574px;
   position: relative;
   max-width: 50%;
   box-shadow: 0 0 1em 1em #ccc;
@@ -339,7 +339,9 @@ input[type="file"] {
 .cont-registration .form-2 .form-detail{
   display: flex;
   flex-direction: column;
-  color: #ccc;
+  color: rgb(97, 81, 81);
+  font-size: 18px;
+  font-weight: ;
 }
 
 
@@ -396,10 +398,12 @@ input[type="file"] {
   flex-direction: column;
 }
 
-.const-registration .form-2 .form-links span input[type=checkbox]{
-  background: red;
-}
 
+#check-btn{
+  position: relative;
+  top: 1px;
+  margin-right: 3px;
+}
 .form-2 .form-links a{
   text-decoration: none;
   color: rgba(33, 50, 96, 0.8);
