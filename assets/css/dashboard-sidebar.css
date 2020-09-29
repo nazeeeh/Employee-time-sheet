@@ -24,6 +24,10 @@
   color: #fff;
   font-size: 22px; /* or 2rem ?*/
   font-weight: 900;
+  text-transform: uppercase;
+}
+
+.company #companyDisplay .greetUser{
   text-transform: capitalize;
 }
 
