@@ -10,15 +10,36 @@
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
     <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
     <title>Dashboard</title>
+    <script language="javascript" type="text/javascript">
+        let bar_clock = () => 
+        { // function to display timer on the title bar
+            var date = new Date()
+            var year = date.getYear()
+            var month = date.getMonth()
+            var day = date.getDate()
+            var hour = date.getHours()
+            var minute = date.getMinutes()
+            var second = date.getSeconds()
+            // var months = new Array("", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
+            // var monthname = months[month]
+            if (hour > 12) {hour = hour - 12}
+            if (minute < 10) {minute = "0" + minute}
+            if (second < 10) {second = "0" + second}
+            document.title = hour + ":" + minute + ":" + second
+            // document.title = monthname + " " + day + ", " + year + " - " + hour + ":" + minute + ":" + second
+            setTimeout(bar_clock, 1000)
+        
+        };
+    </script>
 </head>
-<body>
+<body onLoad ="bar_clock()"">
     <div class="dashboard-container">
         <div class="sidebar-container">
           <div class="sidebar-wrapper">
             <div class="company">
               <i id="logo" class=""></i>
               <i class="fas fa-bars"></i>
-              <h4 id="name">TIIDELab</h4>
+              <h4 id="companyDisplay">TIIDELab</h4>
             </div>
             
             <div class="sidebar-links">

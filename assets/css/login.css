@@ -116,7 +116,8 @@ body{
 .form-wrapper .form h3.login-lead{
   color: #213260;
   font-family: 'Roboto Slab';
-  margin-bottom: 12px;
+  margin-top: 12px;
+  text-transform: capitalize;
 }
 
 .form-wrapper .form img.logo{

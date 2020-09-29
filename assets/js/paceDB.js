@@ -61,7 +61,7 @@ let getUserDetails = () =>
         break;
   
       default:
-        companyLogo = "why"
+        companyLogo = "no_profile_img.png"
     }
     alert(companyLogo)
     let newCompany = {
