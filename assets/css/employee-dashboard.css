@@ -227,18 +227,8 @@ div.cards .details a  {
 
 /* This diplays when the text in the card is clicked */
 
-
- #view-tasks {
-    /* display: none; */
-    background: #fff;
-    width: 95%;
-    height: 100%;
-    margin: 1rem auto;
-    padding: 5px 2px;
-    text-align: center;
-}
  
-/* This diplays when the text in the card is clicked */
+/* This displays when the text in the card is clicked */
 
 
 /* 4th task card starts here */
