@@ -158,3 +158,10 @@ function deleteUser(id) {
     localStorage.setItem("todo-list", JSON.stringify(todo));
     displayContent();
 }
+
+function viewAllTasks() {
+    location.assign("../contents/employee-tasks.html");
+}
+function close() {
+    location.assign("../contents/employee-dashboard.html");
+}
