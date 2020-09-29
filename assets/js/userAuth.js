@@ -4,11 +4,9 @@ var unKnown = document.getElementById("errorMessage");
 
 let paceDB = JSON.parse(localStorage.getItem("paceDB"));
 // isExist = paceDB.find(findEmail)
-email = paceDB[0].email;
-password = paceDB[0].password;
+// email = paceDB[0].email;
+// password = paceDB[0].password;
 
-console.log(email)
-console.log(password)
 
 
 
@@ -18,7 +16,14 @@ let authUser = () =>
   var pwAuth = document.getElementById("passwordAuth").value;
   console.log(emailAuth)
   console.log(pwAuth)
-  if(emailAuth == email && pwAuth == password){
+
+  email_InDb = paceDB.find(x=> x.email == emailAuth);
+  password_InDb = paceDB.find(x=> x.password == pwAuth);
+  
+  console.log(email_InDb["email"])
+  console.log(password_InDb["password"])
+
+  if(emailAuth == email_InDb["email"] && pwAuth == password_InDb["password"]){
 
     // window.location.href = "https://pacetimesheet.netlify.app/contents/confirmation.html", 500;
 
