@@ -19,12 +19,14 @@
   border-bottom-right-radius: 25px;
 }
 
-/* Company Name */
-.company #name{
+/* Company Display Name */
+.company #companyDisplay{
   color: #fff;
   font-size: 22px; /* or 2rem ?*/
   font-weight: 900;
+  text-transform: capitalize;
 }
+
 
 /* the body has a width of 80%, this might increase or reduce as more work is been done on the sidebar */
 .dashboard-body{
