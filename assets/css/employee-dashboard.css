@@ -237,57 +237,7 @@ div.cards .details a  {
     padding: 5px 2px;
     text-align: center;
 }
- #view-tasks ul {
-    list-style-type: none;
-    width: 100%;
-}
-#view-tasks ul li{
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem;
-}
- #view-tasks ul a {
-    background: #213260;
-    color: #fff;
-    text-decoration: none;
-    width: 5rem;
-    padding: .5rem;
-    margin: 1rem 0 3rem;
-}
- #view-tasks ul button{
-    width: 5rem;
-    padding: .5rem;
-    margin: 1rem 0 3rem;
-    text-transform: uppercase;
-    background: #213260;
-    color: #fff;
-}
-/* #body-in #cards-con .cards #view-tasks {
-    width: 100%;
-    height: 100%;
-    /* position: absolute; */
-    /* z-index: 2;
-    display: none;
-    margin: 20px 10px;
-} */ 
-
-/* #body-in #cards-con .cards #view-tasks ul {
-    display: flex;
-    margin-bottom: 10px;
-    background-color: white;
-    padding: 0 5px;
-} */
-
-/* #body-in #cards-con .cards #view-tasks button {
-    padding: 2px 5px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    outline: none;
-    background-color: #213260;
-} */
-
-
+ 
 /* This diplays when the text in the card is clicked */
 
 
