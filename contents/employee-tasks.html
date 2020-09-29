@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/assets/css/employee-dashboard.css" />
+  <link rel="stylesheet" href="/assets/css/employee-tasks.css" />
   <title>Pace | Employee's Tasks</title>
 </head>
 <body>
@@ -104,11 +105,39 @@
             </div>
         </header>
         <!-- header ends here -->
-        <main id="body-in">
+        <main id="">
             <!-- displays tasks section -->
         <div id="view-tasks">
-            
-            <ul>
+            <table>
+              <thead>
+                <th>S/N</th>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th> Status</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td> Lorem ipsum dolor sit. </td>
+                  <td> Wednesday </td>
+                  <td><a href="#">accept</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> Lorem ipsum dolor sit. </td>
+                  <td> Thursday </td>
+                  <td><a href="#">accept</a></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> Lorem ipsum dolor sit. </td>
+                  <td> Friday </td>
+                  <td><a href="#">accept</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <button onclick="closeTasks()">close</button>
+            <!-- <ul>
                 <li> 
                     <p>Lorem ipsum dolor sit. </p>
                     <p>Due: Wednesday</p> 
@@ -127,10 +156,10 @@
                     <a href="#">accept</a> 
                     
                 </li>
-                <button onclick="close()">close</button>
-            </ul>
+                <button onclick="closeTasks()">close</button>
+            </ul> -->
         </div>
-        <!-- displays tasks section ends -->c
+        <!-- displays tasks section ends -->
         </main>
         
       </main>
