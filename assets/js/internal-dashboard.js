@@ -57,7 +57,11 @@ function setSecs(){
         seconds++
     }
 
-    document.getElementById("seconds").textContent = seconds
+    document.getElementById("seconds").textContent = "0" + seconds
+    if(seconds >= 10){
+        document.getElementById("seconds").textContent = seconds
+
+    }
 }
 
 function setMins(){
@@ -67,7 +71,10 @@ function setMins(){
         minutes = 0
         minutes++
     }
-    document.getElementById("mins").textContent = minutes
+    document.getElementById("mins").textContent = "0" + minutes
+    if(seconds >= 10){
+        document.getElementById("seconds").textContent = minutes
+    }
 }
 
 function setHours(){
@@ -171,7 +178,6 @@ function displayTask(){
         `
     }
     document.getElementById("display-tasks").innerHTML = add
-    alert(JSON.stringify(tasks))
 }
 
 function deleteTask(me){
