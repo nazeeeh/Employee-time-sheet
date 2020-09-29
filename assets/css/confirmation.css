@@ -42,7 +42,8 @@
      height: 30rem;
      border-radius: 5px;
      text-align: center;
-     border: 10px solid #213260;
+     border: 2px solid #213260;
+     white-space: nowrap;
  }
  .confirm .icon{
      margin: 2rem auto;
@@ -59,7 +60,7 @@
      padding: .5rem;
      border-radius: 5px;
      text-transform: uppercase;
-     background-color: #4D8AF0;
+     background-color: #213260;
      color: #fff;
      outline: none;
      border: none;
@@ -86,15 +87,25 @@
          height: 25rem;
      }
     .confirm input {
-        width: 10rem;
+        width: 15rem;
         margin: 1rem 0;
     }
     .confirm h2, .confirm p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: .1rem;
     }
     .confirm #p2 {
         font-size: .9rem;
         margin: 2rem 0 0;
+    }
+ }
+/* 
+==================================
+******** IPAD VIEW STYLE *******
+==================================
+ */
+ @media(max-width:768px) {
+    .confirm  {
+        width: 90%;
     }
  }
