@@ -60,20 +60,20 @@ function setSecs(){
     document.getElementById("seconds").textContent = "0" + seconds
     if(seconds >= 10){
         document.getElementById("seconds").textContent = seconds
-
     }
 }
 
 function setMins(){
-    if(minutes < 59){
+    if(minutes < 60){
         minutes++
-    }else if(minutes == 59){
+    }else if(minutes == 60){
         minutes = 0
         minutes++
     }
+
     document.getElementById("mins").textContent = "0" + minutes
-    if(seconds >= 10){
-        document.getElementById("seconds").textContent = minutes
+    if(minutes >= 10){
+        document.getElementById("mins").textContent = minutes
     }
 }
 
@@ -134,11 +134,7 @@ tasks = [
         "employee" : "Toluwanimi",
         "due": "23rd March 2021"
     },
-    {
-        "name":"Assign tasks to all users",
-        "employee" : "Toluwanimi",
-        "due": "23rd March 2021"
-    }
+   
 ]
 
 // if(JSON.parse(localStorage.getItem("tasks")) != tasks){
