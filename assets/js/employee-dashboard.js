@@ -162,6 +162,6 @@ function deleteUser(id) {
 function viewAllTasks() {
     location.assign("../contents/employee-tasks.html");
 }
-function close() {
+function closeTasks() {
     location.assign("../contents/employee-dashboard.html");
 }
