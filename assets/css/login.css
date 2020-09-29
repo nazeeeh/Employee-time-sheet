@@ -78,33 +78,19 @@ i{
   font-weight: 600;
 }
 
-/* a#login{
-  padding: 12px;
+/* Login Button */
+
+a#login{
   background: #2b3541;
   color: white;
   font-size: 23px;
   border-radius: 5px;
 }
-Button Style
-.form-wrapper .form input[type=button]
-{
-  background: #2b3541;
-  color: white;
-  font-size: 21px;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  opacity: 0.9;
-}
-.form-wrapper .form input[type=submit]:hover{
-  opacity: 0.8;
-} */
+
 
 /* MEDIA QUERY */
 /* @media (max-width: 800px) {
   .form-wrapper{
     width: 411px;
   }
-} */
+}

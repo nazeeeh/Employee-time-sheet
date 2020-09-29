@@ -43,6 +43,7 @@ body{
   height: 556px;
   position: relative;
   max-width: 50%;
+  box-shadow: 0 0 1em 1em #ccc;
 }
 /* left section text container */
 #reg-info #reg-info-text{
@@ -81,15 +82,17 @@ body{
   left: 180px;
 }
 
-#reg-info #to-login-con .to-login{
+#reg-info #to-login-con #to-login{
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background: #f4f4f4;
   font-weight: 600;
+  opacity: unset; /* remove default opacity */
 }
 
 #reg-info #to-login-con .to-login:hover{
-  background: #fff;
+  background: #ffff;
+  opacity: unset; /* remove default opacity */
 }
 
 .form-wrapper{
@@ -106,12 +109,14 @@ body{
   align-items: center;
   padding: 25px;
   border-radius: 5px;
-  box-shadow: 0 0 2px #221133;
+  /* box-shadow: 0 0 2px #221133; */
+  box-shadow: 0 0 0.1em 0.1em #f4f4f4;
 }
 
 .form-wrapper .form h3.reg-lead{
   color: #213260;
   font-family: 'Roboto Slab';
+  margin-bottom: 12px;
 }
 
 .form-wrapper .form img.logo{
@@ -158,14 +163,7 @@ body{
 /* Turning <p> to Button Style */
 
 .form-wrapper .form p#form_2Btn{
-  background: #131f41;
-  color: white;
   font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  opacity: 0.9;
   border-radius: 5px;
   padding: 10px 11px;
   margin: 5px;
@@ -202,16 +200,17 @@ body{
   width: 100%;
   height: 100%;
   overflow: auto; 
-  background-color: rgb(146, 138, 138); 
+  background-color: rgb(146, 138, 138); /* fallback color */
   /* filter: blur(8px) ; */
   /* -webkit-filter: blur(8px);  */
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.6); /* fallback color */
   background-image: url("../img/register/dummy-bg.png");
   background-repeat: no-repeat;
   background-size: 100vw;
   animation: popup 0.6s;
 }
 
+/* modal form popup entry animation */
 
 @keyframes popup {
   0%{
@@ -221,14 +220,11 @@ body{
   5%{
     transform: scale(0.4);
   }
-
-
 }
 
-
-
-
+/* link to close modal form */
 .form-2 span.close_form2{
+  margin-top: 30px;
   cursor: pointer;
   font-size: 21px;
   color:rgb(136, 132, 132);
@@ -244,10 +240,10 @@ body{
   gap: 23px;
   width: 80%;
   margin: 0 auto;
-  background: #fff;
+  background: #f4f4f4;
 }
 
-/* SECTION TO FLEX TWO SIDES */
+/* MAKE SECTION TO FLEX TWO SIDES */
 .cont-section{
   display: flex;
 }
@@ -258,12 +254,30 @@ body{
   border-right: 2px solid #ccc;
   margin-left: 19px;
 }
+/* company display name on pop up */
+#companyNameHolder{
+  font-weight: 100px;
+  color: #1e1e5d;
+  margin-left: 24px;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.avatar p.avatar-selector-lead{
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-left: 24px;
+}
+
+
 
 .cont-section1 .avatar .custom-file-upload{
   margin-left: 24px;
   margin-top: 9px;
 }
 
+
+/* file input alternative for custom upload */
 input[type="file"] {
   display: none;
 }
@@ -273,17 +287,15 @@ input[type="file"] {
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
+  margin: 12px;
 }
 
-.avatar h4{
-  margin-left: 24px;
-  font-size: 3rem;
-  text-transform: capitalize;
-}
 
-.avatar p{
-  margin-top: 9px;
-  margin-left: 24px;
+/* avatar select dropdown styles */
+.avatar-selector{
+  border: 0.9px solid #ccc;
+  background: #f3f3f3;
+  padding: 6px 12px;
 }
 
 
@@ -293,6 +305,7 @@ input[type="file"] {
 
 .cont-section1 .company_logo{
   float: left;
+  margin: auto;
 }
 
 
@@ -315,13 +328,18 @@ input[type="file"] {
 }
 
 
+/* pop up form section  styles*/
 
-/* style the label and their input */
+.cont-section2{
+  position: relative;
+  left: 50px;
+}
+
+/* form labels */
 .cont-registration .form-2 .form-detail{
   display: flex;
   flex-direction: column;
-  /* gap: 23px; */
-  color: rgb(141, 139, 139);
+  color: #ccc;
 }
 
 
@@ -391,11 +409,29 @@ input[type="file"] {
 
 
 
-/* MEDIA QUERY 
-@media (max-width: 800px) {
-  .form-wrapper{
-    width: 411px;
+/* MEDIA QUERY  */
+@media only screen and (max-width: 1210px) {
+  #reg-info{
+    display: none;
+  }
+
+  .form-wrapper .form{
+    max-width: 550px;
   }
 
 }
-*/
+@media only screen and (max-width: 810px) {
+  #reg-info{
+    display: none;
+  }
+
+  .form-wrapper .form{
+    max-width: 300px;
+  }
+
+  .form-wrapper .form h3.reg-lead{
+    white-space: nowrap;
+  }
+
+}
+
