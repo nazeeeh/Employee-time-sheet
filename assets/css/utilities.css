@@ -33,11 +33,14 @@ input[type=tel]{
 /* a tag to button */
 
 .to-btn{
-  color: #333;
-  background: #fff;
+  opacity: 0.9;
   padding: 10px 10px;
   cursor: pointer;
   font-weight: 500;
+}
+
+.to-btn:hover{
+  opacity: 0.8;
 }
 
 /* button with font-size */
@@ -54,3 +57,7 @@ input[type=tel]{
   color: #fff
 }
 
+.btn-light{
+  color: #333;
+  background: #fff;
+}
