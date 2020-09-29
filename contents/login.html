@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/assets/css/login.css">
-  <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
-  <link rel="stylesheet" href="../assets/css/component.css">
-  <link rel="stylesheet" href="/assets/css/utilities.css">
-  <script src="../assets/js/component.js"></script>
-  <link rel="stylesheet" media="screen and (max-width:768px)" href="/assets/css/mobile.css">
-  <title>Pace Time-Sheet | Login</title>
-</head>
-
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
+    <link rel="stylesheet" href="../assets/css/component.css">
+    <link rel="stylesheet" href="/assets/css/utilities.css">
+    <script src="../assets/js/component.js"></script>
+    <title>Pace Time-Sheet | Login</title>
+  </head>
 <body>
   <main-header></main-header>
-
   <div class="login-container">
-    <div class="form-wrapper">
-      <form action="" class="form">
-        <img class="logo" src="/assets/img/logo-1.png" alt="logo">
-        <h3>Login to <img src="/assets/img/pace.png"></h3>
-        <span id="errorMessage"></span>
-        <i class="fas fa-user fa-2x"><input type="email" placeholder="Company email" id="emailAuth"></i>
-        <!-- <input type="text"> -->
-    
-        <i class="fas fa-lock fa-2x"><input type="password" placeholder="Password" id="passwordAuth"></i>
-        <span> 
-          <a class="link" href="/contents/forgot-password.html">Forgot Password?</a>
-          <a class="link" href="../contents/register.html">Sign up for Pace</a>.
-        </span>
-          <a id="login" class="to-btn btn-deep" onclick="authUser()">Login</a>
-      </form>
+    <div class="login-wrapper">
+      <div class="form-wrapper">
+        <form action="" class="form">
+          <img class="logo" src="/assets/img/logo-1.png" alt="">
+          <h3 class="login-lead">login to <span class="pace-logo">Pace</span> 
+            <div class="">
+              <span id="errorMessage"></span>
+            </div>
+            <!-- <img src="/assets/img/pace.png"> -->
+          </h3>
+          <!-- email -->
+          <input type="email" placeholder="Company Email" id="emailAuth">
+          <!-- password -->
+          <input type="password" placeholder="Enter Password" id="passwordAuth">
+          <p id="form_2Btn" class="btn-size-18 btn-deep" onClick="authUser();">Login</p>
+          <span id="tandc">
+            <a href="#" onclick="alert(`This page is under maintenance by TIIDELab-Circuit`);"> 
+              Read Terms and Condition
+            </a>
+          </span>
+        </form>
+     </div>
     </div>
   </div>
-
   <!-- <main-footer></main-footer> -->
-  <script>
-    // var email = document.getElementById("email");
-    // var password = document.getElementById("password");
-    // document.getElementById("toDashboard").addEventListener("click", function() {
-    //       // window.location.assign("online link.html", 500)
-    //       window.location.href = "https://pacetimesheet.netlify.app/contents/internal-dashboard.html";
-    // });
-  </script>
+
+  <!-- JavaScript for navbar and footer -->
   <script src="/assets/js/userAuth.js"></script>
+
 </body>
 </html>
