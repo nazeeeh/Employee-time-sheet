@@ -100,7 +100,7 @@ header #right-in #other-in .profile-in button img{
 }
 /* Container holding all cards (task cards) */
 #body-in #cards-con{
-    height: 200px;
+    height: 150px;
     width: 95%;
     margin: 0 auto;
     display: flex;
@@ -113,14 +113,19 @@ header #right-in #other-in .profile-in button img{
     height: 100%;
     background-color: white;
     display: flex;
+    flex-direction: column;
+}
+#body-in #cards-con .cards .cards-con{
+    display: flex;
 }
 /* The text in the cards */
 #body-in #cards-con .cards .details{
-    width: 40%;
-    margin: auto;
+    width: 55%;
+    margin: 5px 0 5px 0;
+    font-size: 14px;
 }
 #body-in #cards-con .cards h5{
-    width: 70%;
+    width: 80%;
     margin: 10px auto;
     font-size: 16px;
 }
@@ -134,18 +139,18 @@ header #right-in #other-in .profile-in button img{
 }
 /* the progress circles */
 .progress{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     line-height: 80px;
     background: none;
-    margin: 20px 0 0 20px;
+    margin: auto 10px;
     box-shadow: none;
     position: relative;
 }
 .progress .percent{
-    margin-left: 30px;
-    margin-top: 12px;
-    font-size: 20px;
+    margin-left: 25px;
+    margin-top: -5px;
+    font-size: 12px;
  }
 .progress:after{
     content: "";
@@ -198,8 +203,8 @@ header #right-in #other-in .profile-in button img{
     animation: loading-1 1.8s linear forwards;
 }
 .progress .progress-value{
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     border-radius: 50%;
     background: white;
     font-size: 20px;
@@ -294,8 +299,24 @@ header #right-in #other-in .profile-in button img{
 }
 /* the progress circles ends here*/
 /* 4th task card starts here */
+#body-in #cards-con .cards:nth-of-type(4){
+    flex-direction: column;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks{
+    /* overflow: scroll; */
+    display: block;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
+    margin: 7px 7px 0 15px;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName i{
+    margin-right: 5px;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .delete-task, #body-in #cards-con .cards:nth-of-type(4) #display-tasks .edit-task{
+    font-size: 10px;
+}
 #body-in #cards-con .cards a{
-    margin: 50px 10px 0 40px;
+    margin: 10px 10px 0 10px;
     color: #7E7E7E;
 }
 /* This diplays when the text in the card is clicked */
@@ -308,12 +329,12 @@ header #right-in #other-in .profile-in button img{
     margin: 20px 10px;
 }
 #body-in #cards-con .cards #new-task input{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 5px;
     border: solid 1px #f2f2f2;
     outline: none;
     background-color: white;
-    padding: 0 5px;
+    padding: 5px 5px;
 }
 #body-in #cards-con .cards #new-task button{
     padding: 2px 5px;
