@@ -9,7 +9,7 @@ body{
     padding: 0;
     margin: 0;
 }
-/* header */
+/* header starts here*/
 header{
     padding: 8px 5px;
     display: flex;
@@ -17,6 +17,7 @@ header{
     margin: auto;
     background-color: white;
 }
+/* search bar */
 #search-in{
     flex: 1;
 }
@@ -28,6 +29,7 @@ header{
     background-color: #F2F2F2;
     padding: 5px 7px;
 }
+/* search bar button */
 #search-in button{
     padding: 5px 10px;
     border: none;
@@ -35,19 +37,33 @@ header{
     border-radius: 5px;
     cursor: pointer;
 }
+/* div containing everything after the search bar */
 header #right-in{
     display: flex;
     width: 60%;
 }
-header #right-in button{
+header #right-in button#start-time, header #right-in button#stop-time{
     border: none;
     border-radius: 5px;
     outline: none;
     padding: 0 6px;
     height: 30px;
-    background-color: #213260;
     color: white;
 }
+/* Start timer button */
+header #right-in button#start-time{
+    background-color: #213260;
+    display: block;
+}
+#right-in #time{
+    margin: auto 10px;
+}
+/* Stop timer button */
+header #right-in #stop-time{
+    background-color: #971425;
+    display: none;
+}
+/* div containing notification button, settings and username */
 header #right-in #other-in{
     display: flex;
     flex: 1;
@@ -58,21 +74,31 @@ header #right-in #other-in .fa-cog, header #right-in #other-in .fa-bell{
     margin-right: 10px;
     color: #213260;
 }
+/* Username(It's a button) */
 header #right-in #other-in .profile-in button{
     height: 30px;
+    border: none;
+    outline: none;
     background-color: white;
     color: black;
 }
+/* image before username but I did'nt upload an image */
 header #right-in #other-in .profile-in button img{
     border-radius: 50%;
     object-fit: cover;
 }
-/* body */
+/*==================================
+ **********body*********************
+ ===================================
+  */
+
+  /* background div. holds everything */
 #body-in{
     background-color: #F2F2F2;
     display: flex;
     flex-direction: column;
 }
+/* Container holding all cards (task cards) */
 #body-in #cards-con{
     height: 150px;
     width: 95%;
@@ -81,18 +107,25 @@ header #right-in #other-in .profile-in button img{
     justify-content: space-between;
     margin-top: 40px;
 }
+/* Template for all cards */
 #body-in #cards-con .cards{
-    width: 24%;
+    width: 24.5%;
     height: 100%;
     background-color: white;
     display: flex;
+    flex-direction: column;
 }
+#body-in #cards-con .cards .cards-con{
+    display: flex;
+}
+/* The text in the cards */
 #body-in #cards-con .cards .details{
-    width: 40%;
-    margin: auto;
+    width: 55%;
+    margin: 5px 0 5px 0;
+    font-size: 14px;
 }
 #body-in #cards-con .cards h5{
-    width: 70%;
+    width: 80%;
     margin: 10px auto;
     font-size: 16px;
 }
@@ -104,19 +137,20 @@ header #right-in #other-in .profile-in button img{
     margin-bottom: 0;
     font-size: 14px;
 }
+/* the progress circles */
 .progress{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     line-height: 80px;
     background: none;
-    margin: 20px 0 0 20px;
+    margin: auto 10px;
     box-shadow: none;
     position: relative;
 }
 .progress .percent{
-    margin-left: 30px;
-    margin-top: 12px;
-    font-size: 20px;
+    margin-left: 25px;
+    margin-top: -5px;
+    font-size: 12px;
  }
 .progress:after{
     content: "";
@@ -169,8 +203,8 @@ header #right-in #other-in .profile-in button img{
     animation: loading-1 1.8s linear forwards;
 }
 .progress .progress-value{
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     border-radius: 50%;
     background: white;
     font-size: 20px;
@@ -184,9 +218,11 @@ header #right-in #other-in .profile-in button img{
 .progress.blue .progress-bar{
     border-color: #049dff;
 }
+/* 50% loader */
 .progress.blue .progress-left .progress-bar{
     animation: loading-2 1.5s linear forwards 1.8s;
 }
+/* 75% loader */
 .progress.yellow .progress-bar{
     border-color: #fdba04;
 }
@@ -199,12 +235,15 @@ header #right-in #other-in .profile-in button img{
 .progress.pink .progress-left .progress-bar{
     animation: loading-4 0.4s linear forwards 1.8s;
 }
+/* 85% loader */
 .progress.green .progress-bar{
     border-color: #1abc9c;
 }
 .progress.green .progress-left .progress-bar{
     animation: loading-5 1.2s linear forwards 1.8s;
 }
+/* animation of the progress circles */
+/* right half of loader */
 @keyframes loading-1{
     0%{
         -webkit-transform: rotate(0deg);
@@ -215,6 +254,7 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(180deg);
     }
 }
+/* 50% loader */
 @keyframes loading-2{
     0%{
         -webkit-transform: rotate(0deg);
@@ -225,6 +265,7 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(0deg);
     }
 }
+/* 75% loader */
 @keyframes loading-3{
     0%{
         -webkit-transform: rotate(0deg);
@@ -245,6 +286,7 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(36deg);
     }
 }
+/* 85% loader */
 @keyframes loading-5{
     0%{
         -webkit-transform: rotate(0deg);
@@ -255,19 +297,58 @@ header #right-in #other-in .profile-in button img{
         transform: rotate(126deg);
     }
 }
-/* progress bar end */
-#body-in #cards-con .cards meter{
-    margin: 0 10px;
-    width: 70%;
+/* the progress circles ends here*/
+/* 4th task card starts here */
+#body-in #cards-con .cards:nth-of-type(4){
+    flex-direction: column;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks{
+    /* overflow: scroll; */
+    display: block;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
+    margin: 7px 7px 0 15px;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName i{
+    margin-right: 5px;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .delete-task, #body-in #cards-con .cards:nth-of-type(4) #display-tasks .edit-task{
+    font-size: 10px;
+    cursor: pointer;
 }
 #body-in #cards-con .cards a{
-    margin: 50px 10px 0 40px;
+    margin: 10px 10px 0 10px;
     color: #7E7E7E;
 }
-#body-in #body-con-in #section-one .bottom #right a{
-    margin: 150px 10px 0 40px;
-    color: #7E7E7E;
+/* This diplays when the text in the card is clicked */
+#body-in #cards-con .cards #new-task{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    display: none;  
+    margin: 20px 10px;
 }
+#body-in #cards-con .cards #new-task input{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: solid 1px #f2f2f2;
+    outline: none;
+    background-color: white;
+    padding: 5px 5px;
+}
+#body-in #cards-con .cards #new-task button{
+    padding: 2px 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    background-color: #213260;
+}
+/* This diplays when the text in the card is clicked */
+/* 4th task card starts here */
+
+/* sections at the bottom part starts here */
 #body-in #body-con-in{
     width: 95%;
     height: 130vh;
@@ -276,7 +357,8 @@ header #right-in #other-in .profile-in button img{
     display: flex;
     justify-content: space-between;
 }
-#body-in #body-con-in #section-one{
+/* bar-chart div */
+#body-in #body-con-in #section-one-in{
     width: 64%;
     height: 100%;
     display: flex;
@@ -284,14 +366,15 @@ header #right-in #other-in .profile-in button img{
     justify-content: space-around;
 }
 /* bar-chart starts here */
-#body-in #body-con-in #section-one .top{
+#body-in #body-con-in #section-one-in .top{
     height: 48%;
     width: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
 }
-#body-in #body-con-in #section-one .top #bar-chart{
+/* bar chart */
+#body-in #body-con-in #section-one-in .top #bar-chart{
     width: 90%;
     margin: 5px auto;
     border-left: solid 1px #7E7E7E;
@@ -302,52 +385,62 @@ header #right-in #other-in .profile-in button img{
     justify-content: space-around;
     align-items: flex-end;
 }
-#body-in #body-con-in #section-one .top #bar-chart .bar:first-child{
+/* Individual bar heights */
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:first-child{
     height: 80%;
 }
-#body-in #body-con-in #section-one .top #bar-chart .bar:nth-child(5){
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(5){
     height: 90%;
 }
-#body-in #body-con-in #section-one .top #bar-chart .bar:nth-child(8){
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(8){
     height: 85%;
 }
-#body-in #body-con-in #section-one .top #bar-chart .bar{
+#body-in #body-con-in #section-one-in .top #bar-chart .bar{
     height: 60%;
     width: 5%;
     background-color: #a6b7eb;
 }
 /* bar-chart ends here */
-#body-in #body-con-in #section-one .bottom{
+/* section below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom{
     height: 48%;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-#body-in #body-con-in #section-one .bottom #left{
+/* left dive below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom #left{
     width: 49%;
     height: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
 }
-#body-in #body-con-in #section-one .bottom #left img{
+/* calendar image */
+#body-in #body-con-in #section-one-in .bottom #left img{
     width: 80%;
     height: 80%;
     margin: auto;
     object-fit: cover;
 }
-#body-in #body-con-in #section-one .bottom #left h5, #body-in #body-con-in #section-one .top h5{
+/* text above calendar */
+#body-in #body-con-in #section-one-in .bottom #left h5, #body-in #body-con-in #section-one-in .top h5{
     margin: 10px 0;
     align-self: center;
 }
-#body-in #body-con-in #section-one .bottom #right{
+/* left dive below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom #right a{
+    margin: 150px 10px 0 40px;
+    color: #7E7E7E;
+}
+#body-in #body-con-in #section-one-in .bottom #right{
     width: 49%;
     height: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
 }
-/* #7E7E7E */
+/* Online users segment */
 #body-in #body-con-in #section-two p{
     margin: 4px 10px;
     border-bottom: solid 1px #F2F2F2;
@@ -367,5 +460,4 @@ header #right-in #other-in .profile-in button img{
     height: 98%;
     margin: auto 0;
     background-color: white;
-    /* display: flex; */
 }

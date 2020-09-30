@@ -1,91 +1,165 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/css/employee-dashboard.css">
-    <title>Pace | Employee's Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/employee-dashboard.css" />
+    <title>Dashboard</title>
 </head>
+
 <body>
-    <section>
-        <div class="div-one">
-            <header>
-                <h2 class="id">ID 0000
-                    <span class="icon">
-                        <a href="#"><i class="fa fa-bell" id="bell"></i></a>
-                        <a href="#"><i class="fa fa-user" id="user"></i></a>
-                        <!-- <a href="#"><i class="fa fa-users-cog" id="users-cog"></i></a> -->
-                    </span> 
-                </h2>
-            </header><hr>
-            <div class="task">
-                <p class="new-task">you have a new task</p>
-                <a href="#" class="view-task">view</a>
-            </div>
-         <!-- <form action="POST"> -->
-            <h2>Work review</h2>
-            <div class="work-list">
-            <div class="work-review">day:1 <input type="checkbox" id="check" name="check" value="daily-check"></div>
-            <div class="work-review">day:2 <input type="checkbox" id="check" name="check" value="daily-check"></div>
-            <div class="work-review">day:3 <input type="checkbox" id="check" name="check" value="daily-check"></div>
-            <div class="work-review">day:4 <input type="checkbox" id="check" name="check" value="daily-check"></div>
-            <div class="work-review">day:5 <input type="checkbox" id="check" name="check" value="daily-check"></div>
-            <div class="work-review">day:6 <input type="checkbox" id="check" name="check" value="daily-check"></div>
-            </div>
-            <!-- <input type="submit" value="Submit"> -->
-        </form>
-        </div>
-        <section id="div-two">
-            <div class="div-two">
-                <header>
-                    <h2 class="info">Information
-                        <span class="icon">
-                            <i class="fa fa-ellipsis-h"></i>
-                        </span> 
-                    </h2>
-                </header><hr>
-                <!-- Timer section -->
-                <div class="data-info">
-                   <div class="card-1">
-                       <h2>Time start</h2>
-                       <div class="timer">
-                           <p class="time">12</p>
-                           <p class="time">6</p>
-                           <p class="time">20</p>
-                       </div>
-                   </div>
-                   <div class="card-2">
-                    <h2>Time End</h2>
-                    <div class="timer">
-                        <p class="time">04</p>
-                        <p class="time">30</p>
-                        <p class="time">13</p>
+    <div class="wrap">
+        <div class="dashboard-container">
+            <div class="sidebar-container">
+                <div class="sidebar-wrapper">
+                    <div class="company">
+                        <i id="logo" class=""></i>
+                        <h4 id="name">TIIDELab</h4>
                     </div>
-                   </div>
+
+                    <div class="sidebar-links">
+                        <!-- Link Start -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <a href="">Employee Status</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-user-friends"></i>
+                            <a href="">Add User</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <a href="">Calender</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-calendar-plus"></i>
+                            <a href="">e-Schedule</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-flag-checkered"></i>
+                            <a href="">Report</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-stream"></i>
+                            <a href="">Billing Rate</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-bell"></i>
+                            <a href="">Requests</a>
+                        </div>
+                        <!-- New link -->
+                        <div class="dashboard-link">
+                            <i class="fas fa-sliders-h"></i>
+                            <a href="/contents/settings.html">Settings</a>
+                        </div>
+
+                        <!-- End of Side-bar-Link -->
+                    </div>
                 </div>
-                <h1>$496.40</h1>
-                 <p class="paid">paid to 01.02.20</p>
-                <a href="./feed-back.html"><button>Feedback</button></a>
             </div>
-        </section>
-    </section>
-            <section id="div-3">
-                <div class="div-3">
-                    <h3>Upload document:</h3>
-                    <form action="POST" method="post" enctype="multipart/form-data">
-                      <input type="file" name="fileToUpload" id="fileToUpload" required>
-                      <input type="submit" value="Upload document" name="submit">
-                    </form>
-                </div>
-                <div class="leave">
-                <form action="POST">
-                    <h3>Request for leave:</h3>
-                    <input type="file" id="myFile" name="filename" required>
-                    <input type="submit" >
-                  </form>
-                  </div>
-            </section>
+            <!-- this is where the dashboard components goes -->
+            <div class="dashboard-body">
+                <main class="internal-con">
+                    <!-- header starts here -->
+                    <header>
+                        <div id="search-in">
+                            <input type="text" placeholder="Search" />
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="right-in">
+                            <button id="start-time" onclick="changeTimerButton()">
+                    Start Time
+                </button>
+                            <div id="time">
+                                <span id="hours">05:</span><span id="mins">34:</span
+                    ><span id="seconds">04</span>
+                            </div>
+                            <button id="stop-time" onclick="changeTimerButton()">
+                    Stop Time
+                </button>
+                            <div id="other-in">
+                                <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i
+                    ></a>
+                                <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i
+                    ></a>
+                                <div class="profile-in">
+                                    <button><img src="" alt="" /> Akan Asanga</button>
+                                    <div class="dropdown-in"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- header ends here -->
+                    <main id="body-in">
+                        <!-- div containing cards -->
+                        <div id="cards-con">
+                            <div></div>
+                            <!-- first card -->
+                            <div class="cards">
+                                <div class="details">
+                                    <h5>Current Task</h5>
+                                    <a href="#">Resume</a>
+                                </div>
+                            </div>
+                            <!-- second card -->
+                            <div class="cards">
+                                <div class="details">
+                                    <h5>View Document</h5>
+                                    <a href="#">View</a>
+                                </div>
+                            </div>
+                            <!-- third card -->
+                            <div class="cards">
+                                <div class="details">
+                                    <h5>Upload Document</h5>
+                                    <a href="#">Upload</a>
+                                </div>
+                            </div>
+                            <!-- fourth card -->
+                            <div class="cards">
+                                <a href="#" id="tasks-link" onclick="viewAllTasks()">View all tasks
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- end os cards -->
+
+                        <!-- calendar section-->
+                        <div id="body-con-in">
+                            <section id="section-one-in">
+                                <h3>Month view for <span id="dateHolder" /></h3>
+                                <table id="calWrapper"></table>
+                            </section>
+                            <!-- list section todo-list -->
+                            <section id="section-two">
+                                <div class="cards-todo">
+                                    <h3>Todo-List</h3>
+                                    <button onclick="addTodoList()">Add</button>
+                                    <div id="new-task">
+                                        <!-- <input type="text" id="todo-list" placeholder="Todo-List" required /> -->
+                                        <div id="todo"></div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </main>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/employee-dashboard.js"></script>
 </body>
+
 </html>

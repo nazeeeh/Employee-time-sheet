@@ -19,12 +19,18 @@
   border-bottom-right-radius: 25px;
 }
 
-/* Company Name */
-.company #name{
+/* Company Display Name */
+.company #companyDisplay{
   color: #fff;
   font-size: 22px; /* or 2rem ?*/
   font-weight: 900;
+  text-transform: uppercase;
 }
+
+.company #companyDisplay .greetUser{
+  text-transform: capitalize;
+}
+
 
 /* the body has a width of 80%, this might increase or reduce as more work is been done on the sidebar */
 .dashboard-body{
@@ -54,6 +60,23 @@
 .dashboard-link i{
   color: #fff;
   font-size: 16px;
+}
+#companyImage{
+  height: 100px;
+  border-radius: 5px;
+}
+/* Hamburger menu */
+.fa-bars{
+  position: relative;
+  bottom: 87px;
+  color: #ffff;
+  left: 60px;
+  font-size: 23px;
+  cursor: pointer;
+}
+.fa-bars:active{
+  color: #ccc;
+
 }
 .dashboard-link a{
   color: #fff;

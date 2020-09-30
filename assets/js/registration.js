@@ -1,15 +1,28 @@
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("form2_container");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var revoke_btn = document.getElementById("form_2Btn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close_form2")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+revoke_btn.onclick = function() {
   modal.style.display = "block";
+  //Display Entered Company Name
+  var newCompanyName = document.getElementById("name").value;
+  if(newCompanyName == ""){
+    
+    document.getElementById("companyNameHolder").innerHTML = "Company Name";
+
+  }else
+  {
+    
+    document.getElementById("companyNameHolder").innerHTML = newCompanyName;
+
+  }
+
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -23,3 +36,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
