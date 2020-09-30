@@ -137,11 +137,11 @@ tasks = [
    
 ]
 
-// if(JSON.parse(localStorage.getItem("tasks")) != tasks){
-//     tasks = JSON.parse(localStorage.getItem("tasks"))
-// }else{
-//     tasks
-// }
+if(JSON.parse(localStorage.getItem("tasks")) != tasks){
+    tasks = JSON.parse(localStorage.getItem("tasks"))
+}else{
+    tasks
+}
 localStorage.setItem("tasks",  JSON.stringify(tasks))
 
 displayTask()
@@ -178,6 +178,6 @@ function displayTask(){
 
 function deleteTask(me){
     tasks.splice(me, 1)
-    // localStorage.setItem("adminUsers",  JSON.stringify(adminUsers))
+    localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
