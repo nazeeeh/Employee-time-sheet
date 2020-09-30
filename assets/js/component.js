@@ -82,5 +82,17 @@ class Footer extends HTMLElement {
     }
 }
 
+class Toggle extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML=`
+    <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+</label>
+    `;
+  }
+}
+
 customElements.define('main-header', Header);
 customElements.define('main-footer', Footer);
+customElements.define('toggle-switch', Toggle);

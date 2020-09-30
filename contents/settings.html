@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/css/component.css">
   <link rel="stylesheet" href="../assets/css/settings.css">
+  <script src="../assets/js/component.js"></script>
   <title>Pace | Settings</title>
 </head>
 <body>
@@ -73,14 +75,15 @@
             <div class="profile-image"><div><i class="fas fa-camera"></i></div></div>
             <p>John Doe</p>
             
-            <a href="#">Edit Profile</a>
-            <a href="#">Notification setting</a>
-            <a href="#">Change Password</a>
-            <a href="#">Log Out</a>
+            <a href="#" id="edit-profile">Edit Profile</a>
+            <a href="#" id="notification-setting">Notification setting</a>
+            <a href="#" id="change-password">Change Password</a>
+            <a href="../contents/login.html" id="log-out">Log Out</a>
         </div>
 
-        <div class="profile-part2">
-          <div class="profile-part2-top">
+        <div class="profile-part2" id="profile-content">
+
+        <div class="profile-part2-top">
             <p>Personal Details</p>
           </div>
           <div class="profile-part2-content">
@@ -121,11 +124,14 @@
           <div class="profile-part2-bottom">
             <a href="#">Update</a>
           </div>
-            
-          </div>
-    </div>
-
+  
+        </div>
+  
+  
+        </div>
   </div>
 </div>
+
+<script src="../assets/js/settings.js"></script>
 </body>
 </html>
