@@ -49,6 +49,7 @@ header #right-in button#start-time, header #right-in button#stop-time{
     padding: 0 6px;
     height: 30px;
     color: white;
+    cursor: pointer;
 }
 /* Start timer button */
 header #right-in button#start-time{
