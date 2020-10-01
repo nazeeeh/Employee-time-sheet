@@ -1,3 +1,5 @@
+var paceDB = JSON.parse(localStorage.getItem("paceDB"));
+
 function editProfileFunc() {
     var editProfile = `
   <div class="profile-part2-top">
@@ -7,11 +9,11 @@ function editProfileFunc() {
             <div class="profile-fill-in">
               <div>
                   <label>First Name:</label>
-                  <div><p contenteditable="true">John</p></div>
+                  <div><p contenteditable="true" id="user-first-name">John</p></div>
               </div>
               <div>
                   <label>Phone Number:</label>
-                  <div><p contenteditable="true">09090798616</p></div>
+                  <div><p contenteditable="true" id="user-phone">09090798616</p></div>
               </div>
               <div>
                   <label>Home Address:</label>
@@ -29,7 +31,7 @@ function editProfileFunc() {
               </div>
               <div>
                   <label>Email Address:</label>
-                  <div><p contenteditable="true">john.doe@tiidelab.com</p></div>
+                  <div><p contenteditable="true" id="user-email">john.doe@tiidelab.com</p></div>
               </div>
               <div>
                   <label>State:</label>
@@ -43,6 +45,10 @@ function editProfileFunc() {
           </div>`
 
     document.getElementById("profile-content").innerHTML = editProfile;
+    document.getElementById("user-first-name").innerHTML = paceDB[0].name;
+    document.getElementById("user-phone").innerHTML = paceDB[0].phone;
+    document.getElementById("user-email").innerHTML = paceDB[0].email;
+    
   }
   
   function notificationSettingsFunc() {
@@ -79,10 +85,24 @@ function editProfileFunc() {
               <input type="password" name="new-password" id="new-password"></div>
               <div><label for="Confirm password">Confirm Password:</label>
               <input type="password" name="confirm-password" id="confirm-password"></div>
+              <a href="#" id="submit-password">Submit</a>
           </div>
           </div>`;
 
     document.getElementById("profile-content").innerHTML = changePasswordDiv;
+  }
+
+  function submitPasswordChange() {
+    if (document.getElementById("present-password").innerHTML == paceDB[paceDB.length-1].password) {
+      if (document.getElementById("new-password").value == document.getElementById("confirm-password")) {
+        paceDB[0].password = document.getElementById("new-password").value
+        localStorage.setItem("paceDB",paceDB)
+      } else {
+        alert("Password mismatch")
+      }
+    } else {
+      alert("Your password is wrong")
+    }
   }
   
   document.getElementById("edit-profile").addEventListener("click",editProfileFunc);
@@ -90,3 +110,7 @@ function editProfileFunc() {
   document.getElementById("notification-setting").addEventListener("click",notificationSettingsFunc);
 
   document.getElementById("change-password").addEventListener("click",changePasswordFunc);
+
+  // document.getElementById("submit-password").addEventListener("click",submitPasswordChange);
+
+  

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
+    <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
+    <title>Dashboard</title>
+    <script language="javascript" type="text/javascript">
+        let bar_clock = () => 
+        { // function to display timer on the title bar
+            var date = new Date()
+            var year = date.getYear()
+            var month = date.getMonth()
+            var day = date.getDate()
+            var hour = date.getHours()
+            var minute = date.getMinutes()
+            var second = date.getSeconds()
+            // var months = new Array("", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
+            // var monthname = months[month]
+            if (hour > 12) {hour = hour - 12}
+            if (minute < 10) {minute = "0" + minute}
+            if (second < 10) {second = "0" + second}
+            document.title = hour + ":" + minute + ":" + second
+            // document.title = monthname + " " + day + ", " + year + " - " + hour + ":" + minute + ":" + second
+            setTimeout(bar_clock, 1000)
+        
+        };
+    </script>
+</head>
+<body onLoad ="bar_clock()">
+    <div class="dashboard-container">
+        <div class="sidebar-container">
+          <div class="sidebar-wrapper">
+            <div class="company">
+              <i id="logo" class=""></i>
+              <i class="fas fa-bars"></i>
+              <h4 id="companyDisplay">TIIDELab</h4>
+            </div>
+            
+            <div class="sidebar-links">
+                <!-- Link Start -->
+                <div class="dashboard-link">
+                    <i class="fas fa-chart-pie"></i>
+                    <a href="">Employee Status</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-user-friends"></i>
+                    <a href="">Add User</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <a href="">Calender</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-calendar-plus"></i>
+                    <a href="">e-Schedule</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-flag-checkered"></i>
+                    <a href="">Report</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-stream"></i>
+                    <a href="">Billing Rate</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-bell"></i>
+                    <a href="">Requests</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sliders-h"></i>
+                    <a href="/contents/settings.html">Settings</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="/index.html" onclick="logOut()">Logout</a>
+                </div>
+              <!-- End of Side-bar-Link -->
+            </div>
+      
+          </div>
+        </div>
+        <!-- this is where the dashboard components goes -->
+        <div class="dashboard-body">
+            <main class="internal-con">
+                <!-- header starts here -->
+                <header>
+                    <div id="search-in">
+                        <input type="text" placeholder="Search">
+                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                    <div id="right-in">
+                        <button id="start-time" onclick="startTime()">Start Time</button>
+                        <div id="time"><span id="hours">00</span> : <span id="mins">00</span> : <span id="seconds">00</span></div>
+                        <button id="stop-time" onclick="stopTime()">Stop Time</button>
+                        <div id="other-in">
+                                <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+                                <div class="profile-in">
+                                    <button> <img src="" alt=""> Ayoola Toluwanimi</button>
+                                    <div class="dropdown-in">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- header ends here -->
+                <main id="body-in">
+                    <!-- div containing cards -->
+                    <div id="cards-con">
+                        <!-- first card -->
+                        <div class="cards">
+                            <h5>Uncompleted Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <div class="cards-con">
+                                <div class="progress green">
+                                    <span class="percent">85%</span>
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value"></div>
+                                </div>
+                                <div class="details">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- second card -->
+                        <div class="cards">
+                            <h5>Pending Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <div class="cards-con">
+                                <div class="progress yellow">
+                                    <span class="percent">75%</span>
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value"></div>
+                                </div>
+                                <div class="details">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- third card -->
+                        <div class="cards">
+                            <h5>Unassigned Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <div class="cards-con">
+                                <div class="progress blue">
+                                    <span class="percent">50%</span>
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value"></div>
+                                </div>
+                                <div class="details">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                            <!-- fourth card -->
+                        <div class="cards">
+                            <div id="display-tasks">
+                                
+                            </div>
+                            <a href="#" id="assign-link" onclick="assignNewTask()">Click to assign new task <i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <div id="new-task">
+                                <input type="text" id="task-name" placeholder="Task" required>
+                                <input type="text" id="employee-assigned" placeholder="Employee to be assigned" required>
+                                <input type="text" id="due-date" placeholder="Due date" required>
+                                <button id="assign" onclick="addTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end os cards -->
+                    <!-- section below the cards -->
+                    <div id="body-con-in">
+                        <!-- bar chart, calendar and manage documents section -->
+                        <section id="section-one-in">
+                        <!-- bar chart (top) -->
+                            <div class="top">
+                                <h5>Most active employee (Team 5)</h5>
+                                <div id="bar-chart">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                            <!-- calendar and manage documents section (below bar chart)-->
+                            <div class="bottom">
+                                <!-- calendar -->
+                                <div id="left">
+                                    <h5>Calender</h5>
+                                    <img src="/assets/img/internal/September-2020-Calendar.jpg" alt="">
+                                </div>
+                                <!-- Manage documents -->
+                                <div id="right">
+                                    <a href="" id="empty">Click to manage documents <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Online users section -->
+                        <section id="section-two">
+                            <h5>Active Users (7)</h5>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Aisha Opaluwa (<span>Senior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Akan Asanga (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Peter Adeyemo (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Adebayo Ayodele (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Ariyibi Baseet (<span>Junior Dev</span>)</p>
+                                    <p><i class="fa fa-circle" aria-hidden="true"></i>Pishikeni Tukura (<span>Senior Dev</span>)</p>
+                        </section>
+                    </div>
+                </main>
+            </main>
+        </div>
+    </div>
+    <script src="/assets/js/internal-dashboard.js"></script>
+    <script src="/assets/js/userDetails.js"></script>
+</body>
+</html>
