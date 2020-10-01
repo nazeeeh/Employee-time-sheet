@@ -241,6 +241,7 @@ body{
   width: 80%;
   margin: 0 auto;
   background: #f4f4f4;
+  overflow: hidden;
 }
 
 /* MAKE SECTION TO FLEX TWO SIDES */
@@ -248,12 +249,12 @@ body{
   display: flex;
 }
 
-
 .cont-section1{
   width: 50%;
   border-right: 2px solid #ccc;
   margin-left: 19px;
 }
+
 /* company display name on pop up */
 #companyNameHolder{
   font-weight: 100px;
