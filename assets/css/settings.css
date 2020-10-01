@@ -195,7 +195,7 @@
     justify-content: space-evenly;
     margin: 20px auto;
     font-family: "Roboto", sans-serif;
-    height: 200px;
+    height: 300px;
     width: 400px;
     background-color: #4D8AF099;
     border-radius: 5px;
@@ -215,4 +215,14 @@
     border-radius: 5px;
     padding: 5px 10px;
     outline: none;
+}
+
+.profile-settings .profile-part2 .change-password-form a {
+    align-self: center;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #213260;
+    font-weight: bold;
 }
