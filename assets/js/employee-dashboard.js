@@ -114,19 +114,19 @@ displayContent();
 
 //Display function
 function displayContent() {
-    todo = "";
+    todoTask = '';
     for (i = 0; i < todoList.length; i++) {
         if (todoList != null) {
-            todo += `<div>
+            todoTask += `<div>
             <div>
-            <strong>List: </strong> ${todoList[i].task}<br>
+             <strong> ${todoList[i].task}</strong><br>
             </div>
             <button onClick="editUser(${i})" class="edit" >Edit</button> &nbsp; <button onClick="deleteUser(${i})" class="delete">Delete</button>
             </div>`;
         }
     }
-    document.getElementById("todo").innerHTML = todo;
-    todo = JSON.parse(localStorage.getItem("todo-list"));
+    document.getElementById("todoTask").innerHTML = todoTask;
+    todoList = JSON.parse(localStorage.getItem("todo"));
 }
 displayContent();
 
@@ -136,7 +136,7 @@ function addTodoList() {
         task: prompt("Enter Task"),
     };
     todoList.push(newList);
-    localStorage.setItem("todo-list", JSON.stringify(todo));
+    localStorage.setItem("todo", JSON.stringify(todoList));
     displayContent();
 }
 
@@ -146,7 +146,7 @@ function editUser(id) {
         task: prompt("Edit task"),
     };
     todoList[id] = newTodoDetail;
-    localStorage.setItem("todo-list", JSON.stringify(todo));
+    localStorage.setItem("todo", JSON.stringify(todoList));
     displayContent();
 }
 
@@ -155,13 +155,14 @@ function deleteUser(id) {
     if (confirm(`Are you sure you want to delete ${todoList[id].task}?`)) {
         todoList.splice(id, 1);
     }
-    localStorage.setItem("todo-list", JSON.stringify(todo));
+    localStorage.setItem("todo", JSON.stringify(todoList));
     displayContent();
 }
 
 function viewAllTasks() {
     location.assign("../contents/employee-tasks.html");
 }
-function close() {
+
+function closeTasks() {
     location.assign("../contents/employee-dashboard.html");
 }

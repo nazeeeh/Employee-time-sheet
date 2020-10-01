@@ -58,9 +58,13 @@ function setSecs(){
     }
 
     document.getElementById("seconds").textContent = "0" + seconds
-    if(seconds >= 10){
+    // I only set the second time to zero as soon as it hits 60 using this if statement. - Peter
+    if(seconds == 60){
+        document.getElementById("seconds").textContent = "00"
+    } else if(seconds >= 10){
         document.getElementById("seconds").textContent = seconds
-    }
+    } 
+    
 }
 
 function setMins(){
@@ -75,6 +79,12 @@ function setMins(){
     if(minutes >= 10){
         document.getElementById("mins").textContent = minutes
     }
+    // Did same as seconds for minutes also - Peter
+    if(minutes == 60){
+        document.getElementById("min").textContent = "00"
+    } else if(minutes >= 10){
+        document.getElementById("min").textContent = minutes
+    } 
 }
 
 function setHours(){

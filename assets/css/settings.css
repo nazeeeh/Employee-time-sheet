@@ -33,7 +33,6 @@
 .profile-settings .profile-part2 {
     flex-direction: column;
     flex: 4;
-    justify-content: space-between;
 }
 
 .profile-settings .profile-part2 .profile-part2-content {
@@ -84,6 +83,7 @@
     font-size: 1rem;
     font-weight: 500;
     padding: 20px 0;
+    text-align: center;
 }
 
 .profile-settings .profile-part2 .profile-part2-top {
@@ -127,6 +127,11 @@
     margin-top: 10px;
 }
 
+
+.profile-settings .profile-part2 .profile-part2-content .profile-fill-in > div > div > p {
+    width: 100%;
+}
+
 .profile-settings .profile-part2 .profile-part2-content .profile-fill-in > div > div > p:focus {
     outline: none;
 }
@@ -151,5 +156,73 @@
     border-radius: 5px;
     position: absolute;
     right: 0;
+    /* top: 20px; */
     bottom: 0;
+}
+
+.profile-settings .profile-part2 .notification-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 40px;
+}
+
+.profile-settings .profile-part2 .notification-content div {
+    padding: 15px 0;
+}
+
+.profile-settings .profile-part2 .notification-content div p {
+    font-family: "Roboto", sans-serif; 
+    color: #222;
+}
+
+ .profile-settings .profile-part2 .notification-content .notification-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-settings .profile-part2 .notification-content .notification-value div {
+    margin-right: 30px;
+    position: relative;
+    padding: 0;
+}
+
+.profile-settings .profile-part2 .change-password-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif;
+    height: 300px;
+    width: 400px;
+    background-color: #4D8AF099;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.profile-settings .profile-part2 .change-password-form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-settings .profile-part2 .change-password-form div input {
+    width: 220px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.profile-settings .profile-part2 .change-password-form a {
+    align-self: center;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    color: #213260;
+    font-weight: bold;
 }

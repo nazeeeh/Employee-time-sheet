@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -28,11 +29,10 @@
             document.title = hour + ":" + minute + ":" + second
             // document.title = monthname + " " + day + ", " + year + " - " + hour + ":" + minute + ":" + second
             setTimeout(bar_clock, 1000)
-        
         };
     </script>
 </head>
-<body onLoad ="bar_clock()"">
+<body onLoad ="bar_clock()">
     <div class="dashboard-container">
         <div class="sidebar-container">
           <div class="sidebar-wrapper">
@@ -123,7 +123,7 @@
                     <div id="cards-con">
                         <!-- first card -->
                         <div class="cards">
-                            <h5>Uncompleted Tasks(<span class="Pendingtask">115</span>)</h5>
+                            <h5>Uncompleted Tasks(<span class="Pendingtask">0</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress green">
                                     <span class="percent">85%</span>
@@ -142,7 +142,7 @@
                         </div>
                         <!-- second card -->
                         <div class="cards">
-                            <h5>Pending Tasks(<span class="Pendingtask">115</span>)</h5>
+                            <h5>Pending Tasks(<span class="Pendingtask">0</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress yellow">
                                     <span class="percent">75%</span>
@@ -161,7 +161,7 @@
                         </div>
                         <!-- third card -->
                         <div class="cards">
-                            <h5>Unassigned Tasks(<span class="Pendingtask">115</span>)</h5>
+                            <h5>Unassigned Tasks(<span class="Pendingtask">0</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress blue">
                                     <span class="percent">50%</span>

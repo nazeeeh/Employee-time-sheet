@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
-html, 
-body{
-  /* font-family: "Open Sans"; */
+a{
+  text-decoration: none;
+  color: #213260;
+  font-family: 700;
 }
 
 /* fonts */

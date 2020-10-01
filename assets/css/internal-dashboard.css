@@ -49,6 +49,7 @@ header #right-in button#start-time, header #right-in button#stop-time{
     padding: 0 6px;
     height: 30px;
     color: white;
+    cursor: pointer;
 }
 /* Start timer button */
 header #right-in button#start-time{
@@ -314,6 +315,7 @@ header #right-in #other-in .profile-in button img{
 }
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks .delete-task, #body-in #cards-con .cards:nth-of-type(4) #display-tasks .edit-task{
     font-size: 10px;
+    cursor: pointer;
 }
 #body-in #cards-con .cards a{
     margin: 10px 10px 0 10px;
