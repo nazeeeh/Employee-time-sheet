@@ -39,6 +39,7 @@ input[type=tel]{
   cursor: pointer;
   font-weight: 500;
   outline: none;
+  border-radius: 5px;
 }
 
 .to-btn:hover{
