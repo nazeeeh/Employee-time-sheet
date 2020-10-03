@@ -5,20 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Software to track time in a working environment, an employee timesheet">
   <meta name="keyword" content="timesheet software, time track">
+  <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
   <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/component.css">
+  <link rel="stylesheet" href="./assets/css/utilities.css">
   <title>Pace Time-Sheet</title>
 </head>
 <body>
+  <main-header></main-header>  
+
   <div class="landing-page-container">
     <div class="landing-page-body">
       <div class="free-trial-form">
-        <h3>Keep track of your time</h3>
-        <form class="trial-form" name="trial-form">
-          <input type="text" placeholder="Enter company email" required>
-          <input type="submit" value="Try 30 days free">
+        <h3 class="roboto-slab">Track Your Time <br>At Your Own <img src="assets/img/Vector.png" alt=""> Pace</h3> 
+        <p>Spend less time making the right and informed decisions</p>
+        <form class="trial-form" name="form" netlify>
+          <input type="text" name="email" placeholder="Your Company's Email" required>
+          <input type="submit" value="Let's Go">
         </form>
       </div>
+      <!-- Features With Logo -->
+      <div class="features-container">
+        <div class="features-items">
+          <div class="logo"><img src="assets/img/landing-page/13.png"><p>  Time<br>Tracking</p></div>
+          <div class="logo"><img src="assets/img/landing-page/14.png"><p>Productivity <br>Monitoring</p></div>
+          <div class="logo"><img src="assets/img/landing-page/15.png"><p>Reporting <br> Sheet</p></div>
+          <div class="logo"><img src="assets/img/landing-page/16.png"><p>Time <br>Scheduling</p></div>
+          <div class="logo"><img src="assets/img/landing-page/17.png"><p>Online  <br>Timesheet</p></div>
+          <div class="logo"><img src="assets/img/landing-page/18.png"><p>Team  <br>Memos</p></div>
+        </div>
+      </div>
     </div>
+    <!-- End of Features with Logo -->
+
+
+    <!-- Features Information -->
+
+    <div class="features-section-2">
+      <div class="heading-con">
+        <h3 id="logo-heading" class="roboto-slab">Everything your team needs to work smarter</h3>
+      </div>
+        <div class="features-wrapper">
+        <div class="features-section-2-logo"><img src="assets/img/landing-page/19.png"></div>
+        <div class="features-section-2-logo"><img src="assets/img/landing-page/20.png"></div>
+        <div class="features-section-2-logo"><img src="assets/img/landing-page/21.png"></div>
+        <div class="features-section-2-logo"><img src="assets/img/landing-page/22.png"></div>
+        <div class="features-section-2-logo"><img src="assets/img/landing-page/23.png"></div>
+        <div class="features-section-2-logo"><img src="assets/img/landing-page/24.png"></div>
+      </div>
+      <!-- Feature text Summary -->
+      <div class="features-summary">
+        <h3>Simple, accurate work time tracking software for growing businesses</h3>
+         <h3 id="second-summary"> Easy time tracking. Stress-free work monitoring. Advanced reporting.</h3>
+        </h3>
+      </div>
+      <a href="./contents/feed-back.html" class="feedback"><img src="/assets/img/feedback-icon.png" alt=""></a>
+      <!-- Hello To Pace Section -->
+      <!-- <div class="hello-to-pace-container">
+          <h2>Say hello to Pace</h2>
+          <p>And goodbye to inefficiency, frustration, clunky timesheets — you get the idea</p>
+      </div> -->
+    <main-footer></main-footer>
+    </div>
+    <!-- End of Body Container -->
+
+    <!-- js files -->
+   <script type="text/javascript" src="./assets/js/component.js"></script>
   </div>
 </body>
 </html>

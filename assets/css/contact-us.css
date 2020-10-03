@@ -1,101 +1,186 @@
+/* 
+==================================
+*********   RESET ****************
+==================================
+ */
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
 }
-
-html, body{
-   background: #fa8526;
-    line-height: 1.6;
-    min-height: 100vh;
-    margin: 0;
+html, body {
     padding: 0;
-    scroll-behavior: smooth;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
 }
 
-#contact{
-    color: #fdf5e6; 
-    margin: 1rem auto;
-    padding: 2rem;  
-    text-align: center;
-    text-transform: uppercase;
-}
-
-#contact .icon{
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    margin: 3rem auto;
-    
-}
-
-#contact .icon a i{
-    color: #fdf5e6;
-    font-size: 3rem;
-    margin:  0 ;
-    padding: 0 .5em;
-}
-
+/* main{
+    max-width: 100vw;
+    max-height: 100vh;
+} */
+/* UncleBay touched here */
+/* MAKE PAGE LINK ACTIVE */
+.nav-list a.contact{
+    background: #fff;
+    color:#333;
+  }
 /* 
-=========================
-    contact form
-=========================
-*/
-.contact-form{
-	margin: auto;
-	padding: 1em;
-	width: 40%;
-	background: #fff;
-    border-radius: 3em;	
-    box-shadow: #000 10px 5px 15px;
+==================================
+***** CONTACT CONTAINER    *******
+==================================
+ */
+.contact-container {
+    min-height: 100vh;
 }
-
-.contact-form input{
-    padding: .5em;
-	border-radius: 5em;
+/* 
+==================================
+*******  CONTACT FORM ************
+==================================
+ */
+.contact-form {
+    margin: 5rem auto;
+    width: 55%;
 }
-
-@media(max-width:800px){
-    #contact{
-        width: auto;
-    }
-    .contact-form{
-        width: 100%;
-    }
-    #contact .icon a i{
-        font-size: 2rem;
-        margin:  0 ;
-        padding: 0 .2em;
-    }
+/* 
+==================================
+***    CONTACT FORM  HEADING ***
+==================================
+ */
+.contact-form header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:  2rem 1rem .2rem;
+    font-size: 50px;
+    line-height: 35px;
+    color: #000000;
+    width: 100%;
+    border: 1px solid #C4C4C4;
+    border-radius: 0px 0px 15px 15px;
+    border-top: 8px solid #213260; 
+    white-space: nowrap;
 }
-
-textarea{
-    height: 15em;
+.contact-form header h2 {
+    font-size: 3rem;
+    color: #213260;
+}   
+.contact-form header .icon {
+    display: flex;
+    font-size: 3rem;
+    margin:   1rem;
 }
-
-.contact-form input, textarea{
+.contact-form header .icon a i {
+    color: #213260;
+    margin:   .5rem;
+    padding: .5rem;
+}
+.contact-form header .icon a i:hover {
+    color:#4D8AF0;
+}
+.contact-form fieldset {
+    width: 100%;
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+    margin: 1rem 0;
+}
+.contact-form fieldset label,
+.contact-form fieldset p {
     display: block;
     width: 80%;
-    margin: 1em auto;
+    color: #213260 ;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
-
-input:focus, textarea:focus{
+/* 
+==================================
+***    CONTACT FORM INPUT ***
+==================================
+ */
+.contact-form fieldset input {
+    width: 50%;
+    padding-top: 1rem;
+    margin: .3rem .9rem 2rem;
+    font-size: 1.5rem;
+    border-color: transparent;
+    border-bottom: 1px solid #C4C4C4;   
+}
+.contact-form fieldset textarea {
+    resize: none;
+    width: 95%;
+    height: 200px;
+    margin:  0 1rem 1rem;
+    font-size: 1.5rem;
+}
+/* 
+==================================
+*** HOVER STATE FOR INPUT ***
+==================================
+ */
+.contact-form fieldset input:hover {
+    border-color: transparent;
+    border-bottom: 1px solid #4D8AF0;
+}
+/* 
+============================================
+*** HOVER STATE FOR FIELDSET & TEXTAREA ***
+============================================
+ */
+.contact-form fieldset:hover,
+.contact-form fieldset textarea:hover {
+    border: 2px solid #4D8AF0;
+}
+/* 
+==================================================
+*** FOCUS STATE STYLING FOR INPUT & TEXTAREA ***
+==================================================
+ */
+.contact-form fieldset input:focus,
+.contact-form fieldset textarea:focus {
     outline: none;
-    background: #fa8526;
 }
-
-.contact-form input[type=submit]{
-    display: block;
-    margin: auto;
-    padding: 1em;
-    width: 8em;
-    font-size: 1em;
-}
-
-input[type=submit]{
-    background: #fa8526;
-    color: #f0ffff;
-    text-transform: uppercase;
-    text-align: center;
+/* 
+==================================
+*** CONTACT FORM SUBMIT BUTTON ***
+==================================
+ */
+input[type=submit] {
+    width: 11rem;
+    padding: .5rem;
+    background: #213260;
+    color: #fff;
+    font-size: 1.8rem;
     border: none;
+    border-radius: .32rem;
+    opacity: .9;
 }
+input[type=submit]:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+/* 
+==================================
+******** MOBILE VIEW STYLE *******
+==================================
+ */
+ @media(max-width:768px){
+    .contact-form {
+        margin: 8rem auto;
+        width: 90%;
+    }
+    .contact-form header .icon {
+        font-size: 2rem;
+        margin:   .7rem 0 .2rem;
+        padding: .2rem .3rem 0;
+    }
+    .contact-form fieldset input {
+        width: 95%;
+        font-size: 1.2rem;
+    }
+    .contact-form fieldset textarea {
+        width: 90%;
+        font-size: 1.5rem;
+        padding: .2rem;
+    }
+ }

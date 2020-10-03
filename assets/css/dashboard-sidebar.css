@@ -1,0 +1,86 @@
+/* resetting the browser display */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Flex the dashboard container to have the sidebar and main aside */
+.dashboard-container{
+  display: flex;
+}
+
+/* flex the sidebar-container to make the inner content direct in columns*/
+.sidebar-container{
+  width: 18%;
+  /* height: 100vh; enable to see effect */
+  background: rgb(33,50,96);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/* Company Display Name */
+.company #companyDisplay{
+  color: #fff;
+  font-size: 22px; /* or 2rem ?*/
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.company #companyDisplay .greetUser{
+  text-transform: capitalize;
+}
+
+
+/* the body has a width of 80%, this might increase or reduce as more work is been done on the sidebar */
+.dashboard-body{
+  width: 80%;
+}
+
+/* flex and Styling the sidebar wrapper to align to the center */
+.sidebar-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Side0-bar-links container */
+.sidebar-links{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Space above the links and logo */
+.dashboard-link{
+  margin: 20px;
+}
+/* dashboard links logo*/
+.dashboard-link i{
+  color: #fff;
+  font-size: 16px;
+}
+#companyImage{
+  height: 100px;
+  border-radius: 5px;
+}
+/* Hamburger menu */
+.fa-bars{
+  position: relative;
+  bottom: 87px;
+  color: #ffff;
+  left: 60px;
+  font-size: 23px;
+  cursor: pointer;
+}
+.fa-bars:active{
+  color: #ccc;
+
+}
+.dashboard-link a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 0px 12px;
+}
