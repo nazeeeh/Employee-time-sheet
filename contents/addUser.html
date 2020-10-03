@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/addUser.css">
+  <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+  <title>Pace | Dashboard</title>
+</head>
+<body>
+  <!-- main dashboard -->
+<div class="dashboard-container">
+  <div class="sidebar-container">
+    <div class="sidebar-wrapper">
+      <div class="company">
+        <i id="logo" class=""></i>
+        <h4 id="name">TIIDELab</h4>
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <div class="sidebar-links">
+        <!-- Link Start -->
+        <div class="dashboard-link">
+          <i class="fas fa-chart-pie"></i>
+          <a href="">Employee Status</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-user-friends"></i>
+          <a href="">Add User</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-calendar-alt"></i>
+          <a href="">Calender</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-calendar-plus"></i>
+          <a href="">e-Schedule</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-flag-checkered"></i>
+          <a href="">Report</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-stream"></i>
+          <a href="">Billing Rate</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-bell"></i>
+          <a href="">Requests</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-sliders-h"></i>
+          <a href="/contents/settings.html">Settings</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-sign-out-alt"></i>
+          <a href="/index.html" onclick="logout()">Logout</a>
+        </div>
+
+        <!-- End of Side-bar-Link -->
+      </div>
+
+    </div>
+  </div>
+  <!-- this is where the dashboard components goes -->
+  <div class="dashboard-body">
+    <div id="container">
+      <header id="header">
+        <button class="to-btn"><i class="fas fa-plus"></i> Add Employee</button>
+      </header>
+      <section id="main">
+        <h1>Employee List</h1>
+        <nav class="tabs">
+          <ul>
+            <li>All Employees</li>
+            <li>Management</li>
+            <li>Others</li>
+          </ul>
+          <section id="search-container">
+            <input type="text" placeholder="Enter Name">
+            <a href="#" class="to-btn btn-deep">Search</a>
+          </section>
+        </nav>
+      <table id="employee_list">
+        <thead>
+          <tr id="profile-details">
+            <td>S/N</td>
+            <td>Status <span>|</span> Basic Details</td>
+            <td>Designation</td>
+            <td>Phone Number</td>
+            <td>Joining Date</td>
+          </tr>
+        </thead>
+        <section>
+          <tr class="profile">
+            <td>1</td>
+            <td> <i class="fas fa-dot-circle status red-status"></i> Ayodele Samuel Adebayo </td>
+            <td>Frontend Developer</td>
+            <td>090879988383</td>
+            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+          </tr>
+          <tr class="profile">
+            <td>2</td>
+            <td> <i class="fas fa-dot-circle status red-status"></i> Ariyibi Baseet </td>
+            <td>Frontend Developer</td>
+            <td>0908798383</td>
+            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+          </tr>
+          <tr class="profile">
+            <td>3</td>
+            <td> <i class="fas fa-dot-circle status green-status"></i> Adeyemo Peter </td>
+            <td>Frontend Developer</td>
+            <td>090879988383</td>
+            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon status red-status" ></i></td>
+          </tr>
+          <tr class="profile">
+            <td>4</td>
+            <td> <i class="fas fa-dot-circle status green-status"></i> Toluwanimi Ayoola </td>
+            <td>Frontend Developer</td>
+            <td>090879988383</td>
+            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
+          </tr>
+          <tr class="profile">
+            <td>5</td>
+            <td> <i class="fas fa-dot-circle status green-status"></i> Opaluwa Aisha </td>
+            <td>Frontend Developer</td>
+            <td>090879988383</td>
+            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
+          </tr>
+          <tr class="profile">
+            <td>6</td>
+            <td> <i class="fas fa-dot-circle status red-status"></i>Akan Asanga </td>
+            <td>Frontend Developer</td>
+            <td>090879988383</td>
+            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+          </tr>
+        </section>
+      </table>
+    <section id="pager-link">
+      <a href="#" class="pager-link_control">Prev</a>
+      <a href="#" >Next</a>
+    </section>
+    
+    </div>
+  
+  </div>
+</div>
+</body>
+</html>

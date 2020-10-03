@@ -10,7 +10,7 @@ if(checkDb == null) // if paceDB does not exist create one
 
 }
 let getUserDetails = () =>
-{ // function to get all user's details
+{ // function to get all user's details from registration form
   
   companyName = document.getElementById("name").value;
   companyEmail = document.getElementById("email").value;
@@ -63,6 +63,40 @@ let getUserDetails = () =>
       default:
         companyLogo = "no_profile_img.png"
     }
+
+        
+    // create local storage for new company employee
+    
+    let _employee_Db = JSON.parse(localStorage.getItem(`${companyName}_employees`));
+    console.log("here")
+    if(_employee_Db == null) // if company local storage does not exist create one 
+    {
+
+      _employee_Db=[]
+
+    }
+    let sample = [
+        {
+        "name":"sam",
+        "role":"coding",
+        "billing_rate":"120k",
+        "complain":"none",
+        },
+        {
+        "name":"tolu",
+        "role":"coding",
+        "billing_rate":"220k",
+        "complain":"food",
+        },
+        {
+        "name":"aisha",
+        "role":"coding",
+        "billing_rate":"320k",
+        "complain":"work",
+        },
+    ]
+    localStorage.setItem(`${companyName}_employees`, JSON.stringify(sample))
+
     alert(companyLogo)
     let newCompany = {
       "name" : companyName,
@@ -71,11 +105,15 @@ let getUserDetails = () =>
       "type" : companyType,
       "password" : companyPassword,
       "url" : companyUrl,
-      "logo" : companyLogo
+      "logo" : companyLogo,
+      "employeeDb" : localStorage.getItem(`${companyName}_employees`)
 
     }
-
+    alert(`database created successfully ${newCompany.employeeDb}`)
+   
     checkDb.push(newCompany)
+
+    // push new company information into the local storage
     localStorage.setItem("paceDB", JSON.stringify(checkDb))
     validateReg()
 
@@ -90,3 +128,4 @@ let getUserDetails = () =>
   }
 
 }
+
