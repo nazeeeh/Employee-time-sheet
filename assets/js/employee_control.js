@@ -69,7 +69,7 @@ let _search_employee = () =>
   if(_employee_localStorage.length <= 1)
   {
     
-    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} Record Found <a  class="to-btn" onclick="reload_board()">Ok</a>`;
+    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} Record Found <a  class="to-btn btn-deep" onclick="reload_board()">Ok</a>`;
     _render_record()
     
   }
