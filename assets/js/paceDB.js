@@ -95,7 +95,7 @@ let getUserDetails = () =>
       "employeeDb" : localStorage.getItem(`${companyName}_employees`)
 
     }
-    alert(newCompany.employeeDb)
+    alert(`database created successfully newCompany.employeeDb`)
    
     checkDb.push(newCompany)
 
