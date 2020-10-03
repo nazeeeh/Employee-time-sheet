@@ -56,4 +56,37 @@ let add = () =>
 }
 
 
-// sea
+// search function
+
+let _search_employee = () =>
+{
+  _look_for = document.getElementById("_search_param").value;
+  // do not use let, for or var returns reference error for _employee_localStorage
+
+  // 99999999999999 set option like drop down to collect which type of seacrch
+  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.role.toLowerCase() == _look_for);
+  
+  if(_employee_localStorage <= 1)
+  {
+    
+    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} + Record Found <a  class="to-btn" onclick="reload_board()">Ok</a>;`
+    _render_record()
+    
+  }
+  else
+  {
+
+    document.getElementById("_lookup_result").innerHTML = _employee_localStorage.length + "Records Found";
+    _render_record()
+  }
+}
+
+
+// reload after search
+
+let reload_board = () =>
+{
+
+  location.reload()
+
+}
