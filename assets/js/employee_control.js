@@ -19,12 +19,13 @@ let show = () =>
 {
   console.log("heheheh")
   var employee_con = "";
-  for (i = 2; i < this_is_it.length; i++)
+  let serialNumber = 0;
+  for (i = 0; i < this_is_it.length; i++)
   {
   
     employee_con += `
     <tr>
-      <td>1</td>
+      <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${this_is_it[i].name}</td>
       <td>${this_is_it[i].role}</td>
       <td>090879988383</td>

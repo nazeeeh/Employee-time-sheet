@@ -1,5 +1,6 @@
 body{
   background: #f4f4f4f4;;
+  
 }
 #container{
   /* width:70%; */
@@ -53,12 +54,12 @@ body{
   cursor: pointer;
 }
 
-tbody#main .tabs ul > li{
+section#main .tabs ul > li{
   font-size: 19px;
   padding: 8px 10px;
 }
 
-tbody#main .tabs ul > li:first-of-type{
+section#main .tabs ul > li:first-of-type{
 
   border-bottom: 3px solid rgb(240, 108, 108);
 
