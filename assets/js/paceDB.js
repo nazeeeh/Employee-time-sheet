@@ -75,12 +75,26 @@ let getUserDetails = () =>
       _employee_Db=[]
 
     }
-    let sample = {
-      "name":"sam",
-      "role":"coding",
-      "billing rate":"120k",
-      "complain":"none",
-    }
+    let sample = [
+        {
+        "name":"sam",
+        "role":"coding",
+        "billing_rate":"120k",
+        "complain":"none",
+        },
+        {
+        "name":"tolu",
+        "role":"coding",
+        "billing_rate":"220k",
+        "complain":"food",
+        },
+        {
+        "name":"aisha",
+        "role":"coding",
+        "billing_rate":"320k",
+        "complain":"work",
+        },
+    ]
     localStorage.setItem(`${companyName}_employees`, JSON.stringify(sample))
 
     alert(companyLogo)
@@ -95,7 +109,7 @@ let getUserDetails = () =>
       "employeeDb" : localStorage.getItem(`${companyName}_employees`)
 
     }
-    alert(`database created successfully newCompany.employeeDb`)
+    alert(`database created successfully ${newCompany.employeeDb}`)
    
     checkDb.push(newCompany)
 
