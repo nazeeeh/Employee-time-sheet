@@ -3,7 +3,12 @@ function closeTasks() {
 }
 
  // getting tasks from local storage
- JSON.parse(localStorage.getItem("tasks"))
+ let tasks = JSON.parse(localStorage.getItem("tasks"));
+ if(tasks == null)
+     {
+        tasks = [];
+
+     }
    
 
 
@@ -20,7 +25,7 @@ function viewTasks() {
             </tr>
         </thead>
     `
-    for(let i = 0; i < tasks.length; i++) {
+    for(let i = 0; i <tasks.length; i++) {
         view += `
         <tbody>
             <tr>
