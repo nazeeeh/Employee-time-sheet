@@ -5,80 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/utilities.css">
   <link rel="stylesheet" href="/assets/css/addUser.css">
+  <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
   <title>Add User</title>
 </head>
 <body>
   <div id="container">
     <header id="header">
-      <button class="to-btn">Add user</button>
+      <button class="to-btn"><i class="fas fa-plus"></i> Add Employee</button>
     </header>
     <section id="main">
-      <h1>Dashboard</h1>
+      <h1>Employee List</h1>
       <nav class="tabs">
         <ul>
           <li>All Employees</li>
-          <li>Internal Employees</li>
-          <li>Employees</li>
+          <li>Management</li>
+          <li>Others</li>
         </ul>
       </nav>
-      <section id="board">
-        <div id="details">
-          <nav id="details-label">
-            <ul>
-              <li>Basic Info</li>
-              <li>Designation</li>
-              <li>Phone Number</li>
-              <li>Joining Date</liclass=>
-            </ul>
-          </nav>
-          <section id="all-employees">
-            <div class="profile-card">
-              <ul>
-                <li>1</li>
-                <li>Ayodele Samuel Adebayo  </li>
-                <li>Frontend Developer</li>
-                <li class="to_left">09087661521</li>
-                <li class="to_left">Aug 12, 2020</li>
-              </ul>
-            </div>
-          </section>
-          <section id="all-employees">
-            <div class="profile-card">
-              <ul>
-                <li>2</li>
-                <li>Adeyemo Peter  </li>
-                <li>Frontend Developer</li>
-                <li class="to_left">09087661521</li>
-                <li class="to_left">Aug 12, 2020</li>
-              </ul>
-            </div>
-          </section>
-          <section id="all-employees">
-            <div class="profile-card">
-              <ul>
-                <li>3</li>
-                <li>Opaluwa Aisha</li>
-                <li>Frontend Developer</li>
-                <li class="to_left">09087661521</li>
-                <li class="to_left">Aug 12, 2020</li>
-              </ul>
-            </div>
-          </section>
-        </div>
+      
+    <table id="employee_list">
+      <thead>
+        <tr id="profile-details">
+          <td>S/N</td>
+          <td>Basic Details</td>
+          <td> Designation</td>
+          <td>Phone Number</td>
+          <td>Joining Date</td>
+        </tr>
+      </thead>
+      <section>
+        <tr class="profile">
+          <td>1</td>
+          <td>Ayodele Samuel Adebayo</td>
+          <td>Frontend Developer</td>
+          <td>090879988383</td>
+          <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+        </tr>
+        <tr class="profile">
+          <td>2</td>
+          <td>Ariyibi Baseet</td>
+          <td>Frontend Developer</td>
+          <td>0908798383</td>
+          <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+        </tr>
+        <tr class="profile">
+          <td>3</td>
+          <td>Adeyemo Peter</td>
+          <td>Frontend Developer</td>
+          <td>090879988383</td>
+          <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
+        </tr>
+        <tr class="profile">
+          <td>4</td>
+          <td>Toluwanimi Ayoola</td>
+          <td>Frontend Developer</td>
+          <td>090879988383</td>
+          <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
+        </tr>
+        <tr class="profile">
+          <td>5</td>
+          <td>Opaluwa Aisha</td>
+          <td>Frontend Developer</td>
+          <td>090879988383</td>
+          <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
+        </tr>
+        <tr class="profile">
+          <td>6</td>
+          <td>Akan Asanga</td>
+          <td>Frontend Developer</td>
+          <td>090879988383</td>
+          <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+        </tr>
       </section>
-    </section>
+    </table>
+  <section id="pager-link">
+    <a href="#" class="pager-link_control">Prev</a>
+    <a href="#" >Next</a>
+  </section>
+  
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <td>Basic Details</td>
-        <td> Designation</td>
-        <td>Phone Number</td>
-        <td>Joining Date</td>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+
 </body>
 </html>

@@ -3,32 +3,40 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: #f4f4f4f4;;
 }
 #container{
   width:70%;
   padding: 23px;
 }
 
-/* Navigation tabs styles*/
-#main .tabs ul{
-  display: flex;
-  gap: 23px;
-  list-style-type: none;
-}
-
 /* add user button */
-#container #header{  
-  margin-right: auto;
-}
-
 #container #header button{
   display:block;
   margin-left: auto;
+  color: #333;
 }
 
-/* main body  */
+/* Navigation tabs styles*/
+.tabs{
+  margin: 30px;
+}
+
+#main h1{
+  margin-left: 20px;
+}
+#main .tabs ul{
+  display: flex;
+  gap: 23px;
+  justify-content: start;
+  list-style-type: none;
+  cursor: pointer;
+}
+
 section#main .tabs ul > li{
-  color: red;
+  position: relative;
+  right: 53px;
+  font-size: 19px;
   padding: 8px 10px;
 }
 
@@ -38,47 +46,57 @@ section#main .tabs ul > li:first-of-type{
 
 }
 
-/* display board */
-section#board{
+
+/* table style */
+table#employee_list{
   /* background: red; */
-}
-section#board #details-label ul{
-
-  list-style-type: none;
-  display: flex;
-  gap: 23px;
-  /* justify-content: center; */
-
+  padding: 12px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.4rem;
 }
 
-section#board #details-label ul > li:first-of-type{
-  margin-right: 230px; /* add space from the first tab */
+table section{
 }
 
-section#board  #details-label ul > li{
-  padding: 9px 12px;
+#profile-details td{
+  font-size: 18px;
+}
+
+.profile td{
+  padding-top: 30px;
   font-size: 16px;
+}
+
+.profile{
+  /* box-shadow: 0px 1px 0px 0px #333; */
+  border-radius: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.more-icon{
+  float: right;
+  clear: both;
+  margin-right: 10px;
   color: #333;
-  margin-right: 30px;
+  cursor: pointer;
 }
 
-
-/* Employee profiles */
-
-section#all-employees ul{
-  list-style-type: none;
-  display: flex;
-  gap: 30px;
-  padding: 9px 12px;
-
+#pager-link{
+  margin-top: 4px;
+  padding: 12px;
 }
 
-
-section#all-employees ul > li:nth-child(2){
-  margin-right: 146px;
+#pager-link a{
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  /* background: black; */
 }
-
-
-section#all-employees ul li:last-child{
-  margin-left: 55px;
+/* to set next to left and a margin for itself */
+#pager-link .pager-link_control{
+  /* float: right; */
+  margin-left: 10%;
+  margin-right: 65%;
 }
