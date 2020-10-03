@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
-    <link rel="stylesheet" href="/assets/css/employee-dashboard.css" />
+    <link rel="stylesheet" href="/assets/css/report.css" />
     <title>Pace | Employee Dashboard</title>
     <script language="javascript" type="text/javascript">
         let bar_clock = () => { // function to display timer on the title bar
@@ -102,89 +102,35 @@
         </div>
         <!-- this is where the dashboard components goes -->
         <div class="dashboard-body">
-            <main class="internal-con">
-                <!-- header starts here -->
-                <header>
-                    <div id="search-in">
-                        <input type="text" placeholder="Search">
-                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            <main id="report">
+                <!-- report form starts here -->
+                <div class="report-container">
+                    <div class="report-form-wrapper">
+                        <form action="" class="form">
+                            <div class="form-detail">
+                                <h3>Title</h3>
+                                <input type="text" id="title">
+                            </div>
+                            <div>
+                                <h3 class="statement">Report Statement</h3>
+                                <textarea name="message" id="message" cols="45" rows="12" required></textarea>
+                            </div>
+                            <label for="avatar">Upload document</label><br>
+                            <input type="file" id="document" name="document" class="document-upload" accept=".pdf, .doc">
+                            <br>
+                            <input type="submit" value="Send" class="submit">
+                        </form>
                     </div>
-                    <div id="right-in">
-                        <button id="start-time" onclick="startTime()">Start Time</button>
-                        <div id="time"><span id="hours">00</span> : <span id="mins">00</span> : <span id="seconds">00</span></div>
-                        <button id="stop-time" onclick="stopTime()">Stop Time</button>
-                        <div id="other-in">
-                            <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
-                            <div class="profile-in">
-                                <button> <img src="" alt=""> Akan Asanga</button>
-                                <div class="dropdown-in">
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="img-monitor">
+                    <div class="monitor-report">
+                        <img src="../assets/img/monitor.png" alt="" class="monitor-img"><br>
+                        <img src="../assets/img/schedule.PNG" alt="" class="time-board">
                     </div>
-                </header>
-                <!-- header ends here -->
-                <main id="body-in">
-                    <!-- div containing cards -->
-                    <div id="cards-con">
-                        <div></div>
-                        <!-- first card -->
-                        <div class="cards">
-                            <div class="details">
-                                <h5>Current Task</h5>
-                                <a href="#">Resume</a>
-                            </div>
-                        </div>
-                        <!-- second card -->
-                        <div class="cards">
-                            <div class="details">
-                                <h5>View Document</h5>
-                                <a href="#">View</a>
-                            </div>
-                        </div>
-                        <!-- third card -->
-                        <div class="cards">
-                            <div class="details">
-                                <h5>Upload Document</h5>
-                                <a href="#">Upload</a>
-                            </div>
-                        </div>
-                        <!-- fourth card -->
-                        <div class="cards">
-                            <a href="#" id="tasks-link" onclick="viewAllTasks()">View all tasks
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                        </div>
-                    </div>
-                    <!-- end os cards -->
-
-                    <!-- calendar section-->
-                    <div id="body-con-in">
-                        <section id="section-one-in">
-                            <h3>Month view for <span id="dateHolder" /></h3>
-                            <table id="calWrapper"></table>
-                        </section>
-                        <!-- list section todo-list -->
-                        <section id="section-two">
-                            <div class="cards-todo">
-                                <h3>Todo-List</h3>
-                                <button onclick="addTodoList()">Add</button>
-                                <div id="new-task">
-                                    <!-- <input type="text" id="todo-list" placeholder="Todo-List" required /> -->
-                                    <div id="todoTask"></div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </main>
+                </div>
             </main>
         </div>
     </div>
-    </div>
-    <script src="/assets/js/employee-dashboard.js"></script>
-    <script src="/assets/js/internal-dashboard.js"></script>
-    <script src="/assets/js/employee-tasks.js"></script>
 </body>
 
 </html>

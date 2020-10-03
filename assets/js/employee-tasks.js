@@ -3,14 +3,44 @@ function closeTasks() {
 }
 
 
-function see () {
-    eTasks = JSON.parse(localStorage.getItem("tasks"))
+    let tasks = JSON.parse(localStorage.getItem("tasks"))
+   
 
-    if(eTasks==null) {
-        eTasks = [];
-    }
-    eData = JSON.stringify(eTasks)
-alert(eData);
+
+
+function viewTasks() {
+    let view = `
+    <table>
+    <thead>
+            <tr>
+            <th>S/N</th>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th> Status</th>
+            </tr>
+        </thead>
+    `
+    for(let i = 0; i < tasks.length; i++) {
+        view += `
+        <tbody>
+            <tr>
+            <td>${i + 1}</td>
+            <td>${tasks[i].name}</td>
+            <td>${tasks[i].due}</td>
+            <td><a href="#">accept</a></td>
+        ` }
+        view += `
+        </tr>
+    </tbody>
+    </table>
+    <button onclick="closeTasks()">close</button>
+    `
+    document.getElementById('view-tasks').innerHTML = view;
 }
 
-// i need to get the data from the local storage then check if it matches the employee's name and save it
+viewTasks();
+
+
+
+
+

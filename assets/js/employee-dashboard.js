@@ -33,7 +33,7 @@ function changeTimerButton2() {
     day = today.getDate();
     year = today.getFullYear();
 
-    firstDay = new Date(year, month, 1);
+    firstDay = new Date(year, month, 0);
 
     var months = [
         "Jan",
