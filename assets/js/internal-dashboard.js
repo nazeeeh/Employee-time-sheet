@@ -53,6 +53,7 @@ function setSecs(){
     if(seconds < 60){
         seconds++
     }else if(seconds == 60){
+        document.getElementById("seconds").innerHTML = "00"
         seconds = 0
         seconds++
     }
@@ -64,7 +65,7 @@ function setSecs(){
     } else if(seconds >= 10){
         document.getElementById("seconds").textContent = seconds
     } 
-    
+   
 }
 
 function setMins(){
@@ -74,12 +75,8 @@ function setMins(){
         minutes = 0
         minutes++
     }
-
     document.getElementById("mins").textContent = "0" + minutes
-    if(minutes >= 10){
-        document.getElementById("mins").textContent = minutes
-    }
-    // Did same as seconds for minutes also - Peter
+      // Did same as seconds for minutes also - Peter
     if(minutes == 60){
         document.getElementById("min").textContent = "00"
     } else if(minutes >= 10){
@@ -88,13 +85,13 @@ function setMins(){
 }
 
 function setHours(){
-    if(hours < 59){
-        hours++
-    }else if(hours == 59){
-        hours = 0
+    if(hours < 60){
         hours++
     }
-    document.getElementById("hours").textContent = hours
+    document.getElementById("hours").textContent = "0" + hours
+    if(minutes >= 10){
+        document.getElementById("hours").textContent = hours
+    }
 }
 
 function startTime(){
@@ -121,10 +118,11 @@ function stopTime(){
     clearInterval(timeMins);
     clearInterval(timeHours);
 
-    let stopHours = hours, stopMins = minutes, stopSecs = seconds
+    // let stopHours = hours, stopMins = minutes, stopSecs = seconds
 
     let startTime = document.getElementById("start-time");
     let stopTime = document.getElementById("stop-time");
+
 
     if (startTime.style.display == "block") {
         startTime.style.display = "none";
@@ -147,11 +145,11 @@ tasks = [
    
 ]
 
-// if(JSON.parse(localStorage.getItem("tasks")) != tasks){
-//     tasks = JSON.parse(localStorage.getItem("tasks"))
-// }else{
-//     tasks
-// }
+if(JSON.parse(localStorage.getItem("tasks")) != tasks){
+    tasks = JSON.parse(localStorage.getItem("tasks"))
+}else{
+    tasks
+}
 localStorage.setItem("tasks",  JSON.stringify(tasks))
 
 displayTask()
@@ -188,6 +186,6 @@ function displayTask(){
 
 function deleteTask(me){
     tasks.splice(me, 1)
-    // localStorage.setItem("adminUsers",  JSON.stringify(adminUsers))
+    localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
