@@ -49,9 +49,9 @@ let add = () =>
     "role" : prompt("Enter role"),
     "complain" : prompt("Enter Complain")
   }
-  alert( _employee_localStorage)
-   _employee_localStorage.push(newAdd);
-  localStorage.setItem(`${_db_name}_employees`, JSON.stringify( _employee_localStorage))
+  alert(`${_employee_localStorage}_employees`)
+  _employee_localStorage.push(newAdd);
+  localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
   _render_record()
 }
 
