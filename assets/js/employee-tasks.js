@@ -44,6 +44,3 @@ viewTasks();
 
 
 
-=======
-// employee_con += `<td><ul>${this_is_it.years.map(year => `<li>${year}</li>`).join("")}</ul></td>`;
->>>>>>> 5316138c7e7b35729e1cf5d5755cec3fc087b64c
