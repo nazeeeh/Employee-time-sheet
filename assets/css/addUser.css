@@ -1,5 +1,6 @@
 body{
   background: #f4f4f4f4;;
+  
 }
 #container{
   /* width:70%; */
@@ -135,7 +136,7 @@ table#employee_list{
   /* background: black; */
 }
 /* to set next to left and a margin for itself */
-#pager-link .pager-link_control{
+#pager-link a.pager-link_control{
   /* float: right; */
   margin-left: 10%;
   margin-right: 65%;

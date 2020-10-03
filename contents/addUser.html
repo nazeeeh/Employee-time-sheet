@@ -87,8 +87,9 @@
             <li>Others</li>
           </ul>
           <section id="search-container">
-            <input type="text" placeholder="Enter Name">
-            <a href="#" class="to-btn btn-deep">Search</a>
+            <span id="_lookup_result"></span>
+            <input type="text" placeholder="Enter Name" id="_search_param">
+            <a href="#" class="to-btn btn-deep" onclick="_search_employee()">Search</a>
           </section>
         </nav>
       <table id="employee_list">
@@ -101,59 +102,16 @@
             <td>Joining Date</td>
           </tr>
         </thead>
-        <section>
-          <tr class="profile">
-            <td>1</td>
-            <td> <i class="fas fa-dot-circle status red-status"></i> Ayodele Samuel Adebayo </td>
-            <td>Frontend Developer</td>
-            <td>090879988383</td>
-            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
-          </tr>
-          <tr class="profile">
-            <td>2</td>
-            <td> <i class="fas fa-dot-circle status red-status"></i> Ariyibi Baseet </td>
-            <td>Frontend Developer</td>
-            <td>0908798383</td>
-            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
-          </tr>
-          <tr class="profile">
-            <td>3</td>
-            <td> <i class="fas fa-dot-circle status green-status"></i> Adeyemo Peter </td>
-            <td>Frontend Developer</td>
-            <td>090879988383</td>
-            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon status red-status" ></i></td>
-          </tr>
-          <tr class="profile">
-            <td>4</td>
-            <td> <i class="fas fa-dot-circle status green-status"></i> Toluwanimi Ayoola </td>
-            <td>Frontend Developer</td>
-            <td>090879988383</td>
-            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
-          </tr>
-          <tr class="profile">
-            <td>5</td>
-            <td> <i class="fas fa-dot-circle status green-status"></i> Opaluwa Aisha </td>
-            <td>Frontend Developer</td>
-            <td>090879988383</td>
-            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon" ></i></td>
-          </tr>
-          <tr class="profile">
-            <td>6</td>
-            <td> <i class="fas fa-dot-circle status red-status"></i>Akan Asanga </td>
-            <td>Frontend Developer</td>
-            <td>090879988383</td>
-            <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
-          </tr>
-        </section>
+        <tbody  class="profile" id="_record_board"></tbody>
       </table>
-    <section id="pager-link">
-      <a href="#" class="pager-link_control">Prev</a>
-      <a href="#" >Next</a>
-    </section>
-    
+      <section id="pager-link">
+        <a href="#" class="pager-link_control">Prev</a>
+        <a href="#" >Next</a>
+      </section> 
     </div>
-  
   </div>
 </div>
+<script src="/assets/js/employee_control.js"></script>
+
 </body>
 </html>
