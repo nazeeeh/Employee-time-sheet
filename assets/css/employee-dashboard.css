@@ -87,6 +87,7 @@ header #right-in button#stop-time {
     padding: 0 6px;
     height: 30px;
     color: white;
+    cursor: pointer;
 }
 
 
@@ -171,10 +172,10 @@ header #right-in #other-in .profile-in button img {
     margin-top: 40px;
 }
 
-div.cards .details a  { 
+div.cards .details a {
     text-decoration: none;
     background: #213260;
-    color: #fff !important; 
+    color: #fff !important;
     padding: 10px;
     border-radius: 5px;
     margin: 0 30px !important;
@@ -227,7 +228,7 @@ div.cards .details a  {
 
 /* This diplays when the text in the card is clicked */
 
- 
+
 /* This displays when the text in the card is clicked */
 
 
