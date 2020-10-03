@@ -2,12 +2,12 @@ function closeTasks() {
     location.assign("../contents/employee-dashboard.html");
 }
 
-
-    let tasks = JSON.parse(localStorage.getItem("tasks"))
+ // getting tasks from local storage
+ JSON.parse(localStorage.getItem("tasks"))
    
 
 
-
+// function to display tasks gotten from local storage
 function viewTasks() {
     let view = `
     <table>
