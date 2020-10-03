@@ -53,12 +53,12 @@ body{
   cursor: pointer;
 }
 
-section#main .tabs ul > li{
+tbody#main .tabs ul > li{
   font-size: 19px;
   padding: 8px 10px;
 }
 
-section#main .tabs ul > li:first-of-type{
+tbody#main .tabs ul > li:first-of-type{
 
   border-bottom: 3px solid rgb(240, 108, 108);
 
@@ -135,7 +135,7 @@ table#employee_list{
   /* background: black; */
 }
 /* to set next to left and a margin for itself */
-#pager-link .pager-link_control{
+#pager-link a.pager-link_control{
   /* float: right; */
   margin-left: 10%;
   margin-right: 65%;

@@ -126,7 +126,7 @@ function displayContent() {
         }
     }
     document.getElementById("todoTask").innerHTML = todoTask;
-    todoList = JSON.parse(localStorage.getItem("todo"));
+    todoList    = JSON.parse(localStorage.getItem("todo"));
 }
 displayContent();
 

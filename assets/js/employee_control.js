@@ -19,15 +19,21 @@ let show = () =>
 {
   console.log("heheheh")
   var employee_con = "";
-  for (i = 0; i < this_is_it.length; i++)
+  for (i = 2; i < this_is_it.length; i++)
   {
+  
     employee_con += `
-      <strong>${this_is_it[i].name}</strong>
-      <strong>${this_is_it[i].role}</strong>
-      <strong>${this_is_it[i].complain}</strong>
+    <tr>
+      <td>1</td>
+      <td> <i class="fas fa-dot-circle status red-status"></i>${this_is_it[i].name}</td>
+      <td>${this_is_it[i].role}</td>
+      <td>090879988383</td>
+      <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+    </tr>
     `
   }
-  document.getElementById("show").innerHTML = employee_con;
+
+  document.getElementById("showit").innerHTML = employee_con;
 
 }
 
