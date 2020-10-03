@@ -1,12 +1,9 @@
 body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background: #f4f4f4f4;;
+  
 }
 #container{
-  width:70%;
+  /* width:70%; */
   padding: 23px;
 }
 
@@ -14,12 +11,36 @@ body{
 #container #header button{
   display:block;
   margin-left: auto;
-  color: #333;
+  color: rgb(41, 38, 38);
+  border: none;
+  font-weight: 700;
 }
 
 /* Navigation tabs styles*/
 .tabs{
-  margin: 30px;
+  margin: 30px 0px 10px 20px;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+.tabs ul > li{
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.tabs ul > li:first-of-type{
+  background: #333;
+}
+
+.tabs ul > li:nth-child(2){
+  background: #333;
+}
+
+.tabs ul > li:last-of-type{
+  background: #333;
 }
 
 #main h1{
@@ -34,37 +55,45 @@ body{
 }
 
 section#main .tabs ul > li{
-  position: relative;
-  right: 53px;
   font-size: 19px;
   padding: 8px 10px;
 }
 
 section#main .tabs ul > li:first-of-type{
 
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid rgb(240, 108, 108);
 
+}
+
+/* search section */
+
+#search-container{
+  display: block;
+  margin-left: auto;
+}
+
+#search-container input{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
 
 /* table style */
 table#employee_list{
-  /* background: red; */
-  padding: 12px;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.4rem;
 }
 
-table section{
-}
-
 #profile-details td{
   font-size: 18px;
+  padding: 15px;
 }
 
 .profile td{
-  padding-top: 30px;
+  padding: 15px;
   font-size: 16px;
 }
 
@@ -73,6 +102,18 @@ table section{
   border-radius: 5px;
   background-color: #fff;
   border-radius: 3px;
+}
+
+.status{
+  margin: 7px;
+}
+
+.red-status{
+  color: red;
+}
+
+.green-status{
+  color: green;
 }
 
 .more-icon{
@@ -95,7 +136,7 @@ table section{
   /* background: black; */
 }
 /* to set next to left and a margin for itself */
-#pager-link .pager-link_control{
+#pager-link a.pager-link_control{
   /* float: right; */
   margin-left: 10%;
   margin-right: 65%;
