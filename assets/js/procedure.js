@@ -1,3 +1,6 @@
+// Validation script for registration
+
+
 var email = document.getElementById("email");
 var password = document.getElementById("password");
 var url = document.getElementById("url");
