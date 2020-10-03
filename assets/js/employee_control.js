@@ -69,14 +69,14 @@ let _search_employee = () =>
   if(_employee_localStorage <= 1)
   {
     
-    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} + Record Found <a  class="to-btn" onclick="reload_board()">Ok</a>;`
+    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} + Record Found <a  class="to-btn" onclick="reload_board()">Ok</a>`;
     _render_record()
     
   }
   else
   {
 
-    document.getElementById("_lookup_result").innerHTML = _employee_localStorage.length + "Records Found";
+    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} + Records Found <a  class="to-btn" onclick="reload_board()">Ok</a>`;
     _render_record()
   }
 }
