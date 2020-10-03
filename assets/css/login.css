@@ -161,7 +161,7 @@ body{
 
 /* Turning <p> to Button Style */
 
-.form-wrapper .form p#form_2Btn{
+.form-wrapper {
   font-size: 18px;
   border-radius: 5px;
   padding: 10px 11px;
