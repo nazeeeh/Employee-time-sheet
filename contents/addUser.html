@@ -111,33 +111,29 @@
     </div>
   </div>
 
-    <script>
-      function add_form(){
-
-        var form = document.getElementById("employ_form").style.display = "flex";
-        
-        // if(form.style.display == "none"){
-          // form.style.display = "block"
-        // }
-      }
-      function close_form(){
-        alert("RE")
-        document.getElementById("employ_form").style.display = "none";
-
-      }
-    </script>
-    
   <div id="employ_form">
-    <button id="close" onclick='close_form()'>close</button>
-    <label for="">Email</label>
-    <input type="text" id="employee_email">
-    <label for="">Full Name</label>
-    <input type="text" id="employee_name">
-    <label for="">Role</label>
-    <input type="text" id="employee_role">
-    <label for="">Phone Number</label>
-    <input type="text" id="employee_phone">
-    <a href="#" class="to-btn btn-deep" onclick="add()">Employ</a>
+    <div id="info">
+      <h3>Employee Type Code</h3>
+      <ul>
+        <li>Co- Admin - 443</li>
+        <li>Internal Admin - 332</li>
+        <li>Employee - 554</li>
+      </ul>
+    </div>
+    <div id="form_section">
+      <h3 class="look"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
+      <label for="">Employee Type</label>
+      <input type="text" id="employee_email">
+      <label for="">Email</label>
+      <input type="text" id="employee_email">
+      <label for="">Full Name</label>
+      <input type="text" id="employee_name">
+      <label for="">Role</label>
+      <input type="text" id="employee_role">
+      <label for="">Phone Number</label>
+      <input type="text" id="employee_phone">
+      <a href="#" class="to-btn btn-deep" onclick="_add_employee()">Employ</a>
+    </div>
   </div>
 </div>
 <script src="/assets/js/employee_control.js"></script>

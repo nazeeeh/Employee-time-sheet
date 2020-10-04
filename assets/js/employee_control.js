@@ -17,7 +17,6 @@ let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name
 /* function to display all record in the local storage */
 let _render_record = () => 
 {
-  console.log("heheheh")
   var employee_con = "";
   let serialNumber = 0;
   for (i = 0; i <  _employee_localStorage.length; i++)
@@ -42,13 +41,31 @@ _render_record()
 
 // add new employee
 
-let add = () =>
+let _add_employee = () =>
 {
   let newAdd = {
+    "email" : document.getElementById("employee_email").value,
     "name" : document.getElementById("employee_name").value,
     "role" : document.getElementById("employee_role").value,
-    "phone" : document.getElementById("employee_phone").value
+    "phone" : document.getElementById("employee_phone").value,
+    "status" : "Active",
+    "user_type" : document.getElementById("employee_phone").value
   }
+
+  if(newAdd.user_type === 1)
+  {
+    newAdd.user_type = "Co-Admin"
+  }
+  else if(newAdd.user_type === 2)
+  {
+    newAdd.user_type = "Internal User"
+  }
+  else if(newAdd.user_type === 3)
+  {
+    newAdd.user_type = "Employee"
+  }
+
+
   alert(`${_employee_localStorage}_employees`)
   _employee_localStorage.push(newAdd);
   localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
@@ -94,6 +111,21 @@ let reload_board = () =>
 
 //  pop up form control
 
-// function form_control(){
-//   document.getElementById("employ_form").style.display 
-// }
+
+function add_form(){
+
+  form = document.getElementById("employ_form");
+  form.style.display = "flex";
+  
+}
+function close_form(){
+  document.getElementById("employ_form").style.display = "none";
+}
+
+// close form when user click outside the form
+// var form = document.getElementById("employ_form");
+window.onclick = function(event) {
+  if (event.target == form ) {
+    form.style.display = "none";
+  }
+}

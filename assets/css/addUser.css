@@ -145,26 +145,80 @@ table#employee_list{
 
 /* modal form */
 
+#close{
+  color: #f4f4f4;
+  float: right;
+  cursor: pointer;
+}
+
 #employ_form{
   position: fixed;
   display: flex;
-  gap: 20px;
-  flex-direction: column;
+  gap: 50px;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  color: #f4f4f4;
   background: rgba(0,0,0,0.8);
-  background: rgba(255,255,255,0.96);
+  /* background: rgba(255,255,255,0.96); */
   display: none;
+  z-index: 99;
 }
-#employ_form label{
-  color: white;
+
+#info{
+  width: 30%;
   color: #333;
+  background: #f4f4f4;
+  margin: 0px;
+  margin-bottom: 400px;
+  border-radius: 6px;
 }
-#employ_form input{
+#info h3,
+.look{
+  padding: 20px;
+  background: #213260;
+  color: whitesmoke;
+}
+
+#info ul{
+  padding: 20px;
+  list-style-type: disc;
+}
+#info ul li{
+  margin: 20px 20px;
+}
+
+#form_section{
+  /* margin-top: 80px; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  width: 50%;
+  background: #ccc;
+  border-radius: 6px;
+}
+
+#form_section #close{
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+}
+
+#form_section label{
+  color: #333;
+  font-size: large;
+}
+#form_section input{
   border: 1px solid #ccc;
-  background: ;
+  background: #f4f4f4;
+  font-size: 17px;
   padding: 12px 20px;
   border-radius: 5px;
+  border-radius: 16px;
+  outline: none;
 }
+
