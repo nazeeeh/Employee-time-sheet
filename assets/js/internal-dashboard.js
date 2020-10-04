@@ -229,3 +229,13 @@ function deleteTask(id){
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
+
+function showNotificationBar(){
+    const notificationBar = document.getElementById("notification-popup");
+
+    if(notificationBar.style.display == "none"){
+        notificationBar.style.display = "block"
+    }else{
+       notificationBar.style.display = "none"
+    }
+}
