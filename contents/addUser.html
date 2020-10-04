@@ -76,7 +76,7 @@
   <div class="dashboard-body">
     <div id="container">
       <header id="header">
-        <button class="to-btn"><i class="fas fa-plus"></i> Add Employee</button>
+        <button class="to-btn" onclick="add()"><i class="fas fa-plus"></i> Add Employee</button>
       </header>
       <section id="main">
         <h1>Employee List</h1>
@@ -87,8 +87,9 @@
             <li>Others</li>
           </ul>
           <section id="search-container">
-            <input type="text" placeholder="Enter Name">
-            <a href="#" class="to-btn btn-deep">Search</a>
+            <span id="_lookup_result"></span>
+            <input type="text" placeholder="Enter Name" id="_search_param">
+            <a href="#" class="to-btn btn-deep" onclick="_search_employee()">Search</a>
           </section>
         </nav>
       <table id="employee_list">
@@ -108,6 +109,18 @@
         <a href="#" >Next</a>
       </section> 
     </div>
+  </div>
+
+  <div id="employ_form">
+    <label for="">Email</label>
+    <input type="text">
+    <label for="">Full Name</label>
+    <input type="text">
+    <label for="">Role</label>
+    <input type="text">
+    <label for="">Phone Number</label>
+    <input type="text">
+    <a href="#" class="to-btn btn-deep">Employ</a>
   </div>
 </div>
 <script src="/assets/js/employee_control.js"></script>

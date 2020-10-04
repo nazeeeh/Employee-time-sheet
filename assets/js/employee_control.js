@@ -49,11 +49,44 @@ let add = () =>
     "role" : prompt("Enter role"),
     "complain" : prompt("Enter Complain")
   }
-  alert( _employee_localStorage)
-   _employee_localStorage.push(newAdd);
-  localStorage.setItem(`${_db_name}_employees`, JSON.stringify( _employee_localStorage))
+  alert(`${_employee_localStorage}_employees`)
+  _employee_localStorage.push(newAdd);
+  localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
   _render_record()
 }
 
 
-// sea
+// search function
+
+let _search_employee = () =>
+{
+  _look_for = document.getElementById("_search_param").value;
+  // do not use let, for or var returns reference error for _employee_localStorage
+
+  // 99999999999999 set option like drop down to collect which type of seacrch
+  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.name.toLowerCase() == _look_for);
+  
+  if(_employee_localStorage.length <= 1)
+  {
+    
+    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} Record Found <a  class="to-btn btn-deep" onclick="reload_board()">Ok</a>`;
+    _render_record()
+    
+  }
+  else
+  {
+
+    document.getElementById("_lookup_result").innerHTML = `${_employee_localStorage.length} Records Found <a  class="to-btn" onclick="reload_board()">Ok</a>`;
+    _render_record()
+  }
+}
+
+
+// reload after search
+
+let reload_board = () =>
+{
+
+  location.reload()
+
+}
