@@ -71,27 +71,29 @@ function addTask(){
     employeeAssigned = document.getElementById("employee-assigned").value,
     dueDate = document.getElementById("due-date").value;
 
-    newTask = {
-        name : taskName,
-        employee : employeeAssigned,
-        due : dueDate
+    if(taskName === ""){
+        CancelNewTask()
+    } else{
+        newTask = {
+            name : taskName,
+            employee : employeeAssigned,
+            due : dueDate
+        }
     }
 
     tasks.push(newTask)
-    localStorage.setItem("tasks",  JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks))
     displayTask()
     CancelNewTask()
 }
 
 function showEditForm(id){
     const editTask = document.getElementById("editTask" + id);
-    const displayTasks = document.getElementById("display");
     const assignLink = document.getElementById("assign-link");
     const seeAllTasks = document.getElementById("see-all-tasks")
 
     if(editTask.style.display == "none"){
         editTask.style.display = "block"
-        displayTasks.style.display = "block"
         assignLink.style.display = "block"
         seeAllTasks.style.display = "block"
     }else{

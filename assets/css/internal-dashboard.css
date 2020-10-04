@@ -362,6 +362,7 @@ header #right-in #other-in .profile-in button img{
 }
 #body-in #cards-con .cards #assign-link{
     display: block;
+    color: darkgray;
 }
 #body-in #cards-con .cards #see-all-tasks{
     font-size: 9px;
