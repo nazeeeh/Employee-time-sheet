@@ -38,6 +38,8 @@ input[type=tel]{
   padding: 10px 10px;
   cursor: pointer;
   font-weight: 500;
+  outline: none;
+  border-radius: 5px;
 }
 
 .to-btn:hover{
@@ -48,14 +50,22 @@ input[type=tel]{
 .btn-size-18{
   color: #333;
   font-size: 18px;
-  background: #fff;
   padding: 10px 10px;
+  border-radius: 5px;
   cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.btn-size-18:hover{
+  opacity: 0.8;
 }
 
 .btn-deep{
   background: #131f41;
-  color: #fff
+  color: rgb(255, 255, 255)
 }
 
 .btn-light{

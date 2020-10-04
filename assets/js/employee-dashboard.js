@@ -33,7 +33,7 @@ function changeTimerButton2() {
     day = today.getDate();
     year = today.getFullYear();
 
-    firstDay = new Date(year, month, 1);
+    firstDay = new Date(year, month, 0);
 
     var months = [
         "Jan",
@@ -126,7 +126,7 @@ function displayContent() {
         }
     }
     document.getElementById("todoTask").innerHTML = todoTask;
-    todoList = JSON.parse(localStorage.getItem("todo"));
+    todoList    = JSON.parse(localStorage.getItem("todo"));
 }
 displayContent();
 
@@ -163,6 +163,3 @@ function viewAllTasks() {
     location.assign("../contents/employee-tasks.html");
 }
 
-function closeTasks() {
-    location.assign("../contents/employee-dashboard.html");
-}

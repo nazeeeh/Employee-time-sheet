@@ -17,6 +17,7 @@ body{
 
   background-repeat: no-repeat;
   position: right;
+  background-size: cover;
   /* background: #f4f4f4; */
 }
 
@@ -206,7 +207,7 @@ body{
   background-color: rgba(255,255,255,0.6); /* fallback color */
   background-image: url("../img/register/dummy-bg.png");
   background-repeat: no-repeat;
-  background-size: 100vw;
+  background-size: cover;
   animation: popup 0.6s;
 }
 
@@ -241,6 +242,7 @@ body{
   width: 80%;
   margin: 0 auto;
   background: #f4f4f4;
+  overflow: hidden;
 }
 
 /* MAKE SECTION TO FLEX TWO SIDES */
@@ -248,12 +250,12 @@ body{
   display: flex;
 }
 
-
 .cont-section1{
   width: 50%;
   border-right: 2px solid #ccc;
   margin-left: 19px;
 }
+
 /* company display name on pop up */
 #companyNameHolder{
   font-weight: 100px;
@@ -341,7 +343,6 @@ input[type="file"] {
   flex-direction: column;
   color: rgb(97, 81, 81);
   font-size: 18px;
-  font-weight: ;
 }
 
 
@@ -422,20 +423,141 @@ input[type="file"] {
   .form-wrapper .form{
     max-width: 550px;
   }
+  
+
 
 }
 @media only screen and (max-width: 810px) {
-  #reg-info{
+  .cont-registration .form-2{
+    overflow: scroll;
+  }
+  
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* link to close modal form */
+  .form-2 span.close_form2{
+    position: relative;
+    top: 370px;
+    left: 100px;
+  }
+
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+  }
+
+  .cont-section1{
+    width: 50%;
+    margin-left: 19px;
     display: none;
   }
 
-  .form-wrapper .form{
-    max-width: 300px;
+  /* pop up form section  styles*/
+
+  .cont-section2{
+    position: relative;
+    left: 5px;
   }
 
-  .form-wrapper .form h3.reg-lead{
-    white-space: nowrap;
+  /* form labels */
+  .cont-registration .form-2 .form-detail{
+    display: flex;
+    flex-direction: column;
+    color: rgb(97, 81, 81);
+    font-size: 18px;
   }
 
+}
+
+
+@media only screen and (max-width: 900px){
+  .cont-registration .form-2{
+    overflow: scroll;
+  }
+  
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* link to close modal form */
+  .form-2 span.close_form2{
+    position: relative;
+    top: 370px;
+    left: 100px;
+  }
+
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+  }
+
+  .cont-section1{
+    width: 50%;
+    border-right: 2px solid #ccc;
+    margin-left: 19px;
+  }
+
+  /* company display name on pop up */
+  #companyNameHolder{
+    font-weight: 100px;
+    color: #1e1e5d;
+    margin-left: 24px;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-top: 300px;
+  }
+
+  .avatar p.avatar-selector-lead{
+    margin-bottom: 9px;
+    margin-left: 24px;
+    position: relative;
+    left: 6px;
+  }
+
+  .custom-file-upload {
+    position: relative;
+    left: 6px;
+    margin-bottom: 16px;
+  }
+
+
+  /* avatar select dropdown styles */
+  .avatar-selector{
+    position: relative;
+    left: 30px;
+  }
+
+  .cont-section1 .company_logo img{
+    position: relative;
+    left: 35px;
+  }
+
+
+  /* pop up form section  styles*/
+
+  .cont-section2{
+    position: relative;
+    left: 5px;
+  }
+
+  /* form labels */
+  .cont-registration .form-2 .form-detail{
+    display: flex;
+    flex-direction: column;
+    color: rgb(97, 81, 81);
+    font-size: 18px;
+  }
+
+
+    
 }
 

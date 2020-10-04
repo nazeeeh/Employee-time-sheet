@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/css/addUser.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="add()">Add</button>
+  <div id="show"></div>
+  <div id="container">
+    <header id="header">
+      <button class="to-btn"><i class="fas fa-plus"></i> Add Employee</button>
+    </header>
+    <section id="main">
+      <h1>Employee List</h1>
+      <nav class="tabs">
+        <ul>
+          <li>All Employees</li>
+          <li>Management</li>
+          <li>Others</li>
+        </ul>
+        <section id="search-container">
+          <input type="text" placeholder="Enter Name">
+          <a href="#" class="to-btn btn-deep">Search</a>
+        </section>
+      </nav>
+    <table id="employee_list">
+      <thead>
+        <tr id="profile-details">
+          <td>S/N</td>
+          <td>Status <span>|</span> Basic Details</td>
+          <td>Designation</td>
+          <td>Phone Number</td>
+          <td>Joining Date</td>
+        </tr>
+      </thead>
+      <tbody class="profile" id="_record_board">
+      <!-- <tr class="profile" id="showit"></tr> -->
+
+      </tbody>
+    </table>
+    <script src="/assets/js/employee_control.js"></script>
+</body>
+</html>
