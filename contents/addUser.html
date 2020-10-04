@@ -76,7 +76,7 @@
   <div class="dashboard-body">
     <div id="container">
       <header id="header">
-        <button class="to-btn" onclick="add()"><i class="fas fa-plus"></i> Add Employee</button>
+        <button class="to-btn" onclick="addo()"><i class="fas fa-plus"></i> Add Employee</button>
       </header>
       <section id="main">
         <h1>Employee List</h1>
@@ -111,6 +111,15 @@
     </div>
   </div>
 
+    <script>
+      function addo(){
+
+        var form = document.getElementById("employ_form").style.display = "block";
+        // if(form.style.display == "none"){
+          // form.style.display = "block"
+        // }
+      }
+    </script>
   <div id="employ_form">
     <label for="">Email</label>
     <input type="text">

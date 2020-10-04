@@ -66,6 +66,7 @@ function displayTask(){
 }
 
 function addTask(){
+
     let taskName = document.getElementById("task-name").value,
     employeeAssigned = document.getElementById("employee-assigned").value,
     dueDate = document.getElementById("due-date").value;
