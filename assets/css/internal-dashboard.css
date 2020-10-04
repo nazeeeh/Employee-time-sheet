@@ -88,6 +88,7 @@ header #right-in #other-in .profile-in button img{
     border-radius: 50%;
     object-fit: cover;
 }
+
 /*==================================
  **********body*********************
  ===================================
@@ -301,6 +302,7 @@ header #right-in #other-in .profile-in button img{
 /* the progress circles ends here*/
 /* 4th task card starts here */
 #body-in #cards-con .cards:nth-of-type(4){
+    position: relative;
     flex-direction: column;
 }
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks{
@@ -323,23 +325,23 @@ header #right-in #other-in .profile-in button img{
 }
 /* This diplays when the text in the card is clicked */
 #body-in #cards-con .cards #new-task{
-    width: 10%;
+    width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
     display: none;  
-    margin: 20px 10px;
+    margin: 10px;
 }
-#body-in #cards-con .cards #new-task input{
-    margin-bottom: 5px;
+#body-in #cards-con .cards #new-task input, .editForm input{
+    margin: 5px 0;
     border-radius: 5px;
     border: solid 1px #f2f2f2;
     outline: none;
     background-color: white;
     padding: 5px 5px;
 }
-#body-in #cards-con .cards #new-task button{
-    padding: 2px 5px;
+#body-in #cards-con .cards #new-task button, .editForm button{
+    padding: 5px 5px;
     border: none;
     border-radius: 5px;
     color: white;
@@ -347,6 +349,20 @@ header #right-in #other-in .profile-in button img{
     background-color: #213260;
 }
 /* This diplays when the text in the card is clicked */
+.editForm{
+    z-index: 5;
+    display: none;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.editForm input, .editForm button{
+    margin: 10px;
+    cursor: pointer;
+}
+.editForm button{
+    padding: 5px 20px;
+}
 /* 4th task card starts here */
 
 /* sections at the bottom part starts here */

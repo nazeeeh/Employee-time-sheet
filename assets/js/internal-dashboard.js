@@ -5,12 +5,12 @@ function assignNewTask(){
     let taskDisplay = document.getElementById("display-tasks");
 
     if (newTask.style.display === "none") {
-        newTask.style.display = "block";
-        assignLink.style.display = "none";
+        newTask.style.display = "block"
+        assignLink.style.display = "none"
         taskDisplay.style.display = "none"
     }
     else {
-        newTask.style.display = "none";
+        newTask.style.display = "none"
     }
 }
 
@@ -20,31 +20,14 @@ function CancelNewTask(){
     let taskDisplay = document.getElementById("display-tasks");
 
     if (newTask.style.display === "block") {
-        newTask.style.display = "none";
-        assignLink.style.display = "block";
+        newTask.style.display = "none"
+        assignLink.style.display = "block"
         taskDisplay.style.display = "block"
     }
     else {
-        newTask.style.display = "block";
+        newTask.style.display = "block"
     }
 }
-
-// let tasks = []
-
-// function addNewTask(){
-//     let taskName = document.getElementById("task-name").value;
-//     let employeeAssigned= document.getElementById("employee-assigned").value;
-//     let dueDate = document.getElementById("due-date").value;
-
-//     let newTask = {
-//         "nameOfTask" : taskName,
-//         "employeeToBeAssigned" : employeeAssigned,
-//         "expectedDueDate" : dueDate
-//     }
-
-//     taskName.push(newTask)
-//     onclick="CancelNewTask()" 
-// }
 
 let seconds = 0, minutes = 0, hours = 0
 
@@ -94,7 +77,7 @@ function setHours(){
         hours = 0
         hours++
     }
-    document.getElementById("hours").textContent = hours
+    document.getElementById("hours").textContent = hours;
 }
 
 function startTime(){
@@ -121,7 +104,10 @@ function stopTime(){
     clearInterval(timeMins);
     clearInterval(timeHours);
 
-    let stopHours = hours, stopMins = minutes, stopSecs = seconds
+    let stopHours = "", stopMins = "", stopSecs = ""
+    stopHours = hours
+    stopMins = minutes
+    stopSecs = seconds
 
     let startTime = document.getElementById("start-time");
     let stopTime = document.getElementById("stop-time");
@@ -138,23 +124,35 @@ function stopTime(){
     seconds = 0, minutes = 0, hours = 0
 }
 
-tasks = [
-    {
-        "name":"Assign tasks to all users",
-        "employee" : "Toluwanimi",
-        "due": "23rd March 2021"
-    },
-   
-]
+tasks = []
 
-// if(JSON.parse(localStorage.getItem("tasks")) != tasks){
-//     tasks = JSON.parse(localStorage.getItem("tasks"))
-// }else{
-//     tasks
-// }
+if(JSON.parse(localStorage.getItem("tasks")) != tasks){
+    tasks = JSON.parse(localStorage.getItem("tasks"))
+}else{
+    tasks
+}
 localStorage.setItem("tasks",  JSON.stringify(tasks))
 
 displayTask()
+
+function displayTask(){
+    let add = ''
+    for(i = 0; i < tasks.length; i++){
+        add += `<div id="${i}">
+        <p class="taskName"><i class="fas fa-check"></i>${tasks[i].name}</p>
+        <a class="delete-task" onclick="deleteTask(${i})">Delete</a>
+        <a class="edit-task" onclick="showEditForm(${i})">Edit</a>
+        </div>
+        <div id="editTask${i}" class="editForm">
+        <input type="text" id="edit-name${i}" placeholder="Edit Task"  required>
+        <input type="text" id="edit-employee${i}" placeholder="Edit employee assigned" required>
+        <input type="text" id="edit-due-date${i}" placeholder="Edit due date" required> <br>
+        <button id="assign" onclick="editTask(${i})">Edit</button> <button id="cancel" onclick="cancelEdit(${i})">Cancel</button>
+        </div>
+        `
+    }
+    document.getElementById("display-tasks").innerHTML = add
+}
 
 function addTask(){
     let taskName = document.getElementById("task-name").value,
@@ -169,25 +167,65 @@ function addTask(){
 
     tasks.push(newTask)
     localStorage.setItem("tasks",  JSON.stringify(tasks))
-    displayTask(tasks)
+    displayTask()
     CancelNewTask()
 }
 
-function displayTask(){
-    add = ''
-    for(i = 0; i < tasks.length; i++){
-        add += `<div id="${i}">
-        <p class="taskName"><i class="fas fa-check"></i>${tasks[i].name}</p>
-        <a class="delete-task" onclick="deleteTask(${i})">Delete</a>
-        <a class="edit-task">Edit</a>
-        </div>
-        `
+function showEditForm(id){
+    const editTask = document.getElementById("editTask" + id);
+    const displayTasks = document.getElementById("display");
+    const assignLink = document.getElementById("assign-link");
+
+    if(editTask.style.display == "block"){
+        editTask.style.display = "none"
+        displayTasks.style.display = "none"
+        assignLink.style.display = "none"
+    }else{
+        editTask.style.display = "block"
+        assignLink.style.display = "none"
     }
-    document.getElementById("display-tasks").innerHTML = add
 }
 
-function deleteTask(me){
-    tasks.splice(me, 1)
-    localStorage.setItem("adminUsers",  JSON.stringify(adminUsers))
+function cancelEdit(id){
+    const editTask = document.getElementById("editTask" + id);
+    const displayTasks = document.getElementById("display");
+    const assignLink = document.getElementById("assign-link");
+
+    if(editTask.style.display == "none"){
+        editTask.style.display = "block"
+        displayTasks.style.display = "block"
+        assignLink.style.display = "block"
+    }else{
+        editTask.style.display = "none"
+    }
+}
+
+function editTask(id){
+    let editName = document.getElementById("edit-name" + id).value;
+    let editEmployee = document.getElementById("edit-employee" + id).value;
+    let editDueDate = document.getElementById("edit-due-date" + id).value;
+console.log(editName, editEmployee, editDueDate)
+
+    if(editName === ""){
+        tasks[id].name = tasks[id].name
+    } else{tasks[id].name = editName}
+
+    if( editEmployee === ""){
+        tasks[id].employee = tasks[id].employee
+    } else{tasks[id].employee = editEmployee}
+
+    if(editDueDate === ""){
+        tasks[id].due = tasks[id].due
+    }else{tasks[id].due = editDueDate
+    }
+
+
+    localStorage.setItem("tasks",  JSON.stringify(tasks))
+    displayTask()
+}
+
+function deleteTask(id){
+    tasks.splice(id, 1)
+    localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
