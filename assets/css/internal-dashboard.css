@@ -344,7 +344,7 @@ header #right-in #other-in .profile-in button img{
     /* overflow: scroll; */
     display: block;
     font-size: 14px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
     margin: 7px 7px 0 15px;
@@ -359,6 +359,9 @@ header #right-in #other-in .profile-in button img{
 #body-in #cards-con .cards a, #see-all-tasks{
     margin: 10px 10px 0 10px;
     color: #c9c9c9;
+}
+#body-in #cards-con .cards #assign-link{
+    display: block;
 }
 #body-in #cards-con .cards #see-all-tasks{
     font-size: 9px;
