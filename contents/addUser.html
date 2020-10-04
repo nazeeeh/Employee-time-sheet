@@ -76,7 +76,7 @@
   <div class="dashboard-body">
     <div id="container">
       <header id="header">
-        <button class="to-btn" onclick="addo()"><i class="fas fa-plus"></i> Add Employee</button>
+        <button class="to-btn" onclick="add_form()"><i class="fas fa-plus"></i> Add Employee</button>
       </header>
       <section id="main">
         <h1>Employee List</h1>
@@ -112,24 +112,32 @@
   </div>
 
     <script>
-      function addo(){
+      function add_form(){
 
-        var form = document.getElementById("employ_form").style.display = "block";
+        var form = document.getElementById("employ_form").style.display = "flex";
+        
         // if(form.style.display == "none"){
           // form.style.display = "block"
         // }
       }
+      function close_form(){
+        alert("RE")
+        document.getElementById("employ_form").style.display = "none";
+
+      }
     </script>
+    
   <div id="employ_form">
+    <button id="close" onclick='close_form()'>close</button>
     <label for="">Email</label>
-    <input type="text">
+    <input type="text" id="employee_email">
     <label for="">Full Name</label>
-    <input type="text">
+    <input type="text" id="employee_name">
     <label for="">Role</label>
-    <input type="text">
+    <input type="text" id="employee_role">
     <label for="">Phone Number</label>
-    <input type="text">
-    <a href="#" class="to-btn btn-deep">Employ</a>
+    <input type="text" id="employee_phone">
+    <a href="#" class="to-btn btn-deep" onclick="add()">Employ</a>
   </div>
 </div>
 <script src="/assets/js/employee_control.js"></script>

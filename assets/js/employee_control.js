@@ -45,9 +45,9 @@ _render_record()
 let add = () =>
 {
   let newAdd = {
-    "name" : prompt("Enter Name"),
-    "role" : prompt("Enter role"),
-    "complain" : prompt("Enter Complain")
+    "name" : document.getElementById("employee_name").value,
+    "role" : document.getElementById("employee_role").value,
+    "phone" : document.getElementById("employee_phone").value
   }
   alert(`${_employee_localStorage}_employees`)
   _employee_localStorage.push(newAdd);
@@ -90,3 +90,10 @@ let reload_board = () =>
   location.reload()
 
 }
+
+
+//  pop up form control
+
+// function form_control(){
+//   document.getElementById("employ_form").style.display 
+// }

@@ -34,8 +34,10 @@ function CancelNewTask(){
     }
 }
 
+if (tasks == null){
 
-tasks = []
+    tasks = []
+}
 
 if(JSON.parse(localStorage.getItem("tasks")) != tasks){
     tasks = JSON.parse(localStorage.getItem("tasks"))
@@ -80,7 +82,6 @@ function addTask(){
             due : dueDate
         }
     }
-
     tasks.push(newTask)
     localStorage.setItem("tasks", JSON.stringify(tasks))
     displayTask()
