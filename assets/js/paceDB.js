@@ -75,27 +75,27 @@ let getUserDetails = () =>
       _employee_Db=[]
 
     }
-    let sample = [
-        {
-        "name":"sam",
-        "role":"coding",
-        "billing_rate":"120k",
-        "complain":"none",
-        },
-        {
-        "name":"tolu",
-        "role":"coding",
-        "billing_rate":"220k",
-        "complain":"food",
-        },
-        {
-        "name":"aisha",
-        "role":"coding",
-        "billing_rate":"320k",
-        "complain":"work",
-        },
-    ]
-    localStorage.setItem(`${companyName}_employees`, JSON.stringify(sample))
+    // let sample = [
+    //     {
+    //     "name":"sam",
+    //     "role":"coding",
+    //     "billing_rate":"120k",
+    //     "complain":"none",
+    //     },
+    //     {
+    //     "name":"tolu",
+    //     "role":"coding",
+    //     "billing_rate":"220k",
+    //     "complain":"food",
+    //     },
+    //     {
+    //     "name":"aisha",
+    //     "role":"coding",
+    //     "billing_rate":"320k",
+    //     "complain":"work",
+    //     },
+    // ]
+    // localStorage.setItem(`${companyName}_employees`, JSON.stringify(sample))
 
     alert(companyLogo)
     let newCompany = {
@@ -106,8 +106,8 @@ let getUserDetails = () =>
       "password" : companyPassword,
       "url" : companyUrl,
       "logo" : companyLogo,
-      "employeeDb" : localStorage.getItem(`${companyName}_employees`)
-
+      "employeeDb" : localStorage.getItem(`${companyName}_employees`),
+      "user_type" : "admin"
     }
     alert(`database created successfully ${newCompany.employeeDb}`)
    

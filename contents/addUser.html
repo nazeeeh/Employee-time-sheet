@@ -76,7 +76,7 @@
   <div class="dashboard-body">
     <div id="container">
       <header id="header">
-        <button class="to-btn" onclick="add()"><i class="fas fa-plus"></i> Add Employee</button>
+        <button class="to-btn" onclick="add_form()"><i class="fas fa-plus"></i> Add Employee</button>
       </header>
       <section id="main">
         <h1>Employee List</h1>
@@ -112,15 +112,28 @@
   </div>
 
   <div id="employ_form">
-    <label for="">Email</label>
-    <input type="text">
-    <label for="">Full Name</label>
-    <input type="text">
-    <label for="">Role</label>
-    <input type="text">
-    <label for="">Phone Number</label>
-    <input type="text">
-    <a href="#" class="to-btn btn-deep">Employ</a>
+    <div id="info">
+      <h3>Employee Type Code</h3>
+      <ul>
+        <li>Co- Admin - 443</li>
+        <li>Internal Admin - 332</li>
+        <li>Employee - 554</li>
+      </ul>
+    </div>
+    <div id="form_section">
+      <h3 class="look"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
+      <label for="">Employee Type</label>
+      <input type="text" id="employee_email">
+      <label for="">Email</label>
+      <input type="text" id="employee_email">
+      <label for="">Full Name</label>
+      <input type="text" id="employee_name">
+      <label for="">Role</label>
+      <input type="text" id="employee_role">
+      <label for="">Phone Number</label>
+      <input type="text" id="employee_phone">
+      <a href="#" class="to-btn btn-deep" onclick="_add_employee()">Employ</a>
+    </div>
   </div>
 </div>
 <script src="/assets/js/employee_control.js"></script>

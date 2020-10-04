@@ -75,6 +75,41 @@ header #right-in #other-in .fa-cog, header #right-in #other-in .fa-bell{
     margin-right: 10px;
     color: #213260;
 }
+header #right-in #other-in .notification{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+header #right-in #other-in #notification .notifications{
+    position: absolute;
+    z-index: 2;
+    font-size: 12px;
+    top: 48.5px;
+    width: 180px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid darkgrey;
+    display: none;
+}
+header #right-in #other-in #notification .notifications .notification-title{
+    display: flex;
+    width: 100%;
+    padding: 3px;
+    color: #37529c;
+}
+header #right-in #other-in #notification .notifications hr{
+    margin: 0 10px;
+    color: darkgray;
+}
+header #right-in #other-in #notification .notifications a{
+    font-size: 9px;
+    margin-right: 5px;
+    color: #c9c9c9;
+}
+header #right-in #other-in #notification .notifications p{
+    margin: 5px;
+    flex: 1;
+}
 /* Username(It's a button) */
 header #right-in #other-in .profile-in button{
     height: 30px;
@@ -88,6 +123,7 @@ header #right-in #other-in .profile-in button img{
     border-radius: 50%;
     object-fit: cover;
 }
+
 /*==================================
  **********body*********************
  ===================================
@@ -301,11 +337,14 @@ header #right-in #other-in .profile-in button img{
 /* the progress circles ends here*/
 /* 4th task card starts here */
 #body-in #cards-con .cards:nth-of-type(4){
+    position: relative;
     flex-direction: column;
 }
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks{
     /* overflow: scroll; */
     display: block;
+    font-size: 14px;
+    /* overflow: hidden; */
 }
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
     margin: 7px 7px 0 15px;
@@ -317,29 +356,42 @@ header #right-in #other-in .profile-in button img{
     font-size: 10px;
     cursor: pointer;
 }
-#body-in #cards-con .cards a{
+#body-in #cards-con .cards a, #see-all-tasks{
     margin: 10px 10px 0 10px;
-    color: #7E7E7E;
+    color: #c9c9c9;
+}
+#body-in #cards-con .cards #assign-link{
+    display: block;
+    color: darkgray;
+}
+#body-in #cards-con .cards #see-all-tasks{
+    font-size: 9px;
+    text-decoration-line: none;
+    margin-left: 200px;
+    margin-top: 5px;
+}
+#body-in #cards-con .cards #see-all-tasks:hover{
+    text-decoration-line: underline;
 }
 /* This diplays when the text in the card is clicked */
 #body-in #cards-con .cards #new-task{
-    width: 10%;
+    width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
     display: none;  
-    margin: 20px 10px;
+    margin: 10px;
 }
-#body-in #cards-con .cards #new-task input{
-    margin-bottom: 5px;
+#body-in #cards-con .cards #new-task input, .editForm input{
+    margin: 5px 0;
     border-radius: 5px;
     border: solid 1px #f2f2f2;
     outline: none;
     background-color: white;
     padding: 5px 5px;
 }
-#body-in #cards-con .cards #new-task button{
-    padding: 2px 5px;
+#body-in #cards-con .cards #new-task button, .editForm button{
+    padding: 5px 5px;
     border: none;
     border-radius: 5px;
     color: white;
@@ -347,6 +399,20 @@ header #right-in #other-in .profile-in button img{
     background-color: #213260;
 }
 /* This diplays when the text in the card is clicked */
+.editForm{
+    z-index: 5;
+    display: none;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.editForm input, .editForm button{
+    margin: 10px;
+    cursor: pointer;
+}
+.editForm button{
+    padding: 5px 20px;
+}
 /* 4th task card starts here */
 
 /* sections at the bottom part starts here */

@@ -1,17 +1,13 @@
 
-function assignNewTask(){
-    let assignLink = document.getElementById("assign-link");
-    let newTask = document.getElementById("new-task"); 
-    let taskDisplay = document.getElementById("display-tasks");
+function showNotificationBar(){
+    const notificationBar = document.getElementById("notification-popup");
 
-    if (newTask.style.display === "none") {
-        newTask.style.display = "block";
-        assignLink.style.display = "none";
-        taskDisplay.style.display = "none"
+    if(notificationBar.style.display == "block"){
+        notificationBar.style.display = "none"
+    }else{
+       notificationBar.style.display = "block"
     }
-    else {
-        newTask.style.display = "none";
-    }
+   
 }
 
 function CancelNewTask(){
@@ -93,6 +89,11 @@ function setHours(){
         document.getElementById("hours").textContent = hours
     }
 }
+// *************************************************
+// ******************Notifications******************
+// *************************************************
+let notifications = []
+let tasks = JSON.parse(localStorage.getItem("tasks"));
 
 function startTime(){
     let startTime = document.getElementById("start-time");
@@ -189,3 +190,4 @@ function deleteTask(me){
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
+// function displayNotification(){}
