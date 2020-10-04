@@ -5,11 +5,12 @@ function closeTasks() {
  // getting tasks from local storage
  let tasks = JSON.parse(localStorage.getItem("tasks"));
  if(tasks == null)
-     {
-        tasks = [];
-
-     }
-   
+    {
+    tasks = [];
+    }
+else{
+    viewTasks()
+}
 
 
 // function to display tasks gotten from local storage
@@ -43,7 +44,7 @@ function viewTasks() {
     document.getElementById('view-tasks').innerHTML = view;
 }
 
-viewTasks();
+
 
 
 
