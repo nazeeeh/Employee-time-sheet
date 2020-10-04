@@ -34,10 +34,8 @@ function CancelNewTask(){
     }
 }
 
-if (tasks == null){
 
     tasks = []
-}
 
 if(JSON.parse(localStorage.getItem("tasks")) != tasks){
     tasks = JSON.parse(localStorage.getItem("tasks"))

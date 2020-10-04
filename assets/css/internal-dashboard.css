@@ -82,7 +82,7 @@ header #right-in #other-in .notification{
 }
 header #right-in #other-in #notification .notifications{
     position: absolute;
-    z-index: 2;
+    z-index: 12;
     font-size: 12px;
     top: 48.5px;
     width: 180px;
@@ -344,7 +344,7 @@ header #right-in #other-in .profile-in button img{
     /* overflow: scroll; */
     display: block;
     font-size: 14px;
-    /* overflow: hidden; */
+    overflow: overlay;
 }
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
     margin: 7px 7px 0 15px;
