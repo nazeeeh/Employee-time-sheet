@@ -116,7 +116,6 @@ function cancelEdit(id){
         editTask.style.display = "none"
         assignLink.style.display = "block"
         seeAllTasks.style.display = "block"
-
     }
 }
 
