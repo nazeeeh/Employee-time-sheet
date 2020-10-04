@@ -3,11 +3,11 @@ function closeTasks() {
 }
 
  // getting tasks from local storage
- let tasks = JSON.parse(localStorage.getItem("tasks"));
- if(tasks == null)
-    {
-    tasks = [];
-    }
+let tasks = JSON.parse(localStorage.getItem("tasks"));
+if(tasks == null)
+{
+tasks = [];
+}
 else{
     viewTasks()
 }
