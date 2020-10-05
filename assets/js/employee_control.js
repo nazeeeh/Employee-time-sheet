@@ -27,8 +27,9 @@ let _render_record = () =>
       <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].role}</td>
-      <td>090879988383</td>
-      <td>Aug 12, 2020 <i class="fas fa-ellipsis-v more-icon"></i></td>
+      <td>${ _employee_localStorage[i].phone}</td>
+      <td>${ _employee_localStorage[i].user_type}</td>
+      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon"></i></td>
     </tr>
     `
   }
@@ -43,33 +44,67 @@ _render_record()
 
 let _add_employee = () =>
 {
-  let newAdd = {
-    "email" : document.getElementById("employee_email").value,
-    "name" : document.getElementById("employee_name").value,
-    "role" : document.getElementById("employee_role").value,
-    "phone" : document.getElementById("employee_phone").value,
-    "status" : "Active",
-    "user_type" : document.getElementById("employee_phone").value
-  }
-
-  if(newAdd.user_type === 1)
+  new_email = document.getElementById("employee_email").value,
+  new_name = document.getElementById("employee_name").value,
+  new_role = document.getElementById("employee_role").value,
+  new_phone = document.getElementById("employee_phone").value,
+  new_user_type = document.getElementById("employee_type").value
+  let today = new Date();
+  if(new_user_type == 433)
   {
-    newAdd.user_type = "Co-Admin"
+    new_user_type = "Co-Admin"
   }
-  else if(newAdd.user_type === 2)
+  else if(new_user_type = 332)
   {
-    newAdd.user_type = "Internal User"
+    new_user_type = "Internal User"
   }
-  else if(newAdd.user_type === 3)
+  else if(new_user_type === 554)
   {
-    newAdd.user_type = "Employee"
+    new_user_type = "Employee"
   }
+  // today = today.toISOString().split('Td')[0]
+  if(!new_email || !new_name || !new_phone || !new_role || !new_user_type)
+  {
 
+    document.getElementById("error_").innerHTML = "Error - Form Cannot be blank"
 
-  alert(`${_employee_localStorage}_employees`)
-  _employee_localStorage.push(newAdd);
-  localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
-  _render_record()
+  }
+  else 
+  {
+
+    // user_type = 
+      
+    if(document.getElementById("employee_type").value == 433)
+    {
+      user_type = "Co-Admin"
+    }
+    else if(user_type == 332)
+    {
+      user_type = "Internal User"
+    }
+    else if(user_type == 554)
+    {
+      user_type = "Employee"
+    }
+    let newAdd = {
+      "email" : document.getElementById("employee_email").value,
+      "name" : document.getElementById("employee_name").value,
+      "role" : document.getElementById("employee_role").value,
+      "phone" : document.getElementById("employee_phone").value,
+      "status" : "Active",
+      // "user_type" : document.getElementById("employee_type").value,
+      "user_type" : user_type,
+      "joining_date" : today,
+    }
+
+  
+  
+    alert(`${_employee_localStorage}_employees`)
+    _employee_localStorage.push(newAdd);
+    localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
+    _render_record()
+
+  }
 }
 
 

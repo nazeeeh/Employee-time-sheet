@@ -19,7 +19,6 @@ let validateReg = () =>
     Company URL: ${url.value}`)
   }
   else{
-    // alert(url.value)
     const check = confirm(
       `Continue to register as 
       Email: ${email.value}
