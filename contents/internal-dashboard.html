@@ -22,12 +22,12 @@
             var minute = date.getMinutes()
             var second = date.getSeconds()
             // var months = new Array("", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
-            // var monthname = months[month]
+            // var monthName = months[month]
             if (hour > 12) {hour = hour - 12}
             if (minute < 10) {minute = "0" + minute}
             if (second < 10) {second = "0" + second}
             document.title = hour + ":" + minute + ":" + second
-            // document.title = monthname + " " + day + ", " + year + " - " + hour + ":" + minute + ":" + second
+            // document.title = monthame + " " + day + ", " + year + " - " + hour + ":" + minute + ":" + second
             setTimeout(bar_clock, 1000)
         };
     </script>
