@@ -73,20 +73,30 @@ let getUserDetails = () =>
       _employee_Db = []
 
     }
+    let _employed_date = (employed_date) => 
+    {
+      var month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
+      return month[employed_date.getMonth()]+" "+employed_date.getDate()+" "+employed_date.getFullYear();
+    }
 
     let sample = [
-        {
+
+        {// employee sample on dashboard
+
         "name":"Sample Name",
         "role":"Engineer",
+        "user_type" : "Admin",
         "phone":"08038157444",
-        "joining_date" : Date.now()
-        },
+        "joining_date" :  _employed_date(new Date())
+
+        }
+
     ]
 
     localStorage.setItem(`${companyName}_employees`, JSON.stringify(sample))
 
 
-// staging new company details for storage
+    // staging new company details for storage
 
     let newCompany = {
       "name" : companyName,

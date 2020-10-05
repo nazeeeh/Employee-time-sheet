@@ -1,3 +1,10 @@
+/* 
+THIS SCRIPT 
+
+  > Handles the employee local storage from the admin local storage
+
+*/
+
 // get the current logged in user from local storage
 var _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser")) // object
 
@@ -29,7 +36,7 @@ let _render_record = () =>
       <td>${ _employee_localStorage[i].role}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon"></i></td>
+      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon" onclick="add_form()"></i></td>
     </tr>
     `
   }
@@ -49,20 +56,13 @@ let _add_employee = () =>
   new_role = document.getElementById("employee_role").value,
   new_phone = document.getElementById("employee_phone").value,
   new_user_type = document.getElementById("employee_type").value
-  let today = new Date();
-  if(new_user_type == 433)
+  let _employed_date = (employed_date) => 
   {
-    new_user_type = "Co-Admin"
+    var month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
+    return month[employed_date.getMonth()]+" "+employed_date.getDate()+" "+employed_date.getFullYear();
   }
-  else if(new_user_type = 332)
-  {
-    new_user_type = "Internal User"
-  }
-  else if(new_user_type === 554)
-  {
-    new_user_type = "Employee"
-  }
-  // today = today.toISOString().split('Td')[0]
+
+
   if(!new_email || !new_name || !new_phone || !new_role || !new_user_type)
   {
 
@@ -72,34 +72,54 @@ let _add_employee = () =>
   else 
   {
 
-    // user_type = 
-      
-    if(document.getElementById("employee_type").value == 433)
-    {
-      user_type = "Co-Admin"
+    switch(new_user_type)
+    {// check which logo is selected
+  
+      case "443":
+        return new_user_type = "Co-Admin";
+        break;
+  
+      case "332":
+        new_user_type = "Internal Admin ";
+        break;
+  
+      case "554":
+        new_user_type = "Employee";
+        break;
+
+      default:
+        new_user_type = "Others"
     }
-    else if(user_type == 332)
-    {
-      user_type = "Internal User"
-    }
-    else if(user_type == 554)
-    {
-      user_type = "Employee"
-    }
+  
+
+    // if(new_user_type == 433)
+    // {
+    //   new_user_type = "Co-Admin"
+    // }
+    // else if(new_user_type == 332)
+    // {
+    //   new_user_type = "Internal User"
+    // }
+    // else if(new_user_type == 554)
+    // {
+    //   new_user_type = "Employee"
+    // }
+
+
     let newAdd = {
       "email" : document.getElementById("employee_email").value,
       "name" : document.getElementById("employee_name").value,
       "role" : document.getElementById("employee_role").value,
       "phone" : document.getElementById("employee_phone").value,
       "status" : "Active",
-      // "user_type" : document.getElementById("employee_type").value,
-      "user_type" : user_type,
-      "joining_date" : today,
+      "user_type" : new_user_type,
+      "joining_date" : _employed_date(new Date()),
     }
 
   
-  
-    alert(`${_employee_localStorage}_employees`)
+    document.getElementById("error_").innerHTML = `${newAdd.name} created successfully`
+    
+    // alert(`${_employee_localStorage}_employees`)
     _employee_localStorage.push(newAdd);
     localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
     _render_record()
@@ -163,4 +183,37 @@ window.onclick = function(event) {
   if (event.target == form ) {
     form.style.display = "none";
   }
+}
+
+
+//  edit user
+
+const _editRecord = (employee_id) =>
+{
+
+  recordToUpdate = _employee_localStorage[employee_id]
+  document.getElementById("email").value = recordToUpdate.email 
+  document.getElementById("name").value = recordToUpdate.name
+  document.getElementById("role").value = recordToUpdate.role
+  document.getElementById("phone").value = recordToUpdate.phone
+  document.getElementById("mark").value = employee_id
+
+
+}
+
+let updatedRecord = () =>
+{ // function to collate and store new updated details
+  employee_id = document.getElementById("identifier").value;
+  updatedRecord = {
+
+    "email" : document.getElementById("employee_email").value,
+    "name" : document.getElementById("employee_name").value,
+    "role" : document.getElementById("employee_role").value,
+    "phone" : document.getElementById("employee_phone").value,
+
+  }
+  _employee_localStorage[employee_id] = updatedRecord
+  localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
+  _render_record()
+
 }
