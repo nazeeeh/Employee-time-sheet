@@ -36,7 +36,7 @@ let _render_record = () =>
       <td>${ _employee_localStorage[i].role}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon" onclick="add_form()"></i></td>
+      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon" onclick="add_form();"></i></td>
     </tr>
     `
   }
@@ -91,20 +91,6 @@ let _add_employee = () =>
         new_user_type = "Others"
     }
   
-
-    // if(new_user_type == 433)
-    // {
-    //   new_user_type = "Co-Admin"
-    // }
-    // else if(new_user_type == 332)
-    // {
-    //   new_user_type = "Internal User"
-    // }
-    // else if(new_user_type == 554)
-    // {
-    //   new_user_type = "Employee"
-    // }
-
 
     let newAdd = {
       "email" : document.getElementById("employee_email").value,
@@ -190,13 +176,13 @@ window.onclick = function(event) {
 
 const _editRecord = (employee_id) =>
 {
-
+  
   recordToUpdate = _employee_localStorage[employee_id]
-  document.getElementById("email").value = recordToUpdate.email 
-  document.getElementById("name").value = recordToUpdate.name
-  document.getElementById("role").value = recordToUpdate.role
-  document.getElementById("phone").value = recordToUpdate.phone
-  document.getElementById("mark").value = employee_id
+  document.getElementById("employee_email").value = recordToUpdate.email 
+  document.getElementById("employee_name").value = recordToUpdate.name
+  document.getElementById("employee_role").value = recordToUpdate.role
+  document.getElementById("employee_phone").value = recordToUpdate.phone
+  document.getElementById("identifier").value = employee_id
 
 
 }
