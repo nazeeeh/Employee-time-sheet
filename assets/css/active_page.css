@@ -1,0 +1,25 @@
+#active_page{
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
+  width: 100%;
+  cursor: pointer;
+}
+
+#active_page a,
+#active_page i{
+  color: #333;
+}
+#active_page a{
+  color: #333;
+}
+
+.dashboard-link{
+  padding: 10px;
+}
+
+.sidebar-wrapper{
+  padding: 0px;
+  /* background: red; */
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
+    <link rel="stylesheet" href="/assets/css/active_page.css">
     <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
     <title>Dashboard</title>
     <script language="javascript" type="text/javascript">
@@ -38,20 +39,20 @@
         <div class="sidebar-container">
           <div class="sidebar-wrapper">
             <div class="company">
-              <i id="logo" class=""></i>
+              <!-- <i id="logo" class=""></i> -->
               <i class="fas fa-bars"></i>
               <h4 class="companyDisplay" id="companyDisplay">TIIDELab</h4>
             </div>
             
             <div class="sidebar-links">
                 <!-- Link Start -->
-                <div class="dashboard-link">
+                <div class="dashboard-link" id="active_page">
                     <i class="fas fa-chart-pie"></i>
                     <a href="/contents/admin-dashboard.html">Dashboard</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
-                    <i class="fas fa-user-friends"></i>
+                    <i class="fas fa-user-edit"></i>
                     <a href="/contents/addUser.html">Add User</a>
                 </div>
                 <!-- New link -->
@@ -110,9 +111,10 @@
                         <div id="other-in">
                                 <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+                                <i id="logo" class=""></i>
                                 <div class="profile-in">
                                     <!-- <p ></p> -->
-                                    <button class="companyDisplay" id="companyDisplay"> <img src="" alt=""> Ayoola Toluwanimi</button>
+                                    <button class="companyDisplay" id="companyDisplay"></button>
                                     <div class="dropdown-in">
                                     </div>
                                 </div>
