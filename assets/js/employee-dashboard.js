@@ -163,6 +163,3 @@ function viewAllTasks() {
     location.assign("../contents/employee-tasks.html");
 }
 
-function closeTasks() {
-    location.assign("../contents/employee-dashboard.html");
-}

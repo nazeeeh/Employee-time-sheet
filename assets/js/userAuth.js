@@ -1,3 +1,11 @@
+/*
+      THIS SCRIPT 
+                
+ > handles the login validation 
+and
+ > create temporary local storage for their logged-in admin
+
+*/ 
 
 var unKnown = document.getElementById("errorMessage");
 
@@ -15,9 +23,7 @@ let authUser = () =>
   email_InDb = paceDB.find(x=> x.email == emailAuth);
   password_InDb = paceDB.find(x=> x.password == pwAuth);
   
-  // console.log(email_InDb["email"])
-  // console.log(password_InDb["password"])
-  
+
   
   // controlling error when the local storage is empty 
   try{
@@ -60,7 +66,7 @@ let authUser = () =>
     }
     current_UserDb.push(email_InDb)  // store the loggedIn use into an array
     localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
-    location.assign("../contents/internal-dashboard.html"); //redirect to internal dashboard
+    location.assign("../contents/admin-dashboard.html"); //redirect to internal dashboard
     
   }
   else
