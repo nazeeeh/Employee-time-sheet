@@ -16,60 +16,58 @@
     <div class="sidebar-wrapper">
       <div class="company">
         <i id="logo" class=""></i>
-        <h4 id="name">TIIDELab</h4>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" style="position: relative; left: 40px ;"></i>
+        <h4 id="companyDisplay" class="companyDisplay">TIIDELab</h4>
       </div>
       
       <div class="sidebar-links">
-        <!-- Link Start -->
-        <div class="dashboard-link">
-          <i class="fas fa-chart-pie"></i>
-          <a href="">Employee Status</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-user-friends"></i>
-          <a href="">Add User</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-calendar-alt"></i>
-          <a href="">Calender</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-calendar-plus"></i>
-          <a href="">e-Schedule</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-flag-checkered"></i>
-          <a href="">Report</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-stream"></i>
-          <a href="">Billing Rate</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-bell"></i>
-          <a href="">Requests</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-sliders-h"></i>
-          <a href="/contents/settings.html">Settings</a>
-        </div>
-        <!-- New link -->
-        <div class="dashboard-link">
-          <i class="fas fa-sign-out-alt"></i>
-          <a href="/index.html" onclick="logout()">Logout</a>
-        </div>
-
+          <!-- Link Start -->
+          <div class="dashboard-link">
+              <i class="fas fa-chart-pie"></i>
+              <a href="/contents/admin-dashboard.html">Dashboard</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-user-friends"></i>
+              <a href="/contents/addUser.html">Add User</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-calendar-alt"></i>
+              <a href="">Calender</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-calendar-plus"></i>
+              <a href="">e-Schedule</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-flag-checkered"></i>
+              <a href="/contents/report.html">Report</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-stream"></i>
+              <a href="">Billing Rate</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-bell"></i>
+              <a href="/contents/report.html">Requests</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-sliders-h"></i>
+              <a href="/contents/settings.html">Settings</a>
+          </div>
+          <!-- New link -->
+          <div class="dashboard-link">
+              <i class="fas fa-sign-out-alt"></i>
+              <a href="/index.html" onclick="logOut()">Logout</a>
+          </div>
         <!-- End of Side-bar-Link -->
       </div>
-
     </div>
   </div>
   <!-- this is where the dashboard components goes -->
@@ -99,6 +97,7 @@
             <td>Status <span>|</span> Basic Details</td>
             <td>Designation</td>
             <td>Phone Number</td>
+            <td>User Type</td>
             <td>Joining Date</td>
           </tr>
         </thead>
@@ -118,12 +117,14 @@
         <li>Co- Admin - 443</li>
         <li>Internal Admin - 332</li>
         <li>Employee - 554</li>
+        <h4>Pace Bot: <span id="error_">Hello</span></h4>
       </ul>
     </div>
     <div id="form_section">
-      <h3 class="look"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
+      <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
+      <input type="hidden" id="identifier">
       <label for="">Employee Type</label>
-      <input type="text" id="employee_email">
+      <input type="text" id="employee_type">
       <label for="">Email</label>
       <input type="text" id="employee_email">
       <label for="">Full Name</label>
@@ -132,11 +133,11 @@
       <input type="text" id="employee_role">
       <label for="">Phone Number</label>
       <input type="text" id="employee_phone">
-      <a href="#" class="to-btn btn-deep" onclick="_add_employee()">Employ</a>
+      <a href="#" id="add_employee_btn" class="to-btn btn-deep" onclick="_add_employee()">Employ</a>
     </div>
   </div>
 </div>
 <script src="/assets/js/employee_control.js"></script>
-
+<script src="/assets/js/userDetails.js"></script>
 </body>
 </html>
