@@ -3,74 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
+    <link rel="stylesheet" href="/assets/css/task.css">
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Task | Pace timesheet</title>
 </head>
 <body>
-      <!-- main dashboard -->
-<div class="dashboard-container">
-    <div class="sidebar-container">
-      <div class="sidebar-wrapper">
-        <div class="company">
-          <i id="logo" class=""></i>
-          <h4 id="name">TIIDELab</h4>
-          <i class="fas fa-bars"></i>
+    <header>
+      <div id="search-in">
+          <input type="text" placeholder="Search">
+          <button><i class="fa fa-search" aria-hidden="true" onclick="addNewTaskMain()"></i></button>
+      </div>
+      <div id="right-in">
+          <button id="start-time" onclick="startTime()">Start Time</button>
+          <div id="time"><span id="hours">00</span> : <span id="mins">00</span> : <span id="seconds">00</span></div>
+          <button id="stop-time" onclick="stopTime()">Stop Time</button>
+          <div id="other-in">
+              <div id="notification">
+                  <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true" onclick="showNotificationBar()"></i></a>
+                  <div id="notification-popup" class="notifications">
+                      <div class="notification-title">
+                          <p>New task</p><a href="#">See all</a>
+                      </div>
+                      <hr>
+                      <p>Present Pace</p>
+                  </div>
+              </div>
+              <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+              <div class="profile-in">
+                <button> <img src="" alt=""> Ayoola Toluwanimi</button>
+                <div class="dropdown-in">
+                </div>
+              </div>
+          </div>
+      </div>
+    </header>
+  <main>
+    <section id="add-task-main" >
+      <button onclick="assignNewTaskMain()">Add new task</button>
+    </section>
+    <section id="new-task-main">
+     <div>
+      <input type="text" id="task-name-main" placeholder="Task" required><br>
+      <input type="text" id="employee-assigned-main" placeholder="Employee to be assigned" required><br>
+      <input type="date" id="due-date-main" placeholder="Due date" required> <br>
+      <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelNewTask()">Cancel</button>
+      </div>
+    </section>
+    <div class="tasks-main">
+      <div id="assigned-task-main">
+        <div class="main-task">
+          <p>Present Pace <span>Assigned to :</span></p> 
+          <span class="date">Due :</span> <span>Status :</span> <button>Delete</button> <button>Edit</button>
         </div>
-        
-        <div class="sidebar-links">
-          <!-- Link Start -->
-          <div class="dashboard-link">
-            <i class="fas fa-chart-pie"></i>
-            <a href="">Employee Status</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-user-friends"></i>
-            <a href="">Add User</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-calendar-alt"></i>
-            <a href="">Calender</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-calendar-plus"></i>
-            <a href="">e-Schedule</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-flag-checkered"></i>
-            <a href="">Report</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-stream"></i>
-            <a href="">Billing Rate</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-bell"></i>
-            <a href="">Requests</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-sliders-h"></i>
-            <a href="/contents/settings.html">Settings</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-            <i class="fas fa-sign-out-alt"></i>
-            <a href="/index.html" onclick="logout()">Logout</a>
-          </div>
-  
-          <!-- End of Side-bar-Link -->
+      </div>
+      <div id="unassigned-task-main">
+        <div class="main-unassigned">
+          <p>Present Pace</p>
+          <p>Assign to employee:</p><input type="text" id="employee-main">
         </div>
-  
       </div>
     </div>
-    <!-- this is where the dashboard components goes -->
-    <div class="dashboard-body">
-      lorem50
-    </div>
+  </main>
+
+  <script src="/assets/js/timer.js"></script>
+  <script src="/assets/js/maintask.js"></script>
+
 </body>
 </html>
