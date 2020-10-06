@@ -1,5 +1,10 @@
 /*
-SCRIPT That handles the registration details of clients 
+                THIS SCRIPT 
+                
+ > handles the registration details of new clients 
+and
+ > create local storage for their employees
+
 */ 
 
 let checkDb = JSON.parse(localStorage.getItem("paceDB"));
@@ -21,20 +26,12 @@ let getUserDetails = () =>
   company2Password = document.getElementById("cpassword").value;
   logoOption = document.getElementById("logo");
   companyLogo = logoOption.options[logoOption.selectedIndex].text;
-  // text = companyLogo.options[companyLogo.selectedIndex].text;
-  // alert(companyLogo)
-  // alert(companyLogo2)
-  // alert(companyLogo.value)
-
-
-
-
 
   if (companyPassword == company2Password)
   {  // validate password and confirm password before storage
 
     switch(companyLogo)
-    {
+    {// check which logo is selected
   
       case "Business":
         return companyLogo = "business_avatar.png";
@@ -63,41 +60,44 @@ let getUserDetails = () =>
       default:
         companyLogo = "no_profile_img.png"
     }
+  
 
         
     // create local storage for new company employee
     
     let _employee_Db = JSON.parse(localStorage.getItem(`${companyName}_employees`));
-    console.log("here")
-    if(_employee_Db == null) // if company local storage does not exist create one 
-    {
 
-      _employee_Db=[]
+    if(_employee_Db === null || _employee_Db === undefined) 
+    {// if company local storage does not exist create one 
+
+      _employee_Db = []
 
     }
+    let _employed_date = (employed_date) => 
+    {
+      var month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
+      return month[employed_date.getMonth()]+" "+employed_date.getDate()+" "+employed_date.getFullYear();
+    }
+
     let sample = [
-        {
-        "name":"sam",
-        "role":"coding",
-        "billing_rate":"120k",
-        "complain":"none",
-        },
-        {
-        "name":"tolu",
-        "role":"coding",
-        "billing_rate":"220k",
-        "complain":"food",
-        },
-        {
-        "name":"aisha",
-        "role":"coding",
-        "billing_rate":"320k",
-        "complain":"work",
-        },
+
+        {// employee sample on dashboard
+
+        "name":"Sample Name",
+        "role":"Engineer",
+        "user_type" : "Admin",
+        "phone":"08038157444",
+        "joining_date" :  _employed_date(new Date())
+
+        }
+
     ]
+
     localStorage.setItem(`${companyName}_employees`, JSON.stringify(sample))
 
-    alert(companyLogo)
+
+    // staging new company details for storage
+
     let newCompany = {
       "name" : companyName,
       "email" : companyEmail,
@@ -106,11 +106,10 @@ let getUserDetails = () =>
       "password" : companyPassword,
       "url" : companyUrl,
       "logo" : companyLogo,
-      "employeeDb" : localStorage.getItem(`${companyName}_employees`)
-
+      "employeeDb" : localStorage.getItem(`${companyName}_employees`),
+      "user_type" : "admin"
     }
-    alert(`database created successfully ${newCompany.employeeDb}`)
-   
+    
     checkDb.push(newCompany)
 
     // push new company information into the local storage
