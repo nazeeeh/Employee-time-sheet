@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
     <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
+    <link rel="stylesheet" href="/assets/css/active_page.css">
     <title>Dashboard</title>
     <script language="javascript" type="text/javascript">
         let bar_clock = () => 
@@ -37,16 +38,16 @@
         <div class="sidebar-container">
           <div class="sidebar-wrapper">
             <div class="company">
-              <i id="logo" class=""></i>
-              <i class="fas fa-bars" style="position: relative; left: 40px ;"></i>
+              <!-- <i id="logo" class=""></i> -->
+              <i class="fas fa-bars"></i>
               <h4 id="companyDisplay">TIIDELab</h4>
             </div>
             
             <div class="sidebar-links">
                 <!-- Link Start -->
-                <div class="dashboard-link">
-                    <i class="fas fa-chart-pie"></i>
-                    <a href="/contents/addUser.html">Employee Status</a>
+                <div class="dashboard-link" id="active_page">
+                    <i class="fas fa-chart-pie" ></i>
+                    <a href="/contents/addUser.html">Dashboard</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">

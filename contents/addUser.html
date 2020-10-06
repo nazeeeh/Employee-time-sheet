@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
   <link rel="stylesheet" href="/assets/css/utilities.css">
   <link rel="stylesheet" href="/assets/css/addUser.css">
+  <link rel="stylesheet" href="/assets/css/active_page.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
   <title>Pace | Dashboard</title>
 </head>
@@ -15,9 +16,9 @@
   <div class="sidebar-container">
     <div class="sidebar-wrapper">
       <div class="company">
-        <i id="logo" class=""></i>
-        <i class="fas fa-bars" style="position: relative; left: 40px ;"></i>
-        <h4 id="companyDisplay" class="companyDisplay">TIIDELab</h4>
+        <!-- <i id="logo" class=""></i> -->
+        <i class="fas fa-bars"></i>
+        <h4 class="companyDisplay"id="companyDisplay">TIIDELab</h4>
       </div>
       
       <div class="sidebar-links">
@@ -27,7 +28,7 @@
               <a href="/contents/admin-dashboard.html">Dashboard</a>
           </div>
           <!-- New link -->
-          <div class="dashboard-link">
+          <div class="dashboard-link" id="active_page">
               <i class="fas fa-user-friends"></i>
               <a href="/contents/addUser.html">Add User</a>
           </div>

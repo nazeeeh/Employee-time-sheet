@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
     <link rel="stylesheet" href="/assets/css/employee-dashboard.css" />
+    <link rel="stylesheet" href="/assets/css/active_page.css">
     <title>Pace | Employee Dashboard</title>
     <script language="javascript" type="text/javascript">
         let bar_clock = () => { // function to display timer on the title bar
@@ -51,14 +52,19 @@
 
                 <div class="sidebar-links">
                     <!-- Link Start -->
-                    <div class="dashboard-link">
+                    <div class="dashboard-link" id="active_page">
                         <i class="fas fa-chart-pie"></i>
-                        <a href="">Employee Status</a>
+                        <a href="">Dashboard</a>
                     </div>
                     <!-- New link -->
                     <div class="dashboard-link">
-                        <i class="fas fa-user-friends"></i>
-                        <a href="">Add User</a>
+                        <i class="fas fa-tasks"></i>
+                        <a href="/contents/employee-tasks.html">Tasks</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-list-alt"></i>
+                        <a href="">Todo List</a>
                     </div>
                     <!-- New link -->
                     <div class="dashboard-link">
@@ -75,11 +81,7 @@
                         <i class="fas fa-flag-checkered"></i>
                         <a href="">Report</a>
                     </div>
-                    <!-- New link -->
-                    <div class="dashboard-link">
-                        <i class="fas fa-stream"></i>
-                        <a href="">Billing Rate</a>
-                    </div>
+
                     <!-- New link -->
                     <div class="dashboard-link">
                         <i class="fas fa-bell"></i>
