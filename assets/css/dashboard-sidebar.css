@@ -67,12 +67,13 @@
 }
 /* Hamburger menu */
 .fa-bars{
-  position: relative;
-  bottom: 87px;
+  /* position: relative; */
+  /* bottom: 87px; */
   color: #ffff;
-  left: 60px;
+  /* left: 60px; */
   font-size: 23px;
   cursor: pointer;
+  position: fixed;
 }
 .fa-bars:active{
   color: #ccc;
@@ -83,4 +84,9 @@
   text-decoration: none;
   font-size: 15px;
   margin: 0px 12px;
+}
+
+
+.close{
+
 }
