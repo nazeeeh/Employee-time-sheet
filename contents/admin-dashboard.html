@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
     <link rel="stylesheet" href="../assets/css/utilities.css">
-    <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
+    <link rel="stylesheet" href="/assets/css/admin-dashboard.css">
     <title>Dashboard</title>
     <script language="javascript" type="text/javascript">
         let bar_clock = () => 
@@ -97,7 +94,7 @@
         </div>
         <!-- this is where the dashboard components goes -->
         <div class="dashboard-body">
-            <main class="internal-con">
+            <main class="admin-con">
                 <!-- header starts here -->
                 <header>
                     <div id="search-in">
@@ -127,7 +124,7 @@
                     <div id="cards-con">
                         <!-- first card -->
                         <div class="cards">
-                            <h5>Uncompleted Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <h5 class="roboto-slab">Uncompleted Tasks(<span class="Pendingtask">87</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress green">
                                     <span class="percent">85%</span>
@@ -139,14 +136,14 @@
                                     </span>
                                     <div class="progress-value"></div>
                                 </div>
-                                <div class="details">
+                                <!-- <div class="details">
                                     
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- second card -->
                         <div class="cards">
-                            <h5>Pending Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <h5 class="roboto-slab">Pending Tasks(<span class="Pendingtask">50</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress yellow">
                                     <span class="percent">75%</span>
@@ -158,14 +155,14 @@
                                     </span>
                                     <div class="progress-value"></div>
                                 </div>
-                                <div class="details">
+                                <!-- <div class="details">
                                     
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- third card -->
                         <div class="cards">
-                            <h5>Unassigned Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <h5 class="roboto-slab">Unassigned Tasks(<span class="Pendingtask">100</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress blue">
                                     <span class="percent">50%</span>
@@ -177,9 +174,9 @@
                                     </span>
                                     <div class="progress-value"></div>
                                 </div>
-                                <div class="details">
+                                <!-- <div class="details">
                                     
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                             <!-- fourth card -->
@@ -205,16 +202,168 @@
                             <div class="top">
                                 <h5>Most active employee (Team 5)</h5>
                                 <div id="bar-chart">
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Onyedikachi Emmanuel</li>
+                                                <li>Samuel Yusuf</li>
+                                                <li> Opaluwa Aisha </li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="bar tooltip">
+                                        <span class="tooltiptext">
+                                            <ul>
+                                                <li>Ayodele Samuel Adebayo</li>
+                                                <li>Mike Adenuga</li>
+                                                <li> Solomon Chokor</li>
+                                            </ul>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <!-- calendar and manage documents section (below bar chart)-->
@@ -245,8 +394,14 @@
             </main>
         </div>
     </div>
-    <script src="/assets/js/internal-dashboard.js"></script>
     <script src="/assets/js/userDetails.js"></script>
     <script src="/assets/js/dashboard-sidebar.js"></script>
+    <script src="/assets/js/employee_control.js"></script>
+    <!-- Timer functions -->
+    <script src="/assets/js/timer.js"></script>
+    <!-- All functions associated with Tasks -->
+    <script src="/assets/js/tasks.js"></script>
+</body>
+
 </body>
 </html>

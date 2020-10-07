@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+
+/* CSS reset */
+body{
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+/* header starts here*/
+header{
+  padding: 8px 5px;
+  display: flex;
+  width: 95%;
+  margin: auto;
+  background-color: white;
+}
+/* search bar */
+#search-in{
+  flex: 1;
+}
+#search-in input{
+  border: none;
+  border-radius: 5px;
+  margin-left: -15px;
+  outline: none;
+  background-color: #F2F2F2;
+  padding: 5px 7px;
+}
+/* search bar button */
+#search-in button{
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* div containing everything after the search bar */
+header #right-in{
+  display: flex;
+  width: 60%;
+}
+header #right-in button#start-time, header #right-in button#stop-time{
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 6px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+}
+/* Start timer button */
+header #right-in button#start-time{
+  background-color: #213260;
+  display: block;
+}
+#right-in #time{
+  margin: auto 10px;
+}
+/* Stop timer button */
+header #right-in #stop-time{
+  background-color: #971425;
+  display: none;
+}
+/* div containing notification button, settings and username */
+header #right-in #other-in{
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+header #right-in #other-in .fa-cog, header #right-in #other-in .fa-bell{
+  align-self: center;
+  margin-right: 10px;
+  color: #213260;
+}
+header #right-in #other-in .notification{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+header #right-in #other-in #notification .notifications{
+  position: absolute;
+  z-index: 12;
+  font-size: 12px;
+  top: 48.5px;
+  width: 180px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid darkgrey;
+  display: none;
+}
+header #right-in #other-in #notification .notifications .notification-title{
+  display: flex;
+  width: 100%;
+  padding: 3px;
+  color: #37529c;
+}
+header #right-in #other-in #notification .notifications hr{
+  margin: 0 10px;
+  color: darkgray;
+}
+header #right-in #other-in #notification .notifications a{
+  font-size: 9px;
+  margin-right: 5px;
+  color: #c9c9c9;
+}
+header #right-in #other-in #notification .notifications p{
+  margin: 5px;
+  flex: 1;
+}
+/* Username(It's a button) */
+header #right-in #other-in .profile-in button{
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+}
+/* image before username but I did'nt upload an image */
+header #right-in #other-in .profile-in button img{
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/*==================================
+**********body*********************
+===================================
+*/
+
+/* background div. holds everything */
+#body-in{
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+}
+/* Container holding all cards (task cards) */
+#body-in #cards-con{
+  height: 150px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+/* Template for all cards */
+#body-in #cards-con .cards{
+  width: 24.5%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#body-in #cards-con .cards .cards-con{
+  display: flex;
+}
+/* The text in the cards */
+#body-in #cards-con .cards .details{
+  width: 55%;
+  margin: 5px 0 5px 0;
+  font-size: 14px;
+}
+#body-in #cards-con .cards h5{
+  width: 80%;
+  margin: 10px auto;
+  font-size: 16px;
+  text-align: center;
+  color: #213260;
+  cursor: pointer;
+}
+#body-in #cards-con .cards br{
+  margin: 0 10px;
+}
+#body-in #cards-con .cards p{
+  margin-left: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+/* the progress circles */
+.progress{
+  width: 70px;
+  height: 70px;
+  line-height: 80px;
+  background: none;
+  margin: auto 10px;
+  box-shadow: none;
+  position: relative;
+  cursor: pointer;
+}
+.progress .percent{
+  margin-left: 25px;
+  margin-top: -5px;
+  font-size: 12px;
+}
+.progress:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress > span{
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.progress .progress-left{
+  left: 0;
+}
+.progress .progress-bar{
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 12px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+.progress .progress-left .progress-bar{
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+.progress .progress-right{
+  right: 0;
+}
+.progress .progress-right .progress-bar{
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  background: white;
+  font-size: 20px;
+  color: black;
+  line-height: 135px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.progress.blue .progress-bar{
+  border-color: #049dff;
+  /* border-color: #9ea0b8; */
+}
+/* 50% loader */
+.progress.blue .progress-left .progress-bar{
+  animation: loading-2 1.5s linear forwards 1.8s;
+}
+/* 75% loader */
+.progress.yellow .progress-bar{
+  border-color: #fdba04;
+  /* border-color: #7f83a1; */
+}
+.progress.yellow .progress-left .progress-bar{
+  animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.pink .progress-bar{
+  border-color: #ed687c;
+}
+.progress.pink .progress-left .progress-bar{
+  animation: loading-4 0.4s linear forwards 1.8s;
+}
+/* 85% loader */
+.progress.green .progress-bar{
+  border-color: #1abc9c;
+  /* border-color: #60668b; */
+}
+.progress.green .progress-left .progress-bar{
+  animation: loading-5 1.2s linear forwards 1.8s;
+}
+/* animation of the progress circles */
+/* right half of loader */
+@keyframes loading-1{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100%{
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+}
+/* 50% loader */
+@keyframes loading-2{
+  0%{
+    -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(144deg);
+    transform: rotate(0deg);
+  }
+}
+/* 75% loader */
+@keyframes loading-3{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+  }
+}
+@keyframes loading-4{
+  0%{
+    -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  100%{
+    -webkit-transform: rotate(36deg);
+    transform: rotate(36deg);
+  }
+}
+/* 85% loader */
+@keyframes loading-5{
+  0%{
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100%{
+      -webkit-transform: rotate(126deg);
+      transform: rotate(126deg);
+  }
+}
+/* the progress circles ends here*/
+/* 4th task card starts here */
+#body-in #cards-con .cards:nth-of-type(4){
+  position: relative;
+  flex-direction: column;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks{
+  /* overflow: scroll; */
+  display: block;
+  font-size: 14px;
+  overflow: overlay;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
+  margin: 7px 7px 0 15px;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName i{
+  margin-right: 5px;
+}
+#body-in #cards-con .cards:nth-of-type(4) #display-tasks .delete-task, #body-in #cards-con .cards:nth-of-type(4) #display-tasks .edit-task{
+  font-size: 10px;
+  cursor: pointer;
+}
+#body-in #cards-con .cards a, #see-all-tasks{
+  margin: 10px 10px 0 10px;
+  color: #c9c9c9;
+}
+#body-in #cards-con .cards #assign-link{
+  display: block;
+  /* color: darkgray; */
+  color: green;
+}
+#body-in #cards-con .cards #see-all-tasks{
+  font-size: 9px;
+  text-decoration-line: none;
+  margin-left: 200px;
+  margin-top: 5px;
+}
+#body-in #cards-con .cards #see-all-tasks:hover{
+  text-decoration-line: underline;
+}
+/* This diplays when the text in the card is clicked */
+#body-in #cards-con .cards #new-task{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  display: none;  
+  margin: 10px;
+}
+#body-in #cards-con .cards #new-task input, .editForm input{
+  margin: 5px 0;
+  border-radius: 5px;
+  border: solid 1px #f2f2f2;
+  outline: none;
+  background-color: white;
+  padding: 5px 5px;
+}
+#body-in #cards-con .cards #new-task button, .editForm button{
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  background-color: #213260;
+}
+/* This diplays when the text in the card is clicked */
+.editForm{
+  z-index: 5;
+  display: none;
+  background-color: white;
+  border: 1px black solid;
+}
+
+.editForm input, .editForm button{
+  margin: 10px;
+  cursor: pointer;
+}
+.editForm button{
+  padding: 5px 20px;
+}
+/* 4th task card starts here */
+
+/* sections at the bottom part starts here */
+#body-in #body-con-in{
+  width: 95%;
+  height: 130vh;
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+/* bar-chart div */
+#body-in #body-con-in #section-one-in{
+  width: 64%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+/* bar-chart starts here */
+#body-in #body-con-in #section-one-in .top{
+  height: 48%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+/* bar chart */
+#body-in #body-con-in #section-one-in .top #bar-chart{
+  width: 90%;
+  margin: 5px auto;
+  border-left: solid 1px #7E7E7E;
+  border-bottom: solid 1px #7E7E7E;
+  height: 70%;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+/* Individual bar heights */
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:first-child{
+  height: 90%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(2),
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(3),
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(4),
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(5){
+  height: 30%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(6){
+  height: 30%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(7){
+  height: 20%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(8){
+  height: 15%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:nth-child(9){
+  height: 10%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar{
+  height: 5%;
+  width: 5%;
+  /* border: 1px solid rgb(22, 31, 56); */
+  background: #8e91ad;
+}
+/* bar-chart ends here */
+/* section below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom{
+  height: 48%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/* left dive below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom #left{
+  width: 49%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+/* calendar image */
+#body-in #body-con-in #section-one-in .bottom #left img{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  object-fit: cover;
+}
+/* text above calendar */
+#body-in #body-con-in #section-one-in .bottom #left h5, #body-in #body-con-in #section-one-in .top h5{
+  margin: 10px 0;
+  align-self: center;
+  font-size: 1rem;
+  color: #213260;
+}
+/* left dive below the bar-chart */
+#body-in #body-con-in #section-one-in .bottom #right a{
+  margin: 150px 10px 0 40px;
+  color: #7E7E7E;
+}
+#body-in #body-con-in #section-one-in .bottom #right{
+  width: 49%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+/* Online users segment */
+#body-in #body-con-in #section-two p{
+  margin: 4px 10px;
+  border-bottom: solid 1px #F2F2F2;
+  color: #213260;
+  font-weight: 700;
+  padding: 5px 0;
+  font-family: 'Roboto';
+  cursor: pointer
+}
+#body-in #body-con-in #section-two p i{
+  margin: 0 5px;
+  color: #8e91ad;
+}
+#body-in #body-con-in #section-two h5{
+  width: 50%;
+  margin: 10px auto;
+  font-size: 1rem;
+  color: #213260;
+  font-weight: 600px;
+}
+#body-in #body-con-in #section-two{
+  width: 34%;
+  height: 98%;
+  margin: auto 0;
+  background-color: white;
+  padding: 1rem 2.2rem;
+}
+
+
+/* tooltip on bar */
+
+.tooltip {
+  display: none;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 13rem;
+  background-color: rgb(33,50,96);
+  background-color: #424b75;
+  color: #f4f4f4;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  text-align: left;
+  padding: 9px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100px;
+}
+
+.tooltip .tooltiptext ul{
+  list-style-type: none;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

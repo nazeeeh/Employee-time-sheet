@@ -33,14 +33,19 @@ body{
 
 .tabs ul > li:first-of-type{
   background: #333;
+  background: #213260;
+
 }
 
 .tabs ul > li:nth-child(2){
   background: #333;
+  background: #213260;
+
 }
 
 .tabs ul > li:last-of-type{
   background: #333;
+  background: #213260;
 }
 
 #main h1{
@@ -92,6 +97,7 @@ table#employee_list{
   padding: 15px;
   color: rgb(141, 135, 135);
   font-weight: 500;
+  color: #60668b
 }
 .profile tr{
   border-radius: 1px;
@@ -106,6 +112,7 @@ table#employee_list{
   border-radius: 5px;
   background-color: #fff;
   color: rgb(87, 63, 63);
+  color: #424b75;
   border-radius: 3px;
 }
 
@@ -191,8 +198,19 @@ table#employee_list{
 }
 #info ul li{
   margin: 20px 20px;
+  color: #424b75;
+}
+#info ul h4{
+  margin: 20px 0.3rem;
+  color: #213260;
+  font-size: 1.1rem;
+  width: 30rem;
+}
+#info ul h4 > span{
+  font-size: 0.92rem;
 }
 
+/* form section styles */
 #form_section{
   margin-top: 27px;
   height: 100vh;
@@ -223,7 +241,7 @@ table#employee_list{
 }
 
 #form_section label{
-  color: #333;
+  color: #424b75;
   font-size: large;
 }
 #form_section input{

@@ -14,7 +14,7 @@
 .sidebar-container{
   width: 18%;
   height: 100vh; /*enable to see effect*/
-  background: rgb(33,50,96);
+  background: #213260;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 2px;
   position: fixed;
