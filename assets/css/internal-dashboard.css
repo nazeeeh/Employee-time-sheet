@@ -174,6 +174,9 @@ header #right-in #other-in .profile-in button img{
     margin-bottom: 0;
     font-size: 14px;
 }
+#body-in #cards-con .cards:nth-of-type(3) p{
+    text-align: center;
+}
 /* the progress circles */
 .progress{
     width: 70px;
@@ -346,6 +349,10 @@ header #right-in #other-in .profile-in button img{
     font-size: 14px;
     overflow: overlay;
 }
+/* #body-in #cards-con .cards:nth-of-type(4) #display-tasks hr{
+    color: rbg(209, 209, 209);
+    margin: 0 20px;
+} */
 #body-in #cards-con .cards:nth-of-type(4) #display-tasks .taskName{
     margin: 7px 7px 0 15px;
 }
@@ -357,12 +364,13 @@ header #right-in #other-in .profile-in button img{
     cursor: pointer;
 }
 #body-in #cards-con .cards a, #see-all-tasks{
-    margin: 10px 10px 0 10px;
+    margin: 5px 10px 0 10px;
     color: #c9c9c9;
 }
 #body-in #cards-con .cards #assign-link{
     display: block;
     color: darkgray;
+    margin-top: 2px;
 }
 #body-in #cards-con .cards #see-all-tasks{
     font-size: 9px;
@@ -380,7 +388,7 @@ header #right-in #other-in .profile-in button img{
     position: absolute;
     z-index: 2;
     display: none;  
-    margin: 10px;
+    margin: 3px 10px 10px;
 }
 #body-in #cards-con .cards #new-task input, .editForm input{
     margin: 5px 0;
