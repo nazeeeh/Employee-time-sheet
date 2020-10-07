@@ -36,13 +36,22 @@ function CancelNewTask(){
 
 
     tasks = []
+    unassignedMainList = []
+    assignedMainList = []
 
 if(JSON.parse(localStorage.getItem("tasks")) != tasks){
     tasks = JSON.parse(localStorage.getItem("tasks"))
 }else{
-    tasks
+    tasks = []
 }
 localStorage.setItem("tasks",  JSON.stringify(tasks))
+
+if(JSON.parse(localStorage.getItem("unassignedMainList")) != unassignedMainList){
+    unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"))
+}else{
+    unassignedMainList = []
+}
+localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
 
 displayTask()
 
@@ -70,7 +79,7 @@ function addTask(){
     let taskName = document.getElementById("task-name").value,
     employeeAssigned = document.getElementById("employee-assigned").value,
     dueDate = document.getElementById("due-date").value;
-
+    newTask = {}
     if(taskName === ""){
         CancelNewTask()
     } else{
@@ -80,10 +89,34 @@ function addTask(){
             due : dueDate
         }
     }
+    
+    if(employeeAssigned == ""){
+        unassignedMainList.push(newTask)
+        localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
+    }else if(employeeAssigned != ""){
+        assignedMainList.push(newTask)
+    }
+
+    // if(newTask.employee == ""){
+    //     unassigned.push(newTask)
+    //     localStorage.setItem("unassigned", JSON.stringify(unassigned))
+    //     document.getElementById("unassigned-number").textContent = unassigned.length
+    //     displayUnassigned()
+    // }
     tasks.push(newTask)
     localStorage.setItem("tasks", JSON.stringify(tasks))
     displayTask()
     CancelNewTask()
+}
+
+function displayUnassigned(){
+    let add = ''
+    for(i = 0; i < unassigned.length; i++){
+        add += `<div id="${i}">
+        <p class="taskName">${unassigned[i].name}</p>
+        </div> `
+    }
+    document.getElementById("unassigned").innerHTML = add
 }
 
 function showEditForm(id){
@@ -148,4 +181,6 @@ function deleteTask(id){
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
+
+
 

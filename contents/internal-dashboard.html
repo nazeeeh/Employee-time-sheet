@@ -170,7 +170,7 @@
                         </div>
                         <!-- third card -->
                         <div class="cards">
-                            <h5>Unassigned Tasks(<span class="Pendingtask">0</span>)</h5>
+                            <h5>Unassigned Tasks(<span id="unassigned-number">0</span>)</h5>
                             <div class="cards-con">
                                 <div class="progress blue">
                                     <span class="percent">50%</span>
@@ -182,14 +182,14 @@
                                     </span>
                                     <div class="progress-value"></div>
                                 </div>
-                                <div class="details">
+                                <div id="unassigned" class="details">
                                     
                                 </div>
                             </div>
                         </div>
                             <!-- fourth card -->
                         <div class="cards">
-                            <a href="#" id="see-all-tasks">See all</a>
+                            <a href="#" id="see-all-tasks" onclick="seeAllTasks()">See all</a>
                             <div id="display-tasks">
                                 
                             </div>
@@ -197,7 +197,7 @@
                             <div id="new-task">
                                 <input type="text" id="task-name" placeholder="Task" required>
                                 <input type="text" id="employee-assigned" placeholder="Employee to be assigned" required>
-                                <input type="text" id="due-date" placeholder="Due date" required> <br>
+                                <input type="date" id="due-date" placeholder="Due date" required> <br>
                                 <button id="assign" onclick="addTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
                             </div>
                     

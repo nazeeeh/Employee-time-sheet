@@ -1,0 +1,113 @@
+/* CSS reset */
+body{
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+/* body */
+main{
+    background-color: #f2f2f2;
+    padding-bottom: 20px;
+}
+#new-task-main{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+#new-task-main div{
+    width: 20%;
+    height: 17%;
+    margin: 250px auto;
+}
+#new-task-main div input{
+    outline: none;
+    padding: 5px;
+    margin: 7px;
+    width: 100%;
+}
+#new-task-main button{
+    outline: none;
+    padding: 5px 9px;
+    margin: 7px;
+    background-color: #213260;
+    border-radius: 5%;
+    color: white;
+}
+#add-task-main{
+    width: 200px;
+    text-align: center;
+    margin: 0 auto 30px;
+}
+#add-task-main button{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 7px;
+    margin-top: 30px;
+    background-color: #3b4664;
+    color: white;
+}
+.tasks-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+}
+#assigned-task-main{
+    width: 67%;
+    height: 100%;
+    background-color: white;
+    overflow: overlay;
+}
+.tasks-main #assigned-task-main .main-task, .tasks-main #unassigned-task-main .main-unassigned{
+    margin: 30px auto;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    height: 70px;
+    width: 95%;
+    background-color: #a6b7eb;
+}
+.tasks-main #assigned-task-main .main-task p, .tasks-main #unassigned-task-main .main-unassigned p:first-of-type{
+    margin: 5px 20px 5px 20px;
+}
+.tasks-main #unassigned-task-main .main-unassigned p:last-of-type{
+    margin: 5px 10px 5px 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+.tasks-main #unassigned-task-main .main-unassigned input{
+    outline: none;
+}
+.tasks-main #assigned-task-main .main-task span{
+    width: 300px;
+    margin: 0 10px 0 20px;
+}
+.tasks-main #assigned-task-main .main-task button:first-of-type{
+    margin: 0 20px 0 500px;
+    background-color: rgb(179, 24, 24);
+}
+.tasks-main #assigned-task-main .main-task button{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: seagreen;
+    color: white;
+}
+#unassigned-task-main{
+    width: 28.5%;
+    height: 100%;
+    background-color: white;
+}
