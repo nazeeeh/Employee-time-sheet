@@ -48,19 +48,19 @@
       <input type="text" id="task-name-main" placeholder="Task" required><br>
       <input type="text" id="employee-assigned-main" placeholder="Employee to be assigned" required><br>
       <input type="date" id="due-date-main" placeholder="Due date" required> <br>
-      <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelNewTask()">Cancel</button>
+      <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelTask()">Cancel</button>
       </div>
     </section>
     <div class="tasks-main">
       <div id="assigned-task-main">
         <div class="main-task">
           <p>Present Pace <span>Assigned to :</span></p> 
-          <span class="date">Due :</span> <span>Status :</span> <button>Delete</button> <button>Edit</button>
+          <div id="dateAndButtons"> <div id="date"> <span class="date">Due :</span> <span>Status :</span></div> <div id="buttons"><button>Delete</button> <button>Edit</button></div> </div>
         </div>
       </div>
       <div id="unassigned-task-main">
         <div class="main-unassigned">
-          <p>Present Pace</p>
+          <h5>Present Pace</h5>
           <p>Assign to employee:</p><input type="text" id="employee-main">
         </div>
       </div>

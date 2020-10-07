@@ -53,7 +53,16 @@ if(JSON.parse(localStorage.getItem("unassignedMainList")) != unassignedMainList)
 }
 localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
 
+if(JSON.parse(localStorage.getItem("assignedMainList")) != unassignedMainList){
+    assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"))
+}
+else{
+    assignedMainList = []
+}
+localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+
 displayTask()
+displayUnassigned()
 
 function displayTask(){
     let add = ''
@@ -88,35 +97,32 @@ function addTask(){
             employee : employeeAssigned,
             due : dueDate
         }
-    }
-    
-    if(employeeAssigned == ""){
-        unassignedMainList.push(newTask)
-        localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
-    }else if(employeeAssigned != ""){
-        assignedMainList.push(newTask)
-    }
+        if(employeeAssigned == ""){
+            unassignedMainList.push(newTask)
+            localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
+            displayUnassigned()
 
-    // if(newTask.employee == ""){
-    //     unassigned.push(newTask)
-    //     localStorage.setItem("unassigned", JSON.stringify(unassigned))
-    //     document.getElementById("unassigned-number").textContent = unassigned.length
-    //     displayUnassigned()
-    // }
-    tasks.push(newTask)
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-    displayTask()
-    CancelNewTask()
+        }else if(employeeAssigned != ""){
+            assignedMainList.push(newTask)
+            localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+        }
+
+        tasks.push(newTask)
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+        displayTask()
+        CancelNewTask()
+    }
 }
 
 function displayUnassigned(){
     let add = ''
-    for(i = 0; i < unassigned.length; i++){
+    for(i = 0; i < unassignedMainList.length; i++){
         add += `<div id="${i}">
-        <p class="taskName">${unassigned[i].name}</p>
+        <p class="taskName">${unassignedMainList[i].name}</p>
         </div> `
     }
     document.getElementById("unassigned").innerHTML = add
+    document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
 }
 
 function showEditForm(id){
@@ -171,12 +177,19 @@ function editTask(id){
     }else{tasks[id].due = editDueDate
     }
 
-
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
 }
 
 function deleteTask(id){
+    userIndex = unassignedMainList.findIndex(x => x.name == tasks[id].name)
+    unassignedMainList.splice(userIndex, 1)
+    localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
+
+    userIndex = assignedMainList.findIndex(x => x.name == tasks[id].name)
+    assignedMainList.splice(userIndex, 1)
+    localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+
     tasks.splice(id, 1)
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()

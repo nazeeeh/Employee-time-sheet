@@ -27,21 +27,35 @@ main{
 #new-task-main div{
     width: 20%;
     height: 17%;
-    margin: 250px auto;
+    margin: 200px auto;
 }
 #new-task-main div input{
     outline: none;
-    padding: 5px;
-    margin: 7px;
-    width: 100%;
+    padding: 9px 5px;
+    margin: 7px 40px;
+    width: 70%;
+    border-radius: 10px;
+    border: #f2f2f2 2px solid;
+}
+#new-task-main div input:first-of-type{
+    margin-top: 40px;
+}
+#new-task-main div{
+    background-color: white;
+    height: 45%;
+    width: 30%;
 }
 #new-task-main button{
     outline: none;
-    padding: 5px 9px;
+    padding: 7px 9px;
     margin: 7px;
     background-color: #213260;
-    border-radius: 5%;
     color: white;
+    border: none;
+    border-radius: 10%;
+}
+#new-task-main button:first-of-type{
+    margin-left: 40px;
 }
 #add-task-main{
     width: 200px;
@@ -61,11 +75,11 @@ main{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 100vh;
 }
 #assigned-task-main{
-    width: 67%;
+    width: 60%;
     height: 100%;
     background-color: white;
     overflow: overlay;
@@ -74,40 +88,83 @@ main{
     margin: 30px auto;
     margin-bottom: 10px;
     padding-top: 10px;
-    height: 70px;
     width: 95%;
     background-color: #a6b7eb;
+}
+.tasks-main #unassigned-task-main .main-unassigned{
+    width: 90%;
+    padding-bottom: 10px;
+    /* background-color: white; */
+}
+.tasks-main #unassigned-task-main{
+    overflow: overlay;
 }
 .tasks-main #assigned-task-main .main-task p, .tasks-main #unassigned-task-main .main-unassigned p:first-of-type{
     margin: 5px 20px 5px 20px;
 }
 .tasks-main #unassigned-task-main .main-unassigned p:last-of-type{
-    margin: 5px 10px 5px 20px;
+    margin: 5px 10px 10px 10px;
     font-size: 14px;
-    display: inline-block;
+}
+#dateAndButtons{
+    display: flex;
+}
+#dateAndButtons #date{
+    margin-top: 10px;
+    flex: 1;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main{
+   background-color: white; 
+   padding: 20px;
+   display: none;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main input{
+    margin-bottom: 10px;
+    outline: none; 
+    padding: 7px 5px;
+    border-radius: 5px;
+    border: #f2f2f2 solid 2px;
+    width: 250px;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main button{
+    padding: 7px 10px;
+    background-color: #3b4664;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main button{
+    background-color: #3b4664;
 }
 .tasks-main #unassigned-task-main .main-unassigned input{
     outline: none;
+    margin-bottom: 10px;
+    border: 2px solid #f2f2f2;
+    border-radius: 5px;
 }
 .tasks-main #assigned-task-main .main-task span{
     width: 300px;
     margin: 0 10px 0 20px;
 }
 .tasks-main #assigned-task-main .main-task button:first-of-type{
-    margin: 0 20px 0 500px;
     background-color: rgb(179, 24, 24);
+    margin-right: 10px;
 }
 .tasks-main #assigned-task-main .main-task button{
     cursor: pointer;
     outline: none;
+    margin-bottom: 20px;
     border: none;
-    padding: 3px 5px;
+    padding: 7px 7px;
     border-radius: 5px;
     background-color: seagreen;
     color: white;
 }
+.tasks-main #assigned-task-main .main-task button:last-of-type{
+    margin-right: 30px;
+}
 #unassigned-task-main{
-    width: 28.5%;
+    width: 34%;
     height: 100%;
     background-color: white;
+}
+#unassigned-task-main .assignEmployee{
+    display: flex;
 }
