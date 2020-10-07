@@ -15,9 +15,9 @@
   <div class="sidebar-container">
     <div class="sidebar-wrapper">
       <div class="company">
-        <i id="logo" class=""></i>
-        <i class="fas fa-bars" style="position: relative; left: 40px ;"></i>
-        <h4 id="companyDisplay" class="companyDisplay">TIIDELab</h4>
+        <!-- <i id="logo" class=""></i> -->
+        <i class="fas fa-bars"></i>
+        <h4 class="companyDisplay"id="companyDisplay">TIIDELab</h4>
       </div>
       
       <div class="sidebar-links">
@@ -27,7 +27,7 @@
               <a href="/contents/admin-dashboard.html">Dashboard</a>
           </div>
           <!-- New link -->
-          <div class="dashboard-link">
+          <div class="dashboard-link" id="active_page">
               <i class="fas fa-user-friends"></i>
               <a href="/contents/addUser.html">Add User</a>
           </div>
@@ -110,6 +110,7 @@
     </div>
   </div>
 
+ <!-- employ form -->
   <div id="employ_form">
     <div id="info">
       <h3>Employee Type Code</h3>
@@ -122,7 +123,6 @@
     </div>
     <div id="form_section">
       <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
-      <input type="hidden" id="identifier">
       <label for="">Employee Type</label>
       <input type="text" id="employee_type">
       <label for="">Email</label>
@@ -136,6 +136,37 @@
       <a href="#" id="add_employee_btn" class="to-btn btn-deep" onclick="_add_employee()">Employ</a>
     </div>
   </div>
+
+
+  <!-- EDIT FORM -->
+  <div id="edit_form">
+    <div id="edit_info">
+      <h3>Employee Type Code</h3>
+      <ul>
+        <li>Co- Admin - 443</li>
+        <li>Internal Admin - 332</li>
+        <li>Employee - 554</li>
+        <h4>Pace Bot: <span id="error_">Hello</span></h4>
+      </ul>
+    </div>
+    <!-- edit form  -->
+    <div id="edit_section">
+      <h3 id="edit_heading"><span id="close_edit" onclick='close_editForm()'>X</span> Employee Form 2</h3>
+      <input type="hidden" id="identifier">
+      <label for="">Employee Type</label>
+      <input type="text" id="update_type">
+      <label for="">Email</label>
+      <input type="text" id="update_email">
+      <label for="">Full Name</label>
+      <input type="text" id="update_name">
+      <label for="">Role</label>
+      <input type="text" id="update_role">
+      <label for="">Phone Number</label>
+      <input type="text" id="update_phone">
+      <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
+    </div>
+  </div>
+  <!-- END OF EDIT FORM -->
 </div>
 <script src="/assets/js/employee_control.js"></script>
 <script src="/assets/js/userDetails.js"></script>
