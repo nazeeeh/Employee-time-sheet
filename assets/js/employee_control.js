@@ -30,13 +30,15 @@ let _render_record = () =>
   {
   
     employee_con += `
-    <tr>
+    <tr id="${i}">
       <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].role}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon" onclick="add_form();"></i></td>
+      <td>${ _employee_localStorage[i].joining_date} 
+        <i class="fas fa-ellipsis-v more-icon" onclick="edit_form(${i})"></i>
+      </td>
     </tr>
     `
   }
@@ -76,7 +78,7 @@ let _add_employee = () =>
     {// check which logo is selected
   
       case "443":
-        return new_user_type = "Co-Admin";
+        new_user_type = "Co-Admin";
         break;
   
       case "332":
@@ -165,28 +167,43 @@ function close_form(){
 
 // close form when user click outside the form
 // var form = document.getElementById("employ_form");
-window.onclick = function(event) {
-  if (event.target == form ) {
-    form.style.display = "none";
-  }
-}
-
+// window.onclick = function(event) {
+//   if (event.target == form ) {// or use employ_form
+//     form.style.display = "none";
+//   }
+// }
 
 //  edit user
 
-const _editRecord = (employee_id) =>
-{
+function edit_form(x){
+
+  form = document.getElementById("edit_form");
+  form.style.display = "flex";
+  _editRecord(x)
   
+}
+
+function close_editForm(){
+  document.getElementById("edit_form").style.display = "none";
+}
+
+let _editRecord = (employee_id) =>
+{
   recordToUpdate = _employee_localStorage[employee_id]
-  document.getElementById("employee_email").value = recordToUpdate.email 
-  document.getElementById("employee_name").value = recordToUpdate.name
-  document.getElementById("employee_role").value = recordToUpdate.role
-  document.getElementById("employee_phone").value = recordToUpdate.phone
+  // alert(_employee_localStorage)
+  // alert(recordToUpdate)
+  // alert(employee_id)
+  // console.log(_employee_localStorage[employee_id])
+  // console.log(recordToUpdate.name)
+  // console.log(_employee_localStorage)
+  document.getElementById("update_email").value = recordToUpdate.email 
+  document.getElementById("update_name").value = recordToUpdate.name
+  document.getElementById("update_role").value = recordToUpdate.role
+  document.getElementById("update_phone").value = recordToUpdate.phone
   document.getElementById("identifier").value = employee_id
 
 
 }
-
 let updatedRecord = () =>
 { // function to collate and store new updated details
   employee_id = document.getElementById("identifier").value;
