@@ -16,7 +16,7 @@ let display_company_name = () => {
     _companyName[i].innerHTML = `<span class="greetUser"></span> ${islogged_In[0].name}`;
   }
 }
-document.getElementById("logo").innerHTML = `<img id="companyImage" height = "100px" src="../assets/img/register/${islogged_In[0].logo}">`
+// document.getElementById("logo").innerHTML = `<img id="companyImage" height = "100px" src="../assets/img/register/${islogged_In[0].logo}">`
 display_company_name()
 
 // clear the temporary local storage 

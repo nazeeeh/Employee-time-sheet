@@ -5,6 +5,8 @@ THIS SCRIPT
 
 */
 
+
+
 // get the current logged in user from local storage
 var _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser")) // object
 
@@ -14,29 +16,44 @@ let _get_employee_record = _is_Login_Admin[0].employeeDb // string
 // to get the data base name in this format : companyName_employees
 var _company_db_name = _is_Login_Admin[0].name // string
 
+
+
+
+
+
 // parsed version of company record
 let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
 
 let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
 
-
+// create local storage for company employee if deleted or not found
+if(_employee_localStorage === null || _employee_localStorage === undefined) 
+{// if company local storage does not exist create one 
+  
+_employee_localStorage = []
+  
+}
 /* function to display all record in the local storage */
 let _render_record = () => 
 {
+
+
   var employee_con = "";
   let serialNumber = 0;
   for (i = 0; i <  _employee_localStorage.length; i++)
   {
   
     employee_con += `
-    <tr>
+    <tr id="${i}" draggable="true">
       <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].role}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date} <i class="fas fa-ellipsis-v more-icon" onclick="add_form();"></i></td>
+      <td>${ _employee_localStorage[i].joining_date} 
+        <i class="fas fa-ellipsis-v more-icon" onclick="edit_form(${i})"></i>
+      </td>
     </tr>
     `
   }
@@ -49,8 +66,10 @@ _render_record()
 
 // add new employee
 
-let _add_employee = () =>
-{
+// let _add_employee = () =>
+function _add_employee(){
+
+
   new_email = document.getElementById("employee_email").value,
   new_name = document.getElementById("employee_name").value,
   new_role = document.getElementById("employee_role").value,
@@ -76,7 +95,7 @@ let _add_employee = () =>
     {// check which logo is selected
   
       case "443":
-        return new_user_type = "Co-Admin";
+        new_user_type = "Co-Admin";
         break;
   
       case "332":
@@ -105,7 +124,7 @@ let _add_employee = () =>
   
     document.getElementById("error_").innerHTML = `${newAdd.name} created successfully`
     
-    // alert(`${_employee_localStorage}_employees`)
+    alert(`${_employee_localStorage}_employees`)
     _employee_localStorage.push(newAdd);
     localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
     _render_record()
@@ -165,41 +184,55 @@ function close_form(){
 
 // close form when user click outside the form
 // var form = document.getElementById("employ_form");
-window.onclick = function(event) {
-  if (event.target == form ) {
-    form.style.display = "none";
-  }
-}
-
+// window.onclick = function(event) {
+//   if (event.target == form ) {// or use employ_form
+//     form.style.display = "none";
+//   }
+// }
 
 //  edit user
 
-const _editRecord = (employee_id) =>
-{
+function edit_form(x){
+
+  form = document.getElementById("edit_form");
+  form.style.display = "flex";
+  _editRecord(x)
   
+}
+
+function close_editForm(){
+  document.getElementById("edit_form").style.display = "none";
+}
+
+let _editRecord = (employee_id) =>
+{
+
   recordToUpdate = _employee_localStorage[employee_id]
-  document.getElementById("employee_email").value = recordToUpdate.email 
-  document.getElementById("employee_name").value = recordToUpdate.name
-  document.getElementById("employee_role").value = recordToUpdate.role
-  document.getElementById("employee_phone").value = recordToUpdate.phone
+  document.getElementById("update_email").value = recordToUpdate.email 
+  document.getElementById("update_name").value = recordToUpdate.name
+  document.getElementById("update_type").value = recordToUpdate.user_type
+  document.getElementById("update_role").value = recordToUpdate.role
+  document.getElementById("update_phone").value = recordToUpdate.phone
+  restrict_join_date = recordToUpdate.joining_date
   document.getElementById("identifier").value = employee_id
 
 
 }
-
 let updatedRecord = () =>
 { // function to collate and store new updated details
   employee_id = document.getElementById("identifier").value;
   updatedRecord = {
 
-    "email" : document.getElementById("employee_email").value,
-    "name" : document.getElementById("employee_name").value,
-    "role" : document.getElementById("employee_role").value,
-    "phone" : document.getElementById("employee_phone").value,
+    "email" : document.getElementById("update_email").value,
+    "name" : document.getElementById("update_name").value,
+    "user_type" : document.getElementById("update_type").value,
+    "role" : document.getElementById("update_role").value,
+    "joining_date" : restrict_join_date,
+    "phone" : document.getElementById("update_phone").value,
 
   }
   _employee_localStorage[employee_id] = updatedRecord
   localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
   _render_record()
-
+  location.reload()
 }
