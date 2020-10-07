@@ -26,6 +26,8 @@
   font-size: 22px; /* or 2rem ?*/
   font-weight: 900;
   text-transform: uppercase;
+  font-family: 'Roboto', sans-serif ;
+  padding: 25px 23px 0px 10px;
 }
 
 .company #companyDisplay .greetUser{
@@ -44,7 +46,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* padding: 20px; */
 }
 
 
@@ -57,6 +58,8 @@
   margin-left: 20px;
   width: 100%;
   cursor: pointer;
+  /* font-weight: 500; */
+  font-family: 'Roboto', sans-serif ;
 }
 /* dashboard links logo*/
 .dashboard-link i{
@@ -120,4 +123,36 @@
   cursor: pointer;
   font-size: 17px;
   text-transform: capitalize;
+}
+
+
+
+/* active sidebar  */
+
+
+#active_page{
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
+  width: 100%;
+  cursor: pointer;
+  color: red;
+}
+
+#active_page a,
+#active_page i{
+  color: #333;
+}
+#active_page a{
+  color: #333;
+}
+
+.dashboard-link{
+  padding: 10px;
+}
+
+.sidebar-wrapper{
+  padding: 0px;
+  overflow: hidden;
 }
