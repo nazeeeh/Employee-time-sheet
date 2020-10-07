@@ -374,8 +374,7 @@ header #right-in #other-in .profile-in button img{
 }
 #body-in #cards-con .cards #assign-link{
   display: block;
-  /* color: darkgray; */
-  color: green;
+  color: darkgray;
 }
 #body-in #cards-con .cards #see-all-tasks{
   font-size: 9px;
@@ -411,7 +410,7 @@ header #right-in #other-in .profile-in button img{
   outline: none;
   background-color: #213260;
 }
-/* This diplays when the text in the card is clicked */
+/* This displays when the text in the card is clicked */
 .editForm{
   z-index: 5;
   display: none;
@@ -539,15 +538,15 @@ header #right-in #other-in .profile-in button img{
 #body-in #body-con-in #section-two p{
   margin: 4px 10px;
   border-bottom: solid 1px #F2F2F2;
-  color: #213260;
   font-weight: 700;
   padding: 5px 0;
   font-family: 'Roboto';
-  cursor: pointer
+  cursor: pointer;
+  color: #60668b;
 }
 #body-in #body-con-in #section-two p i{
   margin: 0 5px;
-  color: #8e91ad;
+  color: #424b75;
 }
 #body-in #body-con-in #section-two h5{
   width: 50%;
