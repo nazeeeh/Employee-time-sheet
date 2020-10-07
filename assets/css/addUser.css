@@ -97,7 +97,8 @@ table#employee_list{
   padding: 15px;
   color: rgb(141, 135, 135);
   font-weight: 500;
-  color: #60668b
+  color: #60668b;
+  /* cursor: pointer; */
 }
 .profile tr{
   border-radius: 1px;
@@ -106,6 +107,7 @@ table#employee_list{
 .profile td{
   padding: 16px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .profile{
@@ -290,9 +292,10 @@ table#employee_list{
   /* background: rgba(255,255,255,0.96); */
   display: none;
   z-index: 99;
+  overflow: scroll;
 }
 
-#info{
+#edit_info{
   width: 30%;
   color: #333;
   background: #f4f4f4;
@@ -300,27 +303,27 @@ table#employee_list{
   margin-bottom: 400px;
   border-radius: 6px;
 }
-#info h3{
+#edit_info h3{
   padding: 20px;
   background: #213260;
   color: whitesmoke;
 }
 
-#info ul{
+#edit_info ul{
   padding: 20px;
   list-style-type: disc;
 }
-#info ul li{
+#edit_info ul li{
   margin: 20px 20px;
   color: #424b75;
 }
-#info ul h4{
+#edit_info ul h4{
   margin: 20px 0.3rem;
   color: #213260;
   font-size: 1.1rem;
   width: 30rem;
 }
-#info ul h4 > span{
+#edit_info ul h4 > span{
   font-size: 0.92rem;
 }
 
@@ -335,6 +338,7 @@ table#employee_list{
   width: 50%;
   background: #ccc;
   border-radius: 6px;
+  padding: 10px;
 }
 
 #edit_heading{
@@ -348,7 +352,7 @@ table#employee_list{
   bottom: 12px;
 }
 
-#edit_section #close{
+#edit_section #close_edit{
   padding: 10px 10px;
   border: none;
   outline: none;
@@ -369,7 +373,7 @@ table#employee_list{
   margin: 0px 12px;
 }
 
-#add_employee_btn{
+#edit_employee_btn{
   position: relative;
   top: 21px;
   border-radius: unset;
