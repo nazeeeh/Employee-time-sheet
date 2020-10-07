@@ -150,7 +150,8 @@ body{
   box-sizing: border-box;
   border-bottom: 2px solid rgba(33, 50, 96, 0.1);
   font-size: 21px;
-  background: rgba(33, 50, 96, 0.1);
+  /* background: rgba(33, 50, 96, 0.1); */
+  background: transparent;
   /* transition: ease-in-out, 1s ease-in-out; */
 }
 
