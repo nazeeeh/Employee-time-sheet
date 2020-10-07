@@ -61,6 +61,10 @@
   /* font-weight: 500; */
   font-family: 'Roboto', sans-serif ;
 }
+.dashboard-link:hover{
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
 /* dashboard links logo*/
 .dashboard-link i{
   color: #fff;
@@ -99,12 +103,14 @@
   text-decoration: none;
   font-size: 15px;
   margin: 0px 12px;
+  padding: 10px 50px 10px 5px;
+  /* background-color: red; */
 }
 
 .dashboard-link a:hover{
   color: #f4f4f4;
   font-size: 16px;
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
 }
 
 .close{
@@ -137,7 +143,6 @@
   color: #333;
   width: 100%;
   cursor: pointer;
-  color: red;
 }
 
 #active_page a,
