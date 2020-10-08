@@ -178,6 +178,7 @@ table#employee_list{
   /* background: rgba(255,255,255,0.96); */
   display: none;
   z-index: 99;
+  overflow: auto;
 }
 
 #info{
@@ -185,7 +186,7 @@ table#employee_list{
   color: #333;
   background: #f4f4f4;
   margin: 0px;
-  margin-bottom: 400px;
+  /* margin-bottom: 400px; */
   border-radius: 6px;
 }
 #info h3{
@@ -263,11 +264,12 @@ table#employee_list{
   border-radius: unset;
   padding-top: 12px;
   padding-bottom: 12px;
+  font-size: 1.2rem;
 }
 
 
 
-/* EDIT FORM STYLE */
+/* >>>>>>>>>>> EDIT FORM STYLE <<<<<<<<<<<<<<<< */
 
 
 /* modal edit */
@@ -292,7 +294,7 @@ table#employee_list{
   /* background: rgba(255,255,255,0.96); */
   display: none;
   z-index: 99;
-  overflow: scroll;
+  overflow: auto;
 }
 
 #edit_info{
@@ -300,7 +302,7 @@ table#employee_list{
   color: #333;
   background: #f4f4f4;
   margin: 0px;
-  margin-bottom: 400px;
+  /* margin-bottom: 400px; */
   border-radius: 6px;
 }
 #edit_info h3{
@@ -375,9 +377,9 @@ table#employee_list{
 
 #edit_employee_btn{
   position: relative;
-  top: 21px;
   border-radius: unset;
   padding-top: 12px;
   padding-bottom: 12px;
+  font-size: 1.2rem;
 }
 
