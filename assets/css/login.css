@@ -16,7 +16,7 @@ body{
                     url('/assets/img/register/bg-img.png');
 
   background-repeat: no-repeat;
-  position: right;
+  background-size: cover;
   /* background: #f4f4f4; */
 }
 
