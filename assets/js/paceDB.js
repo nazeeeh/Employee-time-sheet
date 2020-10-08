@@ -102,6 +102,7 @@ let getUserDetails = () =>
             "email": `sample@pacetimesheet.com`,
             "user_type" : "Admin",
             "phone":"08038157444",
+            "password":"7444",
             "joining_date" :  _employed_date(new Date())
     
             }
