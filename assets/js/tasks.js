@@ -33,33 +33,26 @@ function CancelNewTask(){
         newTask.style.display = "block"
     }
 }
-
-
     tasks = []
     unassignedMainList = []
     assignedMainList = []
 
-if(JSON.parse(localStorage.getItem("tasks")) != tasks){
-    tasks = JSON.parse(localStorage.getItem("tasks"))
-}else{
+if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
-}
-localStorage.setItem("tasks",  JSON.stringify(tasks))
-
-if(JSON.parse(localStorage.getItem("unassignedMainList")) != unassignedMainList){
-    unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"))
 }else{
-    unassignedMainList = []
+    tasks = JSON.parse(localStorage.getItem("tasks"))
 }
-localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
+if( JSON.parse(localStorage.getItem("unassignedMainList")) == null){
+    unassignedMainList = []
+}else{
+    unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"))
+}
 
-if(JSON.parse(localStorage.getItem("assignedMainList")) != unassignedMainList){
+if( JSON.parse(localStorage.getItem("assignedMainList")) == null){
+    assignedMainList = []
+}else{
     assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"))
 }
-else{
-    assignedMainList = []
-}
-localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
 
 displayTask()
 document.getElementById("Pendingtask").innerHTML = assignedMainList.length
