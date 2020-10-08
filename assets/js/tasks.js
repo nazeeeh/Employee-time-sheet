@@ -62,7 +62,9 @@ else{
 localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
 
 displayTask()
-displayUnassigned()
+document.getElementById("Pendingtask").innerHTML = assignedMainList.length
+document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
+
 
 function displayTask(){
     let add = ''
@@ -84,10 +86,10 @@ function displayTask(){
 }
 
 function addTask(){
-
     let taskName = document.getElementById("task-name").value,
     employeeAssigned = document.getElementById("employee-assigned").value,
     dueDate = document.getElementById("due-date").value;
+
     newTask = {}
     if(taskName === ""){
         CancelNewTask()
@@ -100,11 +102,12 @@ function addTask(){
         if(employeeAssigned == ""){
             unassignedMainList.push(newTask)
             localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
-            displayUnassigned()
+            document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
 
         }else if(employeeAssigned != ""){
             assignedMainList.push(newTask)
             localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+            document.getElementById("Pendingtask").innerHTML = assignedMainList.length
         }
 
         tasks.push(newTask)
@@ -112,17 +115,6 @@ function addTask(){
         displayTask()
         CancelNewTask()
     }
-}
-
-function displayUnassigned(){
-    let add = ''
-    for(i = 0; i < unassignedMainList.length; i++){
-        add += `<div id="${i}">
-        <p class="taskName">${unassignedMainList[i].name}</p>
-        </div> `
-    }
-    document.getElementById("unassigned").innerHTML = add
-    document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
 }
 
 function showEditForm(id){
@@ -193,6 +185,8 @@ function deleteTask(id){
     tasks.splice(id, 1)
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     displayTask()
+    document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
+    document.getElementById("Pendingtask").innerHTML = assignedMainList.length
 }
 
 

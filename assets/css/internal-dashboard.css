@@ -165,6 +165,7 @@ header #right-in #other-in .profile-in button img{
     width: 80%;
     margin: 10px auto;
     font-size: 16px;
+    text-align: center;
 }
 #body-in #cards-con .cards br{
     margin: 0 10px;
@@ -179,11 +180,11 @@ header #right-in #other-in .profile-in button img{
 }
 /* the progress circles */
 .progress{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     line-height: 80px;
     background: none;
-    margin: auto 10px;
+    margin: auto;
     box-shadow: none;
     position: relative;
 }
@@ -460,6 +461,23 @@ header #right-in #other-in .profile-in button img{
     justify-content: space-around;
     align-items: flex-end;
 }
+#body-in #body-con-in #section-one-in .top #bar-chart .bar .bar-details{
+    background-color: #a3abc4;
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    bottom: 40px;
+    left: 5px;
+    z-index: 2;
+    visibility: hidden;
+    border-radius: 10%;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar:hover .bar-details{
+    visibility: visible;
+}
+#body-in #body-con-in #section-one-in .top #bar-chart .bar .bar-details p{
+    margin: 0 15px;
+}
 /* Individual bar heights */
 #body-in #body-con-in #section-one-in .top #bar-chart .bar:first-child{
     height: 80%;
@@ -474,6 +492,7 @@ header #right-in #other-in .profile-in button img{
     height: 60%;
     width: 5%;
     background-color: #a6b7eb;
+    position: relative;
 }
 /* bar-chart ends here */
 /* section below the bar-chart */
