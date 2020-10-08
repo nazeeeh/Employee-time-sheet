@@ -92,16 +92,20 @@ let getUserDetails = () =>
           var month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
           return month[employed_date.getMonth()]+" "+employed_date.getDate()+" "+employed_date.getFullYear();
         }
-    
+        
         let sample = [
     
             {// employee sample on dashboard
     
             "name":"Sample Name",
             "role":"Engineer",
+            "id":`sample.${companyName}`,
             "email": `sample@pacetimesheet.com`,
             "user_type" : "Admin",
             "phone":"08038157444",
+            "salary":"120000",
+            "currency":"Naira",
+            "department":"Sample",
             "joining_date" :  _employed_date(new Date())
     
             }
