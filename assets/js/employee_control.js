@@ -117,6 +117,7 @@ function _add_employee(){
       "password":"7444",
       "role" : document.getElementById("employee_role").value,
       "phone" : document.getElementById("employee_phone").value,
+      "password" : "7444",
       "status" : "Active",
       "user_type" : new_user_type,
       "joining_date" : _employed_date(new Date()),

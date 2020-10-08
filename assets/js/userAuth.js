@@ -40,9 +40,7 @@ let authUser = () =>
 
       unKnown.innerHTML = "you are logged in as admin" 
 
-      _start_Session() // revoke function to keep you signed in      
-      
-     
+      _start_Session() // revoke function to keep you signed in            
       location.assign("../contents/admin-dashboard.html") // redirect you to the admin dashboard
       
     
@@ -86,41 +84,41 @@ let authUser = () =>
   
       }
   
-      else if (employee_InDb["password"] == pwAuth) // finally your password has matched your record 
+      else if (employee_InDb.password == pwAuth) // finally your password has matched your record 
   
       { // now let's fine your user type
-
-        switch(employee_InDb.user_type)
+        alert(employee_InDb.user_type.toUpperCase())
+        switch(employee_InDb.user_type.toUpperCase())
         
         {
 
-          case employee_InDb.user_type.toLowerCase() === "co-admin":
+          case employee_InDb.user_type = "CO-ADMIN":
 
             location.assign("../contents/admin-dashboard.html");
             _start_Session()
             break;
 
-          case employee_InDb.user_type.toLowerCase() === "internal admin":
+          case employee_InDb.user_type = "INTERNAL-ADMIN":
             
             location.assign("../contents/internal-dashboard.html");
             _start_Session()
             break;
           
-          case employee_InDb.user_type.toLowerCase() === "employee":
+          case employee_InDb.user_type = "EMPLOYEE":
             
             location.assign("../contents/employee-dashboard.html");
             _start_Session()
             break;
             
-          case employee_InDb.user_type.toLowerCase() === "others":
+          // case employee_InDb.user_type = "OTHERS":
           
-            location.assign("../contents/employee-dashboard.html");
-            _start_Session()
+          //   location.assign("../contents/employee-dashboard.html");
+          //   _start_Session()
               
-            break;
+          //   break;
         }
 
-        unKnown.innerHTML = "innnnnn"
+        unKnown.innerHTML = `${employee_InDb.user_type.toUpperCase()} innn `
 
       }
     }
@@ -128,7 +126,7 @@ let authUser = () =>
 
   function _start_Session() // function to handle login session
   {
-
+    alert("here")
     let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));// check if there's an existing session of a user
     if(current_UserDb == null || current_UserDb.length > 1) // if current user storage does not exist create one (if empty or more than 1)
     
@@ -137,7 +135,7 @@ let authUser = () =>
       current_UserDb = [] // create new array
       
     }
-    current_UserDb.push(_find_company_InDb)  // store the loggedIn use into an array
+    current_UserDb.push(employee_InDb)  // store the loggedIn use into an array
     localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
 
   }
