@@ -9,6 +9,9 @@ body{
     padding: 0;
     margin: 0;
 }
+*{
+    color: #2b394a;
+}
 /* body */
 main{
     background-color: #f2f2f2;
@@ -58,9 +61,19 @@ main{
     margin-left: 40px;
 }
 #add-task-main{
-    width: 200px;
     text-align: center;
-    margin: 0 auto 30px;
+    display: flex;
+}
+#add-task-main button{
+    justify-self: center;
+    align-self: center;
+    margin: 0 auto 30px; 
+}
+#add-task-main a{
+    justify-self: flex-start;
+    margin: auto 30px;
+    text-decoration: none;
+    color: darkgray;
 }
 #add-task-main button{
     outline: none;
@@ -84,12 +97,17 @@ main{
     background-color: white;
     overflow: overlay;
 }
+#assigned-task-main h3, #unassigned-task-main h3{
+    text-align: center;
+    margin: 10px auto;
+    color: #2b394a;
+}
 .tasks-main #assigned-task-main .main-task, .tasks-main #unassigned-task-main .main-unassigned{
     margin: 30px auto;
     margin-bottom: 10px;
     padding-top: 10px;
     width: 95%;
-    background-color: #a6b7eb;
+    background-color: #d6ddf3;
 }
 .tasks-main #unassigned-task-main .main-unassigned{
     width: 90%;
@@ -143,11 +161,7 @@ main{
     width: 300px;
     margin: 0 10px 0 20px;
 }
-.tasks-main #assigned-task-main .main-task button:first-of-type{
-    background-color: rgb(179, 24, 24);
-    margin-right: 10px;
-}
-.tasks-main #assigned-task-main .main-task button{
+.tasks-main #assigned-task-main .main-task button, .tasks-main #unassigned-task-main .main-unassigned .assignEmployee button{
     cursor: pointer;
     outline: none;
     margin-bottom: 20px;
@@ -156,6 +170,14 @@ main{
     border-radius: 5px;
     background-color: seagreen;
     color: white;
+}
+.tasks-main #assigned-task-main .main-task button:first-of-type, .tasks-main #unassigned-task-main .main-unassigned .assignEmployee button{
+    background-color: rgb(179, 24, 24);
+    margin-right: 10px;
+}
+.tasks-main #unassigned-task-main .main-unassigned .assignEmployee button{
+    margin: 5px 3px 10px 10px;
+    padding: 7px;
 }
 .tasks-main #assigned-task-main .main-task button:last-of-type{
     margin-right: 30px;

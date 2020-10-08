@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/css/task.css">
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Task | Pace timesheet</title>
+    <title>Task | Pace time-sheet</title>
 </head>
 <body>
     <header>
@@ -41,6 +41,7 @@
     </header>
   <main>
     <section id="add-task-main" >
+      <a href="#" onclick="backToDashboard()">Home</a>
       <button onclick="assignNewTaskMain()">Add new task</button>
     </section>
     <section id="new-task-main">
@@ -53,16 +54,24 @@
     </section>
     <div class="tasks-main">
       <div id="assigned-task-main">
-        <div class="main-task">
+        <h3>Assigned Tasks</h3>
+        <div id="show-assigned-tasks">
+
+        </div>
+        <!-- <div class="main-task">
           <p>Present Pace <span>Assigned to :</span></p> 
           <div id="dateAndButtons"> <div id="date"> <span class="date">Due :</span> <span>Status :</span></div> <div id="buttons"><button>Delete</button> <button>Edit</button></div> </div>
-        </div>
+        </div> -->
       </div>
       <div id="unassigned-task-main">
-        <div class="main-unassigned">
+        <h3>Unassigned Tasks</h3>
+        <div id="show-unassigned-tasks">
+          
+        </div>
+        <!-- <div class="main-unassigned">
           <h5>Present Pace</h5>
           <p>Assign to employee:</p><input type="text" id="employee-main">
-        </div>
+        </div> -->
       </div>
     </div>
   </main>
