@@ -39,7 +39,6 @@ function viewTasks() {
         </tr>
     </tbody>
     </table>
-    <button onclick="closeTasks()">close</button>
     `
     document.getElementById('view-tasks').innerHTML = view;
 }
