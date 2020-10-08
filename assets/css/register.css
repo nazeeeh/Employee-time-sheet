@@ -1,47 +1,144 @@
+
+
+/* reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body{
-  /* background-color: rgb(253, 136, 95); */
-  background: rgba(33, 50, 96, 0.05);
-  background-image: linear-gradient(250deg, rgba(33, 50, 96, 0.24), 
+  /* background: rgba(33, 50, 96, 0.05); */
+  background-image: linear-gradient(250deg, 
+                  rgba(33, 50, 96, 0.24), 
                   rgba(33, 50, 96, 0.62)), 
                     url('/assets/img/register/bg-img.png');
 
   background-repeat: no-repeat;
   position: right;
+  background-size: cover;
+  /* background: #f4f4f4; */
 }
+
 .registration-container{
-  width: 350px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 90px;
-  margin-bottom: 35px;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.reg-wrapper{
+  display: flex;
+  gap: 20px;
+  height: 500px;
+}
+
+/* section 1 of registration page by the left */
+#reg-info{
+  background: #213260;
+  color: #f4f4f4;
+  border-radius: 5px;
+  display: flex;
+  height: 574px;
+  position: relative;
+  max-width: 50%;
+  box-shadow: 0 0 1em 1em #ccc;
+}
+/* left section text container */
+#reg-info #reg-info-text{
+  margin-top: 58px;
+  overflow: hidden;
+  width: 510px;
+  padding: 23px;
+  overflow: hidden;
+
+}
+
+/* section 1 heading */
+#reg-info #reg-info-text h1{
+  color:#f4f4f4;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: 'Roboto Slab';
+  font-weight: 100;
+}
+
+/* section 1 text */
+#reg-info #reg-info-text p{
+  color:#f4f4f4;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+  text-align: center;
+  line-height: 1.8rem;
+}
+/* the container of have an account button */
+#reg-info #to-login-con{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  top: 440px;
+  left: 180px;
+}
+
+#reg-info #to-login-con #to-login{
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #f4f4f4;
+  font-weight: 600;
+  opacity: unset; /* remove default opacity */
+}
+
+#reg-info #to-login-con .to-login:hover{
+  background: #ffff;
+  opacity: unset; /* remove default opacity */
+}
+
+.form-wrapper{
+  width: 50%;
+
+}
+
+.form-wrapper .form{
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  width:700px;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  border-radius: 5px;
+  /* box-shadow: 0 0 2px #221133; */
+  box-shadow: 0 0 0.1em 0.1em #f4f4f4;
+}
+
+.form-wrapper .form h3.reg-lead{
+  color: #213260;
+  font-family: 'Roboto Slab';
+  margin-bottom: 12px;
+}
+
 .form-wrapper .form img.logo{
   width: 30px;
   height: 30px;
   position: relative;
   margin: 12px;
 }
+
 .form-wrapper .form h3{
   font-size: 35px;
   font-weight: bold;
-  font-family: roboto;
+  font-family: 'Roboto Slab';
 }
+
 .form-wrapper .form img{
   position: relative;
   top: 7px;
   width: 70px;
 }
-.form-wrapper .form{
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  width: 502px;
-  /* height: 550px; */
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  border-radius: 15px;
-}
+
 .form-wrapper .form input{
   padding: 25px;
   margin: 12px;
@@ -50,51 +147,418 @@ body{
   border: none;
   outline: none;
   color: #333;
-  /* background: #e6e6e6; */
-  /* background: #ffaa8b; */
   box-sizing: border-box;
-  /* border: 1px solid #7a290b; */
   border-bottom: 2px solid rgba(33, 50, 96, 0.1);
-  color: #333;
   font-size: 21px;
-  transition: ease-in-out, 1s ease-in-out;
+  /* background: rgba(33, 50, 96, 0.1); */
+  background: transparent;
+  /* transition: ease-in-out, 1s ease-in-out; */
 }
+
 .form-wrapper .form input:focus{
-  /* border-bottom: 1px solid #f14d11; */
-  /* background: #f35b28; */
   background: rgba(33, 50, 96, 0.1);
-  font-family: monospace;
-  transition: ease-in-out, 1s ease-in-out;
+  /* transition: ease-in-out, 1s ease-in-out; */
   color: #333;
 }
-.form-wrapper .form span{
-  padding: 15px;
+
+
+/* Turning <p> to Button Style */
+
+.form-wrapper .form p#form_2Btn{
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px 11px;
+  margin: 5px;
 }
-.form-wrapper .form a{
+
+.form-wrapper .form p#form_2Btn:hover{
+  opacity: 0.8;
+}
+
+.form-wrapper .form #tandc{
+  margin: 1rem;
+}
+
+.form-wrapper .form #tandc a{
   text-decoration: none;
   color: rgba(33, 50, 96, 0.8);
   font-weight: 600;
 }
-/* Button Style */
-.form-wrapper .form input[type=submit]{
-  /* background: #ff4500; */
-  background: #2b3541;
-  color: white;
-  font-size: 21px;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  opacity: 0.9;
-}
-.form-wrapper .form input[type=submit]:hover{
-  opacity: 0.8;
+
+
+/* 
+  ------------------------
+  POP UP CONT. REGISTRATION 
+  -------------------------
+*/
+.cont-registration{
+  display: none;
+  position: fixed;
+/* prevent navbar from been above */
+  z-index: 99; 
+  padding-top: 90x;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(146, 138, 138); /* fallback color */
+  /* filter: blur(8px) ; */
+  /* -webkit-filter: blur(8px);  */
+  background-color: rgba(255,255,255,0.6); /* fallback color */
+  background-image: url("../img/register/dummy-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: popup 0.6s;
 }
 
-/* MEDIA QUERY 
-@media (max-width: 800px) {
-  .form-wrapper{
-    width: 411px;
+/* modal form popup entry animation */
+
+@keyframes popup {
+  0%{
+    transform: scale(0.3);
   }
-}*/
+
+  5%{
+    transform: scale(0.4);
+  }
+}
+
+/* link to close modal form */
+.form-2 span.close_form2{
+  margin-top: 45px;
+  cursor: pointer;
+  font-size: 21px;
+  color:rgb(136, 132, 132);
+}
+
+/* Make the form contents align to center */
+.cont-registration .form-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 23px;
+  width: 80%;
+  margin: 0 auto;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+/* MAKE SECTION TO FLEX TWO SIDES */
+.cont-section{
+  display: flex;
+}
+
+.cont-section1{
+  width: 50%;
+  border-right: 2px solid #ccc;
+  margin-left: 19px;
+}
+
+/* company display name on pop up */
+#companyNameHolder{
+  font-weight: 100px;
+  color: #1e1e5d;
+  margin-left: 24px;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.avatar p.avatar-selector-lead{
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-left: 24px;
+}
+
+
+
+.cont-section1 .avatar .custom-file-upload{
+  margin-left: 24px;
+  margin-top: 9px;
+}
+
+
+/* file input alternative for custom upload */
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin: 12px;
+}
+
+
+/* avatar select dropdown styles */
+.avatar-selector{
+  border: 0.9px solid #ccc;
+  background: #f3f3f3;
+  padding: 6px 12px;
+}
+
+
+.cont-section2{
+  margin: 19px;
+}
+
+.cont-section1 .company_logo{
+  float: left;
+  margin: auto;
+}
+
+
+.cont-section1 .company_logo img{
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  margin: 23px;
+  cursor: pointer;
+  box-shadow: 0 0 6px #ddd;
+
+}
+
+.cont-section1 .company_logo img:hover{
+  box-shadow: 0 0 6px black;
+}
+
+.cont-section1 .company_logo img:active{
+  box-shadow: 0 0 6px #ccc;
+}
+
+
+/* pop up form section  styles*/
+
+.cont-section2{
+  position: relative;
+  left: 50px;
+}
+
+/* form labels */
+.cont-registration .form-2 .form-detail{
+  display: flex;
+  flex-direction: column;
+  color: rgb(97, 81, 81);
+  font-size: 18px;
+}
+
+
+.form-detail label{
+  margin-left: 20px;
+}
+
+.cont-registration .form-2 .form-detail input[type=text],
+.cont-registration .form-2 .form-detail input[type=number],
+.cont-registration .form-2 .form-detail input[type=password]{
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #cdd3df;
+  border-radius: 5px;
+  outline:none;
+  font-size: 19px;
+  color: rgb(90, 69, 69);
+  margin: 19px;
+}
+
+
+.cont-registration .form-2 .form-detail input[type=text]:focus,
+.cont-registration .form-2 .form-detail input[type=number]:focus,
+.cont-registration .form-2 .form-detail input[type=password]:focus{
+  background: rgba(33, 50, 96, 0.1);
+  transition: all 1s ease-in-out;
+  color: rgb(75, 66, 66);
+}
+
+
+/* Button and terms */
+.cont-registration .form-2 .form-links{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.cont-registration .form-2 .form-links input[type=submit]{
+  padding: 15px;
+  width: 120px;
+  border: none;
+  background: #131f41;
+  color: #fff;
+  margin: 20px auto;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* style privacy and signup button */
+.cont-registration .form-2 .form-links{
+  display: flex;
+  flex-direction: column;
+}
+
+
+#check-btn{
+  position: relative;
+  top: 1px;
+  margin-right: 3px;
+}
+.form-2 .form-links a{
+  text-decoration: none;
+  color: rgba(33, 50, 96, 0.8);
+  font-weight: 600;
+}
+
+
+
+
+/* MEDIA QUERY  */
+@media only screen and (max-width: 1210px) {
+  #reg-info{
+    display: none;
+  }
+
+  .form-wrapper .form{
+    max-width: 550px;
+  }
+  
+
+
+}
+@media only screen and (max-width: 810px) {
+  .cont-registration .form-2{
+    overflow: scroll;
+  }
+  
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* link to close modal form */
+  .form-2 span.close_form2{
+    position: relative;
+    top: 370px;
+    left: 100px;
+  }
+
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+  }
+
+  .cont-section1{
+    width: 50%;
+    margin-left: 19px;
+    display: none;
+  }
+
+  /* pop up form section  styles*/
+
+  .cont-section2{
+    position: relative;
+    left: 5px;
+  }
+
+  /* form labels */
+  .cont-registration .form-2 .form-detail{
+    display: flex;
+    flex-direction: column;
+    color: rgb(97, 81, 81);
+    font-size: 18px;
+  }
+
+}
+
+
+@media only screen and (max-width: 900px){
+  .cont-registration .form-2{
+    overflow: scroll;
+  }
+  
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* link to close modal form */
+  .form-2 span.close_form2{
+    position: relative;
+    top: 370px;
+    left: 100px;
+  }
+
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+  }
+
+  .cont-section1{
+    width: 50%;
+    border-right: 2px solid #ccc;
+    margin-left: 19px;
+  }
+
+  /* company display name on pop up */
+  #companyNameHolder{
+    font-weight: 100px;
+    color: #1e1e5d;
+    margin-left: 24px;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-top: 300px;
+  }
+
+  .avatar p.avatar-selector-lead{
+    margin-bottom: 9px;
+    margin-left: 24px;
+    position: relative;
+    left: 6px;
+  }
+
+  .custom-file-upload {
+    position: relative;
+    left: 6px;
+    margin-bottom: 16px;
+  }
+
+
+  /* avatar select dropdown styles */
+  .avatar-selector{
+    position: relative;
+    left: 30px;
+  }
+
+  .cont-section1 .company_logo img{
+    position: relative;
+    left: 35px;
+  }
+
+
+  /* pop up form section  styles*/
+
+  .cont-section2{
+    position: relative;
+    left: 5px;
+  }
+
+  /* form labels */
+  .cont-registration .form-2 .form-detail{
+    display: flex;
+    flex-direction: column;
+    color: rgb(97, 81, 81);
+    font-size: 18px;
+  }
+
+
+    
+}
+

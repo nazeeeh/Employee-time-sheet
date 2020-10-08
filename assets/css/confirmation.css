@@ -19,7 +19,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     background:  #213260;
+     /* background:  #213260; */
      width: 60vw;
      height: 80vh;
      margin: 3rem auto;
@@ -28,9 +28,12 @@
  .confirm h2, .confirm p{
      font-size: 1.5rem;
  }
+ #next {
+     margin: 2rem 0;
+ }
  .confirm #p2 {
      font-size: 1.4rem;
-     margin:  5rem 0 -1.8rem;
+     margin:  1rem 0 -1.8rem;
  }
  .confirm {
      background-color: #fff;
@@ -39,6 +42,8 @@
      height: 30rem;
      border-radius: 5px;
      text-align: center;
+     border: 2px solid #213260;
+     white-space: nowrap;
  }
  .confirm .icon{
      margin: 2rem auto;
@@ -55,7 +60,7 @@
      padding: .5rem;
      border-radius: 5px;
      text-transform: uppercase;
-     background-color: #4D8AF0;
+     background-color: #213260;
      color: #fff;
      outline: none;
      border: none;
@@ -82,15 +87,25 @@
          height: 25rem;
      }
     .confirm input {
-        width: 10rem;
+        width: 15rem;
         margin: 1rem 0;
     }
     .confirm h2, .confirm p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: .1rem;
     }
     .confirm #p2 {
         font-size: .9rem;
         margin: 2rem 0 0;
+    }
+ }
+/* 
+==================================
+******** IPAD VIEW STYLE *******
+==================================
+ */
+ @media(max-width:768px) {
+    .confirm  {
+        width: 90%;
     }
  }

@@ -1,0 +1,383 @@
+body{
+  background: #f4f4f4f4;;
+  
+}
+#container{
+  /* width:70%; */
+  padding: 23px;
+}
+
+/* add user button */
+#container #header button{
+  display:block;
+  margin-left: auto;
+  color: rgb(41, 38, 38);
+  border: none;
+  font-weight: 700;
+}
+
+/* Navigation tabs styles*/
+.tabs{
+  margin: 30px 0px 10px 20px;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+.tabs ul > li{
+  background: #333;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 5px;
+}
+
+.tabs ul > li:first-of-type{
+  background: #333;
+  background: #213260;
+
+}
+
+.tabs ul > li:nth-child(2){
+  background: #333;
+  background: #213260;
+
+}
+
+.tabs ul > li:last-of-type{
+  background: #333;
+  background: #213260;
+}
+
+#main h1{
+  margin-left: 20px;
+}
+#main .tabs ul{
+  display: flex;
+  gap: 23px;
+  justify-content: start;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+section#main .tabs ul > li{
+  font-size: 19px;
+  padding: 8px 10px;
+}
+
+section#main .tabs ul > li:first-of-type{
+
+  border-bottom: 3px solid rgb(240, 108, 108);
+
+}
+
+/* search section */
+
+#search-container{
+  display: block;
+  margin-left: auto;
+}
+
+#search-container input{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+
+/* table style */
+table#employee_list{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.4rem;
+}
+
+#profile-details td{
+  font-size: 18px;
+  padding: 15px;
+  color: rgb(141, 135, 135);
+  font-weight: 500;
+  color: #60668b;
+  /* cursor: pointer; */
+}
+.profile tr{
+  border-radius: 1px;
+  box-shadow: 1px 1px #ccc;
+}
+.profile td{
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile{
+  border-radius: 5px;
+  background-color: #fff;
+  color: rgb(87, 63, 63);
+  color: #424b75;
+  border-radius: 3px;
+}
+
+.status{
+  margin: 7px;
+}
+
+.red-status{
+  color: red;
+}
+
+.green-status{
+  color: green;
+}
+
+.more-icon{
+  float: right;
+  clear: both;
+  margin-right: 10px;
+  color: #333;
+  cursor: pointer;
+}
+
+#pager-link{
+  margin-top: 4px;
+  padding: 12px;
+}
+
+#pager-link a{
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* to set next to left and a margin for itself */
+#pager-link a.pager-link_control{
+  margin-left: 10%;
+  margin-right: 65%;
+}
+
+
+/* modal form */
+
+#close{
+  color: #f4f4f4;
+  float: right;
+  cursor: pointer;
+}
+
+#employ_form{
+  position: fixed;
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  color: #f4f4f4;
+  background: rgba(0,0,0,0.8);
+  /* background: rgba(255,255,255,0.96); */
+  display: none;
+  z-index: 99;
+}
+
+#info{
+  width: 30%;
+  color: #333;
+  background: #f4f4f4;
+  margin: 0px;
+  margin-bottom: 400px;
+  border-radius: 6px;
+}
+#info h3{
+  padding: 20px;
+  background: #213260;
+  color: whitesmoke;
+}
+
+#info ul{
+  padding: 20px;
+  list-style-type: disc;
+}
+#info ul li{
+  margin: 20px 20px;
+  color: #424b75;
+}
+#info ul h4{
+  margin: 20px 0.3rem;
+  color: #213260;
+  font-size: 1.1rem;
+  width: 30rem;
+}
+#info ul h4 > span{
+  font-size: 0.92rem;
+}
+
+/* form section styles */
+#form_section{
+  margin-top: 27px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  width: 50%;
+  background: #ccc;
+  border-radius: 6px;
+}
+
+#form_heading{
+  padding: 12px;
+  background: #213260;
+  color: whitesmoke;
+}
+
+#form_heading span{
+  position: relative;
+  bottom: 12px;
+}
+
+#form_section #close{
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+}
+
+#form_section label{
+  color: #424b75;
+  font-size: large;
+}
+#form_section input{
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  font-size: 17px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border-radius: 16px;
+  outline: none;
+  margin: 0px 12px;
+}
+
+#add_employee_btn{
+  position: relative;
+  top: 21px;
+  border-radius: unset;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+
+/* EDIT FORM STYLE */
+
+
+/* modal edit */
+
+#close_edit{
+  color: #f4f4f4;
+  float: right;
+  cursor: pointer;
+}
+
+#edit_form{
+  position: fixed;
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  color: #f4f4f4;
+  background: rgba(0,0,0,0.8);
+  /* background: rgba(255,255,255,0.96); */
+  display: none;
+  z-index: 99;
+  overflow: scroll;
+}
+
+#edit_info{
+  width: 30%;
+  color: #333;
+  background: #f4f4f4;
+  margin: 0px;
+  margin-bottom: 400px;
+  border-radius: 6px;
+}
+#edit_info h3{
+  padding: 20px;
+  background: #213260;
+  color: whitesmoke;
+}
+
+#edit_info ul{
+  padding: 20px;
+  list-style-type: disc;
+}
+#edit_info ul li{
+  margin: 20px 20px;
+  color: #424b75;
+}
+#edit_info ul h4{
+  margin: 20px 0.3rem;
+  color: #213260;
+  font-size: 1.1rem;
+  width: 30rem;
+}
+#edit_info ul h4 > span{
+  font-size: 0.92rem;
+}
+
+/* edit section styles */
+#edit_section{
+  margin-top: 27px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  width: 50%;
+  background: #ccc;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+#edit_heading{
+  padding: 12px;
+  background: #213260;
+  color: whitesmoke;
+}
+
+#edit_heading span{
+  position: relative;
+  bottom: 12px;
+}
+
+#edit_section #close_edit{
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+}
+
+#edit_section label{
+  color: #424b75;
+  font-size: large;
+}
+#edit_section input{
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  font-size: 17px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border-radius: 16px;
+  outline: none;
+  margin: 0px 12px;
+}
+
+#edit_employee_btn{
+  position: relative;
+  top: 21px;
+  border-radius: unset;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/internal-dashboard.css">
+    <link rel="stylesheet" href="/assets/css/task.css">
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Task | Pace time-sheet</title>
+</head>
+<body>
+    <header>
+      <div id="search-in">
+          <input type="text" placeholder="Search">
+          <button><i class="fa fa-search" aria-hidden="true" onclick="addNewTaskMain()"></i></button>
+      </div>
+      <div id="right-in">
+          <button id="start-time" onclick="startTime()">Start Time</button>
+          <div id="time"><span id="hours">00</span> : <span id="mins">00</span> : <span id="seconds">00</span></div>
+          <button id="stop-time" onclick="stopTime()">Stop Time</button>
+          <div id="other-in">
+              <div id="notification">
+                  <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true" onclick="showNotificationBar()"></i></a>
+                  <div id="notification-popup" class="notifications">
+                      <div class="notification-title">
+                          <p>New task</p><a href="#">See all</a>
+                      </div>
+                      <hr>
+                      <p>Present Pace</p>
+                  </div>
+              </div>
+              <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+              <div class="profile-in">
+                <button> <img src="" alt=""> Ayoola Toluwanimi</button>
+                <div class="dropdown-in">
+                </div>
+              </div>
+          </div>
+      </div>
+    </header>
+  <main>
+    <section id="add-task-main" >
+      <a href="#" onclick="backToDashboard()">Home</a>
+      <button onclick="assignNewTaskMain()">Add new task</button>
+    </section>
+    <section id="new-task-main">
+     <div>
+      <input type="text" id="task-name-main" placeholder="Task" required><br>
+      <input type="text" id="employee-assigned-main" placeholder="Employee to be assigned" required><br>
+      <input type="date" id="due-date-main" placeholder="Due date" required> <br>
+      <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelTask()">Cancel</button>
+      </div>
+    </section>
+    <div class="tasks-main">
+      <div id="assigned-task-main">
+        <h3>Assigned Tasks</h3>
+        <div id="show-assigned-tasks">
+
+        </div>
+        <!-- <div class="main-task">
+          <p>Present Pace <span>Assigned to :</span></p> 
+          <div id="dateAndButtons"> <div id="date"> <span class="date">Due :</span> <span>Status :</span></div> <div id="buttons"><button>Delete</button> <button>Edit</button></div> </div>
+        </div> -->
+      </div>
+      <div id="unassigned-task-main">
+        <h3>Unassigned Tasks</h3>
+        <div id="show-unassigned-tasks">
+          
+        </div>
+        <!-- <div class="main-unassigned">
+          <h5>Present Pace</h5>
+          <p>Assign to employee:</p><input type="text" id="employee-main">
+        </div> -->
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/js/timer.js"></script>
+  <script src="/assets/js/maintask.js"></script>
+  <script src="/assets/js/employee-tasks.js"></script>
+
+</body>
+</html>

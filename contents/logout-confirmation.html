@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/logout-confirmation.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="toast-wrapper">
+        <div class="toast-header">
+          <img src="../assets/img/logo-1.png">&nbsp;<span class="pace">PaceTimesheet</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="time">Just Now</span>&nbsp;&nbsp;<span class="cancel" id="hide" onclick="HideNUnHide()">X</span>
+        </div>
+        <div class="toast-body">
+          <h4>Thanks for using our program</h4>
+        </div>
+        </div>
+        
+        
+        <div id="toast-wrapper2">
+        <div class="toast-header2">
+          <img src="../assets/img/logo-1.png">&nbsp;<span class="pace2">PaceTimesheet</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="time2">Just Now</span>&nbsp;&nbsp;<span class="cancel2" id="hide2" onclick="HideNUnHide2()">X</span>
+        </div>
+        <div class="toast-body2">
+          <h4>Thanks for spending quality time with our site today</h4>
+        </div>
+        </div>
+
+        
+        <div class="logout-wrapper">
+          <div class="pace-logo">
+            <img src="../assets/img/logo-1.png" alt="PaceTimesheet logo"><a href="index.html"><span class="pace">Pace</span></a>
+          </div><hr>
+          <div class="logout-info-wrapper">
+            <h1><img src="../assets/img/logo-1.png" alt="PaceTimesheet logo">&nbsp;Logged Out</h1>
+            <h4>Thank you for using <a href="about.html">&nbsp;<img src="../assets/img/logo-1.png" alt="PaceTimesheet logo" width="20px">PaceTimeSheet</a></h4>
+            <div class="btn"><a href="login.html"><button>Sign In Again</button></a></div>
+          </div>
+          <div class="contact">
+            <h4>Any Questions? Email us at <a href="mailto:">support@pacetimesheet.com</a></h4>
+          </div>
+        </div>   
+<script>
+document.getElementById('hide').hide();
+
+function HideNUnHide() {
+  var Element = document.getElementById("toast-wrapper");
+
+if(Element.style.display === "none"){
+    Element.style.display = "block";
+}else{
+    Element.style.display = "none";
+  }
+} 
+
+
+
+document.getElementById('hide2').hide();
+
+function HideNUnHide2() {
+  var Element = document.getElementById("toast-wrapper2");
+
+if(Element.style.display === "none"){
+    Element.style.display = "block";
+}else{
+    Element.style.display = "none";
+  }
+}    
+</script>
+</body>
+</html>

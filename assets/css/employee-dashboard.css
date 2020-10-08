@@ -3,58 +3,331 @@
 *********   RESET ****************
 ==================================
  */
- *,
- *::before,
- *::after {
-     box-sizing: border-box;
- }
- html, body {
-     padding: 0;
-     margin: 0;
-     line-height: 1.6;
-     font-family: 'Roboto', sans-serif;
- }
- body {
-    background: #213260; /*rgba(33, 50, 96, .7)*/
- }
- section {
-     display: flex;
-     background: #fff;
-     width: 90vw;
-     height: 90%;
-     margin: 5rem 0 1rem;
-     padding: 1rem;
- }
- .div-one {
-     background: #fff;
-     width: 60%;
-     padding: 3rem;
-     border-radius: 5px;
- }
- header h2 {
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* CSS reset */
+
+body {
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* header starts here*/
+
+header {
+    padding: 8px 5px;
+    display: flex;
+    width: 95%;
+    margin: auto;
+    background-color: white;
+}
+
+
+/* search bar */
+
+#search-in {
+    flex: 1;
+}
+
+#search-in input {
+    border: none;
+    border-radius: 5px;
+    margin-left: -15px;
+    outline: none;
+    background-color: #F2F2F2;
+    padding: 5px 7px;
+}
+
+
+/* search bar button */
+
+#search-in button {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* div containing everything after the search bar */
+
+header #right-in {
+    display: flex;
+    width: 60%;
+}
+
+header #right-in button#start-time,
+header #right-in button#stop-time {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 6px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Start timer button */
+
+header #right-in button#start-time {
+    background-color: #213260;
+    display: block;
+}
+
+#right-in #time {
+    margin: auto 10px;
+}
+
+
+/* Stop timer button */
+
+header #right-in #stop-time {
+    background-color: #971425;
+    display: none;
+}
+
+
+/* div containing notification button, settings and username */
+
+header #right-in #other-in {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+header #right-in #other-in .fa-cog,
+header #right-in #other-in .fa-bell {
+    align-self: center;
+    margin-right: 10px;
+    color: #213260;
+}
+
+
+/* Username(It's a button) */
+
+header #right-in #other-in .profile-in button {
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: black;
+}
+
+
+/* image before username but I did'nt upload an image */
+
+header #right-in #other-in .profile-in button img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/*==================================
+ **********body*********************
+ ===================================
+  */
+
+
+/* background div. holds everything */
+
+#body-in {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Container holding all cards (task cards) */
+
+#body-in #cards-con {
+    height: 200px;
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin: 1rem 0;
-    padding: .5rem;
- }
- .div-two {
-     background: #4D8AF0;
-     width: 40%;
-     padding: 3rem;
-     border-radius: 5px;
- }
- .div-two .icon i {
-     color: #fff;
- }
- .icon i {
-     color: #4D8AF0;
-     padding: 0 1rem;
- }
- .task {
-    background: #c4c4c4;
-    height: 5rem;
-    width: 85%;
- }
-/* #user{
-    font-size: 5rem;
+    margin-top: 40px;
+}
+
+div.cards .details a {
+    text-decoration: none;
+    background: #213260;
+    color: #fff !important;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 30px !important;
+}
+
+
+/* Template for all cards */
+
+#body-in #cards-con .cards {
+    width: 24.5%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    white-space: nowrap;
+}
+
+
+/* The text in the cards */
+
+
+/* #body-in #cards-con .cards .details {
+    width: 40%;
+    margin: auto;
+} */
+
+#body-in #cards-con .cards h5 {
+    margin: 10px 0;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+#body-in #cards-con .cards br {
+    margin: 0 10px;
+}
+
+#body-in #cards-con .cards p {
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+
+/* 4th task card starts here */
+
+#body-in #cards-con .cards a {
+    margin: 50px auto;
+    color: #7E7E7E;
+}
+
+
+/* This diplays when the text in the card is clicked */
+
+
+/* This displays when the text in the card is clicked */
+
+
+/* 4th task card starts here */
+
+
+/* sections at the bottom part starts here */
+
+#body-in #body-con-in {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    padding: 5px 2px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+
+/* calendar section */
+
+#body-in #body-con-in #section-one-in {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+section#section-one-in {
+    background-color: #fff;
+}
+
+#calWrapper {
+    width: 100%;
+    margin: 0 5;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.dayCell {
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+    vertical-align: top;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 2px;
+    background-color: white;
+}
+
+.dayHeader {
+    width: 40px;
+    height: 20px;
+    background-color: #ddd;
+}
+
+.today {
+    border: 2px solid blue;
+}
+
+
+/* list section todo-list*/
+
+h3 {
+    width: auto;
+    margin: 10px auto;
+}
+
+#body-in #body-con-in #section-two {
+    width: 34%;
+    height: 100%;
+    margin-left: 20px;
+    background-color: white;
+}
+
+div.cards-todo {
+    padding: 50px;
+}
+
+div.cards-todo input {
+    border: 1px #ccc;
+    padding: 20px;
+    background-color: #213260;
+    color: #fff;
+}
+
+div.cards-todo button {
+    border: 1px #ccc;
+    padding: 15px;
+    margin-top: 15px;
+    margin-left: center;
+}
+
+div.cards-todo button:hover {
+    background: #213260;
+}
+
+
+/* #section-two .cards-todo #new-task {
+    display: flex;
+    justify-content: space-around;
 } */

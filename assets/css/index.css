@@ -9,9 +9,6 @@ body{
 }
 /* MAKE HOME LINK ACTIVE */
 .nav-list a.home{
-  /* Peter Made modification of the active button for new color scheme 
-  Kindly take not for all other pages too 
-  Didn't want to tamper with too many things. Thanks */
   background-color: #fff;
   color: #213260;
   height: 40px;
@@ -33,6 +30,7 @@ body{
 }
 .free-trial-form h3{
   font-size: 50px;
+  font-weight: 900;
 }
 .trial-form{
   display: flex;
@@ -66,38 +64,45 @@ body{
 }
 .features-container{
   height: 150px;
-  width: 700px;
-  position: relative;
+  max-width: 700px;
+  position: absolute;
   top: 37.6rem;
   left: 25%;
+  background: #f4f4f4;
+  box-shadow: -4px 8px 10px 3px rgba(33, 50, 96, 0.24);
+  backdrop-filter: blur(4px);
+}
+.features-items{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #FFFFFF;
   /* box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25); */
-  box-shadow: -4px 8px 10px 3px rgba(33, 50, 96, 0.24);
-  backdrop-filter: blur(4px);
+  margin:0px 123px;;
   gap: 25px;
+  height: 150px;
+  max-width: 100%;
 }
 .logo p{
   color: #333;
   font-weight: 500;
   font-style: normal;
   line-height: 16px;
-  font-family: roboto;
 }
 .features-section-2{
   height: 1024px;
   position: relative;
   top: 130px;
 }
+
+.features-section-2 .heading-con{
+  line-height: 12rem;
+}
 .features-section-2 #logo-heading{
-  font-weight: 500;
-  font-family: roboto;
   text-align: center;
-  /* font-size: 39px; */
   font-size: 3rem;
   margin: 50px;
+  white-space: nowrap;
 }
 .features-wrapper{
   display: flex;
@@ -142,26 +147,127 @@ body{
   font-size: 2.6rem;
   margin-top: 35px;
 }
+/*feedback icon*/
+.feedback img{
+  float: right;
+  width: 100px;
+}
 
 
 
 /* MEDIA QUERY */
-@media (max-width: 800px) {
-  .landing-page-container{
-    width: 411px;
-  }
-  .trial-form{
-    position: relative;
-    right: 20px;
-  }
+@media only screen  and (max-width: 1200px) {
+
   .features-container{
-    display: none;
+    height: 150px;
+    max-width: px;
+    position: absolute;
+    top: 35.6rem;
+    left: 250px;
+    background: #f4f4f4;
+    box-shadow: -4px 8px 10px 3px rgba(33, 50, 96, 0.24);
+    backdrop-filter: blur(4px);
   }
-  .features-summary{
-    width: 411px;
+  .features-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25); */
+    margin:0px 80px;;
+    gap: 25px;
+    height: 150px;
+    max-width: 70%;
   }
-  .hello-to-pace-container{
-    top: 350px;
-    padding: 12px 20px 12px 22px;
+
+}
+@media only screen  and (max-width: 1000px) {
+
+  .features-container{
+    height: 150px;
+    position: absolute;
+    top: 35.6rem;
+    left: 150px;
+    background: #f4f4f4;
+    box-shadow: -4px 8px 10px 3px rgba(33, 50, 96, 0.24);
+    backdrop-filter: blur(4px);
   }
+  .features-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25); */
+    margin:0px 80px;;
+    gap: 25px;
+    height: 150px;
+    max-width: 70%;
+  }
+
+}
+
+@media only screen  and (max-width: 1000px) {
+
+  .features-container{
+    height: 150px;
+    position: absolute;
+    top: 35.6rem;
+    left: 50px;
+    background: #f4f4f4;
+    box-shadow: -4px 8px 10px 3px rgba(33, 50, 96, 0.24);
+    backdrop-filter: blur(4px);
+  }
+  .features-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25); */
+    margin:0px 80px;;
+    gap: 25px;
+    height: 150px;
+    max-width: 70%;
+  }
+
+}
+
+@media only screen  and (max-width: 800px) {
+
+  .features-container{
+    height: 150px;
+    max-width: 600px;
+    position: absolute;
+    top: 35.6rem;
+    left: -11px;
+    background: #f4f4f4;
+    box-shadow: -4px 8px 10px 3px rgba(33, 50, 96, 0.24);
+    backdrop-filter: blur(4px);
+  }
+  .features-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -4px 8px 10px 3px rgba(255, 123, 37, 0.25); */
+    margin:0px 80px;;
+    gap: 25px;
+    height: 150px;
+    max-width: 70%;
+  }
+  .features-summary #second-summary,
+  .features-summary h3{
+    text-align: center;
+    line-height: 3rem;
+    padding: 12px;
+
+  }
+  .heading-con{
+    position: relative;
+    right: 29px;
+  }
+  .features-section-2 #logo-heading{
+    font-size: 1.6rem;
+  }
+
+
 }

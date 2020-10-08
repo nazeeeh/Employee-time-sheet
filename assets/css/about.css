@@ -1,17 +1,27 @@
-
+/* css reset */
 body{
     box-sizing: border-box;
     text-decoration: none;
-    line-height: 1.5;
-    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
 }
 *{
     padding: 0;
     margin: 0;
 }
-* p{
-    font-size: 0.9rem;
+*p{
+    font-size: 1rem;
+    color: rgb(95, 107, 123);
 }
+* h3,
+* h1{
+    color: black;
+}
+
+h1{
+    padding: 20px 0;
+    font-size: 2rem;
+}
+
 h1{
     padding: 5px 0;
     font-size: 2.1rem;
@@ -33,23 +43,32 @@ h3{
  */
 
 .body{
-     margin-top: 50px;
- }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.con{
+    width: 100%;
+    height: 100vh;
+}
+
+.con .main{
+    max-width: 1240px;
+    margin: auto;
+}
 
 .about-1, .about-3, .about-5{
     width: 80%;
     margin: 7rem auto;
 }
-
 .about-1 .about-ts{
     display: flex;
     justify-content: space-evenly;
 }
-
 .about-1 .about-ts img{
     width: 50%;
 }
-
 .about-1 .about-ts div{
     display: flex;
     flex-direction: column;
@@ -257,11 +276,9 @@ h3{
     .about-3 .story-focus .pace-focus{
         width: 80%;
     }
-
     .about-4 .pace-story .story{
         width: 80%;
     }
-
     .about-5 .pace-team div{
         display: flex;
         margin: auto;
@@ -269,13 +286,10 @@ h3{
         align-items: center;
         justify-content: center;
     }
-
     .about-5 .pace-team h3:first-child{
         margin-bottom: 25px;
     }
-
     .about-5 .pace-team div .team-individuals{
         width: 50%;
-    }
-    
+    }   
 }

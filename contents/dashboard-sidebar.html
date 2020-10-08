@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
+    <link rel="stylesheet" href="/assets/css/utilities.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
   <title>Pace | Dashboard</title>
 </head>
@@ -15,11 +16,12 @@
       <div class="company">
         <i id="logo" class=""></i>
         <h4 id="name">TIIDELab</h4>
+        <i class="fas fa-bars"></i>
       </div>
       
       <div class="sidebar-links">
         <!-- Link Start -->
-        <div class="dashboard-link">
+        <div class="dashboard-link" id="active_page">
           <i class="fas fa-chart-pie"></i>
           <a href="">Employee Status</a>
         </div>
@@ -56,7 +58,12 @@
         <!-- New link -->
         <div class="dashboard-link">
           <i class="fas fa-sliders-h"></i>
-          <a href="">Settings</a>
+          <a href="/contents/settings.html">Settings</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+          <i class="fas fa-sign-out-alt"></i>
+          <a href="/index.html" onclick="logout()">Logout</a>
         </div>
 
         <!-- End of Side-bar-Link -->
@@ -69,5 +76,6 @@
     lorem50
   </div>
 </div>
+<script src="/assets/js/dashboard-sidebar.js"></script>
 </body>
 </html>
