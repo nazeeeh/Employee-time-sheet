@@ -85,7 +85,7 @@
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="/index.html" onclick="logOut()">Logout</a>
+                    <a href="#" onclick="logOut()">Logout</a>
                 </div>
               <!-- End of Side-bar-Link -->
             </div>
@@ -100,6 +100,7 @@
                     <div id="search-in">
                         <input type="text" placeholder="Search">
                         <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <span id="role_display">p</span>
                     </div>
                     <div id="right-in">
                         <button id="start-time" onclick="startTime()">Start Time</button>
@@ -358,8 +359,13 @@
             </main>
         </div>
     </div>
+    <!-- function for logout and validation -->
+    <script src="/assets/js/userAuth.js"></script>
+    <!-- function for getting logged in user details -->
     <script src="/assets/js/userDetails.js"></script>
+    <!-- sidebar functions -->
     <script src="/assets/js/dashboard-sidebar.js"></script>
+    <!-- function for employee management -->
     <script src="/assets/js/employee_control.js"></script>
     <!-- Timer functions -->
     <script src="/assets/js/timer.js"></script>
