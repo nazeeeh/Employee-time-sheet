@@ -114,11 +114,15 @@ function _add_employee(){
     let newAdd = {
       "email" : document.getElementById("employee_email").value,
       "name" : document.getElementById("employee_name").value,
+      "password":"7444",
       "role" : document.getElementById("employee_role").value,
       "phone" : document.getElementById("employee_phone").value,
       "status" : "Active",
       "user_type" : new_user_type,
       "joining_date" : _employed_date(new Date()),
+      "salary":"120000",
+      "currency":"Naira",
+      "department":"Sample",
     }
 
   

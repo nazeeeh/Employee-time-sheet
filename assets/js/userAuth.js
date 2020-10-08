@@ -42,8 +42,7 @@ let authUser = () =>
 
       _start_Session() // revoke function to keep you signed in      
       
-      current_UserDb.push(_find_company_InDb)  // store the loggedIn use into an array
-      localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
+     
       location.assign("../contents/admin-dashboard.html") // redirect you to the admin dashboard
       
     
@@ -138,6 +137,8 @@ let authUser = () =>
       current_UserDb = [] // create new array
       
     }
+    current_UserDb.push(_find_company_InDb)  // store the loggedIn use into an array
+    localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
 
   }
 }
@@ -196,9 +197,9 @@ let authUser = () =>
 // }
 
 
-// // clear the temporary local storage 
-// let logOut = () =>
-// {
-//   localStorage.removeItem("currentUser");
-//   location.assign('../contents/logout-confirmation.html')
-// }
+// clear the temporary local storage 
+let logOut = () =>
+{
+  localStorage.removeItem("currentUser");
+  location.assign('../contents/logout-confirmation.html')
+}
