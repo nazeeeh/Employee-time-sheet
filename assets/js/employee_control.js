@@ -110,12 +110,19 @@ function _add_employee(){
         new_user_type = "Others"
     }
   
+    _employee_email = document.getElementById("employee_email").value;
+    _employee_name = document.getElementById("employee_name").value;
+    _employee_role = document.getElementById("employee_role").value;
+    _employee_phone = document.getElementById("employee_phone").value;
 
     let newAdd = {
-      "email" : document.getElementById("employee_email").value,
-      "name" : document.getElementById("employee_name").value,
-      "role" : document.getElementById("employee_role").value,
-      "phone" : document.getElementById("employee_phone").value,
+      "id" : `${_employee_name}${_employee_localStorage.length}@${_company_db_name}`,
+      "email" : _employee_email, 
+      "name" : _employee_name, 
+      "role" : _employee_role,
+      "salary" : "",
+      "department" : "",
+      "phone" : _employee_phone, 
       "status" : "Active",
       "user_type" : new_user_type,
       "joining_date" : _employed_date(new Date()),
