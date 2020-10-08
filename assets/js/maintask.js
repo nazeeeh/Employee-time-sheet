@@ -1,3 +1,7 @@
+function backToDashboard() {
+    location.assign("../../contents/internal-dashboard.html");
+}
+
 function assignNewTaskMain(){
     let addTaskMain = document.getElementById("new-task-main");
     if(addTaskMain.style.display == "block"){
@@ -12,8 +16,6 @@ let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
-
-alert(JSON.stringify(tasks))
        
 function displayMain(task){
     let add = ''
@@ -30,7 +32,7 @@ function displayMain(task){
       </div>
        `
     }
-    document.getElementById("assigned-task-main").innerHTML = add
+    document.getElementById("show-assigned-tasks").innerHTML = add
 }
 
 function displayUnassigned(task){
@@ -38,11 +40,11 @@ function displayUnassigned(task){
     for(i = 0; i < task.length; i++){
         add += ` <div class="main-unassigned" id="${i}">
         <p><strong>Task name : </strong>${task[i].name}</p>
-        <div class="assignEmployee"><p>Assign to employee:</p><input type="text" id="employee-main${i}"></div>
+        <div class="assignEmployee"><p>Assign to employee:</p><input type="text" id="employee-main${i}"> <button onclick="deletesUnassigned(${i})">Delete</button></div>
       </div>
         `
     }
-    document.getElementById("unassigned-task-main").innerHTML = add
+    document.getElementById("show-unassigned-tasks").innerHTML = add
 }
 
 function appendNewTaskMain(){
@@ -104,7 +106,7 @@ function deletesUnassigned(id){
     
     unassignedMainList.splice(id, 1)
     localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
-    displayMain(unassignedMainList)
+    displayUnassigned(unassignedMainList)
 }
 
 function showEditButton(id){
@@ -121,7 +123,6 @@ function editAssigned(id){
     let editDueDate = document.getElementById("edit-due-date-main" + id).value;
 
     userIndex = tasks.findIndex(x => x.name == assignedMainList[id].name)
-    alert(userIndex)
 
     if(editName === ""){
         tasks[userIndex].name = tasks[userIndex].name
