@@ -39,15 +39,8 @@ let authUser = () =>
     { // if the password you gave me is the same with what is in the PACE CLIENT local storage 
 
       unKnown.innerHTML = "you are logged in as admin" 
-      
-      let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));// check if there's an existing session of a user
-      if(current_UserDb == null || current_UserDb.length > 1) // if current user storage does not exist create one (if empty or more than 1)
-      
-      {
-        
-        current_UserDb = [] // create new array
-        
-      }
+
+      _start_Session() // revoke function to keep you signed in      
       
       current_UserDb.push(_find_company_InDb)  // store the loggedIn use into an array
       localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
@@ -96,12 +89,56 @@ let authUser = () =>
   
       else if (employee_InDb["password"] == pwAuth) // finally your password has matched your record 
   
-      {
+      { // now let's fine your user type
+
+        switch(employee_InDb.user_type)
+        
+        {
+
+          case employee_InDb.user_type.toLowerCase() === "co-admin":
+
+            location.assign("../contents/admin-dashboard.html");
+            _start_Session()
+            break;
+
+          case employee_InDb.user_type.toLowerCase() === "internal admin":
+            
+            location.assign("../contents/internal-dashboard.html");
+            _start_Session()
+            break;
+          
+          case employee_InDb.user_type.toLowerCase() === "employee":
+            
+            location.assign("../contents/employee-dashboard.html");
+            _start_Session()
+            break;
+            
+          case employee_InDb.user_type.toLowerCase() === "others":
+          
+            location.assign("../contents/employee-dashboard.html");
+            _start_Session()
+              
+            break;
+        }
 
         unKnown.innerHTML = "innnnnn"
 
       }
     }
+  }
+
+  function _start_Session() // function to handle login session
+  {
+
+    let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));// check if there's an existing session of a user
+    if(current_UserDb == null || current_UserDb.length > 1) // if current user storage does not exist create one (if empty or more than 1)
+    
+    {
+      
+      current_UserDb = [] // create new array
+      
+    }
+
   }
 }
   
