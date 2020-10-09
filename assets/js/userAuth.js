@@ -40,8 +40,8 @@ let authUser = () =>
 
       unKnown.innerHTML = "you are logged in as admin" 
 
-      _start_Session() // revoke function to keep you signed in            
       location.assign("../contents/admin-dashboard.html") // redirect you to the admin dashboard
+      _start_Session(_find_company_InDb) // revoke function to keep you signed in            
       
     
     }
@@ -60,7 +60,7 @@ let authUser = () =>
   
   { // you are here because you are not the admin so let's fine your company and log you in
     
-  _get_company_name = _find_company_InDb.name // getting the company name
+    _get_company_name = _find_company_InDb.name // getting the company name
     let _get_company_db = JSON.parse(localStorage.getItem(`${_get_company_name}_employees`)) // getting the company data base
     employee_InDb = _get_company_db.find(x=> x.email == emailAuth); // searching if your record exist using your email to search the company database
 
@@ -86,45 +86,59 @@ let authUser = () =>
   
       else if (employee_InDb.password == pwAuth) // finally your password has matched your record 
   
-      { // now let's fine your user type
-        alert(employee_InDb.user_type.toUpperCase())
-        switch(employee_InDb.user_type.toUpperCase())
-        
+      { // now let's find your user type
+
+      // alert(employee_InDb.user_type.toUpperCase())
+      // if(employee_InDb.user_type.toUpperCase() == "ADMIN"){
+      //   alert("ddd")
+      //   location.assign("../contents/employee-dashboard.html");
+      //   _start_Session(employee_InDb)
+
+      // }
+      // else if{
+      //   alert("wee")
+      // }
+      check = employee_InDb.user_type.toUpperCase()
+      alert(check)
+      alert("u")
+      switch(check)
+      
         {
 
-          case employee_InDb.user_type = "CO-ADMIN":
+          case check = "CO-ADMIN":
 
             location.assign("../contents/admin-dashboard.html");
-            _start_Session()
+            _start_Session(employee_InDb)
             break;
 
-          case employee_InDb.user_type = "INTERNAL-ADMIN":
+          case check = "INTERNAL ADMIN":
             
             location.assign("../contents/internal-dashboard.html");
-            _start_Session()
+            _start_Session(employee_InDb)
             break;
           
-          case employee_InDb.user_type = "EMPLOYEE":
+          case check = "EMPLOYEE":
+            alert(employee_InDb.user_type.toUpperCase())
             
             location.assign("../contents/employee-dashboard.html");
-            _start_Session()
+            _start_Session(employee_InDb)
             break;
             
-          // case employee_InDb.user_type = "OTHERS":
+          case check = "OTHERS":
           
-          //   location.assign("../contents/employee-dashboard.html");
-          //   _start_Session()
+            location.assign("../contents/employee-dashboard.html");
+            _start_Session()
               
-          //   break;
+            break;
         }
 
-        unKnown.innerHTML = `${employee_InDb.user_type.toUpperCase()} innn `
+        unKnown.innerHTML = `${check.user_type.toUpperCase()} innn `
 
       }
     }
   }
 
-  function _start_Session() // function to handle login session
+  function _start_Session(logMe_in) // function to handle login session
   {
     alert("here")
     let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));// check if there's an existing session of a user
@@ -135,7 +149,7 @@ let authUser = () =>
       current_UserDb = [] // create new array
       
     }
-    current_UserDb.push(employee_InDb)  // store the loggedIn use into an array
+    current_UserDb.push(logMe_in)  // store the loggedIn use into an array
     localStorage.setItem("currentUser", JSON.stringify(current_UserDb))// store the current user into temp local storage
 
   }

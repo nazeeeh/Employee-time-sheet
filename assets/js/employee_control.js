@@ -99,7 +99,7 @@ function _add_employee(){
         break;
   
       case "332":
-        new_user_type = "Internal Admin ";
+        new_user_type = "Internal-Admin ";
         break;
   
       case "554":
