@@ -17,3 +17,21 @@
     margin: 2rem;
     text-transform: uppercase;
 }
+.cell {
+    text-align: center;
+    margin: .5rem;
+    padding: .5rem;
+}
+.cell:hover > .add-event{
+    /* background: #6c757d; */
+    display: inline-block;
+}
+.add-event  {
+   display: none;
+}
+/* .addEvent:hover {
+    visibility: visible;
+} */
+#schedule {
+    display: none;
+}
