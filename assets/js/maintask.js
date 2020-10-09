@@ -14,6 +14,18 @@ function assignNewTaskMain(){
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
+
+if(JSON.parse(localStorage.getItem("tasks")) == null){
+    tasks = []
+}
+
+if(JSON.parse(localStorage.getItem("unassignedMainList")) == null){
+    unassignedMainList = []
+}
+
+if(JSON.parse(localStorage.getItem("assignedMainList")) == null){
+    assignedMainList = []
+}
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
        
