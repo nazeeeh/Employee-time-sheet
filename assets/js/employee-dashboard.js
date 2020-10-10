@@ -121,12 +121,13 @@ function displayContent() {
             <div>
              <strong> ${todoList[i].task}</strong><br>
             </div>
-            <button onClick="editUser(${i})" class="edit" >Edit</button> &nbsp; <button onClick="deleteUser(${i})" class="delete">Delete</button>
+            <button onClick="editUser(${i})" class="edit" >Edit</button> &nbsp; 
+            <button onClick="deleteUser(${i})" class="delete">Delete</button>
             </div>`;
         }
     }
     document.getElementById("todoTask").innerHTML = todoTask;
-    todoList    = JSON.parse(localStorage.getItem("todo"));
+    todoList = JSON.parse(localStorage.getItem("todo"));
 }
 displayContent();
 
@@ -162,4 +163,3 @@ function deleteUser(id) {
 function viewAllTasks() {
     location.assign("../contents/employee-tasks.html");
 }
-

@@ -16,8 +16,10 @@ body{
                     url('/assets/img/register/bg-img.png');
 
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
+  height: auto;
   /* background: #f4f4f4; */
+  overflow: hidden;
 }
 
 .login-container{
@@ -26,73 +28,15 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  bottom: 70px;
+  left: 180px;
 }
 
 .login-wrapper{
   display: flex;
   gap: 20px;
   height: 500px;
-}
-
-/* section 1 of login page by the left */
-#login-info{
-  background: #213260;
-  color: #f4f4f4;
-  border-radius: 5px;
-  display: flex;
-  height: 574px;
-  position: relative;
-  max-width: 50%;
-  box-shadow: 0 0 1em 1em #ccc;
-}
-/* left section text container */
-#login-info #login-info-text{
-  margin-top: 58px;
-  overflow: hidden;
-  width: 510px;
-  padding: 23px;
-  overflow: hidden;
-
-}
-
-/* section 1 heading */
-#login-info #login-info-text h1{
-  color:#f4f4f4;
-  font-size: 40px;
-  margin-bottom: 20px;
-  font-family: 'Roboto Slab';
-  font-weight: 100;
-}
-
-/* section 1 text */
-#login-info #login-info-text p{
-  color:#f4f4f4;
-  margin-bottom: 20px;
-  font-family: 'Open Sans';
-  text-align: center;
-  line-height: 1.8rem;
-}
-/* the container of have an account button */
-#login-info #to-login-con{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position:absolute;
-  top: 440px;
-  left: 180px;
-}
-
-#login-info #to-login-con #to-login{
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background: #f4f4f4;
-  font-weight: 600;
-  opacity: unset; /* remove default opacity */
-}
-
-#login-info #to-login-con .to-login:hover{
-  background: #ffff;
-  opacity: unset; /* remove default opacity */
 }
 
 .form-wrapper{
@@ -210,12 +154,23 @@ body{
 
 /* MEDIA QUERY  */
 @media only screen and (max-width: 1210px) {
+  body{
+    overflow: auto;
+    background-color: rgba(0,0,0,0.2);
+    background-size: cover;
+  }
   #login-info{
     display: none;
   }
 
+  .login-container{
+    position: unset;
+    top: 12px;
+    left: 120px;
+  }
+
   .form-wrapper .form{
-    max-width: 550px;
+    max-width: 500px;
   }
 
 }
@@ -223,14 +178,46 @@ body{
   #login-info{
     display: none;
   }
-
+  
   .form-wrapper .form{
-    max-width: 300px;
+    width: 390px;
+    white-space: nowrap;
+  }
+
+  .form-wrapper .form input{
+    padding: 10px 12px;
+    background: transparent;
+  }
+
+}
+@media only screen and (max-width: 410px){
+  #login-info{
+    display: none;
+  }
+  
+  .form-wrapper .form{
+    width: 310px;
+    position: relative;
+    bottom: 80px;
   }
 
   .form-wrapper .form h3.login-lead{
     white-space: nowrap;
   }
 
+  .form-wrapper .form input{
+    padding: 10px 12px;
+    background: transparent;
+  }
+
+  .login-btn{
+    margin: 9px;
+  }
+
+  .links-to{
+    /* margin-right: 30px;  */
+    /* margin-top: 20px;  */
+    flex-direction: column;
+  }
 }
 

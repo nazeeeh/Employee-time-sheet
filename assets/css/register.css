@@ -377,7 +377,6 @@ input[type="file"] {
 /* Button and terms */
 .cont-registration .form-2 .form-links{
   display: flex;
-  flex-direction: row;
   margin-left: 20px;
 }
 
@@ -428,54 +427,6 @@ input[type="file"] {
 
 
 }
-@media only screen and (max-width: 810px) {
-  .cont-registration .form-2{
-    overflow: scroll;
-  }
-  
-  /* MAKE SECTION TO FLEX TWO SIDES */
-  .cont-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* link to close modal form */
-  .form-2 span.close_form2{
-    position: relative;
-    top: 370px;
-    left: 100px;
-  }
-
-  /* MAKE SECTION TO FLEX TWO SIDES */
-  .cont-section{
-    display: flex;
-  }
-
-  .cont-section1{
-    width: 50%;
-    margin-left: 19px;
-    display: none;
-  }
-
-  /* pop up form section  styles*/
-
-  .cont-section2{
-    position: relative;
-    left: 5px;
-  }
-
-  /* form labels */
-  .cont-registration .form-2 .form-detail{
-    display: flex;
-    flex-direction: column;
-    color: rgb(97, 81, 81);
-    font-size: 18px;
-  }
-
-}
-
 
 @media only screen and (max-width: 900px){
   .cont-registration .form-2{
@@ -562,3 +513,116 @@ input[type="file"] {
     
 }
 
+
+@media only screen and (max-width: 810px) {
+  .form-wrapper .form{
+    max-width: 450px;
+  }
+  .cont-registration .form-2{
+    overflow: scroll;
+  }
+  
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* link to close modal form */
+  .form-2 span.close_form2{
+    position: relative;
+    top: 15px;
+    left: 10px;
+  }
+
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+  }
+
+  .cont-section1{
+    width: 50%;
+    margin-left: 19px;
+    display: none;
+  }
+
+  /* pop up form section  styles*/
+
+  .cont-section2{
+    position: relative;
+    left: 5px;
+  }
+
+  /* form labels */
+  .cont-registration .form-2 .form-detail{
+    display: flex;
+    flex-direction: column;
+    color: rgb(97, 81, 81);
+    font-size: 18px;
+  }
+
+}
+
+@media only screen and (max-width: 410px){
+  .form-wrapper .form{
+    max-width: 320px;
+    position: relative;
+    bottom: 30px;
+  }
+  .cont-registration .form-2{
+    overflow: scroll;
+  }
+  
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* link to close modal form */
+  .form-2 span.close_form2{
+    position: relative;
+    top: 20px;
+    left: 10px;
+  }
+
+  /* MAKE SECTION TO FLEX TWO SIDES */
+  .cont-section{
+    display: flex;
+  }
+
+  /* pop up form section  styles*/
+
+  .cont-registration .form-2 .form-detail input[type=text],
+  .cont-registration .form-2 .form-detail input[type=number],
+  .cont-registration .form-2 .form-detail input[type=password]{
+    position: relative;
+    left: 5px;
+    width: 80%;
+  }
+  .cont-registration .form-2 .form-links input[type=submit]{
+    display: block;
+    margin: 20px 40px;
+  }
+
+  /* form labels */
+  .cont-registration .form-2 .form-detail label{
+    position: relative;
+    left: 9px;
+  }
+
+  .form-links span{
+    /* white-space: nowrap; */
+    margin-left: 2px;
+    /* flex-direction: column; */
+  }
+  #check-btn{
+    position: relative;
+    top: 1px;
+    margin-right: 0px;
+  }
+}

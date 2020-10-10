@@ -250,11 +250,11 @@ div.cards .details a {
 /* calendar section */
 
 #body-in #body-con-in #section-one-in {
-    width: 100%;
-    height: auto;
+    width: 50%;
+    height: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 section#section-one-in {
@@ -298,7 +298,7 @@ h3 {
 }
 
 #body-in #body-con-in #section-two {
-    width: 34%;
+    width: 56%;
     height: 100%;
     margin-left: 20px;
     background-color: white;
@@ -317,13 +317,35 @@ div.cards-todo input {
 
 div.cards-todo button {
     border: 1px #ccc;
-    padding: 15px;
-    margin-top: 15px;
+    padding: 12px;
+    margin-top: 5px;
     margin-left: center;
 }
 
-div.cards-todo button:hover {
+button.addUp {
+    color: #ffffff;
+    background-color: #008000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.delete {
+    color: #ffffff;
+    background: #ff0000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.edit {
+    color: #ffffff;
     background: #213260;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+strong {
+    font-size: 1.2rem;
+    margin-top: 15px;
 }
 
 

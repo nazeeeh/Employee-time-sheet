@@ -1,3 +1,7 @@
+function backToDashboard() {
+    location.assign("../../contents/internal-dashboard.html");
+}
+
 function assignNewTaskMain(){
     let addTaskMain = document.getElementById("new-task-main");
     if(addTaskMain.style.display == "block"){
@@ -10,17 +14,27 @@ function assignNewTaskMain(){
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
+
+if(JSON.parse(localStorage.getItem("tasks")) == null){
+    tasks = []
+}
+
+if(JSON.parse(localStorage.getItem("unassignedMainList")) == null){
+    unassignedMainList = []
+}
+
+if(JSON.parse(localStorage.getItem("assignedMainList")) == null){
+    assignedMainList = []
+}
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
-
-alert(JSON.stringify(tasks))
        
 function displayMain(task){
     let add = ''
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
         <p> <strong> Task name : </strong> ${task[i].name} <span>Assigned to : ${task[i].employee}</span> </p> 
-        <div id="dateAndButtons"><div id="date"><span class="date">Due : ${task[i].due}</span> <span>Status : Pending</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
+        <div id="dateAndButtons"><div id="date"><span class="date">Due : ${task[i].due}</span> <span>Status : ${task[i].status}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
         <div id="editMainTask${i}" class="edit-Main">
         <input type="text" id="edit-name-main${i}" placeholder="Edit Task"  required>
         <input type="text" id="edit-employee-main${i}" placeholder="Edit employee assigned" required>
@@ -30,7 +44,7 @@ function displayMain(task){
       </div>
        `
     }
-    document.getElementById("assigned-task-main").innerHTML = add
+    document.getElementById("show-assigned-tasks").innerHTML = add
 }
 
 function displayUnassigned(task){
@@ -38,11 +52,11 @@ function displayUnassigned(task){
     for(i = 0; i < task.length; i++){
         add += ` <div class="main-unassigned" id="${i}">
         <p><strong>Task name : </strong>${task[i].name}</p>
-        <div class="assignEmployee"><p>Assign to employee:</p><input type="text" id="employee-main${i}"></div>
+        <div class="assignEmployee"><p>Assign to employee:</p><input type="text" id="employee-main${i}"> <button onclick="deletesUnassigned(${i})">Delete</button></div>
       </div>
         `
     }
-    document.getElementById("unassigned-task-main").innerHTML = add
+    document.getElementById("show-unassigned-tasks").innerHTML = add
 }
 
 function appendNewTaskMain(){
@@ -58,7 +72,8 @@ function appendNewTaskMain(){
         newTask = {
             name : taskName,
             employee : employeeAssigned,
-            due : dueDate
+            due : dueDate,
+            status : "Pending"
         }
 
         tasks.push(newTask)
@@ -104,7 +119,7 @@ function deletesUnassigned(id){
     
     unassignedMainList.splice(id, 1)
     localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
-    displayMain(unassignedMainList)
+    displayUnassigned(unassignedMainList)
 }
 
 function showEditButton(id){
@@ -121,7 +136,6 @@ function editAssigned(id){
     let editDueDate = document.getElementById("edit-due-date-main" + id).value;
 
     userIndex = tasks.findIndex(x => x.name == assignedMainList[id].name)
-    alert(userIndex)
 
     if(editName === ""){
         tasks[userIndex].name = tasks[userIndex].name
