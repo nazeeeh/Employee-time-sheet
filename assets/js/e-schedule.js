@@ -50,7 +50,7 @@ function calendar() {
             for(let i =0; i <days.length; i++) {
                     display +=` <td class ="cell"> `
                if( firstDay === i || a > 0) {
-                   display += `<a href="#" class="add-event" onclick="schedule()"><i class="fa fa-plus" aria-hidden="true"></i></a>`
+                   display += `<a href="#" class="add-event" onclick="schedule(), displaySchedule()"><i class="fa fa-plus" aria-hidden="true"></i></a>`
                    if (a < fullDay) {
                         a++;
                     }
@@ -73,15 +73,67 @@ function calendar() {
 
 // document.getElementsByClassName("add-event").addEventListener("click", schedule);
 
+    // get schedule from local storage
+schedules = JSON.parse(localStorage.getItem("schedule"))
+if(schedules == null){
+    schedules = [];
+}
+// else {
+//     schedules;
+// }
+
+
+
 function schedule() {
     let view = document.getElementById("schedule");
     view.style.display = "block";
 }
-function addEvent() {
+function  addSchedule() {
     let view = document.getElementById("schedule");
     view.style.display = "none";
-    // function would be edited to store events in the local storage
+   
+    newSchedule = {
+        "eventName" : document.getElementById("event-name").value,
+        "eventDate" : document.getElementById("event-date").value,
+        "eventTime" : document.getElementById("event-time").value,
+    }
+    schedules.push(newSchedule);
+    localStorage.setItem("schedule", JSON.stringify(schedules));
+    displaySchedule();
+    
 }
+function displaySchedule() {
+    var list = `
+    <thead>
+            <tr>
+            <th>S/N</th>
+            <th>Event</th>
+            <th> Date</th>
+            <th> Time </th>
+            </tr>
+    </thead>
+    `
+    for(let i = 0; i < schedules.length; i++) {
+        list += `
+        <tbody>
+            <tr> 
+            <td> ${i + 1} </td>
+            <td> ${schedules[i].eventName} </td>
+            <td> ${schedules[i].eventDate} </td>
+            <td> ${schedules[i].eventTime} </td>
+        `
+    }
+    list += `
+            </tr>
+        </tbody> `
+        list += `<button> ${"done"} </button>`
+    document.getElementById("schedule-list").innerHTML = list;
+}
+// function hideScheduleList() {
+//     let view = document.getElementById("schedule-list");
+//     view.style.display = "none";
+// }
 calendar();
+
 
 
