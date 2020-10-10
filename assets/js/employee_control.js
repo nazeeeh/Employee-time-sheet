@@ -99,7 +99,7 @@ function _add_employee(){
         break;
   
       case "332":
-        new_user_type = "Internal Admin ";
+        new_user_type = "Internal-Admin ";
         break;
   
       case "554":
@@ -114,11 +114,16 @@ function _add_employee(){
     let newAdd = {
       "email" : document.getElementById("employee_email").value,
       "name" : document.getElementById("employee_name").value,
+      "password":"7444",
       "role" : document.getElementById("employee_role").value,
       "phone" : document.getElementById("employee_phone").value,
+      "password" : "7444",
       "status" : "Active",
       "user_type" : new_user_type,
       "joining_date" : _employed_date(new Date()),
+      "salary":"120000",
+      "currency":"Naira",
+      "department":"Sample",
     }
 
   
