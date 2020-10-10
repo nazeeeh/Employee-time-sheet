@@ -11,6 +11,7 @@ var logo = document.getElementById("logo");
 
 let validateReg = () => 
 {
+  
 
   if (email.value == "" || password.value == "" || url.value == "" || name.value == "" || tel.value == "" || type.value == ""){
     
@@ -31,9 +32,9 @@ let validateReg = () =>
     }
     else
     {
-      // window.location.assign("online link.html", 500)
-      window.location.href = "https://pacetimesheet.netlify.app/contents/confirmation.html", 500;
+      // window.location.assign/href("online link.html", 500)
       alert(`Redirecting ${email.value} to Dashboard: `)
+      location.assign("../contents/confirmation.html", 500);
     }
   }
 

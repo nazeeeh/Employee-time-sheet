@@ -14,6 +14,18 @@ function assignNewTaskMain(){
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
+
+if(JSON.parse(localStorage.getItem("tasks")) == null){
+    tasks = []
+}
+
+if(JSON.parse(localStorage.getItem("unassignedMainList")) == null){
+    unassignedMainList = []
+}
+
+if(JSON.parse(localStorage.getItem("assignedMainList")) == null){
+    assignedMainList = []
+}
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
        
@@ -22,7 +34,7 @@ function displayMain(task){
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
         <p> <strong> Task name : </strong> ${task[i].name} <span>Assigned to : ${task[i].employee}</span> </p> 
-        <div id="dateAndButtons"><div id="date"><span class="date">Due : ${task[i].due}</span> <span>Status : Pending</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
+        <div id="dateAndButtons"><div id="date"><span class="date">Due : ${task[i].due}</span> <span>Status : ${task[i].status}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
         <div id="editMainTask${i}" class="edit-Main">
         <input type="text" id="edit-name-main${i}" placeholder="Edit Task"  required>
         <input type="text" id="edit-employee-main${i}" placeholder="Edit employee assigned" required>
@@ -60,7 +72,8 @@ function appendNewTaskMain(){
         newTask = {
             name : taskName,
             employee : employeeAssigned,
-            due : dueDate
+            due : dueDate,
+            status : "Pending"
         }
 
         tasks.push(newTask)

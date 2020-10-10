@@ -33,9 +33,12 @@ function CancelNewTask(){
         newTask.style.display = "block"
     }
 }
-    tasks = []
-    unassignedMainList = []
-    assignedMainList = []
+
+tasks = []
+unassignedMainList = []
+assignedMainList = []
+pending = []
+let acceptedTasks = JSON.parse(localStorage.getItem("acceptedTasks"));
 
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
@@ -53,9 +56,16 @@ if( JSON.parse(localStorage.getItem("assignedMainList")) == null){
 }else{
     assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"))
 }
+if(JSON.parse(localStorage.getItem("pending")) == null){
+    pending =[]
+}
+
+if(JSON.parse(localStorage.getItem("acceptedTasks")) == null){
+    acceptedTasks = []
+}
 
 displayTask()
-document.getElementById("Pendingtask").innerHTML = assignedMainList.length
+document.getElementById("Pendingtask").innerHTML = pending.length
 document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
 
 
@@ -90,7 +100,8 @@ function addTask(){
         newTask = {
             name : taskName,
             employee : employeeAssigned,
-            due : dueDate
+            due : dueDate,
+            status: "pending"
         }
         if(employeeAssigned == ""){
             unassignedMainList.push(newTask)
@@ -99,8 +110,10 @@ function addTask(){
 
         }else if(employeeAssigned != ""){
             assignedMainList.push(newTask)
+            pending.push(newTask)
+            localStorage.setItem("pending",  JSON.stringify(pending))
             localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
-            document.getElementById("Pendingtask").innerHTML = assignedMainList.length
+            document.getElementById("Pendingtask").innerHTML = pending.length
         }
 
         tasks.push(newTask)
@@ -181,6 +194,5 @@ function deleteTask(id){
     document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
     document.getElementById("Pendingtask").innerHTML = assignedMainList.length
 }
-
 
 

@@ -74,10 +74,12 @@
   <div class="dashboard-body">
     <div id="container">
       <header id="header">
+        <i id="logo"></i><span  id="role_display"></span>
         <button class="to-btn" onclick="add_form()"><i class="fas fa-plus"></i> Add Employee</button>
       </header>
       <section id="main">
         <h1>Employee List</h1>
+        <span style = "display:none;" id="role_display">p</span>
         <nav class="tabs">
           <ul>
             <li>All Employees</li>
@@ -164,11 +166,12 @@
       <label for="">Phone Number</label>
       <input type="text" id="update_phone">
       <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
-    </div>
+    </div>  
   </div>
   <!-- END OF EDIT FORM -->
 </div>
 <script src="/assets/js/employee_control.js"></script>
 <script src="/assets/js/userDetails.js"></script>
+<script src="/assets/js/userAuth.js"></script>
 </body>
 </html>

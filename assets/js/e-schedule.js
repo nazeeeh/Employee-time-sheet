@@ -26,7 +26,7 @@ var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 document.getElementById("presentMonth").innerText=months[month] + " "+ year;
 
 function calendar() {
-    display = `
+    let display = `
     <thead class="thead-dark">
         <tr> `
         for(let i =0; i <days.length; i++) {
@@ -50,6 +50,7 @@ function calendar() {
             for(let i =0; i <days.length; i++) {
                     display +=` <td class ="cell"> `
                if( firstDay === i || a > 0) {
+                   display += `<a href="#" class="add-event" onclick="schedule()"><i class="fa fa-plus" aria-hidden="true"></i></a>`
                    if (a < fullDay) {
                         a++;
                     }
@@ -69,9 +70,18 @@ function calendar() {
     `
     document.getElementById("table").innerHTML = display;
 }
-// firstDay = new Date(year, month, 0).getDate();
-// alert(firstDay)
-// alert(day)
+
+// document.getElementsByClassName("add-event").addEventListener("click", schedule);
+
+function schedule() {
+    let view = document.getElementById("schedule");
+    view.style.display = "block";
+}
+function addEvent() {
+    let view = document.getElementById("schedule");
+    view.style.display = "none";
+    // function would be edited to store events in the local storage
+}
 calendar();
 
 
