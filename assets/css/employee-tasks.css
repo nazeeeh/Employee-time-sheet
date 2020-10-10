@@ -45,6 +45,9 @@
     background: #213260;
     color: #fff;
     text-decoration: none;
+    outline: none;
+    border-radius: 5px;
+    border: none;
 }
 #view-tasks a:hover {
     background: #fff;

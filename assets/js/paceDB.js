@@ -97,17 +97,18 @@ let getUserDetails = () =>
     
             {// employee sample on dashboard
     
-            "name":"Sample Name",
-            "role":"Engineer",
-            "id":`sample.${companyName}`,
-            "email": `sample@pacetimesheet.com`,
-            "user_type" : "Admin",
-            "phone":"08038157444",
-            "salary":"120000",
-            "currency":"Naira",
-            "department":"Sample",
-            "joining_date" :  _employed_date(new Date())
-    
+              "id":`sample.${companyName}`,
+              "name":"Sample Name",
+              "role":"Engineer",
+              "email": `sample@pacetimesheet.com`,
+              "password":"7444",
+              "user_type" : "co-admin",
+              "phone":"08038157444",
+              "joining_date" :  _employed_date(new Date()),
+              "salary":"120000",
+              "currency":"Naira",
+              "department":"Sample",
+
             }
     
         ]
@@ -117,7 +118,9 @@ let getUserDetails = () =>
     
         // staging new company details for storage
     
-        let newCompany = {
+        let newCompany = 
+        {
+        
           "name" : companyName,
           "email" : companyEmail,
           "phone" : companyTel,
@@ -127,6 +130,7 @@ let getUserDetails = () =>
           "logo" : companyLogo,
           "employeeDb" : localStorage.getItem(`${companyName}_employees`), // creates local storage with company name
           "user_type" : "admin" // admin by default
+        
         }
         
         checkDb.push(newCompany)
