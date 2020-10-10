@@ -1,0 +1,15 @@
+/* Input for Expected hour for all workers */
+#header input {
+    display: block;
+    margin-left: auto;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: darkgray;
+}
+
+#container #header button.calc-btn {
+    background: #131f41;
+    color: rgb(255, 255, 255)
+}

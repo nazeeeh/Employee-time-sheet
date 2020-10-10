@@ -26,6 +26,7 @@ let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
 
 let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
+alert(_employee_localStorage)
 
 // create local storage for company employee if deleted or not found
 if(_employee_localStorage === null || _employee_localStorage === undefined) 
@@ -51,9 +52,7 @@ let _render_record = () =>
       <td>${ _employee_localStorage[i].role}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date} 
-        <i class="fas fa-ellipsis-v more-icon" onclick="edit_form(${i})"></i>
-      </td>
+      <td>${ _employee_localStorage[i].joining_date}</td>
     </tr>
     `
   }
