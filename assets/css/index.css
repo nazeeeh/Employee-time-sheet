@@ -83,6 +83,14 @@ body{
   height: 150px;
   max-width: 100%;
 }
+.logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+}
 .logo p{
   color: #333;
   font-weight: 500;
@@ -133,7 +141,6 @@ body{
   font-style: bold;
 }
 .hello-to-pace-container{
-  background: #FF4500;
   position: relative;
   height: 185px;
   width: 1024;
@@ -181,8 +188,7 @@ body{
   }
 
 }
-@media only screen  and (max-width: 1000px) {
-
+@media only screen  and (max-width: 600px) {
   .features-container{
     height: 150px;
     position: absolute;
@@ -203,7 +209,9 @@ body{
     height: 150px;
     max-width: 70%;
   }
-
+  .trial-form{
+    margin-right: 30px;
+  }
 }
 
 @media only screen  and (max-width: 1000px) {
