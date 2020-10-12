@@ -39,6 +39,7 @@ unassignedMainList = []
 assignedMainList = []
 pending = []
 let acceptedTasks = JSON.parse(localStorage.getItem("acceptedTasks"));
+let completedTasks = JSON.parse(localStorage.getItem("completedTasks"));
 
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
@@ -56,17 +57,31 @@ if( JSON.parse(localStorage.getItem("assignedMainList")) == null){
 }else{
     assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"))
 }
+
 if(JSON.parse(localStorage.getItem("pending")) == null){
     pending =[]
+}else{
+    pending = JSON.parse(localStorage.getItem("pending"))
 }
 
-if(JSON.parse(localStorage.getItem("acceptedTasks")) == null){
+if(acceptedTasks == null){
     acceptedTasks = []
 }
+// else{
+//     acceptedTasks = JSON.parse(localStorage.getItem("acceptedTasks"))
+// }
+
+if(completedTasks == null){
+    completedTasks = []
+}
+// else{
+//     completedTasks = JSON.parse(localStorage.getItem("completedTasks"))
+// }
 
 displayTask()
 document.getElementById("Pendingtask").innerHTML = pending.length
 document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
+document.getElementById("completedTask").innerHTML = completedTasks.length
 
 
 function displayTask(){
@@ -86,6 +101,9 @@ function displayTask(){
         `
     }
     document.getElementById("display-tasks").innerHTML = add
+    document.getElementById("Pendingtask").innerHTML = pending.length
+    document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
+    document.getElementById("completedTask").innerHTML = completedTasks.length
 }
 
 function addTask(){
@@ -187,6 +205,10 @@ function deleteTask(id){
     userIndex = assignedMainList.findIndex(x => x.name == tasks[id].name)
     assignedMainList.splice(userIndex, 1)
     localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+
+    userIndex = pending.findIndex(x => x.name == tasks[id].name)
+    pending.splice(userIndex, 1)
+    localStorage.setItem("pending",  JSON.stringify(pending))
 
     tasks.splice(id, 1)
     localStorage.setItem("tasks",  JSON.stringify(tasks))
