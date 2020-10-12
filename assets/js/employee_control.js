@@ -26,7 +26,6 @@ let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
 
 let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
-alert(_employee_localStorage)
 
 // create local storage for company employee if deleted or not found
 if(_employee_localStorage === null || _employee_localStorage === undefined) 
@@ -52,7 +51,9 @@ let _render_record = () =>
       <td>${ _employee_localStorage[i].role}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date}</td>
+      <td>${ _employee_localStorage[i].joining_date} 
+        <i class="fas fa-ellipsis-v more-icon" onclick="edit_form(${i})"></i>
+      </td>
     </tr>
     `
   }
@@ -98,7 +99,7 @@ function _add_employee(){
         break;
   
       case "332":
-        new_user_type = "Internal-Admin ";
+        new_user_type = "Internal-Admin";
         break;
   
       case "554":
@@ -132,7 +133,7 @@ function _add_employee(){
   
     document.getElementById("error_").innerHTML = `${newAdd.name} created successfully`
     
-    alert(`${_employee_localStorage}_employees`)
+    // alert(`${_employee_localStorage}_employees`)
     _employee_localStorage.push(newAdd);
     localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
     _render_record()

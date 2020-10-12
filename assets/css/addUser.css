@@ -19,8 +19,8 @@ body{
 /* Navigation tabs styles*/
 .tabs{
   margin: 30px 0px 10px 20px;
-  /* display: flex; */
-  /* justify-content: space-around; */
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -83,6 +83,7 @@ section#main .tabs ul > li:first-of-type{
   border-radius: 5px;
   border: none;
   outline: none;
+  margin-right: 8px;
 }
 
 

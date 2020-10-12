@@ -33,7 +33,7 @@ let validateReg = () =>
     else
     {
       // window.location.assign/href("online link.html", 500)
-      alert(`Redirecting ${email.value} to Dashboard: `)
+      // alert(`Redirecting ${email.value} to Dashboard: `)
       location.assign("../contents/confirmation.html", 500);
     }
   }
