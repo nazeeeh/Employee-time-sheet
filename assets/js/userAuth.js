@@ -88,19 +88,7 @@ let authUser = () =>
   
       { // now let's find your user type
 
-      // alert(employee_InDb.user_type.toUpperCase())
-      // if(employee_InDb.user_type.toUpperCase() == "ADMIN"){
-      //   alert("ddd")
-      //   location.assign("../contents/employee-dashboard.html");
-      //   _start_Session(employee_InDb)
-
-      // }
-      // else if{
-      //   alert("wee")
-      // }
       check = employee_InDb.user_type.toUpperCase()
-      alert(check)
-      // alert("u")
       switch(check)
       
         {
@@ -112,13 +100,11 @@ let authUser = () =>
             break;
 
           case check = "INTERNAL-ADMIN":
-            // alert("here")
             location.assign("../contents/internal-dashboard.html");
             _start_Session(employee_InDb)
             break;
           
           case check = "EMPLOYEE":
-            // alert(employee_InDb.user_type.toUpperCase())
             
             location.assign("../contents/employee-dashboard.html");
             _start_Session(employee_InDb)
@@ -140,7 +126,6 @@ let authUser = () =>
 
   function _start_Session(logMe_in) // function to handle login session
   {
-    // alert("here")
     let current_UserDb = JSON.parse(localStorage.getItem("currentUser"));// check if there's an existing session of a user
     if(current_UserDb == null || current_UserDb.length > 1) // if current user storage does not exist create one (if empty or more than 1)
     
