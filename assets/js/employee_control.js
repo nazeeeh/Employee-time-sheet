@@ -99,7 +99,7 @@ function _add_employee(){
         break;
   
       case "332":
-        new_user_type = "Internal-Admin ";
+        new_user_type = "Internal-Admin";
         break;
   
       case "554":
@@ -133,7 +133,7 @@ function _add_employee(){
   
     document.getElementById("error_").innerHTML = `${newAdd.name} created successfully`
     
-    alert(`${_employee_localStorage}_employees`)
+    console.log(`${_employee_localStorage}_employees`)
     _employee_localStorage.push(newAdd);
     localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
     _render_record()

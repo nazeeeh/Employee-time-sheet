@@ -38,7 +38,7 @@ let getUserDetails = () =>
     if (is_email_InDb ==  undefined || is_email_InDb == null)
     {
 
-      alert("success")
+      // alert("success")
 
       if (companyPassword == company2Password)
       {  // validate password and confirm password before storage
@@ -151,7 +151,7 @@ let getUserDetails = () =>
     }
     else if (is_email_InDb["email"] == companyEmail)
     {
-      alert("found")
+      // alert("EMAIL ALREADY FOUND")
     }
   }
 

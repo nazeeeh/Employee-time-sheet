@@ -6,8 +6,9 @@
   <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
   <link rel="stylesheet" href="/assets/css/utilities.css">
   <link rel="stylesheet" href="/assets/css/addUser.css">
+  <link rel="stylesheet" href="/assets/css/billing.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
-  <title>Pace | Dashboard</title>
+  <title>Pace | Billing Dashboard</title>
 </head>
 <body>
   <!-- main dashboard -->
@@ -17,7 +18,14 @@
       <div class="company">
         <!-- <i id="logo" class=""></i> -->
         <i class="fas fa-bars"></i>
-        <h4 class="companyDisplay"id="companyDisplay">TIIDELab</h4>
+        <h4 class="companyDisplay"id="role_display" 
+        style="  
+        color: #fff;
+        font-size: 17px; 
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif ;
+        padding: 25px 23px 0px 10px;">Not logged In</h4>
       </div>
       
       <div class="sidebar-links">
@@ -27,7 +35,7 @@
               <a href="/contents/admin-dashboard.html">Dashboard</a>
           </div>
           <!-- New link -->
-          <div class="dashboard-link" id="active_page">
+          <div class="dashboard-link">
               <i class="fas fa-user-friends"></i>
               <a href="/contents/addUser.html">Add User</a>
           </div>
@@ -47,7 +55,7 @@
               <a href="/contents/report.html">Report</a>
           </div>
           <!-- New link -->
-          <div class="dashboard-link">
+          <div class="dashboard-link" id="active_page">
               <i class="fas fa-stream"></i>
               <a href="/contents/billing.html">Billing Rate</a>
           </div>
@@ -74,13 +82,12 @@
   <div class="dashboard-body">
     <div id="container">
       <header id="header">
-        <i id="logo"></i><span  id="role_display"></span>
-        <button class="to-btn" onclick="add_form()"><i class="fas fa-plus"></i> Add Employee</button>
+          <input type="number" placeholder="Total Expected Hours" id="expected-hour">
+        <button class="to-btn calc-btn" onclick="calculateSalary()">Calculate Salary</button>
       </header>
       <section id="main">
         <h1>Employee List</h1>
-        <span style = "display:none;" id="role_display">p</span>
-        <nav class="tabs">
+        <!-- <nav class="tabs">
           <ul>
             <li>All Employees</li>
             <li>Management</li>
@@ -91,87 +98,25 @@
             <input type="text" placeholder="Enter Name" id="_search_param">
             <a href="#" class="to-btn btn-deep" onclick="_search_employee()">Search</a>
           </section>
-        </nav>
+        </nav> -->
       <table id="employee_list">
         <thead>
           <tr id="profile-details">
             <td>S/N</td>
-            <td>Status <span>|</span> Basic Details</td>
-            <td>Designation</td>
-            <td>Phone Number</td>
-            <td>User Type</td>
-            <td>Joining Date</td>
+            <td>Name</td>
+            <td>Department</td>
+            <td>Salary</td>
+            <td>Worked-Hour</td>
+            <td>Receivable-Pay</td>
           </tr>
         </thead>
-        <tbody  class="profile" id="_record_board"></tbody>
+        <tbody  class="profile" id="_billing_board"></tbody>
       </table>
-      <section id="pager-link">
-        <a href="#" class="pager-link_control">Prev</a>
-        <a href="#" >Next</a>
-      </section> 
+     
     </div>
   </div>
-
- <!-- employ form -->
-  <div id="employ_form">
-    <div id="info">
-      <h3>Employee Type Code</h3>
-      <ul>
-        <li>Co- Admin - 443</li>
-        <li>Internal Admin - 332</li>
-        <li>Employee - 554</li>
-        <h4>Pace Bot: <span id="error_">Hello</span></h4>
-      </ul>
-    </div>
-    <div id="form_section">
-      <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
-      <label for="">Employee Type</label>
-      <input type="text" id="employee_type">
-      <label for="">Email</label>
-      <input type="text" id="employee_email">
-      <label for="">Full Name</label>
-      <input type="text" id="employee_name">
-      <label for="">Role</label>
-      <input type="text" id="employee_role">
-      <label for="">Phone Number</label>
-      <input type="text" id="employee_phone">
-      <a href="#" id="add_employee_btn" class="to-btn btn-deep" onclick="_add_employee()">Employ</a>
-    </div>
-  </div>
-
-
-  <!-- EDIT FORM -->
-  <div id="edit_form">
-    <div id="edit_info">
-      <h3>Employee Type Code</h3>
-      <ul>
-        <li>Co- Admin - 443</li>
-        <li>Internal Admin - 332</li>
-        <li>Employee - 554</li>
-        <h4>Pace Bot: <span id="error_">Hello</span></h4>
-      </ul>
-    </div>
-    <!-- edit form  -->
-    <div id="edit_section">
-      <h3 id="edit_heading"><span id="close_edit" onclick='close_editForm()'>X</span> Employee Form 2</h3>
-      <input type="hidden" id="identifier">
-      <label for="">Employee Type</label>
-      <input type="text" id="update_type">
-      <label for="">Email</label>
-      <input type="text" id="update_email">
-      <label for="">Full Name</label>
-      <input type="text" id="update_name">
-      <label for="">Role</label>
-      <input type="text" id="update_role">
-      <label for="">Phone Number</label>
-      <input type="text" id="update_phone">
-      <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
-    </div>  
-  </div>
-  <!-- END OF EDIT FORM -->
 </div>
-<script src="/assets/js/employee_control.js"></script>
+<script src="/assets/js/billing.js"></script>
 <script src="/assets/js/userDetails.js"></script>
-<script src="/assets/js/userAuth.js"></script>
 </body>
 </html>
