@@ -20,7 +20,11 @@ body{
 .tabs{
   margin: 30px 0px 10px 20px;
   display: flex;
+<<<<<<< Updated upstream
   /* justify-content: space-around; */
+=======
+  justify-content: space-around;
+>>>>>>> Stashed changes
   align-items: center;
 }
 
@@ -82,6 +86,7 @@ section#main .tabs ul > li:first-of-type{
   border-radius: 5px;
   border: none;
   outline: none;
+  margin-right: 8px;
 }
 
 
