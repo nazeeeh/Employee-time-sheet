@@ -218,7 +218,7 @@ table#employee_list{
 /* form section styles */
 #form_section{
   margin-top: 27px;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -232,6 +232,7 @@ table#employee_list{
   padding: 12px;
   background: #213260;
   color: whitesmoke;
+  font-size: 1.6rem;
 }
 
 #form_heading span{
@@ -254,22 +255,35 @@ table#employee_list{
   background: #f4f4f4;
   font-size: 17px;
   padding: 12px 20px;
-  border-radius: 5px;
-  border-radius: 16px;
+  border-radius: 6px;
   outline: none;
   margin: 0px 12px;
 }
 
 #add_employee_btn{
-  position: relative;
-  top: 21px;
-  border-radius: unset;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 1.2rem;
+  padding: 9px;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  display: block;
+  margin: auto; 
+  width: 20%;
 }
 
+.add-form{
+  display: flex;
+  margin-top: 33px;
+}
 
+.add-form section{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
 
 /* >>>>>>>>>>> EDIT FORM STYLE <<<<<<<<<<<<<<<< */
 

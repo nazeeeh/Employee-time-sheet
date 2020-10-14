@@ -53,12 +53,12 @@
                 <!-- Link Start -->
                 <div class="dashboard-link" id="active_page">
                     <i class="fas fa-chart-pie" ></i>
-                    <a href="/contents/addUser.html">Dashboard</a>
+                    <a href="/contents/internal-dashboard.html">Dashboard</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-user-friends"></i>
-                    <a href="/contents/addUser.html">Add User</a>
+                    <a href="/contents/view-employee.html">View Employee</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
@@ -93,7 +93,7 @@
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="/index.html" onclick="logOut()">Logout</a>
+                    <a href="#" onclick="logOut()">Logout</a>
                 </div>
               <!-- End of Side-bar-Link -->
             </div>
@@ -320,8 +320,12 @@
         </div>
     </div>
     <script src="/assets/js/internal-dashboard.js"></script>
+    <!-- function for logout and validation -->
+    <script src="/assets/js/userAuth.js"></script>
+    <!-- function for getting logged in user details -->
     <script src="/assets/js/userDetails.js"></script>
-    <script src="/assets/js/employee_control.js"></script>
+    <!-- sidebar functions -->
+    <script src="/assets/js/dashboard-sidebar.js"></script>
     <!-- Timer functions -->
     <script src="/assets/js/timer.js"></script>
     <!-- All functions associated with Tasks -->

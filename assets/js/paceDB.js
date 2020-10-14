@@ -11,7 +11,7 @@ let checkDb = JSON.parse(localStorage.getItem("paceDB"));
 if(checkDb == null) // if paceDB does not exist create one 
 {
 
-  checkDb=[]
+  checkDb = []
 
 }
 
