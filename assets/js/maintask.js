@@ -15,6 +15,7 @@ let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
 let pending = JSON.parse(localStorage.getItem("pending"));
+let employees = JSON.parse(localStorage.getItem("_employee_localStorage"));
 
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
@@ -30,6 +31,10 @@ if(JSON.parse(localStorage.getItem("assignedMainList")) == null){
 
 if(JSON.parse(localStorage.getItem("pending")) == null){
     pending = []
+}
+
+if(employees == null){
+    employees = []
 }
 
 displayUnassigned(unassignedMainList)
@@ -174,3 +179,36 @@ function editAssigned(id){
     localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
     displayMain(assignedMainList)
 }
+
+function showEmployee(){
+    employeeAssigned = document.getElementById("employee-assigned-main")
+
+    employeeAssigned.addEventListener('keydown', displayOptions)
+
+    function displayOptions(){
+        found = (employees.filter(x => ((x.name).toLowerCase()).includes(employeeAssigned.toLowerCase())))
+        alert(found)
+            displayEmployee(found)
+        
+    }
+  
+}
+
+function displayEmployee(item){
+    let add = ''
+    alert("stuff")
+    if (document.getElementById("employee").style.display == "block"){
+        (document.getElementById("employee").style.display == "none")
+    }else{
+        document.getElementById("employee").style.display == "none"
+    }
+    for(i = 0; i < item.length; i++){
+        add += `<div id="${i}">
+        <p>${item}</p>
+        </div>
+        `
+    }
+    document.getElementById("employee").innerHTML = add
+}
+
+showEmployee()
