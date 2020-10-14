@@ -152,6 +152,8 @@ let getUserDetails = () =>
     else if (is_email_InDb["email"] == companyEmail)
     {
       // alert("EMAIL ALREADY FOUND")
+      document.getElementById("companyNameHolder").innerHTML = "Email Already Exist";
+      
     }
   }
 
