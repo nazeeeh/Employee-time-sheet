@@ -52,14 +52,18 @@ let _render_record = () =>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
       <td>${ _employee_localStorage[i].joining_date} 
-        <i class="fas fa-ellipsis-v more-icon popup" onclick="myFunction(${i})">
+        <i class="fas fa-ellipsis-v more-icon popup" onclick="select(${i})">
         <span class="popuptext" id="myPopup${i}">
-        ${_employee_localStorage[i].phone}
-      </span>
-      </i>
-      </td>
-    </tr>
-    `
+        <section class="small-popup">
+        <a href="#" onClick="edit_form(${i})">Edit</a>
+        <a href="#" onClick="deleteUser(${i})">Delete</a>
+        </section>
+        </span>
+        </i>
+        </td>
+        </tr>
+        `
+        // ${_employee_localStorage[i].phone}
   }
 
   document.getElementById("_record_board").innerHTML = employee_con;
@@ -273,4 +277,28 @@ let updatedRecord = () =>
   localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
   _render_record()
   location.reload()
+}
+
+let deleteUser = (user_id) =>
+
+{
+  swal({
+    title: "Are you sure?",
+    text: `Once deleted, you will not be able to recover this user! ${_employee_localStorage[user_id].name.toUpperCase()}`,
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal(`Poof! ${_employee_localStorage[user_id].name.toUpperCase()} Deleted!`, {
+        icon: "success",
+      });
+      _employee_localStorage.splice(user_id, 1)
+      localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
+      _render_record()
+    } else {
+      swal("User restored!");
+    }
+  });
 }
