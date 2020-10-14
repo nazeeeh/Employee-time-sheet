@@ -38,7 +38,14 @@
             <div class="company">
               <!-- <i id="logo" class=""></i> -->
               <i class="fas fa-bars"></i>
-              <h4 class="companyDisplay" id="companyDisplay">TIIDELab</h4>
+              <h4 class="companyDisplay" id="companyDisplay" style="font-size: 16px;"
+              style="  
+              color: #fff;
+              font-size: 22px; 
+              font-weight: 900;
+              text-transform: uppercase;
+              font-family: 'Roboto', sans-serif ;
+              padding: 25px 23px 0px 10px;">Not Logged In</h4>
             </div>
             
             <div class="sidebar-links">
@@ -181,7 +188,7 @@
                             </div>
                         </div>
                             <!-- fourth card -->
-                        <div class="cards">
+                        <!-- <div class="cards">
                             <div id="display-tasks">
                                 
                             </div>
@@ -192,6 +199,20 @@
                                 <input type="text" id="due-date" placeholder="Due date" required>
                                 <button id="assign" onclick="addTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
                             </div>
+                        </div> -->
+                        <div class="cards">
+                            <a href="#" id="see-all-tasks" onclick="seeAllTasks()">See all</a>
+                            <div id="display-tasks">
+                                
+                            </div>
+                            <a href="#" id="assign-link" onclick="assignNewTask()">Click to assign new task <i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <div id="new-task">
+                                <input type="text" id="task-name" placeholder="Task" required>
+                                <input type="text" id="employee-assigned" placeholder="Employee to be assigned" required>
+                                <input type="date" id="due-date" placeholder="Due date" required> <br>
+                                <button id="assign" onclick="addTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
+                            </div>
+                    
                         </div>
                     </div>
                     <!-- end os cards -->

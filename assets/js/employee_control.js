@@ -26,7 +26,6 @@ let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
 
 let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
-alert(_employee_localStorage)
 
 // create local storage for company employee if deleted or not found
 if(_employee_localStorage === null || _employee_localStorage === undefined) 
@@ -49,10 +48,16 @@ let _render_record = () =>
     <tr id="${i}" draggable="true">
       <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
-      <td>${ _employee_localStorage[i].role}</td>
+      <td>${ _employee_localStorage[i].department}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
-      <td>${ _employee_localStorage[i].joining_date}</td>
+      <td>${ _employee_localStorage[i].joining_date} 
+        <i class="fas fa-ellipsis-v more-icon popup" onclick="myFunction(${i})">
+        <span class="popuptext" id="myPopup${i}">
+        ${_employee_localStorage[i].phone}
+      </span>
+      </i>
+      </td>
     </tr>
     `
   }
@@ -73,6 +78,7 @@ function _add_employee(){
   new_name = document.getElementById("employee_name").value,
   new_role = document.getElementById("employee_role").value,
   new_phone = document.getElementById("employee_phone").value,
+  assign_department = document.getElementById("employee_department").value,
   new_user_type = document.getElementById("employee_type").value
   let _employed_date = (employed_date) => 
   {
@@ -87,7 +93,7 @@ function _add_employee(){
     document.getElementById("error_").innerHTML = "Error - Form Cannot be blank"
 
   }
-  else 
+   else 
   {
 
     switch(new_user_type)
@@ -98,7 +104,7 @@ function _add_employee(){
         break;
   
       case "332":
-        new_user_type = "Internal-Admin ";
+        new_user_type = "Internal-Admin";
         break;
   
       case "554":
@@ -113,26 +119,50 @@ function _add_employee(){
     _employee_name = document.getElementById("employee_name").value;
     _employee_role = document.getElementById("employee_role").value;
     _employee_phone = document.getElementById("employee_phone").value;
+    // check for department
+    let isExist_department = JSON.parse(localStorage.getItem(`${assign_department}`))
+    if (isExist_department === null|| isExist_department === undefined)
+    {
+      isExist_department = []
+    }
+    console.log("here"+ isExist_department.name)
+    if(is_employee_department = isExist_department.find(x=> x.email == _employee_email))
+    {
+      
+      document.getElementById("error_").innerHTML = `${_employee_email} already exist `
+      
+    } 
+    samplel = 
+    {
+      "name" : "Sample Name",  
+      "salary" : "12000",  
+      "Role" : "Engineer",  
+    }
+  
+    // isExist_department.push(samplel)
+   localStorage.setItem(`${assign_department}`, JSON.stringify(samplel))
 
     let newAdd = {
       "email" : document.getElementById("employee_email").value,
       "name" : document.getElementById("employee_name").value,
-      "password":"7444",
       "role" : document.getElementById("employee_role").value,
       "phone" : document.getElementById("employee_phone").value,
+      "joining_date" : _employed_date(new Date()),
+      "department": assign_department,
+      "user_type" : new_user_type,
       "password" : "7444",
       "status" : "Active",
-      "user_type" : new_user_type,
-      "joining_date" : _employed_date(new Date()),
       "salary":"120000",
       "currency":"Naira",
-      "department":"Sample",
     }
 
-  
+
+
+    isExist_department.push(newAdd)
+    localStorage.setItem(`${assign_department}`, JSON.stringify(isExist_department))
+
     document.getElementById("error_").innerHTML = `${newAdd.name} created successfully`
     
-    alert(`${_employee_localStorage}_employees`)
     _employee_localStorage.push(newAdd);
     localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
     _render_record()
@@ -149,7 +179,7 @@ let _search_employee = () =>
   // do not use let, for or var returns reference error for _employee_localStorage
 
   // 99999999999999 set option like drop down to collect which type of seacrch
-  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.name.toLowerCase() == _look_for);
+  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department == _look_for);
   
   if(_employee_localStorage.length <= 1)
   {

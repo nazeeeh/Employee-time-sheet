@@ -37,21 +37,28 @@
         <div class="sidebar-container">
           <div class="sidebar-wrapper">
             <div class="company">
-              <!-- <i id="logo" class=""></i> -->
+              <i id="logo" class="" style="display: none;"></i>
               <i class="fas fa-bars"></i>
-              <h4 id="companyDisplay">TIIDELab</h4>
+              <h4 id="role_display"
+              style="  
+              color: #fff;
+              font-size: 18px; 
+              font-weight: 900;
+              text-transform: uppercase;
+              font-family: 'Roboto', sans-serif ;
+              padding: 25px 23px 0px 10px;">Not Logged In</h4>
             </div>
             
             <div class="sidebar-links">
                 <!-- Link Start -->
                 <div class="dashboard-link" id="active_page">
                     <i class="fas fa-chart-pie" ></i>
-                    <a href="/contents/addUser.html">Dashboard</a>
+                    <a href="/contents/internal-dashboard.html">Dashboard</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-user-friends"></i>
-                    <a href="/contents/addUser.html">Add User</a>
+                    <a href="/contents/view-employee.html">View Employee</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
@@ -71,7 +78,7 @@
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-stream"></i>
-                    <a href="">Billing Rate</a>
+                    <a href="billing.html">Billing Rate</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
@@ -86,7 +93,7 @@
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="/index.html" onclick="logOut()">Logout</a>
+                    <a href="#" onclick="logOut()">Logout</a>
                 </div>
               <!-- End of Side-bar-Link -->
             </div>
@@ -119,7 +126,7 @@
                             </div>
                             <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
                             <div class="profile-in">
-                                <button> <img src="" alt=""> Ayoola Toluwanimi</button>
+                                <button class="companyDisplay" id="companyDisplay"></button>
                                 <div class="dropdown-in">
                                 </div>
                             </div>
@@ -313,8 +320,12 @@
         </div>
     </div>
     <script src="/assets/js/internal-dashboard.js"></script>
+    <!-- function for logout and validation -->
+    <script src="/assets/js/userAuth.js"></script>
+    <!-- function for getting logged in user details -->
     <script src="/assets/js/userDetails.js"></script>
-    <script src="/assets/js/employee_control.js"></script>
+    <!-- sidebar functions -->
+    <script src="/assets/js/dashboard-sidebar.js"></script>
     <!-- Timer functions -->
     <script src="/assets/js/timer.js"></script>
     <!-- All functions associated with Tasks -->
