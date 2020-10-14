@@ -11,7 +11,7 @@ let checkDb = JSON.parse(localStorage.getItem("paceDB"));
 if(checkDb == null) // if paceDB does not exist create one 
 {
 
-  checkDb=[]
+  checkDb = []
 
 }
 
@@ -38,7 +38,7 @@ let getUserDetails = () =>
     if (is_email_InDb ==  undefined || is_email_InDb == null)
     {
 
-      alert("success")
+      // alert("success")
 
       if (companyPassword == company2Password)
       {  // validate password and confirm password before storage
@@ -151,7 +151,9 @@ let getUserDetails = () =>
     }
     else if (is_email_InDb["email"] == companyEmail)
     {
-      alert("found")
+      // alert("EMAIL ALREADY FOUND")
+      document.getElementById("companyNameHolder").innerHTML = "Email Already Exist";
+      
     }
   }
 

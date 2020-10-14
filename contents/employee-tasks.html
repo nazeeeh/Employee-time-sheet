@@ -18,9 +18,16 @@
         <div class="sidebar-container">
             <div class="sidebar-wrapper">
                 <div class="company">
-                    <i id="logo" class=""></i>
+                    <i id="logo" class="" style="display: none;"></i>
                     <i class="fas fa-bars"></i>
-                    <h4 class="companyDisplay" id="companyDisplay">TIIDELab</h4>
+                    <h4 id="role_display"
+                    style="  
+                    color: #fff;
+                    font-size: 17px; 
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    font-family: 'Roboto', sans-serif ;
+                    padding: 25px 23px 0px 10px;">Not Logged-In</h4>
                 </div>
 
                 <div class="sidebar-links">
@@ -92,7 +99,8 @@
                             <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
                             <div class="profile-in">
-                                <button> <img src="" alt=""> Akan Asanga</button>
+                                <!-- <button> <img src="" alt=""> Akan Asanga</button> -->
+                                <button class="companyDisplay" id="companyDisplay"></button>
                                 <div class="dropdown-in">
                                 </div>
                             </div>
@@ -102,8 +110,12 @@
                 <!-- header ends here -->
                 <main id="body-in">
                     <!-- displays tasks section -->
-                    <div id="view-tasks"> <button onclick="closeTasks()">close</button></div>
+                    <div id="view-tasks"> </div>
                     <!-- displays tasks section ends -->
+
+                    <!-- displays accepted tasks section -->
+                    <div id="accepted-tasks"> </div>
+                    <!-- displays accepted tasks section ends -->
                 </main>
 
             </main>
@@ -114,6 +126,7 @@
     <script src="/assets/js/timer.js"></script>
     <!-- All functions associated with Tasks -->
     <script src="/assets/js/tasks.js"></script>
+    <script src="/assets/js/userDetails.js"></script>
 
 </body>
 

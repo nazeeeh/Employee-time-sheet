@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body{
     margin:0;
     padding:0;
   }
   *{
-    font-family:poppins;
+    font-family: 'Poppins', sans-serif;
     box-sizing:border-box;
   }
   /*/////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -126,7 +127,7 @@ body{
     width:100%;
   }
   div.logout-wrapper .pace-logo img{
-    width:70px;
+    width:50px;
     height:50px;
   }
   div.logout-wrapper .pace-logo a{

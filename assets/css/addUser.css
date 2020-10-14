@@ -19,8 +19,8 @@ body{
 /* Navigation tabs styles*/
 .tabs{
   margin: 30px 0px 10px 20px;
-  /* display: flex; */
-  /* justify-content: space-around; */
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -83,6 +83,7 @@ section#main .tabs ul > li:first-of-type{
   border-radius: 5px;
   border: none;
   outline: none;
+  margin-right: 8px;
 }
 
 
@@ -137,6 +138,81 @@ table#employee_list{
   margin-right: 10px;
   color: #333;
   cursor: pointer;
+  padding: 12px;
+}
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 80px;
+  background-color: #213260;
+  color: #ccc;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%;
+  left: 50%;
+  margin-left: -40px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #213260 transparent transparent transparent;
+}
+
+/* this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.small-popup{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.small-popup a{
+  color: #f4f4f4;
+}
+
+/* sweet alert hack */
+.swal-overlay--show-modal .swal-modal{
+  will-change: unset;
+}
+
+.swal-icon{
+  background: #213260;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
 
 #pager-link{
@@ -217,7 +293,7 @@ table#employee_list{
 /* form section styles */
 #form_section{
   margin-top: 27px;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -231,6 +307,7 @@ table#employee_list{
   padding: 12px;
   background: #213260;
   color: whitesmoke;
+  font-size: 1.6rem;
 }
 
 #form_heading span{
@@ -253,22 +330,35 @@ table#employee_list{
   background: #f4f4f4;
   font-size: 17px;
   padding: 12px 20px;
-  border-radius: 5px;
-  border-radius: 16px;
+  border-radius: 6px;
   outline: none;
   margin: 0px 12px;
 }
 
 #add_employee_btn{
-  position: relative;
-  top: 21px;
-  border-radius: unset;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 1.2rem;
+  padding: 9px;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  display: block;
+  margin: auto; 
+  width: 20%;
 }
 
+.add-form{
+  display: flex;
+  margin-top: 33px;
+}
 
+.add-form section{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
 
 /* >>>>>>>>>>> EDIT FORM STYLE <<<<<<<<<<<<<<<< */
 
