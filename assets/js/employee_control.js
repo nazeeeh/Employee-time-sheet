@@ -52,7 +52,11 @@ let _render_record = () =>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
       <td>${ _employee_localStorage[i].joining_date} 
-        <i class="fas fa-ellipsis-v more-icon" onclick="edit_form(${i})"></i>
+        <i class="fas fa-ellipsis-v more-icon popup" onclick="myFunction(${i})">
+        <span class="popuptext" id="myPopup${i}">
+        ${_employee_localStorage[i].phone}
+      </span>
+      </i>
       </td>
     </tr>
     `
