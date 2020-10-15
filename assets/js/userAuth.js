@@ -194,9 +194,3 @@ let authUser = () =>
 // }
 
 
-// clear the temporary local storage 
-let logOut = () =>
-{
-  localStorage.removeItem("currentUser");
-  location.assign('../contents/logout-confirmation.html')
-}

@@ -35,54 +35,53 @@
               </div>
 
               <div class="sidebar-links">
-                  <!-- Link Start -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-chart-pie"></i>
-                      <a href="">Employee Status</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-user-friends"></i>
-                      <a href="">Add User</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-calendar-alt"></i>
-                      <a href="">Calender</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-calendar-plus"></i>
-                      <a href="">e-Schedule</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-flag-checkered"></i>
-                      <a href="">Report</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-stream"></i>
-                      <a href="">Billing Rate</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-bell"></i>
-                      <a href="">Requests</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-sliders-h"></i>
-                      <a href="/contents/settings.html">Settings</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-sign-out-alt"></i>
-                      <a href="/index.html" onclick="logout()">Logout</a>
-                  </div>
-
-                  <!-- End of Side-bar-Link -->
-              </div>
+                <!-- Link Start -->
+                <div class="dashboard-link">
+                    <i class="fas fa-chart-pie"></i>
+                    <a href="../contents/admin-dashboard.html">Dashboard</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-user-edit"></i>
+                    <a href="../contents/addUser.html">Add User</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <a href="">Calender</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link"  id="active_page">
+                    <i class="fas fa-calendar-plus"></i>
+                    <a href="../contents/e-schedule.html">e-Schedule</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-flag-checkered"></i>
+                    <a href="../contents/report.html">Report</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-stream"></i>
+                    <a href="../contents/billing.html">Billing Rate</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-bell"></i>
+                    <a href="#">Requests</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sliders-h"></i>
+                    <a href="../contents/settings.html">Settings</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="#" onclick="logOut()">Logout</a>
+                </div>
+              <!-- End of Side-bar-Link -->
+            </div>
 
           </div>
       </div>
@@ -148,6 +147,7 @@
 
     <script src="../assets/js/e-schedule.js"></script>
     <script src="../assets/js/timer.js"></script>
+    <script src="/assets/js/dashboard-sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

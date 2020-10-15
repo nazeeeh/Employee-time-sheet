@@ -27,47 +27,51 @@
       <div class="sidebar-links">
         <!-- Link Start -->
         <div class="dashboard-link">
-          <i class="fas fa-chart-pie"></i>
-          <a href="">Dashboard</a>
+            <i class="fas fa-chart-pie"></i>
+            <a href="../contents/admin-dashboard.html">Dashboard</a>
         </div>
         <!-- New link -->
         <div class="dashboard-link">
-          <i class="fas fa-user-friends"></i>
-          <a href="">Add User</a>
+            <i class="fas fa-user-edit"></i>
+            <a href="../contents/addUser.html">Add User</a>
         </div>
         <!-- New link -->
         <div class="dashboard-link">
-          <i class="fas fa-calendar-alt"></i>
-          <a href="">Calender</a>
+            <i class="fas fa-calendar-alt"></i>
+            <a href="">Calender</a>
         </div>
         <!-- New link -->
         <div class="dashboard-link">
-          <i class="fas fa-calendar-plus"></i>
-          <a href="">e-Schedule</a>
+            <i class="fas fa-calendar-plus"></i>
+            <a href="../contents/e-schedule.html">e-Schedule</a>
         </div>
         <!-- New link -->
         <div class="dashboard-link">
-          <i class="fas fa-flag-checkered"></i>
-          <a href="">Report</a>
+            <i class="fas fa-flag-checkered"></i>
+            <a href="../contents/report.html">Report</a>
         </div>
         <!-- New link -->
         <div class="dashboard-link">
-          <i class="fas fa-stream"></i>
-          <a href="">Billing Rate</a>
+            <i class="fas fa-stream"></i>
+            <a href="../contents/billing.html">Billing Rate</a>
         </div>
         <!-- New link -->
         <div class="dashboard-link">
-          <i class="fas fa-bell"></i>
-          <a href="">Requests</a>
+            <i class="fas fa-bell"></i>
+            <a href="../contents/report.html">Requests</a>
         </div>
         <!-- New link -->
-        <div class="dashboard-link" id="active_page">
-          <i class="fas fa-sliders-h"></i>
-          <a href="">Settings</a>
+        <div class="dashboard-link"  id="active_page">
+            <i class="fas fa-sliders-h"></i>
+            <a href="../contents/settings.html">Settings</a>
         </div>
-
-        <!-- End of Side-bar-Link -->
-      </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="#" onclick="logOut()">Logout</a>
+        </div>
+      <!-- End of Side-bar-Link -->
+    </div>
 
     </div>
   </div>
@@ -82,7 +86,7 @@
             <a href="#" id="edit-profile">Edit Profile</a>
             <a href="#" id="notification-setting">Notification setting</a>
             <a href="#" id="change-password">Change Password</a>
-            <a href="../contents/login.html" id="log-out">Log Out</a>
+            <a href="#" onclick="logOut()" id="log-out">Log Out</a>
         </div>
         
         <div class="profile-part2" id="profile-content">
@@ -138,6 +142,7 @@
 
 <script src="../assets/js/settings.js"></script>
 <script src="../assets/js/userDetails.js"></script>
+<script src="/assets/js/dashboard-sidebar.js"></script>
 
 </body>
 </html>
