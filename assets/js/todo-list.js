@@ -8,14 +8,16 @@ function displayContent() {
         if (todoList != null || todoList != undefined) {
             todoTask += `<div>
         <div>
-        <strong>Title:</strong> <button onClick="showDescription">${todoList[i].title}</button><br>
-        <strong class="display">Description: ${todoList[i].description}</strong><i class="fas fa-pencil-alt" onClick="editUser(${i})"></i><i class="far fa-trash-alt" onClick="deleteUser(${i})"></i><br>
+        <strong>Title:</strong> ${todoList[i].title}<br>
+        <strong class="display">Description: </strong>${todoList[i].description}<br>
+        <i class="fas fa-pencil-alt" onClick="editUser(${i})">
+        </i><i class="far fa-trash-alt" onClick="deleteUser(${i})"></i><br>
         </div>
         </div>`;
         }
     }
     document.getElementById("todoTask").innerHTML = todoTask;
-    todoList = JSON.parse(localStorage.getItem("todo"));
+    todoList = JSON.parse(localStorage.getItem("todoList"));
 }
 displayContent();
 
@@ -26,7 +28,7 @@ function addTodoList() {
         description: prompt("Description", "Put a description")
     };
     todoList.push(newList);
-    localStorage.setItem("todo", JSON.stringify(todoList));
+    localStorage.setItem("todoList", JSON.stringify(todoList));
     displayContent();
 }
 
@@ -37,7 +39,7 @@ function editUser(id) {
         description: prompt("Edit description", todoList[id].description)
     };
     todoList[id] = newTodoDetail;
-    localStorage.setItem("todo", JSON.stringify(todoList));
+    localStorage.setItem("todoList", JSON.stringify(todoList));
     displayContent();
 }
 
@@ -46,17 +48,6 @@ function deleteUser(id) {
     if (confirm(`Are you sure you want to delete ${todoList[id].title}?`)) {
         todoList.splice(id, 1);
     }
-    localStorage.setItem("todo", JSON.stringify(todoList));
+    localStorage.setItem("todoList", JSON.stringify(todoList));
     displayContent();
 }
-
-// function showDescription(id) {
-//     test = ""
-//     fullDesc = localStorage.getItem("todoList")
-//     test = fullDescList[id].fullDesc
-//     document.getElementById("yexy").innerHTML = test
-//     on()
-//     alert(`${todoList[i].description}`)
-//         // localStorage.setItem("todo", JSON.stringify(todoList));
-//         // displayContent();
-// }

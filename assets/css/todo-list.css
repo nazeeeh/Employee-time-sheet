@@ -1,45 +1,21 @@
-/* 
-==================================
-*********   RESET ****************
-==================================
- */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    padding: 0;
-    margin: 0;
-    line-height: 1.6;
-    font-family: 'Roboto', sans-serif;
-}
-
 #todo-list-section {
     padding: 50px;
-    text-align: left;
+    text-align: center;
+    margin-right: 30%;
 }
 
-.display {
-    display: none;
-}
-
-
-/* #todo-list {
+#todo-list {
     padding: 15px;
     border: 2px solid #213260;
     border-radius: 5px;
     width: 45%;
-} */
+}
 
 .addUp {
     padding: 15px;
     border: 2px solid #fff;
     border-radius: 5px;
-    width: 45%;
+    width: 30%;
     font-size: 1rem;
     color: #fff;
     background-color: #008800;
