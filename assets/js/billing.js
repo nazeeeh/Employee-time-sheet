@@ -16,7 +16,6 @@ var _company_db_name = _is_Login_Admin[0].name // string
 
 
 
-
 // parsed version of company record
 let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 

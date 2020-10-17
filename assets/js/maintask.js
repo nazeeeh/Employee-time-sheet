@@ -10,12 +10,16 @@ function assignNewTaskMain(){
          addTaskMain.style.display = "block"
      }
  }
-
+let _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser"))
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
 let pending = JSON.parse(localStorage.getItem("pending"));
-let employees = JSON.parse(localStorage.getItem("_employee_localStorage"));
+let companyName =  _is_Login_Admin[0].name;
+let employees = JSON.parse(localStorage.getItem(`${companyName}_employees`))
+// employeeDB = JSON.parse(employees)
+
+alert(JSON.stringify(employees))
 
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
@@ -179,33 +183,43 @@ function editAssigned(id){
     localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
     displayMain(assignedMainList)
 }
+var foundele = []
+var found2 = []
 
 function showEmployee(){
     employeeAssigned = document.getElementById("employee-assigned-main")
-
+    found = []
     employeeAssigned.addEventListener('keydown', displayOptions)
-
+    let searchDetails = employeeAssigned.value
     function displayOptions(){
-        found = (employees.filter(x => ((x.name).toLowerCase()).includes(employeeAssigned.toLowerCase())))
-        alert(found)
-            displayEmployee(found)
-        
+        found = (employees.filter(x => (x.name).toLowerCase().includes((searchDetails))))
+        alert(JSON.stringify(found))
+        for(i = 0; i < found.length; i++){
+            foundele.push(found[i].name)
+        }
+        found2 = foundele.filter(x => x.toLowerCase().includes((searchDetails)))
+        console.log(found2)
+        displayEmployee()
+
     }
   
 }
 
-function displayEmployee(item){
+function appendName(id){
+    document.getElementById("employee").style.display == "none"
+    employeeAssigned = document.getElementById("employee-assigned-main")
+    employeeAssigned.value = found[id].name
+
+}
+
+function displayEmployee(){
+    // document.getElementById("employee").style.display == "block"
     let add = ''
-    alert("stuff")
-    if (document.getElementById("employee").style.display == "block"){
-        (document.getElementById("employee").style.display == "none")
-    }else{
-        document.getElementById("employee").style.display == "none"
-    }
-    for(i = 0; i < item.length; i++){
-        add += `<div id="${i}">
-        <p>${item}</p>
+    for(i = 0; i < found.length; i++){
+        add += `<div id="${i}" class="resultsEmployee" onclick="appendName(${i})">
+        <p>${found[i].name}</p>
         </div>
+        <hr>
         `
     }
     document.getElementById("employee").innerHTML = add
