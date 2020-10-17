@@ -144,13 +144,29 @@ function _add_employee(){
     }
   
     // isExist_department.push(samplel)
-   localStorage.setItem(`${assign_department}`, JSON.stringify(samplel))
+    localStorage.setItem(`${assign_department}`, JSON.stringify(samplel))
 
+    // new user info
+    role = document.getElementById("employee_role").value,
+    phone = document.getElementById("employee_phone").value,
+    email = document.getElementById("employee_email").value;
+    name = document.getElementById("employee_name").value;
+    // create local storage for new users
+    let employee_task = JSON.parse(localStorage.getItem(`${email}_task`))
+    if(employee_task == null || employee_task == undefined){
+      employee_task = []
+    }
+
+    let sample_task = {
+      "task_1": "buy bread"
+    }
+    employee_task.push(sample_task)
+    localStorage.setItem(`${email}_task`, JSON.stringify(employee_task))
     let newAdd = {
-      "email" : document.getElementById("employee_email").value,
-      "name" : document.getElementById("employee_name").value,
-      "role" : document.getElementById("employee_role").value,
-      "phone" : document.getElementById("employee_phone").value,
+      "email" : email,
+      "name" : name,
+      "role" : role,
+      "phone" : phone,
       "joining_date" : _employed_date(new Date()),
       "department": assign_department,
       "user_type" : new_user_type,
@@ -158,6 +174,7 @@ function _add_employee(){
       "status" : "Active",
       "salary":"120000",
       "currency":"Naira",
+      "task": employee_task, // local storage for new user task
     }
 
 
@@ -269,7 +286,7 @@ let updatedRecord = () =>
     "name" : document.getElementById("update_name").value,
     "user_type" : document.getElementById("update_type").value,
     "role" : document.getElementById("update_role").value,
-    "joining_date" : restrict_join_date,
+    "joining_date" : restrict_join_date, // you can't change the joining date
     "phone" : document.getElementById("update_phone").value,
 
   }
