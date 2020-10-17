@@ -138,6 +138,7 @@ table#employee_list{
   margin-right: 10px;
   color: #333;
   cursor: pointer;
+  padding: 12px;
 }
 /* Popup container */
 .popup {
@@ -153,17 +154,17 @@ table#employee_list{
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
+  width: 80px;
+  background-color: #213260;
+  color: #ccc;
   text-align: center;
   border-radius: 6px;
   padding: 8px 0;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
+  bottom: 90%;
   left: 50%;
-  margin-left: -80px;
+  margin-left: -40px;
 }
 
 /* Popup arrow */
@@ -175,7 +176,7 @@ table#employee_list{
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: #213260 transparent transparent transparent;
 }
 
 /* this class - hide and show the popup */
@@ -185,6 +186,24 @@ table#employee_list{
   animation: fadeIn 1s;
 }
 
+.small-popup{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.small-popup a{
+  color: #f4f4f4;
+}
+
+/* sweet alert hack */
+.swal-overlay--show-modal .swal-modal{
+  will-change: unset;
+}
+
+.swal-icon{
+  background: #213260;
+}
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
   from {opacity: 0;} 

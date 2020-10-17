@@ -93,15 +93,16 @@ function editProfileFunc() {
   }
 
   function submitPasswordChange() {
+    alert(document.getElementById("present-password").value)
     if (document.getElementById("present-password").innerHTML == paceDB[paceDB.length-1].password) {
       if (document.getElementById("new-password").value == document.getElementById("confirm-password")) {
         paceDB[0].password = document.getElementById("new-password").value
         localStorage.setItem("paceDB",paceDB)
       } else {
-        alert("Password mismatch")
+        swal("Oops!", "Password mismatch", "warning")
       }
     } else {
-      alert("Your password is wrong")
+      swal("Oops!", "Your password is wrong", "warning")
     }
   }
   

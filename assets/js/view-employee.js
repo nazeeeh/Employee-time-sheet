@@ -8,10 +8,10 @@ THIS SCRIPT
 
 
 // get the current logged in user from local storage
-var _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser")) // object
+var _is_Login_Internal = JSON.parse(localStorage.getItem("current_InternalUser")) // object
 
 // get access to all employee record in the company   
-let _get_employee_record = _is_Login_Admin[0].department // string
+let _get_employee_record = _is_Login_Internal[0].department // string
 
 console.log(_get_employee_record)
 
