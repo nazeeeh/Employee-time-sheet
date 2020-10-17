@@ -28,3 +28,11 @@ function employeeDetails()
 
   display_company_name()
 };
+
+
+// clear the temporary local storage for employee
+let logOut = () =>
+{
+  localStorage.removeItem("current_EmployeeUser");
+  location.assign('../contents/logout-confirmation.html')
+}

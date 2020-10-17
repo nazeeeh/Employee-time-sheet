@@ -33,3 +33,10 @@ if (islogged_In_Internal[0].user_type.toLowerCase() == "internal-admin")
 {
 internalDetails()
 }
+
+// clear the temporary local storage for employee
+let logOut = () =>
+{
+  localStorage.removeItem("current_InternalUser");
+  location.assign('../contents/logout-confirmation.html')
+}

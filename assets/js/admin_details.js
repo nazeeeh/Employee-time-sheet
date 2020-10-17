@@ -28,3 +28,11 @@ function adminDetails()
 };
 
 adminDetails()
+
+
+// clear the temporary local storage for admin
+let logOut = () =>
+{
+  localStorage.removeItem("current_AdminUser");
+  location.assign('../contents/logout-confirmation.html')
+}
