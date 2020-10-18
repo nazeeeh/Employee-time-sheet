@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/assets/css/addUser.css">
   <link rel="stylesheet" href="/assets/css/billing.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Pace | Dashboard</title>
 </head>
 <body>
@@ -18,57 +19,64 @@
       <div class="company">
         <!-- <i id="logo" class=""></i> -->
         <i class="fas fa-bars"></i>
-        <h4 class="companyDisplay"id="companyDisplay">TIIDELab</h4>
+        <h4 class="companyDisplay"id="role_display" 
+        style="  
+        color: #fff;
+        font-size: 17px; 
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif ;
+        padding: 25px 23px 0px 10px;">Not logged In</h4>
       </div>
       
       <div class="sidebar-links">
-          <!-- Link Start -->
-          <div class="dashboard-link">
-              <i class="fas fa-chart-pie"></i>
-              <a href="/contents/admin-dashboard.html">Dashboard</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-user-friends"></i>
-              <a href="/contents/addUser.html">Add User</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-calendar-alt"></i>
-              <a href="">Calender</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-calendar-plus"></i>
-              <a href="">e-Schedule</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-flag-checkered"></i>
-              <a href="/contents/report.html">Report</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link" id="active_page">
-              <i class="fas fa-stream"></i>
-              <a href="/contents/billing.html">Billing Rate</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-bell"></i>
-              <a href="/contents/report.html">Requests</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-sliders-h"></i>
-              <a href="/contents/settings.html">Settings</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-sign-out-alt"></i>
-              <a href="/index.html" onclick="logOut()">Logout</a>
-          </div>
-        <!-- End of Side-bar-Link -->
-      </div>
+        <!-- Link Start -->
+        <div class="dashboard-link">
+            <i class="fas fa-chart-pie"></i>
+            <a href="../contents/admin-dashboard.html">Dashboard</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-user-edit"></i>
+            <a href="../contents/addUser.html">Add User</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-calendar-alt"></i>
+            <a href="">Calender</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-calendar-plus"></i>
+            <a href="../contents/e-schedule.html">e-Schedule</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-flag-checkered"></i>
+            <a href="../contents/report.html">Report</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link"  id="active_page">
+            <i class="fas fa-stream"></i>
+            <a href="../contents/billing.html">Billing Rate</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-bell"></i>
+            <a href="#">Requests</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-sliders-h"></i>
+            <a href="../contents/settings.html">Settings</a>
+        </div>
+        <!-- New link -->
+        <div class="dashboard-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="#" onclick="logOut()">Logout</a>
+        </div>
+      <!-- End of Side-bar-Link -->
+    </div>
     </div>
   </div>
   <!-- this is where the dashboard components goes -->
@@ -111,5 +119,6 @@
 </div>
 <script src="/assets/js/billing.js"></script>
 <script src="/assets/js/userDetails.js"></script>
+<script src="/assets/js/dashboard-sidebar.js"></script>
 </body>
 </html>

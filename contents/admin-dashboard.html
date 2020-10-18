@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/assets/img/logo-1.png"/>
+    <link rel="shortcut icon" href="../assets/img/logo-1.png"/>
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
+    <link rel="stylesheet" href="../assets/css/dashboard-sidebar.css">
     <link rel="stylesheet" href="../assets/css/utilities.css">
-    <link rel="stylesheet" href="/assets/css/admin-dashboard.css">
+    <link rel="stylesheet" href="../assets/css/admin-dashboard.css">
     <title>Dashboard</title>
     <script language="javascript" type="text/javascript">
         let bar_clock = () => 
@@ -38,19 +38,26 @@
             <div class="company">
               <!-- <i id="logo" class=""></i> -->
               <i class="fas fa-bars"></i>
-              <h4 class="companyDisplay" id="companyDisplay">TIIDELab</h4>
+              <h4 class="companyDisplay" id="companyDisplay" style="font-size: 16px;"
+              style="  
+              color: #fff;
+              font-size: 22px; 
+              font-weight: 900;
+              text-transform: uppercase;
+              font-family: 'Roboto', sans-serif ;
+              padding: 25px 23px 0px 10px;">Not Logged In</h4>
             </div>
             
             <div class="sidebar-links">
                 <!-- Link Start -->
                 <div class="dashboard-link" id="active_page">
                     <i class="fas fa-chart-pie"></i>
-                    <a href="/contents/admin-dashboard.html">Dashboard</a>
+                    <a href="../contents/admin-dashboard.html">Dashboard</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-user-edit"></i>
-                    <a href="/contents/addUser.html">Add User</a>
+                    <a href="../contents/addUser.html">Add User</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
@@ -60,27 +67,27 @@
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-calendar-plus"></i>
-                    <a href="">e-Schedule</a>
+                    <a href="../contents/e-schedule.html">e-Schedule</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-flag-checkered"></i>
-                    <a href="/contents/report.html">Report</a>
+                    <a href="../contents/report.html">Report</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-stream"></i>
-                    <a href="/contents/billing.html">Billing Rate</a>
+                    <a href="../contents/billing.html">Billing Rate</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-bell"></i>
-                    <a href="/contents/report.html">Requests</a>
+                    <a href="../contents/report.html">Requests</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
                     <i class="fas fa-sliders-h"></i>
-                    <a href="/contents/settings.html">Settings</a>
+                    <a href="../contents/settings.html">Settings</a>
                 </div>
                 <!-- New link -->
                 <div class="dashboard-link">
@@ -181,7 +188,7 @@
                             </div>
                         </div>
                             <!-- fourth card -->
-                        <div class="cards">
+                        <!-- <div class="cards">
                             <div id="display-tasks">
                                 
                             </div>
@@ -192,6 +199,20 @@
                                 <input type="text" id="due-date" placeholder="Due date" required>
                                 <button id="assign" onclick="addTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
                             </div>
+                        </div> -->
+                        <div class="cards">
+                            <a href="#" id="see-all-tasks" onclick="seeAllTasks()">See all</a>
+                            <div id="display-tasks">
+                                
+                            </div>
+                            <a href="#" id="assign-link" onclick="assignNewTask()">Click to assign new task <i class="fa fa-plus" aria-hidden="true"></i></a>
+                            <div id="new-task">
+                                <input type="text" id="task-name" placeholder="Task" required>
+                                <input type="text" id="employee-assigned" placeholder="Employee to be assigned" required>
+                                <input type="date" id="due-date" placeholder="Due date" required> <br>
+                                <button id="assign" onclick="addTask()">assign</button> <button id="cancel" onclick="CancelNewTask()">Cancel</button>
+                            </div>
+                    
                         </div>
                     </div>
                     <!-- end os cards -->
@@ -361,6 +382,7 @@
     </div>
     <!-- function for logout and validation -->
     <script src="/assets/js/userAuth.js"></script>
+    <script src="/assets/js/admin_details.js"></script>
     <!-- function for getting logged in user details -->
     <script src="/assets/js/userDetails.js"></script>
     <!-- sidebar functions -->

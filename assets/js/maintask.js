@@ -14,6 +14,7 @@ function assignNewTaskMain(){
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
+let pending = JSON.parse(localStorage.getItem("pending"));
 
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
@@ -26,6 +27,11 @@ if(JSON.parse(localStorage.getItem("unassignedMainList")) == null){
 if(JSON.parse(localStorage.getItem("assignedMainList")) == null){
     assignedMainList = []
 }
+
+if(JSON.parse(localStorage.getItem("pending")) == null){
+    pending = []
+}
+
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
        
@@ -85,7 +91,9 @@ function appendNewTaskMain(){
             displayUnassigned(unassignedMainList)
         }else if(employeeAssigned != ""){
             assignedMainList.push(newTask)
+            pending.push(newTask)
             localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+            localStorage.setItem("pending",  JSON.stringify(pending))
             displayMain(assignedMainList)
         }
     }
@@ -106,6 +114,10 @@ function deletesAssigned(id){
     userIndex = tasks.findIndex(x => x.name == assignedMainList[id].name)
     tasks.splice(userIndex, 1)
     localStorage.setItem("tasks",  JSON.stringify(tasks))
+
+    userIndex = pending.findIndex(x => x.name == assignedMainList[id].name)
+    pending.splice(userIndex, 1)
+    localStorage.setItem("pending",  JSON.stringify(pending))
 
     assignedMainList.splice(id, 1)
     localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))

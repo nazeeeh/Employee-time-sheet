@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/dashboard-sidebar.css">
-  <link rel="stylesheet" href="../assets/css/utilities.css">
-  <link rel="stylesheet" href="../assets/css/addUser.css">
+  <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/addUser.css">
   <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
   <title>Pace | Dashboard</title>
 </head>
@@ -24,42 +24,42 @@
           <!-- Link Start -->
           <div class="dashboard-link">
               <i class="fas fa-chart-pie"></i>
-              <a href="../contents/admin-dashboard.html">Dashboard</a>
+              <a href="/contents/internal-dashboard.html">Dashboard</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link" id="active_page">
               <i class="fas fa-user-friends"></i>
-              <a href="../contents/addUser.html">Add User</a>
+              <a href="/contents/addUser.html">Add User</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
               <i class="fas fa-calendar-alt"></i>
-              <a href="../contents/">Calender</a>
+              <a href="">Calender</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
               <i class="fas fa-calendar-plus"></i>
-              <a href="../contents/e-schedule.html">e-Schedule</a>
+              <a href="">e-Schedule</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
               <i class="fas fa-flag-checkered"></i>
-              <a href="../contents/report.html">Report</a>
+              <a href="/contents/report.html">Report</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
               <i class="fas fa-stream"></i>
-              <a href="../contents/billing.html">Billing Rate</a>
+              <a href="/contents/billing.html">Billing Rate</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
               <i class="fas fa-bell"></i>
-              <a href="../contents/report.html">Requests</a>
+              <a href="/contents/report.html">Requests</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
               <i class="fas fa-sliders-h"></i>
-              <a href="../contents/settings.html">Settings</a>
+              <a href="/contents/settings.html">Settings</a>
           </div>
           <!-- New link -->
           <div class="dashboard-link">
@@ -180,20 +180,10 @@
   </div>
   <!-- END OF EDIT FORM -->
 </div>
-
-<script>
-// When the user clicks on div, open the popup
-function select(i) {
-  var popup = document.getElementById(`myPopup${i}`);
-  popup.classList.toggle("show");
-}
-
-</script>
-
-<script src="/assets/js/employee_control.js"></script>
-<script src="/assets/js/dashboard-sidebar.js"></script>
-<script src="/assets/js/admin_details.js"></script>
+<!-- <script src="/assets/js/employee_control.js"></script> -->
+<script src="/assets/js/userDetails.js"></script>
+<script src="/assets/js/internal_details.js"></script>
+<script src="/assets/js/view-employee.js"></script>
 <script src="/assets/js/userAuth.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

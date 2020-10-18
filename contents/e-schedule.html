@@ -19,61 +19,69 @@
     <div class="dashboard-container">
       <div class="sidebar-container">
           <div class="sidebar-wrapper">
-              <div class="company">
-                  <i id="logo" class=""></i>
-                  <h4 id="name">TIIDELab</h4>
-                  <i class="fas fa-bars"></i>
+            <div class="company">
+                <!-- <i id="logo" class=""></i> -->
+                <i class="fas fa-bars"></i>
+                <i id="logo" style="display: none;"></i>
+                <h4 class="companyDisplay" id="companyDisplay" style="font-size: 16px;"
+                style="  
+                color: #fff;
+                font-size: 22px; 
+                font-weight: 900;
+                text-transform: uppercase;
+                font-family: 'Roboto', sans-serif ;
+                padding: 25px 23px 0px 10px;">Not Logged In</h4>
+                <!-- <p id="role_display" style="display: none;"></p> -->
               </div>
 
               <div class="sidebar-links">
-                  <!-- Link Start -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-chart-pie"></i>
-                      <a href="">Employee Status</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-user-friends"></i>
-                      <a href="">Add User</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-calendar-alt"></i>
-                      <a href="">Calender</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-calendar-plus"></i>
-                      <a href="">e-Schedule</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-flag-checkered"></i>
-                      <a href="">Report</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-stream"></i>
-                      <a href="">Billing Rate</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-bell"></i>
-                      <a href="">Requests</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-sliders-h"></i>
-                      <a href="/contents/settings.html">Settings</a>
-                  </div>
-                  <!-- New link -->
-                  <div class="dashboard-link">
-                      <i class="fas fa-sign-out-alt"></i>
-                      <a href="/index.html" onclick="logout()">Logout</a>
-                  </div>
-
-                  <!-- End of Side-bar-Link -->
-              </div>
+                <!-- Link Start -->
+                <div class="dashboard-link">
+                    <i class="fas fa-chart-pie"></i>
+                    <a href="../contents/admin-dashboard.html">Dashboard</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-user-edit"></i>
+                    <a href="../contents/addUser.html">Add User</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <a href="">Calender</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link"  id="active_page">
+                    <i class="fas fa-calendar-plus"></i>
+                    <a href="../contents/e-schedule.html">e-Schedule</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-flag-checkered"></i>
+                    <a href="../contents/report.html">Report</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-stream"></i>
+                    <a href="../contents/billing.html">Billing Rate</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-bell"></i>
+                    <a href="#">Requests</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sliders-h"></i>
+                    <a href="../contents/settings.html">Settings</a>
+                </div>
+                <!-- New link -->
+                <div class="dashboard-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="#" onclick="logOut()">Logout</a>
+                </div>
+              <!-- End of Side-bar-Link -->
+            </div>
 
           </div>
       </div>
@@ -94,7 +102,7 @@
                           <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a>
                           <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
                           <div class="profile-in">
-                              <button> <img src="" alt=""> Akan Asanga</button>
+                              <button id="role_display"> <img src="" alt=""> Akan Asanga</button>
                               <div class="dropdown-in">
                               </div>
                           </div>
@@ -109,15 +117,33 @@
                   <h3 id="presentMonth">Month view for</h3>
                   <!-- <table class="table table-hover" id="calWrapper"></table> -->
                   <table class="table" id="table"></table>
-                  <div id="schedule">
-                    <div>
-                        <input type="text" id="event-name" placeholder="add event" required> <br>
-                        <input type="date" id="event-date" placeholder="event date" required> <br>
-                        <input type="time" id="event-time" placeholder="event time" required> <br>
-                        <button onclick="addSchedule()">Add Event</button>
+
+                <!-- Modal -->
+                <div class="modal fade"  id="schedule" role="dialog" >
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onblur="displaySchedule()">view</button>
+                        <!-- <button type="button" class="close" data-dismiss="modal" onclick="addSchedule()">Add</button> -->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                      </div>
+                      <div class="modal-body">
+                            <form>
+                                <input type="text" id="event-name" placeholder="event name" required> <br>
+                                <input type="date" id="event-date" placeholder="event date" required> <br>
+                                <input type="time" id="event-time" placeholder="event time" required> <br>
+                                <input type="button" class="btn" value="Add"  data-dismiss="modal"  onclick="addSchedule()">
+                            </form>
+                      </div>
+                     
                     </div>
+                  </div>
                 </div>
-                <table class="table table-hover" id="schedule-list"></table>
+              </div>
+              <!-- Modal ends -->
+              <!-- <button> &times; </button> -->
+              <table class="table table-hover" id="schedule-list"></table>
                 </div>
               </div>
             <!-- fluid wrapper ends -->
@@ -139,9 +165,10 @@
 
 
 
-
+    <!-- <script src="/assets/js/employee_details.js"></script> -->
     <script src="../assets/js/e-schedule.js"></script>
     <script src="../assets/js/timer.js"></script>
+    <script src="/assets/js/dashboard-sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

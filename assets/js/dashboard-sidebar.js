@@ -15,5 +15,3 @@ function myFunction() {
   }
 }
 
-
-// alert("working")
