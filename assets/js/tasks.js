@@ -2,14 +2,12 @@ function assignNewTask(){
     let assignLink = document.getElementById("assign-link");
     let newTask = document.getElementById("new-task"); 
     let taskDisplay = document.getElementById("display-tasks");
-    let seeAllTasks = document.getElementById("see-all-tasks")
+    let seeAllTasks = document.getElementById("see-all-tasks");
     
     if (newTask.style.display == "block") {
         newTask.style.display = "none"
-        seeAllTasks.style.display = "block"
-        
-    }
-    else {
+        seeAllTasks.style.display = "block"   
+    }else {
         newTask.style.display = "block"
         assignLink.style.display = "none"
         taskDisplay.style.display = "none"
@@ -21,15 +19,14 @@ function CancelNewTask(){
     let assignLink = document.getElementById("assign-link");
     let newTask = document.getElementById("new-task"); 
     let taskDisplay = document.getElementById("display-tasks");
-    let seeAllTasks = document.getElementById("see-all-tasks")
+    let seeAllTasks = document.getElementById("see-all-tasks");
 
     if (newTask.style.display === "block") {
         newTask.style.display = "none"
         assignLink.style.display = "block"
         taskDisplay.style.display = "block"
         seeAllTasks.style.display = "block"
-    }
-    else {
+    }else {
         newTask.style.display = "block"
     }
 }
@@ -46,6 +43,7 @@ if(JSON.parse(localStorage.getItem("tasks")) == null){
 }else{
     tasks = JSON.parse(localStorage.getItem("tasks"))
 }
+
 if( JSON.parse(localStorage.getItem("unassignedMainList")) == null){
     unassignedMainList = []
 }else{
@@ -67,16 +65,10 @@ if(JSON.parse(localStorage.getItem("pending")) == null){
 if(acceptedTasks == null){
     acceptedTasks = []
 }
-// else{
-//     acceptedTasks = JSON.parse(localStorage.getItem("acceptedTasks"))
-// }
 
 if(completedTasks == null){
     completedTasks = []
 }
-// else{
-//     completedTasks = JSON.parse(localStorage.getItem("completedTasks"))
-// }
 
 displayTask()
 document.getElementById("Pendingtask").innerHTML = pending.length
@@ -216,5 +208,7 @@ function deleteTask(id){
     document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
     document.getElementById("Pendingtask").innerHTML = assignedMainList.length
 }
+
+
 
 

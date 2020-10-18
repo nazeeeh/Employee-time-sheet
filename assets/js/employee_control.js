@@ -157,10 +157,7 @@ function _add_employee(){
       employee_task = []
     }
 
-    let sample_task = {
-      "task_1": "buy bread"
-    }
-    employee_task.push(sample_task)
+  
     localStorage.setItem(`${email}_task`, JSON.stringify(employee_task))
     let newAdd = {
       "email" : email,

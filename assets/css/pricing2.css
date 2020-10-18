@@ -57,6 +57,9 @@ section.pricing-card-wrapper .pricing-card:hover{
     border-top-right-radius:10px;
     border-top-left-radius:10px;
 }
+.pricing-card .head:hover{
+    cursor:pointer;
+}
 .head .head-focus{
     border:hidden;
     height:50px;
