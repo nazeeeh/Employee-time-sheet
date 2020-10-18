@@ -27,12 +27,12 @@ main{
     background-color: rgba(0,0,0,0.5);
     display: none;
 }
-#new-task-main div{
+#new-task-main #add-task-display{
     width: 20%;
-    height: 17%;
+    /* height: 17%; */
     margin: 200px auto;
 }
-#new-task-main div input{
+#new-task-main input{
     outline: none;
     padding: 9px 5px;
     margin: 7px 40px;
@@ -40,24 +40,39 @@ main{
     border-radius: 10px;
     border: #f2f2f2 2px solid;
 }
-#new-task-main #employee{
-    position: fixed;
-    width: 200px;
+#new-task-main .employee{
+    position: absolute;
+    width: 70%;
+    margin: 7px 40px;
+    margin-top: -10px;
+    border-radius: 10px;
     z-index: 3;
-    margin: 2px 40px;
-    /* border: 2px black solid; */
-    /* display: none; */
 }
-#new-task-main #employee .resultsEmployee{
+#new-task-main #employee-search{
+    position: relative;
+    width: 100%;
+    /* height: 20px; */
+}
+#new-task-main #employee-search input{
+    margin-top: 5px;
+}
+#new-task-main .employee > div:hover{
+    background-color: rgb(208, 223, 245);
+}
+#new-task-main .employee > div{
     width: 100%;
     height: 20px;
     margin: 0;
-    padding: 0;
+    padding: 5px 5px;
+    border: 1px #f2f2f2 solid;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
 }
 #new-task-main div input:first-of-type{
     margin-top: 40px;
 }
-#new-task-main div{
+#new-task-main #add-task-display{
     background-color: white;
     height: 45%;
     width: 30%;
@@ -123,6 +138,9 @@ main{
     width: 95%;
     background-color: #d6ddf3;
 }
+.tasks-main #assigned-task-main .main-task{
+    position: relative;
+}
 .tasks-main #unassigned-task-main .main-unassigned{
     width: 90%;
     padding-bottom: 10px;
@@ -147,8 +165,17 @@ main{
 }
 .tasks-main #assigned-task-main .main-task .edit-Main{
    background-color: white; 
-   padding: 20px;
+   padding: 20px 27px 0;
    display: none;
+   position: absolute;
+   top: 100%;
+   /* width: 100%; */
+   z-index: 2;
+   border: #f2f2f2 solid 2px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   background-color: #d6ddf3;
+   opacity: 0.9;
 }
 .tasks-main #assigned-task-main .main-task .edit-Main input{
     margin-bottom: 10px;
@@ -156,7 +183,7 @@ main{
     padding: 7px 5px;
     border-radius: 5px;
     border: #f2f2f2 solid 2px;
-    width: 250px;
+    width: 220px;
 }
 .tasks-main #assigned-task-main .main-task .edit-Main button{
     padding: 7px 10px;
