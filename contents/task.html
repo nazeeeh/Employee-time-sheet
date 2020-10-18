@@ -45,11 +45,16 @@
       <button onclick="assignNewTaskMain()">Add new task</button>
     </section>
     <section id="new-task-main">
-     <div>
-      <input type="text" id="task-name-main" placeholder="Task" required><br>
-      <input type="text" id="employee-assigned-main" placeholder="Employee to be assigned" required><br>
-      <input type="date" id="due-date-main" placeholder="Due date" required> <br>
-      <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelTask()">Cancel</button>
+      <div id="add-task-display">
+        <input type="text" id="task-name-main" placeholder="Task" required><br>
+        <div id="employee-search">
+        <input type="text" id="employee-assigned-main" class="employee-assigned" placeholder="Employee to be assigned" required><br>
+        <section class="employee">
+  
+        </section>
+        </div>
+        <input type="date" id="due-date-main" placeholder="Due date" required> <br>
+        <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelTask()">Cancel</button>
       </div>
     </section>
     <div class="tasks-main">

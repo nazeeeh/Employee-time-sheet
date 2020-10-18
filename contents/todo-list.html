@@ -4,22 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/logo-1.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/todo-list.css">
     <title>Pace | Todo-List</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../assets/css/todo-list.css">
+
 </head>
 
 <body>
-    <section id="todo-list-section">
-        <i class="fas fa-th-list fa-6x" style="color: #213260;"></i>
-        <h1>Todo-List</h1>
-        <!-- <input type="text" id="todo-list" placeholder="Todo-List" required /> -->
-        <button onclick="addTodoList()" class="addUp">Click to add</button>
-        <div id="new-task">
-            <div id="todoTask"></div>
+    <div class="dashboard-container">
+        <div class="sidebar-container">
+            <div class="sidebar-wrapper">
+                <div class="company">
+                    <i id="logo" class=""></i>
+                    <i class="fas fa-bars"></i>
+                    <h4 id="companyDisplay">TIIDELab</h4>
+                </div>
+
+                <div class="sidebar-links">
+                    <!-- Link Start -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-chart-pie"></i>
+                        <a href="">Dashboard</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-tasks"></i>
+                        <a href="/contents/employee-tasks.html">Tasks</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link" id="active_page">
+                        <i class="fas fa-list-alt"></i>
+                        <a href="/contents/todo-list.html">Todo List</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <a href="">Calender</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-plus"></i>
+                        <a href="">e-Schedule</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <a href="">Report</a>
+                    </div>
+
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-bell"></i>
+                        <a href="">Requests</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sliders-h"></i>
+                        <a href="/contents/settings.html">Settings</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="logout-confirmation.html" onclick="logOut()">Logout</a>
+                    </div>
+                    <!-- End of Side-bar-Link -->
+                </div>
+
+            </div>
         </div>
+    </div>
+    <section id="todo-list-section">
+        <div id="addTodoListDiv">
+            <input id="addTodoListInput" class="comment">
+            <button id="addTodoListButton" class="btn-save">Add Todo-list</button>
+        </div>
+        <div id="root"></div>
     </section>
     <script src="/assets/js/todo-list.js"></script>
+
+
 </body>
 
 </html>
