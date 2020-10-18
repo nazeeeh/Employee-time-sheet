@@ -13,14 +13,14 @@
 <body>
     <main-header></main-header>
 
-    <main class="container">
+    <main class="container">`
         
         <h2>
             Choose the plan that's right for your team
         </h2>
        <section class="pricing-card-wrapper">
          <div class="pricing-card">
-           <div class="head" id="headOnclick" onclick="ChangeBg()">
+           <div class="head" id="head" onclick="OnMouseIn1 (this)" onmouseleave="OnMouseOut1 (this)">
              <div class="head-focus">
                <h1>Free<span><i class="fas fa-check-circle" id="Color"></i></span></h1>
              </div>
@@ -43,9 +43,9 @@
 
 
          <div class="pricing-card">
-          <div class="head" id="headOnclick" onclick="ChangeBg()">
+          <div class="head" id="head2" onclick="OnMouseIn2 (this)" onmouseleave="OnMouseOut2 (this)">
             <div class="head-focus">
-              <h1>Basic<span><i class="fas fa-check-circle" id="Color"></i></span></h1>
+              <h1>Basic<span><i class="fas fa-check-circle" id="Color2"></i></span></h1>
             </div>
             <div class="head-price">
               <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>2000</h1>
@@ -68,9 +68,9 @@
 
 
          <div class="pricing-card">
-          <div class="head" id="headOnclick" onclick="ChangeBg()">
+          <div class="head" id="head3" onclick="OnMouseIn3 (this)" onmouseleave="OnMouseOut3 (this)">
             <div class="head-focus">
-              <h1>Premium<span><i class="fas fa-check-circle" id="Color"></i></span></h1>
+              <h1>Premium<span><i class="fas fa-check-circle" id="Color3"></i></span></h1>
             </div>
             <div class="head-price">
               <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>3050</h1>
@@ -95,9 +95,9 @@
 
 
          <div class="pricing-card">
-          <div class="head" id="headOnclick" onclick="ChangeBg()">
+          <div class="head" id="head4" onclick="OnMouseIn4 (this)" onmouseleave="OnMouseOut4 (this)">
             <div class="head-focus">
-              <h1>Enterprise<span><i class="fas fa-check-circle" id="Color"></i></span></h1>
+              <h1>Enterprise<span><i class="fas fa-check-circle" id="Color4"></i></span></h1>
             </div>
             <div class="head-price">
               <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>6000</h1>
@@ -183,12 +183,80 @@
           });
         }
         </script>
+
 <script>
-  function ChangeBg()
-  {
-    document.getElementById("headOnclick").style.backgroundColor = "white";
-    document.getElementById("Color").style.cssText = 'color:green;text-shadow:none;';
-  }
+// card one
+function OnMouseIn1 (ele)
+{
+   ElementID = document.getElementById('head');
+   ColorButton = document.getElementById('Color');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut1 (ele)
+{
+   ElementID = document.getElementById('head');
+   ColorButton = document.getElementById('Color');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+// card 2
+function OnMouseIn2 (elem)
+{
+   ElementID = document.getElementById('head2');
+   ColorButton = document.getElementById('Color2');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut2 (elem)
+{
+   ElementID = document.getElementById('head2');
+   ColorButton = document.getElementById('Color2');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+// card 3
+function OnMouseIn3 (elemen)
+{
+   ElementID = document.getElementById('head3');
+   ColorButton = document.getElementById('Color3');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut3 (elemen)
+{
+   ElementID = document.getElementById('head3');
+   ColorButton = document.getElementById('Color3');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+// card 4
+function OnMouseIn4 (element)
+{
+   ElementID = document.getElementById('head4');
+   ColorButton = document.getElementById('Color4');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut4 (element)
+{
+   ElementID = document.getElementById('head4');
+   ColorButton = document.getElementById('Color4');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
 </script>
 </body>
 </html>
