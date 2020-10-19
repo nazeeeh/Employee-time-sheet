@@ -10,12 +10,14 @@ function assignNewTaskMain(){
          addTaskMain.style.display = "block"
      }
  }
-let _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser"))
+let check = JSON.parse(localStorage.getItem("paceDB"))
+// let _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser"))
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
 let pending = JSON.parse(localStorage.getItem("pending"));
-let companyName =  _is_Login_Admin[0].name;
+let companyName =  check[0].name;
+// let _employee_Db = JSON.parse(localStorage.getItem(`${companyName}_employees`))
 let employees = JSON.parse(localStorage.getItem(`${companyName}_employees`));
 let currentUser = JSON.parse(localStorage.getItem("current_InternalUser"))
 let currentUserEmail = currentUser[0].email
@@ -45,6 +47,7 @@ if(JSON.parse(localStorage.getItem(`${currentUserEmail.email}_task`)) == null ||
     employeeTask = []
 }
 
+// alert(JSON.stringify(employees))
 // alert(currentUserEmail)
 displayUnassigned(unassignedMainList)
 displayMain(employeeTask)
