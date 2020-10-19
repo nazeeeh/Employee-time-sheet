@@ -10,7 +10,7 @@ function assignNewTaskMain(){
          addTaskMain.style.display = "block"
      }
  }
-let _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser"))
+let _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser"))
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
@@ -21,7 +21,6 @@ let currentUser = JSON.parse(localStorage.getItem("current_InternalUser"))
 let currentUserEmail = currentUser[0].email
 let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`))
 // employeeDB = JSON.parse(employees)
-
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
 }

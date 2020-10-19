@@ -45,7 +45,7 @@ let _render_record = () =>
   {
   
     employee_con += `
-    <tr id="${i}" draggable="true">
+    <tr id="${i}" draggable="true" onclick="_viewRecord(${i})">
       <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].department}</td>
@@ -61,7 +61,7 @@ let _render_record = () =>
         </span>
         </i>
         </td>
-        </tr>
+    </tr>
         `
         // ${_employee_localStorage[i].phone}
   }
@@ -196,8 +196,8 @@ let _search_employee = () =>
   _look_for = document.getElementById("_search_param").value;
   // do not use let, for or var returns reference error for _employee_localStorage
 
-  // 99999999999999 set option like drop down to collect which type of seacrch
-  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department == _look_for);
+  // 9999 set option like drop down to collect which type of seacrch
+  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department.toUpperCase() == _look_for.toUpperCase());
   
   if(_employee_localStorage.length <= 1)
   {
@@ -315,4 +315,24 @@ let deleteUser = (user_id) =>
       swal("User restored!");
     }
   });
+}
+
+
+
+
+let _viewRecord = (employee_id) =>
+{
+
+  document.getElementById("view-container").style.display= "block"
+  recordToUpdate = _employee_localStorage[employee_id]
+  document.getElementById("view_name").innerHTML = recordToUpdate.name 
+  document.getElementById("department").innerHTML = recordToUpdate.department 
+  document.getElementById("role").innerHTML = recordToUpdate.role
+  document.getElementById("salary").innerHTML = recordToUpdate.salary
+  document.getElementById("email").innerHTML = recordToUpdate.email
+  document.getElementById("tel").innerHTML = recordToUpdate.phone
+  restrict_join_date = recordToUpdate.joining_date
+  document.getElementById("identifier").value = employee_id
+
+
 }
