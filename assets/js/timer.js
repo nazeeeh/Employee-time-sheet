@@ -15,8 +15,7 @@ function setSecs(){
         document.getElementById("seconds").textContent = "00"
     } else if(seconds >= 10){
         document.getElementById("seconds").textContent = seconds
-    } 
-    
+    }   
 }
 
 function setMins(){
@@ -48,10 +47,17 @@ function setHours(){
     }
     document.getElementById("hours").textContent = hours;
 }
+var cumulativeSec;
+var cumulativeMin;
+var cumulativeHour;
 
 function startTime(){
     let startTime = document.getElementById("start-time");
     let stopTime = document.getElementById("stop-time");
+
+    cumulativeSec =  parseInt(document.getElementById("seconds").textContent);
+    cumulativeMin =  parseInt(document.getElementById("mins").textContent);
+    cumulativeHour =  parseInt(document.getElementById("hours").textContent);
 
     if (stopTime.style.display == "block") {
         stopTime.style.display = "none";
@@ -72,6 +78,14 @@ function stopTime(){
     clearInterval(timeSec);
     clearInterval(timeMins);
     clearInterval(timeHours);
+
+    // Gets the value of the time as soon as time is stopped
+    cumulativeSec =  parseInt(document.getElementById("seconds").textContent) - cumulativeSec;
+    cumulativeMin =  parseInt(document.getElementById("mins").textContent) - cumulativeMin;
+    cumulativeHour =  parseInt(document.getElementById("hours").textContent) - cumulativeHour;
+
+    swal("Great work", `You worked for ${cumulativeHour}hours, ${cumulativeMin}minutes and ${cumulativeSec}seconds`, "success");
+
 
     let stopHours = "", stopMins = "", stopSecs = ""
     stopHours = hours
