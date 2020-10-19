@@ -48,7 +48,7 @@ if(JSON.parse(localStorage.getItem(`${currentUserEmail.email}_task`)) == null ||
     employeeTask = []
 }
 
-alert(JSON.stringify(employees))
+alert(JSON.stringify(employeeTask))
 // alert(currentUserEmail)
 displayUnassigned(unassignedMainList)
 displayMain(employeeTask)
