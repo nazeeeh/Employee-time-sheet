@@ -19,8 +19,9 @@
 }
 .cell {
     text-align: center;
-    margin: .5rem;
-    padding: .5rem;
+    margin: 2rem;
+    width: .1rem;
+    border: 2px solid #ccc;
 }
 .cell:hover > .add-event{
     /* background: #6c757d; */
@@ -29,9 +30,46 @@
 .add-event  {
    display: none;
 }
-/* .addEvent:hover {
-    visibility: visible;
-} */
-#schedule {
+
+/* #schedule {
     display: none;
+} */
+.modal-header {
+    background: #213260;
+    color: #fff;
+}
+.close {
+
+}
+button.close {
+    color: #fff;
+    text-shadow: 0 0 #000;
+    opacity: 1;
+    /* background-color: #213260; */
+}
+button.close:hover {
+    color: #fff;
+}
+form input {
+    padding: .5rem;
+    margin: .5rem;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #333;
+    border-bottom: 2px solid rgba(33, 50, 96, 0.1);
+    font-size: 21px;
+    background: rgba(33, 50, 96, 0.1);
+    font-family: 'Open Sans';
+    font-style: italic;
+}
+.btn {
+    background: #213260;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
+}
+.btn:hover {
+    color: #ccc;
 }

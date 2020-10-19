@@ -23,7 +23,6 @@ let currentUser = JSON.parse(localStorage.getItem("current_InternalUser"))
 let currentUserEmail = currentUser[0].email
 let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`))
 // employeeDB = JSON.parse(employees)
-
 if(JSON.parse(localStorage.getItem("tasks")) == null){
     tasks = []
 }
@@ -48,7 +47,7 @@ if(JSON.parse(localStorage.getItem(`${currentUserEmail.email}_task`)) == null ||
     employeeTask = []
 }
 
-alert(JSON.stringify(employeeTask))
+// alert(JSON.stringify(employees))
 // alert(currentUserEmail)
 displayUnassigned(unassignedMainList)
 displayMain(employeeTask)

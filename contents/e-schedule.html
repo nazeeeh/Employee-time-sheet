@@ -15,8 +15,6 @@
     <title> Pace | e-schedule </title>
 </head>
 <body>
-      <!-- fluid wrapper starts -->
-    <div class="container-fluid">
              <!-- main dashboard -->
     <div class="dashboard-container">
       <div class="sidebar-container">
@@ -113,27 +111,48 @@
               </header>
               <!-- header ends here -->
               <main id="body-in">
+                   <!-- fluid wrapper starts -->
+              <div class="container-fluid">
                 <div class="table-responsive">
                   <h3 id="presentMonth">Month view for</h3>
                   <!-- <table class="table table-hover" id="calWrapper"></table> -->
                   <table class="table" id="table"></table>
-                  <div id="schedule">
-                    <div>
-                        <input type="text" id="event-name" placeholder="add event" required> <br>
-                        <input type="date" id="event-date" placeholder="event date" required> <br>
-                        <input type="time" id="event-time" placeholder="event time" required> <br>
-                        <button onclick="addSchedule()">Add Event</button>
+
+                <!-- Modal -->
+                <div class="modal fade"  id="schedule" role="dialog" >
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onblur="displaySchedule()">view</button>
+                        <!-- <button type="button" class="close" data-dismiss="modal" onclick="addSchedule()">Add</button> -->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                      </div>
+                      <div class="modal-body">
+                            <form>
+                                <input type="text" id="event-name" placeholder="event name" required> <br>
+                                <input type="date" id="event-date" placeholder="event date" required> <br>
+                                <input type="time" id="event-time" placeholder="event time" required> <br>
+                                <input type="button" class="btn" value="Add"  data-dismiss="modal"  onclick="addSchedule()">
+                            </form>
+                      </div>
+                     
                     </div>
+                  </div>
                 </div>
-                <table class="table table-hover" id="schedule-list"></table>
+              </div>
+              <!-- Modal ends -->
+              <!-- <button> &times; </button> -->
+              <table class="table table-hover" id="schedule-list"></table>
                 </div>
+              </div>
+            <!-- fluid wrapper ends -->
               </main>
 
           </main>
       </div>
   </div>   
-      </div>
-      <!-- fluid wrapper ends -->
+      
 
 
 
@@ -146,7 +165,7 @@
 
 
 
-    <script src="/assets/js/employee_details.js"></script>
+    <!-- <script src="/assets/js/employee_details.js"></script> -->
     <script src="../assets/js/e-schedule.js"></script>
     <script src="../assets/js/timer.js"></script>
     <script src="/assets/js/dashboard-sidebar.js"></script>

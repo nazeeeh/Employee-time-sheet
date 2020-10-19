@@ -88,7 +88,7 @@
           </ul>
           <section id="search-container">
             <span id="_lookup_result"></span>
-            <input type="text" placeholder="Enter Name" id="_search_param">
+            <input type="text" placeholder="Department" id="_search_param">
             <a href="#" class="to-btn btn-deep" onclick="_search_employee()">Search</a>
           </section>
         </nav>
@@ -189,6 +189,118 @@ function select(i) {
 }
 
 </script>
+
+<!--  view data section -->
+
+<section id="view-container">
+    
+  <script>
+
+
+
+  function closeview(){
+    document.getElementById("view-container").style.display = "none";
+  }
+
+    </script>
+  <style>
+
+    #view-container{
+      position: fixed;
+      bottom: 0.1vh;
+      background: rgba(139, 134, 134, 100);
+      color: white;
+      height: 100vh;
+      width: 100%;
+      display: none;
+    }
+    #view-close{
+      font-size: 3rem;
+      display: block;
+      margin-left: 1000px;
+      cursor: pointer;
+    }
+    view-header{
+      padding: 12px;
+      text-align: center;
+    }
+    .view-img{
+      border: 1px solid #333;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      background: #333;
+      display: block;
+      margin: auto;
+    }
+    view-header h3{
+      font-size: 3vw;
+      line-height: 70px;
+    }
+    view-header p{
+      font-size: 1.3rem;
+    }
+
+    view-main{
+      padding: 12px;
+    }
+
+    .view-profile{
+      display: flex;
+      padding: 12px;
+    }
+
+    .view-profile > section{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: 200px;
+    }
+
+    .view-profile .data{
+      font-size: 1.2rem;
+      position: relative;
+      left: 242px;
+    }
+
+    .view-profile .detail{
+      font-size: 1.2rem;
+      position: relative;
+      left: 220px;
+    }
+  </style>
+  <span id="view-close" onclick="closeview()"> &times;</span>
+  <view-header>
+    <img src="/assets/img/avatar.png" alt="" class="view-img">
+    <h3 id="view_name">Ayodele Samuel Adebayo</h3>
+    <p id="role">Full Stack Developer</p>
+  </view-header>
+  <view-main role="view-main">
+    <section class="view-profile">
+      <section class="data">
+        <span>Department</span>
+        <span>Role</span> 
+        <span>Salary</span> 
+        <span>Email</span> 
+        <span>Phone</span> 
+        <span>Resume</span> 
+        <span>Github</span> 
+        <span>Linked-In</span> 
+      </section>
+
+      <section class="detail">
+        <span id="department"> Web development </span>
+        <span id="role">Backend </span>
+        <span id="salary"># 12, 000 </span>
+        <span id="email"> unclebay@gmail.com </span>
+        <span id="tel"> 09088876665 </span>
+        <span><a href="#">https://sample.resume/unclebay143</a></span>
+        <span><a href="#">https://Github.com/unclebay143</a></span>
+        <span><a href="#">https://Github.com/unclebay143</a></span>
+      </section>
+    </section>
+  </view-main>
+</section>
 
 <script src="/assets/js/employee_control.js"></script>
 <script src="/assets/js/dashboard-sidebar.js"></script>
