@@ -1,0 +1,59 @@
+/* utilities */
+
+a{
+  text-decoration: none;
+}
+
+
+
+
+/* Page styles */
+
+body{
+  background: #fcfcfc;
+}
+
+#logo{
+  color: rgb(51,94,234);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+#this_nav .navbar-nav .nav-link{
+  color: #506690;
+}
+
+#this_nav .navbar-nav .nav-link:hover{
+  color: rgb(51,94,234);
+}
+
+
+#to-btn{
+  background: #335eea;
+  color: #fff;
+  padding: .5625rem 1rem;
+  font-size: 1.0625rem;
+}
+
+
+@media (min-width: 992px){
+  
+  #logo{
+    margin-left: 100px;
+  }
+  
+  .navbar-nav{
+    margin:  0 auto;
+  }
+  
+  .nav-link{
+    margin: 0rem .9rem;
+    padding: 3rem;
+    font-size: 1.21rem;
+  }
+
+  #to-btn{
+    margin-right: 100px;
+  }
+  
+}
