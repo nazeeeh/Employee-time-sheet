@@ -35,6 +35,8 @@ body{
   font-size: 1.0625rem;
 }
 
+/* landing page section 1 */
+
 
 @media (min-width: 992px){
   
@@ -55,5 +57,7 @@ body{
   #to-btn{
     margin-right: 100px;
   }
-  
+  .home-intro-1{
+    margin-top: 80px;
+  }
 }
