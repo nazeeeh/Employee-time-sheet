@@ -120,7 +120,7 @@ function appendNewTaskMain(){
             localStorage.setItem("pending",  JSON.stringify(pending))
             displayMain(employeeTask)
         }
-        alert(JSON.stringify(employeeTask))
+        // alert(JSON.stringify(employeeTask))
 
     }
     CancelTask()
@@ -167,7 +167,7 @@ function deletesUnassigned(id){
     userIndex2 = employeeTask.findIndex(x => x.name == tasks[id].name)
     localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     employeeTask.splice(userIndex2, 1);
-    alert(userIndex2)
+    // alert(userIndex2)
 
 }
 
