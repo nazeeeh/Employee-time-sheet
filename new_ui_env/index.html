@@ -54,7 +54,7 @@
                     </svg>
 
                   </button>
-                  <button type="submit" class="btn to-btn" style="background: #FF6584;">Learn more</button>
+                  <button type="submit" class="btn to-btn" id="learn-btn">Learn more</button>
                 </section>
 
                 <!-- <form action="" class="d-flex flex-column align-item-center trial-form">
@@ -178,51 +178,30 @@
 
         <!-- TESTIMONIEAL SECTION-->
 
-        <section class="container">
-          <h4 class="text-center m-b-3"> What are reviewers are saying</h4>
+        <section class="container testimonial">
+          <h4 class="text-center"> What our reviewers are saying</h4>
           <style>
-            .carousel-item img{
-              width: 200px;
-              height: 400px;
-            }
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-              height: 100px;
-              width: 100px;
-              outline: none;
-              background-size: 100%, 100%;
-              border-radius: 50%;
-              border: none;
-              background-image: none;
-            }
-
-            .carousel-control-next-icon:after
-            {
-              content: '>';
-              font-size: 55px;
-              color: #335eea;
-            }
-
-            .carousel-control-prev-icon:after {
-              content: '<';
-              font-size: 55px;
-              color: #335eea;
-            }
-
-            .carousel{
-              margin: 7rem 0rem;
-            }
+           
           </style>
           <div id="carouselControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="assets/img/1.svg" class="d-block w-100" alt="...">
+                <!-- <img src="assets/img/1.svg" class="d-block w-100" alt="..."> -->
+                <blockquote class="twitter-tweet">
+                  <p lang="en" dir="ltr">I think you can make it more mobile responsive. Otherwise, good stuff.</p>
+                  &mdash; Abdulazeez (@TheAbdulazeez) 
+                  <a href="https://twitter.com/TheAbdulazeez/status/1305443800706408448?ref_src=twsrc%5Etfw">
+                    September 14, 2020
+                  </a>
+                </blockquote> 
               </div>
               <div class="carousel-item">
-                <img src="assets/img/2.svg" class="d-block w-100" alt="...">
+                <!-- <img src="assets/img/2.svg" class="d-block w-100" alt="..."> -->
+                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Great, the colour gradient on mobile is a bit loud, overall great stuff ✌</p>&mdash; Arome Ibrahim (@aromeibrahim_) <a href="https://twitter.com/aromeibrahim_/status/1304437158091120644?ref_src=twsrc%5Etfw">September 11, 2020</a></blockquote>
               </div>
               <div class="carousel-item">
-                <img src="assets/img/time-tracking.svg" class="d-block w-100" alt="...">
+                <!-- <img src="assets/img/time-tracking.svg" class="d-block w-100" alt="..."> -->
+                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Great, will be glad to review again 👍</p>&mdash; Arome Ibrahim (@aromeibrahim_) <a href="https://twitter.com/aromeibrahim_/status/1304659534665916418?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote>
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
@@ -254,5 +233,6 @@
 
     <!-- main js -->
     <script src="assets/js/main.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>
