@@ -179,6 +179,10 @@ body{
     margin-bottom: 7rem;
   }
 
+  .block-2 blockquote{
+    margin-left: 4rem;
+  }
+
   .block img{
     max-width: 60%;
     height: auto;
@@ -191,12 +195,13 @@ body{
   .block-1 img{
     animation: dance-1 15s linear;
     animation-iteration-count: infinite;
+    margin-left: 2rem;
   }
-
-
+  
+  
   @keyframes dance-1 {
     0%{transform: rotateY(-25deg) rotateX(25deg);}
-    100%{transform: rotateY(20deg) rotateX(20deg)}
+    100%{transform: rotateY(20deg) rotateX(20deg);}
   }
   
 
