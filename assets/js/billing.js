@@ -16,7 +16,6 @@ var _company_db_name = _is_Login_Admin[0].name // string
 
 
 
-
 // parsed version of company record
 let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
@@ -107,8 +106,8 @@ function calculateSalary(){
     var expected_hour = document.getElementById("expected-hour").value;
 
     var receivable_pay = [];
-    if (expected_hour == "") { 
-        alert("Kindly input an Expected Value to Calculate");     
+    if (expected_hour == "") {  
+        swal("Empty Input", "Kindly input an Expected Value to Calculate", "warning");   
     
     } else {
             for (var i = 0; i < worked_hour.length; i++) {

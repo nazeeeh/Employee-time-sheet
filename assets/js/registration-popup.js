@@ -16,7 +16,8 @@ revoke_btn.onclick = function() {
     
     document.getElementById("companyNameHolder").innerHTML = "Company Name";
 
-  }else
+  }
+  else
   {
     
     document.getElementById("companyNameHolder").innerHTML = newCompanyName;

@@ -291,8 +291,8 @@ a{text-decoration: none;}
 .switch {
     position: relative;
     display: inline-block;
-    height: 34px;
-    width: 60px;
+    height: 30px;
+    width: 54px;
 }
 
 .switch input {
@@ -309,16 +309,16 @@ a{text-decoration: none;}
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    border-radius: 30px;
+    border-radius: 27px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
     background-color: #fff;
     transition: 0.4s;
     border-radius: 50%;
@@ -329,7 +329,7 @@ a{text-decoration: none;}
 }
 
 .switch input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(24px);
 }
 
 /* MEDIA QUERIES */

@@ -13,119 +13,118 @@
 <body>
     <main-header></main-header>
 
-    <main class="con">
+    <main class="container">`
         
         <h2>
             Choose the plan that's right for your team
         </h2>
+       <section class="pricing-card-wrapper">
+         <div class="pricing-card">
+           <div class="head" id="head" onclick="OnMouseIn1 (this)" onmouseleave="OnMouseOut1 (this)">
+             <div class="head-focus">
+               <h1>Free<span><i class="fas fa-check-circle" id="Color"></i></span></h1>
+             </div>
+             <div class="head-price">
+               <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>0</h1>
+               <h3>Forever</h3>
+               <h3>1 User</h3>
+             </div>
+           </div>
+           <div class="body-features">
+            <p> <i class="fas fa-check-circle"></i>&nbsp;Time tracking <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Activity levels <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited screenshots <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited payments <br>
+              </p>
+              <p></p>
+              <button>Activate</button>
+           </div>
+         </div>
 
-        <section class="prices">
-            <div class="free">
-                <div class="heading">
-                    <h3>Free</h3>
-                    <em>forever</em>
-                    <h1> <span> <img src="../assets/img/naira.png" alt=""></span> 0</h1>
-                    <p>1 user</p>
-                </div>
-                <div class="body">
-                   <p> <i class="fas fa-check"></i>&nbsp;Time tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Activity levels <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited screenshots <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited payments <br>
-                    </p>
-                    <button>Activate</button>
-                </div>
-            </div>
 
-            <div class="free">
-                <div class="heading">
-                    <h3>Basic</h3>
-                    <em>Monthly</em>
-                    <h1><span> <img src="../assets/img/naira.png" alt=""></span>2000</h1>
-                    <p>2 users</p>
-                </div>
-                <div class="body">
-                   <p> <i class="fas fa-check"></i>&nbsp;Time tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Activity levels <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited screenshots <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited payments <br>
-                    <i class="fas fa-check"></i>&nbsp;1 integration <br>
-                    <i class="fas fa-check"></i>&nbsp;24 hour support <br>
-                    <i class="fas fa-check"></i>&nbsp;Per user settings <br>
-                    </p>
-                    <button>Activate</button>
-                </div>
+         <div class="pricing-card">
+          <div class="head" id="head2" onclick="OnMouseIn2 (this)" onmouseleave="OnMouseOut2 (this)">
+            <div class="head-focus">
+              <h1>Basic<span><i class="fas fa-check-circle" id="Color2"></i></span></h1>
             </div>
+            <div class="head-price">
+              <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>2000</h1>
+              <h3>Monthly</h3>
+              <h3>2 Users</h3>
+            </div>
+          </div>
+          <div class="body-features">
+            <p> <i class="fas fa-check-circle"></i>&nbsp;Time tracking <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Activity levels <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited screenshots <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited payments <br>
+              <i class="fas fa-check-circle"></i>&nbsp;1 integration <br>
+              <i class="fas fa-check-circle"></i>&nbsp;24 hour support <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Per user settings <br>
+              </p>
+              <button>Activate</button>
+          </div>
+         </div>
 
-            <div class="free">
-                <div class="heading">
-                    <h3>Premium</h3>
-                    <em>Monthly</em>
-                    <h1><span> <img src="../assets/img/naira.png" alt=""></span>3050</h1>
-                    <p>3 users</p>
-                </div>
-                <div class="body">
-                   <p> <i class="fas fa-check"></i>&nbsp;Time tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Activity levels <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited screenshots <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited payments <br>
-                    <i class="fas fa-check"></i>&nbsp;1 integration <br>
-                    <i class="fas fa-check"></i>&nbsp;24 hour support <br>
-                    <i class="fas fa-check"></i>&nbsp;Per user settings <br>
-                    <i class="fas fa-check"></i>&nbsp;Track apps & URLs <br>
-                    <i class="fas fa-check"></i>&nbsp;Mobile GPS tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Time off & holidays <br>
-                    <i class="fas fa-check"></i>&nbsp;Scheduling & attendance <br>
-                    <i class="fas fa-check"></i>&nbsp;Expense tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Invoices <br>
-                    <i class="fas fa-check"></i>&nbsp;Payroll <br>
-                    <i class="fas fa-check"></i>&nbsp;Client & project budgets <br>
-                    <i class="fas fa-check"></i>&nbsp;Auto-discard idle time <br>
-                    <i class="fas fa-check"></i>&nbsp;Timesheet approvals <br>
-                    <i class="fas fa-check"></i>&nbsp;Weekly limits <br>
-                    <i class="fas fa-check"></i>&nbsp;Fleet tracking <br>
-                    </p>
-                    <button>Activate</button>
-                </div>
-            </div>
 
-            <div class="free">
-                <div class="heading">
-                    <h3>Enterprise</h3>
-                    <em>Monthly</em>
-                    <h1><span> <img src="../assets/img/naira.png" alt=""></span>6000</h1>
-                    <p>4 users</p>
-                </div>
-                <div class="body">
-                   <p><i class="fas fa-check"></i>&nbsp; Time tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Activity levels <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited screenshots <br>
-                    <i class="fas fa-check"></i>&nbsp;Limited payments <br>
-                    <i class="fas fa-check"></i>&nbsp;1 integration <br>
-                    <i class="fas fa-check"></i>&nbsp;24 hour support <br>
-                    <i class="fas fa-check"></i>&nbsp;Per user settings <br>
-                    <i class="fas fa-check"></i>&nbsp;Track apps & URLs <br>
-                    <i class="fas fa-check"></i>&nbsp;Mobile GPS tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Time off & holidays <br>
-                    <i class="fas fa-check"></i>&nbsp;Scheduling & attendance <br>
-                    <i class="fas fa-check"></i>&nbsp;Expense tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Invoices <br>
-                    <i class="fas fa-check"></i>&nbsp;Payroll <br>
-                    <i class="fas fa-check"></i>&nbsp;Client & project budgets <br>
-                    <i class="fas fa-check"></i>&nbsp;Auto-discard idle time <br>
-                    <i class="fas fa-check"></i>&nbsp;Timesheet approvals <br>
-                    <i class="fas fa-check"></i>&nbsp;Weekly limits <br>
-                    <i class="fas fa-check"></i>&nbsp;Fleet tracking <br>
-                    <i class="fas fa-check"></i>&nbsp;Unlimited teams <br>
-                    <i class="fas fa-check"></i>&nbsp;VIP support <br>
-                    <i class="fas fa-check"></i>&nbsp;Unlimited job sites <br>
-                    <i class="fas fa-check"></i>&nbsp;Concierge account setup <br>
-                    <i class="fas fa-check"></i>&nbsp;Higher limits on public API
-                    </p>
-                    <button>Activate</button>
-                </div>
+         <div class="pricing-card">
+          <div class="head" id="head3" onclick="OnMouseIn3 (this)" onmouseleave="OnMouseOut3 (this)">
+            <div class="head-focus">
+              <h1>Premium<span><i class="fas fa-check-circle" id="Color3"></i></span></h1>
             </div>
-        </section>
+            <div class="head-price">
+              <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>3050</h1>
+              <h3>Monthly</h3>
+              <h3>4 Users</h3>
+            </div>
+          </div>
+          <div class="body-features">
+            <p> <i class="fas fa-check-circle"></i>&nbsp;Time tracking <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Activity levels <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited screenshots <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited payments <br>
+              <i class="fas fa-check-circle"></i>&nbsp;1 integration <br>
+              <i class="fas fa-check-circle"></i>&nbsp;24 hour support <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Per user settings <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Track apps & URLs <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Mobile GPS tracking <br>
+            </p>
+            <button>Activate</button>
+          </div>
+         </div>
+
+
+         <div class="pricing-card">
+          <div class="head" id="head4" onclick="OnMouseIn4 (this)" onmouseleave="OnMouseOut4 (this)">
+            <div class="head-focus">
+              <h1>Enterprise<span><i class="fas fa-check-circle" id="Color4"></i></span></h1>
+            </div>
+            <div class="head-price">
+              <h1><span><img src="../assets/img/naira.png" alt="" height="33px"></span>6000</h1>
+              <h3>Monthly</h3>
+              <h3>6 Users</h3>
+            </div>
+          </div>
+          <div class="body-features">
+            <p><i class="fas fa-check-circle"></i>&nbsp; Time tracking <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Activity levels <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited screenshots <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Limited payments <br>
+              <i class="fas fa-check-circle"></i>&nbsp;1 integration <br>
+              <i class="fas fa-check-circle"></i>&nbsp;24 hour support <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Per user settings <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Track apps & URLs <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Mobile GPS tracking <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Time off & holidays <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Scheduling & attendance <br>
+              <i class="fas fa-check-circle"></i>&nbsp;Expense tracking <br>
+            </p>
+            <button>Activate</button>
+          </div>
+         </div>
+
+
+       </section>
 
         <section class="padd-accordion">
             <h2>Frequently Asked questions</h2>
@@ -184,5 +183,80 @@
           });
         }
         </script>
+
+<script>
+// card one
+function OnMouseIn1 (ele)
+{
+   ElementID = document.getElementById('head');
+   ColorButton = document.getElementById('Color');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut1 (ele)
+{
+   ElementID = document.getElementById('head');
+   ColorButton = document.getElementById('Color');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+// card 2
+function OnMouseIn2 (elem)
+{
+   ElementID = document.getElementById('head2');
+   ColorButton = document.getElementById('Color2');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut2 (elem)
+{
+   ElementID = document.getElementById('head2');
+   ColorButton = document.getElementById('Color2');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+// card 3
+function OnMouseIn3 (elemen)
+{
+   ElementID = document.getElementById('head3');
+   ColorButton = document.getElementById('Color3');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut3 (elemen)
+{
+   ElementID = document.getElementById('head3');
+   ColorButton = document.getElementById('Color3');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+// card 4
+function OnMouseIn4 (element)
+{
+   ElementID = document.getElementById('head4');
+   ColorButton = document.getElementById('Color4');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color: green;text-shadow:none;"
+}
+
+// mouse out not completed i wanna set the time for it 
+function OnMouseOut4 (element)
+{
+   ElementID = document.getElementById('head4');
+   ColorButton = document.getElementById('Color4');
+   ElementID.style.backgroundColor = "white";
+   ColorButton.style.cssText = "color:white;text-shadow:2px 1px 7px black;"
+}
+
+</script>
 </body>
 </html>

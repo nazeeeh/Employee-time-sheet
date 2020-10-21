@@ -2,42 +2,45 @@ function closeTasks() {
     location.assign("../contents/employee-dashboard.html");
 }
 
+let acceptedTasks = []
+let completedTasks = []
  // getting tasks from local storage
 let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let pending = JSON.parse(localStorage.getItem("pending"));
-let acceptedTasks = []
+
 
 if(JSON.parse(localStorage.getItem("acceptedTasks")) == null)
 {
-    tasks = [];
+    acceptedTasks = [];
+}
+// else{
+//     JSON.parse(localStorage.getItem("acceptedTasks"))
+// }
+
+if(JSON.parse(localStorage.getItem("completedTasks")) == null)
+{
+    completedTasks = [];
 }else{
-    JSON.parse(localStorage.getItem("acceptedTasks"))
+    JSON.parse(localStorage.getItem("completedTasks"))
 }
 
-if(tasks == null)
-{
+if(tasks == null||undefined){
     tasks = [];
 }
 
-if(assignedMainList == null)
-{
+if(assignedMainList == null||undefined){
     assignedMainList = [];
 }
 
-if(pending == null){
-    pending = []
-}
-else{
-    viewTasks()
-}
-if(pending == null){
+if(pending == null||undefined){
     pending = []
 }
 else{
     viewTasks()
 }
 
+viewAcceptedTasks()
 
 // function to display tasks gotten from local storage
 function viewTasks() {
@@ -59,7 +62,7 @@ function viewTasks() {
             <td>${i + 1}</td>
             <td>${pending[i].name}</td>
             <td>${pending[i].due}</td>
-            <td><a href="#" onclick="acceptTask(${i}), accepted(${i})">accept</a></td>
+            <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
         ` }
         view += `
         </tr>
@@ -71,25 +74,42 @@ function viewTasks() {
     // viewAcceptedTasks()
 }
 
-
+// pacedb viewemployee 
 function acceptTask(id){
-    acceptedTasks.push(assignedMainList[id])
-    localStorage.setItem("acceptedTasks",  JSON.stringify(acceptedTasks))
-
-    userIndex = acceptedTasks.findIndex(x => x.name == pending[id].name)
+    acceptedTasks.push(pending[id])
+    localStorage.setItem("acceptedTasks", JSON.stringify(acceptedTasks))
+    accepted(id)
+    
     pending.splice(id, 1)
     localStorage.setItem("pending",  JSON.stringify(pending))
     viewTasks()
     viewAcceptedTasks()
 }
+
 function accepted(id) { 
-    assignedMainList[id].status = "Accepted"
+    userIndex = assignedMainList.findIndex(x => x.name == pending[id].name)
+    alert(userIndex)
+    assignedMainList[userIndex].status = "Accepted"
     localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
 }
 
-    // function to display accepted tasks
+function completeTask(id){
+    completedTasks.push(acceptedTasks[id])
+    localStorage.setItem("completedTasks",  JSON.stringify(completedTasks))
+
+    userIndex = assignedMainList.findIndex(x => x.name == completedTasks[id].name)
+    assignedMainList[userIndex].status = "Completed"
+    localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+
+    acceptedTasks.splice(id, 1)
+    localStorage.setItem("acceptedTasks",  JSON.stringify(acceptedTasks))
+
+    viewAcceptedTasks()
+}
+
+// function to display accepted tasks
 function viewAcceptedTasks() {
-    let view = `
+    let views = `
     <table>
     <thead>
             <tr>
@@ -101,21 +121,23 @@ function viewAcceptedTasks() {
         </thead>
         <tbody>
     `
-    for( i = 0; i <acceptedTasks.length; i++) {
-        view += `
+    alert(acceptedTasks)
+    for( let i = 0; i < acceptedTasks.length; i++) {
+        views += `
             <tr>
             <td>${i + 1}</td>
             <td>${acceptedTasks[i].name}</td>
             <td>${acceptedTasks[i].due}</td>
-            <td><a href="#">completed</a></td>
+            <td onclick="completeTask(${i})"><a href="#">completed</a></td>
         ` }
-        view += `
+        views += `
         </tr>
     </tbody>
     </table>
     `
-    document.getElementById("accepted-tasks").innerHTML = view;
+    document.getElementById("accepted-tasks").innerHTML = views;
 }
+
 
 
 

@@ -14,147 +14,99 @@ body{
     padding: 0;
     margin: 0;
 }
-
-.con{
-    width: 90%;
-    margin: 50px auto;
-}
-
-.con h2:first-of-type{
-    text-align: center;
-    margin: auto;
-    padding-top: 70px;
+h2{
+    text-align:center;
+    margin-top:50px;
     font-size:30px;
 }
-
-.con .prices{
-    display: flex;
-    justify-content: space-around;
-    padding: 70px 0 20px 0;
+/* styling for the container  starts*/
+main.container{
+    padding:30px;
 }
+/* Ends */
 
-.con .prices h3{
-    font-size: 2rem;
+/* styling for the pricing card wrapper starts */
+section.pricing-card-wrapper{
+    border:hidden;
+    margin-top:20px;
+    display:flex;
+    width:100%;
+    height:auto;
+    justify-content:center;
+    /* flex-wrap:wrap; */
 }
-
-
-.con .prices em{
-    font-size: 0.9rem;
+section.pricing-card-wrapper .pricing-card{
+    border:2px solid gray;
+    width:20%;
+    margin:7px 20px;
+    height:560px;
+    display:flex;
+    flex-direction:column;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
 }
-
-.con .prices h1{
-    font-size: 3rem;
+section.pricing-card-wrapper .pricing-card:hover{
+    box-shadow:2px 2px 13px gray;
 }
-
-.con .prices .free h1 span img{
-    /* margin-right: -5px; */
+.pricing-card .head{
+    display:flex;
+    flex-direction:column;
+    border:hidden;
+    border-bottom:1px solid gray;
+    height:190px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
 }
-
-.con .prices p{
-    font-size: 1rem;
+.pricing-card .head:hover{
+    cursor:pointer;
 }
-
-
-.con .prices .free{
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 20%;
+.head .head-focus{
+    border:hidden;
+    height:50px;
+    padding:5px 25px;
 }
-
-.con .prices .free .heading{
-    border: solid 2px #213260;
-    border-radius: 10px;
-    padding: 20px 0;
-    text-align: center;
+.head-focus h1{
+    font-size:27px;
 }
-
-/* touch here  */
-.con .prices .free .heading button{
-    padding: 7px 30px;
-    border-radius: 10px;
-    background: #213260;
-    color: white;
-    border: none;
-    font-size:16px;
+.head-focus h1 span{
+    float: right;
+    color:white;
+    text-shadow:2px 1px 7px black;
 }
-
-.con .prices .free .body{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
-    border: solid 1px #213260;
-    border-radius: 10px;
-    padding: 20px 10px;
-    height: 120%;
+.head .head-price{
+    border:hidden;
+     padding:5px 25px;
 }
-
-.con .prices .free .body p{
-    padding-bottom: 20px;
-    flex: 1;
+.head .head-price h1{
+    font-size:42px;
 }
-
-.con .prices .free .body button{
-    padding: 7px 30px;
-    border-radius: 10px;
-    background: #213260;
-    color: white;
-    border: none;
+.pricing-card .body-features{
+    border:hidden;
+    border-top:1px solid gray;
+    width:100%;
+    height:400px;
+    padding:5px 10px;
+    position:relative;
+}
+.pricing-card .body-features button{
+    position:absolute;
+    bottom:4%;
+    left:7%;
+    width:85%;
     font-size:18px;
+    padding:8px;
+    background:#213260;
+    border:none;
+    outline:none;
+    color:#fff;
+    border-radius:8px;
 }
-
-.con .prices .free .body button:hover, .con .prices .free .heading button:hover{
-    opacity: 0.8;
-    cursor: pointer;
-    transition: all ease-in-out 200ms;
+.pricing-card .body-features button:hover{
+    background:rgba(33, 50, 96,0.8);
+    transition:500ms ease-in;
+    cursor:pointer;
 }
-.con .prices .free:nth-of-type(2) .heading, .con .prices .free:nth-of-type(2) .body{
-    border: solid 2px #E6899C;
-}
-
-.con .prices .free:nth-of-type(2) .heading button, .con .prices .free:nth-of-type(2) .body button{
-    background-color: #D64161;
-}
-
-.con .prices .free:nth-of-type(3) .heading, .con .prices .free:nth-of-type(3) .body{
-    border: solid 2px #b5adca;
-}
-
-.con .prices .free:nth-of-type(3) .heading button, .con .prices .free:nth-of-type(3) .body button{
-    background-color: #6B5B95 ;
-}
-
-.con .others{
-    margin-top: 100px;
-    text-align: center;
-    /* UncleBay touched here */
-    cursor: pointer;
-}
-
-.con .others h3{
-    margin-top: 10px;
-}
-
-.con .others p{
-    width: 50%;
-    margin: auto;
-    margin-bottom: 80px;
-}
-
-.con .others .each{
-    margin-bottom: 10px;
-    border-bottom: solid 1px #FF4500;
-}
-
-.con .others .each:nth-of-type(1), .con .others .each:nth-of-type(5){
-    width: 60%;
-    margin: auto;
-}
-
-.con .others .each:nth-of-type(4), .con .others .each:nth-of-type(2){
-    width: 70%;
-    margin: auto;
-}
+/* Ends */
 
 /* Baseet work on the styling of the accordion */
 /* styling for the accordion starts */

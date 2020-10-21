@@ -8,7 +8,7 @@ THIS SCRIPT
 
 
 // get the current logged in user from local storage
-var _is_Login_Admin = JSON.parse(localStorage.getItem("currentUser")) // object
+var _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser")) // object
 
 // get access to all employee record in the company   
 let _get_employee_record = _is_Login_Admin[0].employeeDb // string
@@ -45,7 +45,7 @@ let _render_record = () =>
   {
   
     employee_con += `
-    <tr id="${i}" draggable="true">
+    <tr id="${i}" draggable="true" onclick="_viewRecord(${i})">
       <td>${serialNumber+=1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].department}</td>
@@ -61,7 +61,7 @@ let _render_record = () =>
         </span>
         </i>
         </td>
-        </tr>
+    </tr>
         `
         // ${_employee_localStorage[i].phone}
   }
@@ -144,13 +144,26 @@ function _add_employee(){
     }
   
     // isExist_department.push(samplel)
-   localStorage.setItem(`${assign_department}`, JSON.stringify(samplel))
+    localStorage.setItem(`${assign_department}`, JSON.stringify(samplel))
 
+    // new user info
+    role = document.getElementById("employee_role").value,
+    phone = document.getElementById("employee_phone").value,
+    email = document.getElementById("employee_email").value;
+    name = document.getElementById("employee_name").value;
+    // create local storage for new users
+    let employee_task = JSON.parse(localStorage.getItem(`${email}_task`))
+    if(employee_task == null || employee_task == undefined){
+      employee_task = []
+    }
+
+  
+    localStorage.setItem(`${email}_task`, JSON.stringify(employee_task))
     let newAdd = {
-      "email" : document.getElementById("employee_email").value,
-      "name" : document.getElementById("employee_name").value,
-      "role" : document.getElementById("employee_role").value,
-      "phone" : document.getElementById("employee_phone").value,
+      "email" : email,
+      "name" : name,
+      "role" : role,
+      "phone" : phone,
       "joining_date" : _employed_date(new Date()),
       "department": assign_department,
       "user_type" : new_user_type,
@@ -158,6 +171,7 @@ function _add_employee(){
       "status" : "Active",
       "salary":"120000",
       "currency":"Naira",
+      "task": employee_task, // local storage for new user task
     }
 
 
@@ -182,8 +196,8 @@ let _search_employee = () =>
   _look_for = document.getElementById("_search_param").value;
   // do not use let, for or var returns reference error for _employee_localStorage
 
-  // 99999999999999 set option like drop down to collect which type of seacrch
-  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department == _look_for);
+  // 9999 set option like drop down to collect which type of seacrch
+  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department.toUpperCase() == _look_for.toUpperCase());
   
   if(_employee_localStorage.length <= 1)
   {
@@ -269,7 +283,7 @@ let updatedRecord = () =>
     "name" : document.getElementById("update_name").value,
     "user_type" : document.getElementById("update_type").value,
     "role" : document.getElementById("update_role").value,
-    "joining_date" : restrict_join_date,
+    "joining_date" : restrict_join_date, // you can't change the joining date
     "phone" : document.getElementById("update_phone").value,
 
   }
@@ -301,4 +315,24 @@ let deleteUser = (user_id) =>
       swal("User restored!");
     }
   });
+}
+
+
+
+
+let _viewRecord = (employee_id) =>
+{
+
+  document.getElementById("view-container").style.display= "block"
+  recordToUpdate = _employee_localStorage[employee_id]
+  document.getElementById("view_name").innerHTML = recordToUpdate.name 
+  document.getElementById("department").innerHTML = recordToUpdate.department 
+  document.getElementById("role").innerHTML = recordToUpdate.role
+  document.getElementById("salary").innerHTML = recordToUpdate.salary
+  document.getElementById("email").innerHTML = recordToUpdate.email
+  document.getElementById("tel").innerHTML = recordToUpdate.phone
+  restrict_join_date = recordToUpdate.joining_date
+  document.getElementById("identifier").value = employee_id
+
+
 }
