@@ -4,6 +4,12 @@ a{
   text-decoration: none;
 }
 
+input{
+  border: 1px solid #e6e6e6;
+  font-size: 1.0625rem !important;
+  outline: none;
+  background: #fcfcfc;
+}
 
 
 
@@ -28,11 +34,48 @@ body{
 }
 
 
-#to-btn{
-  background: #335eea;
+
+.home-intro-text{
+  margin-top: 50px;
+}
+.home-intro-text h
+
+.home-intro-text p{
+  color: #869ab8;
+  margin-top: 12px;
+}
+
+.home-intro-img{
+  margin-top: 30px;
+}
+
+.home-intro-btn{
+  margin-top: 70px;
+}
+
+.home-intro-btn #login-btn{
+  margin-right: 12px;
+}
+
+.to-btn{
+  background: rgb(51,94,234);
   color: #fff;
   padding: .5625rem 1rem;
   font-size: 1.0625rem;
+}
+
+.trial-form h4{
+  margin-right: 24.3rem;
+}
+
+.trial-form button{
+  background: rgb(51,94,234);
+  color: #fff;
+  width: 270px;
+  color: rgb(51,94,234) !important;
+  font-weight: 700;
+  border: none;
+  background: #E6E6E6 !important;
 }
 
 /* landing page section 1 */
@@ -54,10 +97,21 @@ body{
     font-size: 1.21rem;
   }
 
-  #to-btn{
+  #get-started-btn{
     margin-right: 100px;
   }
-  .home-intro-1{
+  .home-intro{
     margin-top: 80px;
+    flex-direction: row !important;
   }
+
+  .home-intro-text p{
+    width: 600px;
+  }
+
+}
+
+
+@media (min-width: px){
+
 }

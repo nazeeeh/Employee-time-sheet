@@ -31,47 +31,51 @@
               <a href="#" class="nav-link">About</a>
               <a href="#" class="nav-link">Contact</a>
             </div>
-            <a href="#" class="navbar-btn btn btn-sm btn-primary ml-auto" id="to-btn">Get Started</a>
+            <a href="#" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
           </div>
         </nav>
   
         <header class="container">
-          <section class="row home-intro-1 align-ites-center">
-
+          <section class="row d-flex flex-column-reverse home-intro">
+            
             <div class="col d-flex flex-row text-center">
-              <section >
-
+              <section class="home-intro-text">
                 <!-- type-writing effect -->
-
-                <h2 style="width: 600px;">Track Your Time At Your Own  
-                  
-                  <span class="typewrite" data-period="2000" data-type='[ "Pace|" ]'>
+                <h2>Track Your Time At Your Own  
+                  <span  class="typewrite" data-period="2000" data-type='[ "Pace|" ]'>
                     <span class="wrap"></span>
                   </span>
-                  
                 </h2>
                 <p>Spend less time making the right and informed decisions</p>
+                <section class="home-intro-btn">
+                  <button type="submit" class="btn btn-primary to-btn" id="login-btn">Login
 
-                <form action="">
+                    <svg width="2em" height="1.3em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
 
-                  <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password">
-                  </div>
-                  <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Let's go</button>
+                  </button>
+                  <button type="submit" class="btn to-btn" style="background: #FF6584;">Learn more</button>
+                </section>
 
-                </form>
+                <!-- <form action="" class="d-flex flex-column align-item-center trial-form">
+                  <h4>14 days free trial</h4>
+                  <div class="form-group col-6">
+                    <input type="email" class="form-control-lg" id="email" aria-describedby="emailHelp" placeholder="Company Email">
+                  </div>
+                  <div class="form-group col-6">
+                    <input type="password" class="form-control-lg" id="password" placeholder="password">
+                  </div>
+                  <div class="form-group col-6" >
+                    <button type="submit" class="btn btn-primary" id="to-btn">Let's go</button>
+                  </div>
+                </form> -->
               </section>
             </div>
-            <div class="col"><img src="assets/img/landing page man in office.svg" alt="office timing" class="img-fluid"></div>
+            
+            <div class="col home-intro-img">
+              <img src="assets/img/landing page man in office.svg" alt="office timing" class="img-fluid">
+            </div>
 
           </section>
 
