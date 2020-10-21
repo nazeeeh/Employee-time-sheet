@@ -17,6 +17,7 @@ input{
 
 body{
   background: #fcfcfc;
+  color: #161c2d;
 }
 
 #logo{
@@ -38,7 +39,6 @@ body{
 .home-intro-text{
   margin-top: 50px;
 }
-.home-intro-text h
 
 .home-intro-text p{
   color: #869ab8;
@@ -78,7 +78,42 @@ body{
   background: #E6E6E6 !important;
 }
 
-/* landing page section 1 */
+/* landing page section 0 */
+
+#pace-summary{
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+#pace-summary svg{
+  color:#335eea;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+#pace-summary h3{
+  margin: 0.8rem 0rem;
+  color: #161c2d;
+  font-weight: 370;
+}
+
+#pace-summary p{
+  margin: 0.8rem 0rem;
+  color: #869ab8;
+}
+
+.block blockquote{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.block img{
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 
 @media (min-width: 992px){
@@ -109,9 +144,28 @@ body{
     width: 600px;
   }
 
-}
+  .block{
+    margin-bottom: 7rem;
+  }
 
+  .block blockquote{
+    margin-top: 12px;
+  }
 
-@media (min-width: px){
+  .block img{
+    max-width: 70%;
+    height: auto;
+    backface-visibility: hidden;
+    border-radius: .625rem;
+    box-shadow: 25px 60px 125px -25px rgba(80,102,144,.1), 16px 40px 75px -40px rgba(0,0,0,.2);
+  }
+  
+  .block-1 img{
+    transform: rotateY(-25deg) rotateX(25deg);
+  }
+
+  .block-2 img{
+    transform: rotateY(25deg) rotateX(25deg);
+  }
 
 }
