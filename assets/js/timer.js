@@ -55,9 +55,11 @@ function startTime(){
     let startTime = document.getElementById("start-time");
     let stopTime = document.getElementById("stop-time");
 
-    cumulativeSec =  parseInt(document.getElementById("seconds").textContent);
-    cumulativeMin =  parseInt(document.getElementById("mins").textContent);
-    cumulativeHour =  parseInt(document.getElementById("hours").textContent);
+    /* This sets the values to zero first;
+    then it starts to count the time used */
+    document.getElementById("seconds").textContent = "00"
+    document.getElementById("mins").textContent = "00"
+    document.getElementById("hours").textContent = "00"
 
     if (stopTime.style.display == "block") {
         stopTime.style.display = "none";
@@ -80,9 +82,9 @@ function stopTime(){
     clearInterval(timeHours);
 
     // Gets the value of the time as soon as time is stopped
-    cumulativeSec =  parseInt(document.getElementById("seconds").textContent) - cumulativeSec;
-    cumulativeMin =  parseInt(document.getElementById("mins").textContent) - cumulativeMin;
-    cumulativeHour =  parseInt(document.getElementById("hours").textContent) - cumulativeHour;
+    cumulativeSec =  parseInt(document.getElementById("seconds").textContent);
+    cumulativeMin =  parseInt(document.getElementById("mins").textContent);
+    cumulativeHour =  parseInt(document.getElementById("hours").textContent);
 
     swal("Great work", `You worked for ${cumulativeHour}hours, ${cumulativeMin}minutes and ${cumulativeSec}seconds`, "success");
 
@@ -105,4 +107,14 @@ function stopTime(){
     }
 
     seconds = 0, minutes = 0, hours = 0
+    xxx = document.getElementById("role_display").innerHTML
+alert(xxx);
 }
+
+var isLoggedInUser = JSON.parse(localStorage.getItem("currentUsers"));
+
+
+
+// =islogged_In_Admin[0].user_type.toUpperCase()
+
+// if
