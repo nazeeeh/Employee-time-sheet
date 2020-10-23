@@ -84,7 +84,7 @@ function stopTime(){
     cumulativeMin =  parseInt(document.getElementById("mins").textContent) - cumulativeMin;
     cumulativeHour =  parseInt(document.getElementById("hours").textContent) - cumulativeHour;
 
-    swal("Great work", `You worked for ${cumulativeHour}hours, ${cumulativeMin}minutes and ${cumulativeSec}seconds`, "success");
+    swal("Great work", `You worked for ${cumulativeHour}hours   , ${cumulativeMin}minutes and ${cumulativeSec}seconds`, "success");
 
 
     let stopHours = "", stopMins = "", stopSecs = ""
