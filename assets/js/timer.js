@@ -47,17 +47,20 @@ function setHours(){
     }
     document.getElementById("hours").textContent = hours;
 }
-var cumulativeSec;
-var cumulativeMin;
-var cumulativeHour;
+
+var usedSec;
+var usedMin;
+var usedHour;
 
 function startTime(){
     let startTime = document.getElementById("start-time");
     let stopTime = document.getElementById("stop-time");
 
-    cumulativeSec =  parseInt(document.getElementById("seconds").textContent);
-    cumulativeMin =  parseInt(document.getElementById("mins").textContent);
-    cumulativeHour =  parseInt(document.getElementById("hours").textContent);
+    /* This sets the values to zero first;
+    then it starts to count the time used */
+    document.getElementById("seconds").textContent = "00"
+    document.getElementById("mins").textContent = "00"
+    document.getElementById("hours").textContent = "00"
 
     if (stopTime.style.display == "block") {
         stopTime.style.display = "none";
@@ -80,11 +83,11 @@ function stopTime(){
     clearInterval(timeHours);
 
     // Gets the value of the time as soon as time is stopped
-    cumulativeSec =  parseInt(document.getElementById("seconds").textContent) - cumulativeSec;
-    cumulativeMin =  parseInt(document.getElementById("mins").textContent) - cumulativeMin;
-    cumulativeHour =  parseInt(document.getElementById("hours").textContent) - cumulativeHour;
+    usedSec =  parseInt(document.getElementById("seconds").textContent);
+    usedMin =  parseInt(document.getElementById("mins").textContent);
+    usedHour =  parseInt(document.getElementById("hours").textContent);
 
-    swal("Great work", `You worked for ${cumulativeHour}hours, ${cumulativeMin}minutes and ${cumulativeSec}seconds`, "success");
+    swal("Great work", `You worked for ${usedHour}hours, ${usedMin}minutes and ${usedSec}seconds`, "success");
 
 
     let stopHours = "", stopMins = "", stopSecs = ""
@@ -105,4 +108,60 @@ function stopTime(){
     }
 
     seconds = 0, minutes = 0, hours = 0
+
+    timeValue();
+}
+
+function timeValue() {
+    let isLogged_In_Admin = JSON.parse(localStorage.getItem("current_AdminUser"));
+    let isLogged_In_InternalUser = JSON.parse(localStorage.getItem("current_InternalUser"));
+    let isLogged_In_EmployeeUser = JSON.parse(localStorage.getItem("current_EmployeeUser"));
+
+    user_role = document.getElementById("role_display").innerHTML.toLowerCase();
+    
+
+    var usedTime = {
+        "hour" : usedHour,
+        "minute" : usedMin,
+        "second" : usedSec
+    }
+
+switch(user_role) {
+    case user_role = "admin":
+        if(localStorage.getItem(`${isLogged_In_Admin[0].name}_time`) == null) {
+            var isLogged_In_Admin_Time = [];
+        } else {
+            var isLogged_In_Admin_Time = JSON.parse(localStorage.getItem(`${isLogged_In_Admin[0].name}_time`))
+        }
+        isLogged_In_Admin_Time.push(usedTime);
+        localStorage.setItem(`${isLogged_In_Admin[0].name}_time`, JSON.stringify(isLogged_In_Admin_Time));
+        break;            
+
+    case user_role = "internal-admin":
+        if(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`) == null) {
+            var isLogged_In_InternalUser_Time = [];
+        } else {
+            var isLogged_In_InternalUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`))
+        }
+        isLogged_In_InternalUser_Time.push(usedTime);
+        localStorage.setItem(`${isLogged_In_InternalUser[0].name}_time`, JSON.stringify(isLogged_In_InternalUser_Time));
+        break;
+
+    case user_role = "employee":
+        if(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`) == null) {
+            var isLogged_In_EmployeeUser_Time = [];
+        } else {
+            var isLogged_In_EmployeeUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`))
+        }
+        isLogged_In_EmployeeUser_Time.push(usedTime);
+        localStorage.setItem(`${isLogged_In_EmployeeUser[0].name}_time`, JSON.stringify(isLogged_In_EmployeeUser_Time));
+        break;
+}
+
+
+//     var isLoggedInUser = JSON.parse(localStorage.getItem("currentUsers"));
+    
+//     for(var i=0; i<isLoggedInUser.length; i++) {
+        
+//     }
 }

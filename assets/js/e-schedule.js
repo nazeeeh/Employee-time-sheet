@@ -1,87 +1,61 @@
 
 var today = new Date();
-console.log("today" +" "+ today)
 var month = today.getMonth();
 var year = today.getFullYear();
-var day = today.getDate();
-console.log("day" +" "+ day)
-// month = today.getMonth();
-// year = today.getFullYear();
 var months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov", "Dec",
 ];
-var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-// document.getElementById("demo").innerHTML = months[d.getMonth()];
-document.getElementById("presentMonth").innerText=months[month] + " "+ year;
+var weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] ;
+var firstDay =  new Date(year, month, 1).getDay();
+var fullDate = new Date(year, 10, 0).getDate();
+
 
 function calendar() {
-    let display = `
-    <thead class="thead-dark cell">
-        <tr> `
-        for(let i =0; i <days.length; i++) {
-        display +=  `
-        <th>
-        ${days[i]}
-        </th> `
+    let presentMonth =  months[month] + " " + year;
+    document.getElementById("presentMonth").innerHTML = presentMonth;
+    
+    let display = "";
+    display +=
+    ` <thead class = "thead-dark cell"> <tr> `
+    let date = 0;
+        for(let i = 0; i < weekDay.length; i++) {
+            display +=  
+            ` <th>${weekDay[i]}</th> `
+            // console.log(weekDay[today.getDay()]) use this in selecting current day.
         }
-        `</tr>
-    </thead>
-    `
-    display += `
-        <tbody>
-        `
-        var a =0;
-        var firstDay =  new Date(year, month, 1).getDay();
-        var fullDay = new Date(year, month +1, 0).getDate();
-        console.log("firstday:" + " "+ firstDay);
-        console.log("fullday:" + " "+ fullDay);
-        while(a < fullDay) {
-            display += 
-            ` <tr> `
-            for(let i =0; i <days.length; i++) {
-                    display +=` <td class ="cell"> `
+        display += `<tbody>`
+
+        for(let i = 0; i < weekDay.length; i++)
+        while(date < fullDate) {
+            display += `<tr>`
+            for(let i = 0; i < weekDay.length; i++) {
+               
+                if(date == today.getDate()-1){
+                    display += `<td class ="cell today " onclick ="dateValue(event)" data-toggle="modal" data-target="#schedule">`
+                }
+                else{
+                    display += `<td class ="cell" onclick ="dateValue(event)" data-toggle="modal" data-target="#schedule">`
+                }
+                
+                if(firstDay === i || date > 0) {
                     
-               if( firstDay === i || a > 0) {
-                   display += 
-                   `<a href="#" class="add-event" data-toggle="modal" data-target="#schedule">
-                   <i class="fa fa-plus" aria-hidden="true"></i></a>`
-                   if (a < fullDay) {
-                        a++;
+                    if (date < fullDate) {
+                        date++;
                     }
                     else {
                         break;
                     }
-                    document.getElementById("event-date").value =`${a}`;
-              display += `${a}`
-              
-               }
-            
+                    
+                    display += `${date}`
+                } 
             }
-            
-           display += ` </td>`
         }
-        
-        display +=
-        `
-        </tr>
-        </tbody>
-    `
-    // document.getElementById("event-date").value =`${a}`;
-    document.getElementById("table").innerHTML = display;
-}
 
+        display += ` </tr> </tbody> `
+    
+        document.getElementById("table").innerHTML = display;
+}
 
     // get schedule from local storage
 schedules = JSON.parse(localStorage.getItem("schedule"))
@@ -141,15 +115,34 @@ function displaySchedule() {
             <td> ${schedules[i].eventName} </td>
             <td> ${schedules[i].eventDate} </td>
             <td> ${schedules[i].eventTime} </td>
-            <td> <a href="#" onclick="delSchedule(${[i]})" style=" color:red"><i class="fas fa-circle"></i></a> </td>
-           
+            <td> <a href="#" onclick="delSchedule(${[i]})" style=" color:red"><i class="fas fa-trash"></i></a> </td>  
         `
     }
-    list += `
-            </tr>
-        </tbody> `
+    list += `</tr> </tbody> `
+    
     document.getElementById("schedule-list").innerHTML = list;
 }
+
+function dateValue(e){
+    // first checks if month is less than 10 
+    // then append 0 to it, in order to display the month in the right format
+
+    e = e.currentTarget.innerHTML;
+    monthValue = month + 1;
+    
+    if(monthValue < 10) {
+        monthValue = "0"+ month;
+    }
+    if(e < 10) {
+       e = "0"+ e;
+    }
+    
+    eventDate = year + "-" + monthValue + "-" + e;
+    
+    document.getElementById("event-date").value = eventDate;
+    console.log(eventDate)
+}
+
 
 calendar();
 

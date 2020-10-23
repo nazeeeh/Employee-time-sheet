@@ -59,7 +59,6 @@ function getEmployeeNames(){
     return employeeNames
 }
 
-alert(JSON.stringify(assignedMainList))
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
 
@@ -140,11 +139,15 @@ function appendNewTaskMain(){
                 employeeTask.push(newTask)
             }  
         }
+<<<<<<< HEAD
         localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
         localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
         localStorage.setItem("tasks",  JSON.stringify(tasks))
         localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
+=======
+        // alert(JSON.stringify(employeeTask))
+>>>>>>> e953d92824462ec7d0d2b12ee531cb29bb5b0e52
 
         displayMain(assignedMainList)
     }
@@ -235,7 +238,7 @@ function deletesUnassigned(id){
     userIndex2 = employeeTask.findIndex(x => x.name == tasks[id].name)
     localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     employeeTask.splice(userIndex2, 1);
-    alert(userIndex2)
+    // alert(userIndex2)
 
 }
 
