@@ -139,16 +139,12 @@ function appendNewTaskMain(){
                 employeeTask.push(newTask)
             }  
         }
-<<<<<<< HEAD
+
         localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
         localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
         localStorage.setItem("tasks",  JSON.stringify(tasks))
         localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
-=======
-        // alert(JSON.stringify(employeeTask))
->>>>>>> e953d92824462ec7d0d2b12ee531cb29bb5b0e52
-
         displayMain(assignedMainList)
     }
     CancelTask()
@@ -219,9 +215,6 @@ function deletesAssigned(id){
 
     pending.splice(userIndex4, 1)
     localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(unassignedMainList))
-
-    // completed.splice(id, 1)
-    // localStorage.setItem(`${currentUserEmail}_completedTask`,  JSON.stringify(unassignedMainList))
 
     displayMain(assignedMainList)
 }
