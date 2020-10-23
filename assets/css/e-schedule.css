@@ -23,33 +23,32 @@
     width: .1rem;
     border: 2px solid #ccc;
 }
-.cell:hover > .add-event{
-    /* background: #6c757d; */
+.cell:hover {
+    background: #ccc;
+    color: #212529;
+}
+/* .cell:hover > .add-event i{
     display: inline-block;
 }
-.add-event  {
+.add-event i {
    display: none;
-}
-
-/* #schedule {
-    display: none;
 } */
+
 .modal-header {
     background: #213260;
     color: #fff;
 }
-.close {
 
-}
 button.close {
     color: #fff;
     text-shadow: 0 0 #000;
     opacity: 1;
-    /* background-color: #213260; */
 }
+
 button.close:hover {
     color: #fff;
 }
+
 form input {
     padding: .5rem;
     margin: .5rem;
@@ -64,6 +63,7 @@ form input {
     font-family: 'Open Sans';
     font-style: italic;
 }
+
 .btn {
     background: #213260;
     color: #fff;
@@ -72,4 +72,8 @@ form input {
 }
 .btn:hover {
     color: #ccc;
+}
+.today {
+    background: rgba(33, 50, 96, .8);
+    color: #fff;
 }
