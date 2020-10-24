@@ -177,6 +177,30 @@ main{
    background-color: #d6ddf3;
    opacity: 0.9;
 }
+.tasks-main #assigned-task-main .main-task .edit-Main .edit-employee{
+    position: relative;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main section .suggestions{
+    position: absolute;
+    top: 100%;
+    z-index: 3;
+    overflow: hidden;
+    width: 200px;
+    margin-top: -10px;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main section {
+    position: relative;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main section .suggestions > div{
+    padding: 7px 0;
+    border: 2px #f2f2f2 solid;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+}
+.tasks-main #assigned-task-main .main-task .edit-Main section .suggestions > div:hover{
+    background-color: rgb(208, 223, 245);
+}
 .tasks-main #assigned-task-main .main-task .edit-Main input{
     margin-bottom: 10px;
     outline: none; 
@@ -192,11 +216,30 @@ main{
 .tasks-main #assigned-task-main .main-task .edit-Main button{
     background-color: #3b4664;
 }
-.tasks-main #unassigned-task-main .main-unassigned input{
+.tasks-main #unassigned-task-main .main-unassigned #unAssignedSearch input{
     outline: none;
-    margin-bottom: 10px;
+    margin-top: 8px;
     border: 2px solid #f2f2f2;
     border-radius: 5px;
+    padding: 3px 0;
+    position: relative;
+}
+.tasks-main #unassigned-task-main #unAssignedSearch.suggestionAutocomplete{
+    position: sticky;
+    top: 100%;
+    z-index: 3;
+    background-color: white;
+}
+.tasks-main #unassigned-task-main #unAssignedSearch{
+    margin-left: 20px;
+}
+.tasks-main #unassigned-task-main #unAssignedSearch .suggestionAutocomplete > div{
+    background-color: white;
+    border: solid #f2f2f2 2px;
+    border-radius: 5px;
+}
+.tasks-main #unassigned-task-main .main-unassigned #unAssignedSearch .suggestionAutocomplete > div:hover{
+    background-color: rgb(208, 223, 245);
 }
 .tasks-main #assigned-task-main .main-task span{
     width: 300px;
@@ -215,6 +258,9 @@ main{
 .tasks-main #assigned-task-main .main-task button:first-of-type, .tasks-main #unassigned-task-main .main-unassigned .assignEmployee button{
     background-color: rgb(179, 24, 24);
     margin-right: 10px;
+}
+.tasks-main #unassigned-task-main .main-unassigned .assignEmployee .to-Assign-Unassigned{
+    background-color: rgb(23, 23, 87);
 }
 .tasks-main #unassigned-task-main .main-unassigned .assignEmployee button{
     margin: 5px 3px 10px 10px;
