@@ -197,6 +197,7 @@ function editTask(id){
     localStorage.setItem(`${theCurrentUserEmail}_task`, JSON.stringify(theEmployeeTask))
 
     displayTask()
+    cancelEdit(id)
 }
 
 function editNames(id){
@@ -207,16 +208,15 @@ function editNames(id){
     userIndex3 =  unassignedTask.findIndex(x => x.name == theEmployeeTask[id].name)
     userIndex4 = pendingTasks.findIndex(x => x.name == theEmployeeTask[id].name)
     // userIndex5 = completed.findIndex(x => x.name == assignedMainList[id].name)
-    alert(userIndex)
     if(editName === ""){
         tasks[id].name = tasks[id].name
         theEmployeeTask[userIndex2].name = theEmployeeTask[userIndex2].name
         // completed.name[userIndex5].name = assignedMainList[id].name
         if(userIndex == -1){
-            unassignedTasks[userIndex3].name = unassignedTasks[userIndex3].name 
-            pendingTasks[userIndex4].name = pendingTasks[userIndex4].name
+            unassignedTask[userIndex3].name = unassignedTask[userIndex3].name 
         }else{
             assignedTasks[userIndex].name = assignedTasks[userIndex].name
+            pendingTasks[userIndex4].name = pendingTasks[userIndex4].name
         }
     } else{
         tasks[id].name = editName
@@ -224,9 +224,9 @@ function editNames(id){
         // completed.name[userIndex5].name = editName
         if(userIndex == -1){
             unassignedTasks[userIndex3].name = editName
-            pendingTasks[userIndex4].name = editName
         }else{
             assignedTasks[userIndex].name = editName
+            pendingTasks[userIndex4].name = editName
         }
     }
  
@@ -243,22 +243,22 @@ function editEmployees(id){
     if( editEmployee === ""){
         tasks[id].employee = tasks[id].employee
         theEmployeeTask[userIndex2].employee = theEmployeeTask[userIndex2].employee
-        pendingTasks[userIndex4].employee =pendingTasks[userIndex4].employee
         // completed.name[userIndex5].employee = assignedMainList[id].employee
         if(userIndex == -1){
-            unassignedTasks[userIndex3].employee = unassignedTasks[userIndex3].employee   
+            unassignedTask[userIndex3].employee = unassignedTask[userIndex3].employee   
         }else{
             assignedTasks[userIndex].employee = assignedTasks[userIndex].employee
+            pendingTasks[userIndex4].employee =pendingTasks[userIndex4].employee
         }
     } else{
         tasks[id].employee = editEmployee
         theEmployeeTask[userIndex2].employee = editEmployee
-        pendingTasks[userIndex4].employee = editEmployee
         // completed.name[userIndex5].employee = editEmployee
         if(userIndex == -1){
-            unassignedTasks[userIndex3].employee = editEmployee   
+            unassignedTask[userIndex3].employee = editEmployee   
         }else{
             assignedTasks[userIndex].employee = editEmployee
+            pendingTasks[userIndex4].employee = editEmployee
         }
     }
 }
@@ -272,24 +272,24 @@ function editDueDates(id){
     userIndex4 = pendingTasks.findIndex(x => x.name == theEmployeeTask[id].name)
 
     if(editDueDate === ""){
-        tasks[userIndex].due = tasks[id].due
+        tasks[id].due = tasks[id].due
         theEmployeeTask[userIndex2].due = theEmployeeTask[userIndex2].due
-        pendingTasks[userIndex4].due = pendingTasks[userIndex4].due
         // completed.name[userIndex5].due = assignedMainList[id].due
         if(userIndex == -1){
-            unassignedTasks[userIndex3].due = unassignedTasks[userIndex3].due   
+            unassignedTask[userIndex3].due = unassignedTask[userIndex3].due
         }else{
             assignedTasks[userIndex].due = assignedTasks[userIndex].due
+            pendingTasks[userIndex4].due = pendingTasks[userIndex4].due
         }
     }else{
-        tasks[userIndex].due = tasks[userIndex].due
+        tasks[id].due = tasks[id].due
         theEmployeeTask[userIndex2].due = editDueDate
-        pendingTasks[userIndex4].due = editDueDate
         // completed.name[userIndex5].due = editDueDate
         if(userIndex == -1){
-            unassignedTasks[userIndex3].due = editDueDate   
+            unassignedTask[userIndex3].due = editDueDate   
         }else{
             assignedTasks[userIndex].due = editDueDate
+            pendingTasks[userIndex4].due = editDueDate
         }
     }
 }

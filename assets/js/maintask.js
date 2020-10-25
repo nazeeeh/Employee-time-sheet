@@ -130,7 +130,6 @@ function appendNewTaskMain(){
         }else if(employeeAssigned != ""){
             if(Names.includes(employeeAssigned)){
                 Email = findEmployee(employeeAssigned)
-                alert(Email)
                 let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
                 assignedEmployee.push(newTask)
                 localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
@@ -176,6 +175,12 @@ function verifyEmployee(id){
         status : "pending"
     }
 
+    Email = findEmployee(employeeName)
+    let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+    assignedEmployee.push(newTask)
+    localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+
+
     assignedMainList.push(newTask)
     localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
     localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
@@ -192,8 +197,8 @@ function changeFromUnassigned(id){
     }
 
     if(employeeNames.includes(employeeName)){
-        alert(true)
         verifyEmployee(id)
+        
     }
 }
 
@@ -228,7 +233,7 @@ function deletesUnassigned(id){
     localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
     displayUnassigned(unassignedMainList)
 
-    userIndex2 = employeeTask.findIndex(x => x.name == tasks[id].name)
+    userIndex2 = employeeTask.findIndex(x => x.name == unassignedMainList[id].name)
     localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     employeeTask.splice(userIndex2, 1);
     // alert(userIndex2)
