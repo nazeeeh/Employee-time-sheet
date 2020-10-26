@@ -126,23 +126,22 @@
     <div id="form_section">
       <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
      <section class="add-form">
-      <section>
-        <label for="">Full Name</label>
-        <input type="text" id="employee_name">
-        <label for="">Email</label>
-        <input type="text" id="employee_email">
-        <label for="">Phone Number</label>
-        <input type="text" id="employee_phone">
-      </section>
-      <section>
-        <label for="">Employee Type</label>
-        <input type="text" id="employee_type">
-        <label for="">Role</label>
-        <input type="text" id="employee_role">
-        <label for="">Department</label>
-        <input type="text" id="employee_department">
-       </section>
-
+        <section>
+          <label for="">Full Name</label>
+          <input type="text" id="employee_name">
+          <label for="">Email</label>
+          <input type="text" id="employee_email">
+          <label for="">Phone Number</label>
+          <input type="text" id="employee_phone">
+        </section>
+        <section>
+          <label for="">Employee Type</label>
+          <input type="text" id="employee_type">
+          <label for="">Role</label>
+          <input type="text" id="employee_role">
+          <label for="">Department</label>
+          <input type="text" id="employee_department">
+        </section>
       </section>
       <button id="add_employee_btn" class="to-btn btn-deep add-btn" onclick="_add_employee()">Employ</button>
       <span href="#" style="border-radius: unset; padding: 13px;" class="to-btn btn-deep" onclick="_add_employee()"></span>
@@ -164,17 +163,25 @@
     <!-- edit form  -->
     <div id="edit_section">
       <h3 id="edit_heading"><span id="close_edit" onclick='close_editForm()'>X</span> Employee Form 2</h3>
-      <input type="hidden" id="identifier">
-      <label for="">Employee Type</label>
-      <input type="text" id="update_type">
-      <label for="">Email</label>
-      <input type="text" id="update_email">
-      <label for="">Full Name</label>
-      <input type="text" id="update_name">
-      <label for="">Role</label>
-      <input type="text" id="update_role">
-      <label for="">Phone Number</label>
-      <input type="text" id="update_phone">
+     <section id="edit-form">
+       <section>
+         <input type="hidden" id="identifier">
+         <label for="">Full Name</label>
+         <input type="text" id="update_name">
+         <label for="">Department</label>
+         <input type="text" id="update_department">
+         <label for="">Employee Type</label>
+         <input type="text" id="update_type">
+        </section>
+        <section>
+          <label for="">Role</label>
+          <input type="text" id="update_role">
+          <label for="">Phone Number</label>
+          <input type="text" id="update_phone">
+          <label for="">Email</label>
+          <input type="text" id="update_email">
+       </section>
+     </section>
       <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
     </div>  
   </div>
