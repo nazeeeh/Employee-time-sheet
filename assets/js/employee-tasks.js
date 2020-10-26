@@ -32,7 +32,7 @@ if(JSON.parse(localStorage.getItem(`${currentUserEmail}_completedTask`)) == null
     completed = []
 }
 
-if(pending == null || undefined){
+if(JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`)) == null || undefined){
     pending = []
 }
 
@@ -47,14 +47,14 @@ if(employeeTask == null || undefined){
     viewAcceptedTasks() //Display all current user's task on User dashboard
 }
 
-
 if(JSON.parse(localStorage.getItem("acceptedTasks")) == null)
 {
     acceptedTasks = [];
 }
 
+
+
 // DONE
-alert(JSON.stringify(pending))
 
 // function to display tasks gotten from local storage
 function viewTasks() {
@@ -85,6 +85,7 @@ function viewTasks() {
     `
     view += `<button onclick="closeTasks()">close</button>`
     document.getElementById('view-tasks').innerHTML = view;
+
     // viewAcceptedTasks()
 }
  
@@ -93,8 +94,12 @@ function acceptTask(id){ //what to do when the 'accepted button' is clicked
     employeeTask.splice(id, 1) //delete the task from it's current list
     // findTask(id) //this should find the internal user that accepted the task and let them the know the task has been accepted
     // Set local storage of both lists
+    viewAcceptedTasks() //Display all current user's task on User dashboard
+
     localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     localStorage.setItem(`${currentUserEmail}_pendingTask`, JSON.stringify(pending))
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
+
 }
 //this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
 //this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
