@@ -6,6 +6,9 @@ body{
 *::before,
 *::after{
     box-sizing:border-box;
+}
+
+h1, h3, td, th {
     font-family:Roboto;
 }
 /* heading styling */
