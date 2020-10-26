@@ -73,7 +73,9 @@ header #right-in #other-in{
 header #right-in #other-in .fa-cog, header #right-in #other-in .fa-bell{
     align-self: center;
     margin-right: 10px;
+    margin-top: 5px;
     color: #213260;
+    font-size: 20px;
 }
 header #right-in #other-in .notification{
     display: flex;

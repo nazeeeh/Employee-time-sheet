@@ -13,6 +13,10 @@ body{
     color: #2b394a;
 }
 /* body */
+#tasksInternalName{
+    font-size: 18px;
+    text-transform: capitalize;
+}
 main{
     background-color: #f2f2f2;
     padding-bottom: 20px;

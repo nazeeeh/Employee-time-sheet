@@ -1,3 +1,7 @@
+// setTimeout(function(){
+//     location.reload()
+// },1000)
+
 function backToDashboard() {
     location.assign("../../contents/internal-dashboard.html");
 }
@@ -9,6 +13,10 @@ function assignNewTaskMain(){
      }else{
          addTaskMain.style.display = "block"
      }
+
+    taskName = document.getElementById("task-name-main").value = ""
+    employeeAssigned = document.getElementById("employee-assigned-main").value = ""
+    dueDate = document.getElementById("due-date-main").value = ""
  }
 
 let check = JSON.parse(localStorage.getItem("paceDB"))
@@ -59,22 +67,17 @@ function getEmployeeNames(){
     return employeeNames
 }
 
+document.getElementById("tasksInternalName").innerHTML =  currentUser[0].name
+
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
-
-function showTaskNumbers(){
-    document.getElementById("unassigned-number").innerHTML = unassignedMainList.length
-    document.getElementById("PendingTask").innerHTML = pending.length
-    document.getElementById("completedTask").innerHTML = assignedMainList.length
-
-}
        
 function displayMain(task){
     let add = ''
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
         <p> <strong> Task name : </strong> ${task[i].name} <span>Assigned to : ${task[i].employee}</span> </p> 
-        <div id="dateAndButtons"><div id="date"><span class="date">Due : ${task[i].due}</span> <span>Status : ${task[i].status}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
+        <div id="dateAndButtons"><div id="date"><span class="date">Start Date : ${task[i].startDate}</span><span class="date">Due Date: ${task[i].due}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
         <div id="editMainTask${i}" class="edit-Main">
         <input type="text" id="edit-name-main${i}" placeholder="Edit Task"  required>
         <section>
@@ -105,6 +108,11 @@ function displayUnassigned(task){
     document.getElementById("show-unassigned-tasks").innerHTML = add
 }
 
+var date = new Date()
+var year = date.getFullYear()
+var month = date.getMonth()+1
+var day = date.getDate()
+
 function appendNewTaskMain(){
     let taskName = document.getElementById("task-name-main").value,
     employeeAssigned = document.getElementById("employee-assigned-main").value,
@@ -114,12 +122,13 @@ function appendNewTaskMain(){
         CancelTask()
         
     }else{
-
+        var today = new Date
         newTask = {
             "name" : taskName,
             "employee" : employeeAssigned,
             "due" : dueDate,
-            "status" : "Pending"
+            "status" : "Pending",
+            "startDate" : `${day}-${month}-${year}`
         }
         tasks.push(newTask)
         Names = getEmployeeNames()
@@ -127,25 +136,27 @@ function appendNewTaskMain(){
             unassignedMainList.push(newTask)
             employeeTask.push(newTask)
             displayUnassigned(unassignedMainList)
+            localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
+            emptyInput(employeeAssigned)
+            emptyInput(taskName)
+            emptyInput(dueDate) 
         }else if(employeeAssigned != ""){
-            if(Names.includes(employeeAssigned)){
-                Email = findEmployee(employeeAssigned)
-                let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
-                assignedEmployee.push(newTask)
-                localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+            employeeNames = getEmployeeNames()
+            alert(employeeAssigned in employeeNames)
+            if( employeeNames.includes(employeeAssigned)){
+                alert("true")
+                pushToEmployee(employeeAssigned)
                 assignedMainList.push(newTask)
                 pending.push(newTask)
                 employeeTask.push(newTask)
-            }  
+                localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
+            }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
         }
-
-        localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
-        localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
         localStorage.setItem("tasks",  JSON.stringify(tasks))
-        localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
         displayMain(assignedMainList)
     }
+  
     CancelTask()
    
 }
@@ -246,6 +257,10 @@ function showEditButton(id){
     if (editForm.style.display == "block"){
         editForm.style.display = "none"
     }else{editForm.style.display = "block"}
+
+    editName = document.getElementById("edit-name-main" + id).value = ""
+    editEmployee = document.getElementById("edit-employee-main" + id).value = ""
+    editDueDate = document.getElementById("edit-due-date-main" + id).value = ""
 }
 
 function CloseEditButton(id){
@@ -263,7 +278,6 @@ function editAssigned(id){
 
     userIndex = tasks.findIndex(x => x.name == assignedMainList[id].name)
     userIndex2 = employeeTask.findIndex(x => x.name == assignedMainList[id].name)
-    // userIndex3 =  unassignedMainList.findIndex(x => x.name == assignedMainList[id].name)
     userIndex4 = pending.findIndex(x => x.name == assignedMainList[id].name)
     // userIndex5 = completed.findIndex(x => x.name == assignedMainList[id].name)
 
@@ -271,10 +285,9 @@ function editAssigned(id){
         tasks[userIndex].name = tasks[userIndex].name
         employeeTask[userIndex2].name = employeeTask[userIndex2].name
         assignedMainList[id].name = assignedMainList[id].name
-        pending[userIndex4].name = assignedMainList[4].name
+        pending[userIndex4].name = assignedMainList[userIndex4].name
         // completed.name[userIndex5].name = assignedMainList[id].name
     } else{
-        alert(JSON.stringify(employeeTask))
         tasks[userIndex].name = editName
         employeeTask[userIndex2].name = editName
         assignedMainList[id].name = editName
@@ -289,10 +302,16 @@ function editAssigned(id){
         pending[userIndex4].employee = assignedMainList[userIndex4].employee
         // completed.name[userIndex5].employee = assignedMainList[id].employee
     } else{
-        tasks[userIndex].employee = editEmployee
-        employeeTask[userIndex2].employee = editEmployee
-        assignedMainList[id].employee = editEmployee
-        pending[userIndex4].employee = editEmployee
+        Names = getEmployeeNames()
+        if(Names.includes(editEmployee)){
+            Email = findEmployee(editEmployee)
+            let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+            tasks[userIndex].employee = editEmployee
+            employeeTask[userIndex2].employee = editEmployee
+            assignedMainList[id].employee = editEmployee
+            pending[userIndex4].employee = editEmployee
+            localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+        }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
         // completed.name[userIndex5].employee = editEmployee
     }
 
@@ -422,8 +441,15 @@ function appendName(id){
 
 function findEmployee(theName){
    found = employees.find(x => x.name.toLowerCase() == theName.toLowerCase())
-   alert(found)
    foundEmail = found.email
-   alert(foundEmail)
    return foundEmail
 }
+
+function pushToEmployee(name){
+    Email = findEmployee(name)
+    let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+    assignedEmployee.push(newTask)
+    localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+}
+
+
