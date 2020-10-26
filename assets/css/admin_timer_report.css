@@ -16,10 +16,39 @@ div.dashboard-body .heading{
     padding-right:30px;
     border:hidden;
     margin-top:40px;
+    padding-top:7px;
+    display:flex;
 }
 div.dashboard-body .heading h1{
    color:rgba(0,0,0,0.6);
+   font-size:25px;
    text-align:right;
+   border:hidden;
+   width:50%;
+}
+div.dashboard-body .heading .search{
+    border:hidden;
+    width:50%;
+}
+div.dashboard-body .heading .search input[type=search]{
+    width:60%;
+    height:100%;
+    font-size:15px;
+    border:none;
+    border-radius:4px;
+    padding-left:10px;
+    border:2px solid rgb(33,50,96);
+    outline:none;
+}
+div.dashboard-body .heading .search button{
+    width:20%;
+    height:100%;
+    font-size:15px;
+    background:rgb(33,50,96);
+    color:#fff;
+    border-radius:4px;
+    outline:none;
+    margin-left:1px;
 }
 div.dashboard-body .heading h3{
     color:rgba(0,0,0,0.6);
@@ -28,10 +57,12 @@ div.dashboard-body .heading h3{
 
 /* styling for the table */
 div.timer-function-table-wrapper{
-    border:2px solid black;
+    border: 1px solid gray;
     display:flex;
     background:rgb(33,50,96);
     flex-direction:column;
+    box-shadow:2px 2px 10px gray;
+    margin-top:50px;
 }
 div.timer-function-table-wrapper .timer-function-table{
     border:1px solid gray;
@@ -46,9 +77,38 @@ div.timer-function-table-wrapper .timer-function-table:hover{
     background:rgba(242, 242, 242,1);
 }
 div.timer-function-table-wrapper .timer-heading{
-    border:2px solid blue;
-    height:50px;
+    border:hidden;
+    height:60px;
     display:flex;    
+}
+div.timer-function-table-wrapper .timer-heading .member{
+    border:hidden;
+    border-right:2px solid #fff;
+    width:22.5%;
+    padding:14px 50px;
+    padding-left:70px;
+}
+div.timer-function-table-wrapper .timer-heading .member span{
+    color:#fff;
+    font-size:21px;
+}
+div.timer-function-table-wrapper .timer-heading .date{
+    border:hidden;
+    border-right:2px solid #fff;
+    width:12.72%;
+    padding:10px 13px;
+}
+div.timer-function-table-wrapper .timer-heading .date span{
+    text-align:center;
+    color:#fff;
+}
+div.timer-function-table-wrapper .timer-heading .date-w{
+    border:hidden;
+    width:13.9%;
+    padding:17px 13px;
+}
+div.timer-function-table-wrapper .timer-heading .date-w span{
+    color:#fff;
 }
 .timer-function-table .employee-info{
     width:23%;
