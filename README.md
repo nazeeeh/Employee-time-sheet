@@ -52,3 +52,7 @@
 
 > 3. New line after last styling
 `` }\n ``
+
+# Switching to Bootstrap V.4.5
+
+20/10/2020

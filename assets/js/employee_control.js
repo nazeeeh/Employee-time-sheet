@@ -19,8 +19,6 @@ var _company_db_name = _is_Login_Admin[0].name // string
 
 
 
-
-
 // parsed version of company record
 let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
@@ -45,9 +43,9 @@ let _render_record = () =>
   {
   
     employee_con += `
-    <tr id="${i}" draggable="true" onclick="_viewRecord(${i})">
+    <tr id="${i}" draggable="true">
       <td>${serialNumber+=1}</td>
-      <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
+      <td onclick="_viewRecord(${i})"> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].department}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
@@ -192,6 +190,9 @@ function _add_employee(){
       "email" : email,
       "name" : name,
       "role" : role,
+      "address":"",
+      "state":"",
+      "country":"",
       "phone" : phone,
       "joining_date" : _employed_date(new Date()),
       "department": assign_department,
@@ -271,14 +272,6 @@ function close_form(){
   document.getElementById("employ_form").style.display = "none";
 }
 
-// close form when user click outside the form
-// var form = document.getElementById("employ_form");
-// window.onclick = function(event) {
-//   if (event.target == form ) {// or use employ_form
-//     form.style.display = "none";
-//   }
-// }
-
 //  edit user
 
 function edit_form(x){
@@ -297,15 +290,15 @@ let _editRecord = (employee_id) =>
 {
 
   recordToUpdate = _employee_localStorage[employee_id]
+  console.log(recordToUpdate)
   document.getElementById("update_email").value = recordToUpdate.email 
   document.getElementById("update_name").value = recordToUpdate.name
   document.getElementById("update_type").value = recordToUpdate.user_type
   document.getElementById("update_role").value = recordToUpdate.role
   document.getElementById("update_phone").value = recordToUpdate.phone
+  document.getElementById("update_department").value = recordToUpdate.department
   restrict_join_date = recordToUpdate.joining_date
   document.getElementById("identifier").value = employee_id
-
-
 }
 let updatedRecord = () =>
 { // function to collate and store new updated details
@@ -318,6 +311,7 @@ let updatedRecord = () =>
     "role" : document.getElementById("update_role").value,
     "joining_date" : restrict_join_date, // you can't change the joining date
     "phone" : document.getElementById("update_phone").value,
+    "department" : document.getElementById("update_department").value
 
   }
   _employee_localStorage[employee_id] = updatedRecord
