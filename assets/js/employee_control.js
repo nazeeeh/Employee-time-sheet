@@ -125,12 +125,15 @@ function _add_employee(){
     _employee_phone = document.getElementById("employee_phone").value;
     // check for department
     let isExist_department = JSON.parse(localStorage.getItem(`${assign_department}`))
-    if (isExist_department === null|| isExist_department === undefined)
+    
+    if (JSON.parse(localStorage.getItem(`${assign_department}`)) === null|| JSON.parse(localStorage.getItem(`${assign_department}`)) === undefined)
     {
       isExist_department = []
     }
-    console.log("here"+ isExist_department.name)
-    if(is_employee_department = isExist_department.find(x=> x.email == _employee_email))
+
+    console.log("here "+ isExist_department.name)
+    // console.log(typeof(isExist_department))
+    if(is_employee_department = isExist_department.find(x => x.email == _employee_email))
     {
       
       document.getElementById("error_").innerHTML = `${_employee_email} already exist `
@@ -153,12 +156,38 @@ function _add_employee(){
     name = document.getElementById("employee_name").value;
     // create local storage for new users
     let employee_task = JSON.parse(localStorage.getItem(`${email}_task`))
+    let allAssignedTasks = JSON.parse(localStorage.getItem(`${email}_AssignedTask`))
+    let allUnassignedTasks = JSON.parse(localStorage.getItem(`${email}_UnassignedTask`))
+    let allPendingTasks = JSON.parse(localStorage.getItem(`${email}_pendingTask`))
+    let allCompletedTasks = JSON.parse(localStorage.getItem(`${email}_completedTask`))
+
     if(employee_task == null || employee_task == undefined){
       employee_task = []
+    }
+    if(allAssignedTasks == null || allAssignedTasks == undefined){
+      allAssignedTasks = []
+    }
+    if(allUnassignedTasks == null || allUnassignedTasks == undefined){
+      allUnassignedTasks = []
+    }
+    if(allPendingTasks == null || allPendingTasks == undefined){
+      allPendingTasks = []
+    }
+    if(employee_task == null || employee_task == undefined){
+      employee_task = []
+    }
+    if(allCompletedTasks == null || allCompletedTasks == undefined){
+      allCompletedTasks = []
     }
 
   
     localStorage.setItem(`${email}_task`, JSON.stringify(employee_task))
+    localStorage.setItem(`${email}_AssignedTask`, JSON.stringify(allAssignedTasks))
+    localStorage.setItem(`${email}_UnassignedTask`, JSON.stringify(allUnassignedTasks))
+    localStorage.setItem(`${email}_pendingTask`, JSON.stringify(allPendingTasks))
+    localStorage.setItem(`${email}_completedTask`, JSON.stringify(allCompletedTasks))
+    
+
     let newAdd = {
       "email" : email,
       "name" : name,
@@ -172,6 +201,10 @@ function _add_employee(){
       "salary":"120000",
       "currency":"Naira",
       "task": employee_task, // local storage for new user task
+      "assignedTask": allAssignedTasks, // local storage for Assigned tasks
+      "unassignedTasks": allUnassignedTasks,
+      "pendingTasks": allPendingTasks,
+      "completedTasks": allCompletedTasks
     }
 
 
