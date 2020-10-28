@@ -1,304 +1,126 @@
-let item = document.getElementById("root");
-
-
-class todoList {
-    constructor(place, title = "Monday") {
-
-        this.place = place;
-        this.cardArray = [];
-
-        this.h2 = document.createElement('h2');
-        this.h2.innerText = title;
-        this.input = document.createElement('input');
-        this.input.classList.add("comment");
-        this.button = document.createElement('button');
-        this.button.innerText = 'Add';
-        this.button.classList.add("btn-save");
-        this.button.id = "to-do-list-button";
-
-        this.button.addEventListener('click', () => {
-            this.addToDo.call(this);
-        });
-
-        this.div = document.createElement('div');
-        this.todoListElement = document.createElement('div');
-
-        this.todoListElement.append(this.h2);
-        this.todoListElement.append(this.input);
-        this.todoListElement.append(this.button);
-        this.todoListElement.append(this.div);
-        this.todoListElement.classList.add("todoList");
-
-        place.append(this.todoListElement);
-    }
-
-    addToDo() {
-        let text = this.input.value;
-
-        this.cardArray.push(new Card(text, this.div, this));
-    }
-}
-
-
-class Card {
-    constructor(text, place, todoList) {
-        //this.text = text;
-        this.place = place;
-        this.todoList = todoList;
-        this.state = {
-            text: text,
-            description: "Click to write a description...",
-            comments: []
+let root = document.getElementById("root");
+tdList = JSON.parse(localStorage.getItem("todoList"));
+tdListTracker = parseInt(localStorage.getItem("todoListTracker"));
+tdListBreakDown = JSON.parse(localStorage.getItem("todoListBreakDown"));
+tdListBreakDownTracker = parseInt(localStorage.getItem("todoListBreakDownTracker"));
+//check if To do list  is stored in the local storage and assigns data if not
+if (tdList == null || tdList == undefined) {
+    //create a dummy data for the task list
+    todoList = [{
+            "id": 1,
+            "name": "Monday"
+        },
+        {
+            "id": 2,
+            "name": "Tuesday"
         }
-        this.render();
-    }
-
-    render() {
-        this.card = document.createElement('div');
-        this.card.classList.add("card");
-        this.card.addEventListener('click', (e) => {
-            if (e.target != this.deleteButton) {
-                this.showMenu.call(this);
-            }
-        });
-
-        this.p = document.createElement('p');
-        this.p.innerText = this.state.text;
-
-        this.deleteButton = document.createElement('button');
-        this.deleteButton.innerText = "X";
-        this.deleteButton.addEventListener('click', () => {
-            this.deleteCard.call(this);
-        });
-
-        this.card.append(this.p);
-        this.card.append(this.deleteButton);
-
-        this.place.append(this.card);
-    }
-
-    deleteCard() {
-        this.card.remove();
-        let i = this.todoList.cardArray.indexOf(this);
-        this.todoList.cardArray.splice(i, 1);
-    }
-
-    showMenu() { //todoList1.cardArray[0].showMenu()
-
-        //Create elements
-        this.menu = document.createElement("div");
-        this.menuContainer = document.createElement("div");
-        this.menuTitle = document.createElement("div");
-        this.menuDescription = document.createElement("div");
-        this.commentsInput = document.createElement("input");
-        this.commentsButton = document.createElement('button');
-        this.menuComments = document.createElement("div");
-
-
-        //Add class names
-        this.menu.className = "menu";
-        this.menuContainer.className = "menuContainer";
-        this.menuTitle.className = "menuTitle";
-        this.menuDescription.className = "menuDescription";
-        this.menuComments.className = "menuComments";
-        this.commentsInput.className = "commentsInput comment";
-        this.commentsButton.className = "commentsButton btn-save";
-
-        this.commentsButton.innerText = "Add";
-        this.commentsInput.placeholder = "Write a comment...";
-
-        //Event listeners
-        this.menuContainer.addEventListener('click', (e) => {
-            console.log(e.target);
-            if (e.target.classList.contains("menuContainer")) {
-                this.menuContainer.remove();
-            }
-        });
-
-        this.commentsButton.addEventListener('click', () => {
-            this.state.comments.push(this.commentsInput.value);
-            this.renderComments();
-            this.commentsInput.value = "";
-        })
-
-        //Append
-        this.menu.append(this.menuTitle);
-        this.menu.append(this.menuDescription);
-        this.menu.append(this.commentsInput);
-        this.menu.append(this.commentsButton);
-        this.menu.append(this.menuComments);
-        this.menuContainer.append(this.menu);
-        root.append(this.menuContainer);
-
-        this.editableDescription = new EditableText(this.state.description, this.menuDescription, this, "description", "textarea");
-        this.editableTitle = new EditableText(this.state.text, this.menuTitle, this, "text", "input");
-
-        this.renderComments();
-    }
-
-    renderComments() {
-
-        let currentCommentsDOM = Array.from(this.menuComments.childNodes);
-
-        currentCommentsDOM.forEach(commentDOM => {
-            commentDOM.remove();
-        })
-
-        this.state.comments.forEach(comment => {
-            new Comment(comment, this.menuComments, this);
-        });
-    }
+    ];
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+    localStorage.setItem("todoListTracker", 2);
 }
-
-class EditableText {
-    constructor(text, place, card, property, typeOfInput) {
-        this.text = text;
-        this.place = place;
-        this.card = card;
-        this.property = property;
-        this.typeOfInput = typeOfInput;
-        this.render();
-    }
-
-    render() {
-        this.div = document.createElement("div");
-        this.p = document.createElement("p");
-
-        this.p.innerText = this.text;
-
-        this.p.addEventListener('click', () => {
-            this.showEditableTextArea.call(this);
-        });
-
-        this.div.append(this.p);
-        this.place.append(this.div);
-    }
-
-    showEditableTextArea() {
-        let oldText = this.text;
-
-        this.input = document.createElement(this.typeOfInput);
-        this.saveButton = document.createElement("button");
-
-        this.p.remove();
-        this.input.value = oldText;
-        this.saveButton.innerText = "Save";
-        this.saveButton.className = "btn-save";
-        this.input.classList.add("comment");
-
-        this.saveButton.addEventListener('click', () => {
-            this.text = this.input.value;
-            this.card.state[this.property] = this.input.value;
-            if (this.property == "text") {
-                this.card.p.innerText = this.input.value;
-            }
-            this.div.remove();
-            this.render();
-        });
-
-        this.input.addEventListener("keyup", (e) => {
-            if (this.typeOfInput == "input") {
-                clickSaveButton(e, this);
-            }
-        });
-
-        this.div.append(this.input);
-
-        if (this.typeOfInput == "textarea") {
-            this.div.append(this.saveButton);
+//check if To do list breakdown is stored in the local storage and assigns data if not
+if (tdListBreakDown == null || tdListBreakDown == undefined) {
+    todoListBreakDown = [{
+            "id": 1,
+            "parentID": 1,
+            "parentName": "Monday",
+            "comment": "Doctor Appointment",
+            "desc": "Click here to write a description"
+        },
+        {
+            "id": 2,
+            "parentID": 2,
+            "parentName": "Tuesday",
+            "comment": "Coding Interview",
+            "desc": "Click here to write a description"
         }
-
-        this.input.select();
-    }
-
+    ];
+    localStorage.setItem("todoListBreakDown", JSON.stringify(todoListBreakDown));
+    localStorage.setItem("todoListBreakDownTracker", 2);
 }
-
-class Comment {
-    constructor(text, place, card) {
-        this.text = text;
-        this.place = place;
-        this.card = card;
-        this.render();
+//to display the To Do List
+function displayContent() {
+    content = "";
+    for (var i = 0; i < tdList.length; i++) {
+        tdName = tdList[i].name;
+        tdID = tdList[i].id;
+        content += `
+                    <div class="todoList">
+                        <div class="header"><h2>${tdName}</h2>
+                        <button onclick="deleteParent('${tdID}')">X</button></div>
+                        <input class="comment" id="${tdName+tdID}">
+                        <button class="btn-save" onclick="addChildTodo('${tdName}', '${tdID}')">Add</button><div>
+                        `;
+        for (var j = 0; j < tdListBreakDown.length; j++) {
+            parentID = tdListBreakDown[j].parentID
+            if (tdID == parentID) {
+                content += `
+                        <div class="card"><p>${tdListBreakDown[j].comment}</p>
+                        <button onclick="deleteChildTodo('${tdListBreakDown[j].id}')">X</button></div>
+                    `;
+            } else {
+                continue;
+            }
+        }
+        content += `</div></div>`;
     }
-
-    render() {
-        this.div = document.createElement('div');
-        this.div.className = "comment";
-        this.div.innerText = this.text;
-
-        this.place.append(this.div);
+    document.getElementById("root").innerHTML = content;
+}
+//Function call for the TO DO List
+displayContent();
+//function to Add a parent list
+function addParent() {
+    listValue = document.getElementById("addTodoListInput").value;
+    tdListTracker = parseInt(localStorage.getItem("todoListTracker"));
+    if (listValue == null || listValue == undefined || listValue.length == "0") {
+        alert("Error!!! To-do list Name cannot be empty")
+    } else if (listValue.length < 3) {
+        alert("Error!!! To-do list Name must be greater than 3 Characters")
+    } else {
+        newList = {
+            "id": (tdListTracker + 1),
+            "name": listValue
+        }
+        tdList.push(newList);
+        localStorage.setItem("todoList", JSON.stringify(tdList));
+        localStorage.setItem("todoListTracker", (tdListTracker + 1));
+        document.getElementById("addTodoListInput").value = "";
+        displayContent(); //displays the updated info
     }
 }
-
-
-let addTodoListInput = document.getElementById("addTodoListInput");
-let addTodoListButton = document.getElementById("addTodoListButton");
-
-addTodoListButton.addEventListener('click', () => {
-    new todoList(root, addTodoListInput.value);
-});
-
-
-
-let todoList1 = new todoList(root);
-
-
-
-todoList1.input.value = "Doctor appointment";
-localStorage.setItem("todoList", JSON.stringify(todoList1));
-todoList1.addToDo();
-
-
-// let todoList = [];
-// displayContent();
-
-// //Display function
-// function displayContent() {
-//     todoTask = '';
-//     for (i = 0; i < todoList.length; i++) {
-//         if (todoList != null || todoList != undefined) {
-//             todoTask += `<div>
-//         <div>
-//         <strong>Title:</strong> ${todoList[i].title}<br>
-//         <strong class="display">Description: </strong>${todoList[i].description}<br>
-//         <i class="fas fa-pencil-alt" onClick="editUser(${i})">
-//         </i><i class="far fa-trash-alt" onClick="deleteUser(${i})"></i><br>
-//         </div>
-//         </div>`;
-//         }
-//     }
-//     document.getElementById("todoTask").innerHTML = todoTask;
-//     todoList = JSON.parse(localStorage.getItem("todoList"));
-// }
-// displayContent();
-
-// // Adding new User
-// function addTodoList() {
-//     let newList = {
-//         title: prompt("Enter Title", "Enter Title"),
-//         description: prompt("Description", "Put a description")
-//     };
-//     todoList.push(newList);
-//     localStorage.setItem("todoList", JSON.stringify(todoList));
-//     displayContent();
-// }
-
-// //Editing User
-// function editUser(id) {
-//     let newTodoDetail = {
-//         title: prompt("Edit title", todoList[id].title),
-//         description: prompt("Edit description", todoList[id].description)
-//     };
-//     todoList[id] = newTodoDetail;
-//     localStorage.setItem("todoList", JSON.stringify(todoList));
-//     displayContent();
-// }
-
-// //Deleting User
-// function deleteUser(id) {
-//     if (confirm(`Are you sure you want to delete ${todoList[id].title}?`)) {
-//         todoList.splice(id, 1);
-//     }
-//     localStorage.setItem("todoList", JSON.stringify(todoList));
-//     displayContent();
-// }
+//function to Add a child to do list
+function addChildTodo(parentName, parentIdTracker) {
+    listValue = document.getElementById(parentName + parentIdTracker).value;
+    tdListBreakDownTracker = parseInt(localStorage.getItem("todoListBreakDownTracker"));
+    if (listValue == null || listValue == undefined || listValue.length == "0") {
+        alert("Error!!! Task list Name cannot be empty")
+    } else if (listValue.length < 3) {
+        alert("Error!!! Task list Name must be greater than 3 Characters")
+    } else {
+        newList = {
+            "id": (tdListBreakDownTracker + 1),
+            "parentID": parentIdTracker,
+            "parentName": parentName,
+            "comment": listValue,
+            "desc": "Click here to write a description"
+        }
+        tdListBreakDown.push(newList);
+        localStorage.setItem("todoListBreakDown", JSON.stringify(tdListBreakDown));
+        localStorage.setItem("todoListBreakDownTracker", (tdListBreakDownTracker + 1));
+        displayContent(); //displays the updated info
+    }
+}
+//function to Delete a parent list
+function deleteParent(id) {
+    tdListIndex = tdList.findIndex(x => x.id == id);
+    tdList.splice(tdListIndex, 1);
+    localStorage.setItem("todoList", JSON.stringify(tdList));
+    displayContent(); //displays the updated info
+}
+//function to delete a child to do list
+function deleteChildTodo(id) {
+    tdListIndex = tdListBreakDown.findIndex(x => x.id == id);
+    tdListBreakDown.splice(tdListIndex, 1);
+    localStorage.setItem("todoListBreakDown", JSON.stringify(tdListBreakDown));
+    displayContent(); //displays the updated info
+}

@@ -2,7 +2,7 @@
 THIS SCRIPT Utilizes local storage to calculate bill or payable amount for the month.
 */
 
-// get the current logged in user from local storage
+// get the current logged in AdminUser from local storage
 var _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser")) // object
 
 // get access to all employee record in the company   
@@ -33,14 +33,15 @@ let _render_record = () =>
  for (var i=0; i<_employee_localStorage.length; i++) {
     employeeTime = JSON.parse(localStorage.getItem(`${_employee_localStorage[i].name}_time`));
     var totalHour = 0, totalMin = 0, totalSec = 0;
-    alert(JSON.stringify(employeeTime))
-    
-    for (var j=0; j<employeeTime.length; j++) {
-      totalHour += employeeTime[j].hour;
-      totalMin += employeeTime[j].minute;
-      totalSec += employeeTime[j].second;
+    if (employeeTime == null) {
+        employeeTime == [];
+    } else {
+      for (var j=0; j<employeeTime.length; j++) {
+        totalHour += employeeTime[j].hour;
+        totalMin += employeeTime[j].minute;
+        totalSec += employeeTime[j].second;
+      }
     }
-
     var totalTime = Math.round((totalHour + (totalMin/60) + (totalSec/3600))*10) / 10;
     worked_hour.push(Math.round(totalTime));
   }

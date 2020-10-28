@@ -13,6 +13,10 @@ function assignNewTask(){
         taskDisplay.style.display = "none"
         seeAllTasks.style.display = "none"
     }
+
+    taskName = document.getElementById("task-name").value = ""
+    employeeAssigned = document.getElementById("employee-assigned").value = ""
+    dueDate = document.getElementById("due-date").value = ""
 }
 
 function CancelNewTask(){
@@ -81,7 +85,10 @@ if(JSON.parse(localStorage.getItem(`${theCurrentUserEmail}_task`)) == null || un
 if(completedTasks == null){
     completedTasks = []
 }
-
+var date = new Date()
+var year = date.getFullYear()
+var month = date.getMonth()+1
+var day = date.getDate()
 displayTask()
 showTaskNumbers()
 
@@ -126,26 +133,32 @@ function addTask(){
             "name" : taskName,
             "employee" : employeeAssigned,
             "due" : dueDate,
-            "status": "pending"
+            "status": "pending",
+            "startDate" : `${day}-${month}-${year}`
         }
         if(employeeAssigned == ""){
             unassignedTask.push(newTask)
             theEmployeeTask.push(newTask)
             showTaskNumbers()
-        }else if(employeeAssigned != ""){
-            assignedTasks.push(newTask)
-            theEmployeeTask.push(newTask)
-            pendingTasks.push(newTask)
-            showTaskNumbers()        }
-    }
 
+            localStorage.setItem(`${theCurrentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedTask))
+        }else if(employeeAssigned != ""){
+            employeeNames = storeEmployees() 
+            if(employeeNames.includes(employeeAssigned)){
+                pushToAssigned(employeeAssigned, newTask)
+                assignedTasks.push(newTask)
+                theEmployeeTask.push(newTask)
+                pendingTasks.push(newTask)
+                showTaskNumbers() 
+            }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
+        }
+    }
     tasks.push(newTask)
     localStorage.setItem("tasks", JSON.stringify(tasks))
     localStorage.setItem(`${theCurrentUserEmail}_AssignedTask`,  JSON.stringify(assignedTasks))
     localStorage.setItem(`${theCurrentUserEmail}_pendingTask`,  JSON.stringify(pendingTasks))
-    localStorage.setItem(`${theCurrentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedTask))
     localStorage.setItem(`${theCurrentUserEmail}_task`, JSON.stringify(theEmployeeTask))
-
+    
     displayTask()
     CancelNewTask()
 }
@@ -164,6 +177,9 @@ function showEditForm(id){
         assignLink.style.display = "none"
         seeAllTasks.style.display = "none"
     }
+    editName = document.getElementById("edit-name" + id).value = ""
+    editEmployee = document.getElementById("edit-employee" + id).value = ""
+    editDueDate = document.getElementById("edit-due-date" + id).value = ""
 }
 
 function cancelEdit(id){
@@ -197,6 +213,7 @@ function editTask(id){
     localStorage.setItem(`${theCurrentUserEmail}_task`, JSON.stringify(theEmployeeTask))
 
     displayTask()
+    showTaskNumbers() 
     cancelEdit(id)
 }
 
@@ -223,13 +240,12 @@ function editNames(id){
         theEmployeeTask[userIndex2].name = editName
         // completed.name[userIndex5].name = editName
         if(userIndex == -1){
-            unassignedTasks[userIndex3].name = editName
+            unassignedTask[userIndex3].name = editName
         }else{
             assignedTasks[userIndex].name = editName
             pendingTasks[userIndex4].name = editName
         }
     }
- 
 }
 
 function editEmployees(id){
@@ -255,10 +271,24 @@ function editEmployees(id){
         theEmployeeTask[userIndex2].employee = editEmployee
         // completed.name[userIndex5].employee = editEmployee
         if(userIndex == -1){
-            unassignedTask[userIndex3].employee = editEmployee   
+            employeeNames = storeEmployees()
+            if(employeeNames.includes(editEmployee)){
+                alert("me")
+                pushToAssigned(editEmployee, tasks[id])
+                unassignedTask[userIndex3].employee = editEmployee
+                assignedTasks.push(tasks[id])
+                unassignedTask.splice(userIndex3, 1)
+            }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}     
         }else{
-            assignedTasks[userIndex].employee = editEmployee
-            pendingTasks[userIndex4].employee = editEmployee
+            employeeNames = storeEmployees()
+            if(employeeNames.includes(editEmployee)){
+                alert("me")
+                assignedTasks[userIndex].employee = editEmployee
+                pendingTasks[userIndex4].employee = editEmployee
+                pushToAssigned(editEmployee, tasks[id])
+                assignedTasks.push(tasks[id])
+                unassignedTask.splice(userIndex3, 1)
+            }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}  
         }
     }
 }
@@ -279,7 +309,7 @@ function editDueDates(id){
             unassignedTask[userIndex3].due = unassignedTask[userIndex3].due
         }else{
             assignedTasks[userIndex].due = assignedTasks[userIndex].due
-            pendingTasks[userIndex4].due = pendingTasks[userIndex4].due
+            // pendingTasks[userIndex4].due = pendingTasks[userIndex4].due
         }
     }else{
         tasks[id].due = tasks[id].due
@@ -353,4 +383,25 @@ function appendResults(id, i){
     searchResult.innerHTML = ''
 }
 
+function findEmployee(theName){
+    employeeNames = storeEmployees()
+    found = theEmployees.find(x => x.name.toLowerCase() == theName.toLowerCase())
+    foundEmail = found.email
+    return foundEmail
+ }
 
+ function pushToAssigned(name, task){
+    Email = findEmployee(name)
+    let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+    assignedEmployee.push(task)
+    localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+ }
+
+ function storeEmployees(){
+    let employeeNames = []
+
+    for(i = 0; i < theEmployees.length; i++){
+        employeeNames.push(theEmployees[i].name)
+    }
+    return employeeNames
+ }
