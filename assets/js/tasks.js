@@ -46,7 +46,8 @@ let assignedTasks = JSON.parse(localStorage.getItem(`${theCurrentUserEmail}_Assi
 let pendingTasks = JSON.parse(localStorage.getItem(`${theCurrentUserEmail}_pendingTask`));
 let completedTasks = JSON.parse(localStorage.getItem(`${theCurrentUserEmail}_completedTask`));
 let NameOfCurrentCompany =  PaceStorage[0].name;
-let theEmployees = JSON.parse(localStorage.getItem(`${NameOfCurrentCompany}_employees`));
+let MyDepartment =  currentUser[0].department
+let theEmployees = JSON.parse(localStorage.getItem(MyDepartment));
 let theEmployeeTask = JSON.parse(localStorage.getItem(`${theCurrentUserEmail}_task`));
 
 if(JSON.parse(localStorage.getItem("tasks")) == null){
@@ -85,6 +86,7 @@ if(JSON.parse(localStorage.getItem(`${theCurrentUserEmail}_task`)) == null || un
 if(completedTasks == null){
     completedTasks = []
 }
+
 var date = new Date()
 var year = date.getFullYear()
 var month = date.getMonth()+1

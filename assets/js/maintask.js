@@ -28,7 +28,8 @@ let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_Assi
 let pending = JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`));
 let completed = JSON.parse(localStorage.getItem(`${currentUserEmail}_completedTask`));
 let companyName =  check[0].name;
-let employees = JSON.parse(localStorage.getItem(`${companyName}_employees`));
+let department =  currentUser[0].department
+let employees = JSON.parse(localStorage.getItem(department));
 let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`));
 
 if(JSON.parse(localStorage.getItem("tasks")) == null || undefined){
@@ -66,6 +67,8 @@ function getEmployeeNames(){
     }
     return employeeNames
 }
+
+alert(employees)
 
 document.getElementById("tasksInternalName").innerHTML =  currentUser[0].name
 
