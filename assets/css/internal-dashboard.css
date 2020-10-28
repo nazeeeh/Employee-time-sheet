@@ -73,7 +73,9 @@ header #right-in #other-in{
 header #right-in #other-in .fa-cog, header #right-in #other-in .fa-bell{
     align-self: center;
     margin-right: 10px;
+    margin-top: 5px;
     color: #213260;
+    font-size: 20px;
 }
 header #right-in #other-in .notification{
     display: flex;
@@ -339,6 +341,7 @@ header #right-in #other-in .profile-in button img{
     }
 }
 /* the progress circles ends here*/
+
 /* 4th task card starts here */
 #body-in #cards-con .cards:nth-of-type(4){
     position: relative;
@@ -421,6 +424,29 @@ header #right-in #other-in .profile-in button img{
 }
 .editForm button{
     padding: 5px 20px;
+}
+.editForm div input{
+    position: relative;
+}
+.editForm div{
+    position: relative;
+}
+.editForm div .autoCompleteBox{
+    position: absolute;
+    z-index: 7;
+    top: 100%;
+    width: 150px;
+    margin: 0 10px;
+    margin-top: -10px;
+    background-color: white;
+}
+.editForm div .autoCompleteBox > div{
+    border: solid 2px #f2f2f2;
+    background-color: white;
+    cursor: pointer;
+}
+.editForm div .autoCompleteBox > div:hover{
+    background-color: rgb(208, 223, 245);
 }
 /* 4th task card starts here */
 

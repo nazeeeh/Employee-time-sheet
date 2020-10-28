@@ -1,3 +1,7 @@
+// setTimeout(function(){
+//     location.reload()
+// },1000)
+
 function backToDashboard() {
     location.assign("../../contents/internal-dashboard.html");
 }
@@ -9,28 +13,61 @@ function assignNewTaskMain(){
      }else{
          addTaskMain.style.display = "block"
      }
+
+    taskName = document.getElementById("task-name-main").value = ""
+    employeeAssigned = document.getElementById("employee-assigned-main").value = ""
+    dueDate = document.getElementById("due-date-main").value = ""
  }
 
+let check = JSON.parse(localStorage.getItem("paceDB"))
 let tasks = JSON.parse(localStorage.getItem("tasks"));
-let unassignedMainList = JSON.parse(localStorage.getItem("unassignedMainList"));
-let assignedMainList = JSON.parse(localStorage.getItem("assignedMainList"));
-let pending = JSON.parse(localStorage.getItem("pending"));
+let currentUser = JSON.parse(localStorage.getItem("current_InternalUser"));
+let currentUserEmail = currentUser[0].email
+let unassignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`));
+let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`));
+let pending = JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`));
+let completed = JSON.parse(localStorage.getItem(`${currentUserEmail}_completedTask`));
+let companyName =  check[0].name;
+let employees = JSON.parse(localStorage.getItem(`${companyName}_employees`));
+let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`));
 
-if(JSON.parse(localStorage.getItem("tasks")) == null){
+if(JSON.parse(localStorage.getItem("tasks")) == null || undefined){
     tasks = []
 }
 
-if(JSON.parse(localStorage.getItem("unassignedMainList")) == null){
+if(JSON.parse(localStorage.getItem("current_InternalUser")) == null || undefined){
+    currentUser = []
+}
+
+if(JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`)) == null || undefined){
     unassignedMainList = []
 }
 
-if(JSON.parse(localStorage.getItem("assignedMainList")) == null){
+if(JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`)) == null || undefined){
     assignedMainList = []
 }
 
-if(JSON.parse(localStorage.getItem("pending")) == null){
+if(JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`)) == null || undefined){
     pending = []
 }
+
+if(employees == null || undefined){
+    employees = []
+}
+
+if(employeeTask == null || undefined){
+    employeeTask = []
+}
+
+function getEmployeeNames(){
+    let employeeNames = []
+    for(i = 0; i < employees.length; i++){
+        employeeNames.push(employees[i].name)
+    }
+    return employeeNames
+}
+
+document.getElementById("tasksInternalName").innerHTML =  currentUser[0].name
 
 displayUnassigned(unassignedMainList)
 displayMain(assignedMainList)
@@ -40,12 +77,15 @@ function displayMain(task){
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
         <p> <strong> Task name : </strong> ${task[i].name} <span>Assigned to : ${task[i].employee}</span> </p> 
-        <div id="dateAndButtons"><div id="date"><span class="date">Due : ${task[i].due}</span> <span>Status : ${task[i].status}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
+        <div id="dateAndButtons"><div id="date"><span class="date">Start Date : ${task[i].startDate}</span><span class="date">Due Date: ${task[i].due}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
         <div id="editMainTask${i}" class="edit-Main">
         <input type="text" id="edit-name-main${i}" placeholder="Edit Task"  required>
-        <input type="text" id="edit-employee-main${i}" placeholder="Edit employee assigned" required>
+        <section>
+        <input type="text" class="edit-employee" id="edit-employee-main${i}" onkeyup="editAutoComplete(${i})" placeholder="Edit employee assigned" onclick="displayOptions()" required>
+        <div class="suggestions" id="autoComplete${i}"></div>
+        </section>
         <input type="date" id="edit-due-date-main${i}" placeholder="Edit due date" required> <br>
-        <button id="assign" onclick="editAssigned(${i})">Edit</button> <button id="cancel" onclick="cancelEdit(${i})">Cancel</button>
+        <button id="assign" onclick="editAssigned(${i})">Edit</button> <button id="cancel" onclick="CloseEditButton(${i})">Cancel</button>
         </div>
       </div>
        `
@@ -58,12 +98,20 @@ function displayUnassigned(task){
     for(i = 0; i < task.length; i++){
         add += ` <div class="main-unassigned" id="${i}">
         <p><strong>Task name : </strong>${task[i].name}</p>
-        <div class="assignEmployee"><p>Assign to employee:</p><input type="text" id="employee-main${i}"> <button onclick="deletesUnassigned(${i})">Delete</button></div>
+        <div class="assignEmployee"><div id="unAssignedSearch"><input type="text" id="employee-main${i}" onkeyup="unassignedAutoComplete(${i})">
+        <div class="suggestionAutocomplete">
+        </div>
+        </div> <button id="toAssignUnassigned${i}" class="to-Assign-Unassigned" onclick="changeFromUnassigned(${i})">Assign Employee</button> <button onclick="deletesUnassigned(${i})">Delete</button></div>
       </div>
         `
     }
     document.getElementById("show-unassigned-tasks").innerHTML = add
 }
+
+var date = new Date()
+var year = date.getFullYear()
+var month = date.getMonth()+1
+var day = date.getDate()
 
 function appendNewTaskMain(){
     let taskName = document.getElementById("task-name-main").value,
@@ -74,31 +122,49 @@ function appendNewTaskMain(){
         CancelTask()
         
     }else{
-
+        var today = new Date
         newTask = {
-            name : taskName,
-            employee : employeeAssigned,
-            due : dueDate,
-            status : "Pending"
+            "name" : taskName,
+            "employee" : employeeAssigned,
+            "due" : dueDate,
+            "status" : "Pending",
+            "startDate" : `${day}-${month}-${year}`
         }
-
         tasks.push(newTask)
-        localStorage.setItem("tasks",  JSON.stringify(tasks))
-    
+        Names = getEmployeeNames()
         if(employeeAssigned == ""){
             unassignedMainList.push(newTask)
-            localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
+            employeeTask.push(newTask)
             displayUnassigned(unassignedMainList)
+            localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
+            emptyInput(employeeAssigned)
+            emptyInput(taskName)
+            emptyInput(dueDate) 
         }else if(employeeAssigned != ""){
-            assignedMainList.push(newTask)
-            pending.push(newTask)
-            localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
-            localStorage.setItem("pending",  JSON.stringify(pending))
-            displayMain(assignedMainList)
+            employeeNames = getEmployeeNames()
+            alert(employeeAssigned in employeeNames)
+            if( employeeNames.includes(employeeAssigned)){
+                alert("true")
+                pushToEmployee(employeeAssigned)
+                assignedMainList.push(newTask)
+                pending.push(newTask)
+                employeeTask.push(newTask)
+                localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
+            }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
         }
+        localStorage.setItem("tasks",  JSON.stringify(tasks))
+        localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
+        displayMain(assignedMainList)
     }
+  
     CancelTask()
    
+}
+
+function setLocal(){
+    if(assignedEmployee == null || undefined){
+        assignedEmployee = []
+    }
 }
 
 function CancelTask(){
@@ -110,17 +176,62 @@ function CancelTask(){
     } 
 }
 
+function verifyEmployee(id){
+    employeeName = document.getElementById("employee-main" + id).value
+    newTask = {
+        name : unassignedMainList[id].name,
+        employee : employeeName,
+        due : unassignedMainList[id].due,
+        name : unassignedMainList[id].name,
+        status : "pending"
+    }
+
+    Email = findEmployee(employeeName)
+    let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+    assignedEmployee.push(newTask)
+    localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+
+
+    assignedMainList.push(newTask)
+    localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
+    localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
+    displayMain(assignedMainList)
+    deletesUnassigned(id)
+
+}
+
+function changeFromUnassigned(id){
+    employeeName = document.getElementById("employee-main" + id).value
+    let employeeNames = []
+    for(i = 0; i < employees.length; i++){
+        employeeNames.push(employees[i].name)
+    }
+
+    if(employeeNames.includes(employeeName)){
+        verifyEmployee(id)
+        
+    }
+}
+
 function deletesAssigned(id){
     userIndex = tasks.findIndex(x => x.name == assignedMainList[id].name)
+    userIndex2 = employeeTask.findIndex(x => x.name == assignedMainList[id].name)
+    userIndex3 =  unassignedMainList.findIndex(x => x.name == assignedMainList[id].name)
+    userIndex4 = pending.findIndex(x => x.name == assignedMainList[id].name)
+    // userIndex5 = completed.findIndex(x => x.name == assignedMainList[id].name)
+
     tasks.splice(userIndex, 1)
     localStorage.setItem("tasks",  JSON.stringify(tasks))
 
-    userIndex = pending.findIndex(x => x.name == assignedMainList[id].name)
-    pending.splice(userIndex, 1)
-    localStorage.setItem("pending",  JSON.stringify(pending))
+    employeeTask.splice(userIndex2, 1)
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
 
     assignedMainList.splice(id, 1)
-    localStorage.setItem("assignedMainList",  JSON.stringify(assignedMainList))
+    localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(unassignedMainList))
+
+    pending.splice(userIndex4, 1)
+    localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(unassignedMainList))
+
     displayMain(assignedMainList)
 }
 
@@ -130,8 +241,14 @@ function deletesUnassigned(id){
     localStorage.setItem("tasks",  JSON.stringify(tasks))
     
     unassignedMainList.splice(id, 1)
-    localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
+    localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
     displayUnassigned(unassignedMainList)
+
+    userIndex2 = employeeTask.findIndex(x => x.name == unassignedMainList[id].name)
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
+    employeeTask.splice(userIndex2, 1);
+    // alert(userIndex2)
+
 }
 
 function showEditButton(id){
@@ -140,6 +257,18 @@ function showEditButton(id){
     if (editForm.style.display == "block"){
         editForm.style.display = "none"
     }else{editForm.style.display = "block"}
+
+    editName = document.getElementById("edit-name-main" + id).value = ""
+    editEmployee = document.getElementById("edit-employee-main" + id).value = ""
+    editDueDate = document.getElementById("edit-due-date-main" + id).value = ""
+}
+
+function CloseEditButton(id){
+    let editForm = document.getElementById("editMainTask" + id)
+
+    if (editForm.style.display == "none"){
+        editForm.style.display = "block"
+    }else{editForm.style.display = "none"}
 }
 
 function editAssigned(id){
@@ -148,29 +277,179 @@ function editAssigned(id){
     let editDueDate = document.getElementById("edit-due-date-main" + id).value;
 
     userIndex = tasks.findIndex(x => x.name == assignedMainList[id].name)
+    userIndex2 = employeeTask.findIndex(x => x.name == assignedMainList[id].name)
+    userIndex4 = pending.findIndex(x => x.name == assignedMainList[id].name)
+    // userIndex5 = completed.findIndex(x => x.name == assignedMainList[id].name)
 
     if(editName === ""){
         tasks[userIndex].name = tasks[userIndex].name
-        assignedMainList[id].taskName = assignedMainList[id].name
-    } else{tasks[userIndex].name = editName
+        employeeTask[userIndex2].name = employeeTask[userIndex2].name
+        assignedMainList[id].name = assignedMainList[id].name
+        pending[userIndex4].name = assignedMainList[userIndex4].name
+        // completed.name[userIndex5].name = assignedMainList[id].name
+    } else{
+        tasks[userIndex].name = editName
+        employeeTask[userIndex2].name = editName
         assignedMainList[id].name = editName
+        pending[userIndex4].name = editName
+        // completed.name[userIndex5].name = editName
     }
 
     if( editEmployee === ""){
         tasks[userIndex].employee = tasks[userIndex].employee
+        employeeTask[userIndex2].employee = employeeTask[userIndex2].employee
         assignedMainList[id].employee = assignedMainList[id].employee
-    } else{tasks[userIndex].employee = editEmployee
-        assignedMainList[id].employee = editEmployee
+        pending[userIndex4].employee = assignedMainList[userIndex4].employee
+        // completed.name[userIndex5].employee = assignedMainList[id].employee
+    } else{
+        Names = getEmployeeNames()
+        if(Names.includes(editEmployee)){
+            Email = findEmployee(editEmployee)
+            let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+            tasks[userIndex].employee = editEmployee
+            employeeTask[userIndex2].employee = editEmployee
+            assignedMainList[id].employee = editEmployee
+            pending[userIndex4].employee = editEmployee
+            localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+        }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
+        // completed.name[userIndex5].employee = editEmployee
     }
 
     if(editDueDate === ""){
         tasks[userIndex].due = tasks[userIndex].due
+        employeeTask[userIndex2].due = employeeTask[userIndex2].due
         assignedMainList[id].due = assignedMainList[id].due
-    }else{tasks[userIndex].due = editDueDate
+        pending[userIndex4].due = assignedMainList[userIndex4].due
+        // completed.name[userIndex5].due = assignedMainList[id].due
+    }else{
+        tasks[userIndex].due = tasks[userIndex].due
+        employeeTask[userIndex2].due = editDueDate
         assignedMainList[id].due = editDueDate
+        pending[userIndex4].due = editDueDate
+        // completed.name[userIndex5].due = editDueDate
     }
 
     localStorage.setItem("tasks",  JSON.stringify(tasks))
-    localStorage.setItem("unassignedMainList",  JSON.stringify(unassignedMainList))
-    displayMain(assignedMainList)
+    localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(unassignedMainList))
+    localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(unassignedMainList))
+    localStorage.setItem(`${currentUserEmail}_completedTask`,  JSON.stringify(unassignedMainList))
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
+    displayUnassigned(unassignedMainList) 
+    CloseEditButton(id)  
 }
+
+document.getElementById("employee-assigned-main").addEventListener('keyup', displayOptions)
+
+function unassignedAutoComplete(id){
+    let employeeName = document.getElementById("employee-main" + id).value
+    let employeeNames = []
+    for(i = 0; i < employees.length; i++){
+        employeeNames.push(employees[i].name)
+    }
+    document.getElementsByClassName('suggestionAutocomplete')[id].innerHTML = ''
+    let employeeResult = employeeNames.filter(function(employee){
+        return employee.toLowerCase().startsWith(employeeName.toLowerCase());
+    });
+
+    employeeResult.forEach(element => {
+        i = employeeResult.indexOf(element)
+        let div =document.createElement('div')
+        div.innerHTML = element
+        document.getElementsByClassName('suggestionAutocomplete')[id].appendChild(div)
+        div.setAttribute("id", `${i}`)
+        div.setAttribute('onclick', `appendUnassignedName(${i}, ${id})`)
+    });
+
+    if (employeeName == ""){
+        document.getElementsByClassName('suggestionAutocomplete')[id].innerHTML = ''
+    }
+    return employeeResult
+} 
+
+function appendUnassignedName(id, i){
+    results = unassignedAutoComplete(i)
+    document.getElementById("employee-main" + i ).value = results[id]
+    document.getElementsByClassName('suggestionAutocomplete')[id].innerHTML = ''
+}
+
+function editAutoComplete(id){
+    let employeeName = document.getElementById("edit-employee-main" + id).value
+    
+    let employeeNames = []
+    for(i = 0; i < employees.length; i++){
+        employeeNames.push(employees[i].name)
+    }
+
+    console.log(employeeNames)
+    document.getElementsByClassName('suggestions')[id].innerHTML = ''
+    let employeeResult = employeeNames.filter(function(employee){
+        return employee.toLowerCase().startsWith(employeeName.toLowerCase());
+    });
+
+    employeeResult.forEach(element => {
+        i = employeeResult.indexOf(element)
+        let div =document.createElement('div')
+        div.innerHTML = element
+        document.getElementsByClassName('suggestions')[id].appendChild(div)
+        div.setAttribute("id", `${i}`)
+        div.setAttribute('onclick', `appendNameEdit(${i}, ${i})`)
+    });
+
+    if (employeeName == ""){
+        document.getElementsByClassName('suggestions')[id].innerHTML = ''
+    }
+    return employeeResult
+    // employeeName.addEventListener('click',)
+} 
+
+function appendNameEdit(id, i){
+    results = editAutoComplete(i)
+    document.getElementById("edit-employee-main" + i).value = results[id]
+    document.getElementsByClassName('suggestions')[id].innerHTML = ''
+}
+
+function displayOptions(){
+let employeeName = document.getElementById("employee-assigned-main").value
+let searchResult = document.querySelector('.employee')
+    searchResult.innerHTML = ''
+    employeeNames = getEmployeeNames()
+    let employeeResult = employeeNames.filter(function(employee){
+        return employee.toLowerCase().startsWith(employeeName.toLowerCase());
+    });
+
+    employeeResult.forEach(element => {
+        i = employeeResult.indexOf(element)
+        let div =document.createElement('div')
+        div.innerHTML = element
+        searchResult.appendChild(div)
+        div.setAttribute("id", `${i}`)
+        div.setAttribute('onclick', `appendName(${i})`)
+    });
+
+    if (employeeName == ""){
+        searchResult.innerHTML = ''
+    }
+    return employeeResult
+}
+
+function appendName(id){
+    results = displayOptions()
+    let searchResult = document.querySelector('.employee')
+    document.getElementById("employee-assigned-main").value = results[id]
+    searchResult.innerHTML = ''
+}
+
+function findEmployee(theName){
+   found = employees.find(x => x.name.toLowerCase() == theName.toLowerCase())
+   foundEmail = found.email
+   return foundEmail
+}
+
+function pushToEmployee(name){
+    Email = findEmployee(name)
+    let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
+    assignedEmployee.push(newTask)
+    localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
+}
+
+

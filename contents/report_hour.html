@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/logo-1.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/report_hour.css" />
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar-container">
+            <div class="sidebar-wrapper">
+                <div class="company">
+                    <i id="logo" class="" style="display: none;"></i>
+                    <i class="fas fa-bars"></i>
+                    <h4 id="role_display" 
+                    style="  
+                    color: #fff;
+                    font-size: 22px; 
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    font-family: 'Roboto', sans-serif ;
+                    padding: 25px 23px 0px 10px;">Not Logged IN</h4>
+                </div>
+
+                <div class="sidebar-links">
+                    <!-- Link Start -->
+                    <div class="dashboard-link" id="active_page">
+                        <i class="fas fa-chart-pie"></i>
+                        <a href="employee-dashboard.html">Dashboard</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-tasks"></i>
+                        <a href="employee-tasks.html">Tasks</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-list-alt"></i>
+                        <a href="todo-list.html">Todo List</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <a href="../contents/">Calender</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-plus"></i>
+                        <a href="e-schedule.html">e-Schedule</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <a href="report.html">Report</a>
+                    </div>
+
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-bell"></i>
+                        <a href="report.html">Requests</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sliders-h"></i>
+                        <a href="settings.html">Settings</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="#" onclick="logOut()">Logout</a>
+                    </div>
+                    <!-- End of Side-bar-Link -->
+                </div>
+
+            </div>
+        </div>
+        </div>    
+        <!-- this is where the dashboard components goes -->
+        <div class="dashboard-body">
+         <div class="heading">
+         <h1>Employee Timer Report.<i class="fas fa-stopwatch"></i></h1><br><h3>Employee name</h3>
+         </div>
+
+         <div class="timer-function-table-wrapper">
+            <table class="timer-function-table">
+                <tr style="background-color:rgb(33,50,96);color:#fff;padding-top:5px;">
+                <th>Date</th>
+                <th>Monday,<br><span>Oct 19,2020</span></th>
+                <th>Tuesday,<br><span>Oct 20,2020</span></th>
+                <th>Wednesday,<br><span>Oct 21,2020</span></th>
+                <th>Thursday,<br><span>Oct 22,2020</span></th>
+                <th>Friday,<br><span>Oct 23,2020</span></th>
+                <th>Saturday,<br><span>Oct 24,2020</span></th>
+                <th>Sunday,<br><span>Oct 25,2020</span></th>
+                <th>Weekly Total</th>
+            </tr>
+            <tr style="background:rgb(230, 230, 230);">
+                <th>Daily</th>
+                <td>4:04:10</td>
+                <td>7:05:00</td>
+                <td>4:04:03</td>
+                <td><i class="fas fa-check"></i>10:45:15</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>15:13:13</td>
+            </tr>
+            </table>
+         </div>
+
+         <div class="timer-function-table-wrapper">
+            <table class="timer-function-table">
+                <tr style="background-color:rgb(33,50,96);color:#fff;padding-top:5px;">
+                <th>Date</th>
+                <th>Monday,<br><span>Oct 26,2020</span></th>
+                <th>Tuesday,<br><span>Oct 27,2020</span></th>
+                <th>Wednesday,<br><span>Oct 28,2020</span></th>
+                <th>Thursday,<br><span>Oct 29,2020</span></th>
+                <th>Friday,<br><span>Oct 30,2020</span></th>
+                <th>Saturday,<br><span>Oct 31,2020</span></th>
+                <th>Sunday,<br><span>Nov 1,2020</span></th>
+                <th>Weekly Total</th>
+            </tr>
+            <tr style="background:rgb(230, 230, 230);">
+                <th>Daily</th>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+            </tr>
+            </table>
+         </div>
+         <div class="timer-function-table-wrapper">
+            <table class="timer-function-table">
+                <tr style="background-color:rgb(33,50,96);color:#fff;padding-top:5px;">
+                <th>Date</th>
+                <th>Monday,<br><span>Nov 1,2020</span></th>
+                <th>Tuesday,<br><span>Nov 2,2020</span></th>
+                <th>Wednesday,<br><span>Nov 3,2020</span></th>
+                <th>Thursday,<br><span>Nov 4,2020</span></th>
+                <th>Friday,<br><span>Nov 5,2020</span></th>
+                <th>Saturday,<br><span>Nov 6,2020</span></th>
+                <th>Sunday,<br><span>Nov 7,2020</span></th>
+                <th>Weekly Total</th>
+            </tr>
+            <tr style="background:rgb(230, 230, 230);">
+                <th>Daily</th>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+                <td>00:00:00</td>
+            </tr>
+            </table>
+         </div>
+        </div>
+</body>
+</html>

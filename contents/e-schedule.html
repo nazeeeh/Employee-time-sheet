@@ -7,16 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../assets/css/e-schedule.css">
     <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
-    <link rel="stylesheet" href="../assets/css/employee-dashboard.css">
     <link rel="stylesheet" href="/assets/css/employee-dashboard.css">
+    <link rel="stylesheet" href="../assets/css/e-schedule.css">
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <title> Pace | e-schedule </title>
 </head>
 <body>
-      <!-- fluid wrapper starts -->
-    <div class="container-fluid">
              <!-- main dashboard -->
     <div class="dashboard-container">
       <div class="sidebar-container">
@@ -32,7 +29,7 @@
                 font-weight: 900;
                 text-transform: uppercase;
                 font-family: 'Roboto', sans-serif ;
-                padding: 25px 23px 0px 10px;">Not Logged In</h4>
+                padding: 25px 23px 0px 10px;"></h4>
                 <!-- <p id="role_display" style="display: none;"></p> -->
               </div>
 
@@ -113,27 +110,48 @@
               </header>
               <!-- header ends here -->
               <main id="body-in">
+                   <!-- fluid wrapper starts -->
+              <div class="container-fluid">
                 <div class="table-responsive">
                   <h3 id="presentMonth">Month view for</h3>
                   <!-- <table class="table table-hover" id="calWrapper"></table> -->
                   <table class="table" id="table"></table>
-                  <div id="schedule">
-                    <div>
-                        <input type="text" id="event-name" placeholder="add event" required> <br>
-                        <input type="date" id="event-date" placeholder="event date" required> <br>
-                        <input type="time" id="event-time" placeholder="event time" required> <br>
-                        <button onclick="addSchedule()">Add Event</button>
+
+                <!-- Modal -->
+                <div class="modal fade"  id="schedule" role="dialog" >
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onblur="displaySchedule()">view</button>
+                        <!-- <button type="button" class="close" data-dismiss="modal" onclick="addSchedule()">Add</button> -->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                      </div>
+                      <div class="modal-body">
+                            <form>
+                                <input type="text" id="event-name" placeholder="event name" required> <br>
+                                <input type="date" id="event-date" placeholder="event date" required> <br>
+                                <input type="time" id="event-time" placeholder="event time" required> <br>
+                                <input type="button" class="btn" value="Add"  data-dismiss="modal"  onclick="addSchedule()">
+                            </form>
+                      </div>
+                     
                     </div>
+                  </div>
                 </div>
-                <table class="table table-hover" id="schedule-list"></table>
+              </div>
+              <!-- Modal ends -->
+              <!-- <button> &times; </button> -->
+              <table class="table table-hover" id="schedule-list"></table>
                 </div>
+              </div>
+            <!-- fluid wrapper ends -->
               </main>
 
           </main>
       </div>
   </div>   
-      </div>
-      <!-- fluid wrapper ends -->
+      
 
 
 
@@ -146,10 +164,10 @@
 
 
 
-    <script src="/assets/js/employee_details.js"></script>
+    <!-- <script src="/assets/js/employee_details.js"></script> -->
     <script src="../assets/js/e-schedule.js"></script>
     <script src="../assets/js/timer.js"></script>
-    <script src="/assets/js/dashboard-sidebar.js"></script>
+    <script src="../assets/js/dashboard-sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

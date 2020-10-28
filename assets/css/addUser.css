@@ -423,7 +423,7 @@ table#employee_list{
 /* edit section styles */
 #edit_section{
   margin-top: 27px;
-  height: 100vh;
+  height: vh;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -433,6 +433,20 @@ table#employee_list{
   border-radius: 6px;
   padding: 10px;
 }
+
+#edit_section section#edit-form{
+  display: flex;
+  gap: 23px;
+  justify-content: center;
+  text-align: ;
+}
+
+#edit_section #edit-form section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 
 #edit_heading{
   padding: 12px;

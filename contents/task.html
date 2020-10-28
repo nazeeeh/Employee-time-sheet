@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/assets/css/task.css">
     <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Task | Pace time-sheet</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
           <button id="stop-time" onclick="stopTime()">Stop Time</button>
           <div id="other-in">
               <div id="notification">
-                  <a href="#"><i class="fa fa-bell fa-2x" aria-hidden="true" onclick="showNotificationBar()"></i></a>
+                  <a href="#"><i class="fa fa-bell fa" aria-hidden="true" onclick="showNotificationBar()"></i></a>
                   <div id="notification-popup" class="notifications">
                       <div class="notification-title">
                           <p>New task</p><a href="#">See all</a>
@@ -30,9 +31,9 @@
                       <p>Present Pace</p>
                   </div>
               </div>
-              <a href="#"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-cog fa" aria-hidden="true"></i></a>
               <div class="profile-in">
-                <button> <img src="" alt=""> Ayoola Toluwanimi</button>
+                <button id="tasksInternalName"> <img src="" alt=""> Ayoola Toluwanimi</button>
                 <div class="dropdown-in">
                 </div>
               </div>
@@ -45,11 +46,16 @@
       <button onclick="assignNewTaskMain()">Add new task</button>
     </section>
     <section id="new-task-main">
-     <div>
-      <input type="text" id="task-name-main" placeholder="Task" required><br>
-      <input type="text" id="employee-assigned-main" placeholder="Employee to be assigned" required><br>
-      <input type="date" id="due-date-main" placeholder="Due date" required> <br>
-      <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelTask()">Cancel</button>
+      <div id="add-task-display">
+        <input type="text" id="task-name-main" placeholder="Task" required><br>
+        <div id="employee-search">
+        <input type="text" id="employee-assigned-main" class="employee-assigned" placeholder="Employee to be assigned" required><br>
+        <section class="employee">
+  
+        </section>
+        </div>
+        <input type="date" id="due-date-main" placeholder="Due date" required> <br>
+        <button id="assign-main" onclick="appendNewTaskMain()">assign</button> <button id="cancel-main" onclick="CancelTask()">Cancel</button>
       </div>
     </section>
     <div class="tasks-main">

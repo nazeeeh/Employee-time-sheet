@@ -19,8 +19,6 @@ var _company_db_name = _is_Login_Admin[0].name // string
 
 
 
-
-
 // parsed version of company record
 let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 
@@ -47,7 +45,7 @@ let _render_record = () =>
     employee_con += `
     <tr id="${i}" draggable="true">
       <td>${serialNumber+=1}</td>
-      <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
+      <td onclick="_viewRecord(${i})"> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
       <td>${ _employee_localStorage[i].department}</td>
       <td>${ _employee_localStorage[i].phone}</td>
       <td>${ _employee_localStorage[i].user_type}</td>
@@ -61,7 +59,7 @@ let _render_record = () =>
         </span>
         </i>
         </td>
-        </tr>
+    </tr>
         `
         // ${_employee_localStorage[i].phone}
   }
@@ -125,12 +123,15 @@ function _add_employee(){
     _employee_phone = document.getElementById("employee_phone").value;
     // check for department
     let isExist_department = JSON.parse(localStorage.getItem(`${assign_department}`))
-    if (isExist_department === null|| isExist_department === undefined)
+    
+    if (JSON.parse(localStorage.getItem(`${assign_department}`)) === null|| JSON.parse(localStorage.getItem(`${assign_department}`)) === undefined)
     {
       isExist_department = []
     }
-    console.log("here"+ isExist_department.name)
-    if(is_employee_department = isExist_department.find(x=> x.email == _employee_email))
+
+    console.log("here "+ isExist_department.name)
+    // console.log(typeof(isExist_department))
+    if(is_employee_department = isExist_department.find(x => x.email == _employee_email))
     {
       
       document.getElementById("error_").innerHTML = `${_employee_email} already exist `
@@ -153,19 +154,45 @@ function _add_employee(){
     name = document.getElementById("employee_name").value;
     // create local storage for new users
     let employee_task = JSON.parse(localStorage.getItem(`${email}_task`))
+    let allAssignedTasks = JSON.parse(localStorage.getItem(`${email}_AssignedTask`))
+    let allUnassignedTasks = JSON.parse(localStorage.getItem(`${email}_UnassignedTask`))
+    let allPendingTasks = JSON.parse(localStorage.getItem(`${email}_pendingTask`))
+    let allCompletedTasks = JSON.parse(localStorage.getItem(`${email}_completedTask`))
+
     if(employee_task == null || employee_task == undefined){
       employee_task = []
     }
-
-    let sample_task = {
-      "task_1": "buy bread"
+    if(allAssignedTasks == null || allAssignedTasks == undefined){
+      allAssignedTasks = []
     }
-    employee_task.push(sample_task)
+    if(allUnassignedTasks == null || allUnassignedTasks == undefined){
+      allUnassignedTasks = []
+    }
+    if(allPendingTasks == null || allPendingTasks == undefined){
+      allPendingTasks = []
+    }
+    if(employee_task == null || employee_task == undefined){
+      employee_task = []
+    }
+    if(allCompletedTasks == null || allCompletedTasks == undefined){
+      allCompletedTasks = []
+    }
+
+  
     localStorage.setItem(`${email}_task`, JSON.stringify(employee_task))
+    localStorage.setItem(`${email}_AssignedTask`, JSON.stringify(allAssignedTasks))
+    localStorage.setItem(`${email}_UnassignedTask`, JSON.stringify(allUnassignedTasks))
+    localStorage.setItem(`${email}_pendingTask`, JSON.stringify(allPendingTasks))
+    localStorage.setItem(`${email}_completedTask`, JSON.stringify(allCompletedTasks))
+    
+
     let newAdd = {
       "email" : email,
       "name" : name,
       "role" : role,
+      "address":"",
+      "state":"",
+      "country":"",
       "phone" : phone,
       "joining_date" : _employed_date(new Date()),
       "department": assign_department,
@@ -175,6 +202,10 @@ function _add_employee(){
       "salary":"120000",
       "currency":"Naira",
       "task": employee_task, // local storage for new user task
+      "assignedTask": allAssignedTasks, // local storage for Assigned tasks
+      "unassignedTasks": allUnassignedTasks,
+      "pendingTasks": allPendingTasks,
+      "completedTasks": allCompletedTasks
     }
 
 
@@ -199,8 +230,8 @@ let _search_employee = () =>
   _look_for = document.getElementById("_search_param").value;
   // do not use let, for or var returns reference error for _employee_localStorage
 
-  // 99999999999999 set option like drop down to collect which type of seacrch
-  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department == _look_for);
+  // 9999 set option like drop down to collect which type of seacrch
+  _employee_localStorage = _employee_localStorage.filter( _finder_ => _finder_.department.toUpperCase() == _look_for.toUpperCase());
   
   if(_employee_localStorage.length <= 1)
   {
@@ -241,14 +272,6 @@ function close_form(){
   document.getElementById("employ_form").style.display = "none";
 }
 
-// close form when user click outside the form
-// var form = document.getElementById("employ_form");
-// window.onclick = function(event) {
-//   if (event.target == form ) {// or use employ_form
-//     form.style.display = "none";
-//   }
-// }
-
 //  edit user
 
 function edit_form(x){
@@ -267,15 +290,15 @@ let _editRecord = (employee_id) =>
 {
 
   recordToUpdate = _employee_localStorage[employee_id]
+  console.log(recordToUpdate)
   document.getElementById("update_email").value = recordToUpdate.email 
   document.getElementById("update_name").value = recordToUpdate.name
   document.getElementById("update_type").value = recordToUpdate.user_type
   document.getElementById("update_role").value = recordToUpdate.role
   document.getElementById("update_phone").value = recordToUpdate.phone
+  document.getElementById("update_department").value = recordToUpdate.department
   restrict_join_date = recordToUpdate.joining_date
   document.getElementById("identifier").value = employee_id
-
-
 }
 let updatedRecord = () =>
 { // function to collate and store new updated details
@@ -288,6 +311,7 @@ let updatedRecord = () =>
     "role" : document.getElementById("update_role").value,
     "joining_date" : restrict_join_date, // you can't change the joining date
     "phone" : document.getElementById("update_phone").value,
+    "department" : document.getElementById("update_department").value
 
   }
   _employee_localStorage[employee_id] = updatedRecord
@@ -318,4 +342,24 @@ let deleteUser = (user_id) =>
       swal("User restored!");
     }
   });
+}
+
+
+
+
+let _viewRecord = (employee_id) =>
+{
+
+  document.getElementById("view-container").style.display= "block"
+  recordToUpdate = _employee_localStorage[employee_id]
+  document.getElementById("view_name").innerHTML = recordToUpdate.name 
+  document.getElementById("department").innerHTML = recordToUpdate.department 
+  document.getElementById("role").innerHTML = recordToUpdate.role
+  document.getElementById("salary").innerHTML = recordToUpdate.salary
+  document.getElementById("email").innerHTML = recordToUpdate.email
+  document.getElementById("tel").innerHTML = recordToUpdate.phone
+  restrict_join_date = recordToUpdate.joining_date
+  document.getElementById("identifier").value = employee_id
+
+
 }

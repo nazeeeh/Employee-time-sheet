@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/logo-1.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/assets/css/dashboard-sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/admin_timer_report.css" />
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar-container">
+            <div class="sidebar-wrapper">
+                <div class="company">
+                    <!-- <i id="logo" class=""></i> -->
+                    <i class="fas fa-bars"></i>
+                    <h4 class="companyDisplay" id="companyDisplay">TIIDELab</h4>
+                </div>
+
+                <div class="sidebar-links">
+                    <!-- Link Start -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-chart-pie"></i>
+                        <a href="admin-dashboard.html">Dashboard</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-user-friends"></i>
+                        <a href="addUser.html">Add User</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <a href="#">Calender</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-plus"></i>
+                        <a href="e-schedule.html">e-Schedule</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <a href="report.html">Report</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-stream"></i>
+                        <a href="billing.html">Billing Rate</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link" id="active_page">
+                        <i class="fas fa-bell"></i>
+                        <a href="report.html">Requests</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sliders-h"></i>
+                        <a href="/contents/settings.html">Settings</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="/index.html" onclick="logOut()">Logout</a>
+                    </div>
+                    <!-- End of Side-bar-Link -->
+                </div>
+
+            </div>
+        </div>    
+        <!-- this is where the dashboard components goes -->
+        <div class="dashboard-body">
+         <div class="heading">
+             <div class="search">
+                 <input type="search" name="" id="" placeholder="Search Employee by name..."><button>Search</button>
+             </div>
+         <h1>Employee Timer Report.<i class="fas fa-stopwatch"></i></h1>
+         </div>
+
+         <div class="timer-function-table-wrapper">
+        <div class="timer-heading">
+            <div class="member"><span>Member</span></div>
+            <div class="date"><span>Mon,<br>Oct 19,2020</span></div>
+            <div class="date"><span>Tue,<br>Oct 20,2020</span></div>
+            <div class="date"><span>Wed,<br>Oct 21,2020</span></div>
+            <div class="date"><span>Thur,<br>Oct 22,2020</span></div>
+            <div class="date"><span>Fri,<br>Oct 23,2020</span></div>
+            <div class="date-w"><span>Weekly Total</span></div>
+        </div>
+
+          <div class="timer-function-table">
+              <div class="employee-info">
+                  <div class="img">
+                      <img src="/assets/img/avatar.png" alt="">
+                  </div>
+                  <div class="name">
+                      <div class="emp-name"><h4>Ariyibi Baseet</h4><hr><br><span>Frontend developer</span></div>
+                  </div>
+              </div>
+              <div class="work-hour">
+                  <div class="time">
+                      00:00:00
+                  </div>
+              </div>
+              <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+              </div>
+              <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+              </div>
+              <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+              </div>
+              <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+              </div>
+              <div class="weeklytotal">
+                <div class="time">
+                    00:00:00
+                </div>
+              </div>
+          </div>
+          <div class="timer-function-table">
+            <div class="employee-info">
+                <div class="img">
+                    <img src="/assets/img/logo-1.png" alt="">
+                </div>
+                <div class="name">
+                    <div class="emp-name"><h4>Ayodele Samuel</h4><hr><br><span>Frontend developer</span></div>
+                </div>
+            </div>
+            <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="weeklytotal">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+        </div>
+        <div class="timer-function-table">
+            <div class="employee-info">
+                <div class="img">
+                    <img src="/assets/img/Tolu-team-member.jpg" alt="">
+                </div>
+                <div class="name">
+                    <div class="emp-name"><h4>Ayoola Toluwanimi</h4><hr><br><span>Backend developer</span></div>
+                </div>
+            </div>
+            <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="weeklytotal">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+        </div>
+        <div class="timer-function-table">
+            <div class="employee-info">
+                <div class="img">
+                    <img src="/assets/img/flat_seo-46-512.png" alt="">
+                </div>
+                <div class="name">
+                    <div class="emp-name"><h4>Aisha Opaluwa </h4><hr><br><span>Frontend developer</span></div>
+                </div>
+            </div>
+            <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="weeklytotal">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+        </div>
+        <div class="timer-function-table">
+            <div class="employee-info">
+                <div class="img">
+                    <img src="/assets/img/register/bussiness_avatar.png" alt="">
+                </div>
+                <div class="name">
+                    <div class="emp-name"><h4>Adeyemo Peter</h4><hr><br><span>Backend developer</span></div>
+                </div>
+            </div>
+            <div class="work-hour">
+                <div class="time">
+                    00:00:00
+                </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="work-hour">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+            <div class="weeklytotal">
+              <div class="time">
+                  00:00:00
+              </div>
+            </div>
+        </div>
+         </div>
+        </div>
+</body>
+</html>

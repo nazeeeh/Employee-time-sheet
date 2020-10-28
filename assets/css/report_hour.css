@@ -1,0 +1,70 @@
+body{
+    margin:0;
+    padding:0;
+}
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+h1, h3, td, th {
+    font-family:Roboto;
+}
+/* heading styling */
+div.dashboard-body{
+    padding:20px;
+}
+div.dashboard-body .heading{
+    padding-left:30px;
+    border:hidden;
+    margin-top:70px;
+}
+div.dashboard-body .heading h1{
+   color:rgba(0,0,0,0.6);
+}
+div.dashboard-body .heading h3{
+    color:rgba(0,0,0,0.6);
+    font-style:italic;
+}
+
+/* styling for the timer function table wrapper */
+div.timer-function-table-wrapper{
+    border:2px solid white;
+    margin-left: 5px;
+    margin-top:60px;
+    width:100%;
+    background:rgb(33,50,96);
+    border-top-right-radius:17px;
+    border-top-left-radius:17px;
+}
+div.timer-function-table-wrapper table, tr, th, td{
+    border:1px solid rgb(33,50,96);
+    box-shadow:2px 2px 2px white;
+    border-collapse:collapse;
+}
+div.timer-function-table-wrapper table td{
+    font-size:18px;
+    padding:5px;
+    text-align:center;
+}
+/* div.timer-function-table-wrapper table th{
+    border:hidden;
+    border-right: 1px solid black;
+}
+div.timer-function-table-wrapper table td{
+    border:;
+} */
+div.timer-function-table-wrapper table.timer-function-table{
+    border:1px solid rgb(33,50,96);
+    width:inherit;
+    margin-top:10px;
+}
+div.timer-function-table-wrapper table.timer-function-table tr th{
+    letter-spacing:2px;
+}
+div.timer-function-table-wrapper table.timer-function-table tr th span{
+    font-size:12px;
+    letter-spacing:normal;
+    color:rgba(255,255,255,0.8);
+}
