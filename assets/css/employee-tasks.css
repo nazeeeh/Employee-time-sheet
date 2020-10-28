@@ -19,7 +19,7 @@
  }
  
 
-#view-tasks {
+#view-tasks, #accepted-tasks {
     background: #fff;
     width: 95%;
     padding: 5px 2px;
@@ -31,13 +31,14 @@
     justify-content: center;
     align-items: center;
 }
-#view-tasks table {
+#view-tasks table,  #accepted-tasks table {
     width: 100%;
     border-collapse: collapse;
     padding: 2rem;
     color: #fff;
 }
-#view-tasks button, #view-tasks a{
+#view-tasks button, #view-tasks a,
+#accepted-tasks button, #accepted-tasks a{
     width: 5rem;
     padding: .5rem;
     margin: 1rem 0 3rem;
@@ -49,7 +50,8 @@
     border-radius: 5px;
     border: none;
 }
-#view-tasks a:hover {
+#view-tasks a:hover,
+#accepted-tasks a:hover {
     background: #fff;
     color: #213260;
 }
