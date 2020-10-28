@@ -1,0 +1,43 @@
+/* css Reset */
+body{
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.internal-con #billing-reports-con{
+    width: 95%;
+    margin: 70px auto;
+}
+
+.internal-con #billing-reports-con table{
+    width: 100%;
+}
+
+.internal-con #billing-reports-con tr{
+    background-color: rgb(219, 236, 241);
+    width: 100%;
+    padding: 17px 10px;
+    display: flex;
+    border-radius: 5px;
+    margin: 3px 0;
+}
+
+.internal-con #billing-reports-con thead tr{
+    justify-content: space-around;
+}
+
+.internal-con #billing-reports-con tbody tr{
+    justify-content: space-around;
+}
+
+.internal-con #billing-reports-con tr td{
+    text-align: center;
+    /* padding: 3rem; */
+}
