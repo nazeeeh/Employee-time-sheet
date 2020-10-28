@@ -79,8 +79,7 @@ input[type=tel]{
 
 #errorMessage{
   font-size: 19px;
-  color: rgb(197, 40, 40);
-  /* background: #ccc; */
+  color: #131f41;
   margin: 2px;
 }
 

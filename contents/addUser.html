@@ -113,7 +113,8 @@
   </div>
 
  <!-- employ form -->
-  <div id="employ_form">
+ <div id="employ_form">
+  <!-- 
     <div id="info">
       <h3>Employee Type Code</h3>
       <ul>
@@ -122,11 +123,17 @@
         <li>Employee - 554</li>
         <h4>Pace Bot: <span id="error_">Hello</span></h4>
       </ul>
-    </div>
+    </div> -->
     <div id="form_section">
       <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
+      <h4 class="bot">Pace Bot: <span id="error_">Hello</span></h4>
       <section class="add-form">
         <section>
+        <!-- userTypeOption = document.getElementById("employee_type");
+        new_user_type = userTypeOption.options[userTypeOption.selectedIndex].value; -->
+        <!-- var companyAdmin = JSON.parse(localStorage.getItem("current_AdminUser"))
+        var companyName = companyAdmin[0].name
+        localStorage.setItem(`${companyName}_department`, JSON.stringify(isExist_department)) -->
           <label for="">Full Name</label>
           <input type="text" id="employee_name">
           <label for="">Email</label>
@@ -136,11 +143,28 @@
         </section>
         <section>
           <label for="">Employee Type</label>
-          <input type="text" id="employee_type">
+          <select name="" id="employee_type">
+            <option value="">--Select--</option>
+            <option value="443">Co-Admin</option>
+            <option value="332">Internal Admin</option>
+            <option value="554">Employee</option>
+          </select>
           <label for="">Role</label>
-          <input type="text" id="employee_role">
+          <!-- <input type="text" id="employee_role"> -->
+          <select name="" id="employee_role">
+            <option value="">--Select--</option>
+            <option value="Backend">Backend</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Manager">Manager</option>
+          </select>
           <label for="">Department</label>
-          <input type="text" id="employee_department">
+          <!-- <input type="text" id="employee_department"> -->
+          <select name="" id="employee_department">
+            <option value="">--Select--</option>
+            <option value="Product Management">Product Management</option>
+            <option value="Web design">Web design</option>
+            <option value="web development">Web development</option>
+          </select>
         </section>
       </section>
       <button id="add_employee_btn" class="to-btn btn-deep add-btn" onclick="_add_employee()">Employ</button>
