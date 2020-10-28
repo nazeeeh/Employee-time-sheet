@@ -180,6 +180,7 @@ let authUser = () =>
       current_EmployeeDb = [] // create new array
       
     }
+    alert(current_EmployeeDb)
     current_EmployeeDb.push(logMe_in)  // store the loggedIn use into an array
     localStorage.setItem("current_EmployeeUser", JSON.stringify(current_EmployeeDb))// store the current user into temp local storage
     session(logMe_in)
