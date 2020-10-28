@@ -74,8 +74,19 @@ let getUserDetails = () =>
             companyLogo = "no_profile_img.png"
         }
       
+        var companyDepartment = JSON.parse(localStorage.getItem(`${companyName}_department`));
     
-            
+        if( companyDepartment === null || companyDepartment === undefined) 
+        {// if company department local storage does not exist create one 
+    
+          companyDepartment = []
+    
+        }
+        
+        companyDefaultDepartment = ["Web design", "Web development", "Product Management"]
+        companyDepartment.push(companyDefaultDepartment)
+        localStorage.setItem(`${companyName}_department`, JSON.stringify(companyDefaultDepartment))
+
         // create local storage for new company employee
         
         let _employee_Db = JSON.parse(localStorage.getItem(`${companyName}_employees`));
@@ -129,7 +140,8 @@ let getUserDetails = () =>
           "url" : companyUrl,
           "logo" : companyLogo,
           "employeeDb" : localStorage.getItem(`${companyName}_employees`), // creates local storage with company name
-          "user_type" : "admin" // admin by default
+          "user_type" : "admin", // admin by default
+          "department" : companyDepartment
         
         }
         

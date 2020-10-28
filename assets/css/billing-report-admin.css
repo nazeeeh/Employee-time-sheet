@@ -1,0 +1,82 @@
+/* css Reset */
+body{
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.internal-con #co-admin{
+    width: 20%;
+    margin: 30px auto 5px;
+    text-align: center;
+}
+
+.internal-con #billing-reports-con-admin{
+    width: 95%;
+    background-color: #f2f2f2;
+    margin: 30px auto;
+}
+
+.internal-con #billing-reports-con-admin table{
+    width: 100%;
+}
+
+.internal-con #billing-reports-con-admin tr{
+    background-color: #f2f2f2;
+    width: 100%;
+    padding: 17px 10px;
+    display: flex;
+    border-radius: 5px;
+    margin: 3px 0;
+}
+
+.internal-con #billing-reports-con-admin thead tr{
+    justify-content: space-around;
+}
+
+.internal-con #billing-reports-con-admin tbody tr{
+    justify-content: space-around;
+}
+
+.internal-con #billing-reports-con-admin tr td{
+    text-align: center;
+    /* padding: 3rem; */
+}
+
+.internal-con #department-section{
+    width: 30%;
+    margin: 20px 35px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.internal-con #department-section #showDepartment{
+    background-color: darkgray;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.internal-con #department-section #departments{
+    width: 100%;
+}
+
+.internal-con #department-section .each-department{
+    width: 100%;
+    border: #f2f2f2 2px solid;
+    text-align: center;
+    display: none;
+}
+
+.internal-con #department-section .each-department:hover{
+    background-color: #f2f2f2;
+
+}

@@ -1,3 +1,12 @@
+// sorry, i was here(Tolu)
+var date = new Date()
+var year = date.getFullYear()
+var month = date.getMonth()+1
+var day = date.getDate()
+var hour = date.getHours()
+var minute = date.getMinutes()
+var second = date.getSeconds()
+
 let seconds = 0, minutes = 0, hours = 0
 
     
@@ -55,7 +64,8 @@ var usedHour;
 function startTime(){
     let startTime = document.getElementById("start-time");
     let stopTime = document.getElementById("stop-time");
-
+    // sorry, i was here(Tolu)
+    loggedIn = `${hour}:${minute}:${second}`
     /* This sets the values to zero first;
     then it starts to count the time used */
     document.getElementById("seconds").textContent = "00"
@@ -119,11 +129,23 @@ function timeValue() {
 
     user_role = document.getElementById("role_display").innerHTML.toLowerCase();
     
+    name = ""
 
+    if(user_role == "admin"){
+        name = isLogged_In_Admin[0].name
+    }else if (user_role == "internal-admin"){
+        name =isLogged_In_InternalUser[0].name
+    }else{
+        name = isLogged_In_EmployeeUser[0].name
+    }
+    // sorry, i was here(Tolu)
     var usedTime = {
+        "name" : name,
+        "loginTime": loggedIn,
         "hour" : usedHour,
         "minute" : usedMin,
-        "second" : usedSec
+        "second" : usedSec,
+        "date" : `${day}-${month}-${year}`
     }
 
 switch(user_role) {

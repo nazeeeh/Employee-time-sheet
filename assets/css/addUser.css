@@ -235,6 +235,13 @@ table#employee_list{
 
 /* modal form */
 
+.bot{
+  color:#213260;
+}
+#error_{
+  color: #213260;
+}
+
 #close{
   color: #f4f4f4;
   float: right;
@@ -259,6 +266,7 @@ table#employee_list{
 }
 
 #info{
+  display: none;
   width: 30%;
   color: #333;
   background: #f4f4f4;
@@ -298,7 +306,7 @@ table#employee_list{
   flex-direction: column;
   gap: 15px;
   text-align: center;
-  width: 50%;
+  width: 80%;
   background: #ccc;
   border-radius: 6px;
 }
@@ -325,14 +333,19 @@ table#employee_list{
   color: #424b75;
   font-size: large;
 }
-#form_section input{
+#form_section input, select{
   border: 1px solid #ccc;
   background: #f4f4f4;
   font-size: 17px;
-  padding: 12px 20px;
+  padding: 12px 50px;
   border-radius: 6px;
   outline: none;
   margin: 0px 12px;
+  width: 70%;
+}
+
+select{
+  padding: 12px 78px;
 }
 
 #add_employee_btn{
@@ -393,7 +406,6 @@ table#employee_list{
   color: #333;
   background: #f4f4f4;
   margin: 0px;
-  /* margin-bottom: 400px; */
   border-radius: 6px;
 }
 #edit_info h3{
@@ -438,7 +450,6 @@ table#employee_list{
   display: flex;
   gap: 23px;
   justify-content: center;
-  text-align: ;
 }
 
 #edit_section #edit-form section{
@@ -487,4 +498,48 @@ table#employee_list{
   padding-bottom: 12px;
   font-size: 1.2rem;
 }
+
+
+@media (max-width: 1000px){
+  .add-form{
+    flex-direction: column;
+    width: auto;
+    overflow: auto;
+  }
+  #form_section{
+    height: auto; 
+    width: auto;
+    margin-top: 250px;
+    margin-bottom: 50px;
+  }
+  .add-form section{
+    width: auto;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 900px){
+
+  body{
+    /* display: none; */
+  }
+  
+  #form_section{
+    height: auto; 
+    width: auto;
+  }
+  .add-form section{
+    width: auto;
+    height: 100%;
+  }
+
+  #edit-form{
+
+  }
+}
+
+
+
+
 
