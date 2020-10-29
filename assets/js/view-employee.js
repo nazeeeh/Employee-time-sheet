@@ -31,7 +31,7 @@ let _render_record = () =>
     employee_con += `
     <tr id="${i}" draggable="true">
       <td>${serialNumber+=1}</td>
-      <td> <i class="fas fa-dot-circle status red-status"></i>${ db[i].name}</td>
+      <td onclick="_viewRecord(${i})"> <i class="fas fa-dot-circle status red-status"></i>${ db[i].name}</td>
       <td>${ db[i].department}</td>
       <td>${ db[i].phone}</td>
       <td>${ db[i].user_type}</td>
@@ -48,3 +48,23 @@ let _render_record = () =>
 
 
 _render_record()
+
+
+
+
+let _viewRecord = (employee_id) =>
+{
+
+  document.getElementById("view-container").style.display= "block"
+  recordToUpdate = db[employee_id]
+  document.getElementById("view_name").innerHTML = recordToUpdate.name 
+  document.getElementById("department").innerHTML = recordToUpdate.department 
+  document.getElementById("role").innerHTML = recordToUpdate.role
+  document.getElementById("salary").innerHTML = recordToUpdate.salary
+  document.getElementById("email").innerHTML = recordToUpdate.email
+  document.getElementById("tel").innerHTML = recordToUpdate.phone
+  restrict_join_date = recordToUpdate.joining_date
+  document.getElementById("identifier").value = employee_id
+
+
+}
