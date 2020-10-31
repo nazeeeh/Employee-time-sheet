@@ -122,6 +122,8 @@ function stopTime(){
     timeValue();
 }
 
+
+
 function timeValue() {
     let isLogged_In_Admin = JSON.parse(localStorage.getItem("current_AdminUser"));
     let isLogged_In_InternalUser = JSON.parse(localStorage.getItem("current_InternalUser"));
@@ -138,6 +140,68 @@ function timeValue() {
     }else{
         name = isLogged_In_EmployeeUser[0].name
     }
+
+    months = ""
+    switch (month){
+        case month = 01:
+            months = "January"
+        break
+
+        case month = 02:
+            months = "Febuary"
+        break
+
+        case month = 03:
+            months = "March"
+        break
+
+        case month = 04:
+            months = "April"
+        break
+
+        case month = 05:
+            months = "May"
+        break
+
+        case month = 06:
+            months = "June"
+        break
+
+        case month = 07:
+            months = "July"
+        break
+
+        case month = 08:
+            months = "August"
+        break
+
+        case month = 09:
+            months = "September"
+        break
+
+        case month = 10:
+            months = "October"
+        break
+
+        case month = 11:
+            months = "November"
+        break
+
+        case month = 12:
+            months = "December"
+        break        
+    }
+
+    if((usedHour == 8 || usedHour > 8) & usedMin > 1){
+        let overTime = (8 - usedHour)
+    }else{
+        overTime = "NILL"
+    }
+
+    let dailyWage = 50 * 8
+
+    let overTimeWage = 10 * (8 - usedHour)
+
     // sorry, i was here(Tolu)
     var usedTime = {
         "name" : name,
@@ -145,8 +209,15 @@ function timeValue() {
         "hour" : usedHour,
         "minute" : usedMin,
         "second" : usedSec,
-        "date" : `${day}-${month}-${year}`
+        "date" : `${day}-${month}-${year}`,
+        "month" : months,
+        "overTime" : overTime,
+        "dailyWage" : dailyWage,
+        "overTimeWage" : overTimeWage
     }
+
+    alert(JSON.stringify(usedTime))
+
 
 switch(user_role) {
     case user_role = "admin":

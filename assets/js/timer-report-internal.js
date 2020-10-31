@@ -3,6 +3,28 @@ let department =  currentUser[0].department //Gets department name and saves it 
 let employees = JSON.parse(localStorage.getItem(department)); //Get all employees from local storage and store them
 let employeeName = [] //Declare an empty variable to store all names of all employee
 
+function showMonths(){
+    let theMonth = document.getElementsByClassName('each-month')
+
+    for(i = 0; i < theMonth.length; i++){
+        
+        if(document.getElementsByClassName('each-month')[i].style.display == "none"){
+            document.getElementsByClassName('each-month')[i].style.display = "block"
+        }
+        else{
+            document.getElementsByClassName('each-month')[i].style.display = "none"
+        }
+    }
+}
+
+function chooseMonth(id){
+    monthBox = document.getElementById('showMonth')
+    words = document.getElementsByClassName('each-month')[id].textContent
+    monthBox.innerHTML = words
+    selectedMonth = document.getElementsByClassName('each-month')[id].textContent
+    showMonths()
+}
+
 // Loop through each object in employees and push the value of the name to employeeName
 employees.forEach(element => {
     employeeName.push(element.name)
@@ -36,22 +58,15 @@ timingDatabase.forEach((element) => {
     }
 })
 
-populateTimerReport()
+
+function filterAndDisplay(){
+    populateTimerReport()
+}
+
 
 function populateTimerReport(){
     // Head of the timeSheet table
-    let add = ` 
-    <table>
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Login Time</th>
-            <th>Hours spent</th>
-        </tr>
-    </thead>
-    <tbody>
-    `
+    let add = ""
     // loop through every time entry
     timeSheet.forEach((element) => {
         // if entry says "err", don't display anything on the DOM
@@ -59,19 +74,24 @@ function populateTimerReport(){
             add += ""
         }else{
         // if not, add the table body to the DOM
-        add +=`<tr>
+            if((element.month == "October" && selectedMonth == "October") || (element.month == "January" && selectedMonth == "January" )||( element.month == "Febuary" && selectedMonth == "Febuary") || (element.month == "March" && selectedMonth == "March" )|| element.month == "April" && selectedMonth == "April" || element.month == "May" && selectedMonth == "May" || element.month == "June" && selectedMonth == "June" || element.month == "July" && selectedMonth == "July" || element.month == "August" && selectedMonth == "August" || (element.month == "September" && selectedMonth == "September") || (element.month == "November" && selectedMonth == "November") || (element.month == "December" && selectedMonth == "December")){
+                // if not, add the table body to the DOM
+                add +=`<tr>
                 <td>${element.date}</td>
                 <td><strong>${element.name}</strong></td>
                 <td>${element.loginTime}</td>
                 <td>${element.hour}:${element.minute}:${element.second}</td>
-            `
+                <td>${element.overTime}</td>
+                <td>${element.dailyWage}</td>
+                <td>${element.overTimeWage}</td>
+                </tr>
+                `
+                document.getElementById("timeSheetCon").innerHTML = add
+            }
+            // else{
+            //     alert(`Sorry! No Time Sheet available for ${selectedMonth}!`)
+            // }
         }
     })
-        //add the closing tags 
-        add +=`
-        </tr> 
-        </tbody>
-        </table>
-        ` 
-    document.getElementById("billing-reports-con").innerHTML = add
+    // document.getElementById("timeSheetCon").innerHTML = add
 }
