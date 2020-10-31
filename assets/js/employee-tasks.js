@@ -11,11 +11,23 @@ let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_Assi
 let pending = JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`)); //Current user's pending tasks
 let completed = JSON.parse(localStorage.getItem(`${currentUserEmail}_completedTask`)); //current user's completed task
 let companyName =  check[0].name; //Find the name of all the companies of Pace
-let employees = JSON.parse(localStorage.getItem(`${companyName}_employees`)); //Get all the employees of user company
+let department =  currentUser[0].department
+let employees = JSON.parse(localStorage.getItem(department)); //Get all the employees of user company
 let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`)); //Current User Tasks
 
-// SETTING ALL LIST ITEMS TO LOCAL STORAGE
 
+// function goToReport(id){
+//     let name = employeeTask[id].name
+//     promise = new Promise(function(resolve, reject){
+//         location.assign("../contents/report.html");
+//     })
+
+//     promise.then(
+//         result => document.getElementById("title").value = name
+//     )
+// }
+
+// SETTING ALL LIST ITEMS TO LOCAL STORAGE
 if(JSON.parse(localStorage.getItem("tasks")) == null || undefined){
     tasks = []
 }
@@ -71,8 +83,7 @@ function viewTasks() {
         <tbody>
     `
     for(let i = 0; i <employeeTask.length; i++) {
-        if(employeeTask.document != ""){
-alert(JSON.stringify(employeeTask))
+        if(employeeTask[i].document != ""){
             view += `
             <tr>
             <td>${i + 1}</td>
@@ -88,7 +99,7 @@ alert(JSON.stringify(employeeTask))
             <td>${employeeTask[i].name}</td>
             <td>${employeeTask[i].due}</td>
             <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
-            <td><a href="#" onclick="">Requests</a></td>
+            <td><a href="#" onclick="goToReport(${i})">Requests</a></td>
         ` 
         }
       }
@@ -102,90 +113,71 @@ alert(JSON.stringify(employeeTask))
 
     // viewAcceptedTasks()
 }
+
+alert(JSON.stringify(employeeTask))
  
 function acceptTask(id){ //what to do when the 'accepted button' is clicked
+    eachInternalsTask(id, "Accepted", employeeTask)
+
     pending.push(employeeTask[id]) //push the task to the pending list
     employeeTask.splice(id, 1) //delete the task from it's current list
-    // findTask(id) //this should find the internal user that accepted the task and let them the know the task has been accepted
-    // Set local storage of both lists
+    viewTasks()
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
+    
     viewAcceptedTasks() //Display all current user's task on User dashboard
 
-    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     localStorage.setItem(`${currentUserEmail}_pendingTask`, JSON.stringify(pending))
-    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
-
 }
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-function findTask(id){
-    eachEmployeeTask = eachEmployeesTask()
-    theEmail = getEmails()
-    for(var i = 0; i < eachEmployeeTask.length; i++){
-        // taskIndex = eachEmployeeTask[i].findIndex(x => (x.name == employeeTask[id].name))
-        // alert(taskIndex)
-        alert(JSON.stringify(eachEmployeeTask[i]))
-            alert(JSON.stringify(employeeTask[id].name))
-        if(eachEmployeeTask[i].includes(employeeTask[id]).name){
-            eachEmployeeTask[i].name = eachEmployeeTask[i].name
-            eachEmployeeTask[i].employee = eachEmployeeTask[i].employee
-            eachEmployeeTask[i].due = eachEmployeeTask[i].due
-            eachEmployeeTask[i].status = "Accepted"
-            alert(JSON.stringify(eachEmployeeTask[i].status))
-            localStorage.setItem(`${theEmail[taskIndex + 1]}_task`, JSON.stringify(eachEmployeeTask))
-            alert(JSON.stringify(eachEmployeeTask))
-        }else{
-            eachEmployeeTask[i].status = "Accepted"
-            localStorage.setItem(`${theEmail[i + 1]}_task`, JSON.stringify(eachEmployeeTask))
-            
 
-            alert("no!")
-        }
-    }        
+
+
+function findInternal(){
+    internal = []
+    for(var i = 0; i < employees.length; i++){
+        if(user_role = "internal-admin")
+        internal.push(employees[i])
+    }
+    return internal
 }
 
 function getEmails(){
-    employeeEmails = []
-    for(var i = 0; i < employees.length; i++){
-        employeeEmails.push(employees[i].email)
+    internal = findInternal()
+    theEmail = []
+    for(var i = 0; i < internal.length; i++){
+        theEmail.push(internal[i].email)
     }
-    return employeeEmails
+    return theEmail
 }
 
-function GetAllTasks(){
+function eachInternalsTask(id, changeTo, whatTask){
     theEmail = getEmails()
-    allTasks = []
-    for(var i = 0; i < theEmail.length; i++){
-        allTasks.push(theEmail[i] + "_task")
+    internalTask = []
+    for(var i = 0; i < theEmail.length - 1; i++){
+        internalTask = (JSON.parse(localStorage.getItem(`${theEmail[i]}_AssignedTask`)))
+        internalTask.forEach(element => {
+            if(whatTask[id].name == element.name){
+                element.status = changeTo
+                localStorage.setItem(`${theEmail[i]}_AssignedTask`, JSON.stringify(internalTask))
+            }
+        });
     }
-    return allTasks
+    return internalTask
 }
 
-function eachEmployeesTask(){
-    allTasks = GetAllTasks()
-    eachEmployeeTask = []
-    for(var i = 0; i < allTasks.length - 1; i++){
-        eachEmployeeTask.push(JSON.parse(localStorage.getItem(`${allTasks[i + 1]}`)))
-    }
-    alert(eachEmployeeTask.length)
-    alert(JSON.stringify(eachEmployeeTask))
-    return eachEmployeeTask
-}
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
-//this should find the internal user that accepted the task and let them the know the task has been accepted but it's not working, I failed but ill come back to it
 
 function completeTask(id){ //What to do do when the 'completed' button is clicked
+    eachInternalsTask(id, "Completed", pending) //DIsplay the now current pending list
+
     completedTasks.push(pending[id]) //push the task from pending list to completed list
     pending.splice(id, 1) //Delete the task from pending list so it doesn't display anymore
-    viewAcceptedTasks() //DIsplay the now current pending list
-    // Set local storage
     localStorage.setItem(`${currentUserEmail}_pendingTask`, JSON.stringify(pending))
-    localStorage.setItem(`${currentUserEmail}_completedTask`,  JSON.stringify(completed))
 
+    // Set local storage
+    localStorage.setItem(`${currentUserEmail}_completedTask`,  JSON.stringify(completed))
+    viewAcceptedTasks()
 }
+
+
 
 // function to display accepted tasks
 function viewAcceptedTasks() {
@@ -216,9 +208,6 @@ function viewAcceptedTasks() {
     `
     document.getElementById("accepted-tasks").innerHTML = views;
 }
-
-
-
 
 
 

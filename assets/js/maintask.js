@@ -85,7 +85,7 @@ function displayMain(task){
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
         <p> <strong> Task name : </strong> ${task[i].name} <span>Assigned to : ${task[i].employee}</span> </p> 
-        <div id="dateAndButtons"><div id="date"><span class="date">Start Date : ${task[i].startDate}</span><span class="date">Due Date: ${task[i].due}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
+        <div id="dateAndButtons"><div id="date"><span class="date">Start Date : ${task[i].startDate}</span><span class="date">Due Date: ${task[i].due}</span> <span class="status">Status : ${task[i].status}</span></div> <div id="buttons"><button onclick="deletesAssigned(${i})">Delete</button> <button onclick="showEditButton(${i})">Edit</button></div> </div>
         <div id="editMainTask${i}" class="edit-Main">
         <input type="text" id="edit-name-main${i}" placeholder="Edit Task"  required>
         <section>
@@ -141,7 +141,6 @@ function appendNewTaskMain(){
             "message" : message,
             document : docs
         }
-        alert(typeof(dueDate))
 
         tasks.push(newTask)
         Names = getEmployeeNames()
