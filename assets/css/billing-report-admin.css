@@ -35,29 +35,39 @@ body{
     margin: 3px 0;
 }
 
-.internal-con #billing-reports-con-admin thead tr{
-    justify-content: space-around;
-}
-
-.internal-con #billing-reports-con-admin tbody tr{
-    justify-content: space-around;
+.internal-con #billing-reports-con-admin thead tr th{
+    width: 14%;
 }
 
 .internal-con #billing-reports-con-admin tr td{
     text-align: center;
-    /* padding: 3rem; */
+    width: 14%;
 }
 
-.internal-con #department-section{
+.internal-con #options{
+    display: flex;
+}
+
+.internal-con #department-section, .internal-con #month-section, #time-sheet-button{
     width: 30%;
-    margin: 20px 35px 0;
+    margin: 40px 35px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.internal-con #department-section #showDepartment{
+#time-sheet-button{
+    padding: 10px 7px;
+    width: auto;
+    margin-top: 53px;
+    background-color: lightseagreen;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.internal-con #department-section #showDepartment, .internal-con #month-section #showMonth{
     background-color: darkgray;
     width: 100%;
     text-align: center;
@@ -65,18 +75,18 @@ body{
     font-size: 20px;
 }
 
-.internal-con #department-section #departments{
+.internal-con #department-section #departments, .internal-con #month-section #months{
     width: 100%;
 }
 
-.internal-con #department-section .each-department{
+.internal-con #department-section .each-department, .internal-con #month-section #months .each-month{
     width: 100%;
     border: #f2f2f2 2px solid;
     text-align: center;
     display: none;
 }
 
-.internal-con #department-section .each-department:hover{
+.internal-con #department-section .each-department:hover, .internal-con #month-section #months .each-month:hover{
     background-color: #f2f2f2;
 
 }

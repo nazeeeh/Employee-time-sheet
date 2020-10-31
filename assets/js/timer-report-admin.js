@@ -1,5 +1,18 @@
 department = ["texting", "production", "stuff", "stuff", "stuff"]
 
+function showMonths(){
+    let theMonth = document.getElementsByClassName('each-month')
+
+    for(i = 0; i < theMonth.length; i++){
+        
+        if(document.getElementsByClassName('each-month')[i].style.display == "block"){
+            document.getElementsByClassName('each-month')[i].style.display = "none"
+        }
+        else{
+            document.getElementsByClassName('each-month')[i].style.display = "block"
+        }
+    }
+}
 function showDepartments(){
 let departments = document.getElementsByClassName('each-department')
 
@@ -23,6 +36,8 @@ function showDepartmentTimeSheet(id){
     getEmployeeTimeSheetDataBase(employeesInDepartment)
 }
 
+
+let timeSheet = [] //Declare an empty variable to store timing details of employees that have been online and hac=ve stopped their time
 function getEmployeeTimeSheetDataBase(partDepartment){
     let employeeName = [] //Declare an empty variable to store all names of all employee
 
@@ -38,9 +53,6 @@ function getEmployeeTimeSheetDataBase(partDepartment){
         timingDatabase.push(JSON.parse(localStorage.getItem(`${element}_time`)))
     })
 
-    
-    timeSheet = [] //Declare an empty variable to store timing details of employees that have been online and hac=ve stopped their time
-
     // Loop through each item in timingDatabase and check if an entry is null
     timingDatabase.forEach((element) => {
         try{
@@ -52,7 +64,17 @@ function getEmployeeTimeSheetDataBase(partDepartment){
             timeSheet.push("err")
         }
     })
-    alert(timeSheet)
+}
+
+function chooseMonth(id){
+    monthBox = document.getElementById('showMonth')
+    words = document.getElementsByClassName('each-month')[id].textContent
+    monthBox.innerHTML = words
+    selectedMonth = document.getElementsByClassName('each-month')[id].textContent
+    showMonths()
+}
+
+function filterAndDisplay(){
     displayTimeSheet(timeSheet)
 }
 
@@ -61,23 +83,27 @@ function displayTimeSheet(sheet){
     // loop through every time entry
     sheet.forEach((element) => {
     // if entry says "err", don't display anything on the DOM
-    if(element == "err"){
-        add += ""
-    }else{
-    // if not, add the table body to the DOM
-    add +=`<tr>
-            <td>${element.date}</td>
-            <td><strong>${element.name}</strong></td>
-            <td>${element.loginTime}</td>
-            <td>${element.hour}:${element.minute}:${element.second}</td>
-        </tr>
-        `
-    }
+        if(element == "err"){
+            add += ""
+        }else{
+            if((element.month == "October" && selectedMonth == "October") || (element.month == "January" && selectedMonth == "January" )||( element.month == "Febuary" && selectedMonth == "Febuary") || (element.month == "March" && selectedMonth == "March" )|| element.month == "April" && selectedMonth == "April" || element.month == "May" && selectedMonth == "May" || element.month == "June" && selectedMonth == "June" || element.month == "July" && selectedMonth == "July" || element.month == "August" && selectedMonth == "August" || (element.month == "September" && selectedMonth == "September") || (element.month == "November" && selectedMonth == "November") || (element.month == "December" && selectedMonth == "December")){
+                // if not, add the table body to the DOM
+                add +=`<tr>
+                <td>${element.date}</td>
+                <td><strong>${element.name}</strong></td>
+                <td>${element.loginTime}</td>
+                <td>${element.hour}:${element.minute}:${element.second}</td>
+                <td>${element.overTime}</td>
+                <td>${element.dailyWage}</td>
+                <td>${element.overTimeWage}</td>
+                </tr>
+                `
+                document.getElementById("con").innerHTML = add
+            }
+                
+        }
     })
 
-    document.getElementById("con").innerHTML = add
-
-    
 }
 
 
