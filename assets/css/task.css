@@ -33,8 +33,8 @@ main{
 }
 #new-task-main #add-task-display{
     width: 20%;
-    /* height: 17%; */
-    margin: 200px auto;
+    height: 100%;
+    margin: 100px auto;
 }
 #new-task-main input{
     outline: none;
@@ -78,8 +78,26 @@ main{
 }
 #new-task-main #add-task-display{
     background-color: white;
-    height: 45%;
+    height: 63%;
     width: 30%;
+}
+#new-task-main #add-task-display #add-file-con{
+    display: flex;
+}
+#new-task-main #add-task-display #add-file-con #file{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 0;
+    width: 40%;
+    border: none;
+}
+/* #new-task-main #add-task-display #add-file-con #file{
+    outline: none;
+    border: none;
+} */
+#new-task-main #add-task-display #add-file-con #file-label{
+    margin: auto 40px;
+    margin-right: 10px;
 }
 #new-task-main button{
     outline: none;

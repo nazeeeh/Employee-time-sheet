@@ -1,6 +1,12 @@
 // setTimeout(function(){
 //     location.reload()
 // },1000)
+let taskName = document.getElementById("task-name-main").value,
+employeeAssigned = document.getElementById("employee-assigned-main").value,
+dueDate = document.getElementById("due-date-main").value;
+if(taskName != "" || dueDate != ""){
+    document.getElementById("assign-main").style.opacity = "1"
+}
 
 function backToDashboard() {
     location.assign("../../contents/internal-dashboard.html");
@@ -14,6 +20,7 @@ function assignNewTaskMain(){
          addTaskMain.style.display = "block"
      }
 
+    document.getElementById("assign-main").style.opacity = "0.7"
     taskName = document.getElementById("task-name-main").value = ""
     employeeAssigned = document.getElementById("employee-assigned-main").value = ""
     dueDate = document.getElementById("due-date-main").value = ""
@@ -68,8 +75,6 @@ function getEmployeeNames(){
     return employeeNames
 }
 
-alert(employees)
-
 document.getElementById("tasksInternalName").innerHTML =  currentUser[0].name
 
 displayUnassigned(unassignedMainList)
@@ -119,49 +124,54 @@ var day = date.getDate()
 function appendNewTaskMain(){
     let taskName = document.getElementById("task-name-main").value,
     employeeAssigned = document.getElementById("employee-assigned-main").value,
-    dueDate = document.getElementById("due-date-main").value;
+    dueDate = document.getElementById("due-date-main").value,
+    message = document.getElementById("message").value,
+    docs = document.getElementById("file").value;
+    
     newTask = {}
-    if (taskName === ""){
-        CancelTask()
-        
+    if (taskName == "" || dueDate == ""){
+        document.getElementById("assign-main").style.opacity = "0.7"
     }else{
-        var today = new Date
         newTask = {
             "name" : taskName,
             "employee" : employeeAssigned,
             "due" : dueDate,
             "status" : "Pending",
-            "startDate" : `${day}-${month}-${year}`
+            "startDate" : `${day}-${month}-${year}`,
+            "message" : message,
+            document : docs
         }
+        alert(typeof(dueDate))
+
         tasks.push(newTask)
         Names = getEmployeeNames()
         if(employeeAssigned == ""){
             unassignedMainList.push(newTask)
             employeeTask.push(newTask)
+            CancelTask()
             displayUnassigned(unassignedMainList)
             localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
-            emptyInput(employeeAssigned)
-            emptyInput(taskName)
-            emptyInput(dueDate) 
         }else if(employeeAssigned != ""){
             employeeNames = getEmployeeNames()
-            alert(employeeAssigned in employeeNames)
             if( employeeNames.includes(employeeAssigned)){
-                alert("true")
                 pushToEmployee(employeeAssigned)
                 assignedMainList.push(newTask)
                 pending.push(newTask)
                 employeeTask.push(newTask)
                 localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
+            CancelTask()
             }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
+        }
+
+
+        if(taskName != "" || dueDate != ""){
+            // document.getElementById("assign-main").style.opacity = "0"
         }
         localStorage.setItem("tasks",  JSON.stringify(tasks))
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
         displayMain(assignedMainList)
-    }
-  
-    CancelTask()
-   
+
+    }   
 }
 
 function setLocal(){
