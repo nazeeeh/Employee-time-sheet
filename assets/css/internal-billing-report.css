@@ -29,15 +29,36 @@ body{
     margin: 3px 0;
 }
 
-.internal-con #billing-reports-con thead tr{
-    justify-content: space-around;
-}
-
-.internal-con #billing-reports-con tbody tr{
-    justify-content: space-around;
+.internal-con #billing-reports-con thead tr th{
+    width: 14%;
 }
 
 .internal-con #billing-reports-con tr td{
     text-align: center;
-    /* padding: 3rem; */
+    width: 14%;
+}
+
+.internal-con #month-section{
+    display: flex;
+    width: 25%;
+    margin: 30px auto;
+}
+
+.internal-con #month-section #showMonth{
+    width: 100%;
+    background-color: darkgray;
+    padding: 7px 9px;
+}
+
+.internal-con #month-section #time-sheet-button{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 9px;
+    background-color: darkslateblue;
+    margin-left: 50px;
+}
+
+.internal-con #month-section #months #each-month{
+    display: none;
 }
