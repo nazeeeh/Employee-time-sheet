@@ -53,7 +53,6 @@ if(JSON.parse(localStorage.getItem("acceptedTasks")) == null)
 }
 
 
-
 // DONE
 
 // function to display tasks gotten from local storage
@@ -66,18 +65,33 @@ function viewTasks() {
             <th>Task</th>
             <th>Due Date</th>
             <th> Status</th>
+            <th> Requests</th>
             </tr>
         </thead>
         <tbody>
     `
     for(let i = 0; i <employeeTask.length; i++) {
-        view += `
+        if(employeeTask.document != ""){
+alert(JSON.stringify(employeeTask))
+            view += `
+            <tr>
+            <td>${i + 1}</td>
+            <td>${employeeTask[i].name} <i class="fa fa-paperclip" aria-hidden="true"></i></td>
+            <td>${employeeTask[i].due}</td>
+            <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
+            <td><a href="#" onclick="">Requests</a></td>
+        `
+        }else{
+            view += `
             <tr>
             <td>${i + 1}</td>
             <td>${employeeTask[i].name}</td>
             <td>${employeeTask[i].due}</td>
             <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
-        ` }
+            <td><a href="#" onclick="">Requests</a></td>
+        ` 
+        }
+      }
         view += `
         </tr>
     </tbody>
