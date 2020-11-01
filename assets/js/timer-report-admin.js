@@ -93,9 +93,10 @@ function displayTimeSheet(sheet){
                 <td><strong>${element.name}</strong></td>
                 <td>${element.loginTime}</td>
                 <td>${element.hour}:${element.minute}:${element.second}</td>
-                <td>${element.overTime}</td>
                 <td>${element.dailyWage}</td>
+                <td>${element.overTime}</td>
                 <td>${element.overTimeWage}</td>
+                <td>${element.payableWage}</td>
                 </tr>
                 `
                 document.getElementById("con").innerHTML = add
