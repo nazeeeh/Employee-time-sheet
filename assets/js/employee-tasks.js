@@ -15,18 +15,6 @@ let department =  currentUser[0].department
 let employees = JSON.parse(localStorage.getItem(department)); //Get all the employees of user company
 let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`)); //Current User Tasks
 
-
-// function goToReport(id){
-//     let name = employeeTask[id].name
-//     promise = new Promise(function(resolve, reject){
-//         location.assign("../contents/report.html");
-//     })
-
-//     promise.then(
-//         result => document.getElementById("title").value = name
-//     )
-// }
-
 // SETTING ALL LIST ITEMS TO LOCAL STORAGE
 if(JSON.parse(localStorage.getItem("tasks")) == null || undefined){
     tasks = []
@@ -87,7 +75,7 @@ function viewTasks() {
             view += `
             <tr>
             <td>${i + 1}</td>
-            <td>${employeeTask[i].name} <i class="fa fa-paperclip" aria-hidden="true"></i></td>
+            <td onclick="taskDetails(${i})" id='taskName'>${employeeTask[i].name} <i class="fa fa-paperclip" aria-hidden="true"></i></td>
             <td>${employeeTask[i].due}</td>
             <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
             <td><a href="#" onclick="">Requests</a></td>
@@ -96,7 +84,7 @@ function viewTasks() {
             view += `
             <tr>
             <td>${i + 1}</td>
-            <td>${employeeTask[i].name}</td>
+            <td onclick="taskDetails(${i})>${employeeTask[i].name}</td>
             <td>${employeeTask[i].due}</td>
             <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
             <td><a href="#" onclick="goToReport(${i})">Requests</a></td>
@@ -114,8 +102,29 @@ function viewTasks() {
     // viewAcceptedTasks()
 }
 
-alert(JSON.stringify(employeeTask))
- 
+function goToReport(){
+    // let name = employeeTask[id].name
+    location.assign("../contents/report.html");
+
+    // document.getElementById("title").value = name 
+}
+
+function taskDetails(id){
+    theDocument = employeeTask[id].document.split(`\\`)
+    closeTaskDetails()
+    view = ""
+    
+    view +=`
+        <h3>Task: ${employeeTask[id].name}</h3>
+        <p>Summary: ${employeeTask[id].message}</p>
+        <p>Documents attached: ${theDocument[2]}</p>
+        <p>Start Date : ${employeeTask[id].startDate}</p>
+        <p>End Date : ${employeeTask[id].due}</p>
+        <button onclick="closeTaskDetails()">Done</button>
+    `
+    document.getElementById('mainDetails').innerHTML = view
+}
+
 function acceptTask(id){ //what to do when the 'accepted button' is clicked
     eachInternalsTask(id, "Accepted", employeeTask)
 
@@ -129,7 +138,14 @@ function acceptTask(id){ //what to do when the 'accepted button' is clicked
     localStorage.setItem(`${currentUserEmail}_pendingTask`, JSON.stringify(pending))
 }
 
-
+function closeTaskDetails(){
+    let taskDetails = document.getElementById('taskDetails');
+    if(taskDetails.style.display == 'block'){
+        taskDetails.style.display = 'none'
+    }else{
+        taskDetails.style.display = 'block'
+    }
+}
 
 function findInternal(){
     internal = []
