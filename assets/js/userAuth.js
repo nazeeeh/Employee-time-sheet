@@ -12,6 +12,10 @@ var unKnown = document.getElementById("errorMessage"); // error message box
 
 let paceDB = JSON.parse(localStorage.getItem("paceDB")); // PACE local storage
 
+if(paceDB == null){
+  paceDB = JSON.parse(localStorage.getItem("paceDB"))
+}
+
 let authUser = () =>
 { // function that authenticates users type
 
