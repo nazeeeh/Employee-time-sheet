@@ -16,10 +16,17 @@
      white-space: nowrap;
  }
  h3 {
-     color: #4D8AF0;
+     color:#335eea;
  }
  h4 {
-     color: #1e3b8b;
+     color:#FF6584;
+ }
+ a {
+     color: #FF6584;
+ }
+ a:hover {
+     color: #335eea;
+     text-decoration: none;
  }
  .container {
      margin: 5rem auto 0;
@@ -39,6 +46,9 @@
      } */
      
  }
+ form p {
+     margin: .5rem 0;
+ }
  .form-heading {
      margin: 0 0 2rem;
  }
@@ -48,7 +58,7 @@
     border-color: #80bdff;
     outline: 0; */
     box-shadow: none;
-    border: 1px solid #4D8AF0;
+    border: 1px solid#335eea;
     outline: none;
 }
  
@@ -56,12 +66,12 @@
     color: #1e3b8b;
  }
  .btn-primary {
-     background: #4D8AF0;
+     background:#335eea;
      color: #fff;
-     opacity: 1;
+     opacity: .9;
 }
 .btn-primary:hover {
-    background: #1e3b8b;
+    /* background: #1e3b8b; */
     opacity: 1;
     cursor: pointer;
 }
