@@ -8,7 +8,7 @@ var months = [
 
 var weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] ;
 var firstDay =  new Date(year, month, 1).getDay();
-var fullDate = new Date(year, 10, 0).getDate();
+var fullDate = new Date(year, month+1, 0).getDate();
 
 
 function calendar() {
@@ -26,7 +26,9 @@ function calendar() {
         }
         display += `<tbody>`
 
-        for(let i = 0; i < weekDay.length; i++)
+        // for(let i = 0; i < weekDay.length; i++)
+        console.log("fullDate is "+fullDate)
+        
         while(date < fullDate) {
             display += `<tr>`
             for(let i = 0; i < weekDay.length; i++) {
@@ -126,13 +128,14 @@ function displaySchedule() {
 function dateValue(e){
     // first checks if month is less than 10 
     // then append 0 to it, in order to display the month in the right format
-
+   
     e = e.currentTarget.innerHTML;
-    monthValue = month + 1;
+    monthValue = month;
     
     if(monthValue < 10) {
         monthValue = "0"+ month;
     }
+    
     if(e < 10) {
        e = "0"+ e;
     }
