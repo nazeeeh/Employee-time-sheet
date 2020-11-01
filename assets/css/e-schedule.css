@@ -18,10 +18,11 @@
     text-transform: uppercase;
 }
 .cell {
+    background: #fff;
     text-align: center;
-    margin: 2rem;
+    margin: 0rem;
     width: .1rem;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
 }
 .cell:hover {
     background: #ccc;
@@ -74,6 +75,6 @@ form input {
     color: #ccc;
 }
 .today {
-    background: rgba(33, 50, 96, .8);
+    background: rgba(33, 50, 96, .7);
     color: #fff;
 }
