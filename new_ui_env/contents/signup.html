@@ -7,44 +7,67 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/form.css">
-    <title>Sign Up | Pace</title>
+    <title>Signup | Pace</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div>
-                    <div class="form-heading">
-                        <h3>Sign Up</h3>
-                        <h4>keep track of each seconds!</h4>
-                    </div>
-                    <form action="">
-                        <div class="form-group">
-                            <label for="companyEmail">Company's Email</label>
-				            <input type="email" name="companyEmail" class="form-control" id="companyEmail" placeholder= "Company's Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="CompanyName">Company's Name</label>
-				            <input type="text" name="CompanyName" class="form-control" id="CompanyName" placeholder= "Company's Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
-                        <p>Already have an account? <a href="#">login</a></p>
-                    </form>
-                </div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a href="#" class="navbar-brand" id="logo">
+            
+              <!-- <svg width="1em" style="color: #335eea" height="2em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z"/>
+              </svg> -->
+              Pace</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#this_nav" aria-controls="this_nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="this_nav">
+            <div class="navbar-nav">
+              <a href="../index.html" class="nav-link active">Home</a>
+              <a href="#" class="nav-link">Features</a>
+              <a href="#" class="nav-link">Pricing</a>
+              <a href="#" class="nav-link">About</a>
+              <a href="#" class="nav-link">Contact</a>
             </div>
-            <div class="col">
-                <div class="home-intro-img">
-                    <img src="../assets/img/landing page man in office.svg" alt="office timing" class="img-fluid">
-                </div>
-            </div>
-        </div>
+            <a href="signup.html" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
+          </div>
+        </nav>
 
+
+        <main class="container">
+            <div class="con">
+                 <div class="form-con">
+                     <div class="form-heading">
+                         <h3>Sign Up</h3>
+                         <h4>keep track of each seconds!</h4>
+                     </div>
+                     <form action="">
+                         <div class="form-group">
+                             <label for="companyEmail">Company's Email</label>
+                             <input type="email" name="companyEmail" class="form-control" id="companyEmail" placeholder= "pace@gmail.com" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="CompanyName">Company's Name</label>
+                             <input type="text" name="CompanyName" class="form-control" id="CompanyName" placeholder= "Pace" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="password">Password</label>
+                             <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                         </div>
+                         <button type="submit" class="btn btn-primary">Sign Up</button>
+                         <p>Already have an account? <a href="./login.html">login</a></p>
+                     </form>
+                 </div>
+                 <div class="img-con">
+                     <div class="home-intro-img">
+                         <img src="../assets/img/landing page man in office.svg" alt="office timing" class="img-fluid">
+                     </div>    
+                 </div>
+            </div>  
+        </main>
     </div>
 
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
