@@ -200,7 +200,17 @@ function timeValue() {
 
     let dailyWage = 50 * 8
 
-    let overTimeWage = 10 * (8 - usedHour)
+    if(overTime == "NILL"){
+        overTimeWage = "NILL"
+    }else{
+        let overTimeWage = 10 * (8 - usedHour)
+    }
+    
+    if(usedHour < 1){
+        payableWage = 0
+    }else{
+        payableWage = usedHour * 50
+    }
 
     // sorry, i was here(Tolu)
     var usedTime = {
@@ -213,11 +223,9 @@ function timeValue() {
         "month" : months,
         "overTime" : overTime,
         "dailyWage" : dailyWage,
-        "overTimeWage" : overTimeWage
+        "overTimeWage" : overTimeWage,
+        "payableWage" : payableWage
     }
-
-    alert(JSON.stringify(usedTime))
-
 
 switch(user_role) {
     case user_role = "admin":
