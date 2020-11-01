@@ -1,12 +1,7 @@
 // setTimeout(function(){
 //     location.reload()
 // },1000)
-let taskName = document.getElementById("task-name-main").value,
-employeeAssigned = document.getElementById("employee-assigned-main").value,
-dueDate = document.getElementById("due-date-main").value;
-if(taskName != "" || dueDate != ""){
-    document.getElementById("assign-main").style.opacity = "1"
-}
+
 
 function backToDashboard() {
     location.assign("../../contents/internal-dashboard.html");
@@ -24,6 +19,16 @@ function assignNewTaskMain(){
     taskName = document.getElementById("task-name-main").value = ""
     employeeAssigned = document.getElementById("employee-assigned-main").value = ""
     dueDate = document.getElementById("due-date-main").value = ""
+ }
+
+ function disableAssign(){
+    let taskName = document.getElementById("task-name-main").value,
+    dueDate = document.getElementById("due-date-main").value;
+    if(taskName == "" || dueDate == ""){
+        document.getElementById("assign-main").style.disabled= true
+    }else{
+        document.getElementById("assign-main").style.disabled= false
+    }
  }
 
 let check = JSON.parse(localStorage.getItem("paceDB"))
@@ -137,7 +142,7 @@ function appendNewTaskMain(){
             "employee" : employeeAssigned,
             "due" : dueDate,
             "status" : "Pending",
-            "startDate" : `${day}-${month}-${year}`,
+            "startDate" : `${year}-${day}-${month}`,
             "message" : message,
             document : docs
         }
@@ -150,6 +155,7 @@ function appendNewTaskMain(){
             CancelTask()
             displayUnassigned(unassignedMainList)
             localStorage.setItem(`${currentUserEmail}_UnassignedTask`,  JSON.stringify(unassignedMainList))
+            localStorage.setItem("tasks",  JSON.stringify(tasks))
         }else if(employeeAssigned != ""){
             employeeNames = getEmployeeNames()
             if( employeeNames.includes(employeeAssigned)){
@@ -158,6 +164,7 @@ function appendNewTaskMain(){
                 pending.push(newTask)
                 employeeTask.push(newTask)
                 localStorage.setItem(`${currentUserEmail}_AssignedTask`,  JSON.stringify(assignedMainList))
+                localStorage.setItem("tasks",  JSON.stringify(tasks))
             CancelTask()
             }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
         }
@@ -166,7 +173,6 @@ function appendNewTaskMain(){
         if(taskName != "" || dueDate != ""){
             // document.getElementById("assign-main").style.opacity = "0"
         }
-        localStorage.setItem("tasks",  JSON.stringify(tasks))
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
         displayMain(assignedMainList)
 
