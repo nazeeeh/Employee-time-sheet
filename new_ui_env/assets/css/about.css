@@ -1,0 +1,30 @@
+.about{
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.about summary.team{
+  margin-top: 4rem;
+}
+.about .pace-team{
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.about .pace-team article{
+  margin-bottom: 1rem;
+}
+
+.pace-team img{
+  width: 30%;
+  height: auto;
+  margin-bottom: 0.43rem;
+}
+
+
+@media (min-width: 576px){
+  section.pace-team{
+    display: flex;
+    flex-direction: row !important;
+  }
+}
