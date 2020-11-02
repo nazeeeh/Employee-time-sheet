@@ -323,10 +323,14 @@ let _editRecord = (employee_id) =>
   console.log(recordToUpdate)
   document.getElementById("update_email").value = recordToUpdate.email 
   document.getElementById("update_name").value = recordToUpdate.name
-  document.getElementById("update_type").value = recordToUpdate.user_type
-  document.getElementById("update_role").value = recordToUpdate.role
+  // document.getElementById("update_type").value = recordToUpdate.user_type
+  // document.getElementById("update_role").value = recordToUpdate.role
   document.getElementById("update_phone").value = recordToUpdate.phone
-  document.getElementById("update_department").value = recordToUpdate.department
+  // document.getElementById("update_department").value = recordToUpdate.department
+  assignedDepartment = document.getElementById("employee_department");
+  assignedDepartment.options[assignedDepartment.selectedIndex].value = recordToUpdate.department;
+  userTypeOption = document.getElementById("employee_type");
+  new_user_type = userTypeOption.options[userTypeOption.selectedIndex].value;
   restrict_join_date = recordToUpdate.joining_date
   document.getElementById("identifier").value = employee_id
 }
