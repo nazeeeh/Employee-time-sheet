@@ -68,3 +68,6 @@ let _viewRecord = (employee_id) =>
 
 
 }
+
+
+

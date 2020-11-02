@@ -17,7 +17,6 @@ if(checkDb == null) // if paceDB does not exist create one
 
 let getUserDetails = () =>
 { // function to get all user's details from registration form
-  
   companyName = document.getElementById("name").value;
   companyEmail = document.getElementById("email").value;
   companyTel = document.getElementById("phone").value;
