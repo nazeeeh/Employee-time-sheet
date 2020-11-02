@@ -108,8 +108,8 @@ button.navbar-toggler:hover{
 .to-btn{
   background: rgb(51,94,234);
   color: #ffffff;
-  padding: .5625rem 1rem;
-  font-size: 1.0625rem;
+  padding: .5625rem 1rem !important;
+  font-size: 1.0625rem !important;
 }
 
 /* landing page section 0 */
@@ -181,10 +181,6 @@ button.navbar-toggler:hover{
     text-align: center;
   }
 
-  @media (max-width: 660px){
-
-  }
-
   @media (max-width: 360px){
     .testimonial h4{
       font-size: 1.4rem;
@@ -235,32 +231,28 @@ button.navbar-toggler:hover{
 /* MEDIA QUERY FOR BIG SCREEN */
 @media (min-width: 992px){
   
-  #logo{
-    margin-left: 100px;
-  }
-  
   .navbar-nav{
     margin:  0 auto;
   }
   
-  .nav-link{
+  a.nav-link{
     margin: 0rem .9rem;
-    padding: 3rem;
+    padding: 3rem ;
     font-size: 1.21rem;
   }
 
-  #get-started-btn{
-    margin-right: 100px;
+  a#get-started-btn{
     background: transparent;
     color: #335eea;
     transition: 1s;
   }
-  #get-started-btn:hover{
+  a#get-started-btn:hover{
     background: #335eea;
     color: #ffffff;
     outline: none;
     border: 1px solid #ffffff;
   }
+
   .home-intro{
     margin-top: 80px;
     flex-direction: row !important;
