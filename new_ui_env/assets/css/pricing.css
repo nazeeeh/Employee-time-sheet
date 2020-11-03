@@ -28,14 +28,6 @@ body{
 .choose{
   color:#506690;  
 }
-/* .card{
-  margin:10px;
-} */
-
-.card img{
-  height:60px;
-  border-bottom:2px solid gray;
-}
 .btn-primary{
   background:#FF6584;
   border-radius:50px;
@@ -46,9 +38,41 @@ body{
   background:#506690;
   transition:500ms ease-out;
 }
-/* media query for the button */
-/* @media (min-width:768px) and (max-width:1024px){.btn-primary{width:20%;}}
-@media (min-width:425px) and (max-width:768px){.btn-primary{width:25%;}} */
+/* styling for the cards starts */
 .card-group{
   margin-top:40px;
 }
+.card{
+  border-radius:5px;
+  margin:5px;
+  margin-top:40px;
+
+}
+.top{
+  margin-top:20px;
+  box-sizing:border-box;
+}
+.card h1{
+  font-weight:bolder;
+}
+.card img{
+  height:160px;
+  border-bottom:1px solid gray;
+  display:flex;
+  justify-content:center;
+}
+div.card-footer{
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+}
+div.card-footer button{
+  border:2px solid white;
+  width:90%;
+  background:white;
+  color:#506690;
+  font-weight:bold;
+}
+div.card-footer button:hover{
+  border:2px solid white;
+}
+/* styling for the cards Ends */
