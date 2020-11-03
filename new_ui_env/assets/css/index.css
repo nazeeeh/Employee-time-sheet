@@ -48,11 +48,8 @@ button.navbar-toggler:hover{
 }
 
 .home-intro-text{
-  color: #FF6584;
-}
-
-.home-intro-text{
   margin-top: 50px;
+  color: #FF6584;
 }
 
 .home-intro-text p{
