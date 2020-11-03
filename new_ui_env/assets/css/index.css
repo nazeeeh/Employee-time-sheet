@@ -1,6 +1,10 @@
 /* utilities */
 body{
-  background: #fffddd;
+  /* background: #fffddd; */
+}
+
+h3{
+  font-weight:357 !important;
 }
 
 a{

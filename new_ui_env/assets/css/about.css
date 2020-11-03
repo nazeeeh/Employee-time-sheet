@@ -21,6 +21,9 @@
   margin-bottom: 0.43rem;
 }
 
+p{
+  /* color: #869ab8; */
+}
 
 @media (min-width: 576px){
   section.pace-team{
