@@ -42,16 +42,16 @@ body{
 .card-group{
   margin-top:40px;
 }
-.card{
+.card-group .card{
   border-radius:5px;
   margin:5px;
-  margin-top:40px;
+  margin-top:30px;
 
 }
-.top{
-  margin-top:20px;
+/* .top{
+  margin-top:30px;
   box-sizing:border-box;
-}
+} */
 .card h1{
   font-weight:bolder;
 }
@@ -114,3 +114,7 @@ div.card-footer button.enterprise-btn:hover{
   color:white;
 }
 /* styling for the cards Ends */
+
+.collapse.show{
+  content:"\2709";
+}
