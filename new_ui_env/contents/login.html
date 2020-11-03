@@ -5,30 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/form.css">
     <title>Login | Pace</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="#" class="navbar-brand" id="logo"> Pace </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#this_nav" aria-controls="this_nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="this_nav">
-                <div class="navbar-nav">
-                    <a href="../index.html" class="nav-link active">Home</a>
-                    <a href="#" class="nav-link">Features</a>
-                    <a href="#" class="nav-link">Pricing</a>
-                    <a href="#" class="nav-link">About</a>
-                    <a href="#" class="nav-link">Contact</a>
-                </div>
-            <a href="./signup.html" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
-            </div>
-        </nav>
+    <div class="container">
+        <!-- navbar component -->
+        <nav-bar></nav-bar>
+        
         <main class="container">
             <div class="con">
+                <!-- form container start -->
                 <div class="form-con">
                     <div class="form-heading">
                         <h3>Login</h3>
@@ -51,6 +39,7 @@
                         <p>Don't have an account? <a href="./signup.html">Sign Up</a></p>
                     </form>
                 </div>
+                <!-- form container end -->
                 <div class="img-con">
                     <div class="home-intro-img">
                         <img src="../assets/img/landing page man in office.svg" alt="office timing" class="img-fluid">
@@ -136,9 +125,14 @@
     
 
 
-
+        <!-- bootstrap link start-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <!-- bootstrap link end-->
+    
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/smoothscroll.js"></script>
+    <script src="../partials/_navbar.js"></script>
 </body>
 </html>

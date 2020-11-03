@@ -36,7 +36,7 @@
     margin: 0 auto;
 }
 .form-con {
-    margin: .5rem;
+    margin: .5rem 0;
 }
 .img-con {
     width: 50%;
@@ -88,4 +88,8 @@
 footer .socials {
     background: rgb(51,94,234);
     margin: 3rem 0 0;
+}
+/* modifying the margin-left from the bootstrap 'row' class */
+footer .row {
+    margin-left: 0px;
 }
