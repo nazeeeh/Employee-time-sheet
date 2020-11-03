@@ -1,4 +1,4 @@
-class Header extends HTMLElement {
+class Navbar extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -13,8 +13,8 @@ class Header extends HTMLElement {
       </button>
       <div class="collapse navbar-collapse" id="this_nav">
         <div class="navbar-nav">
-          <a href="#" class="nav-link active">Home</a>
-          <a href="#pace-features" class="nav-link">Features</a>
+          <a href="../index.html" class="nav-link active">Home</a>
+          <a href="../features#pace-features" class="nav-link">Features</a>
           <a href="contents/pricing.html" class="nav-link">Pricing</a>
           <a href="contents/about.html" class="nav-link">About</a>
           <a href="contents/contact.html" class="nav-link">Contact</a>
@@ -26,5 +26,4 @@ class Header extends HTMLElement {
   }
 }
 
-customElements.define('main-header', Header);
-customElements.define('main-footer', Footer);
+customElements.define('nav-bar', Navbar);
