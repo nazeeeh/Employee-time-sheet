@@ -1,6 +1,7 @@
 class Navbar extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
+
       <nav class="navbar navbar-expand-lg navbar-light">
       <a href="../index.html" class="navbar-brand" id="logo">
         
@@ -22,6 +23,7 @@ class Navbar extends HTMLElement {
         <a href="contents/signup.html" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
       </div>
     </nav>
+    
     `;
   }
 }
