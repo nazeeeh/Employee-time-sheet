@@ -21,6 +21,16 @@
   margin-bottom: 0.43rem;
 }
 
+.about-section h3{
+  /* padding: 12px;
+  border-left: 3px solid #FF6584; */
+}
+
+.team h3{
+  border-left: 3px solid #FF6584;
+  padding: 12px;
+}
+
 p{
   /* color: #869ab8; */
 }
