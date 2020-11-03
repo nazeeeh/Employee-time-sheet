@@ -42,16 +42,16 @@ body{
 .card-group{
   margin-top:40px;
 }
-.card{
+.card-group .card{
   border-radius:5px;
   margin:5px;
-  margin-top:40px;
+  margin-top:30px;
 
 }
-.top{
-  margin-top:20px;
+/* .top{
+  margin-top:30px;
   box-sizing:border-box;
-}
+} */
 .card h1{
   font-weight:bolder;
 }
@@ -65,14 +65,56 @@ div.card-footer{
   border-bottom-right-radius:5px;
   border-bottom-left-radius:5px;
 }
-div.card-footer button{
-  border:2px solid white;
+div.card-footer button.free-btn{
+  border:1px solid white;
   width:90%;
   background:white;
   color:#506690;
   font-weight:bold;
 }
-div.card-footer button:hover{
-  border:2px solid white;
+div.card-footer button.free-btn:hover{
+  border:1px solid white;
+  background:#506690;
+  color:white;
+}
+div.card-footer button.basic-btn{
+  border:1px solid white;
+  width:90%;
+  background:white;
+  color:#FF63E5;
+  font-weight:bold;
+}
+div.card-footer button.basic-btn:hover{
+  border:1px solid white;
+  background:#FF63E5;
+  color:white;
+}
+div.card-footer button.premium-btn{
+  border:1px solid white;
+  width:90%;
+  background:white;
+  color:#FF6584;
+  font-weight:bold;
+}
+div.card-footer button.premium-btn:hover{
+  border:1px solid white;
+  background:#FF6584;
+  color:white;
+}
+div.card-footer button.enterprise-btn{
+  border:1px solid white;
+  width:90%;
+  background:white;
+  color:#F9B726;
+  font-weight:bold;
+}
+div.card-footer button.enterprise-btn:hover{
+  border:1px solid white;
+  background:#F9B726;
+  color:white;
 }
 /* styling for the cards Ends */
+
+.collapse.show{
+  content:"\2709";
+}
