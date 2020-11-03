@@ -39,7 +39,7 @@ button.navbar-toggler:hover{
 }
 
 #this_nav .navbar-nav .nav-link{
-  backface-visibilityFF6584: hidden;
+  backface-visibility: hidden;
   color: #506690;
 }
 
@@ -48,11 +48,8 @@ button.navbar-toggler:hover{
 }
 
 .home-intro-text{
-  color: #;
-}
-
-.home-intro-text{
   margin-top: 50px;
+  color: #FF6584;
 }
 
 .home-intro-text p{
