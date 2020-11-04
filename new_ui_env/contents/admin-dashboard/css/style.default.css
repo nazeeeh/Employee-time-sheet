@@ -136,6 +136,13 @@ button {
   margin: 2rem 0;
 }
 
+.btn{
+  padding: 0.5625rem 1rem !important;
+  outline: none !important;
+  border: none !important;
+  border-radius: 0.25rem !important;
+}
+
 .btn:not([class*='outline']) {
   color: #fff;
 }

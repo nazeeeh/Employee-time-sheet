@@ -1,0 +1,25 @@
+.form-control{
+  border-radius: 0px;
+}
+
+
+.profile img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile-info{
+  list-style-type: none;
+}
+
+.profile-info li{
+  margin-bottom: 10px;
+}
+
+.profile-info .title{
+  float: left;
+  width: 25%;
+  font-weight: 700;
+  margin-right: 30px;
+}
