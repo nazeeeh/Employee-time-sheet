@@ -13,6 +13,11 @@
 * =====================
 *
 */
+/* pace  */
+.close span{
+  cursor: pointer;
+}
+
 .shadow {
   -webkit-box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1) !important;

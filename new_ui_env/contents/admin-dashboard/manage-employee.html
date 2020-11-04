@@ -272,47 +272,107 @@
               </div>
             </div>
           </section>
-          <div class="py-5 profile">
-            <div class="card">
-            <div class="card-header">
-              <h3>Profile</h3>
+                      <!-- profile trigger button -->
+                      <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#profileDisplayForm">
+                        View Profile
+                      </button>
+
+          <!-- Profile Modal Contents -->
+           <div class="modal fade" id="profileDisplayForm" tabindex="-1" role="dialog" aria-labelledby="profileDisplayLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+               <div class="modal-body">
+                  <div class="py-5 profile">
+                    <div class="card">
+                    <div class="card-header d-flex">
+                      <h3>Profile</h3>
+                      <!-- <button type="button" class="d-block ml-auto close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button> -->
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <img src="https://github.com/unclebay143.png" alt="">
+                        </div>
+                        <div class="col-md-4 profile-left-section">
+                          <h4 class="m-t-0 mb-0" id="displayFullname">Ayodele Samuel Adebayo</h4>
+                          <h6 class="text-muted" id="displayRole">Frontend Developer</h6>
+                          <small class="text-muted" id="displayDepartment">Web Design</small>
+                          <div class="user-name mt-3" id="displayUserName">Employee ID : unclebay143</div>
+                          <div class="text-muted" id="displayJoinedDate">Date of Joined : Aug 21, 2020</div>
+        
+                          <button class="btn pace-bg-accent mt-3">Disable Account</button>
+                        </div>
+                        <div class="col-md-6 my-lg-4">
+                          <ul class="profile-info profile-right-section">
+                            <li>
+                              <div class="title">Phone:</div>
+                              <div class="text">08038157444</div>
+                            </li>
+                            <li>
+                              <div class="title">Email:</div>
+                              <div class="text">unclebigbay@gmail.com</div>
+                            </li>
+                            <li>
+                              <div class="title">Birthday:</div>
+                              <div class="text">24th May</div>
+                            </li>
+                            <li>
+                              <div class="title">Address:</div>
+                              <div class="text">TIIDELab cohort 2</div>
+                            </li>
+                            <li>
+                              <div class="title">Report to:</div>
+                              <div class="text">Solomon Chokor</div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <div class="row mt-5">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 profile-stat">
+                          <ul>
+                            <li>
+                              <div class="title">Completed Task : </div>
+                              <div class="text">5</div>
+                            </li>
+                            <li>
+                              <div class="title">Approved Leave : </div>
+                              <div class="text">5</div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 profile-links">
+                          <ul>
+                            <li>
+                              <div class="title">Resume : </div>
+                              <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div>
+                            </li>
+                            <li>
+                              <div class="title">Github :</div>
+                              <div class="text"><a href="#">unclebay143</a></div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-2 mt-5"></div>
+                        <div class="col-6"></div>
+                          <div class="col-4">
+                            <!-- <button type="button" class="btn pace-bg-accent" data-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn pace-bg-primary" onclick="alert(document.getElementById('email').value)">Employee</button>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
             </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-2">
-                  <img src="https://github.com/unclebay143.png" alt="">
-                </div>
-                <div class="col-md-5 profile-left-section">
-                  <h4 class="m-t-0 mb-0" id="displayFullname">Ayodele Samuel Adebayo</h4>
-                  <h6 class="text-muted" id="displayRole">Frontend Developer</h6>
-                  <small class="text-muted" id="displayDepartment">Web Design</small>
-                  <div class="text-muted" id="displayUserName">Employee ID : unclebay143</div>
-                  <div class="text-muted" id="displayJoinedDate">Date of Joined : Aug 21, 2020</div>
-                </div>
-                <div class="col-md-5">
-                  <ul class="profile-info profile-right-section">
-                    <li>
-                      <div class="title">Phone:</div>
-                      <div class="text">08038157444</div>
-                    </li>
-                    <li>
-                      <div class="title">Email:</div>
-                      <div class="text">unclebigbay@gmail.com</div>
-                    </li>
-                    <li>
-                      <div class="title">Birthday:</div>
-                      <div class="text">24th May</div>
-                    </li>
-                    <li>
-                      <div class="title">Address:</div>
-                      <div class="text">TIIDELab cohort 2</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+           </div>
+          <!-- / Profile Modal Contents  -->
       </div>
         <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
           <div class="container-fluid">
