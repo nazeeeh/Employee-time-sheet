@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+/* sweet alert hack */
+.swal-overlay--show-modal .swal-modal{
+  will-change: unset;
+}
+
 .pace-primary-color{
   color: #335eea;
 }
