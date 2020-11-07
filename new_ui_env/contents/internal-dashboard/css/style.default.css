@@ -13,6 +13,11 @@
 * =====================
 *
 */
+/* pace  */
+.close span{
+  cursor: pointer;
+}
+
 .shadow {
   -webkit-box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1) !important;
@@ -134,6 +139,13 @@ button {
   height: 1px;
   border-bottom: 1px dashed #eee;
   margin: 2rem 0;
+}
+
+.btn{
+  padding: 0.5625rem 1rem !important;
+  outline: none !important;
+  border: none !important;
+  border-radius: 0.25rem !important;
 }
 
 .btn:not([class*='outline']) {

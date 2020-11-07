@@ -20,6 +20,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="../../assets/css/utilities.css">
+    <link rel="stylesheet" href="css/manage-employee.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.png?3">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -82,10 +83,10 @@
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
         <ul class="sidebar-menu list-unstyled">
               <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-              <li class="sidebar-list-item"><a href="charts.html" class="sidebar-link text-muted active"><i class="o-sales-up-1 mr-3 text-gray"></i><span>Charts</span></a></li>
-              <li class="sidebar-list-item"><a href="tables.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Tables</span></a></li>
-              <li class="sidebar-list-item"><a href="forms.html" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>Forms</span></a></li>
-          <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Pages</span></a>
+              <li class="sidebar-list-item"><a href="charts.html" class="sidebar-link text-muted active"><i class="o-sales-up-1 mr-3 text-gray"></i><span>Employee</span></a></li>
+              <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Todo</span></a></li>
+              <li class="sidebar-list-item"><a href="forms.html" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>e-schedule</span></a></li>
+          <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Calendar</span></a>
             <div id="pages" class="collapse">
               <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                 <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page one</a></li>
@@ -95,40 +96,126 @@
               </ul>
             </div>
           </li>
-              <li class="sidebar-list-item"><a href="login.html" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Login</span></a></li>
+              <li class="sidebar-list-item"><a href="login.html" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Report</span></a></li>
         </ul>
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">EXTRAS</div>
         <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-paperwork-1 mr-3 text-gray"></i><span>Demo</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Demo</span></a></li>
+              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Request</span></a></li>
+              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3 text-gray"></i><span>Billing Rate</span></a></li>
+              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-paperwork-1 mr-3 text-gray"></i><span>Settings</span></a></li>
+              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Logout</span></a></li>
         </ul>
       </div>
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <div class="pt-5">
-            <!-- Add Employee Modal Form -->
+            <!-- Add Employee Modal Form Section-->
             <!-- trigger button -->
-            <button type="button" class="btn pace-bg-accent d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
+            <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
               Add Employee
             </button>
 
-            <!-- Modal -->
+            <!-- Modal Contents -->
             <div class="modal fade" id="addEmployeeForm" tabindex="-1" role="dialog" aria-labelledby="addEmployeeFormLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="addEmployeeFormLabel">Modal title</h5>
+                    <h5 class="modal-title" id="addEmployeeFormLabel">Employee Form</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                   
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="firstName">Firstname</label>
+                          <input type="text" class="form-control" id="firstName">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="lastName">Lastname</label>
+                          <input type="text" class="form-control" id="lastName">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="username">Username</label>
+                          <input type="text" class="form-control" id="username">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="phone">Phone</label>
+                          <input type="tel" class="form-control" id="phone">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" id="password">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="department">Department</label>
+                          <select id="department" class="form-control">
+                            <option selected>Choose...</option>
+                            <option value="">Web Development</option>
+                            <option value="">Web Design</option>
+                            <option value="">Product Management</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="department">Role</label>
+                          <select id="department" class="form-control">
+                            <option selected>Choose...</option>
+                            <option value="">Web Development</option>
+                            <option value="">Web Design</option>
+                            <option value="">Product Management</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="143 work and connect" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Techspecialist, Arare Street, first floor">
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState">State</label>
+                          <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="inputZip">Zip</label>
+                          <input type="text" class="form-control" id="inputZip">
+                        </div>
+                      </div>
+                      <!-- <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Check me out
+                          </label>
+                        </div>
+                      </div> -->
+                      <!-- <button type="submit" class="btn pace">Sign in</button> -->
+                    </form>
+                  </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn pace-bg-accent" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn pace-bg-primary" onclick="alert(document.getElementById('email').value)">Employee</button>
                   </div>
                 </div>
               </div>
@@ -142,8 +229,8 @@
               <div class="card-body">
                 <table class="table card-text">
                   <thead>
-                    <tr class="pace-accent-color">
-                      <th class="pace-accent-color">#</th>
+                    <tr class="pace-accen-color">
+                      <th class="pace-accnt-color">S/N</th>
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Username</th>
@@ -155,8 +242,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
+                      <td>Ayodele Samuel Adebayo</td>
+                      <td>Ayodele Samuel Adebayo</td>
                       <td>@mdo</td>
                       <td>@mdo</td>
                       <td>@mdo</td>
@@ -164,8 +251,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
+                      <td>Ayodele Samuel Adebayo</td>
+                      <td>Ayodele Samuel Adebayo</td>
                       <td>@fat</td>
                       <td>@fat</td>
                       <td>@fat</td>
@@ -185,12 +272,111 @@
               </div>
             </div>
           </section>
+          <!-- profile trigger button -->
+          <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#profileDisplayForm">
+            View Profile
+          </button>
         </div>
+        <!-- Profile Modal Contents -->
+         <div class="modal" id="profileDisplayForm" tabindex="-1" role="dialog" aria-labelledby="profileDisplayLabel" aria-hidden="true">
+             <div class="modal-body">
+                <div class="py-5 profile">
+                  <div class="card">
+                  <div class="card-header d-flex">
+                    <h3>Profile</h3>
+                    <button type="button" class="d-block ml-auto close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <img src="https://github.com/unclebay143.png" alt="">
+                      </div>
+                      <div class="col-md-4 profile-left-section">
+                        <h4 class="m-t-0 mb-0" id="displayFullname">Ayodele Samuel Adebayo</h4>
+                        <h6 class="text-muted" id="displayRole">Frontend Developer</h6>
+                        <small class="text-muted" id="displayDepartment">Web Design</small>
+                        <div class="user-name mt-3" id="displayUserName">Employee ID : unclebay143</div>
+                        <div class="text-muted" id="displayJoinedDate">Date of Joined : Aug 21, 2020</div>
+      
+                        <button class="btn pace-bg-accent mt-3">Disable Account</button>
+                      </div>
+                      <div class="col-md-6 my-lg-4">
+                        <ul class="profile-info profile-right-section">
+                          <li>
+                            <div class="title">Phone:</div>
+                            <div class="text">08038157444</div>
+                          </li>
+                          <li>
+                            <div class="title">Email:</div>
+                            <div class="text">unclebigbay@gmail.com</div>
+                          </li>
+                          <li>
+                            <div class="title">Birthday:</div>
+                            <div class="text">24th May</div>
+                          </li>
+                          <li>
+                            <div class="title">Address:</div>
+                            <div class="text">TIIDELab cohort 2</div>
+                          </li>
+                          <li>
+                            <div class="title">Report to:</div>
+                            <div class="text">Solomon Chokor</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="row mt-5">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-4 profile-stat">
+                        <ul>
+                          <li>
+                            <div class="title">Completed Task : </div>
+                            <div class="text">5</div>
+                          </li>
+                          <li>
+                            <div class="title">Approved Leave : </div>
+                            <div class="text">5</div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6 profile-links">
+                        <ul>
+                          <li>
+                            <div class="title">Resume : </div>
+                            <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div>
+                          </li>
+                          <li>
+                            <div class="title">Github :</div>
+                            <div class="text"><a href="#">unclebay143</a></div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-2 mt-5"></div>
+                      <div class="col-6"></div>
+                        <div class="col-4">
+                          <!-- <button type="button" class="btn pace-bg-accent" data-dismiss="modal">Close</button> -->
+                          <button type="button" class="btn pace-bg-primary mt-5 ml-5" onclick="alert(document.getElementById('email').value)">Employee</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <!-- <div class="modal-footer">
+                  
+                </div> -->
+          </div>
+         </div>
+        <!-- / Profile Modal Contents  -->
         <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 text-center text-md-left text-primary">
-                <p class="mb-2 mb-md-0">Your company &copy; 2018-2020</p>
+                <p class="mb-2 mb-md-0">Pace Timesheet &copy; 2018-2020</p>
               </div>
               <div class="col-md-6 text-center text-md-right text-gray-400">
                 <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>
