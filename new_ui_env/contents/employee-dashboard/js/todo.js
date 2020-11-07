@@ -46,17 +46,17 @@ function displayContent() {
         tdID = tdList[i].id;
         content += `
                     <div class="todoList">
-                        <div class="header"><h2>${tdName}</h2>
-                        <button onclick="deleteParent('${tdID}')">X</button></div>
+                        <div class="todo-header"><h2>${tdName}</h2>
+                        <button onclick="deleteParent('${tdID}')"><i class="fa fa-times pace-accent-color"></i></button></div>
                         <input class="comment" id="${tdName+tdID}">
-                        <button class="btn-save pace-bg-accent btn-save-children" onclick="addChildTodo('${tdName}', '${tdID}')">Comment</button><div>
+                        <button class="btn-save pace-bg-accent btn-save-children" onclick="addChildTodo('${tdName}', '${tdID}')">add</button><div>
                         `;
         for (var j = 0; j < tdListBreakDown.length; j++) {
             parentID = tdListBreakDown[j].parentID
             if (tdID == parentID) {
                 content += `
-                        <div class="card"><p>${tdListBreakDown[j].comment}</p>
-                        <button onclick="deleteChildTodo('${tdListBreakDown[j].id}')">X</button></div>
+                        <div class="todo-card"><p>${tdListBreakDown[j].comment}</p>
+                        <button onclick="deleteChildTodo('${tdListBreakDown[j].id}')"><i class="fa fa-times pace-accent-color"></i></button></div>
                     `;
             } else {
                 continue;
