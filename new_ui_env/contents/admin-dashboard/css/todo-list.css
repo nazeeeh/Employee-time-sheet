@@ -4,20 +4,26 @@
 ==================================
  */
 
+input{
+    border: 1px solid #dddddd !important;
+    outline: none !important;
+}
 
 button {
     outline: none;
     cursor: pointer;
 }
 
+.swal-button{
+    background: #FF6584;
+}
 
-/* #todo-list-section {
-    width: 100%;
-} */
+.swal-button:hover{
+    background: #FF6584 !important;
+}
 
 #addTodoListDiv {
-    /* text-align: center; */
-    margin-top: 5em;
+    margin-top: 3em;
     margin-bottom: 2em;
     margin-left: 1em;
 }
@@ -43,6 +49,8 @@ button {
 .todoList h2 {
     font-size: 1em;
     margin-bottom: 0.5em;
+    text-transform: capitalize;
+    padding: 0.7rem;
 }
 
 #to-do-list-button {
@@ -62,11 +70,15 @@ button {
 }
 
 .card button {
-    visibility: hidden;
+    /* visibility: hidden; */
     height: max-content;
     background: none;
     border: none;
     padding: 0.3em;
+    background: rgb(235, 235, 235);
+    color: #FF6584;
+    font-weight: 800;
+    font-size: 0.734rem;
 }
 
 .card:hover button {
@@ -74,29 +86,29 @@ button {
 }
 
 .card button:hover {
-    background-color: rgb(235, 235, 235);
     border-radius: 4px;
     cursor: pointer;
 }
 
-.header {
+.todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.header button {
-    visibility: hidden;
+.todo-header .deleteBtn {
     height: max-content;
-    background: none;
+    color: #FF6584; 
+    background: transparent;
     border: none;
     padding: 0.3em;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
 }
 
-.header:hover button {
-    visibility: visible;
-}
-
-.header button:hover {
+.todo-header button:hover {
     background-color: rgb(235, 235, 235);
     border-radius: 4px;
     cursor: pointer;
@@ -146,7 +158,16 @@ button {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 0.5em;
-    padding: 0.5em;
+    padding: 0.93em;
+    font-size: 0.8em;
+}
+
+.children-comment{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    padding: 0.6em;
     font-size: 0.8em;
 }
 
