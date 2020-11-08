@@ -30,7 +30,7 @@
   <body>
     <!-- navbar-->
     <header class="header">
-      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base">Manage Employee</a>
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow pace-navbar-full"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base">Manage Employee</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -106,14 +106,27 @@
               <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Logout</span></a></li>
         </ul>
       </div>
-      <div class="page-holder w-100 d-flex flex-wrap">
+      <div class="d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
           <div class="pt-5">
             <!-- Add Employee Modal Form Section-->
             <!-- trigger button -->
-            <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
-              Add Employee
-            </button>
+            <div class="row">
+              <div class="col">
+                <form class="form-inline d-flex search-form justify-content-center md-form form-sm mt-0">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <input class="form-control search-input form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                    aria-label="Search">
+                    <button class="btn pace-bg-primary ml-3">Search</button>
+                </form>
+                <!-- <input type="text" class="form-control"> -->
+              </div>
+              <div class="col">
+                <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
+                  Add Employee
+                </button>
+              </div>
+            </div>
 
             <!-- Modal Contents -->
             <div class="modal fade" id="addEmployeeForm" tabindex="-1" role="dialog" aria-labelledby="addEmployeeFormLabel" aria-hidden="true">

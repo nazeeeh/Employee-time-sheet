@@ -1,7 +1,14 @@
+/* reset */
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.form-inline input,
+.form-inline textarea{
+  border-radius: 0px;
 }
 
 /* sweet alert hack */

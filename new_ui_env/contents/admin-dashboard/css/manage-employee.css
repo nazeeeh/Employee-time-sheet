@@ -1,3 +1,15 @@
+/* make the navbar full on small device bcos of the employee form list */
+.pace-navbar-full{
+  /* width: 700px; */
+}
+
+.search-form{
+  flex-flow: nowrap;
+}
+
+.search-input{
+  padding: 12px 13px;
+}
 .title{
   font-weight: 700;
 }
