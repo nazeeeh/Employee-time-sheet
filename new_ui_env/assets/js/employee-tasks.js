@@ -1,5 +1,8 @@
 function closeTasks() {
-    location.assign("../contents/employee-dashboard.html");
+    location.assign("../../contents/employee-dashboard/index.html");
+}
+function taskPage() {
+    location.assign("employee-tasks.html")
 }
 
 let acceptedTasks = [] //Contains tasks that have been accepted
@@ -70,7 +73,7 @@ if(JSON.parse(localStorage.getItem("acceptedTasks")) == null)
 // function to display tasks gotten from local storage
 function viewTasks() {
     let view = `
-    <thead class = "pace-accent-color">
+    <thead class = "pace-thead">
             <tr>
             <th>S/N</th>
             <th>Task</th>
@@ -80,6 +83,12 @@ function viewTasks() {
         </thead>
         <tbody>
     `
+   view += `<tr>
+        <td>1.</td>
+        <td>Build UI</td>
+        <td>13/11/2020</td>
+        <td>Accept</td>
+    </tr>`
     for(let i = 0; i <employeeTask.length; i++) {
         if(employeeTask[i].document != ""){
             view += `
@@ -105,7 +114,7 @@ function viewTasks() {
         </tr>
     </tbody>
     `
-    view += `<button onclick="closeTasks()">close</button>`
+    // view += `<button onclick="closeTasks()">close</button>`
     document.getElementById('view-tasks').innerHTML = view;
 
     // viewAcceptedTasks()
@@ -179,7 +188,7 @@ function completeTask(id){ //What to do do when the 'completed' button is clicke
 // function to display accepted tasks
 function viewAcceptedTasks() {
     let views = `
-    <thead class = "pace-accent-color">
+    <thead class = "pace-thead">
             <tr>
             <th>S/N</th>
             <th>Task</th>
@@ -189,6 +198,12 @@ function viewAcceptedTasks() {
         </thead>
         <tbody>
     `
+    views += `<tr>
+        <td>1.</td>
+        <td>Fix UI</td>
+        <td>13/11/2020</td>
+        <td>In Progress</td>
+    </tr>`
     for( let i = 0; i < pending.length; i++) {
         views += `
             <tr>
