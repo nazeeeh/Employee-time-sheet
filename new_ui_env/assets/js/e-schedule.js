@@ -17,7 +17,7 @@ function calendar() {
     
     let display = "";
     display +=
-    ` <thead class = "pace-bg-primary"> <tr> `
+    ` <thead class = "pace-thead"> <tr> `
     let date = 0;
         for(let i = 0; i < weekDay.length; i++) {
             display +=  
@@ -99,7 +99,7 @@ function delSchedule(id) {
 function displaySchedule() {
     var list = `
    
-    <thead class="pace-bg-primary">
+    <thead class="pace-thead">
             <tr>
             <th>S/N</th>
             <th>Event</th>
