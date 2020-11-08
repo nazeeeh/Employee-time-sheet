@@ -1,0 +1,75 @@
+
+.table-responsive {
+    margin: 2rem auto;
+    padding: 2rem;
+    
+}
+.table {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.table th {
+    color: #fff;
+}
+#presentMonth {
+    text-align: center;
+}
+.cell {
+    background: #fff;
+    text-align: center;
+    margin: 0rem;
+    width: .1rem;
+    border: 1px solid #ccc;
+}
+.cell:hover {
+    background: #ddd;
+    color: #fff;
+}
+/* .cell:hover > .add-event i{
+    display: inline-block;
+}
+.add-event i {
+   display: none;
+} */
+
+.modal-header {
+    color: #fff;
+}
+
+button.close {
+    color: #fff;
+    text-shadow: 0 0 #000;
+    opacity: 1;
+}
+
+button.close:hover {
+    color: #eee !important;
+}
+
+form input {
+    padding: .5rem;
+    margin: .5rem;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #333;
+    border-bottom: 2px solid rgba(33, 50, 96, 0.1);
+    font-size: 21px;
+    background: rgba(33, 50, 96, 0.1);
+    font-family: 'Open Sans';
+    font-style: italic;
+}
+
+.btn {
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
+}
+.btn:hover {
+    color: #ccc !important;
+}
+.today {
+    background: #eee;
+    color: #FF6584;
+}
