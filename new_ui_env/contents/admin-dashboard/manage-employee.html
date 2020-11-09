@@ -43,7 +43,8 @@
                         </div>
                     </form>
                 </li>
-                <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon"></span></a>
+                <li class="nav-item dropdown mr-3">
+                    <a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon pace-bg-accent"></span></a>
                     <div aria-labelledby="notifications" class="dropdown-menu">
                         <a href="#" class="dropdown-item">
                             <div class="d-flex align-items-center">
@@ -81,8 +82,8 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown ml-auto">
-                    <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Mark Stephen</strong><small>Web Developer</small></a>
+                    <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://github.com/unclebay143.png" alt="Ayodele Samuel Adebayo" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Ayodele Samuel Adebayo</strong><small>Web Developer</small></a>
                         <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
                         <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
                     </div>
@@ -95,10 +96,10 @@
             <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-                <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
+                <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted active"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
                 <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Task</span></a></li>
                 <li class="sidebar-list-item"><a href="forms.html" class="sidebar-link text-muted"><i class="o-timing-1 mr-3 text-gray"></i><span>e-schedule</span></a></li>
-                <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted active"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
+                <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Calendar</span></a>
                     <div id="pages" class="collapse">
                         <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
@@ -126,17 +127,19 @@
                     <!-- trigger button -->
                     <div class="row">
                         <div class="col">
-                            <form class="form-inline d-flex search-form justify-content-center md-form form-sm mt-0">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <input class="form-control search-input form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                                <button class="btn pace-bg-primary ml-3">Search</button>
+                            <form class="form-inline d-flex search-form md-form form-sm mt-0">
+                                <input class="form-control search-input form-control-sm w-75" type="text" placeholder="Search" aria-label="Search">
+                                <button class="btn pace-bg-accent ml-3">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                    Search
+                                </button>
                             </form>
                             <!-- <input type="text" class="form-control"> -->
                         </div>
                         <div class="col">
-                            <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
-                  Add Employee
-                </button>
+                            <button type="button" class="btn pace-bg-accent d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
+                                Add Employee
+                            </button>
                         </div>
                     </div>
 
@@ -249,13 +252,13 @@
                 <section class="py-5">
                     <div class="card">
                         <div class="card-header">
-                            <h6 class="text-uppercase mb-0 pace-primary-color">Employee List</h6>
+                            <h6 class="text-uppercase mb-0 pace-accent-color">Employee List</h6>
                         </div>
                         <div class="card-body">
                             <table class="table card-text">
                                 <thead>
-                                    <tr class="pace-accen-color">
-                                        <th class="pace-accnt-color">S/N</th>
+                                    <tr class="pace-bg-accent text-white shadow">
+                                        <th>S/N</th>
                                         <th>First Name</th>
                                         <th>Last Name</th>
                                         <th>Username</th>
@@ -266,7 +269,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope=" row ">1</th>
                                         <td>Ayodele</td>
                                         <td>Samuel Adebayo</td>
                                         <td>unclebay143</td>
@@ -275,7 +278,7 @@
                                         <td>Aug 2 2020</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">2</th>
+                                        <th scope="row ">2</th>
                                         <td>Opaluwa</td>
                                         <td>Aisha</td>
                                         <td>aeesh</td>
@@ -283,8 +286,8 @@
                                         <td>Frontend</td>
                                         <td>Aug 2 2020</td>
                                     </tr>
-                                    <tr data-toggle="modal" data-target="#profileDisplayForm">
-                                        <th scope="row">3</th>
+                                    <tr data-toggle="modal " data-target="#profileDisplayForm ">
+                                        <th scope="row ">3</th>
                                         <td>Ariyibi</td>
                                         <td>Baseet</td>
                                         <td>Bastocurrency</td>
@@ -298,113 +301,113 @@
                     </div>
                 </section>
                 <!-- profile trigger text button -->
-                <!-- <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#profileDisplayForm">
+                <!-- <button type="button " class="btn pace-bg-primary d-block ml-auto " data-toggle="modal " data-target="#profileDisplayForm ">
             View Profile
           </button> -->
             </div>
             <!-- Profile Modal Contents -->
-            <div class="modal" id="profileDisplayForm" tabindex="-1" role="dialog" aria-labelledby="profileDisplayLabel" aria-hidden="true">
-                <div class="modal-body">
-                    <div class="py-5 profile">
-                        <div class="card">
-                            <div class="card-header d-flex">
+            <div class="modal " id="profileDisplayForm " tabindex="-1 " role="dialog " aria-labelledby="profileDisplayLabel " aria-hidden="true ">
+                <div class="modal-body ">
+                    <div class="py-5 profile ">
+                        <div class="card ">
+                            <div class="card-header d-flex ">
                                 <h3>Profile</h3>
-                                <button type="button" class="d-block ml-auto close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
+                                <button type="button " class="d-block ml-auto close " data-dismiss="modal " aria-label="Close ">
+                      <span aria-hidden="true ">&times;</span>
                     </button>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="https://github.com/unclebay143.png" alt="">
+                            <div class="card-body ">
+                                <div class="row ">
+                                    <div class="col-md-2 ">
+                                        <img src="https://github.com/unclebay143.png " alt=" ">
                                     </div>
-                                    <div class="col-md-4 profile-left-section">
-                                        <h4 class="m-t-0 mb-0" id="displayFullname">Ayodele Samuel Adebayo</h4>
-                                        <h6 class="text-muted" id="displayRole">Frontend Developer</h6>
-                                        <small class="text-muted" id="displayDepartment">Web Design</small>
-                                        <div class="user-name mt-3" id="displayUserName">Employee ID : unclebay143</div>
-                                        <div class="text-muted" id="displayJoinedDate">Date of Joined : Aug 21, 2020</div>
+                                    <div class="col-md-4 profile-left-section ">
+                                        <h4 class="m-t-0 mb-0 " id="displayFullname ">Ayodele Samuel Adebayo</h4>
+                                        <h6 class="text-muted " id="displayRole ">Frontend Developer</h6>
+                                        <small class="text-muted " id="displayDepartment ">Web Design</small>
+                                        <div class="user-name mt-3 " id="displayUserName ">Employee ID : unclebay143</div>
+                                        <div class="text-muted " id="displayJoinedDate ">Date of Joined : Aug 21, 2020</div>
 
-                                        <button class="btn pace-bg-accent mt-3">Disable Account</button>
+                                        <button class="btn pace-bg-accent mt-3 ">Disable Account</button>
                                     </div>
-                                    <div class="col-md-6 my-lg-4">
-                                        <ul class="profile-info profile-right-section">
+                                    <div class="col-md-6 my-lg-4 ">
+                                        <ul class="profile-info profile-right-section ">
                                             <li>
-                                                <div class="title">Phone:</div>
-                                                <div class="text">08038157444</div>
+                                                <div class="title ">Phone:</div>
+                                                <div class="text ">08038157444</div>
                                             </li>
                                             <li>
-                                                <div class="title">Email:</div>
-                                                <div class="text">unclebigbay@gmail.com</div>
+                                                <div class="title ">Email:</div>
+                                                <div class="text ">unclebigbay@gmail.com</div>
                                             </li>
                                             <li>
-                                                <div class="title">Birthday:</div>
-                                                <div class="text">24th May</div>
+                                                <div class="title ">Birthday:</div>
+                                                <div class="text ">24th May</div>
                                             </li>
                                             <li>
-                                                <div class="title">Address:</div>
-                                                <div class="text">TIIDELab cohort 2</div>
+                                                <div class="title ">Address:</div>
+                                                <div class="text ">TIIDELab cohort 2</div>
                                             </li>
                                             <li>
-                                                <div class="title">Report to:</div>
-                                                <div class="text">Solomon Chokor</div>
+                                                <div class="title ">Report to:</div>
+                                                <div class="text ">Solomon Chokor</div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <div class="row mt-5">
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4 profile-stat">
+                                <div class="row mt-5 ">
+                                    <div class="col-md-2 "></div>
+                                    <div class="col-md-4 profile-stat ">
                                         <ul>
                                             <li>
-                                                <div class="title">Completed Task : </div>
-                                                <div class="text">5</div>
+                                                <div class="title ">Completed Task : </div>
+                                                <div class="text ">5</div>
                                             </li>
                                             <li>
-                                                <div class="title">Approved Leave : </div>
-                                                <div class="text">5</div>
+                                                <div class="title ">Approved Leave : </div>
+                                                <div class="text ">5</div>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="col-md-6 profile-links">
+                                    <div class="col-md-6 profile-links ">
                                         <ul>
                                             <li>
-                                                <div class="title">Resume : </div>
-                                                <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div>
+                                                <div class="title ">Resume : </div>
+                                                <div class="text "><a href="# ">AyodeleSamuelAdebayo.pdf</a></div>
                                             </li>
                                             <li>
-                                                <div class="title">Github :</div>
-                                                <div class="text"><a href="#">unclebay143</a></div>
+                                                <div class="title ">Github :</div>
+                                                <div class="text "><a href="# ">unclebay143</a></div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-2 mt-5"></div>
-                                    <div class="col-6"></div>
-                                    <div class="col-4">
-                                        <!-- <button type="button" class="btn pace-bg-accent" data-dismiss="modal">Close</button> -->
-                                        <button type="button" class="btn pace-bg-primary mt-5 ml-5" onclick="alert(document.getElementById('email').value)">Employee</button>
+                                <div class="row ">
+                                    <div class="col-2 mt-5 "></div>
+                                    <div class="col-6 "></div>
+                                    <div class="col-4 ">
+                                        <!-- <button type="button " class="btn pace-bg-accent " data-dismiss="modal ">Close</button> -->
+                                        <button type="button " class="btn pace-bg-primary mt-5 ml-5 " onclick="alert(document.getElementById( 'email').value) ">Employee</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="modal-footer">
+                    <!-- <div class="modal-footer ">
                   
                 </div> -->
                 </div>
             </div>
             <!-- / Profile Modal Contents  -->
-            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-left text-primary">
-                            <p class="mb-2 mb-md-0">Pace Timesheet &copy; 2018-2020</p>
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100 ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-md-6 text-center text-md-left text-primary ">
+                            <p class="mb-2 mb-md-0 ">Pace Timesheet &copy; 2018-2020</p>
                         </div>
-                        <div class="col-md-6 text-center text-md-right text-gray-400">
-                            <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p>
+                        <div class="col-md-6 text-center text-md-right text-gray-400 ">
+                            <p class="mb-0 ">Design by <a href="https://bootstrapious.com/admin-templates " class="external text-gray-400 ">Bootstrapious</a></p>
                             <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                         </div>
                     </div>
@@ -413,16 +416,16 @@
         </div>
     </div>
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js">
+    <script src="vendor/jquery/jquery.min.js "></script>
+    <script src="vendor/popper.js/umd/popper.min.js ">
     </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js">
+    <script src="vendor/bootstrap/js/bootstrap.min.js "></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js ">
     </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="js/charts-custom.js"></script>
-    <script src="js/front.js"></script>
+    <script src="vendor/chart.js/Chart.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js "></script>
+    <script src="js/charts-custom.js "></script>
+    <script src="js/front.js "></script>
 </body>
 
 </html>
