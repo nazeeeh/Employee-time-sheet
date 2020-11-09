@@ -82,7 +82,7 @@ function populateTimerReport(){
                 <td>${element.loginTime}</td>
                 <td>${element.hour}:${element.minute}:${element.second}</td>
                 <td>${element.dailyWage}</td>
-                <td>${element.overTime}<block
+                <td>${element.overTime}</td>
                 <td>${element.overTimeWage}</td>
                 <td>${element.payableWage}</td>
                 </tr>

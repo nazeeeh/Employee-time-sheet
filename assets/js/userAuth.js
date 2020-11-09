@@ -12,7 +12,7 @@ var unKnown = document.getElementById("errorMessage"); // error message box
 
 let paceDB = JSON.parse(localStorage.getItem("paceDB")); // PACE local storage
 
-if(paceDB == null){
+if(JSON.parse(localStorage.getItem("paceDB")) == null){
   paceDB = JSON.parse(localStorage.getItem("paceDB"))
 }
 

@@ -10,17 +10,19 @@ function backToDashboard() {
 function assignNewTaskMain(){
     let addTaskMain = document.getElementById("new-task-main");
     if(addTaskMain.style.display == "block"){
-         addTaskMain.style.display = "none"
-     }else{
-         addTaskMain.style.display = "block"
-     }
+        addTaskMain.style.display = "none"
+    }else{
+        addTaskMain.style.display = "block"
+    }
 
-    document.getElementById("assign-main").style.opacity = "0.7"
+    disableAssign()
+
+    // document.getElementById("assign-main").style.opacity = "0.7"
     taskName = document.getElementById("task-name-main").value = ""
     employeeAssigned = document.getElementById("employee-assigned-main").value = ""
     dueDate = document.getElementById("due-date-main").value = ""
  }
-
+ 
  function disableAssign(){
     let taskName = document.getElementById("task-name-main").value,
     dueDate = document.getElementById("due-date-main").value;
@@ -134,9 +136,7 @@ function appendNewTaskMain(){
     docs = document.getElementById("file").value;
     
     newTask = {}
-    if (taskName == "" || dueDate == ""){
-        document.getElementById("assign-main").style.opacity = "0.7"
-    }else{
+   if (taskName != "" || dueDate != ""){
         newTask = {
             "name" : taskName,
             "employee" : employeeAssigned,
@@ -170,9 +170,6 @@ function appendNewTaskMain(){
         }
 
 
-        if(taskName != "" || dueDate != ""){
-            // document.getElementById("assign-main").style.opacity = "0"
-        }
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
         displayMain(assignedMainList)
 
