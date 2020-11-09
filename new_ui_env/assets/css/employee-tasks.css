@@ -59,8 +59,8 @@ th, td{
     border-bottom: 1px solid #fff;
     padding: 2rem;
 }
-thead tr {
-    background-color:  #213260;
+.table thead th {
+    color: #fff !important;
 }
 
 tbody tr{

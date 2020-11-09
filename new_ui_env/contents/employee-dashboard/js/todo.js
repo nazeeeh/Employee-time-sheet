@@ -73,7 +73,12 @@ function addParent() {
     listValue = document.getElementById("addTodoListInput").value;
     tdListTracker = parseInt(localStorage.getItem("todoListTracker"));
     if (listValue == null || listValue == undefined || listValue.length == "0") {
-        alert("Error!!! To-do list Name cannot be empty")
+        swal({
+            title: "Todo Cannot be empty",
+            // text: `Please n `,
+            icon: "error",
+            button: "Okay",
+          })
     } else if (listValue.length < 3) {
         alert("Error!!! To-do list Name must be greater than 3 Characters")
     } else {

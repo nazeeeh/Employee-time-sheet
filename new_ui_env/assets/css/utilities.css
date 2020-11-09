@@ -15,7 +15,10 @@
 .pace-bg-primary{
   background: #335eea;
 }
-
+.pace-thead{
+  background: #335eea;
+  color: #fff;
+}
 .pace-bg-accent{
   background: #FF6584;
 }
