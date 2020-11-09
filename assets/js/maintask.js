@@ -1,12 +1,24 @@
-// setTimeout(function(){
-//     location.reload()
-// },1000)
-
-
 function backToDashboard() {
     location.assign("../../contents/internal-dashboard.html");
 }
 
+// get name of current user and display on user dashboard
+document.getElementById("tasksInternalName").innerHTML =  currentUser[0].name
+
+// reload the page every 1 minute
+setTimeout(function(){
+    location.reload()
+},10000)
+
+// get current date
+var date = new Date()
+var year = date.getFullYear()
+var month = date.getMonth()+1
+var day = date.getDate()
+
+disableAssign()
+
+// display form to add new task
 function assignNewTaskMain(){
     let addTaskMain = document.getElementById("new-task-main");
     if(addTaskMain.style.display == "block"){
@@ -14,16 +26,14 @@ function assignNewTaskMain(){
     }else{
         addTaskMain.style.display = "block"
     }
-
-    disableAssign()
-
-    // document.getElementById("assign-main").style.opacity = "0.7"
+    // clear input every time the the form is displayed
     taskName = document.getElementById("task-name-main").value = ""
     employeeAssigned = document.getElementById("employee-assigned-main").value = ""
     dueDate = document.getElementById("due-date-main").value = ""
- }
+}
  
- function disableAssign(){
+// disables the assign button when task name and due date data inputs are empty
+function disableAssign(){
     let taskName = document.getElementById("task-name-main").value,
     dueDate = document.getElementById("due-date-main").value;
     if(taskName == "" || dueDate == ""){
@@ -31,21 +41,22 @@ function assignNewTaskMain(){
     }else{
         document.getElementById("assign-main").style.disabled= false
     }
- }
+}
 
-let check = JSON.parse(localStorage.getItem("paceDB"))
-let tasks = JSON.parse(localStorage.getItem("tasks"));
-let currentUser = JSON.parse(localStorage.getItem("current_InternalUser"));
-let currentUserEmail = currentUser[0].email
-let unassignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`));
-let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`));
-let pending = JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`));
-let completed = JSON.parse(localStorage.getItem(`${currentUserEmail}_completedTask`));
-let companyName =  check[0].name;
-let department =  currentUser[0].department
-let employees = JSON.parse(localStorage.getItem(department));
-let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`));
+let check = JSON.parse(localStorage.getItem("paceDB")) //get company details
+let tasks = JSON.parse(localStorage.getItem("tasks")); //get general task details
+let currentUser = JSON.parse(localStorage.getItem("current_InternalUser")); //get current user details
+let currentUserEmail = currentUser[0].email //get email of user from current user details
+let unassignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`)); //get user unassigned tasks
+let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`)); //get user assigned tasks
+let pending = JSON.parse(localStorage.getItem(`${currentUserEmail}_pendingTask`)); //get user pending tasks
+let completed = JSON.parse(localStorage.getItem(`${currentUserEmail}_completedTask`)); //get user's completed tasks
+let companyName =  check[0].name; //get name of company from company details
+let department =  currentUser[0].department //get current user
+let employees = JSON.parse(localStorage.getItem(department)); //get all employees in user department
+let employeeTask = JSON.parse(localStorage.getItem(`${currentUserEmail}_task`)); //get all user tasks
 
+// if local storage does not exist, create an empty list for all above items
 if(JSON.parse(localStorage.getItem("tasks")) == null || undefined){
     tasks = []
 }
@@ -73,7 +84,9 @@ if(employees == null || undefined){
 if(employeeTask == null || undefined){
     employeeTask = []
 }
+// if local storage does not exist, create an empty list
 
+// loop through details of all employees in user's department and get employee names
 function getEmployeeNames(){
     let employeeNames = []
     for(i = 0; i < employees.length; i++){
@@ -82,13 +95,15 @@ function getEmployeeNames(){
     return employeeNames
 }
 
-document.getElementById("tasksInternalName").innerHTML =  currentUser[0].name
-
+// display unassigned list or drafts
 displayUnassigned(unassignedMainList)
+//display all assigned lists
 displayMain(assignedMainList)
-       
+
 function displayMain(task){
     let add = ''
+
+    //loop through every task and display task details on dashboard, edit input fields are hidden
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
         <p> <strong> Task name : </strong> ${task[i].name} <span>Assigned to : ${task[i].employee}</span> </p> 
@@ -110,6 +125,7 @@ function displayMain(task){
 
 function displayUnassigned(task){
     let add = ''
+    //loop through every unassigned task and display task details on dashboard
     for(i = 0; i < task.length; i++){
         add += ` <div class="main-unassigned" id="${i}">
         <p><strong>Task name : </strong>${task[i].name}</p>
@@ -123,11 +139,6 @@ function displayUnassigned(task){
     document.getElementById("show-unassigned-tasks").innerHTML = add
 }
 
-var date = new Date()
-var year = date.getFullYear()
-var month = date.getMonth()+1
-var day = date.getDate()
-
 function appendNewTaskMain(){
     let taskName = document.getElementById("task-name-main").value,
     employeeAssigned = document.getElementById("employee-assigned-main").value,
@@ -136,7 +147,7 @@ function appendNewTaskMain(){
     docs = document.getElementById("file").value;
     
     newTask = {}
-   if (taskName != "" || dueDate != ""){
+    if (taskName != "" || dueDate != ""){
         newTask = {
             "name" : taskName,
             "employee" : employeeAssigned,
@@ -169,10 +180,8 @@ function appendNewTaskMain(){
             }else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
         }
 
-
         localStorage.setItem(`${currentUserEmail}_pendingTask`,  JSON.stringify(pending))
         displayMain(assignedMainList)
-
     }   
 }
 
