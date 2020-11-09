@@ -28,18 +28,16 @@
      text-decoration: none;
  }
  
-.con{
-    display: flex;
-    justify-content: space-between;
-    height: 60%;
-    width: 100%;
-    margin: 0 auto;
-}
+
 .form-con {
-    margin: .5rem 0;
+    /* margin: .5rem 0; */
+    /* width: 45%; */
+}
+.form-heading h4 {
+    font-style: italic;
 }
 .img-con {
-    width: 50%;
+    /* width: 50%; */
 }
 
 .img-con img{
@@ -47,11 +45,9 @@
 }
 
  @media(max-width:768px) {
-    .con{
-        display: flex;
+     /* modifying the bootstrap 'row' class for smaller screen */
+    .row{
         flex-direction: column-reverse;
-        width: 100%;
-        margin: 0 auto;
     }
     .form-con, .img-con{
         width: 100%;
