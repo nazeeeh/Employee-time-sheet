@@ -129,11 +129,6 @@
       <h4 class="bot">Pace Bot: <span id="error_">Hello</span></h4>
       <section class="add-form">
         <section>
-        <!-- userTypeOption = document.getElementById("employee_type");
-        new_user_type = userTypeOption.options[userTypeOption.selectedIndex].value; -->
-        <!-- var companyAdmin = JSON.parse(localStorage.getItem("current_AdminUser"))
-        var companyName = companyAdmin[0].name
-        localStorage.setItem(`${companyName}_department`, JSON.stringify(isExist_department)) -->
           <label for="">Full Name</label>
           <input type="text" id="employee_name">
           <label for="">Email</label>
@@ -150,7 +145,6 @@
             <option value="554">Employee</option>
           </select>
           <label for="">Role</label>
-          <!-- <input type="text" id="employee_role"> -->
           <select name="" id="employee_role">
             <option value="">--Select--</option>
             <option value="Backend">Backend</option>
@@ -187,24 +181,41 @@
     <!-- edit form  -->
     <div id="edit_section">
       <h3 id="edit_heading"><span id="close_edit" onclick='close_editForm()'>X</span> Employee Form 2</h3>
-     <section id="edit-form">
+     <section id="edit-form-section">
        <section>
          <input type="hidden" id="identifier">
          <label for="">Full Name</label>
          <input type="text" id="update_name">
-         <label for="">Department</label>
-         <input type="text" id="update_department">
-         <label for="">Employee Type</label>
-         <input type="text" id="update_type">
+         <label for="">Email</label>
+         <input type="text" id="update_email">
+         <label for="">Password</label>
+         <input type="text" id="update_password">
         </section>
         <section>
+          <label for="">Employee Type</label>
+          <select name="" id="employee_type">
+            <option value="">--Select--</option>
+            <option value="443">Co-Admin</option>
+            <option value="332">Internal Admin</option>
+            <option value="554">Employee</option>
+          </select>
           <label for="">Role</label>
-          <input type="text" id="update_role">
-          <label for="">Phone Number</label>
-          <input type="text" id="update_phone">
-          <label for="">Email</label>
-          <input type="text" id="update_email">
-       </section>
+          <select name="" id="employee_role">
+            <option value="">--Select--</option>
+            <option value="Backend">Backend</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Manager">Manager</option>
+          </select>
+          <label for="">Department</label>
+          <!-- <input type="text" id="employee_department"> -->
+          <select name="" id="employee_department">
+            <option value="">--Select--</option>
+            <option value="Product Management">Product Management</option>
+            <option value="Web design">Web design</option>
+            <option value="web development">Web development</option>
+          </select>
+        </section>
+      </section>
      </section>
       <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
     </div>  

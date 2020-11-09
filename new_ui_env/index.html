@@ -7,36 +7,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Pace Timesheet</title>
   </head>
   <body onload="typeWriter()">
-    <main class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a href="#" class="navbar-brand" id="logo">
-            
-              <!-- <svg width="1em" style="color: #335eea" height="2em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z"/>
-              </svg> -->
-              Pace</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#this_nav" aria-controls="this_nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="this_nav">
-            <div class="navbar-nav">
-              <a href="#" class="nav-link active">Home</a>
-              <a href="#" class="nav-link">Features</a>
-              <a href="#" class="nav-link">Pricing</a>
-              <a href="#" class="nav-link">About</a>
-              <a href="#" class="nav-link">Contact</a>
-            </div>
-            <a href="#" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
-          </div>
-        </nav>
-  
-        <header class="container">
+    <main class="container">
+      <nav-bar></nav-bar>
+      <header class="container">
           <section class="row d-flex flex-column-reverse home-intro">
-            
             <div class="col d-flex flex-row">
               <section class="home-intro-text">
                 <!-- type-writing effect -->
@@ -47,14 +25,14 @@
                 </h2>
                 <p>Spend less time making the right and informed decisions</p>
                 <section class="home-intro-btn">
-                  <button type="submit" class="btn btn-primary to-btn" id="login-btn">Login
+                  <button type="submit" class="btn btn-primary to-btn" id="login-btn" onclick="window.location.href='contents/login.html'">Login
 
-                    <svg width="2em" height="1.3em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="2em" height="1.3em" viewBox="0 0 16 16" class="bi bi-arrow-right" id="login-arrow" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                     </svg>
 
                   </button>
-                  <button type="submit" class="btn to-btn" id="learn-btn">Learn more</button>
+                  <button type="submit" class="btn to-btn" id="learn-btn" onclick="window.location.href='contents/about.html'">Learn more</button>
                 </section>
 
                 <!-- <form action="" class="d-flex flex-column align-item-center trial-form">
@@ -78,7 +56,8 @@
           </section>
           
 
-          <!--  info section -->
+          <!--  features section -->
+          <section id="pace-features"></section>
 
           <section class="row m-t5 d-flex flex-column flex-sm-row align-items-center" id="pace-summary">
             <article class="col">
@@ -105,13 +84,47 @@
               </svg>
               <h3>Productivity Management</h3>              
               <p>Just like we've promised that this will be dynamic by the time we hear from Toluwanimi and Aisha</p>
-            </section>
+            </article>
+          </section>
+          <!-- row 2 -->
+          <section class="row m-t5 d-flex flex-column flex-sm-row align-items-center" id="pace-summary">
+
+            <article class="col">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                <path fill-rule="evenodd" d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+              </svg>
+              <h3>Calendar</h3>
+              <p>Honestly, this will container about 15 words that will be provided by Toluwanimi and Aisha</p>
+            </article>
+
+            <article class="col">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-receipt-cutoff" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v13h-1V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51L2 2.118V15H1V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zM0 15.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                <path fill-rule="evenodd" d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-8a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+              <h3>Billing Management</h3>              
+              <p>Wordings are been worked on by Toluwanimi and Aisha, guess they are currently coding.</p>
+            </article>
+            
+
+            <article class="col">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                <path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <h3>Todo-List</h3>
+              <p>Just like we've promised that this will be dynamic by the time we hear from Toluwanimi and Aisha</p>
+            </article>
+
+          </section>
+
         </header>
 
         <!-- SAMPLES OF DASHBOARD SECTION-->
         <section class="container">
           <div class="row block block-1">
-            <article class="col d-flex flex-column-reverse flex-sm-row">
+            <article class="col d-flex flex-column-reverse" id="dashboard-display">
               <blockquote>
                 <h3>Admin Dashboard</h3>
                 Pace version 1 Dashboard with bar-chat report and also a section showing the most active employee
@@ -140,7 +153,7 @@
             </article>
           </div>
           <div class="row block block-2">
-            <article class="col d-flex flex-column flex-sm-row">
+            <article class="col d-flex flex-column" id="dashboard-display">
               <img src="assets/img/add-user-blue.png" alt="">
               <blockquote>
                 <h3>Add Employee Board</h3>
@@ -177,7 +190,7 @@
         <!-- TESTIMONIAL SECTION-->
 
         <section class="container testimonial">
-          <h4 class="text-center"> What our reviewers are saying</h4>
+          <h4> What our reviewers are saying</h4>
           <style>
            
           </style>
@@ -371,5 +384,9 @@
     <!-- main js -->
     <script src="assets/js/main.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="partials/_navbar.js"></script>
+
   </body>
 </html>

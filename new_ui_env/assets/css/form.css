@@ -13,7 +13,6 @@
      margin: 0;
      line-height: 1.6;
      font-family: 'Roboto', sans-serif;
-     white-space: nowrap;
  }
  h3 {
      color:#335eea;
@@ -21,10 +20,10 @@
  h4 {
      color:#FF6584;
  }
- a {
+ form a {
      color: #FF6584;
  }
- a:hover {
+ form a:hover {
      color: #335eea;
      text-decoration: none;
  }
@@ -37,7 +36,7 @@
     margin: 0 auto;
 }
 .form-con {
-    margin: .5rem;
+    margin: .5rem 0;
 }
 .img-con {
     width: 50%;
@@ -85,5 +84,12 @@
     opacity: 1;
     cursor: pointer;
 }
- 
 
+footer .socials {
+    background: rgb(51,94,234);
+    margin: 3rem 0 0;
+}
+/* modifying the margin-left from the bootstrap 'row' class */
+footer .row {
+    margin-left: 0px;
+}

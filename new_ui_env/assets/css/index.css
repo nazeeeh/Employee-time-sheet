@@ -1,4 +1,11 @@
 /* utilities */
+body{
+  background:#F8F9FB;
+}
+
+h3{
+  font-weight:357 !important;
+}
 
 a{
   text-decoration: none;
@@ -22,6 +29,15 @@ input{
   font-weight: 700;
 }
 
+button.navbar-toggler{
+  outline: none;
+  border: none;
+}
+
+button.navbar-toggler:hover{
+  transform: scale(1.2);
+}
+
 #this_nav .navbar-nav .nav-link{
   backface-visibility: hidden;
   color: #506690;
@@ -32,11 +48,8 @@ input{
 }
 
 .home-intro-text{
-  color: #FF6584;
-}
-
-.home-intro-text{
   margin-top: 50px;
+  color: #FF6584;
 }
 
 .home-intro-text p{
@@ -65,14 +78,39 @@ input{
   margin-right: 12px;
 }
 
+#login-arrow:hover{
+  transform: rotate(180deg);
+  transition: 0.25s;
+}
+
 .home-intro-btn #learn-btn{
   background: #FF6584;
 }
+.home-intro-btn #learn-btn:hover{
+  background: #FF6584;
+  color: #ffffff;
+  position: relative;
+  animation-name: shake;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes shake {
+0% {left: 0}
+1% {left: -3px}
+2% {left: 5px}
+3% {left: -8px}
+4% {left: 8px}
+5% {left: -5px}
+6% {left: 3px}
+7% {left: 0}
+}
+
 .to-btn{
   background: rgb(51,94,234);
-  color: #fff;
-  padding: .5625rem 1rem;
-  font-size: 1.0625rem;
+  color: #ffffff;
+  padding: .5625rem 1rem !important;
+  font-size: 1.0625rem !important;
 }
 
 /* landing page section 0 */
@@ -137,9 +175,17 @@ input{
   /* TESTIMONIAL CAROUSEL SECTION */
 
   .testimonial h4{
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 350;
     color: #161c2d;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 360px){
+    .testimonial h4{
+      font-size: 1.4rem;
+    }
   }
 
   .carousel-item img{
@@ -155,6 +201,7 @@ input{
     border-radius: 50%;
     border: none;
     background-image: none;
+    display: none;
   }
 
   .carousel-control-next-icon:after
@@ -182,36 +229,31 @@ input{
   }
 
 
-
-
 /* MEDIA QUERY FOR BIG SCREEN */
 @media (min-width: 992px){
-  
-  #logo{
-    margin-left: 100px;
-  }
   
   .navbar-nav{
     margin:  0 auto;
   }
   
-  .nav-link{
+  a.nav-link{
     margin: 0rem .9rem;
-    padding: 3rem;
+    padding: 3rem ;
     font-size: 1.21rem;
   }
 
-  #get-started-btn{
-    margin-right: 100px;
+  a#get-started-btn{
     background: transparent;
     color: #335eea;
     transition: 1s;
   }
-  #get-started-btn:hover{
+  a#get-started-btn:hover{
     background: #335eea;
     color: #ffffff;
     outline: none;
+    border: 1px solid #ffffff;
   }
+
   .home-intro{
     margin-top: 80px;
     flex-direction: row !important;
@@ -225,8 +267,14 @@ input{
     margin-bottom: 7rem;
   }
 
+  
+  .block-1 blockquote{
+    margin-top: 0rem;
+  }
+
   .block-2 blockquote{
     margin-left: 4rem;
+    margin-top: 0rem;
   }
 
   .block img{
@@ -244,6 +292,9 @@ input{
     margin-left: 2rem;
   }
   
+  #dashboard-display{
+    flex-direction: row !important;
+  }
   
   @keyframes dance-1 {
     /* 0%{transform: rotateY(-25deg) rotateX(25deg);} */
@@ -263,9 +314,10 @@ input{
   }
 
   .testimonial h4{
-    font-size: 2.78rem;
+    font-size: 3rem;
     font-weight: 350;
     color: #161c2d;
+    text-align: center;
   }
   
   #carouselControls{

@@ -1,0 +1,77 @@
+/* 
+==================================
+*********   RESET ****************
+==================================
+ */
+
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+ 
+ html,
+ body {
+     padding: 0;
+     margin: 0;
+     line-height: 1.6;
+     font-family: 'Roboto', sans-serif;
+ }
+ 
+
+#view-tasks, #accepted-tasks {
+    background: #fff;
+    width: 95%;
+    padding: 5px 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#view-tasks table,  #accepted-tasks table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 2rem;
+    color: #fff;
+}
+#view-tasks button, #view-tasks a,
+#accepted-tasks button, #accepted-tasks a{
+    width: 5rem;
+    padding: .5rem;
+    margin: 1rem 0 3rem;
+    text-transform: uppercase;
+    background: #213260;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+#view-tasks a:hover,
+#accepted-tasks a:hover {
+    background: #fff;
+    color: #213260;
+}
+th, td{
+    border-bottom: 1px solid #fff;
+    padding: 2rem;
+}
+.table thead th {
+    color: #fff !important;
+}
+
+tbody tr{
+    background-color: rgba(33, 35, 96, .7);
+} 
+
+tbody tr:hover {
+    background: #213260;
+}
+
+/* #view-tasks button, #view-tasks i{
+    font-size: 16px;
+    width: 10px;
+} */
