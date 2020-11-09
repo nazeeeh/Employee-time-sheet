@@ -94,13 +94,13 @@ button {
     cursor: pointer;
 }
 
-.header {
+.todo-header {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.header button {
+.todo-header button {
     visibility: hidden;
     height: max-content;
     background: none;
@@ -108,11 +108,11 @@ button {
     padding: 0.3em;
 }
 
-.header:hover button {
+.todo-header:hover button {
     visibility: visible;
 }
 
-.header button:hover {
+.todo-header button:hover {
     background-color: rgb(235, 235, 235);
     border-radius: 4px;
     cursor: pointer;
