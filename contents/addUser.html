@@ -1,120 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/dashboard-sidebar.css">
-  <link rel="stylesheet" href="../assets/css/utilities.css">
-  <link rel="stylesheet" href="../assets/css/addUser.css">
-  <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
-  <title>Pace | Dashboard</title>
-</head>
-<body>
-  <!-- main dashboard -->
-<div class="dashboard-container">
-  <div class="sidebar-container">
-    <div class="sidebar-wrapper">
-      <div class="company">
-        <!-- <i id="logo" class=""></i> -->
-        <i class="fas fa-bars"></i>
-        <h4 class="companyDisplay"id="companyDisplay">Not logged in</h4>
-      </div>
-      
-      <div class="sidebar-links">
-          <!-- Link Start -->
-          <div class="dashboard-link">
-              <i class="fas fa-chart-pie"></i>
-              <a href="../contents/admin-dashboard.html">Dashboard</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link" id="active_page">
-              <i class="fas fa-user-friends"></i>
-              <a href="../contents/addUser.html">Add User</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-calendar-alt"></i>
-              <a href="../contents/">Calender</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-calendar-plus"></i>
-              <a href="../contents/e-schedule.html">e-Schedule</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-flag-checkered"></i>
-              <a href="../contents/report.html">Report</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-stream"></i>
-              <a href="../contents/billing.html">Billing Rate</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-bell"></i>
-              <a href="../contents/report.html">Requests</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-sliders-h"></i>
-              <a href="../contents/settings.html">Settings</a>
-          </div>
-          <!-- New link -->
-          <div class="dashboard-link">
-              <i class="fas fa-sign-out-alt"></i>
-              <a href="#" onclick="logOut()">Logout</a>
-          </div>
-        <!-- End of Side-bar-Link -->
-      </div>
-    </div>
-  </div>
-  <!-- this is where the dashboard components goes -->
-  <div class="dashboard-body">
-    <div id="container">
-      <header id="header">
-        <i id="logo"></i><span  id="role_display"></span>
-        <button class="to-btn" onclick="add_form()"><i class="fas fa-plus"></i> Add Employee</button>
-      </header>
-      <section id="main">
-        <h1>Employee List</h1>
-        <span style = "display:none;" id="role_display">p</span>
-        <nav class="tabs">
-          <ul>
-            <li>All Employees</li>
-            <li>Create Department</li>
-            <li>Add Roles</li>
-          </ul>
-          <section id="search-container">
-            <span id="_lookup_result"></span>
-            <input type="text" placeholder="Department" id="_search_param">
-            <a href="#" class="to-btn btn-deep" onclick="_search_employee()">Search</a>
-          </section>
-        </nav>
-      <table id="employee_list">
-        <thead>
-          <tr id="profile-details">
-            <td>S/N</td>
-            <td>Status <span>|</span> Basic Details</td>
-            <td>Department</td>
-            <td>Phone Number</td>
-            <td>User Type</td>
-            <td>Joining Date</td>
-          </tr>
-        </thead>
-        <tbody  class="profile" id="_record_board"></tbody>
-      </table>
-      <section id="pager-link">
-        <a href="#" class="pager-link_control">Prev</a>
-        <a href="#" >Next</a>
-      </section> 
-    </div>
-  </div>
 
- <!-- employ form -->
- <div id="employ_form">
-  <!-- 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/dashboard-sidebar.css">
+    <link rel="stylesheet" href="../assets/css/utilities.css">
+    <link rel="stylesheet" href="../assets/css/addUser.css">
+    <script src="https://kit.fontawesome.com/c375a2cc0a.js" crossorigin="anonymous"></script>
+    <title>Pace | Dashboard</title>
+</head>
+
+<body>
+    <!-- main dashboard -->
+    <div class="dashboard-container">
+        <div class="sidebar-container">
+            <div class="sidebar-wrapper">
+                <div class="company">
+                    <!-- <i id="logo" class=""></i> -->
+                    <i class="fas fa-bars"></i>
+                    <h4 class="companyDisplay" id="companyDisplay">Not logged in</h4>
+                </div>
+
+                <div class="sidebar-links">
+                    <!-- Link Start -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-chart-pie"></i>
+                        <a href="../contents/admin-dashboard.html">Dashboard</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link" id="active_page">
+                        <i class="fas fa-user-friends"></i>
+                        <a href="../contents/addUser.html">Add User</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <a href="../contents/">Calender</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-calendar-plus"></i>
+                        <a href="../contents/e-schedule.html">e-Schedule</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <a href="../contents/report.html">Report</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-stream"></i>
+                        <a href="../contents/billing.html">Billing Rate</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-bell"></i>
+                        <a href="../contents/report.html">Requests</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sliders-h"></i>
+                        <a href="../contents/settings.html">Settings</a>
+                    </div>
+                    <!-- New link -->
+                    <div class="dashboard-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="#" onclick="logOut()">Logout</a>
+                    </div>
+                    <!-- End of Side-bar-Link -->
+                </div>
+            </div>
+        </div>
+        <!-- this is where the dashboard components goes -->
+        <div class="dashboard-body">
+            <div id="container">
+                <header id="header">
+                    <i id="logo"></i><span id="role_display"></span>
+                    <button class="to-btn" onclick="add_form()"><i class="fas fa-plus"></i> Add Employee</button>
+                </header>
+                <section id="main">
+                    <h1>Employee List</h1>
+                    <span style="display:none;" id="role_display">p</span>
+                    <nav class="tabs">
+                        <ul>
+                            <li>All Employees</li>
+                            <li>Create Department</li>
+                            <li>Add Roles</li>
+                        </ul>
+                        <section id="search-container">
+                            <span id="_lookup_result"></span>
+                            <input type="text" placeholder="Department" id="_search_param">
+                            <a href="#" class="to-btn btn-deep" onclick="_search_employee()">Search</a>
+                        </section>
+                    </nav>
+                    <table id="employee_list">
+                        <thead>
+                            <tr id="profile-details">
+                                <td>S/N</td>
+                                <td>Status <span>|</span> Basic Details</td>
+                                <td>Department</td>
+                                <td>Phone Number</td>
+                                <td>User Type</td>
+                                <td>Joining Date</td>
+                            </tr>
+                        </thead>
+                        <tbody class="profile" id="_record_board"></tbody>
+                    </table>
+                    <section id="pager-link">
+                        <a href="#" class="pager-link_control">Prev</a>
+                        <a href="#">Next</a>
+                    </section>
+            </div>
+        </div>
+
+        <!-- employ form -->
+        <div id="employ_form">
+            <!-- 
     <div id="info">
       <h3>Employee Type Code</h3>
       <ul>
@@ -124,230 +126,231 @@
         <h4>Pace Bot: <span id="error_">Hello</span></h4>
       </ul>
     </div> -->
-    <div id="form_section">
-      <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
-      <h4 class="bot">Pace Bot: <span id="error_">Hello</span></h4>
-      <section class="add-form">
-        <section>
-          <label for="">Full Name</label>
-          <input type="text" id="employee_name">
-          <label for="">Email</label>
-          <input type="text" id="employee_email">
-          <label for="">Phone Number</label>
-          <input type="text" id="employee_phone">
-        </section>
-        <section>
-          <label for="">Employee Type</label>
-          <select name="" id="employee_type">
+            <div id="form_section">
+                <h3 id="form_heading"><span id="close" onclick='close_form()'>X</span> Employee Form 1</h3>
+                <h4 class="bot">Pace Bot: <span id="error_">Hello</span></h4>
+                <section class="add-form">
+                    <section>
+                        <label for="">Full Name</label>
+                        <input type="text" id="employee_name">
+                        <label for="">Email</label>
+                        <input type="text" id="employee_email">
+                        <label for="">Phone Number</label>
+                        <input type="text" id="employee_phone">
+                    </section>
+                    <section>
+                        <label for="">Employee Type</label>
+                        <select name="" id="employee_type">
             <option value="">--Select--</option>
             <option value="443">Co-Admin</option>
             <option value="332">Internal Admin</option>
             <option value="554">Employee</option>
           </select>
-          <label for="">Role</label>
-          <select name="" id="employee_role">
+                        <label for="">Role</label>
+                        <select name="" id="employee_role">
             <option value="">--Select--</option>
             <option value="Backend">Backend</option>
             <option value="Frontend">Frontend</option>
             <option value="Manager">Manager</option>
           </select>
-          <label for="">Department</label>
-          <!-- <input type="text" id="employee_department"> -->
-          <select name="" id="employee_department">
+                        <label for="">Department</label>
+                        <!-- <input type="text" id="employee_department"> -->
+                        <select name="" id="employee_department">
             <option value="">--Select--</option>
             <option value="Product Management">Product Management</option>
             <option value="Web design">Web design</option>
             <option value="web development">Web development</option>
           </select>
-        </section>
-      </section>
-      <button id="add_employee_btn" class="to-btn btn-deep add-btn" onclick="_add_employee()">Employ</button>
-      <span href="#" style="border-radius: unset; padding: 13px;" class="to-btn btn-deep" onclick="_add_employee()"></span>
-    </div>
-  </div>
+                    </section>
+                </section>
+                <button id="add_employee_btn" class="to-btn btn-deep add-btn" onclick="_add_employee()">Employ</button>
+                <span href="#" style="border-radius: unset; padding: 13px;" class="to-btn btn-deep" onclick="_add_employee()"></span>
+            </div>
+        </div>
 
 
-  <!-- EDIT FORM -->
-  <div id="edit_form">
-    <div id="edit_info">
-      <h3>Employee Type Code</h3>
-      <ul>
-        <li>Co- Admin - 443</li>
-        <li>Internal Admin - 332</li>
-        <li>Employee - 554</li>
-        <h4>Pace Bot: <span id="error_">Hello</span></h4>
-      </ul>
-    </div>
-    <!-- edit form  -->
-    <div id="edit_section">
-      <h3 id="edit_heading"><span id="close_edit" onclick='close_editForm()'>X</span> Employee Form 2</h3>
-     <section id="edit-form-section">
-       <section>
-         <input type="hidden" id="identifier">
-         <label for="">Full Name</label>
-         <input type="text" id="update_name">
-         <label for="">Email</label>
-         <input type="text" id="update_email">
-         <label for="">Password</label>
-         <input type="text" id="update_password">
-        </section>
-        <section>
-          <label for="">Employee Type</label>
-          <select name="" id="employee_type">
+        <!-- EDIT FORM -->
+        <div id="edit_form">
+            <div id="edit_info">
+                <h3>Employee Type Code</h3>
+                <ul>
+                    <li>Co- Admin - 443</li>
+                    <li>Internal Admin - 332</li>
+                    <li>Employee - 554</li>
+                    <h4>Pace Bot: <span id="error_">Hello</span></h4>
+                </ul>
+            </div>
+            <!-- edit form  -->
+            <div id="edit_section">
+                <h3 id="edit_heading"><span id="close_edit" onclick='close_editForm()'>X</span> Employee Form 2</h3>
+                <section id="edit-form-section">
+                    <section>
+                        <input type="hidden" id="identifier">
+                        <label for="">Full Name</label>
+                        <input type="text" id="update_name">
+                        <label for="">Email</label>
+                        <input type="text" id="update_email">
+                        <!-- <label for="">Password</label>
+                        <input type="text" id="update_password"> -->
+                        <button onclick="resetPassword()">Reset Password</button>
+                    </section>
+                    <section>
+                        <label for="">Employee Type</label>
+                        <select name="" id="employee_type">
             <option value="">--Select--</option>
             <option value="443">Co-Admin</option>
             <option value="332">Internal Admin</option>
             <option value="554">Employee</option>
           </select>
-          <label for="">Role</label>
-          <select name="" id="employee_role">
+                        <label for="">Role</label>
+                        <select name="" id="employee_role">
             <option value="">--Select--</option>
             <option value="Backend">Backend</option>
             <option value="Frontend">Frontend</option>
             <option value="Manager">Manager</option>
           </select>
-          <label for="">Department</label>
-          <!-- <input type="text" id="employee_department"> -->
-          <select name="" id="employee_department">
+                        <label for="">Department</label>
+                        <!-- <input type="text" id="employee_department"> -->
+                        <select name="" id="employee_department">
             <option value="">--Select--</option>
             <option value="Product Management">Product Management</option>
             <option value="Web design">Web design</option>
             <option value="web development">Web development</option>
           </select>
-        </section>
-      </section>
-     </section>
-      <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
-    </div>  
-  </div>
-  <!-- END OF EDIT FORM -->
-</div>
+                    </section>
+                </section>
+                </section>
+                <a href="#" id="edit_employee_btn" class="to-btn btn-deep" onclick="updatedRecord()">Update</a>
+            </div>
+        </div>
+        <!-- END OF EDIT FORM -->
+    </div>
 
-<script>
-// When the user clicks on div, open the popup
-function select(i) {
-  var popup = document.getElementById(`myPopup${i}`);
-  popup.classList.toggle("show");
-}
-
-</script>
-
-<!--  view data section -->
-
-<section id="view-container">
-    
-  <script>
-
-
-
-  function closeview(){
-    document.getElementById("view-container").style.display = "none";
-  }
-
+    <script>
+        // When the user clicks on div, open the popup
+        function select(i) {
+            var popup = document.getElementById(`myPopup${i}`);
+            popup.classList.toggle("show");
+        }
     </script>
-  <style>
 
-    #view-container{
-      position: fixed;
-      bottom: 0.1vh;
-      background: rgba(139, 134, 134, 100);
-      color: white;
-      height: 100vh;
-      width: 100%;
-      display: none;
-    }
-    #view-close{
-      font-size: 3rem;
-      display: block;
-      margin-left: 1000px;
-      cursor: pointer;
-    }
-    view-header{
-      padding: 12px;
-      text-align: center;
-    }
-    .view-img{
-      border: 1px solid #333;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      background: #333;
-      display: block;
-      margin: auto;
-    }
-    view-header h3{
-      font-size: 3vw;
-      line-height: 70px;
-    }
-    view-header p{
-      font-size: 1.3rem;
-    }
+    <!--  view data section -->
 
-    view-main{
-      padding: 12px;
-    }
+    <section id="view-container">
 
-    .view-profile{
-      display: flex;
-      padding: 12px;
-    }
+        <script>
+            function closeview() {
+                document.getElementById("view-container").style.display = "none";
+            }
+        </script>
+        <style>
+            #view-container {
+                position: fixed;
+                bottom: 0.1vh;
+                background: rgba(139, 134, 134, 100);
+                color: white;
+                height: 100vh;
+                width: 100%;
+                display: none;
+            }
+            
+            #view-close {
+                font-size: 3rem;
+                display: block;
+                margin-left: 1000px;
+                cursor: pointer;
+            }
+            
+            view-header {
+                padding: 12px;
+                text-align: center;
+            }
+            
+            .view-img {
+                border: 1px solid #333;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                background: #333;
+                display: block;
+                margin: auto;
+            }
+            
+            view-header h3 {
+                font-size: 3vw;
+                line-height: 70px;
+            }
+            
+            view-header p {
+                font-size: 1.3rem;
+            }
+            
+            view-main {
+                padding: 12px;
+            }
+            
+            .view-profile {
+                display: flex;
+                padding: 12px;
+            }
+            
+            .view-profile>section {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-left: 200px;
+            }
+            
+            .view-profile .data {
+                font-size: 1.2rem;
+                position: relative;
+                left: 242px;
+            }
+            
+            .view-profile .detail {
+                font-size: 1.2rem;
+                position: relative;
+                left: 220px;
+            }
+        </style>
+        <span id="view-close" onclick="closeview()"> &times;</span>
+        <view-header>
+            <img src="/assets/img/avatar.png" alt="" class="view-img">
+            <h3 id="view_name">Ayodele Samuel Adebayo</h3>
+            <p id="role">Full Stack Developer</p>
+        </view-header>
+        <view-main role="view-main">
+            <section class="view-profile">
+                <section class="data">
+                    <span>Department</span>
+                    <span>Role</span>
+                    <span>Salary</span>
+                    <span>Email</span>
+                    <span>Phone</span>
+                    <span>Resume</span>
+                    <span>Github</span>
+                    <span>Linked-In</span>
+                </section>
 
-    .view-profile > section{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-left: 200px;
-    }
-
-    .view-profile .data{
-      font-size: 1.2rem;
-      position: relative;
-      left: 242px;
-    }
-
-    .view-profile .detail{
-      font-size: 1.2rem;
-      position: relative;
-      left: 220px;
-    }
-  </style>
-  <span id="view-close" onclick="closeview()"> &times;</span>
-  <view-header>
-    <img src="/assets/img/avatar.png" alt="" class="view-img">
-    <h3 id="view_name">Ayodele Samuel Adebayo</h3>
-    <p id="role">Full Stack Developer</p>
-  </view-header>
-  <view-main role="view-main">
-    <section class="view-profile">
-      <section class="data">
-        <span>Department</span>
-        <span>Role</span> 
-        <span>Salary</span> 
-        <span>Email</span> 
-        <span>Phone</span> 
-        <span>Resume</span> 
-        <span>Github</span> 
-        <span>Linked-In</span> 
-      </section>
-
-      <section class="detail">
-        <span id="department"> Web development </span>
-        <span id="role">Backend </span>
-        <span id="salary"># 12, 000 </span>
-        <span id="email"> unclebay@gmail.com </span>
-        <span id="tel"> 09088876665 </span>
-        <span><a href="#">https://sample.resume/unclebay143</a></span>
-        <span><a href="#">https://Github.com/unclebay143</a></span>
-        <span><a href="#">https://Github.com/unclebay143</a></span>
-      </section>
+                <section class="detail">
+                    <span id="department"> Web development </span>
+                    <span id="role">Backend </span>
+                    <span id="salary"># 12, 000 </span>
+                    <span id="email"> unclebay@gmail.com </span>
+                    <span id="tel"> 09088876665 </span>
+                    <span><a href="#">https://sample.resume/unclebay143</a></span>
+                    <span><a href="#">https://Github.com/unclebay143</a></span>
+                    <span><a href="#">https://Github.com/unclebay143</a></span>
+                </section>
+            </section>
+        </view-main>
     </section>
-  </view-main>
-</section>
 
-<script src="/assets/js/employee_control.js"></script>
-<script src="/assets/js/dashboard-sidebar.js"></script>
-<script src="/assets/js/admin_details.js"></script>
-<script src="/assets/js/userAuth.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/assets/js/employee_control.js"></script>
+    <script src="/assets/js/dashboard-sidebar.js"></script>
+    <script src="/assets/js/admin_details.js"></script>
+    <script src="/assets/js/userAuth.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
+
 </html>

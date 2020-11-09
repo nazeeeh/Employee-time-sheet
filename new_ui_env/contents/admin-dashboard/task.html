@@ -9,19 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <!-- Google fonts - Popppins for copy-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
     <!-- orion icons-->
-    <link rel="stylesheet" href="css/orionicons.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/orionicons.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/todo-list.css">
-    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/style.default.css" id="theme-stylesheet">
+
+    <link rel="stylesheet" href="../../assets/css/dashboard/custom.css">
+    <link rel="stylesheet" href="../../assets/css/utilities.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/admin.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/manage-employee.css">
     <link rel="stylesheet" href="css/task.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.png?3">
@@ -82,7 +81,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown ml-auto">
-                    <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+                    <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://github.com/unclebay143.png" s alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
                     <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Mark Stephen</strong><small>Web Developer</small></a>
                         <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
                         <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
@@ -96,9 +95,10 @@
             <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-                <li class="sidebar-list-item"><a href="charts.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
-                <li class="sidebar-list-item"><a href="tables.html" class="sidebar-link text-muted active"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
+                <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
+                <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="o-letter-1 mr-3 text-gray"></i><span>Task</span></a></li>
                 <li class="sidebar-list-item"><a href="forms.html" class="sidebar-link text-muted"><i class="o-timing-1 mr-3 text-gray"></i><span>e-schedule</span></a></li>
+                <li class="sidebar-list-item"><a href="tables.html" class="sidebar-link text-muted active"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Calendar</span></a>
                     <div id="pages" class="collapse">
                         <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
@@ -219,7 +219,7 @@
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table align-items-center table-flush">
-                                        <thead class="thead-light">
+                                        <thead class="thead-light mr-5 ">
                                             <tr>
                                                 <th>S/N</th>
                                                 <th>Name</th>
@@ -287,18 +287,15 @@
     <!-- // body  -->
     </div>
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js">
-    </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js">
-    </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="js/front.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/popper.js/umd/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../../assets/js/dashboard/front.js"></script>
+    <script src="../../assets/js/dashboard/manage-employee.js"></script>
+    <script src="../../assets/js/dashboard/time-reminder.js"></script>
     <script src="js/todo.js"></script>
 </body>
 
