@@ -8,11 +8,11 @@ function showMonths(){
 
     for(i = 0; i < theMonth.length; i++){
         
-        if(document.getElementsByClassName('each-month')[i].style.display == "none"){
-            document.getElementsByClassName('each-month')[i].style.display = "block"
+        if(document.getElementsByClassName('each-month')[i].style.display == "block"){
+            document.getElementsByClassName('each-month')[i].style.display = "none"
         }
         else{
-            document.getElementsByClassName('each-month')[i].style.display = "none"
+            document.getElementsByClassName('each-month')[i].style.display = "block"
         }
     }
 }
@@ -81,9 +81,10 @@ function populateTimerReport(){
                 <td><strong>${element.name}</strong></td>
                 <td>${element.loginTime}</td>
                 <td>${element.hour}:${element.minute}:${element.second}</td>
-                <td>${element.overTime}</td>
                 <td>${element.dailyWage}</td>
+                <td>${element.overTime}</td>
                 <td>${element.overTimeWage}</td>
+                <td>${element.payableWage}</td>
                 </tr>
                 `
                 document.getElementById("timeSheetCon").innerHTML = add

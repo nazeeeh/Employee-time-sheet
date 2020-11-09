@@ -200,7 +200,17 @@ function timeValue() {
 
     let dailyWage = 50 * 8
 
-    let overTimeWage = 10 * (8 - usedHour)
+    if(overTime == "NILL"){
+        overTimeWage = "NILL"
+    }else{
+        let overTimeWage = 10 * (8 - usedHour)
+    }
+    
+    if(usedHour < 1){
+        payableWage = 0
+    }else{
+        payableWage = usedHour * 50
+    }
 
     // sorry, i was here(Tolu)
     var usedTime = {
@@ -213,24 +223,23 @@ function timeValue() {
         "month" : months,
         "overTime" : overTime,
         "dailyWage" : dailyWage,
-        "overTimeWage" : overTimeWage
+        "overTimeWage" : overTimeWage,
+        "payableWage" : payableWage
     }
-
-    alert(JSON.stringify(usedTime))
 
     // The function takes in two arguments - the userArray from the localStorage and the usedTime recorded for the user
     function timeAppend(userTime, newTime) {
         var lengthTime = userTime.length;
         if(userTime[lengthTime-1].date == newTime.date) {
-
             // Sums the value of the two seconds and find the minute and second from it while it appends the minute to the minute variable
             var overflowMinute = parseInt((userTime[lengthTime-1].second + newTime.second)/60)
             userTime[lengthTime-1].second =(userTime[lengthTime-1].second + newTime.second)%60;
+            userTime[lengthTime-1].second += newTime.second;
         
             // Sums the value of the two minutes and find the hour and minute from it while it appends the hour to the hour variable
             var overflowHour = parseInt((userTime[lengthTime-1].minute + newTime.minute)/60)
             userTime[lengthTime-1].minute =(userTime[lengthTime-1].minute + newTime.minute)%60;
-            userTime[lengthTime-1].minute += overflowMinute;
+            userTime[lengthTime-1].minute += (newTime.minute + overflowMinute);
         
             // Sums both hours and sets the value to the sum
             userTime[lengthTime-1].hour += (newTime.hour + overflowHour);    
@@ -238,18 +247,16 @@ function timeValue() {
             userTime.push(newTime);
         }
     }
-
-
+    
 switch(user_role) {
     case user_role = "admin":
         if(localStorage.getItem(`${isLogged_In_Admin[0].name}_time`) == null) {
             var isLogged_In_Admin_Time = [];
-            isLogged_In_Admin_Time.push(usedTime);
         } else {
             var isLogged_In_Admin_Time = JSON.parse(localStorage.getItem(`${isLogged_In_Admin[0].name}_time`))
-            timeAppend(isLogged_In_Admin_Time, usedTime);
         }
 
+        timeAppend(isLogged_In_Admin_Time, usedTime);
         
         localStorage.setItem(`${isLogged_In_Admin[0].name}_time`, JSON.stringify(isLogged_In_Admin_Time));
         break;            
@@ -257,12 +264,11 @@ switch(user_role) {
     case user_role = "internal-admin":
         if(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`) == null) {
             var isLogged_In_InternalUser_Time = [];
-            isLogged_In_InternalUser_Time.push(usedTime);
         } else {
             var isLogged_In_InternalUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`))
-            timeAppend(isLogged_In_InternalUser_Time, usedTime);
         }
 
+        timeAppend(isLogged_In_InternalUser_Time, usedTime);
 
         localStorage.setItem(`${isLogged_In_InternalUser[0].name}_time`, JSON.stringify(isLogged_In_InternalUser_Time));
         break;
@@ -270,14 +276,19 @@ switch(user_role) {
     case user_role = "employee":
         if(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`) == null) {
             var isLogged_In_EmployeeUser_Time = [];
-            isLogged_In_EmployeeUser_Time.push(usedTime);
         } else {
             var isLogged_In_EmployeeUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`))
-            timeAppend(isLogged_In_EmployeeUser_Time, usedTime);
         }
+        timeAppend(isLogged_In_EmployeeUser_Time, usedTime);
 
         localStorage.setItem(`${isLogged_In_EmployeeUser[0].name}_time`, JSON.stringify(isLogged_In_EmployeeUser_Time));
         break;
 }
 
+
+//     var isLoggedInUser = JSON.parse(localStorage.getItem("currentUsers"));
+    
+//     for(var i=0; i<isLoggedInUser.length; i++) {
+        
+//     }
 }
