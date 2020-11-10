@@ -22,9 +22,9 @@ let renderEmployeeRecord = () => {
     for (i = 0; i < employee.length; i++) {
 
         employeeListContainer += `
-  <tr id="${i}" draggable="true" data-toggle="modal" data-target="#profileDisplayForm">
-    <th scope="row">${serialNumber+=1}</th>
-    <td>${employee[i].firstName}</td>
+  <tr>
+    <th scope="row">${serialNumber+=1} <i class="fas fa-edit edit-btn" data-toggle="modal" data-target="#editEmployeeRecord"></i></th>
+    <td id="${i}" draggable="true" data-toggle="modal" data-target="#profileDisplayForm">${employee[i].firstName}</td>
     <td>${employee[i].secondName}</td>
     <td>${employee[i].userName}</td>
     <td>${employee[i].department}</td>
