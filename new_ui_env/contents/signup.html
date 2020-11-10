@@ -20,35 +20,37 @@
         <main class="container">
             <div class="row">
                 <!-- form container start -->
-                <div class="form-con">
-                    <div class="form-heading">
-                        <h3>Sign Up</h3>
-                        <h4>Track every second!</h4>
-                    </div>
-                    <div id="errorMessage"></div>
-                    <form>
-                        <div class="form-group">
-                            <label for="companyEmail">Company's Email</label>
-                            <input type="email" name="companyEmail" class="form-control" id="companyEmail" placeholder="pace@gmail.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="CompanyName">Company's Name</label>
-                            <input type="text" name="CompanyName" class="form-control" id="companyName" placeholder="Pace" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="cpassword" placeholder="Confirm password">
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="signUp">Sign Up</button>
-                        <p>Already have an account? <a href="./login.html">login</a></p>
-                    </form>
-                </div>
+                 <div class="form-con col-lg-5">
+                     <div class="form-heading">
+                         <h3>Sign Up</h3>
+                         <h4>Track every second!</h4>
+                     </div>
+                     <form action="">
+                         <div class="form-group">
+                             <label for="companyEmail">Company's Email</label>
+                             <input type="email" name="companyEmail" class="form-control" id="companyEmail" placeholder= "pace@gmail.com" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="CompanyName">Company's Name</label>
+                             <input type="text" name="CompanyName" class="form-control" id="CompanyName" placeholder= "Pace" required>
+                         </div>
+                         <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                             <div class="col-lg-6">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                             </div>
+                         </div>
+                    
+                         <button type="submit" class="btn btn-primary">Sign Up</button>
+                         <p>Already have an account? <a href="./login.html">login</a></p>
+                     </form>
+                 </div>
                 <!-- form container end -->
-                <div class="img-con">
+                <div class="img-con col-lg-7">
                     <div class="home-intro-img">
                         <img src="../assets/img/landing page man in office.svg" alt="office timing" class="img-fluid">
                     </div>
