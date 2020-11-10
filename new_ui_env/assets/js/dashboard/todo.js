@@ -56,7 +56,7 @@ function displayContent() {
                             </button>
                         </div>
                         <input class="children-comment" id="${tdName+tdID}">
-                        <button class="btn-save pace-bg-accent btn-save-children" onclick="addChildTodo('${tdName}', '${tdID}')">Comment</button><div>
+                        <button class="btn-save pace-bg-primary btn-save-children" onclick="addChildTodo('${tdName}', '${tdID}')">Comment</button><div>
                         `;
         for (var j = 0; j < tdListBreakDown.length; j++) {
             parentID = tdListBreakDown[j].parentID
@@ -90,9 +90,15 @@ function addParent() {
             // text: `Please n `,
             icon: "error",
             button: "Okay",
-          })
+        })
     } else if (listValue.length < 3) {
-        alert("Error!!! To-do list Name must be greater than 3 Characters")
+        swal({
+            title: "Todo Cannot be empty",
+            text: `Todo list name must be more than 3 Characters `,
+            icon: "error",
+            button: "Okay",
+        })
+
     } else {
         newList = {
             "id": (tdListTracker + 1),
@@ -110,9 +116,19 @@ function addChildTodo(parentName, parentIdTracker) {
     listValue = document.getElementById(parentName + parentIdTracker).value;
     tdListBreakDownTracker = parseInt(localStorage.getItem("todoListBreakDownTracker"));
     if (listValue == null || listValue == undefined || listValue.length == "0") {
-        alert("Error!!! Task list Name cannot be empty")
+        swal({
+            // title: `Todo list name cannot be empty `,
+            text: "Todo Cannot be empty",
+            icon: "error",
+            button: "Okay",
+        })
     } else if (listValue.length < 3) {
-        alert("Error!!! Task list Name must be greater than 3 Characters")
+        swal({
+            // title: `Todo list name cannot be empty `,
+            text: "Task List Name must be greater than 3 characters",
+            icon: "error",
+            button: "Okay",
+        })
     } else {
         newList = {
             "id": (tdListBreakDownTracker + 1),

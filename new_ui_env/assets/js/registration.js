@@ -106,7 +106,7 @@ function getUserDetails(formSubmit) { // function to get all user's details from
                 localStorage.setItem("paceDB", JSON.stringify(checkDb))
 
                 swal({
-                    title: "Registration Succesful",
+                    title: "Registration Successful",
                     // text: `You have logged in for 5 minutes, Did you forget to start your time?`,
                     icon: "warning",
                     button: "Ok",
