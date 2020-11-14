@@ -116,7 +116,20 @@
                     <h6 class="text-uppercase mb-0 pace-accent-color">Tasks</h6>
                   </div>
                   <div class="card-body">
-                    <table id="view-tasks" class="table card-text"></table>
+                    <table id="view-tasks" class="table card-text">
+                      <thead>
+                        <tr>
+                        <th>S/N</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th> Status</th>
+                        <th> Requests</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignedTasks">
+
+                    </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -130,7 +143,20 @@
                     <h6 class="text-uppercase mb-0 pace-accent-color">Accepted Tasks</h6>
                   </div>
                   <div class="card-body">
-                    <table id="accepted-tasks" class="table card-text"></table>
+                    <table id="accepted-tasks" class="table card-text">
+                      <thead>
+                        <tr>
+                        <th>S/N</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th> Status</th>
+                        <th> Requests</th>
+                        </tr>
+                    </thead>
+                    <tbody id="acceptedTasks">
+
+                    </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -152,7 +178,6 @@
     <script src="js/charts-custom.js"></script>
     
     <!-- employee's tasks js -->
-    <script src="../../assets/js/employee-tasks.js"></script>
-
+    <script src="js/task.js"></script>
   </body>
 </html>
