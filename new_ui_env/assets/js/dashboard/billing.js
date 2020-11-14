@@ -18,40 +18,39 @@ let _parsed_employee_record = JSON.parse(_get_employee_record) // object
 let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
 
 // create local storage for company employee if deleted or not found
-if(_employee_localStorage === null || _employee_localStorage === undefined) 
-{// if company local storage does not exist create one 
-  
-_employee_localStorage = []
-  
+if (_employee_localStorage === null || _employee_localStorage === undefined) { // if company local storage does not exist create one 
+
+    _employee_localStorage = []
+
 }
 /* function to display all record in the local storage */
 var worked_hour = [];
 var salary = [];
 
-let _render_record = () => 
-{
- for (var i=0; i<_employee_localStorage.length; i++) {
-    employeeTime = JSON.parse(localStorage.getItem(`${_employee_localStorage[i].name}_time`));
-    var totalHour = 0, totalMin = 0, totalSec = 0;
-    if (employeeTime == null) {
-        employeeTime == [];
-    } else {
-      for (var j=0; j<employeeTime.length; j++) {
-        totalHour += employeeTime[j].hour;
-        totalMin += employeeTime[j].minute;
-        totalSec += employeeTime[j].second;
-      }
+let _render_record = () => {
+    for (var i = 0; i < _employee_localStorage.length; i++) {
+        employeeTime = JSON.parse(localStorage.getItem(`${_employee_localStorage[i].name}_time`));
+        var totalHour = 0,
+            totalMin = 0,
+            totalSec = 0;
+        if (employeeTime == null) {
+            employeeTime == [];
+        } else {
+            for (var j = 0; j < employeeTime.length; j++) {
+                totalHour += employeeTime[j].hour;
+                totalMin += employeeTime[j].minute;
+                totalSec += employeeTime[j].second;
+            }
+        }
+        var totalTime = Math.round((totalHour + (totalMin / 60) + (totalSec / 3600)) * 10) / 10;
+        worked_hour.push(Math.round(totalTime));
     }
-    var totalTime = Math.round((totalHour + (totalMin/60) + (totalSec/3600))*10) / 10;
-    worked_hour.push(Math.round(totalTime));
-  }
 
-  var employee_con = "";
-//   let serialNumber = 0;
-  for (i = 0; i <  _employee_localStorage.length; i++)
-  {  
-    salary.push(_employee_localStorage[i].salary);
-      employee_con += `
+    var employee_con = "";
+    //   let serialNumber = 0;
+    for (i = 0; i < _employee_localStorage.length; i++) {
+        salary.push(_employee_localStorage[i].salary);
+        employee_con += `
     <tr id="${i}" draggable="true">
       <td>${i+1}</td>
       <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
@@ -61,18 +60,17 @@ let _render_record = () =>
     </tr>
     `
 
-  }
+    }
 
-  document.getElementById("_billing_board").innerHTML = employee_con;
+    document.getElementById("_billing_board").innerHTML = employee_con;
 
 }
 
 _render_record();
 
-let reload_board = () =>
-{
+let reload_board = () => {
 
-  location.reload()
+    location.reload()
 
 }
 
@@ -81,22 +79,22 @@ let reload_board = () =>
 //     return Math.floor(init);
 // }
 
-function calculateSalary(){
+function calculateSalary() {
     var expected_hour = document.getElementById("expected-hour").value;
 
     var receivable_pay = [];
-    if (expected_hour == "") {  
-        swal("Empty Input", "Kindly input an Expected Value to Calculate", "warning");   
-    
+    if (expected_hour == "") {
+        swal("Empty Input", "Kindly input an Expected Value to Calculate", "warning");
+
     } else {
         for (var i = 0; i < worked_hour.length; i++) {
             receivable_pay_val = (worked_hour[i] * salary[i]) / expected_hour;
             receivable_pay.push(Math.round(receivable_pay_val));
         }
 
-    var employee_con = "";
-        for (i = 0; i <  _employee_localStorage.length; i++) {
-        employee_con += `
+        var employee_con = "";
+        for (i = 0; i < _employee_localStorage.length; i++) {
+            employee_con += `
         <tr id="${i}" draggable="true">
           <td>${i+1}</td>
           <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
@@ -106,8 +104,8 @@ function calculateSalary(){
           <td>${receivable_pay[i]}</td>
         </tr>
         `
-      }
-    
-      document.getElementById("_billing_board").innerHTML = employee_con;
         }
+
+        document.getElementById("_billing_board").innerHTML = employee_con;
+    }
 }

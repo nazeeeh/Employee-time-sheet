@@ -104,7 +104,7 @@
                     <div id="pages" class="collapse">
                         <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
                             <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Timer</a></li>
-                            <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Billing</a></li>
+                            <li class="sidebar-list-item"><a href="./billing-report.html" class="sidebar-link text-muted pl-lg-5">Billing</a></li>
                             <!-- <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page three</a> </li> -->
                             <!-- <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page four</a> </li> -->
                         </ul>
@@ -220,7 +220,7 @@
                                                 <label for="salary">Salary</label>
                                                 <input type="text" class="form-control" id="salary">
                                             </div>
-    
+
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Address</label>
@@ -237,7 +237,7 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputState">State</label>
-                                                <input id="inputState" class="form-control"/>
+                                                <input id="inputState" class="form-control" />
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label for="Zip">Zip</label>
@@ -396,7 +396,7 @@
                                     <div class="col-2 mt-5"></div>
                                     <div class="col-6"></div>
                                     <div class="col-4">
-                                            <!-- <button type="button" class="btn pace-bg-primary mt-5 ml-5" onclick="alert(document.getElementById( 'email').value)">Employee</button> -->
+                                        <!-- <button type="button" class="btn pace-bg-primary mt-5 ml-5" onclick="alert(document.getElementById( 'email').value)">Employee</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -407,120 +407,120 @@
                 </div> -->
                 </div>
             </div>
-        <!-- Modal Contents -->
-                <!-- Modal Contents For Edit form-->
-                    <div class="modal fade" id="editEmployeeRecord" tabindex="-1" role="dialog" aria-labelledby="editEmployeeRecordLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title" id="editEmployeeRecordLabel">Edit Record</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <!-- Modal Contents -->
+            <!-- Modal Contents For Edit form-->
+            <div class="modal fade" id="editEmployeeRecord" tabindex="-1" role="dialog" aria-labelledby="editEmployeeRecordLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editEmployeeRecordLabel">Edit Record</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
-                              </div>
-                              <div class="modal-body">
-                                  <form>
-                                      <div class="form-row">
-                                          <div class="form-group col-md-6">
-                                              <input type="hidden" id="identifier">
-                                              <label for="editFirstName">Firstname</label>
-                                              <input type="text" class="form-control" id="editFirstName">
-                                          </div>
-                                          <div class="form-group col-md-6">
-                                              <label for="editSecondName">Lastname</label>
-                                              <input type="text" class="form-control" id="editSecondName">
-                                          </div>
-                                      </div>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="editEmail">Email</label>
-                                            <input type="editEmail" class="form-control" id="editEmail">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="editPhone">Phone</label>
-                                            <input type="tel" class="form-control" id="editPhone">
-                                        </div>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input type="hidden" id="identifier">
+                                        <label for="editFirstName">Firstname</label>
+                                        <input type="text" class="form-control" id="editFirstName">
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="password">Password</label>
-                                            <input type="password" class="form-control" id="editPassword">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="cEditPassword">Confirm Password</label>
-                                            <input type="password" class="form-control" id="cEditPassword">
-                                        </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="editSecondName">Lastname</label>
+                                        <input type="text" class="form-control" id="editSecondName">
                                     </div>
-                                    <div>
-                                        <input type="checkbox" name="" onclick="showPassword()">
-                                        <label for="showPassword">Verify</label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="editEmail">Email</label>
+                                        <input type="editEmail" class="form-control" id="editEmail">
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="editDepartment">Department</label>
-                                            <select id="editDepartment" class="form-control">
+                                    <div class="form-group col-md-6">
+                                        <label for="editPhone">Phone</label>
+                                        <input type="tel" class="form-control" id="editPhone">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="editPassword">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="cEditPassword">Confirm Password</label>
+                                        <input type="password" class="form-control" id="cEditPassword">
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="" onclick="showPassword()">
+                                    <label for="showPassword">Verify</label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="editDepartment">Department</label>
+                                        <select id="editDepartment" class="form-control">
                                                 <option selected>Choose...</option>
                                                 <option value="web development">Web Development</option>
                                                 <option value="web design">Web Design</option>
                                                 <option value="product management">Product Management</option>
                                             </select>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="editRole">Role</label>
-                                            <select id="editRole" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="editRole">Role</label>
+                                        <select id="editRole" class="form-control">
                                                 <option selected>Choose...</option>
                                                 <option value="backend developer">Backend Developer</option>
                                                 <option value="frontend developer">Frontend Developer</option>
                                                 <option value="quality assurance">Quality Assurance</option>
                                             </select>
-                                        </div>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="editType">Type</label>
-                                            <select id="editType" class="form-control">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="editType">Type</label>
+                                        <select id="editType" class="form-control">
                                                 <option value="blank" selected>Choose...</option>
                                                 <option value="332">Internal</option>
                                                 <option value="554">Employee</option>
                                             </select>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="editSalary">Salary</label>
-                                            <input type="text" class="form-control" id="editSalary">
-                                        </div>
                                     </div>
-                                      <div class="form-group">
-                                          <label for="editAddress">Address</label>
-                                          <input type="text" class="form-control" id="editAddress" placeholder="143 work and connect" required>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="editAddress2">Address 2</label>
-                                          <input type="text" class="form-control" id="editAddress2" placeholder="Techspecialist, Arare Street, first floor">
-                                      </div>
-                                      <div class="form-row">
-                                          <div class="form-group col-md-6">
-                                              <label for="editCity">City</label>
-                                              <input type="text" class="form-control" id="editCity">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="editState">State</label>
-                                                <input type="text" class="form-control" id="editState">
-                                          </select>
-                                          </div>
-                                          <div class="form-group col-md-2">
-                                              <label for="editInputZip">Zip</label>
-                                              <input type="text" class="form-control" id="editInputZip">
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn pace-bg-primary" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn pace-bg-primary" onclick="updateRecord()">Employee</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="editSalary">Salary</label>
+                                        <input type="text" class="form-control" id="editSalary">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editAddress">Address</label>
+                                    <input type="text" class="form-control" id="editAddress" placeholder="143 work and connect" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editAddress2">Address 2</label>
+                                    <input type="text" class="form-control" id="editAddress2" placeholder="Techspecialist, Arare Street, first floor">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="editCity">City</label>
+                                        <input type="text" class="form-control" id="editCity">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="editState">State</label>
+                                        <input type="text" class="form-control" id="editState">
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="editInputZip">Zip</label>
+                                        <input type="text" class="form-control" id="editInputZip">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn pace-bg-primary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn pace-bg-primary" onclick="updateRecord()">Employee</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- / Profile Modal Contents  -->
             <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
