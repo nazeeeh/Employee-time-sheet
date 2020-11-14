@@ -142,7 +142,7 @@
                                             <div class="form-group col-12">
                                                 <!-- task title -->
                                                 <label for="firstName">Title</label>
-                                                <input type="text" class="form-control mb-3 mr-sm-2" placeholder="Task">
+                                                <input type="text" class="form-control mb-3 mr-sm-2" id="title" placeholder="Task">
                                             </div>
                                         </div>
 
@@ -150,20 +150,18 @@
                                             <div class="form-group col-md-6">
                                                 <!-- department  dropdown -->
                                                 <label for="lastName">Department</label>
-                                                <input type="text" list="departments" class="form-control mb-3 mr-sm-2 customer-select custom-select0-sm" placeholder="Department">
+                                                <input type="text" list="departments" id="department" class="form-control mb-3 mr-sm-2 customer-select custom-select0-sm" placeholder="Department">
                                                 <datalist id="departments">
                                                     <option value="Web development">Web development</option>
                                                     <option value="Product Management">Product Management</option>
                                                     <option value="Quality Assurance">Quality Assurance</option>
-                                                    <option value="Human Resources">Human Resources</option>
-                                                    <option value="Ariyibi Baseet">Ariyibi Baseet</option>
                                                 </datalist>
                                                 <!-- // department dropdown -->
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="email">Name</label>
                                                 <!-- employee name from selected department dropdown -->
-                                                <input type="text" list="employeeNames" class="form-control mb-3 mr-sm-2 customer-select custom-select0-sm" placeholder="Name">
+                                                <input type="text" list="employeeNames" id="name" class="form-control mb-3 mr-sm-2 customer-select custom-select0-sm" placeholder="Name">
                                                 <datalist id="employeeNames">
                                                     <option value="Ayodele Samuel Adebayo">Ayodele Samuel Adebayo</option>
                                                     <option value="Ayoola Toluwanimi">Ayoola Toluwanimi</option>
@@ -178,7 +176,7 @@
                                         <div class="form-row">
                                             <div class="form-group col-12">
                                                 <label for="taskDescription">Task Description</label>
-                                                <textarea class="form-control mb-3" rows="3" placeholder="Default textarea" id="taskDescription"></textarea>
+                                                <textarea class="form-control mb-3" rows="3" placeholder="Default textarea" id="taskMessage"></textarea>
                                             </div>
                                         </div>
                                         <!-- task attachment -->
@@ -189,7 +187,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">Attachment (2)</label>
-                                                <input type="file" id="attachment1" class="form-control mb-3 mr-sm-2">
+                                                <input type="file" id="attachment2" class="form-control mb-3 mr-sm-2">
                                             </div>
                                         </div>
                                         <!-- task due date -->
@@ -199,7 +197,7 @@
                                                 <input class="form-control mb-3 mr-sm-2" type="datetime-local" value="2020-08-19T13:45:00" id="taskDueDate">
                                             </div>
                                         </div>
-                                        <button type="button" class="btn pace-bg-primary" onclick="alert(document.getElementById('email').value)">Assign</button>
+                                        <button type="button" onclick="getTaskDetails()" class="btn pace-bg-primary" onclick="alert(document.getElementById('email').value)">Assign</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
@@ -229,7 +227,7 @@
                                                 <th>Due Date</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tasksTable">
                                             <tr>
                                                 <td><a href="#">1</a></td>
                                                 <td>Ayodele Samuel Adebayo</td>
@@ -297,8 +295,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="js/front.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+    <script src="js/admin-task.js"></script>
     <script src="js/todo.js"></script>
 </body>
 

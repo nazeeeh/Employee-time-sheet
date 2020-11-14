@@ -102,7 +102,6 @@ displayMain(assignedMainList)
 
 function displayMain(task){
     let add = ''
-
     //loop through every task and display task details on dashboard, edit input fields are hidden
     for(i = 0; i < task.length; i++){
         add += `<div class="main-task" id="${i}">
