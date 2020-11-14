@@ -34,5 +34,5 @@ adminDetails()
 let logOut = () =>
 {
   localStorage.removeItem("current_AdminUser");
-  location.assign('../../login.html')
+  location.assign('../../contents/login.html')
 }

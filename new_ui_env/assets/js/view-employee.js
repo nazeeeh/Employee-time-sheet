@@ -8,14 +8,19 @@ THIS SCRIPT
 
 
 // get the current logged in user from local storage
-var _is_Login_Admin = JSON.parse(localStorage.getItem("current_InternalUser")) // object
+var currentInternal = JSON.parse(localStorage.getItem("current_InternalUser")) // object
 
 // get access to all employee record in the company   
-let _get_employee_record = _is_Login_Admin[0].department // string
+let currentInternalDepartment = currentInternal[0].department // string
 
 // to get the database name in this format : companyName_employees
-// var _company_db_name = _is_Login_Admin[0].name // string
-let internalDepartment = JSON.parse(localStorage.getItem(_get_employee_record))
+// alert(currentInternal[0].accessToCompanyDB)
+accessCompanyDb = currentInternal[0].accessToCompanyDB
+alert(accessCompanyDb)
+var _company_db_name = JSON.parse(localStorage.getItem(`${accessCompanyDb}_employees`)) // string
+alert(accessCompanyDb)
+alert(JSON.stringify(_company_db_name))
+let internalDepartmentDb = JSON.parse(localStorage.getItem(currentInternalDepartment))
 // parsed version of company record
 // let _parsed_employee_record = JSON.parse(internalDepartment) // object
 
@@ -33,24 +38,24 @@ let internalDepartment = JSON.parse(localStorage.getItem(_get_employee_record))
 let renderRecord = () => {
 
 
-    var employee_con = "";
+    var employeePlaceHolder = "";
     let serialNumber = 0;
-    for (i = 0; i < internalDepartment.length; i++) {
+    for (i = 0; i < internalDepartmentDb.length; i++) {
 
-        employee_con += `
+        employeePlaceHolder += `
         <tr>
         <th scope="row">${serialNumber+=1} <i class="fas fa-edit edit-btn" data-toggle="modal" data-target="#editEmployeeRecord" onclick="editEmployeeRecord(${i})"></i></th>
-        <td id="${i}" draggable="true" data-toggle="modal" data-target="#profileDisplayForm" onclick="_viewRecord(${i})" class="view-profile">${internalDepartment[i].firstName}</td>
-        <td>${internalDepartment[i].secondName}</td>
-        <td>${internalDepartment[i].phone}</td>
-        <td>${internalDepartment[i].department}</td>
-        <td>${internalDepartment[i].role}</td>
-        <td>${internalDepartment[i].joining_date}</td>
+        <td id="${i}" draggable="true" data-toggle="modal" data-target="#profileDisplayForm" onclick="_viewRecord(${i})" class="view-profile">${internalDepartmentDb[i].firstName}</td>
+        <td>${internalDepartmentDb[i].secondName}</td>
+        <td>${internalDepartmentDb[i].phone}</td>
+        <td>${internalDepartmentDb[i].department}</td>
+        <td>${internalDepartmentDb[i].role}</td>
+        <td>${internalDepartmentDb[i].joining_date}</td>
     </tr>
         `
     }
 
-    document.getElementById("employeeList").innerHTML = employee_con;
+    document.getElementById("employeeList").innerHTML = employeePlaceHolder;
 
 }
 
@@ -278,8 +283,10 @@ function addEmployee() {
             document.getElementById("cPassword").value = "";
             document.getElementById("employee_type").value = "";
 
-            internalDepartment.push(newAdd);
-            localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(internalDepartment))
+            internalDepartmentDb.push(newAdd);
+            alert(`${_company_db_name}`)
+            alert(`${internalDepartmentDb}`)
+            localStorage.setItem(_company_db_name, JSON.stringify(internalDepartmentDb))
             renderRecord()
 
         }
@@ -298,15 +305,15 @@ function searchEmployee(searchForm){
     searchFor = document.getElementById("searchParam").value;
     // do not use let, for or var returns reference error for internalDepartment
 
-    internalDepartment = internalDepartment.filter(_finder_ => _finder_.department.toUpperCase() == searchFor.toUpperCase());
+    internalDepartmentDb = internalDepartmentDb.filter(_finder_ => _finder_.department.toUpperCase() == searchFor.toUpperCase());
 
-    if (internalDepartment.length <= 1) {
-        document.getElementById("searchResponse").innerHTML = `${internalDepartment.length} Record Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
+    if (internalDepartmentDb.length <= 1) {
+        document.getElementById("searchResponse").innerHTML = `${internalDepartmentDb.length} Record Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
         renderRecord()
 
     } else {
 
-        document.getElementById("searchResponse").innerHTML = `${internalDepartment.length} Records Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
+        document.getElementById("searchResponse").innerHTML = `${internalDepartmentDb.length} Records Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
         renderRecord()
     }
 }
@@ -395,7 +402,7 @@ let updateRecord = () => { // function to collate and store new updated details
             "joining_date" : restrict_join_date, // can't be edited
         }
         internalDepartment[employee_id] = updatedRecord
-        localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(internalDepartment))
+        localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(internalDepartmentDb))
         
         swal({
             'title' : 'Record Updated',
@@ -440,7 +447,7 @@ let deleteUser = () =>
 
 let _viewRecord = (employee_id) => {
 
-    recordToUpdate = internalDepartment[employee_id]
+    recordToUpdate = internalDepartmentDb[employee_id]
     firstName = recordToUpdate.firstName
     secondName = recordToUpdate.secondName
     fullName = firstName +  ' ' + secondName

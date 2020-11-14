@@ -39,6 +39,11 @@ internalDetails()
 // clear the temporary local storage for employee
 let logOut = () =>
 {
+  swal({
+    text: "Logged Out!",
+    button: false,
+    icon: "success"
+  });
   localStorage.removeItem("current_InternalUser");
-  location.assign('../contents/logout-confirmation.html')
+  location.assign('../../contents/login.html')
 }
