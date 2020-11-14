@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <!-- navbar component -->
-        <nav-bar></nav-bar>
+        <nav-bar></nav-bar> 
 
         <main class="container">
             <div class="row">
@@ -24,20 +24,21 @@
                         <h3>Login</h3>
                         <h4>Track every second!</h4>
                     </div>
-                    <form action="">
+                    <form>
+                        <p id="errorMessage"></p>
                         <div class="form-group">
                             <label for="companyEmail">Company's Email</label>
                             <input type="email" name="companyEmail" class="form-control" id="companyEmail" placeholder="pace@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="yourEmail">Your Email</label>
-                            <input type="email" name="yourEmail" class="form-control" id="yourEmail" placeholder="janedoe@gmail.com" required>
+                            <input type="email" name="yourEmail" class="form-control" id="employeeEmail" placeholder="janedoe@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <p type="submit" class="btn btn-primary" id="logIn">Login</p>
                         <p>Don't have an account? <a href="./signup.html">Sign Up</a></p>
                     </form>
                 </div>
@@ -61,6 +62,7 @@
 
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/smoothscroll.js"></script>
+    <script src="../assets/js/login.js"></script>
     <script src="../partials/_navbar.js"></script>
 </body>
 
