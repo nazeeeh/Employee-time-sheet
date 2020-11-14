@@ -62,7 +62,11 @@ function addEmployee() {
 
     new_email = document.getElementById("employee_email").value,
     new_name = document.getElementById("employee_name").value,
-    secondName = document.getElementById("lastName").value,
+    secondName = document.getElementById("secondName").value,
+    address1 = document.getElementById("inputAddress1").value,
+    address2 = document.getElementById("inputAddress2").value,
+    city = document.getElementById("inputCity").value,
+    state = document.getElementById("inputState").value,
     password = document.getElementById("password").value,
     salary = document.getElementById("salary").value,
     cpassword = document.getElementById("cPassword").value,
@@ -140,7 +144,7 @@ function addEmployee() {
                 icon: "warning"
               });
 
-        } else if(password.length >= 6){
+        } else if(password.length <= 6){
             swal({
                 text: "Weak Password!",
                 button: "okay",
@@ -228,16 +232,19 @@ function addEmployee() {
 
             let newAdd = {
                 "email": email,
-                "name": name,
+                "firstName": name,
+                "secondName": secondName,
                 "role": role,
-                "address": "",
-                "state": "",
+                "address1": address1,
+                "address2": address2,
+                "city": city,
+                "state": state,
                 "country": "",
                 "phone": phone,
                 "joining_date": _employed_date(new Date()),
                 "department": assign_department,
                 "user_type": new_user_type,
-                "password": "7444",
+                "password": password,
                 "status": "Active",
                 "salary": salary,
                 "currency": "Naira",
@@ -267,6 +274,8 @@ function addEmployee() {
             document.getElementById("employee_role").value = "";
             document.getElementById("employee_phone").value = "";
             document.getElementById("employee_department").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("cPassword").value = "";
             document.getElementById("employee_type").value = "";
 
             _employee_localStorage.push(newAdd);
@@ -398,30 +407,34 @@ let updateRecord = () => { // function to collate and store new updated details
     }
 }
 
-let deleteUser = (user_id) =>
+// delete record
+let deleteUser = () =>
 
-    {
-        swal({
-                title: "Are you sure?",
-                text: `Once deleted, you will not be able to recover this user! ${_employee_localStorage[user_id].name.toUpperCase()}`,
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal(`Poof! ${_employee_localStorage[user_id].name.toUpperCase()} Deleted!`, {
-                        icon: "success",
-                    });
-                    _employee_localStorage.splice(user_id, 1)
-                    localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
-                    renderRecord()
-                } else {
-                    swal("User restored!");
-                }
-            });
-    }
+{
 
+    let user_id = document.getElementById("del-identifier").value
+    swal({
+            title: "Are you sure?",
+            text: `You will not be able to recover this user! ${_employee_localStorage[user_id].firstName}`,
+            icon: "warning",
+            buttons: ["Cancel", "Confirm"],
+            dangerMode: true
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal(`Poof! ${_employee_localStorage[user_id].firstName.toUpperCase()} Deleted!`, {
+                    icon: "success",
+                });
+                _employee_localStorage.splice(user_id, 1)
+                localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
+                renderRecord()
+            } else {
+                swal("User restored!");
+            }
+        });
+}
+
+// deleteBtn = document.getElementById("deleteRecord").addEventListener('click', deleteUser(x))
 
 
 
@@ -436,8 +449,12 @@ let _viewRecord = (employee_id) => {
     document.getElementById("displayRole").innerHTML = recordToUpdate.role
     document.getElementById("displaySalary").innerHTML = recordToUpdate.salary
     document.getElementById("displayEmail").innerHTML = recordToUpdate.email
-    document.getElementById("displayPhone").innerHTML = recordToUpdate.phone
+    document.getElementById("displayAddress1").innerHTML = recordToUpdate.address
+    document.getElementById("displayAddress2").innerHTML = recordToUpdate.address2
+    document.getElementById("displayCity").innerHTML = recordToUpdate.city
+    document.getElementById("displayState").innerHTML = recordToUpdate.state
+    // document.getElementById("displayPhne").innerHTML = recordToUpdate.city
     document.getElementById("displayJoinedDate").innerHTML = recordToUpdate.joining_date
-    document.getElementById("identifier").value = employee_id
+    document.getElementById("del-identifier").value = employee_id
 
 }
