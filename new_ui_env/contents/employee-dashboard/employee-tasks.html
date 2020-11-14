@@ -115,7 +115,20 @@
                     <h6 class="text-uppercase mb-0 pace-accent-color">Tasks</h6>
                   </div>
                   <div class="card-body">
-                    <table id="view-tasks" class="table card-text"></table>
+                    <table id="view-tasks" class="table card-text">
+                      <thead>
+                        <tr>
+                        <th>S/N</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th> Status</th>
+                        <th> Requests</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignedTasks">
+
+                    </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -129,7 +142,20 @@
                     <h6 class="text-uppercase mb-0 pace-accent-color">Accepted Tasks</h6>
                   </div>
                   <div class="card-body">
-                    <table id="accepted-tasks" class="table card-text"></table>
+                    <table id="accepted-tasks" class="table card-text">
+                      <thead>
+                        <tr>
+                        <th>S/N</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th> Status</th>
+                        <th> Requests</th>
+                        </tr>
+                    </thead>
+                    <tbody id="acceptedTasks">
+
+                    </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -160,11 +186,20 @@
     <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
     <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<<<<<<< HEAD
+    <script src="js/charts-home.js"></script>
+    <script src="js/front.js"></script>
+    <script src="js/charts-custom.js"></script>
+    
+    <!-- employee's tasks js -->
+    <script src="js/task.js"></script>
+=======
     <script src="../../assets/js/dashboard/charts-home.js"></script>
     <script src="../../assets/js/dashboard/front.js"></script>
     <script src="../../assets/js/dashboard/charts-custom.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../assets/js/dashboard/time-reminder.js"></script>
     <script src="../../assets/js/employee-tasks.js"></script>
+>>>>>>> 0896deb9e075ad210b2ba483b3833a0968b4b44f
   </body>
 </html>

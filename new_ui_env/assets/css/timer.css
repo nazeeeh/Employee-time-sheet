@@ -9,6 +9,12 @@ to { opacity: 0; }
 
 
 /* div containing everything after the search bar */
+#right-i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px 15px 0;
+}
 
 #right-in {
   display: flex;
@@ -30,7 +36,8 @@ button#stop-time {
 /* Start timer button */
 
 button#start-time {
-  background-color: #213260;
+  background-color: #FF6584;
+  margin-right: 15px;
   display: block;
 }
 
@@ -42,6 +49,7 @@ button#start-time {
 /* Stop timer button */
 
 #stop-time {
-  background-color: #971425;
+  background-color: #FF6584;
+  margin-left: 15px;
   display: none;
 }
