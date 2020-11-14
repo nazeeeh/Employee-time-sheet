@@ -28,30 +28,19 @@
      text-decoration: none;
  }
  
-.con{
-    display: flex;
-    justify-content: space-between;
-    height: 60%;
-    width: 100%;
-    margin: 0 auto;
-}
-.form-con {
-    margin: .5rem 0;
-}
-.img-con {
-    width: 50%;
+.form-heading h4 {
+    font-style: italic;
 }
 
 .img-con img{
+    height: auto;
     max-width: 100%;
 }
 
  @media(max-width:768px) {
-    .con{
-        display: flex;
+     /* modifying the bootstrap 'row' class for smaller screen */
+    .row{
         flex-direction: column-reverse;
-        width: 100%;
-        margin: 0 auto;
     }
     .form-con, .img-con{
         width: 100%;
@@ -66,7 +55,7 @@
      margin: .5rem 0;
  }
  .form-heading {
-     margin: 0 0 2rem;
+     margin: 0 0 1rem;
  }
  .form-control:focus {
     box-shadow: none;
@@ -85,11 +74,3 @@
     cursor: pointer;
 }
 
-footer .socials {
-    background: rgb(51,94,234);
-    margin: 3rem 0 0;
-}
-/* modifying the margin-left from the bootstrap 'row' class */
-footer .row {
-    margin-left: 0px;
-}

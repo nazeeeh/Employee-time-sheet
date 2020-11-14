@@ -1,4 +1,4 @@
-var paceDB = JSON.parse(localStorage.getItem("paceDB"));
+rvar paceDB = JSON.parse(localStorage.getItem("paceDB"));
 
 function editProfileFunc() {
     var editProfile = `
@@ -48,10 +48,10 @@ function editProfileFunc() {
     document.getElementById("user-first-name").innerHTML = paceDB[0].name;
     document.getElementById("user-phone").innerHTML = paceDB[0].phone;
     document.getElementById("user-email").innerHTML = paceDB[0].email;
-    
-  }
-  
-  function notificationSettingsFunc() {
+
+}
+
+function notificationSettingsFunc() {
     var notificationDiv = `
           <div class="profile-part2-top">
             <p>Notifications</p>
@@ -70,9 +70,9 @@ function editProfileFunc() {
           </div>
   `;
     document.getElementById("profile-content").innerHTML = notificationDiv;
-  }
+}
 
-  function changePasswordFunc() {
+function changePasswordFunc() {
     var changePasswordDiv = `
     <div class="profile-part2-top">
             <p>Change Password</p>
@@ -90,28 +90,26 @@ function editProfileFunc() {
           </div>`;
 
     document.getElementById("profile-content").innerHTML = changePasswordDiv;
-  }
+}
 
-  function submitPasswordChange() {
+function submitPasswordChange() {
     alert(document.getElementById("present-password").value)
-    if (document.getElementById("present-password").innerHTML == paceDB[paceDB.length-1].password) {
-      if (document.getElementById("new-password").value == document.getElementById("confirm-password")) {
-        paceDB[0].password = document.getElementById("new-password").value
-        localStorage.setItem("paceDB",paceDB)
-      } else {
-        swal("Oops!", "Password mismatch", "warning")
-      }
+    if (document.getElementById("present-password").innerHTML == paceDB[paceDB.length - 1].password) {
+        if (document.getElementById("new-password").value == document.getElementById("confirm-password")) {
+            paceDB[0].password = document.getElementById("new-password").value
+            localStorage.setItem("paceDB", paceDB)
+        } else {
+            swal("Oops!", "Password mismatch", "warning")
+        }
     } else {
-      swal("Oops!", "Your password is wrong", "warning")
+        swal("Oops!", "Your password is wrong", "warning")
     }
-  }
-  
-  document.getElementById("edit-profile").addEventListener("click",editProfileFunc);
+}
 
-  document.getElementById("notification-setting").addEventListener("click",notificationSettingsFunc);
+document.getElementById("edit-profile").addEventListener("click", editProfileFunc);
 
-  document.getElementById("change-password").addEventListener("click",changePasswordFunc);
+document.getElementById("notification-setting").addEventListener("click", notificationSettingsFunc);
 
-  // document.getElementById("submit-password").addEventListener("click",submitPasswordChange);
+document.getElementById("change-password").addEventListener("click", changePasswordFunc);
 
-  
+// document.getElementById("submit-password").addEventListener("click",submitPasswordChange);

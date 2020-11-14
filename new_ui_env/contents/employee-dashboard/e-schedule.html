@@ -8,25 +8,24 @@
     <meta name="robots" content="all,follow">
     <title>Employee's-tasks | Pace</title>
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- orion icons-->
-    <link rel="stylesheet" href="css/orionicons.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/orionicons.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/style.default.css" id="theme-stylesheet">
+
+    <link rel="stylesheet" href="../../assets/css/dashboard/custom.css">
     <link rel="stylesheet" href="../../assets/css/utilities.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/swal.css">
+    <link rel="stylesheet" href="../../assets/css/e-schedule.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.png?3">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+    <!-- <link rel="shortcut icon" href="img/favicon.png?3"> -->
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-    <!-- <link rel="stylesheet" href="../../assets/css/employee-tasks.css"> -->
-    <link rel="stylesheet" href="../../assets/css/utilities.css">
-    <link rel="stylesheet" href="../../assets/css/e-schedule.css">
   </head>
   <body>
     <!-- navbar-->
@@ -70,8 +69,8 @@
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
             </div>
           </li>
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Mark Stephen</strong><small>Web Developer</small></a>
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/opaluwa_aisha.jpg" alt="Opaluwa Aisha" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">OPALUWA AISHA</strong><small>Web Developer</small></a>
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
               <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
             </div>
@@ -83,8 +82,8 @@
       <div id="sidebar" class="sidebar py-3">
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
         <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-              <li class="sidebar-list-item"><a href="employee-tasks.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Tasks</span></a></li>
+              <li class="sidebar-list-item"><a href="admin-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
+              <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Tasks</span></a></li>
               <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Todo</span></a></li>
               <li class="sidebar-list-item"><a href="e-schedule.html" class="sidebar-link text-muted active"><i class="o-survey-1 mr-3 text-gray"></i><span>e-Schedule</span></a></li>
               <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
@@ -164,23 +163,34 @@
           </section>
           
         </div>
-      </div>
-        </footer>
+        <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-6 text-center text-md-left text-primary">
+                      <p class="mb-2 mb-md-0 pace-accent-color">Pace Timesheet &copy; 2018-2020</p>
+                  </div>
+                  <div class="col-md-6 text-center text-md-right text-gray-400">
+                      <!-- <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p> -->
+                      <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                  </div>
+              </div>
+          </div>
+      </footer>
       </div>
     </div>
-    <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="js/charts-home.js"></script>
-    <script src="js/front.js"></script>
-    <script src="js/charts-custom.js"></script>
-    
-    <!-- e-schedule  js -->
-    <script src="../../assets/js/e-schedule.js"></script>
+     <!-- JavaScript files-->
+     <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+     <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
+     <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+     <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
+     <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+     <script src="../../assets/js/dashboard/charts-home.js"></script>
+     <script src="../../assets/js/dashboard/front.js"></script>
+     <script src="../../assets/js/dashboard/charts-custom.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script src="../../assets/js/dashboard/time-reminder.js"></script>
+     <script src="../../assets/js/e-schedule.js"></script>
 
   </body>
 </html>
