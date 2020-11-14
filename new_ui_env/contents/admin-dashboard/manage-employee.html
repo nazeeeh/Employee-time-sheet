@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../../assets/css/utilities.css">
     <!-- <link rel="stylesheet" href="../../assets/css/dashboard/admin.css"> -->
     <link rel="stylesheet" href="../../assets/css/dashboard/manage-employee.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/swal.css">
     <!-- Favicon-->
     <!-- <link rel="shortcut icon"href="img/favicon.png?3"> -->
     <!-- Tweaks for older IEs-->
@@ -160,8 +161,8 @@
                                                 <input type="text" class="form-control" id="employee_name">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="lastName">Lastname</label>
-                                                <input type="text" class="form-control" id="lastName">
+                                                <label for="secondName">Lastname</label>
+                                                <input type="text" class="form-control" id="secondName">
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -223,7 +224,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Address</label>
-                                            <input type="text" class="form-control" id="inputddress1" placeholder="143 work and connect" required>
+                                            <input type="text" class="form-control" id="inputAddress1" placeholder="143 work and connect" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress2">Address 2</label>
@@ -315,18 +316,13 @@
                                         <img src="../../assets/img/about/ayodele_samuel_adebayo.jpg" alt="">
                                     </div>
                                     <div class="col-md-4 profile-left-section">
+                                        <input type="hidden" id="del-identifier">
                                         <h4 class="m-t-0 mb-0" id="displayFullName">Ayodele Samuel Adebayo</h4>
-                                        <h6 class="text-muted" id="displayRole">Frontend Developer</h6>
+                                        <h6 class="text-muted text-uppercase" id="displayRole">Frontend Developer</h6>
                                         <small class="text-muted" id="displayDepartment">Web Design</small>
                                         <!-- <div class="user-name mt-3" id="displayUserName">Employee ID : <span id="displayUserName">unclebay143</span></div> -->
                                         <div class="text-muted">Date of Joined : <span id="displayJoinedDate">Aug 21, 2020</span></div>
-                                        <ul class="profile-info profile-right-section mt-2">
-                                            <li>
-                                                <div class="title">Salary:</div>
-                                                <div class="text" id="displaySalary"></div>
-                                            </li>
-                                        </ul>
-                                        <!-- <button class="btn pace-bg-accent mt-3" onclick="editEmployee(i);">Edit Account</button> -->
+                                        <button class="btn pace-bg-accent mt-3" onclick="deleteUser();">Delete Account</button>
                                     </div>
                                     <div class="col-md-6 my-lg-4">
                                         <ul class="profile-info profile-right-section">
@@ -356,39 +352,45 @@
                                             </li>
                                             <li>
                                                 <div class="title">Pending Task : </div>
-                                                <div class="text">5</div>
+                                                <div class="text">15</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Salary:</div>
+                                                <div class="text" id="displaySalary"></div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <!-- <div class="row mt-5">
+                                <div class="row mt-5">
                                     <div class="col-md-2"></div>
                                     <div class="col-md-4 profile-stat">
                                         <ul>
                                             <li>
-                                                <div class="title">Completed Task : </div>
-                                                <div class="text">5</div>
+                                                <div class="title">Address 1 : </div>
+                                                <div class="text" id="displayAddress1"></div>
                                             </li>
                                             <li>
-                                                <div class="title">Pending Task : </div>
-                                                <div class="text">5</div>
+                                                <div class="title">Address 2 : </div>
+                                                <div class="text" id="displayAddress2">5</div>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 profile-links">
                                         <ul>
                                             <li>
-                                                <div class="title">Resume : </div>
-                                                <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div>
+                                                <div class="title">City : </div>
+                                                <div class="text" id="displayCity">5</div>
+                                                <!-- <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div> -->
                                             </li>
                                             <li>
-                                                <div class="title">Github :</div>
-                                                <div class="text"><a href="#">unclebay143</a></div>
+                                                <div class="title">State :</div>
+                                                <div class="text" id="displayState"></div>
+                                                <!-- <div class="text"><a href="#">unclebay143</a></div> -->
                                             </li>
                                         </ul>
                                     </div>
-                                </div> -->
+                                </div>
                                 <!-- <button type="button"class="btn pace-bg-primary"data-dismiss="modal">Close</button> -->
                                 <div class="row">
                                     <div class="col-2 mt-5"></div>
@@ -445,7 +447,7 @@
                                             <input type="password" class="form-control" id="editPassword">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="cEditPassword">Confirm Passwor</label>
+                                            <label for="cEditPassword">Confirm Password</label>
                                             <input type="password" class="form-control" id="cEditPassword">
                                         </div>
                                     </div>
