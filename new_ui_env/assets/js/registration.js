@@ -25,7 +25,7 @@ function getUserDetails(formSubmit) { // function to get all user's details from
     companyName = document.getElementById("companyName").value;
     companyEmail = document.getElementById("companyEmail").value;
     companyPassword = document.getElementById("password").value;
-    company2Password = document.getElementById("cpassword").value;
+    company2Password = document.getElementById("cPassword").value;
     // accept_tc = document.getElementById("check-btn");
     const _create_company = () => {
         is_email_InDb = checkDb.find(x => x.email == companyEmail);
@@ -66,11 +66,12 @@ function getUserDetails(formSubmit) { // function to get all user's details from
                     { // employee sample on dashboard
 
                         "id": `sample.${companyName}`,
-                        "name": "Sample Name",
+                        "firstName": "Sample",
+                        "secondName": "Demo",
                         "role": "Engineer",
                         "email": `sample@pacetimesheet.com`,
                         "password": "7444",
-                        "user_type": "co-admin",
+                        "user_type": "employee",
                         "phone": "08038157444",
                         "joining_date": _employed_date(new Date()),
                         "salary": "120000",
@@ -104,6 +105,9 @@ function getUserDetails(formSubmit) { // function to get all user's details from
 
                 // push new company information into the local storage
                 localStorage.setItem("paceDB", JSON.stringify(checkDb))
+                
+
+                
 
                 swal({
                     title: "Registration Successful",
@@ -113,9 +117,9 @@ function getUserDetails(formSubmit) { // function to get all user's details from
                 })
                 setTimeout(() => {
                     // alert("sam")
-                    location.assign("../contents/admin-dashboard/admin-dashboard.html", 500);
+                    location.assign("./login.html", 500);
                 }, 1000);
-
+                
             } else
 
             {

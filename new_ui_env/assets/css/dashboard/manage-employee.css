@@ -83,3 +83,13 @@ input.search-input {
 .profile-stat .text {
     width: px;
 }
+
+.edit-btn{
+    /* color: red; */
+    cursor: pointer;
+}
+
+.view-profile{
+    cursor: pointer;
+    font-weight: 500;
+}

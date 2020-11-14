@@ -31,7 +31,7 @@
 <body onload="timerReminder()">
     <!-- navbar-->
     <header class="header">
-        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead">Ayodele Samuel Adebayo</a>
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead companyDisplay">Ayodele Samuel Adebayo</a>
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
                 <li class="nav-item">
                     <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -80,9 +80,9 @@
                 </li>
                 <li class="nav-item dropdown ml-auto">
                     <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/ayodele_samuel_adebayo.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Ayodele Samuel Adebayo</strong><small>Web Developer</small></a>
-                        <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
-                        <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
+                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family companyDisplay">Ayodele Samuel Adebayo</strong><small>Web Developer</small></a>
+                        <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log</a>
+                        <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item" onclick="logOut()">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -90,7 +90,7 @@
     </header>
     <div class="d-flex align-items-stretch">
         <div id="sidebar" class="sidebar py-3">
-            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">ADMIN</div>
+            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" id="role_display">Admin</div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
                 <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
@@ -114,7 +114,7 @@
                 <li class="sidebar-list-item"><a href="request.html" class="sidebar-link text-muted"><i class="o-letter-1 mr-3 text-gray"></i><span>Request</span></a></li>
                 <li class="sidebar-list-item"><a href="billing.html" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Billing</span></a></li>
                 <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-settings-window-1 mr-3 text-gray"></i><span>Settings</span></a></li>
-                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Logout</span></a></li>
+                <li class="sidebar-list-item" onclick="logOut()"><a href="#" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Logout</span></a></li>
             </ul>
         </div>
         <div class="page-holder w-100 d-flex flex-wrap">
@@ -250,6 +250,7 @@
     <script src="../../assets/js/dashboard/charts-custom.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../assets/js/dashboard/time-reminder.js"></script>
+    <script src="../../assets/js/admin-details.js"></script>
 
 </body>
 
