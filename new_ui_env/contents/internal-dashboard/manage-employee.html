@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="../../assets/css/utilities.css">
     <link rel="stylesheet" href="../../assets/css/dashboard/admin.css">
     <link rel="stylesheet" href="../../assets/css/dashboard/manage-employee.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/swal.css">
+
     <!-- Favicon-->
     <!-- <link rel="shortcut icon"href="img/favicon.png?3"> -->
     <!-- Tweaks for older IEs-->
@@ -82,7 +84,7 @@
                 </li>
                 <li class="nav-item dropdown ml-auto">
                     <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="https://github.com/unclebay143.png" alt="Ayodele Samuel Adebayo" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Ayodele Samuel Adebayo</strong><small>Web Developer</small></a>
+                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family displayName">Ayodele Samuel Adebayo</strong><small id="displayRole">Web Developer</small></a>
                         <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
                         <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
                     </div>
@@ -92,7 +94,7 @@
     </header>
     <div class="d-flex align-items-stretch">
         <div id="sidebar" class="sidebar py-3">
-            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">Admin</div>
+            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" id="displayType">Admin</div>
             <ul class="sidebar-menu list-unstyled">
                 <li class="sidebar-list-item"><a href="internal-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
                 <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted active"><i class="o-user-details-1 mr-3 text-gray"></i><span>View Employee</span></a></li>
@@ -122,19 +124,19 @@
         <div class="d-flex flex-wrap">
             <div class="container-fluid px-xl-5">
                 <div class="pt-5">
-                    <!-- Add Employee Modal Form Section-->
                     <!-- trigger button -->
                     <div class="row">
                         <div class="col">
                             <form class="form-inline d-flex search-form md-form form-sm mt-0">
-                                <input class="form-control search-input form-control-sm w-75" type="text" placeholder="Search" aria-label="Search">
-                                <button class="btn pace-bg-primary ml-3">
+                                <input class="form-control search-input form-control-sm w-75" type="text" placeholder="Search" aria-label="Search" id="searchParam">
+                                <button class="btn pace-bg-primary ml-3" id="searchEmployeeBtn">
                                     <i class="fas fa-search"aria-hidden="true"></i>
                                     Search
                                 </button>
                             </form>
                             <!-- <input type="text"class="form-control"> -->
                         </div>
+                        <!-- Add Employee Modal Form Section-->
                         <div class="col">
                             <!-- <button type="button"class="btn pace-bg-primary d-block ml-auto"data-toggle="modal"data-target="#addEmployeeForm"> -->
                             <button type="button" class="btn pace-bg-primary d-block ml-auto" data-toggle="modal" data-target="#addEmployeeForm">
@@ -158,56 +160,73 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="firstName">Firstname</label>
-                                                <input type="text" class="form-control" id="firstName">
+                                                <input type="text" class="form-control" id="employee_name">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="lastName">Lastname</label>
-                                                <input type="text" class="form-control" id="lastName">
+                                                <label for="secondName">Lastname</label>
+                                                <input type="text" class="form-control" id="secondName">
                                             </div>
                                         </div>
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
+                                            <!-- <div class="form-group col-md-6">
                                                 <label for="username">Username</label>
                                                 <input type="text" class="form-control" id="username">
-                                            </div>
+                                            </div> -->
                                             <div class="form-group col-md-6">
                                                 <label for="phone">Phone</label>
-                                                <input type="tel" class="form-control" id="phone">
+                                                <input type="tel" class="form-control" id="employee_phone">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" id="employee_email">
                                             </div>
                                         </div>
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="email">Email</label>
-                                                <input type="email" class="form-control" id="email">
-                                            </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">Password</label>
                                                 <input type="password" class="form-control" id="password">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="cPassword">Confirm Password</label>
+                                                <input type="password" class="form-control" id="cPassword">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="department">Department</label>
-                                                <select id="department" class="form-control">
-                            <option selected>Choose...</option>
-                            <option value="">Web Development</option>
-                            <option value="">Web Design</option>
-                            <option value="">Product Management</option>
+                                                <select id="employee_department" class="form-control">
+                            <option value="blank" selected>Choose...</option>
+                            <option value="Web development">Web Development</option>
+                            <option value="Web design">Web Design</option>
+                            <option value="Product Management">Product Management</option>
                           </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="role">Role</label>
-                                                <select id="role" class="form-control">
-                            <option selected>Choose...</option>
-                            <option value="">Backend Developer</option>
-                            <option value="">Frontend Developer</option>
-                            <option value="">Quality Assurance</option>
+                                                <select id="employee_role" class="form-control">
+                            <option value="blank" selected>Choose...</option>
+                            <option value="backend developer">Backend Developer</option>
+                            <option value="frontend developer">Frontend Developer</option>
+                            <option value="quality assurance">Quality Assurance</option>
                           </select>
                                             </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="type">Type</label>
+                                                <select id="employee_type" class="form-control">
+                                                    <option value="blank" selected>Choose...</option>
+                                                    <option value="332">Internal</option>
+                                                    <option value="554">Employee</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="salary">Salary</label>
+                                                <input type="text" class="form-control" id="salary">
+                                            </div>
+    
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Address</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="143 work and connect" required>
+                                            <input type="text" class="form-control" id="inputAddress1" placeholder="143 work and connect" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputAddress2">Address 2</label>
@@ -220,14 +239,11 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputState">State</label>
-                                                <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                          </select>
+                                                <input id="inputState" class="form-control"/>
                                             </div>
                                             <div class="form-group col-md-2">
-                                                <label for="inputZip">Zip</label>
-                                                <input type="text" class="form-control" id="inputZip">
+                                                <label for="Zip">Zip</label>
+                                                <input type="text" class="form-control" id="Zip">
                                             </div>
                                         </div>
                                         <!-- <div class="form-group">
@@ -243,7 +259,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn pace-bg-primary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn pace-bg-primary" onclick="alert(document.getElementById('email').value)">Employee</button>
+                                    <button type="button" class="btn pace-bg-primary" onclick="addEmployee()">Employee</button>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +268,14 @@
                 <section class="py-5">
                     <div class="card">
                         <div class="card-header">
-                            <h6 class="text-uppercase mb-0 pace-accent-color">Employee List</h6>
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="text-uppercase mb-0 pace-accent-color">Employee List</h6>
+                                </div>
+                                <div class="col d-block ml-auto">
+                                    <span id="searchResponse"></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table class="table card-text">
@@ -261,40 +284,13 @@
                                         <th>S/N</th>
                                         <th>First Name</th>
                                         <th>Last Name</th>
-                                        <th>Username</th>
+                                        <th>Phone</th>
                                         <th>Department</th>
                                         <th>Role</th>
                                         <th>Employed Date</th>
                                     </tr>
                                 </thead>
-                                <tbody id="here">
-                                    <!-- <tr>
-                                        <th scope="row">1</th>
-                                        <td>Ayodele</td>
-                                        <td>Samuel Adebayo</td>
-                                        <td>unclebay143</td>
-                                        <td>Web Development</td>
-                                        <td>Frontend</td>
-                                        <td>Aug 2 2020</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Opaluwa</td>
-                                        <td>Aisha</td>
-                                        <td>aeesh</td>
-                                        <td>Web Development</td>
-                                        <td>Frontend</td>
-                                        <td>Aug 2 2020</td>
-                                    </tr>
-                                    <tr data-toggle="modal" data-target="#profileDisplayForm">
-                                        <th scope="row">3</th>
-                                        <td>Ariyibi</td>
-                                        <td>Baseet</td>
-                                        <td>Bastocurrency</td>
-                                        <td>Web Development</td>
-                                        <td>Frontend</td>
-                                        <td>Aug 2 2020</td>
-                                    </tr> -->
+                                <tbody id="employeeList">
                                 </tbody>
                             </table>
                         </div>
@@ -319,28 +315,28 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <img src="https://github.com/unclebay143.png" alt="">
+                                        <img src="../../assets/img/about/ayodele_samuel_adebayo.jpg" alt="">
                                     </div>
                                     <div class="col-md-4 profile-left-section">
-                                        <h4 class="m-t-0 mb-0" id="displayFullname">Ayodele Samuel Adebayo</h4>
-                                        <h6 class="text-muted" id="displayRole">Frontend Developer</h6>
+                                        <input type="hidden" id="del-identifier">
+                                        <h4 class="m-t-0 mb-0" id="displayFullName">Ayodele Samuel Adebayo</h4>
+                                        <h6 class="text-muted text-uppercase" id="displayRole">Frontend Developer</h6>
                                         <small class="text-muted" id="displayDepartment">Web Design</small>
-                                        <div class="user-name mt-3" id="displayUserName">Employee ID : unclebay143</div>
-                                        <div class="text-muted" id="displayJoinedDate">Date of Joined : Aug 21, 2020</div>
-
-                                        <button class="btn pace-bg-primary mt-3">Disable Account</button>
+                                        <!-- <div class="user-name mt-3" id="displayUserName">Employee ID : <span id="displayUserName">unclebay143</span></div> -->
+                                        <div class="text-muted">Date of Joined : <span id="displayJoinedDate">Aug 21, 2020</span></div>
+                                        <button class="btn pace-bg-accent mt-3" onclick="deleteUser();">Delete Account</button>
                                     </div>
                                     <div class="col-md-6 my-lg-4">
                                         <ul class="profile-info profile-right-section">
                                             <li>
                                                 <div class="title">Phone:</div>
-                                                <div class="text">08038157444</div>
+                                                <div class="text" id="displayPhone">08038157444</div>
                                             </li>
                                             <li>
                                                 <div class="title">Email:</div>
-                                                <div class="text">unclebigbay@gmail.com</div>
+                                                <div class="text" id="displayEmail">unclebigbay@gmail.com</div>
                                             </li>
-                                            <li>
+                                            <!-- <li>
                                                 <div class="title">Birthday:</div>
                                                 <div class="text">24th May</div>
                                             </li>
@@ -351,6 +347,18 @@
                                             <li>
                                                 <div class="title">Report to:</div>
                                                 <div class="text">Solomon Chokor</div>
+                                            </li> -->
+                                            <li>
+                                                <div class="title">Completed Task : </div>
+                                                <div class="text">5</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Pending Task : </div>
+                                                <div class="text">15</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Salary:</div>
+                                                <div class="text" id="displaySalary"></div>
                                             </li>
                                         </ul>
                                     </div>
@@ -361,34 +369,36 @@
                                     <div class="col-md-4 profile-stat">
                                         <ul>
                                             <li>
-                                                <div class="title">Completed Task : </div>
-                                                <div class="text">5</div>
+                                                <div class="title">Address 1 : </div>
+                                                <div class="text" id="displayAddress1"></div>
                                             </li>
                                             <li>
-                                                <div class="title">Approved Leave : </div>
-                                                <div class="text">5</div>
+                                                <div class="title">Address 2 : </div>
+                                                <div class="text" id="displayAddress2">5</div>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 profile-links">
                                         <ul>
                                             <li>
-                                                <div class="title">Resume : </div>
-                                                <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div>
+                                                <div class="title">City : </div>
+                                                <div class="text" id="displayCity">5</div>
+                                                <!-- <div class="text"><a href="#">AyodeleSamuelAdebayo.pdf</a></div> -->
                                             </li>
                                             <li>
-                                                <div class="title">Github :</div>
-                                                <div class="text"><a href="#">unclebay143</a></div>
+                                                <div class="title">State :</div>
+                                                <div class="text" id="displayState"></div>
+                                                <!-- <div class="text"><a href="#">unclebay143</a></div> -->
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- <button type="button"class="btn pace-bg-primary"data-dismiss="modal">Close</button> -->
                                 <div class="row">
                                     <div class="col-2 mt-5"></div>
                                     <div class="col-6"></div>
                                     <div class="col-4">
-                                        <!-- <button type="button"class="btn pace-bg-primary"data-dismiss="modal">Close</button> -->
-                                        <button type="button" class="btn pace-bg-primary mt-5 ml-5" onclick="alert(document.getElementById( 'email').value)">Employee</button>
+                                            <!-- <button type="button" class="btn pace-bg-primary mt-5 ml-5" onclick="alert(document.getElementById( 'email').value)">Employee</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -399,6 +409,121 @@
                 </div> -->
                 </div>
             </div>
+        <!-- Modal Contents -->
+                <!-- Modal Contents For Edit form-->
+                    <div class="modal fade" id="editEmployeeRecord" tabindex="-1" role="dialog" aria-labelledby="editEmployeeRecordLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="editEmployeeRecordLabel">Edit Record</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+                              <div class="modal-body">
+                                  <form>
+                                      <div class="form-row">
+                                          <div class="form-group col-md-6">
+                                              <input type="hidden" id="identifier">
+                                              <label for="editFirstName">Firstname</label>
+                                              <input type="text" class="form-control" id="editFirstName">
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                              <label for="editSecondName">Lastname</label>
+                                              <input type="text" class="form-control" id="editSecondName">
+                                          </div>
+                                      </div>
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="editEmail">Email</label>
+                                            <input type="editEmail" class="form-control" id="editEmail">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="editPhone">Phone</label>
+                                            <input type="tel" class="form-control" id="editPhone">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="editPassword">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="cEditPassword">Confirm Password</label>
+                                            <input type="password" class="form-control" id="cEditPassword">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" onclick="showPassword()">
+                                        <label for="showPassword">Verify</label>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="editDepartment">Department</label>
+                                            <select id="editDepartment" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option value="web development">Web Development</option>
+                                                <option value="web design">Web Design</option>
+                                                <option value="product management">Product Management</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="editRole">Role</label>
+                                            <select id="editRole" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option value="backend developer">Backend Developer</option>
+                                                <option value="frontend developer">Frontend Developer</option>
+                                                <option value="quality assurance">Quality Assurance</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="editType">Type</label>
+                                            <select id="editType" class="form-control">
+                                                <option value="blank" selected>Choose...</option>
+                                                <option value="332">Internal</option>
+                                                <option value="554">Employee</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="editSalary">Salary</label>
+                                            <input type="text" class="form-control" id="editSalary">
+                                        </div>
+                                    </div>
+                                      <div class="form-group">
+                                          <label for="editAddress">Address</label>
+                                          <input type="text" class="form-control" id="editAddress" placeholder="143 work and connect" required>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="editAddress2">Address 2</label>
+                                          <input type="text" class="form-control" id="editAddress2" placeholder="Techspecialist, Arare Street, first floor">
+                                      </div>
+                                      <div class="form-row">
+                                          <div class="form-group col-md-6">
+                                              <label for="editCity">City</label>
+                                              <input type="text" class="form-control" id="editCity">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="editState">State</label>
+                                                <input type="text" class="form-control" id="editState">
+                                          </select>
+                                          </div>
+                                          <div class="form-group col-md-2">
+                                              <label for="editInputZip">Zip</label>
+                                              <input type="text" class="form-control" id="editInputZip">
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn pace-bg-primary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn pace-bg-primary" onclick="updateRecord()">Employee</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
             <!-- / Profile Modal Contents  -->
             <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
                 <div class="container-fluid">
@@ -427,8 +552,9 @@
     <script src="../../assets/js/dashboard/charts-home.js"></script>
     <script src="../../assets/js/dashboard/front.js"></script>
     <script src="../../assets/js/dashboard/charts-custom.js"></script>
-    <script src="../../assets/js/dashboard/manage-employee.js"></script>
     <script src="../../assets/js/dashboard/time-reminder.js"></script>
+    <script src="../../assets/js/internal-details.js"></script>
+    <script src="../../assets/js/view-employee.js"></script>
 </body>
 
 </html>

@@ -5,47 +5,47 @@ THIS SCRIPT
 
 */
 
-alert("here is the latest")
+
 
 // get the current logged in user from local storage
-var _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser")) // object
+var _is_Login_Admin = JSON.parse(localStorage.getItem("current_InternalUser")) // object
 
 // get access to all employee record in the company   
-let _get_employee_record = _is_Login_Admin[0].employeeDb // string
+let _get_employee_record = _is_Login_Admin[0].department // string
 
 // to get the database name in this format : companyName_employees
-var _company_db_name = _is_Login_Admin[0].name // string
-
+// var _company_db_name = _is_Login_Admin[0].name // string
+let internalDepartment = JSON.parse(localStorage.getItem(_get_employee_record))
 // parsed version of company record
-let _parsed_employee_record = JSON.parse(_get_employee_record) // object
+// let _parsed_employee_record = JSON.parse(internalDepartment) // object
 
-let _employee_localStorage = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
+// let internalDepartment = JSON.parse(localStorage.getItem(`${_company_db_name}_employees`))
 
 // create local storage for company employee if deleted or not found
-if (_employee_localStorage === null || _employee_localStorage === undefined)
+// if (internalDepartment === null || internalDepartment === undefined)
 
-{ // if company local storage does not exist create one 
+// { // if company local storage does not exist create one 
 
-    _employee_localStorage = []
+//     internalDepartment = []
 
-}
+// }
 /* function to display all record in the local storage */
 let renderRecord = () => {
 
 
     var employee_con = "";
     let serialNumber = 0;
-    for (i = 0; i < _employee_localStorage.length; i++) {
+    for (i = 0; i < internalDepartment.length; i++) {
 
         employee_con += `
         <tr>
         <th scope="row">${serialNumber+=1} <i class="fas fa-edit edit-btn" data-toggle="modal" data-target="#editEmployeeRecord" onclick="editEmployeeRecord(${i})"></i></th>
-        <td id="${i}" draggable="true" data-toggle="modal" data-target="#profileDisplayForm" onclick="_viewRecord(${i})" class="view-profile">${_employee_localStorage[i].firstName}</td>
-        <td>${_employee_localStorage[i].secondName}</td>
-        <td>${_employee_localStorage[i].phone}</td>
-        <td>${_employee_localStorage[i].department}</td>
-        <td>${_employee_localStorage[i].role}</td>
-        <td>${_employee_localStorage[i].joining_date}</td>
+        <td id="${i}" draggable="true" data-toggle="modal" data-target="#profileDisplayForm" onclick="_viewRecord(${i})" class="view-profile">${internalDepartment[i].firstName}</td>
+        <td>${internalDepartment[i].secondName}</td>
+        <td>${internalDepartment[i].phone}</td>
+        <td>${internalDepartment[i].department}</td>
+        <td>${internalDepartment[i].role}</td>
+        <td>${internalDepartment[i].joining_date}</td>
     </tr>
         `
     }
@@ -278,8 +278,8 @@ function addEmployee() {
             document.getElementById("cPassword").value = "";
             document.getElementById("employee_type").value = "";
 
-            _employee_localStorage.push(newAdd);
-            localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
+            internalDepartment.push(newAdd);
+            localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(internalDepartment))
             renderRecord()
 
         }
@@ -296,17 +296,17 @@ searchBtn.addEventListener("click", searchEmployee)
 function searchEmployee(searchForm){
     searchForm.preventDefault()
     searchFor = document.getElementById("searchParam").value;
-    // do not use let, for or var returns reference error for _employee_localStorage
+    // do not use let, for or var returns reference error for internalDepartment
 
-    _employee_localStorage = _employee_localStorage.filter(_finder_ => _finder_.department.toUpperCase() == searchFor.toUpperCase());
+    internalDepartment = internalDepartment.filter(_finder_ => _finder_.department.toUpperCase() == searchFor.toUpperCase());
 
-    if (_employee_localStorage.length <= 1) {
-        document.getElementById("searchResponse").innerHTML = `${_employee_localStorage.length} Record Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
+    if (internalDepartment.length <= 1) {
+        document.getElementById("searchResponse").innerHTML = `${internalDepartment.length} Record Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
         renderRecord()
 
     } else {
 
-        document.getElementById("searchResponse").innerHTML = `${_employee_localStorage.length} Records Found <a  class="to-btn pace-bg-accent" onclick="reload_board()">Ok</a>`;
+        document.getElementById("searchResponse").innerHTML = `${internalDepartment.length} Records Found <a  class="btn pace-bg-accent text-white mr-auto" onclick="reload_board()">Ok</a>`;
         renderRecord()
     }
 }
@@ -335,7 +335,7 @@ function showPassword(){
 
 function editEmployeeRecord(employee_id){
 
-        recordToUpdate = _employee_localStorage[employee_id]
+        recordToUpdate = internalDepartment[employee_id]
         document.getElementById("editFirstName").value = recordToUpdate.firstName
         document.getElementById("editSecondName").value = recordToUpdate.secondName
         document.getElementById("editSalary").value = recordToUpdate.salary
@@ -394,8 +394,8 @@ let updateRecord = () => { // function to collate and store new updated details
             "role": assignedRole,
             "joining_date" : restrict_join_date, // can't be edited
         }
-        _employee_localStorage[employee_id] = updatedRecord
-        localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
+        internalDepartment[employee_id] = updatedRecord
+        localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(internalDepartment))
         
         swal({
             'title' : 'Record Updated',
@@ -414,24 +414,24 @@ let deleteUser = () =>
 
     let user_id = document.getElementById("del-identifier").value
     swal({
-            title: "Are you sure?",
-            text: `You will not be able to recover this user! ${_employee_localStorage[user_id].firstName}`,
+            title: "Access Denied",
+            text: `Only Admin an perform this action`,
             icon: "warning",
-            buttons: ["Cancel", "Confirm"],
+            buttons: "OK",
             dangerMode: true
         })
-        .then((willDelete) => {
-            if (willDelete) {
-                swal(`Poof! ${_employee_localStorage[user_id].firstName.toUpperCase()} Deleted!`, {
-                    icon: "success",
-                });
-                _employee_localStorage.splice(user_id, 1)
-                localStorage.setItem(`${_company_db_name}_employees`, JSON.stringify(_employee_localStorage))
-                renderRecord()
-            } else {
-                swal("User restored!");
-            }
-        });
+        // .then((willDelete) => {
+        //     if (willDelete) {
+        //         swal(`Poof! ${internalDepartment[user_id].firstName.toUpperCase()} Deleted!`, {
+        //             icon: "success",
+        //         });
+        //         internalDepartment.splice(user_id, 1)
+        //         localStorage.setItem(`${_company_db_name}`, JSON.stringify(internalDepartment))
+        //         renderRecord()
+        //     } else {
+        //         swal("User restored!");
+        //     }
+        // });
 }
 
 // deleteBtn = document.getElementById("deleteRecord").addEventListener('click', deleteUser(x))
@@ -440,7 +440,7 @@ let deleteUser = () =>
 
 let _viewRecord = (employee_id) => {
 
-    recordToUpdate = _employee_localStorage[employee_id]
+    recordToUpdate = internalDepartment[employee_id]
     firstName = recordToUpdate.firstName
     secondName = recordToUpdate.secondName
     fullName = firstName +  ' ' + secondName
