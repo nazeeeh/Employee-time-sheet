@@ -107,7 +107,7 @@ function authUser(e)
             break;
 
           case check = "INTERNAL-ADMIN":
-            location.assign("../contents/internal-dashboard/index.html");
+            location.assign("../../contents/internal-dashboard/internal-dashboard.html");
             _start_InternalSession(employee_InDb)
             break;
           
