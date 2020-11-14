@@ -88,3 +88,8 @@ input.search-input {
     /* color: red; */
     cursor: pointer;
 }
+
+.view-profile{
+    cursor: pointer;
+    font-weight: 500;
+}
