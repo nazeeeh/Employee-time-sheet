@@ -5,8 +5,6 @@ THIS SCRIPT
 
 */
 
-alert("here is the latest")
-
 // get the current logged in user from local storage
 var _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser")) // object
 
@@ -252,7 +250,8 @@ function addEmployee() {
                 "assignedTask": allAssignedTasks, // local storage for Assigned tasks
                 "unassignedTasks": allUnassignedTasks,
                 "pendingTasks": allPendingTasks,
-                "completedTasks": allCompletedTasks
+                "completedTasks": allCompletedTasks,
+                "accessToCompanyDB": _company_db_name
             }
 
 

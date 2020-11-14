@@ -42,7 +42,12 @@ let authUser = () =>
   
     { // if the password you gave me is the same with what is in the PACE CLIENT local storage 
 
-      unKnown.innerHTML = "You are logged in as admin" 
+      unKnown.innerHTML = "" 
+      swal({
+        text: "Login Successful!",
+        button: false,
+        icon: "success"
+      });
 
       location.assign("../contents/admin-dashboard.html") // redirect you to the admin dashboard
       _start_AdminSession(_find_company_InDb) // revoke function to keep you signed in            

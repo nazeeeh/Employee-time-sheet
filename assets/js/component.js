@@ -19,7 +19,7 @@ class Header extends HTMLElement {
             <li><a href="../../contents/register.html"><button class="nav-signup-button">Sign Up</button></a></li>
           </ul>
         </div>
-      </div>
+      </div>  
       </div>
     </div>
     </div>

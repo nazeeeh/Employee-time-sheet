@@ -5,8 +5,6 @@ THIS SCRIPT
 
 */
 
-
-
 // get the current logged in user from local storage
 var _is_Login_Admin = JSON.parse(localStorage.getItem("current_AdminUser")) // object
 
@@ -28,7 +26,7 @@ if (_employee_localStorage === null || _employee_localStorage === undefined)
 
     _employee_localStorage = []
 
-}
+
 /* function to display all record in the local storage */
 let _render_record = () => {
 
@@ -69,10 +67,10 @@ _render_record()
 function _add_employee() {
 
     new_email = document.getElementById("employee_email").value,
-        new_name = document.getElementById("employee_name").value,
-        new_role = document.getElementById("employee_role").value,
-        new_phone = document.getElementById("employee_phone").value,
-        assignedDepartment = document.getElementById("employee_department");
+    new_name = document.getElementById("employee_name").value,
+    new_role = document.getElementById("employee_role").value,
+    new_phone = document.getElementById("employee_phone").value,
+    assignedDepartment = document.getElementById("employee_department");
     assign_department = assignedDepartment.options[assignedDepartment.selectedIndex].value;
     userTypeOption = document.getElementById("employee_type");
     new_user_type = userTypeOption.options[userTypeOption.selectedIndex].value;
