@@ -35,19 +35,18 @@
         <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead companyDisplay">Ayodele Samuel Adebayo</a>
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
                 <li class="nav-item">
-                    <form id="searchForm" class="ml-auto d-none d-lg-block">
-                        <div class="form-group position-relative mb-0">
+                    <div id="searchForm" class="ml-auto d-none d-lg-block">
+                        <div class="position-relative mb-0">
                             <!-- <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button> -->
-                            <div><i class="fa fa-circle text-danger timer-blink"></i>&nbsp;</div>
-                           <div id="right-i">
-                               <button id="start-time" onclick="startTime()">Start Time</button>
-                               <div id="time"><span id="hours">00</span> : <span id="mins">00</span> : <span id="seconds">00</span></div>
-                               <button id="stop-time" onclick="stopTime()">Stop Time</button>
-                           </div>
+                            <div id="right-i">
+                                <button id="start-time" onclick="startTime()">Start Time</button>
+                                <div id="time"><span id="hours">00</span> : <span id="mins">00</span> : <span id="seconds">00</span></div>
+                                <button id="stop-time" onclick="stopTime()">Stop Time</button>
+                            </div>
 
                             <!-- <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4"> -->
                         </div>
-                    </form>
+                    </div>
                 </li>
                 <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell pace-primary-color"></i><span class="notification-icon pace-bg-accent"></span></a>
                     <div aria-labelledby="notifications" class="dropdown-menu">
@@ -222,7 +221,9 @@
                                 <div class="icon bg-blue text-white"><i class="fas fa-dollar-sign"></i></div>
                             </div>
                             <div class="card px-5 py-4">
-                                <h2 class="mb-0 d-flex align-items-center"><span>0 hours</span><span class="dot pace-bg-accent d-inline-block ml-3"></span></h2><span class="text-muted">Worked Hours</span>
+                                <h2 class="mb-0 d-flex align-items-center"><span>0 hours</span>
+                                <!-- <div><i class="fa fa-circle text-danger timer-blink"></i>&nbsp;</div> -->
+                                <span class="dot pace-bg-accent d-inline-block ml-3 timer-blink"></span></h2><span class="text-muted">Worked Hours</span>
                                 <div class="chart-holder">
                                     <canvas id="lineChart3" style="max-height: 7rem !important;" class="w-100">      </canvas>
                                 </div>

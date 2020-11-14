@@ -16,10 +16,10 @@ let currentInternalDepartment = currentInternal[0].department // string
 // to get the database name in this format : companyName_employees
 // alert(currentInternal[0].accessToCompanyDB)
 accessCompanyDb = currentInternal[0].accessToCompanyDB
-alert(accessCompanyDb)
+// alert(accessCompanyDb)
 var _company_db_name = JSON.parse(localStorage.getItem(`${accessCompanyDb}_employees`)) // string
-alert(accessCompanyDb)
-alert(JSON.stringify(_company_db_name))
+// alert(accessCompanyDb)
+// alert(JSON.stringify(_company_db_name))
 let internalDepartmentDb = JSON.parse(localStorage.getItem(currentInternalDepartment))
 // parsed version of company record
 // let _parsed_employee_record = JSON.parse(internalDepartment) // object
@@ -284,8 +284,8 @@ function addEmployee() {
             document.getElementById("employee_type").value = "";
 
             internalDepartmentDb.push(newAdd);
-            alert(`${_company_db_name}`)
-            alert(`${internalDepartmentDb}`)
+            // alert(`${_company_db_name}`)
+            // alert(`${internalDepartmentDb}`)
             localStorage.setItem(_company_db_name, JSON.stringify(internalDepartmentDb))
             renderRecord()
 
