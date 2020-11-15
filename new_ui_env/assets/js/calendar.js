@@ -11,7 +11,7 @@ var firstDay =  new Date(year, month, 1).getDay();
 var fullDate = new Date(year, month+1, 0).getDate();
 
 
-function calendar() {
+function cal() {
     let presentMonth =  months[month] + " " + year;
     document.getElementById("presentMonth").innerHTML = presentMonth;
     
@@ -60,9 +60,9 @@ function calendar() {
 }
 
     // get schedule from local storage
-schedules = JSON.parse(localStorage.getItem("schedule"))
-if(schedules == null){
-    schedules = [];
+calendar = JSON.parse(localStorage.getItem("companyCalendar"))
+if(calendar == null){
+    calendar = [];
 }
 
 
@@ -80,17 +80,17 @@ function  addSchedule() {
         "eventDate" : document.getElementById("event-date").value,
         "eventTime" : document.getElementById("event-time").value,
     }
-    schedules.push(newSchedule);
-    localStorage.setItem("schedule", JSON.stringify(schedules));
+    calendar.push(newSchedule);
+    localStorage.setItem("companyCalendar", JSON.stringify(calendar));
     displaySchedule();
     
 }
 
 function delSchedule(id) {
-    check= confirm(`delete event ${schedules[id].eventName}?`);
+    check= confirm(`delete event ${calendar[id].eventName}?`);
     if(check){
-        schedules.splice(id,1);
-        localStorage.setItem("schedule", JSON.stringify(schedules));
+        calendar.splice(id,1);
+        localStorage.setItem("companyCalendar", JSON.stringify(calendar));
         displaySchedule();
     }
      
@@ -110,13 +110,13 @@ function displaySchedule() {
     </thead>
     <tbody>
     `
-    for(let i = 0; i < schedules.length; i++) {
+    for(let i = 0; i < calendar.length; i++) {
         list += `
             <tr> 
             <td> ${i + 1} </td>
-            <td> ${schedules[i].eventName} </td>
-            <td> ${schedules[i].eventDate} </td>
-            <td> ${schedules[i].eventTime} </td>
+            <td> ${calendar[i].eventName} </td>
+            <td> ${calendar[i].eventDate} </td>
+            <td> ${calendar[i].eventTime} </td>
             <td> <a href="#" onclick="delSchedule(${[i]})" style=" color:red"><i class="fas fa-trash"></i></a> </td>  
         `
     }
@@ -149,24 +149,44 @@ function dateValue(e){
 let paceDB = JSON.parse(localStorage.getItem("paceDB"));
 
 
-let current_Users = JSON.parse(localStorage.getItem("currentUsers"))
-
-
+// JSON.parse(localStorage.getItem(`${_get_company_name}_employees`))
 
 // check = employee_InDb.user_type.toUpperCase();
 
 
 
-for(let i = 0; i <  current_Users.length; i++) {
+// for(let i = 0; i <=  paceDB.length; i++) {
+//     let companyName = paceDB[i].name
+//     alert(companyName)
+//     let companyEmployees = JSON.parse(localStorage.getItem(`${companyName}_employees`))
+//     // alert("companyEmployees "+ JSON.stringify(companyEmployees))
+//     // console.log("companyEmployees "+ JSON.stringify(companyEmployees))
+//     console.log(`${companyName}_employees`, JSON.stringify(companyEmployees))
+//     let userType = companyEmployees[i].user_type.toUpperCase();
+//     alert("userType"+ userType)
+//     if(userType === "employee") {
+//         alert(JSON.stringify())
+//     }
+// }
+
+
+
+for(let i = 0; i <  paceDB.length; i++) {
     let calUserType = document.getElementById('cal-user-type');
     // let brand = document.getElementsByClassName('navbar-brand');
     // brand.innerText = paceDB[i].name;
-    if( current_Users[i].user_type === "Employee") {
+    let companyName = paceDB[i].name
+    let userType = JSON.parse(localStorage.getItem(`${companyName}_employees`))
+    // alert(companyName)
+    console.log("userType",userType)
+    if(userType[i].user_type === "Employee") {
         calUserType.style.display = "none";
+        console.log("activerrr",  userType[i].user_type)
+       alert(  userType[i].user_type)
     }
 }
 
 
-calendar();
+cal();
 
 {/* <button> &times; </button> */}
