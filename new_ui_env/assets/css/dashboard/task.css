@@ -12,3 +12,7 @@ textarea {
     width: 766px !important;
     /*full*/
 }
+
+a.task-duration{
+    color: #333333;
+}
