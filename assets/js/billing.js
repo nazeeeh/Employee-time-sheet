@@ -49,16 +49,17 @@ let _render_record = () => {
     var employee_con = "";
     //   let serialNumber = 0;
     for (i = 0; i < _employee_localStorage.length; i++) {
-        const fullName = `${_employee_localStorage[i].firstName + " " + _employee_localStorage[i].secondName}`
+
         salary.push(_employee_localStorage[i].salary);
         employee_con += `
     <tr id="${i}" draggable="true">
       <td>${i+1}</td>
-      <td> <i class=""></i>${fullName}</td>
+      <td> <i class="fas fa-dot-circle status red-status"></i>${name}</td>
       <td>${ _employee_localStorage[i].role}</td>
-      <td>${ _employee_localStorage[i].salary}</td>
       <td>${worked_hour[i]}</td>
-    </tr>
+      <td>${ _employee_localStorage[i].salary}</td>
+      <td>${ _employee_localStorage[i].salary}</td>
+</tr>
     `
 
     }
@@ -95,16 +96,14 @@ function calculateSalary() {
 
         var employee_con = "";
         for (i = 0; i < _employee_localStorage.length; i++) {
-            const fullName = `${_employee_localStorage[i].firstName + " " + _employee_localStorage[i].secondName}`
             employee_con += `
         <tr id="${i}" draggable="true">
           <td>${i+1}</td>
-          <td> <i class=""></i>${fullName}</td>
+          <td> <i class="fas fa-dot-circle status red-status"></i>${ _employee_localStorage[i].name}</td>
           <td>${ _employee_localStorage[i].role}</td>
           <td>${ _employee_localStorage[i].salary}</td>
           <td>${worked_hour[i]}</td>
           <td>${receivable_pay[i]}</td>
-        </tr>
         </tr>
         `
         }
