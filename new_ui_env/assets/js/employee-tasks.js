@@ -79,16 +79,11 @@ function viewTasks() {
             <th>Task</th>
             <th>Due</th>
             <th> Status</th>
+            <th>Requests</th>
             </tr>
         </thead>
         <tbody>
     `
-   view += `<tr>
-        <td>1.</td>
-        <td>Build UI</td>
-        <td>13/11/2020</td>
-        <td>Accept</td>
-    </tr>`
     for(let i = 0; i <employeeTask.length; i++) {
         if(employeeTask[i].document != ""){
             view += `
@@ -105,7 +100,7 @@ function viewTasks() {
             <td>${i + 1}</td>
             <td>${employeeTask[i].name}</td>
             <td>${employeeTask[i].due}</td>
-            <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
+            <td><a href="#" onclick="acceptTask(${i})">Accept</a></td>
             <td><a href="#" onclick="goToReport(${i})">Requests</a></td>
         ` 
         }
@@ -123,7 +118,7 @@ function viewTasks() {
 // alert(JSON.stringify(employeeTask))
  
 function acceptTask(id){ //what to do when the 'accepted button' is clicked
-    eachInternalsTask(id, "Accepted", employeeTask)
+    eachInternalsTask(id, "In Progress", employeeTask)
 
     pending.push(employeeTask[id]) //push the task to the pending list
     employeeTask.splice(id, 1) //delete the task from it's current list
@@ -174,7 +169,7 @@ function eachInternalsTask(id, changeTo, whatTask){
 function completeTask(id){ //What to do do when the 'completed' button is clicked
     eachInternalsTask(id, "Completed", pending) //DIsplay the now current pending list
 
-    completedTasks.push(pending[id]) //push the task from pending list to completed list
+    completed.push(pending[id]) //push the task from pending list to completed list
     pending.splice(id, 1) //Delete the task from pending list so it doesn't display anymore
     localStorage.setItem(`${currentUserEmail}_pendingTask`, JSON.stringify(pending))
 
@@ -198,12 +193,7 @@ function viewAcceptedTasks() {
         </thead>
         <tbody>
     `
-    views += `<tr>
-        <td>1.</td>
-        <td>Fix UI</td>
-        <td>13/11/2020</td>
-        <td>In Progress</td>
-    </tr>`
+
     for( let i = 0; i < pending.length; i++) {
         views += `
             <tr>

@@ -126,7 +126,7 @@ function taskDetails(id){
 }
 
 function acceptTask(id){ //what to do when the 'accepted button' is clicked
-    eachInternalsTask(id, "Accepted", employeeTask)
+    eachInternalsTask(id, "In Progress", employeeTask)
 
     pending.push(employeeTask[id]) //push the task to the pending list
     employeeTask.splice(id, 1) //delete the task from it's current list
