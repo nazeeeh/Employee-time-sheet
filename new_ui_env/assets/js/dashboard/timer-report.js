@@ -1,10 +1,10 @@
 function showDepartmentTimeSheet(){
-    // alert(selectedMonth)
-    selectedMonth = "pig"
-    words = document.getElementById('role').value
-    // alert(words)
+    words = document.getElementById('role')
+    words = words.options[words.selectedIndex].value
+    // words = document.getElementById('role').value
+    alert(words)
     let employeesInDepartment = JSON.parse(localStorage.getItem(words))
-    // alert(employeesInDepartment)
+    alert(employeesInDepartment)
     getEmployeeTimeSheetDataBase(employeesInDepartment)
 }
 
@@ -15,16 +15,20 @@ function getEmployeeTimeSheetDataBase(partDepartment){
 
     // Loop through each object in employees and push the value of the name to employeeName
     partDepartment.forEach(element => {
-        employeeName.push(element.name)
+        firstName = (element.firstName)
+        secondName = (element.secondName)
+
+        employeeName.push(firstName +" " + secondName)
     });
+    
     alert(employeeName)
     timingDatabase = [] //Declare an empty variable to store timing details of all employees in internals department
 
     // Loop through every name in employeeNames and concatenate name with local storage containing timing details and store in timingDatabase
     employeeName.forEach(element => {
-        timingDatabase.push(JSON.parse(localStorage.getItem(`${element}_time`)))
+        timingDatabase.push(JSON.parse(localStorage.getItem(`generalReport`)))
     })
-    alert(timingDatabase)
+    alert(JSON.stringify(timingDatabase))
     // Loop through each item in timingDatabase and check if an entry is null
     timingDatabase.forEach((element) => {
         try{
@@ -47,7 +51,9 @@ function test (){
 }
 
 function filterAndDisplay(){
-    alert(selectedMonth)
+    selectedMonth = document.getElementById('month')
+    selectedMonth = selectedMonth.options[selectedMonth.selectedIndex].value
+    alert(timeSheet)
     displayTimeSheet(timeSheet)
 }
 
@@ -62,6 +68,7 @@ function displayTimeSheet(sheet){
             if((element.month == "October" && selectedMonth == "October") || (element.month == "January" && selectedMonth == "January" )||( element.month == "Febuary" && selectedMonth == "Febuary") || (element.month == "March" && selectedMonth == "March" )|| element.month == "April" && selectedMonth == "April" || element.month == "May" && selectedMonth == "May" || element.month == "June" && selectedMonth == "June" || element.month == "July" && selectedMonth == "July" || element.month == "August" && selectedMonth == "August" || (element.month == "September" && selectedMonth == "September") || (element.month == "November" && selectedMonth == "November") || (element.month == "December" && selectedMonth == "December")){
                 // if not, add the table body to the DOM
                 add +=`<tr>
+                <td>${i + 1}</td>
                 <td>${element.date}</td>
                 <td><strong>${element.name}</strong></td>
                 <td>${element.loginTime}</td>
@@ -72,7 +79,7 @@ function displayTimeSheet(sheet){
                 <td>${element.payableWage}</td>
                 </tr>
                 `
-                document.getElementById("con").innerHTML = add
+                document.getElementById("printArea").innerHTML = add
             }
                 
         }
