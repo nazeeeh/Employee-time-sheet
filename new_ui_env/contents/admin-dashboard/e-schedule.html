@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-    <title>Employee's-tasks | Pace</title>
+    <title>E-schedule | Pace</title>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../../assets/css/dashboard/custom.css">
     <link rel="stylesheet" href="../../assets/css/utilities.css">
     <link rel="stylesheet" href="../../assets/css/dashboard/swal.css">
+    <link rel="stylesheet" href="../../assets/css/e-schedule.css">
     <!-- Favicon-->
     <!-- <link rel="shortcut icon" href="img/favicon.png?3"> -->
     <!-- Tweaks for older IEs-->
@@ -29,7 +30,7 @@
   <body>
     <!-- navbar-->
     <header class="header">
-      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead employeeName">Employee Dashboard</a>
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead">Employee Dashboard</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -69,7 +70,7 @@
             </div>
           </li>
           <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/opaluwa_aisha.jpg" alt="Opaluwa Aisha" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family employeeName">Opaluwa Aisha</strong><small id="displayRole">Web Developer</small></a>
+            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">OPALUWA AISHA</strong><small>Web Developer</small></a>
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
               <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
             </div>
@@ -79,12 +80,12 @@
     </header>
     <div class="d-flex align-items-stretch">
       <div id="sidebar" class="sidebar py-3">
-        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" id="displayType"></div>
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
         <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="employee-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-              <li class="sidebar-list-item"><a href="employee-tasks.html" class="sidebar-link text-muted active"><i class="fas fa-tasks mr-3 text-gray"></i><span>Tasks</span></a></li>
+              <li class="sidebar-list-item"><a href="admin-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
+              <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Tasks</span></a></li>
               <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Todo</span></a></li>
-              <li class="sidebar-list-item"><a href="e-schedule.html" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>e-Schedule</span></a></li>
+              <li class="sidebar-list-item"><a href="e-schedule.html" class="sidebar-link text-muted active"><i class="o-survey-1 mr-3 text-gray"></i><span>e-Schedule</span></a></li>
               <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
           <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Report</span></a>
             <div id="pages" class="collapse">
@@ -107,88 +108,89 @@
       </div>
       <div class="page-holder w-100 d-flex flex-wrap">
         <div class="container-fluid px-xl-5">
+    
           <section class="py-5">
             <div class="row mb-4">
               <div class="col-lg-12 mb-4">
                 <div class="card">
                   <div class="card-header">
-                    <h6 class="text-uppercase mb-0 pace-accent-color">Tasks</h6>
+                    <!-- displays present Month and Year -->
+                    <h6 id="presentMonth" class="text-uppercase mb-0 pace-accent-color"></h6>
                   </div>
                   <div class="card-body">
-                    <table id="view-tasks" class="table card-text">
-                      <thead>
-                        <tr>
-                        <th>S/N</th>
-                        <th>Task</th>
-                        <th>Due Date</th>
-                        <th> Status</th>
-                        <th> Requests</th>
-                        </tr>
-                    </thead>
-                    <tbody id="assignedTasks">
+                    <!-- calendar table container -->
+                    <table class="table" id="table"></table>
 
-                    </tbody>
-                    </table>
+                    <!-- Modal container-->
+                    <div class="modal fade"  id="schedule" role="dialog" >
+                     <div class="modal-dialog modal-sm">
+                       <div class="modal-content">
+                         <div class="modal-header pace-bg-primary">
+                           <button type="button" class="close" data-dismiss="modal" onblur="displaySchedule()">view</button>
+                           <!-- <button type="button" class="close" data-dismiss="modal" onclick="addSchedule()">Add</button> -->
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <h4 class="modal-title"></h4>
+                         </div>
+                         <div class="modal-body">
+                            <form>
+                              <input type="text" id="event-name" placeholder="event name" required> <br>
+                              <input type="date" id="event-date" placeholder="event date" required> <br>
+                              <input type="time" id="event-time" placeholder="event time" required> <br>
+                              <input type="button" class="btn pace-bg-primary" value="Add"  data-dismiss="modal"  onclick="addSchedule()">
+                            </form>
+                         </div>
+                       </div>
+                     </div>
+                    </div>
+                    <!-- Modal container ends -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="py-5">
+            <div class="row mb-4">
+              <div class="col-lg-12 mb-4">
+                <div class="card">
+                  <div class="card-header">
+                    <h6 class="text-uppercase mb-0 pace-primary-color">Schedule</h6>
+                  </div>
+                  <div class="card-body">
+                    <table id="schedule-list" class="table table-hover card-text"></table>
                   </div>
                 </div>
               </div>
           </section>
           
-          <section class="py-5">
-            <div class="row mb-4">
-              <div class="col-lg-12 mb-4">
-                <div class="card">
-                  <div class="card-header">
-                    <h6 class="text-uppercase mb-0 pace-accent-color">Accepted Tasks</h6>
+        </div>
+        <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-6 text-center text-md-left text-primary">
+                      <p class="mb-2 mb-md-0 pace-accent-color">Pace Timesheet &copy; 2018-2020</p>
                   </div>
-                  <div class="card-body">
-                    <table id="accepted-tasks" class="table card-text">
-                      <thead>
-                        <tr>
-                        <th>S/N</th>
-                        <th>Task</th>
-                        <th>Due Date</th>
-                        <th> Status</th>
-                        <th> Requests</th>
-                        </tr>
-                    </thead>
-                    <tbody id="acceptedTasks">
-
-                    </tbody>
-                    </table>
+                  <div class="col-md-6 text-center text-md-right text-gray-400">
+                      <!-- <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p> -->
+                      <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                   </div>
-                </div>
               </div>
-          </section>
-        </div>
-      <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-left text-primary">
-                    <p class="mb-2 mb-md-0 pace-accent-color">Pace Timesheet &copy; 2018-2020</p>
-                </div>
-                <div class="col-md-6 text-center text-md-right text-gray-400">
-                    <!-- <p class="mb-0">Design by <a href="https://bootstrapious.com/admin-templates" class="external text-gray-400">Bootstrapious</a></p> -->
-                    <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-                </div>
-            </div>
-        </div>
-    </footer>
+          </div>
+      </footer>
       </div>
     </div>
-    <!-- JavaScript files-->
-    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
-    <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
-    <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
-    <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="../../assets/js/dashboard/charts-home.js"></script>
-    <script src="../../assets/js/dashboard/front.js"></script>
-    <script src="../../assets/js/dashboard/charts-custom.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../../assets/js/dashboard/time-reminder.js"></script>
-    <script src="../../assets/js/employee-tasks.js"></script>
-    <script src="../../assets/js/employee_details.js"></script>
+     <!-- JavaScript files-->
+     <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+     <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
+     <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+     <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
+     <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+     <script src="../../assets/js/dashboard/charts-home.js"></script>
+     <script src="../../assets/js/dashboard/front.js"></script>
+     <script src="../../assets/js/dashboard/charts-custom.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script src="../../assets/js/dashboard/time-reminder.js"></script>
+     <script src="../../assets/js/e-schedule.js"></script>
+
   </body>
 </html>

@@ -151,7 +151,7 @@ button.navbar-toggler:hover{
 
 
 .block img{
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
 }
 
