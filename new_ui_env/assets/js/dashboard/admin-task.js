@@ -100,9 +100,9 @@ function displayTasks(){
         <td>${employeeTask[i].title}</td>
         <td><span class="badge badge-success">${employeeTask[i].status}</span></td>
         <td>
-            <a href="#" class="btn btn-sm pace-bg-primary">${employeeTask[i].Date}</a>
+            <a href="#" class="task-duration">${employeeTask[i].Date}</a>
         </td>
-        <td><a href="#" class="btn btn-sm pace-bg-primary">${employeeTask[i].due}</a></td>
+        <td><a href="#" class="task-duration">${employeeTask[i].due}</a></td>
         </tr>
         `
     }
@@ -119,8 +119,9 @@ function sendTaskToEmployee(name){
         assignedMainList.push(newTask)
         // pending.push(newTask)
         // employeeTask.push(newTask)
-    }else(alert("Invalid"))
-    // else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
+    }else{
+    swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")
+    }
 }
 
 function pushToEmployee(name){
@@ -134,5 +135,38 @@ function findEmployee(theName){
     found = employees.find(x => x.name.toLowerCase() == theName.toLowerCase())
     foundEmail = found.email
     return foundEmail
- }
+}
 
+//
+
+function displayOptions(){
+    let employeeName = document.getElementById("employee-assigned-main").value
+    let searchResult = document.querySelector('.employee')
+        searchResult.innerHTML = ''
+        employeeNames = getEmployeeNames()
+        let employeeResult = employeeNames.filter(function(employee){
+            return employee.toLowerCase().startsWith(employeeName.toLowerCase());
+        });
+    
+        employeeResult.forEach(element => {
+            i = employeeResult.indexOf(element)
+            let div =document.createElement('div')
+            div.innerHTML = element
+            searchResult.appendChild(div)
+            div.setAttribute("id", `${i}`)
+            div.setAttribute('onclick', `appendName(${i})`)
+        });
+    
+        if (employeeName == ""){
+            searchResult.innerHTML = ''
+        }
+        return employeeResult
+    }
+    
+    function appendName(id){
+        results = displayOptions()
+        let searchResult = document.querySelector('.employee')
+        document.getElementById("employee-assigned-main").value = results[id]
+        searchResult.innerHTML = ''
+    }
+    
