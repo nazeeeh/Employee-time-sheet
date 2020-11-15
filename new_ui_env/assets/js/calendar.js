@@ -146,45 +146,34 @@ function dateValue(e){
     console.log(eventDate)
 }
 
-let paceDB = JSON.parse(localStorage.getItem("paceDB"));
 
 
-// JSON.parse(localStorage.getItem(`${_get_company_name}_employees`))
+let isLoggedInEmployee = JSON.parse(localStorage.getItem("current_EmployeeUser"));
+if(isLoggedInEmployee) {
+    displaySchedule()
+}
 
-// check = employee_InDb.user_type.toUpperCase();
 
+// let sortedCalendar = calendar.slice().sort.(( (a, b) => 
+// {new Date( a.date) - new Date(b.date)}
+// ));
+// // let sortedCalendar = calendar.sort(( a, b => a - b));
+// console.log("sorted", sortedCalendar)
 
-
-// for(let i = 0; i <=  paceDB.length; i++) {
+// for(let i = 0; i <  paceDB.length; i++) {
+//     let calUserType = document.getElementById('cal-user-type');
+//     // let brand = document.getElementsByClassName('navbar-brand');
+//     // brand.innerText = paceDB[i].name;
 //     let companyName = paceDB[i].name
-//     alert(companyName)
-//     let companyEmployees = JSON.parse(localStorage.getItem(`${companyName}_employees`))
-//     // alert("companyEmployees "+ JSON.stringify(companyEmployees))
-//     // console.log("companyEmployees "+ JSON.stringify(companyEmployees))
-//     console.log(`${companyName}_employees`, JSON.stringify(companyEmployees))
-//     let userType = companyEmployees[i].user_type.toUpperCase();
-//     alert("userType"+ userType)
-//     if(userType === "employee") {
-//         alert(JSON.stringify())
+//     let userType = JSON.parse(localStorage.getItem(`${companyName}_employees`))
+//     // alert(companyName)
+//     console.log("userType",userType)
+//     if(userType[i].user_type === "Employee") {
+//         calUserType.style.display = "none";
+//         console.log("activerrr",  userType[i].user_type)
+//        alert(  userType[i].user_type)
 //     }
 // }
-
-
-
-for(let i = 0; i <  paceDB.length; i++) {
-    let calUserType = document.getElementById('cal-user-type');
-    // let brand = document.getElementsByClassName('navbar-brand');
-    // brand.innerText = paceDB[i].name;
-    let companyName = paceDB[i].name
-    let userType = JSON.parse(localStorage.getItem(`${companyName}_employees`))
-    // alert(companyName)
-    console.log("userType",userType)
-    if(userType[i].user_type === "Employee") {
-        calUserType.style.display = "none";
-        console.log("activerrr",  userType[i].user_type)
-       alert(  userType[i].user_type)
-    }
-}
 
 
 cal();
