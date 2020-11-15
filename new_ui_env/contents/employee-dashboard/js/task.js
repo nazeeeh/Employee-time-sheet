@@ -56,8 +56,8 @@ function viewTasks() {
             view += `
             <tr>
             <td>${i + 1}</td>
-            <td onclick="taskDetails(${i})" id='taskName'>${employeeTask[i].name} <i class="fa fa-paperclip" aria-hidden="true"></i></td>
-            <td>${employeeTask[i].due}</td>
+            <td onclick="taskDetails(${i})" id='taskName'>${employeeTask[i].title} <i class="fa fa-paperclip" aria-hidden="true"></i></td>
+            <td>${employeeTask[i].dueDate}</td>
             <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
             <td><a href="#" onclick="">Requests</a></td>
         `
@@ -65,8 +65,8 @@ function viewTasks() {
             view += `
             <tr>
             <td>${i + 1}</td>
-            <td onclick="taskDetails(${i})>${employeeTask[i].name}</td>
-            <td>${employeeTask[i].due}</td>
+            <td onclick="taskDetails(${i})>${employeeTask[i].title}</td>
+            <td>${employeeTask[i].dueDate}</td>
             <td><a href="#" onclick="acceptTask(${i})">accept</a></td>
             <td><a href="#" onclick="goToReport(${i})">Requests</a></td>
         ` 
@@ -94,7 +94,7 @@ function taskDetails(id){
 }
 
 function acceptTask(id){ //what to do when the 'accepted button' is clicked
-    eachInternalsTask(id, "Accepted", employeeTask)
+    eachInternalsTask(id, "In Progress", employeeTask)
 
     pending.push(employeeTask[id]) //push the task to the pending list
     employeeTask.splice(id, 1) //delete the task from it's current list

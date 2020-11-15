@@ -41,6 +41,7 @@ if(employeeTask == null || undefined){
 }
 // if local storage does not exist, create an empty list
 displayTasks()
+// alert(JSON.stringify(employees))
 function getTaskDetails(){
     let title = document.getElementById('title').value,
         name = document.getElementById("name").value,
@@ -55,7 +56,10 @@ function getTaskDetails(){
 function getEmployeeNames(){
     let employeeNames = []
     for(i = 0; i < employees.length; i++){
-        employeeNames.push(employees[i].name)
+        firstName = (employees[i].firstName)
+        secondName = (employees[i].secondName)
+
+        employeeNames.push(firstName +" " + secondName)
     }
     return employeeNames
 }
@@ -67,7 +71,7 @@ var month = date.getMonth()+1
 var day = date.getDate()
 
 function newTask(title, department, name, message, attachment1, attachment2, dueDate){
-    let newTask = {
+    let theTask = {
         "title" : title,
         "department" : department,
         "name" : name,
@@ -76,20 +80,20 @@ function newTask(title, department, name, message, attachment1, attachment2, due
         document1 : attachment2,
         // "startDate" : startDate,
         "due" : dueDate,
-        "status" : "In Progress",
+        "status" : "Pending",
         "Date" : `${year}-${day}-${month}`,
         "id" : generateID()
     }
 
     employeeNames = getEmployeeNames()
-    sendTaskToEmployee(name)
-    employeeTask.push(newTask)
+    sendTaskToEmployee(name, theTask)
+    employeeTask.push(theTask)
     localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     displayTasks()
 }
 
 function displayTasks(){
-    // employeeTask.splice(0,1)
+    // employeeTask.splice(0,3)
     // localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     let add = ""
     for(i = 0; i < employeeTask.length; i++){
@@ -113,9 +117,9 @@ function generateID(){
    return Math.floor(Math.random() * 1000000)
 }
 
-function sendTaskToEmployee(name){
+function sendTaskToEmployee(name, theTask){
     if(employeeNames.includes(name)){
-        pushToEmployee(name)
+        pushToEmployee(name,theTask)
         assignedMainList.push(newTask)
         // pending.push(newTask)
         // employeeTask.push(newTask)
@@ -124,15 +128,16 @@ function sendTaskToEmployee(name){
     }
 }
 
-function pushToEmployee(name){
-    Email = findEmployee(name)
+function pushToEmployee(name, theTask){
+    name = name.split(" ")
+    Email = findEmployee(name[0])
     let assignedEmployee = JSON.parse(localStorage.getItem(`${Email}_task`));
-    assignedEmployee.push(newTask)
+    assignedEmployee.push(theTask)
     localStorage.setItem(`${Email}_task`,  JSON.stringify(assignedEmployee))
 }
 
 function findEmployee(theName){
-    found = employees.find(x => x.name.toLowerCase() == theName.toLowerCase())
+    found = employees.find(x => x.firstName.toLowerCase() == theName.toLowerCase())
     foundEmail = found.email
     return foundEmail
 }
@@ -140,17 +145,16 @@ function findEmployee(theName){
 //
 
 function displayOptions(){
-    let employeeName = document.getElementById("employee-assigned-main").value
-    let searchResult = document.querySelector('.employee')
+    let employeeName = document.getElementById("name").value
+    let searchResult = document.getElementById('employeeNames')
         searchResult.innerHTML = ''
         employeeNames = getEmployeeNames()
-        let employeeResult = employeeNames.filter(function(employee){
-            return employee.toLowerCase().startsWith(employeeName.toLowerCase());
+        let employeeResult = employeeNames.filter(function(employeeNames){
+            return employeeNames.toLowerCase().startsWith(employeeName.toLowerCase());
         });
-    
         employeeResult.forEach(element => {
             i = employeeResult.indexOf(element)
-            let div =document.createElement('div')
+            let div =document.createElement('option')
             div.innerHTML = element
             searchResult.appendChild(div)
             div.setAttribute("id", `${i}`)
