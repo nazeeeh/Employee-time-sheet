@@ -1,6 +1,6 @@
 let check = JSON.parse(localStorage.getItem("paceDB")) //get company details
 let tasks = JSON.parse(localStorage.getItem("tasks")); //get general task details
-let currentUser = JSON.parse(localStorage.getItem("current_InternalUser")); //get current user details
+let currentUser = JSON.parse(localStorage.getItem("current_AdminUser")); //get current user details
 let currentUserEmail = currentUser[0].email //get email of user from current user details
 let unassignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`)); //get user unassigned tasks
 let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`)); //get user assigned tasks
