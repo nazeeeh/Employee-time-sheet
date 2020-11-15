@@ -14,13 +14,13 @@ class Navbar extends HTMLElement {
       </button>
       <div class="collapse navbar-collapse" id="this_nav">
         <div class="navbar-nav">
-          <a href="../index.html" class="nav-link active">Home</a>
-          <a href="../features#pace-features" class="nav-link">Features</a>
-          <a href="contents/pricing.html" class="nav-link">Pricing</a>
-          <a href="contents/about.html" class="nav-link">About</a>
-          <a href="contents/contact.html" class="nav-link">Contact</a>
+          <a href="../../new_ui_env/index.html" class="nav-link active">Home</a>
+          <a href="../../new_ui_env/index.html#pace-features" class="nav-link">Features</a>
+          <a href="../../new_ui_env/index.html#pace-pricing" class="nav-link">Pricing</a>
+          <a href="../../new_ui_env/contents/about.html" class="nav-link">About</a>
+          <a href="../../new_ui_env/contents/contact.html" class="nav-link">Contact</a>
         </div>
-        <a href="contents/signup.html" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
+        <a href="../../new_ui_env/contents/signup.html" class="navbar-btn btn btn-sm btn-primary ml-auto to-btn" id="get-started-btn">Get Started</a>
       </div>
     </nav>
     
