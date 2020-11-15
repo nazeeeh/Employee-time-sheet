@@ -8,9 +8,12 @@
     margin: 0 auto;
     padding: 0 1rem;
 }
-.table th {
-    color: #fff;
+.table th, .table td {
+    /* color: #fff; */
+    text-align: center;
 }
+
+
 #presentMonth {
     text-align: center;
 }

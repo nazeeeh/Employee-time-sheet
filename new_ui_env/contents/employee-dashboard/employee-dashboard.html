@@ -31,7 +31,7 @@
 <body>
     <!-- navbar-->
     <header class="header">
-        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead">Employee Dashboard</a>
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead displayName">Not Logged In</a>
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
                 <li class="nav-item">
                     <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -80,7 +80,7 @@
                 </li>
                 <li class="nav-item dropdown ml-auto">
                     <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/opaluwa_aisha.jpg" alt="Opaluwa Aisha" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">OPALUWA AISHA</strong><small>Web Developer</small></a>
+                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family displayName">OPALUWA AISHA</strong><small>Web Developer</small></a>
                         <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
                         <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
                     </div>
@@ -90,13 +90,13 @@
     </header>
     <div class="d-flex align-items-stretch">
         <div id="sidebar" class="sidebar py-3">
-            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">employee</div>
+            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" id="displayType">employee</div>
             <ul class="sidebar-menu list-unstyled">
-                <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
+                <li class="sidebar-list-item"><a href="employee-dashboard.html" class="sidebar-link text-muted active"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
                 <li class="sidebar-list-item"><a href="employee-tasks.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Tasks</span></a></li>
                 <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
                 <li class="sidebar-list-item"><a href="e-schedule.html" class="sidebar-link text-muted"><i class="o-timing-1 mr-3 text-gray"></i><span>e-Schedule</span></a></li>
-                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
+                <li class="sidebar-list-item"><a href="calendar.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
                 <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Report</span></a>
                     <div id="pages" class="collapse">
                         <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
@@ -249,7 +249,9 @@
     <script src="../../assets/js/dashboard/charts-custom.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../assets/js/dashboard/time-reminder.js"></script>
+    <!-- <script src="../../assets/js/admin-details.js"></script> -->
     <script src="../../assets/js/employee-tasks.js"></script>
+    <script src="../../assets/js/employee-details.js"></script>
 </body>
 
 </html>

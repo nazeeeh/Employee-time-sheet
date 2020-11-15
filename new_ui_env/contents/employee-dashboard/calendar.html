@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-    <title>E-schedule | Pace</title>
+    <title>Calendar | Pace</title>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
@@ -30,7 +30,7 @@
   <body>
     <!-- navbar-->
     <header class="header">
-      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead">Employee Dashboard</a>
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead displayName">Ayodele Samuel Adebayo</a>
         <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
           <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -69,10 +69,10 @@
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
             </div>
           </li>
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/opaluwa_aisha.jpg" alt="Opaluwa Aisha" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">OPALUWA AISHA</strong><small>Web Developer</small></a>
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/ayodele_samuel_adebayo.jpg" alt="Ayodele Samuel" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family displayName">Ayodele Samuel</strong><small>Web Developer</small></a>
               <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
-              <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
+              <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item" onclick="logOut()">Logout</a>
             </div>
           </li>
         </ul>
@@ -80,22 +80,23 @@
     </header>
     <div class="d-flex align-items-stretch">
       <div id="sidebar" class="sidebar py-3">
-        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family displayType">Not Logged In</div>
         <ul class="sidebar-menu list-unstyled">
-              <li class="sidebar-list-item"><a href="admin-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-              <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Tasks</span></a></li>
-              <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Todo</span></a></li>
-              <li class="sidebar-list-item"><a href="e-schedule.html" class="sidebar-link text-muted active"><i class="o-survey-1 mr-3 text-gray"></i><span>e-Schedule</span></a></li>
-              <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
-          <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Report</span></a>
-            <div id="pages" class="collapse">
-              <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
-                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Billing Report</a></li>
-                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Time Report</a></li>
-                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page three</a></li>
-                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page four</a></li>
-              </ul>
-            </div>
+          <li class="sidebar-list-item"><a href="employee-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
+            <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
+            <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Task</span></a></li>
+            <!-- <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-timing-1 mr-3 text-gray"></i><span>e-schedule</span></a></li> -->
+            <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
+            <li class="sidebar-list-item"><a href="calendar.html" class="sidebar-link text-muted active"><i class="o-table-content-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Report</span></a>
+                <div id="pages" class="collapse">
+                  <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Billing Report</a></li>
+                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Time Report</a></li>
+                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page three</a></li>
+                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page four</a></li>
+                  </ul>
+                </div>
           </li>
         </ul>
         <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">EXTRAS</div>
@@ -131,7 +132,7 @@
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                            <h4 class="modal-title"></h4>
                          </div>
-                         <div class="modal-body">
+                         <div class="modal-body" id="cal-user-type">
                             <form>
                               <input type="text" id="event-name" placeholder="event name" required> <br>
                               <input type="date" id="event-date" placeholder="event date" required> <br>
@@ -153,7 +154,7 @@
               <div class="col-lg-12 mb-4">
                 <div class="card">
                   <div class="card-header">
-                    <h6 class="text-uppercase mb-0 pace-primary-color">Schedule</h6>
+                    <h6 class="text-uppercase mb-0 pace-primary-color">Company's Event</h6>
                   </div>
                   <div class="card-body">
                     <table id="schedule-list" class="table table-hover card-text"></table>
@@ -190,7 +191,8 @@
      <script src="../../assets/js/dashboard/charts-custom.js"></script>
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      <script src="../../assets/js/dashboard/time-reminder.js"></script>
-     <script src="../../assets/js/e-schedule.js"></script>
+     <script src="../../assets/js/employee-details.js"></script>
+     <script src="../../assets/js/calendar.js"></script>
 
   </body>
 </html>
