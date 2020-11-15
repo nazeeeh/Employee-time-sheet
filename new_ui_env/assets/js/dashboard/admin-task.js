@@ -84,10 +84,13 @@ function newTask(title, department, name, message, attachment1, attachment2, due
     employeeNames = getEmployeeNames()
     sendTaskToEmployee(name)
     employeeTask.push(newTask)
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     displayTasks()
 }
 
 function displayTasks(){
+    // employeeTask.splice(0,1)
+    // localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     let add = ""
     for(i = 0; i < employeeTask.length; i++){
         add += `
@@ -114,8 +117,8 @@ function sendTaskToEmployee(name){
     if(employeeNames.includes(name)){
         pushToEmployee(name)
         assignedMainList.push(newTask)
-        pending.push(newTask)
-        employeeTask.push(newTask)
+        // pending.push(newTask)
+        // employeeTask.push(newTask)
     }else(alert("Invalid"))
     // else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
 }

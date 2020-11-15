@@ -1,0 +1,79 @@
+function showDepartmentTimeSheet(){
+    // alert(selectedMonth)
+    selectedMonth = "pig"
+    words = document.getElementById('role').value
+    // alert(words)
+    let employeesInDepartment = JSON.parse(localStorage.getItem(words))
+    // alert(employeesInDepartment)
+    getEmployeeTimeSheetDataBase(employeesInDepartment)
+}
+
+
+let timeSheet = [] //Declare an empty variable to store timing details of employees that have been online and hac=ve stopped their time
+function getEmployeeTimeSheetDataBase(partDepartment){
+    let employeeName = [] //Declare an empty variable to store all names of all employee
+
+    // Loop through each object in employees and push the value of the name to employeeName
+    partDepartment.forEach(element => {
+        employeeName.push(element.name)
+    });
+    alert(employeeName)
+    timingDatabase = [] //Declare an empty variable to store timing details of all employees in internals department
+
+    // Loop through every name in employeeNames and concatenate name with local storage containing timing details and store in timingDatabase
+    employeeName.forEach(element => {
+        timingDatabase.push(JSON.parse(localStorage.getItem(`${element}_time`)))
+    })
+    alert(timingDatabase)
+    // Loop through each item in timingDatabase and check if an entry is null
+    timingDatabase.forEach((element) => {
+        try{
+            element.forEach(item => {
+                    timeSheet.push(item) 
+        }) 
+        }
+        catch(err){ //catch the type error and push 'err' instead
+            timeSheet.push("err")
+        }
+    })
+
+    filterAndDisplay()
+}
+
+selectedMonth = document.getElementById('month').value
+
+function filterAndDisplay(){
+    alert(selectedMonth)
+    displayTimeSheet(timeSheet)
+}
+
+function displayTimeSheet(sheet){
+    let add = ""
+    // loop through every time entry
+    sheet.forEach((element) => {
+    // if entry says "err", don't display anything on the DOM
+        if(element == "err"){
+            add += ""
+        }else{
+            if((element.month == "October" && selectedMonth == "October") || (element.month == "January" && selectedMonth == "January" )||( element.month == "Febuary" && selectedMonth == "Febuary") || (element.month == "March" && selectedMonth == "March" )|| element.month == "April" && selectedMonth == "April" || element.month == "May" && selectedMonth == "May" || element.month == "June" && selectedMonth == "June" || element.month == "July" && selectedMonth == "July" || element.month == "August" && selectedMonth == "August" || (element.month == "September" && selectedMonth == "September") || (element.month == "November" && selectedMonth == "November") || (element.month == "December" && selectedMonth == "December")){
+                // if not, add the table body to the DOM
+                add +=`<tr>
+                <td>${element.date}</td>
+                <td><strong>${element.name}</strong></td>
+                <td>${element.loginTime}</td>
+                <td>${element.hour}:${element.minute}:${element.second}</td>
+                <td>${element.dailyWage}</td>
+                <td>${element.overTime}</td>
+                <td>${element.overTimeWage}</td>
+                <td>${element.payableWage}</td>
+                </tr>
+                `
+                document.getElementById("con").innerHTML = add
+            }
+                
+        }
+    })
+
+}
+
+

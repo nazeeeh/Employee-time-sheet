@@ -126,23 +126,31 @@
                         <div class="form-group col-md-12 ">
                             <div class="mr-4 ">
                                 <label for="role " class="mb-3 d-block mr-auto ">Department</label>
-                                <select id="role " class="form-control ">
+                                <select id="role" class="form-control ">
                                     <option selected>Choose...</option>
-                                    <option value=" ">Backend Developer</option>
-                                    <option value=" ">Frontend Developer</option>
-                                    <option value=" ">Quality Assurance</option>
+                                    <option value="Web design">Web design</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Product Management">Product Management</option>
                                 </select>
                             </div>
                             <div class="mr-4 ">
                                 <label for="role " class="mb-3 d-block mr-auto ">Select Month</label>
-                                <!-- <select id="role " class="form-control ">
-                                    <option selected>Choose...</option>
-                                    <option value=" ">Backend Developer</option>
-                                    <option value=" ">Frontend Developer</option>
-                                    <option value=" ">Quality Assurance</option>
-                                </select> -->
-                                <input type="date " class="form-control ">
-                                <button type="button " class="btn pace-bg-primary ml-4 ">
+                                <select id="month" class="form-control">
+                                    <option value="">Choose...</option>
+                                    <option value="January">January</option>
+                                    <option value="Febuary">Febuary</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                                <button type="button " class="btn pace-bg-primary ml-4 " onclick="showDepartmentTimeSheet()">
                                     Search
                                 </button>
                             </div>
@@ -163,11 +171,14 @@
                                         <thead class="thead-light ">
                                             <tr>
                                                 <th>S/N</th>
+                                                <th>Date</th>
                                                 <th>Name</th>
                                                 <th>Department</th>
-                                                <th>Salary</th>
+                                                <th>Logged in</th>
+                                                <th>OverTime</th>
                                                 <th>Worked Hour</th>
-                                                <th>Salary</th>
+                                                <th>Expected Wage</th>
+                                                <th>Payable Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -178,6 +189,9 @@
                                                 <td><span>20,000</span></td>
                                                 <td><span>0</span></td>
                                                 <td><span>0</span></td>
+                                                <td>Build new UI</td>
+                                                <td>Build new UI</td>
+                                                <td>Build new UI</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -209,6 +223,7 @@
     <script src="../../assets/js/dashboard/manage-employee.js "></script>
     <script src="../../assets/js/dashboard/time-reminder.js "></script>
     <script src="../../assets/js/dashboard/billing.js "></script>
+    <script src="../../assets/js/dashboard/timer-report.js"></script>
 </body>
 
 </html>
