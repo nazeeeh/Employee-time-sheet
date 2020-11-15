@@ -9,6 +9,12 @@ var second = date.getSeconds()
 
 let seconds = 0, minutes = 0, hours = 0
 
+if(JSON.parse(localStorage.getItem("generalReport")) == null){
+    generalReport = []
+}else{
+    generalReport = JSON.parse(localStorage.getItem("generalReport"))
+}
+
 if(JSON.parse(localStorage.getItem("seconds")) == null){
     seconds = 0
 }else{
@@ -44,6 +50,19 @@ function getCurrentHours(){
         timeSec = setInterval(setSecs, 1000);
         timeMins = setInterval(setMins, 60000);
         timeHours = setInterval(setHours, 3600000);
+    }
+}
+
+function timerReminder() {
+    if(seconds === 0 && minutes === 0 && hours === 0){
+        setTimeout(function() {
+            swal({
+                title: "Timer reminder",
+                text: `You have logged in for 5 minutes, Did you forget to start your time?`,
+                icon: "warning",
+                button: "Okay",
+            })
+        }, 50000)
     }
 }
 
@@ -163,11 +182,12 @@ function stopTime(){
     localStorage.setItem("minutes", JSON.stringify(minutes))
     localStorage.setItem("seconds", JSON.stringify(seconds))
 
+    timeValue()
 
-    timeValue();
 }
 
-function timeValue() {
+function timeValue()    {
+    console.log("hi")
     let isLogged_In_Admin = JSON.parse(localStorage.getItem("current_AdminUser"));
     let isLogged_In_InternalUser = JSON.parse(localStorage.getItem("current_InternalUser"));
     let isLogged_In_EmployeeUser = JSON.parse(localStorage.getItem("current_EmployeeUser"));
@@ -236,7 +256,7 @@ function timeValue() {
     }
 
     if((usedHour == 8 || usedHour > 8) & usedMin > 1){
-        let overTime = (8 - usedHour)
+        overTime = (8 - usedHour)
     }else{
         overTime = "NILL"
     }
@@ -246,7 +266,7 @@ function timeValue() {
     if(overTime == "NILL"){
         overTimeWage = "NILL"
     }else{
-        let overTimeWage = 10 * (8 - usedHour)
+        overTimeWage = 10 * (8 - usedHour)
     }
     
     if(usedHour < 1){
@@ -273,65 +293,79 @@ function timeValue() {
     // The function takes in two arguments - the userArray from the localStorage and the usedTime recorded for the user
     function timeAppend(userTime, newTime) {
         var lengthTime = userTime.length;
-        if(userTime[lengthTime-1].date == newTime.date) {
-            // Sums the value of the two seconds and find the minute and second from it while it appends the minute to the minute variable
-            var overflowMinute = parseInt((userTime[lengthTime-1].second + newTime.second)/60)
-            userTime[lengthTime-1].second =(userTime[lengthTime-1].second + newTime.second)%60;
-            userTime[lengthTime-1].second += newTime.second;
-        
-            // Sums the value of the two minutes and find the hour and minute from it while it appends the hour to the hour variable
-            var overflowHour = parseInt((userTime[lengthTime-1].minute + newTime.minute)/60)
-            userTime[lengthTime-1].minute =(userTime[lengthTime-1].minute + newTime.minute)%60;
-            userTime[lengthTime-1].minute += (newTime.minute + overflowMinute);
-        
-            // Sums both hours and sets the value to the sum
-            userTime[lengthTime-1].hour += (newTime.hour + overflowHour);    
-        } else {
-            userTime.push(newTime);
+        try{
+            if(userTime[lengthTime-1].date == newTime.date) {
+                // Sums the value of the two seconds and find the minute and second from it while it appends the minute to the minute variable
+                var overflowMinute = parseInt((userTime[lengthTime-1].second + newTime.second)/60)
+                userTime[lengthTime-1].second =(userTime[lengthTime-1].second + newTime.second)%60;
+                userTime[lengthTime-1].second += newTime.second;
+            
+                // Sums the value of the two minutes and find the hour and minute from it while it appends the hour to the hour variable
+                var overflowHour = parseInt((userTime[lengthTime-1].minute + newTime.minute)/60)
+                userTime[lengthTime-1].minute =(userTime[lengthTime-1].minute + newTime.minute)%60;
+                userTime[lengthTime-1].minute += (newTime.minute + overflowMinute);
+            
+                // Sums both hours and sets the value to the sum
+                userTime[lengthTime-1].hour += (newTime.hour + overflowHour);    
+            } else {
+                generalReport.push(newTime)
+                userTime.push()
+            }
+        }catch(err){
+            generalReport.push(newTime)
+            userTime.push(newTime)
         }
-}
     
-switch(user_role) {
-    case user_role = "admin":
-        if(localStorage.getItem(`${isLogged_In_Admin[0].name}_time`) == null) {
-            var isLogged_In_Admin_Time = [];
-        } else {
-            var isLogged_In_Admin_Time = JSON.parse(localStorage.getItem(`${isLogged_In_Admin[0].name}_time`))
-        }
+    }
+    var isLogged_In_Admin_Time = [];
+    switch(user_role) {
+        case user_role = "admin":
+            if(localStorage.getItem(`${name}_time`) === null || localStorage.getItem(`${name}_time`) === undefined) {
+                var isLogged_In_Admin_Time = [];
+            } else {
+                var isLogged_In_Admin_Time = JSON.parse(localStorage.getItem(`${name}_time`))
+            }
 
-        timeAppend(isLogged_In_Admin_Time, usedTime);
-        
-        localStorage.setItem(`${isLogged_In_Admin[0].name}_time`, JSON.stringify(isLogged_In_Admin_Time));
-    break;            
+            // alert(isLogged_In_Admin_Time)
+            // userTime = localStorage.getItem(`${isLogged_In_Admin[0].name}_time`)
+            timeAppend(isLogged_In_Admin_Time, usedTime);
 
-    case user_role = "internal-admin":
-        if(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`) == null) {
-            var isLogged_In_InternalUser_Time = [];
-        } else {
-            var isLogged_In_InternalUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`))
-        }
+            localStorage.setItem(`${name}_time`, JSON.stringify(isLogged_In_Admin_Time));
+            localStorage.setItem("generalReport", JSON.stringify(generalReport));
 
-        timeAppend(isLogged_In_InternalUser_Time, usedTime);
+        break;            
 
-        localStorage.setItem(`${isLogged_In_InternalUser[0].name}_time`, JSON.stringify(isLogged_In_InternalUser_Time));
-    break;
+        case user_role = "internal-admin":
+            if(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`) == null) {
+                var isLogged_In_InternalUser_Time = [];
+            } else {
+                var isLogged_In_InternalUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_InternalUser[0].name}_time`))
+            }
 
-    case user_role = "employee":
-        if(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`) == null) {
-            var isLogged_In_EmployeeUser_Time = [];
-        } else {
-            var isLogged_In_EmployeeUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`))
-        }
-        timeAppend(isLogged_In_EmployeeUser_Time, usedTime);
+            timeAppend(isLogged_In_InternalUser_Time, usedTime);
 
-        localStorage.setItem(`${isLogged_In_EmployeeUser[0].name}_time`, JSON.stringify(isLogged_In_EmployeeUser_Time));
-    break;
-}
+            localStorage.setItem(`${isLogged_In_InternalUser[0].name}_time`, JSON.stringify(isLogged_In_InternalUser_Time));
+            localStorage.setItem("generalReport", JSON.stringify(generalReport));
+        break;
 
+        case user_role = "employee":
+            if(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`) == null) {
+                var isLogged_In_EmployeeUser_Time = [];
+            } else {
+                var isLogged_In_EmployeeUser_Time = JSON.parse(localStorage.getItem(`${isLogged_In_EmployeeUser[0].name}_time`))
+            }
+            timeAppend(isLogged_In_EmployeeUser_Time, usedTime);
 
-//     var isLoggedInUser = JSON.parse(localStorage.getItem("currentUsers"));
+            localStorage.setItem(`${isLogged_In_EmployeeUser[0].name}_time`, JSON.stringify(isLogged_In_EmployeeUser_Time));
+            localStorage.setItem("generalReport", JSON.stringify(generalReport));
+        break;
+    }
+
     
-//     for(var i=0; i<isLoggedInUser.length; i++) {
+
+    //     var isLoggedInUser = JSON.parse(localStorage.getItem("currentUsers"));
         
-//     }
+    //     for(var i=0; i<isLoggedInUser.length; i++) {
+            
+    //     }
 }

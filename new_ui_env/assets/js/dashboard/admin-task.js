@@ -1,6 +1,6 @@
 let check = JSON.parse(localStorage.getItem("paceDB")) //get company details
 let tasks = JSON.parse(localStorage.getItem("tasks")); //get general task details
-let currentUser = JSON.parse(localStorage.getItem("current_InternalUser")); //get current user details
+let currentUser = JSON.parse(localStorage.getItem("current_AdminUser")); //get current user details
 let currentUserEmail = currentUser[0].email //get email of user from current user details
 let unassignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`)); //get user unassigned tasks
 let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`)); //get user assigned tasks
@@ -84,10 +84,13 @@ function newTask(title, department, name, message, attachment1, attachment2, due
     employeeNames = getEmployeeNames()
     sendTaskToEmployee(name)
     employeeTask.push(newTask)
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     displayTasks()
 }
 
 function displayTasks(){
+    // employeeTask.splice(0,1)
+    // localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     let add = ""
     for(i = 0; i < employeeTask.length; i++){
         add += `
@@ -97,9 +100,9 @@ function displayTasks(){
         <td>${employeeTask[i].title}</td>
         <td><span class="badge badge-success">${employeeTask[i].status}</span></td>
         <td>
-            <a href="#" class="btn btn-sm pace-bg-primary">${employeeTask[i].Date}</a>
+            <a href="#" class="task-duration">${employeeTask[i].Date}</a>
         </td>
-        <td><a href="#" class="btn btn-sm pace-bg-primary">${employeeTask[i].due}</a></td>
+        <td><a href="#" class="task-duration">${employeeTask[i].due}</a></td>
         </tr>
         `
     }
@@ -114,10 +117,11 @@ function sendTaskToEmployee(name){
     if(employeeNames.includes(name)){
         pushToEmployee(name)
         assignedMainList.push(newTask)
-        pending.push(newTask)
-        employeeTask.push(newTask)
-    }else(alert("Invalid"))
-    // else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
+        // pending.push(newTask)
+        // employeeTask.push(newTask)
+    }else{
+    swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")
+    }
 }
 
 function pushToEmployee(name){
@@ -131,5 +135,38 @@ function findEmployee(theName){
     found = employees.find(x => x.name.toLowerCase() == theName.toLowerCase())
     foundEmail = found.email
     return foundEmail
- }
+}
 
+//
+
+function displayOptions(){
+    let employeeName = document.getElementById("employee-assigned-main").value
+    let searchResult = document.querySelector('.employee')
+        searchResult.innerHTML = ''
+        employeeNames = getEmployeeNames()
+        let employeeResult = employeeNames.filter(function(employee){
+            return employee.toLowerCase().startsWith(employeeName.toLowerCase());
+        });
+    
+        employeeResult.forEach(element => {
+            i = employeeResult.indexOf(element)
+            let div =document.createElement('div')
+            div.innerHTML = element
+            searchResult.appendChild(div)
+            div.setAttribute("id", `${i}`)
+            div.setAttribute('onclick', `appendName(${i})`)
+        });
+    
+        if (employeeName == ""){
+            searchResult.innerHTML = ''
+        }
+        return employeeResult
+    }
+    
+    function appendName(id){
+        results = displayOptions()
+        let searchResult = document.querySelector('.employee')
+        document.getElementById("employee-assigned-main").value = results[id]
+        searchResult.innerHTML = ''
+    }
+    

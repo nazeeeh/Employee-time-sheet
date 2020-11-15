@@ -16,7 +16,7 @@ class Navbar extends HTMLElement {
         <div class="navbar-nav">
           <a href="../../new_ui_env/index.html" class="nav-link active">Home</a>
           <a href="../../new_ui_env/index.html#pace-features" class="nav-link">Features</a>
-          <a href="contents/pricing.html" class="nav-link">Pricing</a>
+          <a href="../../new_ui_env/index.html#pace-pricing" class="nav-link">Pricing</a>
           <a href="../../new_ui_env/contents/about.html" class="nav-link">About</a>
           <a href="../../new_ui_env/contents/contact.html" class="nav-link">Contact</a>
         </div>

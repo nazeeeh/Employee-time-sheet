@@ -135,11 +135,11 @@ function getUserDetails(formSubmit) { // function to get all user's details from
         } else if (is_email_InDb["email"] == companyEmail) {
             // alert("EMAIL ALREADY FOUND")
             // document.getElementById("companyNameHolder").innerHTML = "Email Already Exist";
-            swal({
-                title: "Email Already Exist",
-                icon: "error",
-                button: "Okay",
-            })
+            // swal({
+            //     title: "Email Already Exist",
+            //     icon: "error",
+            //     button: "Okay",
+            // })
 
         }
     }
