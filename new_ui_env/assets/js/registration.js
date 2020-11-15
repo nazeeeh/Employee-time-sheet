@@ -109,12 +109,12 @@ function getUserDetails(formSubmit) { // function to get all user's details from
 
                 
 
-                // swal({
-                //     title: "Registration Successful",
-                //     // text: `You have logged in for 5 minutes, Did you forget to start your time?`,
-                //     icon: "warning",
-                //     button: "Ok",
-                // })
+                swal({
+                    title: "Registration Successful",
+                    // text: `You have logged in for 5 minutes, Did you forget to start your time?`,
+                    icon: "warning",
+                    button: "Ok",
+                })
                 setTimeout(() => {
                     // alert("sam")
                     location.assign("./login.html", 500);
