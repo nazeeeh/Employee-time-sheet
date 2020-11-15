@@ -1,6 +1,6 @@
 let check = JSON.parse(localStorage.getItem("paceDB")) //get company details
 let tasks = JSON.parse(localStorage.getItem("tasks")); //get general task details
-let currentUser = JSON.parse(localStorage.getItem("current_InternalUser")); //get current user details
+let currentUser = JSON.parse(localStorage.getItem("current_AdminUser")); //get current user details
 let currentUserEmail = currentUser[0].email //get email of user from current user details
 let unassignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_UnassignedTask`)); //get user unassigned tasks
 let assignedMainList = JSON.parse(localStorage.getItem(`${currentUserEmail}_AssignedTask`)); //get user assigned tasks
@@ -84,10 +84,13 @@ function newTask(title, department, name, message, attachment1, attachment2, due
     employeeNames = getEmployeeNames()
     sendTaskToEmployee(name)
     employeeTask.push(newTask)
+    localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     displayTasks()
 }
 
 function displayTasks(){
+    // employeeTask.splice(0,1)
+    // localStorage.setItem(`${currentUserEmail}_task`, JSON.stringify(employeeTask))
     let add = ""
     for(i = 0; i < employeeTask.length; i++){
         add += `
@@ -114,8 +117,8 @@ function sendTaskToEmployee(name){
     if(employeeNames.includes(name)){
         pushToEmployee(name)
         assignedMainList.push(newTask)
-        pending.push(newTask)
-        employeeTask.push(newTask)
+        // pending.push(newTask)
+        // employeeTask.push(newTask)
     }else(alert("Invalid"))
     // else{swal("Sorry!",`${employeeAssigned} is not an employee!`, "error")}
 }

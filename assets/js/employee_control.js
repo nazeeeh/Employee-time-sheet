@@ -391,4 +391,4 @@ let _viewRecord = (employee_id) => {
     document.getElementById("identifier").value = employee_id
 
 
-}
+}}
