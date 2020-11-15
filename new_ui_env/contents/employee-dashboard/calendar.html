@@ -30,62 +30,71 @@
   <body>
     <!-- navbar-->
     <header class="header">
-      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead displayName">Ayodele Samuel Adebayo</a>
-        <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
-          <li class="nav-item">
-            <form id="searchForm" class="ml-auto d-none d-lg-block">
-              <div class="form-group position-relative mb-0">
-                <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button>
-                <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4">
-              </div>
-            </form>
-          </li>
-          <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell pace-primary-color"></i><span class="notification-icon pace-bg-accent"></span></a>
-            <div aria-labelledby="notifications" class="dropdown-menu"><a href="#" class="dropdown-item">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-sm pace-bg-accent text-white"><i class="fab fa-twitter"></i></div>
-                  <div class="text ml-2">
-                    <p class="mb-0">You have 2 followers</p>
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="#" class="navbar-brand font-weight-bold text-uppercase text-base pace-primary-color dashboard-lead employeeName">Employee Dashboard</a>
+          <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+              <li class="nav-item">
+                  <form id="searchForm" class="ml-auto d-none d-lg-block">
+                      <div class="form-group position-relative mb-0">
+                          <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button>
+                          <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4">
+                      </div>
+                  </form>
+              </li>
+              <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell pace-primary-color"></i><span class="notification-icon pace-bg-accent"></span></a>
+                  <div aria-labelledby="notifications" class="dropdown-menu">
+                      <a href="#" class="dropdown-item">
+                          <div class="d-flex align-items-center">
+                              <div class="icon icon-sm pace-bg-accent text-white"><i class="fab fa-twitter"></i></div>
+                              <div class="text ml-2">
+                                  <p class="mb-0">You have 2 followers</p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href="#" class="dropdown-item">
+                          <div class="d-flex align-items-center">
+                              <div class="icon icon-sm bg-green text-white"><i class="fas fa-envelope"></i></div>
+                              <div class="text ml-2">
+                                  <p class="mb-0">You have 6 new messages</p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href="#" class="dropdown-item">
+                          <div class="d-flex align-items-center">
+                              <div class="icon icon-sm bg-blue text-white"><i class="fas fa-upload"></i></div>
+                              <div class="text ml-2">
+                                  <p class="mb-0">Server rebooted</p>
+                              </div>
+                          </div>
+                      </a>
+                      <a href="#" class="dropdown-item">
+                          <div class="d-flex align-items-center">
+                              <div class="icon icon-sm pace-bg-accent text-white"><i class="fab fa-twitter"></i></div>
+                              <div class="text ml-2">
+                                  <p class="mb-0">You have 2 followers</p>
+                              </div>
+                          </div>
+                      </a>
+                      <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
                   </div>
-                </div></a><a href="#" class="dropdown-item"> 
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-sm bg-green text-white"><i class="fas fa-envelope"></i></div>
-                  <div class="text ml-2">
-                    <p class="mb-0">You have 6 new messages</p>
+              </li>
+              <li class="nav-item dropdown ml-auto">
+                  <a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/opaluwa_aisha.jpg" alt="Opaluwa Aisha" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+                  <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family employeeName">OPALUWA AISHA</strong><small id="displayRole">Web Developer</small></a>
+                      <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log</a>
+                      <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
                   </div>
-                </div></a><a href="#" class="dropdown-item">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-sm bg-blue text-white"><i class="fas fa-upload"></i></div>
-                  <div class="text ml-2">
-                    <p class="mb-0">Server rebooted</p>
-                  </div>
-                </div></a><a href="#" class="dropdown-item">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-sm pace-bg-accent text-white"><i class="fab fa-twitter"></i></div>
-                  <div class="text ml-2">
-                    <p class="mb-0">You have 2 followers</p>
-                  </div>
-                </div></a>
-              <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
-            </div>
-          </li>
-          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="../../assets/img/about/ayodele_samuel_adebayo.jpg" alt="Ayodele Samuel" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
-            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family displayName">Ayodele Samuel</strong><small>Web Developer</small></a>
-              <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a>
-              <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item" onclick="logOut()">Logout</a>
-            </div>
-          </li>
-        </ul>
+              </li>
+          </ul>
       </nav>
-    </header>
-    <div class="d-flex align-items-stretch">
+  </header>
+  <div class="d-flex align-items-stretch">
       <div id="sidebar" class="sidebar py-3">
-        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family displayType">Not Logged In</div>
-        <ul class="sidebar-menu list-unstyled">
-          <li class="sidebar-list-item"><a href="employee-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
-            <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li>
+          <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family" id="displayType">employee</div>
+          <ul class="sidebar-menu list-unstyled">
+            <li class="sidebar-list-item"><a href="employee-dashboard.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
+            <!-- <li class="sidebar-list-item"><a href="manage-employee.html" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3 text-gray"></i><span>Employee</span></a></li> -->
             <li class="sidebar-list-item"><a href="task.html" class="sidebar-link text-muted"><i class="fas fa-tasks mr-3 text-gray"></i><span>Task</span></a></li>
-            <!-- <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-timing-1 mr-3 text-gray"></i><span>e-schedule</span></a></li> -->
+            <li class="sidebar-list-item"><a href="e-schedule.html" class="sidebar-link text-muted"><i class="o-timing-1 mr-3 text-gray"></i><span>e-schedule</span></a></li>
             <li class="sidebar-list-item"><a href="todo.html" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3 text-gray"></i><span>Todo</span></a></li>
             <li class="sidebar-list-item"><a href="calendar.html" class="sidebar-link text-muted active"><i class="o-table-content-1 mr-3 text-gray"></i><span>Calendar</span></a></li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Report</span></a>
@@ -115,48 +124,13 @@
               <div class="col-lg-12 mb-4">
                 <div class="card">
                   <div class="card-header">
-                    <!-- displays present Month and Year -->
-                    <h6 id="presentMonth" class="text-uppercase mb-0 pace-accent-color"></h6>
+                    <h6 class="text-uppercase mb-0 pace-accent-color">Company's Event
+                      <!-- <span><button type="button" onclick="displaySchedule()">view</button></span> -->
+                    </h6>
                   </div>
                   <div class="card-body">
-                    <!-- calendar table container -->
-                    <table class="table" id="table"></table>
-
-                    <!-- Modal container-->
-                    <div class="modal fade"  id="schedule" role="dialog" >
-                     <div class="modal-dialog modal-sm">
-                       <div class="modal-content">
-                         <div class="modal-header pace-bg-primary">
-                           <button type="button" class="close" data-dismiss="modal" onblur="displaySchedule()">view</button>
-                           <!-- <button type="button" class="close" data-dismiss="modal" onclick="addSchedule()">Add</button> -->
-                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           <h4 class="modal-title"></h4>
-                         </div>
-                         <div class="modal-body" id="cal-user-type">
-                            <form>
-                              <input type="text" id="event-name" placeholder="event name" required> <br>
-                              <input type="date" id="event-date" placeholder="event date" required> <br>
-                              <input type="time" id="event-time" placeholder="event time" required> <br>
-                              <input type="button" class="btn pace-bg-primary" value="Add"  data-dismiss="modal"  onclick="addSchedule()">
-                            </form>
-                         </div>
-                       </div>
-                     </div>
-                    </div>
-                    <!-- Modal container ends -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="py-5">
-            <div class="row mb-4">
-              <div class="col-lg-12 mb-4">
-                <div class="card">
-                  <div class="card-header">
-                    <h6 class="text-uppercase mb-0 pace-primary-color">Company's Event</h6>
-                  </div>
-                  <div class="card-body">
+                     <!-- calendar table container -->
+                     <!-- <table class="table" id="table"></table> -->
                     <table id="schedule-list" class="table table-hover card-text"></table>
                   </div>
                 </div>
@@ -179,20 +153,22 @@
       </footer>
       </div>
     </div>
-     <!-- JavaScript files-->
-     <script src="../../assets/vendor/jquery/jquery.min.js"></script>
-     <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
-     <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-     <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
-     <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-     <script src="../../assets/js/dashboard/charts-home.js"></script>
-     <script src="../../assets/js/dashboard/front.js"></script>
-     <script src="../../assets/js/dashboard/charts-custom.js"></script>
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-     <script src="../../assets/js/dashboard/time-reminder.js"></script>
-     <script src="../../assets/js/employee-details.js"></script>
-     <script src="../../assets/js/calendar.js"></script>
+    <!-- JavaScript files-->
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../assets/vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../../assets/js/dashboard/charts-home.js"></script>
+    <script src="../../assets/js/dashboard/front.js"></script>
+    <script src="../../assets/js/dashboard/charts-custom.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../assets/js/dashboard/time-reminder.js"></script>
+    <!-- <script src="../../assets/js/admin-details.js"></script> -->
+    <script src="../../assets/js/employee-tasks.js"></script>
+    <script src="../../assets/js/employee-details.js"></script> 
+    <script src="../../assets/js/calendar.js"></script> 
 
   </body>
 </html>
