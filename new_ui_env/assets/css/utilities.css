@@ -36,3 +36,13 @@
   padding: .5625rem 1rem !important;
   font-size: 1.0625rem !important;
 }
+
+
+@media print {
+  * {
+    display: none;
+  }
+  #printArea {
+    display: block;
+  }
+}

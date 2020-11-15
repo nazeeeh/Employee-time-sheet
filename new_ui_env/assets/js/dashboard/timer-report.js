@@ -39,8 +39,12 @@ function getEmployeeTimeSheetDataBase(partDepartment){
 
     filterAndDisplay()
 }
+function test (){
 
-selectedMonth = document.getElementById('month').value
+    selectedMonth = document.getElementById('month')
+    s = selectedMonth.options[selectedMonth.selectedIndex].value
+    alert(s)
+}
 
 function filterAndDisplay(){
     alert(selectedMonth)
@@ -77,3 +81,9 @@ function displayTimeSheet(sheet){
 }
 
 
+// printing section
+function printReport() {
+    window.frames["print_frame"].document.body.innerHTML = document.getElementById("printArea").innerHTML;
+    window.frames["print_frame"].window.focus();
+    window.frames["print_frame"].window.print();
+  }
