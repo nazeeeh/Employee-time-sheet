@@ -1,120 +1,37 @@
+/* import google font - Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body{
   margin:0;
   padding:0;
-  background: #fcfcfc;
 }
 *,
 *::before,
 *::after{
-  box-sizing:border-box;
+  font-family: 'Roboto', sans-serif;
 }
-.price-heading{
-  margin-top:40px;
-  border:hidden;
-  padding:10px;
-}
-.price-heading2{
-  margin-top:80px;
-}
-.trial{
-  color:#506690;
-}
-.para{
-  color:#506690;
-}
-.free{
-  color: #FF6584;
-}
-.choose{
-  color:#506690;  
-}
-.btn-primary{
-  background:#FF6584;
-  border-radius:50px;
-  border:hidden;
-  transition:500ms ease-in;
-}
-.btn-primary:hover{
-  background:#506690;
-  transition:500ms ease-out;
-}
-/* styling for the cards starts */
-.card-group{
-  margin-top:40px;
-}
-.card-group .card{
-  border-radius:5px;
+.card-deck{
+  flex-wrap:wrap;
   margin:5px;
-  margin-top:30px;
-
 }
-/* .top{
-  margin-top:30px;
-  box-sizing:border-box;
-} */
-.card h1{
-  font-weight:bolder;
+.head-text{
+  font-weight:600;
+  text-transform:uppercase;
+  font-size:26px;
 }
-.card img{
-  height:160px;
-  border-bottom:1px solid gray;
-  display:flex;
-  justify-content:center;
+.price{
+  font-weight:800;
 }
-div.card-footer{
-  border-bottom-right-radius:5px;
-  border-bottom-left-radius:5px;
+.card-header{
+  background-color:transparent;
 }
-div.card-footer button.free-btn{
-  border:1px solid white;
-  width:90%;
-  background:white;
-  color:#506690;
-  font-weight:bold;
+hr{
+  width:50px;
+  border:1px solid black;
+  box-shadow:3px 2px 8px blue;
 }
-div.card-footer button.free-btn:hover{
-  border:1px solid white;
-  background:#506690;
-  color:white;
+.duration{
+   font-size:24px;
 }
-div.card-footer button.basic-btn{
-  border:1px solid white;
-  width:90%;
-  background:white;
-  color:#FF63E5;
-  font-weight:bold;
-}
-div.card-footer button.basic-btn:hover{
-  border:1px solid white;
-  background:#FF63E5;
-  color:white;
-}
-div.card-footer button.premium-btn{
-  border:1px solid white;
-  width:90%;
-  background:white;
-  color:#FF6584;
-  font-weight:bold;
-}
-div.card-footer button.premium-btn:hover{
-  border:1px solid white;
-  background:#FF6584;
-  color:white;
-}
-div.card-footer button.enterprise-btn{
-  border:1px solid white;
-  width:90%;
-  background:white;
-  color:#F9B726;
-  font-weight:bold;
-}
-div.card-footer button.enterprise-btn:hover{
-  border:1px solid white;
-  background:#F9B726;
-  color:white;
-}
-/* styling for the cards Ends */
-
-.collapse.show{
-  content:"\2709";
+.badge-primary{
+  font-size:18px;
 }
