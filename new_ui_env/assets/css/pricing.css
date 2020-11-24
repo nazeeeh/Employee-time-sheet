@@ -19,15 +19,16 @@ body{
   font-size:26px;
 }
 .price{
-  font-weight:800;
+  font-weight:bolder;
+  font-size:32px;
 }
 .card-header{
   background-color:transparent;
 }
 hr{
   width:50px;
-  border:1px solid black;
-  box-shadow:3px 2px 8px blue;
+  border:1px solid #fff;
+  box-shadow:3px 3px 8px #fff;
 }
 .duration{
    font-size:24px;
@@ -35,3 +36,15 @@ hr{
 .badge-primary{
   font-size:18px;
 }
+
+.card{
+  /* border:2px solid black;
+  height:inherit; */
+}
+/* .card::after{
+  content:'ddd';
+  border:2px solid black;
+  height:50px;
+  background-color:black;
+  color:white;
+} */
