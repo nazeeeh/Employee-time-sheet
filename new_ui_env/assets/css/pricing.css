@@ -37,14 +37,21 @@ hr{
   font-size:18px;
 }
 
-.card{
-  /* border:2px solid black;
-  height:inherit; */
+.pricing-h,.pricing-f{
+  font-weight:bold;
 }
-/* .card::after{
-  content:'ddd';
-  border:2px solid black;
-  height:50px;
-  background-color:black;
-  color:white;
-} */
+.pricing-h span{
+  color:blue;
+}
+
+/* button */
+.btn-g{
+  border-radius:20px;
+  letter-spacing:2px;
+  font-weight:700;
+  padding:7px 17px;
+}
+
+footer{
+  margin-top:100px;
+}
