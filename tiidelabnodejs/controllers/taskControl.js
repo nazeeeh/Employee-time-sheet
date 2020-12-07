@@ -28,22 +28,14 @@ let taskControl = (app) => {
                     'status' : 'false'
                 }
                 logNotification(notified, res)
-                connection.query(`INSERT INTO usertask 
-                (staffID, employerID, taskName, taskDescription,
-                documentsAttached, taskStatus, startDate, endDate) 
-                VALUES ('${req.body.assignedID}', '${req.body.staffID}', 
-                '${req.body.taskName}', '${req.body.taskDescription}', 
-                '${req.body.documentsAttached}', '1', '${req.body.startDate}', 
-                '${req.body.endDate}')`, (taskErr, resp) => {
-                    if(taskErr){
-                        res.statusCode = 401
-                        res.send(taskErr)
-                    }
+                if(taskErr){
+                    res.statusCode = 401
+                    res.send(taskErr)
+                }
 
-                    if(resp){
-                        res.send('task created')
-                    }
-                })
+                if(resp){
+                    res.send('task created')
+                }
             }
         })
     })
@@ -59,21 +51,10 @@ let taskControl = (app) => {
         })
     })
 
-    // read assigned tasks by ID
-    app.get('/pace-time-sheet/companyName/assignedTasks/:id', (req, res) => {
-        connection.query(`select* 
-        from usertask where staffID = ${req.params.id}`, (err, resp) => {
-            if(err){
-                res.send(err)
-            }
-            res.send(resp)
-        })
-    })
-
     // read task by status
-    app.get('/pace-time-sheet/companyName/pendingTasks/:id', (req, res) => {
+    app.get('/pace-time-sheet/companyName/status/:id', (req, res) => {
         connection.query(`select* 
-        from usertask
+        from task
         JOIN status 
         ON status.statusID = task.statusID`, (err, resp) => {
             if(err){
@@ -84,7 +65,21 @@ let taskControl = (app) => {
     })
 
     // read task
+    app.get('/pace-time-sheet/companyName/pendingTasks', (req, res) => {
+        connection.query(`select * from task`, (err, resp) => {
+            if(err){
+                res.send(err)
+            }
+            res.send(resp)
+        })
+    })
+
     // update task
+    app.put('/pace-time-sheet/companyName/task/:id', (req, res) => {
+        connection.query(`UPDATE task SET `, (err, resp) => {
+
+        })
+    })
     // Delete task
 }
 
